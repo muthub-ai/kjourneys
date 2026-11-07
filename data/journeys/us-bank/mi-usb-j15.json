@@ -1,0 +1,645 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j15",
+ "title": "Small business adds a vendor and pays by ACH/check (card-funded optional) with Pro approval",
+ "bank": "us-bank",
+ "product": "ach-origination",
+ "persona": "Small business with bookkeeper (Level 1) and owner (Level 3)",
+ "segment": "small-business",
+ "customer_goal": "Pay vendors from one AP dashboard with approval control",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Transfer & pay > Pay bills for your business (dashboard: Vendors /…",
+   "customer_action": "Transfer & pay > Pay bills for your business (dashboard: Vendors / Bills tabs; blue Pay button; mobile blue +)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & pay > Pay bills for your business"
+    }
+   ],
+   "frontstage": "Enrollment prompt; Standard vs Pro plan",
+   "actor": "customer",
+   "decision": "Standard vs Pro",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s097",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s097",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s097",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Pro plan user setup: Settings > 'Users and roles' > select user >…",
+   "customer_action": "Pro plan user setup: Settings > 'Users and roles' > select user > Account activation toggle > Roles and permissions (Level 1/2/3) > Funding method access (Full access or selected accounts) > Payment limit amount for Level 3 users > Save; then +Add vendor (existing)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "+Add vendor; Bills > Import bills"
+    }
+   ],
+   "frontstage": "Vendor enrollment not required to get paid",
+   "actor": "customer",
+   "decision": "ACH details supplied vs check only",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s040",
+      "src-us-bank-s095",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s040",
+      "src-us-bank-s095",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s040",
+      "src-us-bank-s095",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Pay > vendor > funding account (checking/MMA or credit card 2.90%) >…",
+   "customer_action": "Pay > vendor > funding account (checking/MMA or credit card 2.90%) > payment method (ACH or mailed check) > one-time or recurring (frequency, first date, duration) > arrival date (debit date shown) > memo/invoice number (prints on check)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay flow"
+    }
+   ],
+   "frontstage": "Debit date auto-adjusts toward arrival date; credit card not future-datable; multi-vendor only on desktop",
+   "actor": "customer",
+   "decision": "ACH vs check; card-funded",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s091"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s091"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s091"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Confirm and pay. Approval rule (corrected): Level 1 and Level 2 users…",
+   "customer_action": "Confirm and pay. Approval rule (corrected): Level 1 and Level 2 users schedule any payment without limitation; a Level 3 user's payment above the Payment limit set by the Level 1 user is held for approval by a Level 1 or Level 2 user ('Review and approve payments submitted by Level 3 users')",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirm and pay > approval queue"
+    }
+   ],
+   "frontstage": "Payment limit applies only to Level 3 users; 'Any payment over the limit will require approval from a Level 1 or Level 2 user.' Standard plan has a single Level 1 user and therefore no approval workflow.",
+   "actor": "customer",
+   "decision": "Needs approval vs auto",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s047",
+      "src-us-bank-s932",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s047",
+      "src-us-bank-s932",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s047",
+      "src-us-bank-s932",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s047",
+      "src-us-bank-s932",
+      "src-us-bank-s933",
+      "src-us-bank-s934"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j15-4",
+     "text": "Approval UI not documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Confirmation that payment is scheduled; appears on Bill pay dashboard",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Bill pay dashboard"
+    }
+   ],
+   "frontstage": "Confirmation that payment is scheduled; appears on Bill pay dashboard",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s091"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s091"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Status/notifications not documented beyond dashboard",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Status/notifications not documented beyond dashboard",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Plans: Settings > Plans and billing > Manage plan (Standard→Pro…",
+   "customer_action": "Plans: Settings > Plans and billing > Manage plan (Standard→Pro 'Confirm upgrade' immediate; Pro→Standard 'Switch plan' effective next billing cycle after deactivating extra users). Level 1 can select a new Level 1 user (confirmation step; immediate; prior Level 1 access removed; scheduled payments intact). Recurring on weekend → prior business day",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s047",
+      "src-us-bank-s916",
+      "src-us-bank-s933",
+      "src-us-bank-s935"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s043",
+      "src-us-bank-s047",
+      "src-us-bank-s916",
+      "src-us-bank-s933",
+      "src-us-bank-s935"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Declined approvals, returned ACH, lost checks – not documented",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Declined approvals, returned ACH, lost checks – not documented",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
+   "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help & services; Smart Assistant; 800-USBANKS; Make an appointment"
+    }
+   ],
+   "frontstage": "Contact-center or branch handles",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j15-9",
+     "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j15:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
+   "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Fraud claim intake",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J15",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P08-S01",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Bill pay dashboard; Bills tab",
+  "states": [
+   "Scheduled",
+   "Paid (inferred)"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Approval declined",
+   "customer_experience": null,
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  },
+  {
+   "trigger": "Level 3 user schedules a payment above the Level-1-set Payment limit (Pro plan)",
+   "customer_experience": "Payment is held pending review; Level 1 or Level 2 user reviews and approves",
+   "bank_handling": "Approval queue inside bill pay for business; limit configured per user under Settings > Users and roles",
+   "resolution": "Approved payments proceed; declined/expired approval handling not documented",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s933",
+    "src-us-bank-s934"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Modern embedded AP (bill capture, email inbox, card-funded vendor pay, approvals) launched 2025; notification and exception documentation is thin.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

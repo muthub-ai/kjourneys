@@ -1,0 +1,338 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j19",
+ "title": "Commercial: send/receive Real-Time Payments and Request for Payment (sketch)",
+ "bank": "truist",
+ "product": "rtp",
+ "persona": "Corporate biller / fintech",
+ "segment": "commercial",
+ "customer_goal": "Instant settlement with notifications",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j19:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Initiate RTP credit in Digital Treasury, via API, or in-ERP (One View…",
+   "customer_action": "Initiate RTP credit in Digital Treasury, via API, or in-ERP (One View Connect pilot)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "RTP module / API"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s044",
+      "src-truist-s042",
+      "src-truist-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s044",
+      "src-truist-s042",
+      "src-truist-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j19:m02",
+   "code": "M02",
+   "stage": "review-authorize",
+   "title": "Token approval / ERP approval workflow",
+   "customer_action": "Token approval / ERP approval workflow",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Approvals"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s033",
+      "src-truist-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s033",
+      "src-truist-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j19:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "24/7 settlement via TCH RTP; 'RTP provides instant confirmations that…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Notifications"
+    }
+   ],
+   "frontstage": "24/7 settlement via TCH RTP; 'RTP provides instant confirmations that payments have been sent, received, and fully settled'; Digital Treasury alerts 'Incoming Real Time Payment Transaction', 'Real Time Payments Message' and 'Payment Request Received' (email/contact methods); API flow returns an encrypted confirmation displayed in the client platform.",
+   "actor": "network",
+   "decision": null,
+   "notification": "RTP messages",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s029",
+      "src-truist-s042",
+      "src-truist-s909",
+      "src-truist-s914"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s029",
+      "src-truist-s042",
+      "src-truist-s909",
+      "src-truist-s914"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j19:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Immediate acknowledgement; alias-based RfP pilot adds applied…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Immediate acknowledgement; alias-based RfP pilot adds applied confirmation",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j19:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Irrevocable; investigation via Client Services",
+   "customer_action": "Irrevocable; investigation via Client Services",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j19:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Treasury Solutions Client Services",
+   "customer_action": "Treasury Solutions Client Services",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J19",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P10-S03",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Digital Treasury / API callbacks",
+  "states": [
+   "Accepted",
+   "Rejected",
+   "Non-payment"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [
+  {
+   "event": "rtp_payer_payee_notifications",
+   "channels": [
+    "in-app",
+    "api"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "FedNow absent as of Nov 2025/Oct 2026 third-party lists.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

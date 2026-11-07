@@ -3,7 +3,7 @@
 
 id: urn:kos:dataproduct:kjourneys
 name: kjourneys
-version: 0.6.0                    # follows the ontology version
+version: 0.7.0                    # follows the ontology version
 status: prototype                 # prototype → pilot → production
 domain: customer-experience / money-movement
 description: >
@@ -24,14 +24,14 @@ classification:
   pii: false
   mnpi: false
   competitive_intelligence: true                      # legal review gates publication
-  hosting: "prototype: personal org with sample data only; production: enterprise GitHub"
+  hosting: "prototype: personal org; public-source competitor data (CI legal review pending) and sample Wells Fargo internals; production: enterprise GitHub"
 
 # ---------------------------------------------------------------- input ports
 input_ports:
   - id: market-intelligence
-    description: Versioned MI reports (immutable, sha256-pinned) plus structured extracts, ingested into competitor facts
-    path: reports/<YYYY-MM-DD-vN>/ → data/comparisons/<product>/values/<bank>.json
-    tool: scripts/refresh.sh reports/<version> (wraps tools/ingest_mi.py; rerunnable)
+    description: Versioned MI reports (immutable, sha256-pinned). The MI workbook is imported into journeys, findings, composites, scores and extracts; extracts are ingested into comparison facts
+    path: reports/<YYYY-MM-DD-vN>/ → data/journeys/<bank>/mi-*.json, data/findings|composites|observations|verifications/, data/participation.json, data/rankings.json, data/comparisons/<product>/values/<bank>.json
+    tool: scripts/refresh.sh reports/<version> (wraps tools/import_mi_workbook.py and tools/ingest_mi.py; rerunnable)
     contract: [docs/market-intelligence-contract.md, docs/mi-extraction.md, reports/README.md]
     producer: process:mi-session
     review: [role:ci-legal, role:ci-study-lead]
@@ -64,7 +64,7 @@ output_ports:
   - id: site
     format: text/html
     path: dist/index.html
-    description: Self-contained executive journey site (portfolio, journey, blueprint, compare, method)
+    description: Self-contained executive journey site (overview, stage scores, journeys, compare, gaps and strengths, method)
     consumers: [executives, product, engineering]
 
 # ---------------------------------------------------------------- quality
@@ -76,7 +76,8 @@ quality_gates:                       # every scripts/refresh.sh run, and re-vali
   - temporal: one current assertion per slot, valid_from <= valid_to, supersedes resolves
   - provenance: every non-awaiting fact has sources, asserter, timestamp; competitors never sample/internal
   - publish_gate: in-review/published needs real data, steward, retention, GRC + CMDB links, approved legal review
-  - negative_tests: tests/fixtures (31 cases) must all fail
+  - mi_integrity: findings, composites, observations, verifications, participation and rankings resolve to banks, journeys, products, stages and their report
+  - negative_tests: tests/fixtures (40 cases) must all fail
   - ingest_flow: tests/test_ingest.py (27 end-to-end checks of ingest, rerun, refusals and multi-product)
   - report_integrity: every mi-report source's file exists and matches its sha256
 

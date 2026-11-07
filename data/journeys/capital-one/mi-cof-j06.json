@@ -1,0 +1,529 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j06",
+ "title": "Consumer transfers to/from a linked external account (ACH push/pull)",
+ "bank": "capital-one",
+ "product": "ach-external-transfer",
+ "persona": "Customer moving savings between banks",
+ "segment": "consumer",
+ "customer_goal": "Move money between my Capital One and external accounts",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Select the Capital One account > 'Transfer' / 'Transfer Money' (under…",
+   "customer_action": "Select the Capital One account > 'Transfer' / 'Transfer Money' (under 'I Want To' in app)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account > 'I Want To' > 'Transfer Money'"
+    }
+   ],
+   "frontstage": "Linked external accounts appear as From/To options",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Choose From/To (external account), frequency, date, amount, memo",
+   "customer_action": "Choose From/To (external account), frequency, date, amount, memo",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer form"
+    }
+   ],
+   "frontstage": "External deposit limits vary 'based on fraud and security factors'",
+   "actor": "customer",
+   "decision": "Inbound (pull) vs outbound (push)",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007",
+      "src-capital-one-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007",
+      "src-capital-one-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007",
+      "src-capital-one-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s007",
+      "src-capital-one-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j06-2",
+     "text": "No instant/same-day outbound option"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Slide to confirm (app) / 'Review' then 'Transfer' (web)",
+   "customer_action": "Slide to confirm (app) / 'Review' then 'Transfer' (web)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Outbound: 1-3 business days. Inbound set up before 5 PM ET posts same…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Upcoming Transactions"
+    }
+   ],
+   "frontstage": "ACH via Nacha",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j06-4",
+     "text": "Inbound posts same day but availability may lag to 2nd business day"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Posts to Transaction History",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transaction History"
+    }
+   ],
+   "frontstage": "Posts to Transaction History",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Generic alerts",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s069"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s069"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Cancel or manage scheduled one-time and recurring external transfers…",
+   "customer_action": "Cancel or manage scheduled one-time and recurring external transfers from 'Upcoming Transactions' (cancel cut-off UNKNOWN; the 11:59 PM ET rule applies to Zelle Scheduled Payments only)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Upcoming Transactions"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s049",
+      "src-capital-one-s069",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s049",
+      "src-capital-one-s069",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "ACH return (NSF/closed account) on inbound pull",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "unknown",
+   "actor": "network",
+   "decision": null,
+   "notification": "unknown",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Unauthorized external transfer: report to 800-655-2265 / in writing;…",
+   "customer_action": "Unauthorized external transfer: report to 800-655-2265 / in writing; Reg E investigation",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "EFT error line"
+    }
+   ],
+   "frontstage": "10/45/90-day investigation; provisional credit",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j06:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Phone 800-655-2265; Help Center 'Transfer times' article",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help Center"
+    }
+   ],
+   "frontstage": "Phone 800-655-2265; Help Center 'Transfer times' article",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J06",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P02-S03",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": [
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Upcoming Transactions / Transaction History",
+  "states": [
+   "Upcoming",
+   "Posted"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Return/NSF",
+   "customer_experience": "unknown",
+   "bank_handling": "unknown",
+   "resolution": "unknown",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Standard ACH; absence of any instant (RTP/FedNow/push-to-card) outbound option is a notable gap for a digital-first bank.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

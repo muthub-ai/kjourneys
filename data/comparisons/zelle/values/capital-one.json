@@ -2,46 +2,91 @@
   "bank": "capital-one",
   "product": "zelle",
   "values": {
-    "attr-enroll-where": [
+    "attr-cap-recurring": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-recurring:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:enroll-where:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-enroll-steps": [
+    "attr-cap-scheduled-future-dated": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:enroll-steps:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-payee-name-shown": [
+    "attr-cap-request-money": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-request-money:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049",
+          "src-capital-one-s051",
+          "src-capital-one-s053",
+          "src-capital-one-s058",
+          "src-capital-one-s076",
+          "src-capital-one-s924",
+          "src-capital-one-s930"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:payee-name-shown:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-new-payee-warning": [
+    "attr-cap-split": [
       {
         "basis": "awaiting",
         "source_ids": [],
@@ -51,88 +96,166 @@
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:new-payee-warning:1"
+        "id": "urn:kos:assertion:capital-one:zelle:cap-split:1"
       }
     ],
-    "attr-daily-limit": [
+    "attr-cap-qr-code": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-qr-code:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:daily-limit:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-stepup-trigger": [
+    "attr-cap-contact-sync": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-contact-sync:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:stepup-trigger:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-time-to-recipient": [
+    "attr-cap-cancel-before-send": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-cancel-before-send:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:time-to-recipient:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-notifications": [
+    "attr-cap-status-tracking": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-status-tracking:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:notifications:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-cancel-pending": [
+    "attr-cap-push-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-push-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:cancel-pending:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-report-channels": [
+    "attr-cap-email-sms-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:zelle:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:report-channels:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-scam-reimbursement": [
+    "attr-cap-scam-warning-interstitial": [
       {
         "basis": "awaiting",
         "source_ids": [],
@@ -142,7 +265,378 @@
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:zelle:scam-reimbursement:1"
+        "id": "urn:kos:assertion:capital-one:zelle:cap-scam-warning-interstitial:1"
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — one-time passcode to mobile phone required (bank help center)",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:cap-dual-approval-smb:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049",
+          "src-capital-one-s051",
+          "src-capital-one-s053",
+          "src-capital-one-s058",
+          "src-capital-one-s076",
+          "src-capital-one-s924",
+          "src-capital-one-s930"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03, COF-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:cap-international:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049",
+          "src-capital-one-s051",
+          "src-capital-one-s053",
+          "src-capital-one-s058",
+          "src-capital-one-s076",
+          "src-capital-one-s924",
+          "src-capital-one-s930"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03, COF-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049",
+          "src-capital-one-s051",
+          "src-capital-one-s053",
+          "src-capital-one-s058",
+          "src-capital-one-s076",
+          "src-capital-one-s924",
+          "src-capital-one-s930"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03, COF-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:cap-instant:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-capital-one-s001",
+          "src-capital-one-s002",
+          "src-capital-one-s074",
+          "src-capital-one-s049",
+          "src-capital-one-s051",
+          "src-capital-one-s053",
+          "src-capital-one-s058",
+          "src-capital-one-s076",
+          "src-capital-one-s924",
+          "src-capital-one-s930"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: COF-P01-S01, COF-P01-S03, COF-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-discover:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM FRICTION: Zelle is account-scoped; no global money-movement hub is documented. [GAP-COF-0001]; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-set-up:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM CHANNEL_GAP: Zelle enrollment must be done in the mobile app. [GAP-COF-0002]; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-initiate:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Zelle limits are dynamic and unpublished. [GAP-COF-0005]; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-review-authorize:2",
+        "value": 0,
+        "display": "0 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH SECURITY_TRUST: No scam-warning interstitial documented on the review screen; scam guidance lives only on the marketing FAQ. [GAP-COF-0003]; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-execute-track:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence COF-J01, COF-J03, COF-J20; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-confirm-complete:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: No inbound-Zelle push alert documented. [GAP-COF-0006]; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-manage:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence COF-J01, COF-J03, COF-J20; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-exception:2",
+        "value": 0,
+        "display": "0 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: No in-app Zelle dispute or scam flow; Eno explicitly cannot take EFT disputes; four different phone numbers. [GAP-COF-0004]; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:capital-one:zelle:score-support:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence COF-J01, COF-J03, COF-J20; ZELLE-SMB-RECEIVE=0: Zelle terms exclude business use (absent)",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ]
   }

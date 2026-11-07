@@ -1,0 +1,612 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j06",
+ "title": "Consumer links an external bank account and schedules a transfer",
+ "bank": "jpmorgan-chase",
+ "product": "ach-external-transfer",
+ "persona": "Customer moving money from another bank",
+ "segment": "consumer",
+ "customer_goal": "Pull my paycheck from another bank into Chase without a wire",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay and transfer' tab > 'External accounts' (web) or account tile…",
+   "customer_action": "'Pay and transfer' tab > 'External accounts' (web) or account tile swipe-left > 'Transfer' > 'Manage external accounts' (mobile)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay and transfer > External accounts"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "'Add external account' / 'Add an external checking or savings account';…",
+   "customer_action": "'Add external account' / 'Add an external checking or savings account'; search bank; accept Terms",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Add external account"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Instant verification: sign in to the other bank; or manual…",
+   "customer_action": "Instant verification: sign in to the other bank; or manual routing/account entry; or trial deposits (2 small deposits + 1 withdrawal, verify in 2-3 business days)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Verification"
+    }
+   ],
+   "frontstage": "Chase attempts to confirm account details match the other bank",
+   "actor": "customer",
+   "decision": "Instant login available vs fall back to manual/trial deposits",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-jpmorgan-chase-jpm-j06-3",
+     "text": "Trial-deposit path adds 2-3 days"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Choose account, review, 'Next'/'Close'/'Done'",
+   "customer_action": "Choose account, review, 'Next'/'Close'/'Done'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s018",
+      "src-jpmorgan-chase-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s018",
+      "src-jpmorgan-chase-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "'Transfer money' > 'Schedule transfer'; pick external account as…",
+   "customer_action": "'Transfer money' > 'Schedule transfer'; pick external account as from/to; amount; date; optional 'Set up repeating transfers'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Schedule transfer"
+    }
+   ],
+   "frontstage": "Web: 'Transfer money' > 'Schedule transfer' > From > To > one-time or 'Set up repeating transfers' (frequency, dates, duration) > transfer date > 'Next' > review > 'Transfer Money' > confirmation page with transaction number. Max daily limit displayed at setup (DSA ceiling: Consumer $25,000; Sapphire/CPC/Private/Business $100,000 aggregate), dynamically reduced per transfer.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Review and submit; DSA internal review may hold or verify",
+   "customer_action": "Review and submit; DSA internal review may hold or verify",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirm"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "ACH settles; funds typically accessible in 2-3 business days",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment Activity"
+    }
+   ],
+   "frontstage": "States Pending / In Process / Completed",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Confirmation; alert",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation; alert",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Cancel an external transfer online until the 8:00 PM ET Cutoff Time on…",
+   "customer_action": "Cancel an external transfer online until the 8:00 PM ET Cutoff Time on the Send On Date; transfers with status 'Sent' or 'Completed' cannot be cancelled; stop a repeating (preauthorized) transfer ≥3 Business Days before the Send On date (online, or call 1-877-242-7372 / write Online Customer Service, PO Box 2558, Houston TX 77252-9968; written confirmation within 14 days may be required); manage external accounts under 'External accounts'.",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment Activity / External accounts"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Future-dated/repeating transfer with insufficient funds on the Transfer…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Future-dated/repeating transfer with insufficient funds on the Transfer date: Chase retries up to two more times on each of the three succeeding Business Days with status 'Funds Needed' in Transfer Activity; after the final attempt the request is Cancelled and shows 'Funding Failed'; customer notified of each failed attempt. Current-day transfers with insufficient funds are not retried and are immediately rejected. Inbound pulls are provisional until final settlement; if settlement fails Chase charges back the amount. Unauthorized transfer: Online and Mobile Banking Guarantee reimburses 100% if reported within two Business Days of discovery.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j06:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "1-800-935-9935; in-app chat",
+   "customer_action": "1-800-935-9935; in-app chat",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J06",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P03-S02",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Payment Activity",
+  "states": [
+   "Pending",
+   "Sent",
+   "Completed",
+   "Funds Needed",
+   "Funding Failed",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Other bank charges fee",
+   "customer_experience": "Chase warns other bank may charge to send to Chase",
+   "bank_handling": "No Chase fee",
+   "resolution": "n/a",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s009"
+   ]
+  },
+  {
+   "trigger": "Unauthorized external transfer",
+   "customer_experience": "Report promptly",
+   "bank_handling": "EFTA reimbursement per DSA/Deposit Agreement",
+   "resolution": "Provisional credit within 10 business days",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s057",
+    "src-jpmorgan-chase-s043"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "external_transfer_completed",
+   "channels": [
+    "email",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Three verification paths is strong; Chase does not market same-day or instant external transfer for consumers (no push-to-card). Aggregator not named.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

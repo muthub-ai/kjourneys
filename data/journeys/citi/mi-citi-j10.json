@@ -1,0 +1,526 @@
+{
+ "id": "urn:kos:journey:citi:citi-j10",
+ "title": "Consumer sends a Citibank Global Transfer to a Citi account abroad",
+ "bank": "citi",
+ "product": "remittance",
+ "persona": "Expat moving money to own Citi account overseas",
+ "segment": "consumer",
+ "customer_goal": "Move money between Citi accounts in different countries for free",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens Citi Global Transfers in the Citi Mobile App or Citi…",
+   "customer_action": "Customer opens Citi Global Transfers in the Citi Mobile App or Citi Online (available in the app since Dec 2016)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "citi.com Services > MOVE YOUR MONEY > Transfers > Citi Global Transfers (online.citi.com/US/nga/paymentHub/interCiti) > 'Sign on and Make a Transfer'; hub CTA 'Make a Citibank Global Transfer'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s017",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s017",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enter the recipient's Citibank account in a permitted destination…",
+   "customer_action": "Enter the recipient's Citibank account in a permitted destination country (list may change; check Citi Online or service team)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Quick Link 'Add a CGT Payee' > Destination / Beneficiary Name / Beneficiary Nickname / Beneficiary Citibank Account # > Next > verify (Next / Make Changes) > printable confirmation page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Destination permitted vs. not",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Enter amount ($1 minimum); credit is in the recipient account's…",
+   "customer_action": "Enter amount ($1 minimum); credit is in the recipient account's currency at Citi's rate with conversion commission; remittance disclosures apply",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Amount / FX"
+    }
+   ],
+   "frontstage": "Limits (Standard/Priority/Citigold/CPC): $50,000/$75,000/$100,000/$100,000 per day on Citi Online and on Citi Mobile; $50,000/$100,000/$150,000/$500,000 weekly; first-time transfers subject to lower limits; destination-country caps may apply; $1 minimum; FX rate (with commission) shown with federal remittance disclosures",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review; authenticate",
+   "customer_action": "Review; authenticate",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Debit and credit occur immediately (U.S.) / in recipient currency…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "'Once your transfer is reviewed, your funds are debited from your account and transferred to the recipient's bank'; U.S.-to-U.S. credited immediately",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Confirmation; no fee",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Confirmation; no fee",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Cancel within 30 minutes (international, Remittance Transfer rule)",
+   "customer_action": "Cancel within 30 minutes (international, Remittance Transfer rule)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Cancel within 30 minutes (international): call 1-866-515-1725, or sign into Citi Online / Citi Mobile App; refund within 3 business days"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Errors: 60-day window for Global/Intra Citi transfers; provisional…",
+   "customer_action": "Errors: 60-day window for Global/Intra Citi transfers; provisional credit within 10 Business Days",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Claim"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j10:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j10-9",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J10",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P06-S02",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": [
+   "branch",
+   "atm"
+  ]
+ },
+ "status_tracking": {
+  "where": "Activity",
+  "states": [
+   "Completed"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Destination removed for security reasons",
+   "customer_experience": "Transfer unavailable",
+   "bank_handling": "Citi may change destinations",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s031"
+   ]
+  },
+  {
+   "trigger": "Insufficient funds for a Global Transfer",
+   "customer_experience": "If the funding checking account lacks funds but has Checking Plus, the line covers the transfer plus fees; Safety Check overdraft protection does not apply to transfers; otherwise the transfer cannot be completed",
+   "bank_handling": "Checking Plus advance or transfer declined",
+   "resolution": "Fund the account or use Checking Plus",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s912"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "transfer_completed",
+   "channels": [
+    "in_app"
+   ],
+   "configurable": false,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Distinctive free on-us cross-border rail; limited to Citi-to-Citi, so non-Citi recipients still need wires.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

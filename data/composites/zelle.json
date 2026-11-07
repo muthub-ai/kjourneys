@@ -1,0 +1,242 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Zelle is a first-class destination (bottom-nav tab or Pay & Transfer tile) inside a money-movement hub that explains when to use Zelle vs instant transfer vs wire; assistant can open the flow",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "wells-fargo:WF-J01#1; bank-of-america:BAC-J01#1; wells-fargo:WF-J01#2; benchmark:R39#None",
+    "rationale": "WF bottom-nav tab and BofA hub tile minimise taps; Javelin notes hubs still fail to guide rail choice, so the composite adds the explainer."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "One-screen token enrollment with one-time code; transfer of an existing enrollment from another bank supported",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "wells-fargo:WF-J01#3; jpmorgan-chase:JPM-J01#3",
+    "rationale": "Single enrollment with OTP and enrollment portability removes the most common first-use failure."
+   },
+   {
+    "stage": "set-up",
+    "n": 3,
+    "action": "Add recipient from synced contacts, token, Zelle tag or QR; registered name shown before saving, with an explicit warning when it does not match the address-book name and a 'new recipient' badge",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "fifth-third:FITB-J01#3; fifth-third:FITB-J01#4; wells-fargo:WF-J01#4; us-bank:USB-J01#4; bank-of-america:BAC-J01#3",
+    "rationale": "Fifth Third is the only bank documenting a name-mismatch warning; WF/USB/BofA show the enrolled name. Together they are the strongest wrong-recipient control."
+   },
+   {
+    "stage": "initiate",
+    "n": 4,
+    "action": "Amount, funding account, memo, future date or recurring toggle in one screen, with remaining daily/30-day limit shown before entry",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J01#5; us-bank:USB-J01#6; jpmorgan-chase:JPM-J01#5",
+    "rationale": "WF 'Repeat payment' toggle and JPM/USB in-flow limit display."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 5,
+    "action": "Risk-tiered scam intervention: for new recipients or risk signals (social-media origin, changed token, high amount) ask payment purpose and contact origin, then show a full-screen warning with irrevocability acknowledgement; low-risk repeat payments skip it",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "SCAM_INTERVENTION",
+    "derived_from": "jpmorgan-chase:JPM-J01#7; us-bank:USB-J01#7; bank-of-america:BAC-J01#7; benchmark:R58#None",
+    "rationale": "Chase purpose/origin questions (Mar 2025) plus U.S. Bank's explicit APP-scam copy and checkbox; risk-tiering avoids U.S. Bank's every-send double screen."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 6,
+    "action": "Step-up one-time code only for first payment to a new recipient or elevated risk; customer taps Send",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "wells-fargo:WF-J01#8; us-bank:USB-J01#9; bank-of-america:BAC-J01#7",
+    "rationale": "Targeted OTP adds friction only where scam exposure is highest."
+   },
+   {
+    "stage": "execute-track",
+    "n": 7,
+    "action": "Explicit status states with next-step copy: Pending acceptance (recipient not enrolled, cancellable), Pending review (bank hold, with expected timing), Completed",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "bank-of-america:BAC-J01#9; wells-fargo:WF-J01#11; benchmark:R67#None",
+    "rationale": "BofA publishes the fullest Zelle state vocabulary; the composite adds expected timing to 'Pending review'."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 8,
+    "action": "Confirmation with recipient registered name, token, amount, time; push + email to sender; recipient notified by network",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "wells-fargo:WF-J01#12; us-bank:USB-J01#11; jpmorgan-chase:JPM-J01#10",
+    "rationale": "Multi-channel confirmation is table stakes; WF adds secure-inbox copy."
+   },
+   {
+    "stage": "manage",
+    "n": 9,
+    "action": "Activity with cancel while recipient unenrolled; edit/skip/cancel scheduled and recurring series until a published cutoff; long searchable history",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J01#14; wells-fargo:WF-J01#15; us-bank:USB-J01#12; us-bank:USB-J01#13",
+    "rationale": "WF skip-one or cancel-series until 11:30 PM PT with 24-month activity; U.S. Bank 18-month search."
+   },
+   {
+    "stage": "exception",
+    "n": 10,
+    "action": "In-app 'Report a problem' on the transaction branching unauthorized (Reg E timeline shown) vs scam (imposter eligibility check, network recovery request), with a claim status tracker in-app",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "CLAIM_OUTCOME",
+    "derived_from": "bank-of-america:BAC-J01#16; td-bank:TD-J14#3; benchmark:R20#None; benchmark:R43#None",
+    "rationale": "BofA consumer claims are trackable in-app (Status Tracker) and TD added a Disputes Center (2026); no bank yet offers in-app Zelle scam intake, so intake is composite."
+   },
+   {
+    "stage": "support",
+    "n": 11,
+    "action": "Virtual assistant locates the payment, explains status and hands off to a specialist with context; one published fraud/scam number",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J01#17; wells-fargo:WF-J01#17; benchmark:R39#None",
+    "rationale": "Erica is cited by Javelin/Forrester as the money-movement aide; Fargo can view Zelle activity."
+   }
+  ],
+  "id": "CJ-ZELLE-CONSUMER-SEND",
+  "title": "Consumer sends money to a new recipient with Zelle (mobile-first)",
+  "product": "zelle",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ },
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "'Zelle for your business' inside the business app/online banking profile",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "wells-fargo:WF-J03#1; fifth-third:FITB-J14#1; us-bank:USB-J13#1",
+    "rationale": "Business enrollment in the same app as consumer."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Create a Zelle tag and a printable/shareable QR showing the business name",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J04#2; us-bank:USB-J13#2; wells-fargo:WF-J03#3",
+    "rationale": "Tag + printable QR is the SMB acceptance standard since Sep 2025."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Customer pays the tag/QR from any bank app; business can request by email/mobile",
+    "actor": "RECIPIENT",
+    "channel": "MOBILE_APP",
+    "job_step": "EXECUTE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J13#3",
+    "rationale": "Privacy-preserving acceptance."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Payer sees the verified business name; business-initiated sends follow the account's approval policy (secondary approver above threshold)",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "us-bank:USB-J13#4; jpmorgan-chase:JPM-J19#3",
+    "rationale": "No bank applies dual approval to business Zelle; composite borrows Chase's approval queue pattern."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Funds land in minutes; activity searchable",
+    "actor": "NETWORK",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J13#5; wells-fargo:WF-J03#6",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Receipt notification with payer and memo; exportable for reconciliation",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "wells-fargo:WF-J03#7; benchmark:R15#None",
+    "rationale": "Accounting export absent at all ten banks; composite element."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Manage tags and tokens, block payers; assistant can manage tags",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J03#8; bank-of-america:BAC-J13#6",
+    "rationale": "Erica manages business Zelle tags."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Refund flow and a published business imposter-scam reimbursement position",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "fifth-third:FITB-J14#7; truist:TFC-J03#10",
+    "rationale": "Fifth Third is the only bank stating business imposter-scam reimbursement."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Dedicated business Zelle line",
+    "actor": "CUSTOMER",
+    "channel": "PHONE",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "pnc:PNC-J20#11",
+    "rationale": "PNC publishes a Zelle for Business number."
+   }
+  ],
+  "id": "CJ-ZELLE-SMB-RECEIVE",
+  "title": "Small business gets paid with a Zelle tag/QR and pays vendors under controls",
+  "product": "zelle",
+  "segment": "small_business",
+  "direction": "RECEIVE",
+  "report_version": "2026-11-06-v1"
+ }
+]

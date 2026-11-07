@@ -2,223 +2,656 @@
   "bank": "wells-fargo",
   "product": "zelle",
   "values": {
-    "attr-enroll-where": [
+    "attr-cap-recurring": [
       {
-        "value": [
-          "mobile-app",
-          "web"
-        ],
-        "basis": "sample",
-        "source_ids": [
-          "src-sample"
-        ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
-        "valid_from": "2026-11-06",
-        "valid_to": null,
-        "verified_by": null,
-        "verified_at": null,
-        "confidence": "low",
-        "display": "Mobile app and online banking",
-        "id": "urn:kos:assertion:wells-fargo:zelle:enroll-where:1"
-      }
-    ],
-    "attr-enroll-steps": [
-      {
-        "value": 3,
-        "basis": "sample",
-        "source_ids": [
-          "src-sample"
-        ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
-        "valid_from": "2026-11-06",
-        "valid_to": null,
-        "verified_by": null,
-        "verified_at": null,
-        "confidence": "low",
-        "display": "3 screens, one code",
-        "id": "urn:kos:assertion:wells-fargo:zelle:enroll-steps:1"
-      }
-    ],
-    "attr-payee-name-shown": [
-      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-recurring:2",
         "value": true,
-        "basis": "sample",
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "Yes",
-        "id": "urn:kos:assertion:wells-fargo:zelle:payee-name-shown:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-new-payee-warning": [
+    "attr-cap-scheduled-future-dated": [
       {
-        "value": "first-payment",
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "Yes, first payment",
-        "id": "urn:kos:assertion:wells-fargo:zelle:new-payee-warning:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-daily-limit": [
+    "attr-cap-request-money": [
       {
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-request-money:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "$X,XXX by segment (placeholder)",
-        "id": "urn:kos:assertion:wells-fargo:zelle:daily-limit:1",
-        "qualifier": "segment: standard consumer"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-stepup-trigger": [
+    "attr-cap-split": [
       {
-        "value": "High risk score",
-        "basis": "sample",
-        "source_ids": [
-          "src-sample"
-        ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
         "observed_on": null,
-        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "High risk score",
-        "id": "urn:kos:assertion:wells-fargo:zelle:stepup-trigger:1"
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-split:1"
       }
     ],
-    "attr-time-to-recipient": [
+    "attr-cap-qr-code": [
       {
-        "value": null,
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-qr-code:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990",
+          "src-wells-fargo-s034"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "Minutes",
-        "id": "urn:kos:assertion:wells-fargo:zelle:time-to-recipient:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01, WF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-notifications": [
+    "attr-cap-contact-sync": [
       {
-        "value": [
-          "push",
-          "email"
-        ],
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-contact-sync:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990",
+          "src-wells-fargo-s901",
+          "src-wells-fargo-s927"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "Push, email",
-        "id": "urn:kos:assertion:wells-fargo:zelle:notifications:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01, WF-P09-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-cancel-pending": [
+    "attr-cap-cancel-before-send": [
       {
-        "value": "only-if-unclaimed",
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-cancel-before-send:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "Only if unclaimed",
-        "id": "urn:kos:assertion:wells-fargo:zelle:cancel-pending:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-report-channels": [
+    "attr-cap-status-tracking": [
       {
-        "value": [
-          "mobile-app",
-          "chat",
-          "contact-center"
-        ],
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-status-tracking:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990",
+          "src-wells-fargo-s034",
+          "src-wells-fargo-s901",
+          "src-wells-fargo-s927"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "App, chat, phone",
-        "id": "urn:kos:assertion:wells-fargo:zelle:report-channels:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01, WF-P01-S03, WF-P09-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-scam-reimbursement": [
+    "attr-cap-push-notifications": [
       {
-        "value": "Network rules for qualifying imposter scams",
-        "basis": "sample",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-push-notifications:2",
+        "value": true,
+        "basis": "disclosed",
         "source_ids": [
-          "src-sample"
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990",
+          "src-wells-fargo-s034"
         ],
-        "asserted_by": "process:claude-draft",
-        "asserted_at": "2026-11-06T20:00:00-06:00",
-        "observed_on": null,
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "low",
-        "display": "Network rules for qualifying imposter scams",
-        "id": "urn:kos:assertion:wells-fargo:zelle:scam-reimbursement:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01, WF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-email-sms-notifications": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990",
+          "src-wells-fargo-s034"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01, WF-P01-S03",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-scam-warning-interstitial": [
+      {
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-scam-warning-interstitial:1"
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — Access code (text to registered mobile or RSA SecurID) for first-time recipient and selected payments; Advanced Access",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
+      {
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-dual-approval-smb:1"
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-international:1"
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:cap-instant:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s002",
+          "src-wells-fargo-s005",
+          "src-wells-fargo-s010",
+          "src-wells-fargo-s015",
+          "src-wells-fargo-s016",
+          "src-wells-fargo-s019",
+          "src-wells-fargo-s902",
+          "src-wells-fargo-s903",
+          "src-wells-fargo-s990",
+          "src-wells-fargo-s034",
+          "src-wells-fargo-s901",
+          "src-wells-fargo-s927"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P01-S01, WF-P01-S03, WF-P09-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-discover:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=4: Sets composite reference: Zelle has its own bottom-nav tab and can be initiated by Fargo, the deepest navigation placement among the ten. [STR-WF-0001]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence WF-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-set-up:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence WF-J01, WF-J04, WF-J28, WF-J29; ZELLE-SMB-RECEIVE=4: Sets composite reference: Business Zelle tag plus QR code displaying the business name. [STR-WF-0004]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-initiate:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Observed: the web amount screen shows the recipient's Zelle-registered name ('Enrolled as …'), the daily and 30-day limits inline (whether remaining or total amounts was not recorded), a required 'Pay from' selector and the 'Repeat payment' toggle on one screen. [STR-WF-0020]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence WF-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-review-authorize:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH SECURITY_TRUST: Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: Chase purpose questions, U.S. Bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messa",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-execute-track:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence WF-J01, WF-J04, WF-J28, WF-J29; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence WF-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-confirm-complete:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence WF-J01, WF-J04, WF-J28, WF-J29; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence WF-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-manage:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=4: Sets composite reference: Skip-one or cancel-series for scheduled Zelle until 11:30 PM PT the day before; 24-month activity and 2-year visibility of cancelled items. [STR-WF-0003]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence WF-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-exception:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (BofA Status Tracker, TD Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:zelle:score-support:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM FRICTION: Fraud and scam support is split across at least four phone numbers with different scopes (1-800-869-3557, 1-800-956-4442, 1-866-867-5568, 1-800-225-5935). [GAP-WF-0004]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence WF-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ]
   }

@@ -1,0 +1,483 @@
+{
+ "id": "urn:kos:journey:citi:citi-j17",
+ "title": "Business user sets up a transfer between CitiBusiness accounts (CitiBusiness Online)",
+ "bank": "citi",
+ "product": "internal-transfer",
+ "persona": "Controller at a mid-size business",
+ "segment": "small-business",
+ "customer_goal": "Fund payroll account from operating account",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "User signs on to CBOL (User ID + password + Security Token code) and…",
+   "customer_action": "User signs on to CBOL (User ID + password + Security Token code) and opens Main Menu > Transfers and Payments > Transfer Between Accounts",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Main Menu > Transfers and Payments"
+    }
+   ],
+   "frontstage": "Entitlements per account govern access",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s009",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s009",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s009",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Select from/to accounts (incl. linked businesses under one business…",
+   "customer_action": "Select from/to accounts (incl. linked businesses under one business code), amount (up to $999,999,999.99), immediate or future date, optional recurring or flexible recurring instruction, 37-char description",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Set Up a Transfer"
+    }
+   ],
+   "frontstage": "Variable-amount instructions route to Approvals if user lacks unlimited entitlement",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "User enters password to authorize; if above the user's 'No Additional…",
+   "customer_action": "User enters password to authorize; if above the user's 'No Additional Approval Required' limit the transfer waits in Approvals for a designated co-signer ('Required Approval', specific users or 'Any'); approver may release in CitiBusiness Mobile with Mobile Token",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Approvals Queue"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Within limit vs. requires approval",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s009",
+      "src-citi-s010",
+      "src-citi-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s009",
+      "src-citi-s010",
+      "src-citi-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Immediate transfers post; future-dated appear under Planned and Pending…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Planned and Pending Transfers / Completed Transfers"
+    }
+   ],
+   "frontstage": "Immediate transfers post; future-dated appear under Planned and Pending Transfers; must execute by 7:30 PM ET to cover same-day debits",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Completed Transfers report; push notifications in CitiBusiness Mobile…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Completed Transfers"
+    }
+   ],
+   "frontstage": "Completed Transfers report; push notifications in CitiBusiness Mobile (added 2025)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s006",
+      "src-citi-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Cancel future-dated transfers until 6:45 AM ET on the scheduled date…",
+   "customer_action": "Cancel future-dated transfers until 6:45 AM ET on the scheduled date via See Planned Transfers; suspend recurring up to 2 years",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Planned and Pending Transfers"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Insufficient funds: retried daily for 5 calendar days with daily…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Messages"
+    }
+   ],
+   "frontstage": "Insufficient funds: retried daily for 5 calendar days with daily message, then cancelled with electronic notice",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j17:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
+   "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "CBOL Customer Service menu"
+    }
+   ],
+   "frontstage": "Message gets a reference number; reply inside CBOL within two business days; phone hours Mon-Fri 7 AM-11 PM ET, Sat-Sun 9 AM-5:30 PM ET",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s007",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s007",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s007",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "CITI-J17",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P12-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app",
+   "phone",
+   "atm"
+  ]
+ },
+ "status_tracking": {
+  "where": "Planned and Pending Transfers; Completed Transfers; Today's Account Activity",
+  "states": [
+   "Pending approval",
+   "Planned",
+   "Pending (insufficient funds)",
+   "Completed",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Immediate transfer",
+   "customer_experience": "Cannot be cancelled",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s010"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "transfer_pending_insufficient_funds",
+   "channels": [
+    "cbol_message"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "approval_required",
+   "channels": [
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Robust entitlement and approval framework; dated UI vocabulary.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

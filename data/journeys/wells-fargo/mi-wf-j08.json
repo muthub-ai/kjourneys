@@ -1,0 +1,605 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j08",
+ "title": "Consumer activates eBills and sets auto pay",
+ "bank": "wells-fargo",
+ "product": "bill-pay",
+ "persona": "Consumer automating card/utility bills",
+ "segment": "consumer",
+ "customer_goal": "Never miss a due date; pay the exact statement amount automatically",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Bill Pay home, 'Manage Payee' screen, or during new payee setup shows…",
+   "customer_action": "Bill Pay home, 'Manage Payee' screen, or during new payee setup shows 'Get eBills'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Payee"
+    }
+   ],
+   "frontstage": "Only payees offering electronic billing",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Provide biller account/billing details; accept biller terms (may stop…",
+   "customer_action": "Provide biller account/billing details; accept biller terms (may stop paper bills); biller approval up to 10 business days",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "eBill activation"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Approved vs. failure (name/address mismatch, not primary holder, bill delivered elsewhere)",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Set 'auto pay' rules: timing and amount (full statement / minimum /…",
+   "customer_action": "Set 'auto pay' rules: timing and amount (full statement / minimum / fixed), continues even when amount changes",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Auto pay"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s003",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s003",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Confirm rules",
+   "customer_action": "Confirm rules",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "eBill arrives in Bill Pay; reminder email; auto pay schedules payment…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Bill Pay"
+    }
+   ],
+   "frontstage": "Keep paying mailed bills until first eBill arrives",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Email confirmation when sent",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Email"
+    }
+   ],
+   "frontstage": "Email confirmation when sent",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "View/print eBills (available 4 weeks–6 months per biller); edit/cancel…",
+   "customer_action": "View/print eBills (available 4 weeks–6 months per biller); edit/cancel auto pay",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Bill Pay"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "eBill setup fails → WF notifies; customer contacts biller",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Notification"
+    }
+   ],
+   "frontstage": "eBill setup fails → WF notifies; customer contacts biller",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "In-app Help/FAQs; Fargo assistant",
+   "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Help; Fargo"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s014",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s014",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
+   "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j08:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Branch appointment via appointments.wellsfargo.com",
+   "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Make an appointment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J08",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P03-S03",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Bill Pay 'Payment History' (incl. check cashed dates); 'Transfer and payment Activity'; Fargo 'Which bills are due?'",
+  "states": [
+   "Scheduled",
+   "Processing/Sent",
+   "Paid",
+   "Canceled",
+   "Check cashed"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "eBill activation failure",
+   "customer_experience": "WF notification of problem",
+   "bank_handling": null,
+   "resolution": "Contact payee",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s007"
+   ]
+  },
+  {
+   "trigger": "Biller late delivering eBill",
+   "customer_experience": "WF not responsible",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s040"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent_confirmation",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "eBill_arrived / due reminder",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "upcoming payments due alert",
+   "channels": [
+    "email",
+    "text",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "eBill_problem",
+   "channels": [
+    "notification"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Standard eBill/autopay; WF loan eBills integrated.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

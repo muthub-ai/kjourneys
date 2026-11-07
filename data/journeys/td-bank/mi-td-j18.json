@@ -1,0 +1,343 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j18",
+ "title": "Commercial: domestic or international wire in TD eTreasury with dual control (sketch)",
+ "bank": "td-bank",
+ "product": "wire-domestic",
+ "persona": "Treasury analyst + approver",
+ "segment": "commercial",
+ "customer_goal": "Send a wire",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j18:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Template Center > Create a Template > Submit Template (users may be…",
+   "customer_action": "Template Center > Create a Template > Submit Template (users may be restricted to template-only wires)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payments > Manage > Template Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j18:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Payment Center > Create a Payment > US Wire / Drawdown / US Federal Tax…",
+   "customer_action": "Payment Center > Create a Payment > US Wire / Drawdown / US Federal Tax / International Wire (USD or FX with real-time rates); full beneficiary address required (ISO 20022), most special characters rejected",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payment Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014",
+      "src-td-bank-s015",
+      "src-td-bank-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014",
+      "src-td-bank-s015",
+      "src-td-bank-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014",
+      "src-td-bank-s015",
+      "src-td-bank-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j18-2",
+     "text": "ISO 20022 field rules cause failed wires"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j18:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "'All wire transfers require dual control'; approver: Payment Center >…",
+   "customer_action": "'All wire transfers require dual control'; approver: Payment Center > Pending > Status link > Approve (also in TD eTreasury mobile app)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payment Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014",
+      "src-td-bank-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014",
+      "src-td-bank-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j18:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Statuses: Sent > Received by Bank > Confirmed with Fed Reference Number…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payment Center"
+    }
+   ],
+   "frontstage": "Statuses: Sent > Received by Bank > Confirmed with Fed Reference Number (intl confirmation numbers may not be provided)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j18:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Failed status on ISO 20022 validation; recall not described",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payment Center"
+    }
+   ],
+   "frontstage": "Failed status on ISO 20022 validation; recall not described",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j18:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "TMS support line",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "TMS support line",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TD-J18",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P04-S05",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Payment Center",
+  "states": [
+   "Pending",
+   "Sent",
+   "Received by Bank",
+   "Confirmed",
+   "Failed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Mandatory dual control is stricter than many peers.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

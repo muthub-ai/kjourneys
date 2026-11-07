@@ -1,0 +1,682 @@
+{
+  "bank": "wells-fargo",
+  "product": "ach-origination",
+  "values": {
+    "attr-cap-recurring": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-recurring:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-scheduled-future-dated": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S08",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-request-money": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-request-money:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s049"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-split": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-split:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-qr-code": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-qr-code:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-contact-sync": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-contact-sync:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-cancel-before-send": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-cancel-before-send:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-status-tracking": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-status-tracking:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-push-notifications": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-push-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P13-S01, WF-P13-S08",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-email-sms-notifications": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S08, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-scam-warning-interstitial": [
+      {
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-scam-warning-interstitial:1"
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — RSA SecurID or Advanced Access 6-digit code at enrollment/sensitive actions; RSA SecurID / Advanced Access; RSA SecurID hard token or Vantage mobile token; dual custody; Vantage credentials + token validation",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S08",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-dual-approval-smb:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-international:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P13-S08",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P13-S08",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:cap-instant:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-wells-fargo-s031",
+          "src-wells-fargo-s032",
+          "src-wells-fargo-s039",
+          "src-wells-fargo-s931",
+          "src-wells-fargo-s042",
+          "src-wells-fargo-s049",
+          "src-wells-fargo-s055",
+          "src-wells-fargo-s066",
+          "src-wells-fargo-s067",
+          "src-wells-fargo-s951"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-discover:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "HIGH CHANNEL_GAP: Direct Pay is desktop-browser only: SMB owners cannot initiate or approve ACH on mobile unless they enrol in Vantage Treasury Management. [GAP-WF-0026]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-set-up:2",
+        "value": 4,
+        "display": "4 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "Sets composite reference: Direct Pay four-level access model (Input Only, Input/Release, Input/Release/Control, No Access) enforces dual control for SMB ACH. [STR-WF-0017]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-initiate:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "MEDIUM MISSING_CAPABILITY: Direct Pay is next-business-day only; no Same Day ACH option documented after a search of the Direct Pay FAQ (S931). [GAP-WF-0027]",
+          "report_ref": "Scores sheet",
+          "mi_level": "UNKNOWN"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-review-authorize:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "HIGH SECURITY_TRUST: SMB wires from Business Online have no dual approval (INFERRED, WF-C003); a single delegate can release a foreign-currency wire. [GAP-WF-0030]",
+          "report_ref": "Scores sheet",
+          "mi_level": "INFERRED"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-execute-track:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence WF-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-confirm-complete:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence WF-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-manage:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "MEDIUM TRANSPARENCY: Edit/cancel rules for scheduled Direct Pay payments are not documented. [GAP-WF-0028]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-exception:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "MEDIUM EXCEPTION_HANDLING: Returned ACH, failed validation and NSF handling are not published (UNKNOWN). [GAP-WF-0029]",
+          "report_ref": "Scores sheet",
+          "mi_level": "UNKNOWN"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-support:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence WF-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ]
+  }
+}

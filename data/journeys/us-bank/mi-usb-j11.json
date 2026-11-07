@@ -1,0 +1,632 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j11",
+ "title": "Consumer receives a Request for Payment (RfP) from a biller and pays instantly over RTP",
+ "bank": "us-bank",
+ "product": "rtp",
+ "persona": "Consumer whose utility offers 'Instant payment/RfP'",
+ "segment": "consumer",
+ "customer_goal": "Pay a bill the moment it arrives, with instant confirmation, no cutoffs",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "At the biller, customer selects 'Instant payment/RfP' as digital…",
+   "customer_action": "At the biller, customer selects 'Instant payment/RfP' as digital payment method and provides bank account information; biller confirms enrollment",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Biller's site"
+    }
+   ],
+   "frontstage": "Not all billers support RfP",
+   "actor": "customer",
+   "decision": "Biller supports RfP",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j11-1",
+     "text": "Enrollment lives at the biller, not in the bank app"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Customer agrees to pay through the Real Time Payment network; biller…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "RTP RfP message received",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Customer gets email + digital-banking notification with biller name,…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay bills dashboard (RfP)"
+    }
+   ],
+   "frontstage": "Customer gets email + digital-banking notification with biller name, amount, due date; request sits on Bill Pay dashboard until biller's expiration",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email + in-app notification",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Choose Pay instantly, Schedule for a future date, or Dismiss;…",
+   "customer_action": "Choose Pay instantly, Schedule for a future date, or Dismiss; partial/extra amount only if biller allows modification",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "RfP > Pay instantly / Schedule / Dismiss"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Pay now / schedule / dismiss",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Approved payments sent immediately via RTP; no fee; no cutoff;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Bill Pay dashboard"
+    }
+   ],
+   "frontstage": "TCH RTP credit transfer",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Confirmation in mobile/online banking and email from U.S. Bank when the…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Confirmation in mobile/online banking and email from U.S. Bank when the biller receives the payment",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "in-app + email",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Edit/cancel a scheduled RfP payment in the biller's dashboard within…",
+   "customer_action": "Edit/cancel a scheduled RfP payment in the biller's dashboard within bill pay",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Biller dashboard"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Request expires at biller's expiration date/time (may differ from due…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Request expires at biller's expiration date/time (may differ from due date); dismissed requests removed",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Fraudulent RfP handling not documented",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Fraudulent RfP handling not documented",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
+   "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help & services; Smart Assistant; 800-USBANKS; Make an appointment"
+    }
+   ],
+   "frontstage": "Contact-center or branch handles",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j11-10",
+     "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j11:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
+   "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Fraud claim intake",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J11",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P05-S04",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Bill Pay dashboard",
+  "states": [
+   "Requested",
+   "Scheduled",
+   "Paid",
+   "Dismissed",
+   "Expired"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "RfP expires",
+   "customer_experience": "Disappears from dashboard",
+   "bank_handling": null,
+   "resolution": "Pay by other means",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s045"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "rfp_received",
+   "channels": [
+    "email",
+    "in-app"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "rfp_paid_confirmation",
+   "channels": [
+    "email",
+    "in-app"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Rare consumer-facing RTP Request-for-Payment bill-pay experience (biller product since Nov 2021); a genuine differentiator among top-10 banks, though reach depends on biller adoption.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,611 @@
+{
+ "id": "urn:kos:journey:pnc:pnc-j13",
+ "title": "Consumer sends an International Money Transfer to Latin America (mobile app)",
+ "bank": "pnc",
+ "product": "remittance",
+ "persona": "Spanish-speaking customer sending to family in Mexico",
+ "segment": "consumer",
+ "customer_goal": "Send a low-cost remittance to a bank account abroad",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay & Transfer' > 'International Transfers' > 'Make a Transfer' (app…",
+   "customer_action": "'Pay & Transfer' > 'International Transfers' > 'Make a Transfer' (app available in Spanish)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay & Transfer > International Transfers"
+    }
+   ],
+   "frontstage": "10 countries, 100+ providers (BBVA, Bancolombia, Elektra, Banrural)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007",
+      "src-pnc-s004",
+      "src-pnc-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007",
+      "src-pnc-s004",
+      "src-pnc-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007",
+      "src-pnc-s004",
+      "src-pnc-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enter recipient full name (as on account), home address, institution…",
+   "customer_action": "Enter recipient full name (as on account), home address, institution and account number; app saves recipient for future transfers",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Add recipient"
+    }
+   ],
+   "frontstage": "Colombia recipients must enroll with their bank",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Choose PNC checking/savings source, amount (same currency as recipient…",
+   "customer_action": "Choose PNC checking/savings source, amount (same currency as recipient account)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Limits: BBVA Mexico $10,000/day & month; others $1,500/day, $3,000/month; $5 fee",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Verify via U.S. phone text/voice; submit",
+   "customer_action": "Verify via U.S. phone text/voice; submit",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Delivery expected within one business day; delays possible for PNC…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Delivery expected within one business day; delays possible for PNC review, incorrect info, provider processing",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "PNC provides a receipt with availability date",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Receipt"
+    }
+   ],
+   "frontstage": "PNC provides a receipt with availability date",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Cancel within 30 minutes at no fee",
+   "customer_action": "Cancel within 30 minutes at no fee",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007",
+      "src-pnc-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007",
+      "src-pnc-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Name mismatch or wrong info -> delay/return; recipient should confirm…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Name mismatch or wrong info -> delay/return; recipient should confirm with their bank",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
+   "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Online Banking > Help"
+    }
+   ],
+   "frontstage": "Self-service dispute tool explains 'what to expect and next steps'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
+   "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center / branch"
+    }
+   ],
+   "frontstage": "Agent-assisted claims, stop payments, wire inquiries",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j13:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
+   "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Social / email"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "PNC-J13",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "PNC-P06-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Receipt; activity",
+  "states": [
+   "Submitted",
+   "Delivered (expected date)"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Cash pickup needed",
+   "customer_experience": "Branch only ($10; $500/day)",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-pnc-s007"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Differentiated LatAm remittance with in-app Spanish; limited to 10 countries and deposit-to-account digitally.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

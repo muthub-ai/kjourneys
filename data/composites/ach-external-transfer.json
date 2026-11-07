@@ -1,0 +1,220 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "External accounts listed in the transfer hub (and home screen) next to internal accounts",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "truist:TFC-J05#1; jpmorgan-chase:JPM-J06#1; benchmark:R40#None",
+    "rationale": "Truist home-screen linking; Javelin 2026 top performers show external balances."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Instant credential/aggregator verification with micro-deposit fallback, in app and web",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "us-bank:USB-J05#2; jpmorgan-chase:JPM-J06#3; truist:TFC-J05#4; td-bank:TD-J04#2",
+    "rationale": "Four banks offer instant verification; micro-deposits only as fallback."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Direction, amount, date and delivery-speed choice (standard / next-day / instant) with fastest eligible rail auto-selected and expected arrival shown",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J05#4; truist:TFC-J05#6; citi:CITI-J07#4",
+    "rationale": "U.S. Bank free instant with auto rail selection; Truist shows eligible speeds per account; Citi shows estimated deposit date."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Review with fee and arrival; step-up for first transfer to a new account or recurring set-up",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "us-bank:USB-J05#5; benchmark:R21#None",
+    "rationale": "U.S. Bank OTP on recurring set-up."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Status timeline Pending -> Submitted -> Complete with reference number",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "us-bank:USB-J05#6; jpmorgan-chase:JPM-J06#7",
+    "rationale": "Both publish state names."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Email/push on submission and completion",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J05#7",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Edit/cancel in app until a single published cutoff; manage linked accounts",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J06#9; us-bank:USB-J05#8",
+    "rationale": "Chase publishes 8 PM ET on send date."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Automatic downgrade from instant to standard with notice; NSF retry; return reason in plain language",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "us-bank:USB-J05#10; jpmorgan-chase:JPM-J06#10; benchmark:R64#None",
+    "rationale": "U.S. Bank auto-downgrade, Chase retries."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant traces by date/amount",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R41#None",
+    "rationale": "Composite."
+   }
+  ],
+  "id": "CJ-ACH-EXT-SEND",
+  "title": "Consumer links an external account and pushes money out",
+  "product": "ach-external-transfer",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ },
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Choose linked external account as 'from'",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J06#1",
+    "rationale": "Same hub."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "External account linked and verified once",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J06#2",
+    "rationale": "Re-uses send linking."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Choose speed: free standard, free next-day, or instant (RfP to the other bank)",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J06#3; td-bank:TD-J05#2",
+    "rationale": "U.S. Bank free next-day and RfP-based instant pull; TD terms define a 'within minutes' inbound option."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Confirm; for instant, approve the Request for Payment at the external bank",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "us-bank:USB-J06#5",
+    "rationale": "Payer-side control at the debtor bank."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Funds post instantly on approval or on the stated day",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J06#6",
+    "rationale": "Speed-specific arrival."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Confirmation with reference number and availability date",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J06#7",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Edit/cancel scheduled pulls",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J06#8",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "RfP expiry explained with one-tap retry; inbound return/hold explained",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "us-bank:USB-J06#9",
+    "rationale": "Expiry rule published (5 days)."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant/agent can trace inbound transfer",
+    "actor": "CUSTOMER",
+    "channel": "PHONE",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J06#11",
+    "rationale": "Phone baseline."
+   }
+  ],
+  "id": "CJ-ACH-EXT-RECEIVE",
+  "title": "Consumer pulls money in from an account at another bank",
+  "product": "ach-external-transfer",
+  "segment": "consumer",
+  "direction": "RECEIVE",
+  "report_version": "2026-11-06-v1"
+ }
+]

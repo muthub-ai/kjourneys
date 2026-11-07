@@ -1,0 +1,554 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j15",
+ "title": "Consumer receives an RTP®/FedNow® instant payment or early ACH direct deposit",
+ "bank": "wells-fargo",
+ "product": "rtp",
+ "persona": "Gig worker paid by instant payout; salaried employee",
+ "segment": "consumer",
+ "customer_goal": "Get paid instantly / early and know when funds land",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Early Pay Day is automatic (no enrollment); payer sends RTP/FedNow…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "WF receives RTP and FedNow credits (Early Pay Day page lists both as ineligible for early pay, confirming receipt)",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Optionally set deposit alerts in 'Manage Alerts' (email/text/push);…",
+   "customer_action": "Optionally set deposit alerts in 'Manage Alerts' (email/text/push); create Direct Deposit form in app for ACH payroll",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Manage Alerts; Direct Deposit form"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s025"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s025"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Web (observed): Accounts > 'Set Up Direct Deposit' = 'Prefill your…",
+   "customer_action": "Web (observed): Accounts > 'Set Up Direct Deposit' = 'Prefill your direct deposit form' — select up to 3 accounts → allocate → verify → 'Create Form' (prefilled PDF to give to the payer) or 'download a blank form'; Accounts > 'Manage Alerts' offers, per checking account, Account balance (zero/low/high), Direct Deposit Alert and Returned Deposited Item Alert by email / text / push",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Accounts > Set Up Direct Deposit; Accounts > Manage Alerts"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "fail_points": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j15-3",
+     "text": "No embedded payroll-login direct-deposit switch (Bank of America, TD, Fifth Third and Truist offer one; PNC's Quick Switch Center generates switch letters); the customer carries a PDF to the employer. The web alert catalogue for money movement is thin (no transfer-sent/received or Zelle alert options on the web page; app catalogue not observed)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "N/A — payer initiates",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "N/A — payer initiates",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "N/A",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Incoming transfers may be returned if WF cannot confirm intended recipient or legal issue (Zelle addendum analog)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "RTP/FedNow credit posts in real time to Available Balance; ACH direct…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account Activity"
+    }
+   ],
+   "frontstage": "Customer-facing labeling of instant credits not published",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s071",
+      "src-wells-fargo-s911"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s071",
+      "src-wells-fargo-s911"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s071",
+      "src-wells-fargo-s911"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j15-6",
+     "text": "No published description of how RTP/FedNow credits are labeled"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "'deposit posted alert' / recent deposits alert",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "'deposit posted alert' / recent deposits alert",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text/push",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s025",
+      "src-wells-fargo-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s025",
+      "src-wells-fargo-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "View deposit details; Early Pay Day pending vs posted balance semantics",
+   "customer_action": "View deposit details; Early Pay Day pending vs posted balance semantics",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Missing/incorrect deposit → contact sender; early availability not…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Missing/incorrect deposit → contact sender; early availability not guaranteed",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s071"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s071"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j15:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "1-800-869-3557",
+   "customer_action": "1-800-869-3557",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J15",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P12-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Account Activity / Available Balance",
+  "states": [
+   "Pending (early pay)",
+   "Posted"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Early Pay Day not applied",
+   "customer_experience": "Deposit posts on pay date",
+   "bank_handling": "Depends on payor file timing",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s021"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "deposit_posted",
+   "channels": [
+    "email",
+    "text",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Receive-side instant rails are live but invisible in marketing; Early Pay Day is competitive with peers.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

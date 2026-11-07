@@ -1,0 +1,314 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j20",
+ "title": "Commercial client disburses to consumers via Payee Choice (RTP / Zelle / push-to-card / ACH / prepaid / check)",
+ "bank": "us-bank",
+ "product": "other",
+ "persona": "Corporate treasury user",
+ "segment": "commercial",
+ "customer_goal": "Commercial client disburses to consumers via Payee Choice (RTP / Zelle / push-to-card / ACH / prepaid / check)",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j20:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Client submits payee list and amounts through the disbursement platform…",
+   "customer_action": "Client submits payee list and amounts through the disbursement platform (API/file)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j20:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Payee chooses rail; push-to-card leg funds any eligible Visa/Mastercard…",
+   "customer_action": "Payee chooses rail; push-to-card leg funds any eligible Visa/Mastercard U.S. debit card within 30 minutes, 24/7 ($125k cap, irrevocable); Zelle leg verifies enrollment by email/U.S. mobile before paying",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Personalized payee site"
+    }
+   ],
+   "frontstage": "",
+   "actor": "recipient",
+   "decision": "Instant/Zelle/push-to-card/ACH/prepaid/check",
+   "notification": "email + text",
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063",
+      "src-us-bank-s942",
+      "src-us-bank-s944"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063",
+      "src-us-bank-s942",
+      "src-us-bank-s944"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j20:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Payment sent via chosen rail (Zelle via mobile/email token;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payment sent via chosen rail (Zelle via mobile/email token; push-to-card via Visa Direct to Visa/Mastercard debit or prepaid)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s062",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s062",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j20:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Payee preference stored for future payments; reporting to client",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payee preference stored for future payments; reporting to client",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j20:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Payee does not respond → fallback (check) or re-notification – not…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payee does not respond → fallback (check) or re-notification – not documented",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j20:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Treasury management support",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "Treasury management support",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J20",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P15-S01",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "SinglePoint / API callbacks",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Payee-choice disbursement with six rails, incl. Zelle Disbursements (2017) and Visa Direct push-to-card, is a strong B2C payout stack; consumer-side push-to-card self-service does not exist.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

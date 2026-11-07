@@ -1,0 +1,562 @@
+{
+ "id": "urn:kos:journey:citi:citi-j05",
+ "title": "Consumer sets up recurring bill payments and manages bills (eBills/autopay)",
+ "bank": "citi",
+ "product": "bill-pay",
+ "persona": "Customer automating monthly bills",
+ "segment": "consumer",
+ "customer_goal": "Never miss a due date",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "inferred",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer uses 'Bill management: view and manage bills and recurring…",
+   "customer_action": "Customer uses 'Bill management: view and manage bills and recurring payments in one place' (Citi Mobile App, limited availability) or recurring payments in Citi Online",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Bill management"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018",
+      "src-citi-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018",
+      "src-citi-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Select an existing payee; eBills exist in Citi Online bill pay (bills…",
+   "customer_action": "Select an existing payee; eBills exist in Citi Online bill pay (bills carry a 'due' status and can be filed/unfiled online), but biller eBill enrollment steps are not published",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payee > eBill (file / unfile; status 'due')"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j05-2",
+     "text": "eBill enrollment and autopay-on-eBill flows unverifiable"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Set amount, frequency and start date for the recurring series (up to…",
+   "customer_action": "Set amount, frequency and start date for the recurring series (up to one year ahead); variable-amount payments require the payee to notify the customer of amount/date",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Set up recurring payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Confirm series",
+   "customer_action": "Confirm series",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Each occurrence is sent on schedule; alerts for payments due",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Future payments"
+    }
+   ],
+   "frontstage": "Each occurrence is sent on schedule; alerts for payments due",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Payment history and alerts",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account Alerts"
+    }
+   ],
+   "frontstage": "Payment history and alerts",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Configurable alerts",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Cancel/change the series by 11:59 PM ET the day before the next…",
+   "customer_action": "Cancel/change the series by 11:59 PM ET the day before the next payment; cancelling applies to the same payee series",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Recurring payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Biller changes amount: Citi does not notify; payee must",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Biller changes amount: Citi does not notify; payee must",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Missed or failed payment: report problem; Pay Bills promise",
+   "customer_action": "Missed or failed payment: report problem; Pay Bills promise",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Report a bill payment problem"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j05:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j05-10",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J05",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P02-S02",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": [
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Future payments / bill management",
+  "states": [
+   "Scheduled",
+   "Paid"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "eBill not received",
+   "customer_experience": "Unknown",
+   "bank_handling": "Unknown",
+   "resolution": "Unknown",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_due",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Recurring payments confirmed; eBills remain an evidence gap because citi.com pages are JS-rendered.",
+ "x-mi_evidence": "INFERRED"
+}

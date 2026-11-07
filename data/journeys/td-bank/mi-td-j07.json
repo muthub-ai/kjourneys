@@ -1,0 +1,695 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j07",
+ "title": "Consumer adds a payee and schedules a bill payment (electronic vs check)",
+ "bank": "td-bank",
+ "product": "bill-pay",
+ "persona": "Household bill payer",
+ "segment": "consumer",
+ "customer_goal": "Pay my utility on time without writing checks",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens Bill Pay in Online Banking or the app (site nav: 'Pay…",
+   "customer_action": "Customer opens Bill Pay in Online Banking or the app (site nav: 'Pay bills and schedule payments')",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "App: 'Bill Pay' / 'Pay a Bill' quick links; Online Banking: 'Bill Pay' -> 'Payment Center'"
+    }
+   ],
+   "frontstage": "Pay from Checking or Money Market only",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Customer adds a company or person (payee) with account number and…",
+   "customer_action": "Customer adds a company or person (payee) with account number and address; TD matches to electronic biller network or defaults to paper check",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Enroll (verify e-mail, accept Terms of Use, 'Welcome to Bill Pay!') -> 'Add Bill' -> search TD directory -> 'Add' -> account number -> review -> 'Add bill'; paper billers: 'tap to add the bill' (name, account number)"
+    }
+   ],
+   "frontstage": "If next available payment date is next day, biller accepts ACH; otherwise check (minimum 5 days)",
+   "actor": "customer",
+   "decision": "Electronic vs check payee",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j07-2",
+     "text": "Customer must infer payee type from the earliest date offered"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Customer selects payee, amount, and 'deliver by' date; options:…",
+   "customer_action": "Customer selects payee, amount, and 'deliver by' date; options: scheduled/next-day (free) or Rush same-day ($2) for electronic payees",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Bill payment screen: amount | pay-from account | calendar ('date you want the bill to be received') -> 'Confirm'"
+    }
+   ],
+   "frontstage": "Bill Pay displays the earliest date the biller will receive the payment; next-day electronic payments until 9:59 PM ET; electronic or laser draft (paper check) depending on biller",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Customer reviews and submits",
+   "customer_action": "Customer reviews and submits",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirm info -> optional Rush Delivery ('same-day payment for a fee') -> 'Send payment'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Electronic: ACH withdrawal up to 2 business days after payment date;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Bill Pay > Payment history / upcoming; account activity"
+    }
+   ],
+   "frontstage": "Electronic: ACH withdrawal up to 2 business days after payment date; check: funds leave when cashed. Status shown on account activity page (app v25.09)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j07-5",
+     "text": "Debit-timing ambiguity; TD advises treating funds as withdrawn at scheduling"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Payment appears in payment history; eBill alerts by email where enrolled",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "'Payment scheduled' with confirmation number -> 'Ok'; pending payments list until processed, then Bill History status 'Paid'"
+    }
+   ],
+   "frontstage": "Payment appears in payment history; eBill alerts by email where enrolled",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email alerts for eBills; general TD Alerts",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Change or cancel a pending payment (tutorial 'Change or cancel…",
+   "customer_action": "Change or cancel a pending payment (tutorial 'Change or cancel payments'); recurring: cancel series and recreate",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Bill Pay home -> tap upcoming payment -> 'Edit payment' (amount, account, date; 'Save') or 'Cancel payment' ('Cancel this payment?'); AutoPay: cancel one or 'Stop this AutoPay series'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j07-7",
+     "text": "Biller edit/delete only in Online Banking on a laptop/computer; Bill Pay may say it is too close to the payment date to cancel; stop payments cannot be placed on Online/Mobile bill payments"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Late or misapplied payment: Bill Payment Service Guarantee covers late…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "Late or misapplied payment: Bill Payment Service Guarantee covers late charges up to $50 (notify within 60 days of the Scheduled Payment Date); stop payment on a Bill Pay check $30",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s012",
+      "src-td-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s012",
+      "src-td-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s012",
+      "src-td-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j07-8",
+     "text": "Bill Payment Service Guarantee exists: TD bears late charges up to $50 if payment posts after the Scheduled Payment Date and customer notifies within 60 days (void for insufficient funds, wrong biller info, exception payments)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
+   "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app > Help / 'Call us' / virtual assistant; td.com Help Center"
+    }
+   ],
+   "frontstage": "Logging in to the app before calling 'reaches a live agent faster'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s004",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j07-9",
+     "text": "Help Center answers load client-side and are readable; TD Digital Academy hosts interactive step-by-step demos for Zelle, transfers, Bill Pay, mobile deposit, disputes, direct deposit and SMB wires/ACH/roles (first-wave 'unavailable/unplayable' finding was a fetch-tool artifact). Residual issue: several KB answers are stale or contradictory (app external transfers, consumer wires)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j07:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center"
+    }
+   ],
+   "frontstage": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j07-10",
+     "text": "Three different numbers published for Zelle/fraud issues across pages"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TD-J07",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P03-S02",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Bill Pay payment history/upcoming; account activity page",
+  "states": [
+   "Scheduled",
+   "Pending",
+   "Processed/Paid"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Biller accepts only paper check",
+   "customer_experience": "Minimum 5-day lead time, no rush",
+   "bank_handling": "Mailed check",
+   "resolution": "Plan earlier",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s004"
+   ]
+  },
+  {
+   "trigger": "Payment not received by biller",
+   "customer_experience": "Customer contacts TD",
+   "bank_handling": "Bill Payment Service Guarantee: if notified immediately (within 60 days of Scheduled Payment Date), TD bears late-payment charges up to $50 when a payment posts after its Scheduled Payment Date; void for insufficient funds, wrong biller info or exception payments.",
+   "resolution": "Unknown",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s936"
+   ]
+  },
+  {
+   "trigger": "Customer tries to cancel a bill payment too close to the payment date",
+   "customer_experience": "Bill Pay informs the customer it is too close to the payment date to cancel; stop payments cannot be placed on Online/Mobile bill payments",
+   "bank_handling": "Payment proceeds",
+   "resolution": "Contact biller / TD",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s903"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ebill_received",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Functional but dated; payee-type detection is implicit and the only bank-published tutorials are 2020-era demos now unplayable.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

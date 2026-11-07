@@ -1,0 +1,306 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j19",
+ "title": "Fintech/platform makes payouts via Newline APIs (ACH, RTP, wire) with webhooks",
+ "bank": "fifth-third",
+ "product": "rtp",
+ "persona": "Treasury/AP user with payment entitlements",
+ "segment": "commercial",
+ "customer_goal": "Embed bank-grade payouts in my product",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j19:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Onboard with Newline Specialist; exposure limits/transaction types set;…",
+   "customer_action": "Onboard with Newline Specialist; exposure limits/transaction types set; create Synthetic Accounts and Virtual Reference Numbers (register VRN for RTP receive); configure Webhooks/Message Queue",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "developers.newline53.com"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s048",
+      "src-fifth-third-s088",
+      "src-fifth-third-s089"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s048",
+      "src-fifth-third-s088",
+      "src-fifth-third-s089"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j19:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "POST transfer (ACH SEC code / sameday; Instant Payments; Wire domestic;…",
+   "customer_action": "POST transfer (ACH SEC code / sameday; Instant Payments; Wire domestic; Book Transfer); counterparty eligibility checked for RTP",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Transfers API"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s047",
+      "src-fifth-third-s048",
+      "src-fifth-third-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s047",
+      "src-fifth-third-s048",
+      "src-fifth-third-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j19:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Events: Transfer Initiated, Transfer Status Changed, RTP Settlement,…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Webhooks"
+    }
+   ],
+   "frontstage": "Events: Transfer Initiated, Transfer Status Changed, RTP Settlement, Transaction Created/Status Updated; prefunded ACH holds; Same Day windows 8:50/1:20/2:50 ET",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "webhook/message queue",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s089",
+      "src-fifth-third-s048"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s089",
+      "src-fifth-third-s048"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j19:m04",
+   "code": "M04",
+   "stage": "exception",
+   "title": "ACH returns (3 banking days), NOCs, delete/reversal/recall; RTP reject…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Returns / reject codes"
+    }
+   ],
+   "frontstage": "ACH returns (3 banking days), NOCs, delete/reversal/recall; RTP reject codes; wire invalid ABA returned instantly, recall if already sent",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s048",
+      "src-fifth-third-s047",
+      "src-fifth-third-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s048",
+      "src-fifth-third-s047",
+      "src-fifth-third-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j19:m05",
+   "code": "M05",
+   "stage": "support",
+   "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
+   "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Commercial Support Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J19",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P09-S02",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app",
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Webhooks, List Transactions",
+  "states": [
+   "initiated",
+   "status changed",
+   "completed",
+   "rejected",
+   "failed",
+   "queued"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [
+  {
+   "event": "payment_status",
+   "channels": [
+    "email",
+    "in_portal"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Best-documented money-movement surface Fifth Third has: full lifecycle, returns and recall semantics public; FedNow and push-to-card absent.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

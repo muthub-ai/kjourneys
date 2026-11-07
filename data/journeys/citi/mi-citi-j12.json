@@ -1,0 +1,457 @@
+{
+ "id": "urn:kos:journey:citi:citi-j12",
+ "title": "Consumer receives and pays a real-time Request-for-Payment e-bill (RTP)",
+ "bank": "citi",
+ "product": "rtp",
+ "persona": "Customer of a Citi TTS biller (e.g., telecom)",
+ "segment": "consumer",
+ "customer_goal": "Pay a bill instantly with confirmed settlement",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opts in to receive e-bills via RfP from a participating biller",
+   "customer_action": "Customer opts in to receive e-bills via RfP from a participating biller",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "e-bill opt-in (screen unknown)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Biller sends an RfP through Citi TTS over the RTP network; Citi…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "e-bill display"
+    }
+   ],
+   "frontstage": "Biller sends an RfP through Citi TTS over the RTP network; Citi displays the e-bill to the customer",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027",
+      "src-citi-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027",
+      "src-citi-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Customer decides whether and when to authorize/schedule payment",
+   "customer_action": "Customer decides whether and when to authorize/schedule payment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay now / schedule"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Payment settles in real time over RTP, 24/7/365, irrevocably",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payment settles in real time over RTP, 24/7/365, irrevocably",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027",
+      "src-citi-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027",
+      "src-citi-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Biller receives funds and remittance data immediately; customer sees…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Biller receives funds and remittance data immediately; customer sees payment",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Scheduled RfP payments can presumably be cancelled before execution…",
+   "customer_action": "Scheduled RfP payments can presumably be cancelled before execution (not documented)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Irrevocable once sent; disputes go to the biller or Reg E for…",
+   "customer_action": "Irrevocable once sent; disputes go to the biller or Reg E for unauthorized",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "CitiPhone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s014",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s014",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j12:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j12-8",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J12",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P10-S02",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Unknown",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Fraudulent RfP",
+   "customer_experience": "Customer should decline",
+   "bank_handling": "Biller onboarding controls",
+   "resolution": null,
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s020"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ebill_received",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": true,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Citi was first U.S. bank to pay RfP e-bills (Sept 2021); current customer-facing labels are undocumented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

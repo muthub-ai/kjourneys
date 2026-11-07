@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Wire in the Pay & Transfer hub with a speed/cost/cut-off comparison against instant options",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J07#1; jpmorgan-chase:JPM-J17#1; benchmark:R12#None",
+    "rationale": "Chase business comparison chart; BofA guided mobile entry."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Beneficiary builder with routing validation and an 'important scam reminder' at the moment a new recipient is added",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": "SCAM_INTERVENTION",
+    "derived_from": "bank-of-america:BAC-J07#2; bank-of-america:BAC-J07#3; us-bank:USB-J07#3",
+    "rationale": "BofA interrupts at recipient creation, the point where business-email-compromise instructions are entered."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Amount, purpose, notes, same-day/future/repeating date; total cost incl. fee and cut-off shown before review",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J07#4; us-bank:USB-J07#4; jpmorgan-chase:JPM-J07#4",
+    "rationale": "BofA shows total cost; U.S. Bank captures purpose."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Plain-language 'cannot be reversed' attestation plus mandatory OTP/token on every wire; risk-tiered callback for new beneficiaries",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "wells-fargo:WF-J10#6; wells-fargo:WF-J10#7; us-bank:USB-J07#5; us-bank:USB-J07#6; benchmark:R47#None",
+    "rationale": "WF and U.S. Bank require OTP on every digital wire."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Status vocabulary Scheduled -> Pending -> Under review -> Completed / Returned / Failed / Canceled, visible in activity",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "wells-fargo:WF-J10#9; jpmorgan-chase:JPM-J07#6",
+    "rationale": "WF has the richest public wire status set of the peer group."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Confirmation with Fed reference; shareable receipt; email",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "bank-of-america:BAC-J07#8; wells-fargo:WF-J10#10",
+    "rationale": "BofA share receipt."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Cancel while Scheduled or until 11:59 PM the day before a future-dated wire; saved recipients and repeat",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J10#11; jpmorgan-chase:JPM-J07#8; us-bank:USB-J07#9",
+    "rationale": "Published cancel windows."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "'Under review' and 'Returned' states pushed with secure-message explanation; in-app recall request opening a case with SLA; unauthorized-wire claim path",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J10#12; benchmark:R47#None",
+    "rationale": "WF secure-inbox + email on return; in-app recall is composite (no bank offers it to consumers)."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Dedicated wire line; assistant can check wire status",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J08#6; wells-fargo:WF-J10#14",
+    "rationale": "Erica checks wire status; WF 877 wire line."
+   }
+  ],
+  "id": "CJ-WIRE-DOM-CONSUMER-SEND",
+  "title": "Consumer sends a domestic wire to a new recipient",
+  "product": "wire-domestic",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

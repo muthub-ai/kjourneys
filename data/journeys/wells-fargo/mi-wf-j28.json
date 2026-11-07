@@ -1,0 +1,675 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j28",
+ "title": "Consumer reports an unauthorized Zelle/online transfer or an imposter scam and seeks reimbursement",
+ "bank": "wells-fargo",
+ "product": "zelle",
+ "persona": "Consumer who received a 'bank fraud department' call and sent Zelle to 'themselves'",
+ "segment": "consumer",
+ "customer_goal": "Get my money back and secure my account",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Report fraud page: Bill Pay, Zelle, Direct Pay, online transfers,…",
+   "customer_action": "Report fraud page: Bill Pay, Zelle, Direct Pay, online transfers, ExpressSend, digital wires → 1-866-867-5568; bank-imposter page: 'we will never ask you to send money to anyone, including yourself'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Report fraud"
+    }
+   ],
+   "frontstage": "Intake map (security brochure): Personal accounts 1-800-869-3557; Business 1-800-225-5935; Credit cards 1-800-642-4720; online/mobile services fraud or imposter payments 1-866-867-5568; Zelle scams 1-800-956-4442; phishing to reportphish@wellsfargo.com; imposter calls to reportimposter@wellsfargo.com; in-app 'Security Center' to 'report fraud and maintain safe accounts' and add two-step verification, biometrics, passkey or voice recognition.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022",
+      "src-wells-fargo-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022",
+      "src-wells-fargo-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022",
+      "src-wells-fargo-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m02",
+   "code": "M02",
+   "stage": "discover",
+   "title": "Web (observed): Security & Support menu groups 'Report Fraud & File…",
+   "customer_action": "Web (observed): Security & Support menu groups 'Report Fraud & File Claims' (Report Fraud & ID Theft · Report Phish & Email Scams · Track Claims); 'Report Phish & Email Scams' leaves the secure session for the public scam-education page — no in-session intake form",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Security & Support > Report Fraud & File Claims"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Gather details: name, account, transfer, amount, date, why erroneous",
+   "customer_action": "Gather details: name, account, transfer, amount, date, why erroneous",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone / online form"
+    }
+   ],
+   "frontstage": "Reg E requires report within 60 days of statement",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Web (observed): 'Track Claims' → 'My claims' (tabs Open (n) / Closed…",
+   "customer_action": "Web (observed): 'Track Claims' → 'My claims' (tabs Open (n) / Closed (n)) → 'Dispute a charge' → 'Which charge are you disputing?': account selector and a paginated list of posted transactions (date, description, amount, 'Show details') with radio-select → Continue; on the observed profile the list held only debit-card purchases — whether Zelle, ACH, transfer or bill-pay items are excluded is unconfirmed",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Security & Support > Track Claims > Dispute a charge"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Card transaction (online dispute) vs Zelle/ACH/online transfer (phone)",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "fail_points": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j28-4",
+     "text": "No Zelle or ACH item was offered in the online dispute picker on this profile; whether non-card items are filtered or merely absent could not be confirmed."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Call 1-800-956-4442 (Zelle scams, 24/7) / 1-866-867-5568; or write P.O.…",
+   "customer_action": "Call 1-800-956-4442 (Zelle scams, 24/7) / 1-866-867-5568; or write P.O. Box 6995 Portland OR; or online form",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Bank classifies: unauthorized (Reg E) vs authorized scam…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Claim intake"
+    }
+   ],
+   "frontstage": "WF wording: 'Qualifying imposters scams may be eligible for reimbursement' (CONFIRMED_BANK). Link to the EWS 2023 network imposter-scam reimbursement policy is INFERRED (WF is an EWS owner bank; not cited on WF pages).",
+   "actor": "bank-staff",
+   "decision": "Unauthorized → Reg E investigation; qualifying imposter scam → reimbursement review; other authorized → denied",
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Web (observed): 'My claims' shows Open (n) / Closed (n) tabs for claims…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Security & Support > Track Claims"
+    }
+   ],
+   "frontstage": "Web (observed): 'My claims' shows Open (n) / Closed (n) tabs for claims on file",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "frontstage": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "Reg E: determination within 10 business days; up to 45 days with…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Investigation"
+    }
+   ],
+   "frontstage": "Reg E: determination within 10 business days; up to 45 days with provisional credit within 10 business days (90/20 new accounts); results within 3 business days of completion",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m09",
+   "code": "M09",
+   "stage": "confirm-complete",
+   "title": "Written results; credit if liable",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Message Center / mail"
+    }
+   ],
+   "frontstage": "Written results; credit if liable",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "written results",
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m10",
+   "code": "M10",
+   "stage": "manage",
+   "title": "Reset credentials; enable 2-step verification; review alerts; block…",
+   "customer_action": "Reset credentials; enable 2-step verification; review alerts; block contact in Zelle; web Security & Support also offers 'Sign On with a Passkey' and 'Order RSA SecurID Device' (observed)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Security Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s023",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s023",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Denied authorized-scam claims; CFPB sued WF (Dec 2024) alleging…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Denied authorized-scam claims; CFPB sued WF (Dec 2024) alleging failures on Zelle fraud handling (~$870M losses across three banks); dismissed with prejudice Mar 2025",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s062",
+      "src-wells-fargo-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s062",
+      "src-wells-fargo-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j28:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Branch escalation; debit claim status 1-800-548-9554; elder fraud…",
+   "customer_action": "Branch escalation; debit claim status 1-800-548-9554; elder fraud 1-800-869-3557",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Branch"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J28",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P01-S01",
+ "channels": {
+  "entry": [
+   "phone"
+  ],
+  "other": [
+   "mobile-app",
+   "web",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Claim status by phone (debit 1-800-548-9554); Message Center; web Security & Support > Track Claims > 'My claims' (Open / Closed) — observed, scope of claim types shown not confirmed",
+  "states": [
+   "Open",
+   "Provisional credit",
+   "Resolved"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Authorized marketplace scam",
+   "customer_experience": "Denied — no purchase protection",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019"
+   ]
+  },
+  {
+   "trigger": "Qualifying imposter scam",
+   "customer_experience": "Reimbursement reviewed",
+   "bank_handling": "Network policy",
+   "resolution": "Case-by-case",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019"
+   ]
+  },
+  {
+   "trigger": "Unauthorized (ATO)",
+   "customer_experience": "Phone/mail intake; online 'Dispute a charge' under Track Claims covers card transactions (observed: only debit-card purchases listed); status later visible under 'My claims' Open/Closed",
+   "bank_handling": null,
+   "resolution": "Reimbursed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s019",
+    "src-wells-fargo-s040",
+    "src-wells-fargo-s990"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "claim_result",
+   "channels": [
+    "mail",
+    "Message Center"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Clear Reg E articulation in the Addendum; scam stance is the network minimum ('qualifying imposter scams'); no public WF-specific scam-reimbursement commitments beyond that, and the fraud phone tree is fragmented (four numbers).",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

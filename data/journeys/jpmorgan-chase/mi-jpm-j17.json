@@ -1,0 +1,486 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j17",
+ "title": "Small business enrolls in wires, adds a recipient and sends a wire with approval",
+ "bank": "jpmorgan-chase",
+ "product": "wire-international",
+ "persona": "Owner paying overseas supplier",
+ "segment": "small-business",
+ "customer_goal": "Send a wire with a second approver",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay & transfer' > 'Wires and global transfers'; comparison: 1-5 days,…",
+   "customer_action": "'Pay & transfer' > 'Wires and global transfers'; comparison: 1-5 days, $0-$40, 6 PM ET",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay & transfer"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "'Enroll now' > accept terms; 'Add recipient' > activation code > bank…",
+   "customer_action": "'Enroll now' > accept terms; 'Add recipient' > activation code > bank details (SWIFT for international) > name/address > 'Next' > review > 'Add recipient'; save frequent payees",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "'Pay & transfer' > 'Wires & global transfers' > 'Add a recipient' (Connect guide; same Chase business online UI family — INFERRED for Chase Business Online)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029",
+      "src-jpmorgan-chase-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029",
+      "src-jpmorgan-chase-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Choose recipient, amount, USD or local currency (60+ countries local…",
+   "customer_action": "Choose recipient, amount, USD or local currency (60+ countries local currency; rate calculator), date/repeating",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Send money page > 'Domestic (U.S.)' or 'International' > 'Schedule a wire' > find recipient > 'Next' > details > 'Next' > review > 'Send Wire' / 'Authorize Wire' (Connect guide; INFERRED for Chase Business Online)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review; if Access & Security Manager/Dual Control requires approval,…",
+   "customer_action": "Review; if Access & Security Manager/Dual Control requires approval, approver opens 'Pending approvals' > 'Approve' > 'Approve items'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pending approvals"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Approved by 6 PM ET -> same business day; later -> next business day;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire activity"
+    }
+   ],
+   "frontstage": "Approved by 6 PM ET -> same business day; later -> next business day; 13 months outgoing history",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Notification once processed",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Notification once processed",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Repeating wires to same recipient; manage transaction limits in Profile…",
+   "customer_action": "Repeating wires to same recipient; manage transaction limits in Profile & settings",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment preferences"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s024",
+      "src-jpmorgan-chase-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s024",
+      "src-jpmorgan-chase-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Not reversible; call Chase for Business wire support; FX rate at Chase…",
+   "customer_action": "Not reversible; call Chase for Business wire support; FX rate at Chase discretion",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Business wire support"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s026",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s026",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j17:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Business support / banker",
+   "customer_action": "Business support / banker",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "1-800-242-7338"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J17",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P04-S02",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Wire activity",
+  "states": [
+   "Scheduled",
+   "Processing",
+   "Sent",
+   "Failed",
+   "Needs approval"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Approver misses 6 PM ET",
+   "customer_experience": "Processed next business day",
+   "bank_handling": "Cutoff",
+   "resolution": "Delay",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s024"
+   ]
+  },
+  {
+   "trigger": "Wire sent in error / recall or amendment needed (Connect UI)",
+   "customer_experience": "In 'Wires & global transfers' > 'Payment activity' > 'All wire activity', select the sent wire and choose 'Report a problem' > 'request a recall' > pick the recall reason > 'Next' > confirmation > 'Done'. 'Only authorized users can request a wire recall up to 13 months after the wire was sent. The more time after a wire was sent, the less likely the recall will be successful.'",
+   "bank_handling": "Chase transmits the recall/amendment request to the beneficiary bank; recovery not guaranteed; returned funds may be net of fees/FX.",
+   "resolution": "Funds returned only if the recipient bank agrees.",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s926",
+    "src-jpmorgan-chase-s910"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "wire_processed",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Business wires reuse the consumer chassis with Access & Security Manager approvals layered on.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,537 @@
+{
+ "id": "urn:kos:journey:pnc:pnc-j04",
+ "title": "Consumer sends or receives with a Zelle QR code",
+ "bank": "pnc",
+ "product": "zelle",
+ "persona": "Consumer paying a vendor at a market",
+ "segment": "consumer",
+ "customer_goal": "Pay without typing a phone number",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Open Zelle and tap the 'QR Code icon' at top right; allow camera access",
+   "customer_action": "Open Zelle and tap the 'QR Code icon' at top right; allow camera access",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle > QR Code icon"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Scan the recipient's Zelle QR code; enter amount",
+   "customer_action": "Scan the recipient's Zelle QR code; enter amount",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Scan > amount"
+    }
+   ],
+   "frontstage": "QR encodes the recipient's enrolled token",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Tap 'Review' then 'Send' (OTP applies for first-time recipients)",
+   "customer_action": "Tap 'Review' then 'Send' (OTP applies for first-time recipients)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review > Send"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Payment delivered in minutes to enrolled recipient",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payment delivered in minutes to enrolled recipient",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "To receive: 'Your QR Code' tab; show screen or 'Share QR Code' by…",
+   "customer_action": "To receive: 'Your QR Code' tab; show screen or 'Share QR Code' by text/email/print; one QR per enrolled token (swipe for more)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "QR Code icon > Your QR Code > Share QR Code"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Changing enrolled token changes QR; payments to old code expire in 14…",
+   "customer_action": "Changing enrolled token changes QR; payments to old code expire in 14 days unless re-enrolled",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Settings"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Recipient's bank lacks QR scanning -> they can still send to your…",
+   "customer_action": "Recipient's bank lacks QR scanning -> they can still send to your enrolled email/mobile",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "recipient",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
+   "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Online Banking > Help"
+    }
+   ],
+   "frontstage": "Self-service dispute tool explains 'what to expect and next steps'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
+   "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center / branch"
+    }
+   ],
+   "frontstage": "Agent-assisted claims, stop payments, wire inquiries",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j04:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
+   "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Social / email"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "PNC-J04",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "PNC-P01-S04",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Zelle Activity",
+  "states": [
+   "Sent",
+   "Pending"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Scanning without enrollment",
+   "customer_experience": "Scanning does not enroll you; must enroll first",
+   "bank_handling": null,
+   "resolution": "Enroll then scan",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-pnc-s003"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "QR support on both send and receive sides, incl. print/share.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

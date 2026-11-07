@@ -1,0 +1,663 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j03",
+ "title": "Small business enrolls and gets paid with Zelle (Zelle for business, Zelle Tag/QR)",
+ "bank": "td-bank",
+ "product": "zelle",
+ "persona": "Owner-operator service business",
+ "segment": "small-business",
+ "customer_goal": "Collect customer payments without card fees",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Owner finds 'Send Money with Zelle®' > 'Business' tab in Online…",
+   "customer_action": "Owner finds 'Send Money with Zelle®' > 'Business' tab in Online Banking/app",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Send Money with Zelle® > Business / Personal tabs"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enroll with an email/mobile different from any personal Zelle profile;…",
+   "customer_action": "Enroll with an email/mobile different from any personal Zelle profile; enter one-time verification code; accept terms",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD app: security code ('Call me'/'Text me') -> 'Zelle®' (top navigation) -> confirm email -> 'Zelle® Service Agreement' + 'eSignature Agreement' -> 'Accept Terms' -> Zelle® Small Business Enrollment (primary owner name, DOB, authorized-signer checkbox) -> verification code -> optional 'Yes, Transfer' of existing personal profile -> 'Confirm Account' -> 'Send or Request Money'"
+    }
+   ],
+   "frontstage": "Business users classified as 'Zelle® Small Business Service Users'",
+   "actor": "customer",
+   "decision": null,
+   "notification": "OTP",
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j03-2",
+     "text": "Must maintain a second email/phone"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Share enrolled email, U.S. mobile number or Zelle Tag; optionally…",
+   "customer_action": "Share enrolled email, U.S. mobile number or Zelle Tag; optionally display QR code (TD Bank app > Zelle > QR icon > 'My Code') - live in app; TD's business FAQ still carries a stale 'not available' line",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > QR icon"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j03-3",
+     "text": "Resolved: QR code is available in the TD app (QR Code icon / 'My Code' tab, share or print); SMB page lists 'email address, U.S. mobile number or QR code'"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Customer of the business pays via Zelle in their own bank or credit…",
+   "customer_action": "Customer of the business pays via Zelle in their own bank or credit union app/online banking (the standalone Zelle app was discontinued April 1 2025)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Payer's bank app"
+    }
+   ],
+   "frontstage": "",
+   "actor": "recipient",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s044",
+      "src-td-bank-s951"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s044",
+      "src-td-bank-s951"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s044",
+      "src-td-bank-s951"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j03-4",
+     "text": "Payer's bank must be a Zelle participant"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Funds arrive typically within minutes; business can also send and…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Funds arrive typically within minutes; business can also send and request (Jun 2026 terms: within minutes up to $2,500/day and $10,000/month; 3-business-day up to $3,000/day and $15,000/month; TD SMB FAQ PDF lists $2,500/$10,000 for both; inbound requests up to $100,000)",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Payment visible in activity/account; no purchase protection for either…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Payment visible in activity/account; no purchase protection for either party",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Activity page; cancel only while payee unenrolled",
+   "customer_action": "Activity page; cancel only while payee unenrolled",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Business accounts: 'YOU ARE RESPONSIBLE FOR ALL TRANSFERS INITIATED…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Terms"
+    }
+   ],
+   "frontstage": "Business accounts: 'YOU ARE RESPONSIBLE FOR ALL TRANSFERS INITIATED USING YOUR USER IDENTIFICATION'; Reg E does not apply",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j03-8",
+     "text": "No consumer-style liability cap"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
+   "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app > Help / 'Call us' / virtual assistant; td.com Help Center"
+    }
+   ],
+   "frontstage": "Logging in to the app before calling 'reaches a live agent faster'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j03-9",
+     "text": "Help Center answers load client-side and are readable; TD Digital Academy hosts interactive step-by-step demos for Zelle, transfers, Bill Pay, mobile deposit, disputes, direct deposit and SMB wires/ACH/roles (first-wave 'unavailable/unplayable' finding was a fetch-tool artifact). Residual issue: several KB answers are stale or contradictory (app external transfers, consumer wires)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j03:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center"
+    }
+   ],
+   "frontstage": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j03-10",
+     "text": "Three different numbers published for Zelle/fraud issues across pages"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TD-J03",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P01-S03",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Zelle activity",
+  "states": [
+   "Pending",
+   "Completed"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payer's bank or credit union is not a Zelle participant (the standalone Zelle app was discontinued Apr 1 2025)",
+   "customer_experience": "Payment cannot be made",
+   "bank_handling": "n/a",
+   "resolution": "Arrange another method",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s951"
+   ]
+  },
+  {
+   "trigger": "Unauthorized business transaction",
+   "customer_experience": "Business bears loss",
+   "bank_handling": "No Reg E; UCC 4A framework",
+   "resolution": "Case-by-case",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_received",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Zelle for business is bundled in the consumer platform, with Zelle Tag support; QR-code availability is contradicted on TD's own page.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,566 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j12",
+ "title": "Small business runs payroll/vendor ACH batch in Small Business Online Banking",
+ "bank": "td-bank",
+ "product": "ach-origination",
+ "persona": "Owner with employees",
+ "segment": "small-business",
+ "customer_goal": "Pay staff by direct deposit",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Owner enrolls once in ACH Services",
+   "customer_action": "Owner enrolls once in ACH Services",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Small Business Online Banking 'Payroll & ACH' (top menu) -> 'Enroll Now' -> ACH Payments Enrollment questionnaire -> security code -> T&Cs -> Secure Message within 2 business days"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Add receivers (routing + account) or import a file from accounting…",
+   "customer_action": "Add receivers (routing + account) or import a file from accounting software; save templates",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH > receivers / templates / import"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Create batch (payroll, vendor, tax), amounts, effective date",
+   "customer_action": "Create batch (payroll, vendor, tax), amounts, effective date",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH > create batch"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Submit; approval by a second user if role requires; 'approval needed'…",
+   "customer_action": "Submit; approval by a second user if role requires; 'approval needed' alert",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Users & Access > 'Manage Access Roles': Payroll & ACH / Business/Corporate Payments (CCD) - Originate, Approve, Manage Templates; 'Release' or 'Always Require Approval' (no, single or dual approval, or deny); Batch Limit and Daily Limit"
+    }
+   ],
+   "frontstage": "Origination by a sub-user 'will trigger an email to the administrator for approval'",
+   "actor": "customer",
+   "decision": null,
+   "notification": "Email/SMS",
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Batch released; funds arrive in 1–2 business days; status and history…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH > status/history"
+    }
+   ],
+   "frontstage": "Money arrives in 2 business days; per batch cost $10.00",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "$10 per batch fee",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "$10 per batch fee",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Edit templates; recurring batches",
+   "customer_action": "Edit templates; recurring batches",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Templates"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "'ACH return' alert when an item is returned; NOC handling undocumented",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "ACH return alerts sent when a transaction is returned via the ACH processing system",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "ACH return alert",
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
+   "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app > Help / 'Call us' / virtual assistant; td.com Help Center"
+    }
+   ],
+   "frontstage": "Logging in to the app before calling 'reaches a live agent faster'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j12-9",
+     "text": "Help Center answers load client-side and are readable; TD Digital Academy hosts interactive step-by-step demos for Zelle, transfers, Bill Pay, mobile deposit, disputes, direct deposit and SMB wires/ACH/roles (first-wave 'unavailable/unplayable' finding was a fetch-tool artifact). Residual issue: several KB answers are stale or contradictory (app external transfers, consumer wires)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j12:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center"
+    }
+   ],
+   "frontstage": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j12-10",
+     "text": "Three different numbers published for Zelle/fraud issues across pages"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TD-J12",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P09-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "ACH status/history",
+  "states": [
+   "Pending approval",
+   "Released",
+   "Returned"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "ACH return",
+   "customer_experience": "Alert",
+   "bank_handling": "Re-send",
+   "resolution": "Fix receiver",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s023"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ach_return",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Same-day ACH for SMB not evidenced.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

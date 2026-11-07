@@ -1,0 +1,635 @@
+{
+ "id": "urn:kos:journey:pnc:pnc-j02",
+ "title": "Consumer requests money from one person with Zelle",
+ "bank": "pnc",
+ "product": "request-to-pay",
+ "persona": "Consumer splitting a bill with a friend",
+ "segment": "consumer",
+ "customer_goal": "Get paid back without sharing bank details",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Open Zelle in the app via 'Pay & Transfer' > 'Send Money with Zelle'",
+   "customer_action": "Open Zelle in the app via 'Pay & Transfer' > 'Send Money with Zelle'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay & Transfer > Send Money with Zelle"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Tap 'Request' then 'Request from one person'",
+   "customer_action": "Tap 'Request' then 'Request from one person'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Request > Request from one person"
+    }
+   ],
+   "frontstage": "Requests can only be sent to enrolled Zelle users",
+   "actor": "customer",
+   "decision": "Payer must be enrolled",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Enter or select the person's name, enter amount and optional note, tap…",
+   "customer_action": "Enter or select the person's name, enter amount and optional note, tap 'Review'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Request > amount > Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Tap 'Request'",
+   "customer_action": "Tap 'Request'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review > Request"
+    }
+   ],
+   "frontstage": "PNC does not review or verify requests; may restrict ability to send requests; cannot be used for overdue debts",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Payer receives a Zelle notification and can pay or decline; request…",
+   "customer_action": "Payer receives a Zelle notification and can pay or decline; request open 14 days",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Payer's bank app"
+    }
+   ],
+   "frontstage": "Neither PNC nor Zelle guarantees payment",
+   "actor": "recipient",
+   "decision": null,
+   "notification": "Payer text/email",
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Tap 'Done'; request visible in Zelle Activity; funds arrive in minutes…",
+   "customer_action": "Tap 'Done'; request visible in Zelle Activity; funds arrive in minutes when paid",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Done > Zelle Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "View/track requests in Zelle Activity",
+   "customer_action": "View/track requests in Zelle Activity",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Activity"
+    }
+   ],
+   "frontstage": "Cancelling a pending request not documented",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Request expires after 14 days unanswered or payer declines",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Activity"
+    }
+   ],
+   "frontstage": "Request expires after 14 days unanswered or payer declines",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
+   "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Online Banking > Help"
+    }
+   ],
+   "frontstage": "Self-service dispute tool explains 'what to expect and next steps'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
+   "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center / branch"
+    }
+   ],
+   "frontstage": "Agent-assisted claims, stop payments, wire inquiries",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j02:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
+   "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Social / email"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "PNC-J02",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "PNC-P01-S02",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Zelle Activity",
+  "states": [
+   "Requested/Pending",
+   "Paid",
+   "Declined",
+   "Expired"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payer declines or ignores",
+   "customer_experience": "Request expires in 14 days",
+   "bank_handling": "None",
+   "resolution": "Re-request",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-pnc-s017"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "request_sent_to_payer",
+   "channels": [
+    "sms",
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Simple request flow; no cancel-request step documented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

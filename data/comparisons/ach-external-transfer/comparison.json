@@ -1,0 +1,219 @@
+{
+ "product": "ach-external-transfer",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "attributes": [
+  {
+   "id": "attr-cap-recurring",
+   "stage": "manage",
+   "name": "Recurring payments",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-scheduled-future-dated",
+   "stage": "initiate",
+   "name": "Schedule for a future date",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-request-money",
+   "stage": "initiate",
+   "name": "Request money",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-split",
+   "stage": "initiate",
+   "name": "Split a payment",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-qr-code",
+   "stage": "initiate",
+   "name": "QR code",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-contact-sync",
+   "stage": "set-up",
+   "name": "Pay from phone contacts",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-cancel-before-send",
+   "stage": "manage",
+   "name": "Cancel before it is sent",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-status-tracking",
+   "stage": "execute-track",
+   "name": "Status tracking",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-push-notifications",
+   "stage": "confirm-complete",
+   "name": "Push notifications",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-email-sms-notifications",
+   "stage": "confirm-complete",
+   "name": "Email or text notifications",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-scam-warning-interstitial",
+   "stage": "review-authorize",
+   "name": "Scam warning before sending",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-step-up-auth",
+   "stage": "review-authorize",
+   "name": "Step-up authentication",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-dual-approval-smb",
+   "stage": "review-authorize",
+   "name": "Dual approval (business)",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-international",
+   "stage": "initiate",
+   "name": "International",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-same-day",
+   "stage": "execute-track",
+   "name": "Same-day delivery",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-cap-instant",
+   "stage": "execute-track",
+   "name": "Instant delivery",
+   "datatype": "boolean",
+   "unit": null,
+   "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"
+  },
+  {
+   "id": "attr-score-discover",
+   "stage": "discover",
+   "name": "Stage score: discover",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-set-up",
+   "stage": "set-up",
+   "name": "Stage score: set up",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-initiate",
+   "stage": "initiate",
+   "name": "Stage score: initiate",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-review-authorize",
+   "stage": "review-authorize",
+   "name": "Stage score: review authorize",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-execute-track",
+   "stage": "execute-track",
+   "name": "Stage score: execute track",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-confirm-complete",
+   "stage": "confirm-complete",
+   "name": "Stage score: confirm complete",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-manage",
+   "stage": "manage",
+   "name": "Stage score: manage",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-exception",
+   "stage": "exception",
+   "name": "Stage score: exception",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  },
+  {
+   "id": "attr-score-support",
+   "stage": "support",
+   "name": "Stage score: support",
+   "datatype": "integer",
+   "unit": "score 0-4",
+   "normalization": "MI rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only via channel switch or a critical/high gap, 0 absent (evidenced); U unknown is left awaiting"
+  }
+ ]
+}

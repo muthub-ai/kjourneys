@@ -1,0 +1,620 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j02",
+ "title": "Consumer requests money / splits a bill with Zelle",
+ "bank": "td-bank",
+ "product": "request-to-pay",
+ "persona": "Retail customer organising group expense",
+ "segment": "consumer",
+ "customer_goal": "Get paid back by several friends",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens Zelle and chooses 'Request' (or 'split')",
+   "customer_action": "Customer opens Zelle and chooses 'Request' (or 'split')",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® (app) / 'Send Money' tab (Online Banking) -> 'Request' or 'Split'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s003",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s003",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Customer selects one or multiple contacts; requests to a mobile number…",
+   "customer_action": "Customer selects one or multiple contacts; requests to a mobile number require that number to be enrolled; unenrolled contacts must be requested by email",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Request > choose contacts"
+    }
+   ],
+   "frontstage": "Directory check",
+   "actor": "customer",
+   "decision": "Enrolled mobile vs email",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j02-2",
+     "text": "Rule that unenrolled mobile numbers cannot be requested adds friction"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Customer enters amount (per person for split) and optional note",
+   "customer_action": "Customer enters amount (per person for split) and optional note",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Request > Amount"
+    }
+   ],
+   "frontstage": "Split: up to 5 people; enter total incl. own share, portions editable. Request limits (up to 3-day arrival): $1,500 single / $2,500 daily / $10,000 monthly",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Customer confirms recipient details and taps 'Request'",
+   "customer_action": "Customer confirms recipient details and taps 'Request'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review -> add reason -> 'Request' (or 'Split') -> 'your request has been sent' -> 'All Done'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Zelle notifies requestee with instructions on how to pay; requestee may…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "Bank 'does not guarantee' payment on requests",
+   "actor": "network",
+   "decision": null,
+   "notification": "Email/SMS to requestee",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Incoming funds credited within minutes and shown in activity",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Incoming funds credited within minutes and shown in activity",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "View outstanding requests in activity; cancellation of a request not…",
+   "customer_action": "View outstanding requests in activity; cancellation of a request not documented",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Request ignored/declined; request-money fee may be deducted per terms…",
+   "customer_action": "Request ignored/declined; request-money fee may be deducted per terms if any applies (none listed in fee schedule)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Requestee can 'Decline' the request, which cancels it",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
+   "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app > Help / 'Call us' / virtual assistant; td.com Help Center"
+    }
+   ],
+   "frontstage": "Logging in to the app before calling 'reaches a live agent faster'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j02-9",
+     "text": "Help Center answers load client-side and are readable; TD Digital Academy hosts interactive step-by-step demos for Zelle, transfers, Bill Pay, mobile deposit, disputes, direct deposit and SMB wires/ACH/roles (first-wave 'unavailable/unplayable' finding was a fetch-tool artifact). Residual issue: several KB answers are stale or contradictory (app external transfers, consumer wires)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j02:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center"
+    }
+   ],
+   "frontstage": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j02-10",
+     "text": "Three different numbers published for Zelle/fraud issues across pages"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TD-J02",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P01-S02",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle activity",
+  "states": [
+   "Requested",
+   "Paid",
+   "Declined/Expired (inferred)"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Requestee never pays",
+   "customer_experience": "Request remains open",
+   "bank_handling": "No guarantee of payment",
+   "resolution": "Customer follows up out-of-band",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "request_received",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Split is supported natively via multi-contact requests; request-cancel/expiry rules undocumented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

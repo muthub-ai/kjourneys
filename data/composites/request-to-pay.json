@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Request and Split entries in the Zelle hub, plus 'split this' from a card or account transaction",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "jpmorgan-chase:JPM-J02#1; us-bank:USB-J02#1",
+    "rationale": "Chase split-from-transaction (incl. credit-card charges) puts the request where the cost is seen."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Pick payers from contacts, tokens or QR",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J02#2; us-bank:USB-J02#2",
+    "rationale": "Same recipient model as send."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Enter total including own share; per-person amounts editable and auto-rebalanced; note",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J02#4",
+    "rationale": "U.S. Bank split with per-person editing is the most flexible documented split."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Review and send request",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "us-bank:USB-J02#6; wells-fargo:WF-J02#4",
+    "rationale": "Single confirm."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Requests tab shows pending / paid / declined per payer",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "us-bank:USB-J02#7; wells-fargo:WF-J02#5",
+    "rationale": "Per-payer visibility."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Push/email when each payer pays; funds post to the chosen account",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J02#8; wells-fargo:WF-J02#6",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Cancel a pending request; send reminders",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J02#9; benchmark:R67#None",
+    "rationale": "U.S. Bank documents request cancel; reminders are composite."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Declined and expired requests shown with reason; abusive or debt-collection requests reportable",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J02#8; us-bank:USB-J02#10",
+    "rationale": "WF prohibits debt-collection use and suspends abusers."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant can create a request and explain status",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J02#10; bank-of-america:BAC-J13#2",
+    "rationale": "Erica handles send/request."
+   }
+  ],
+  "id": "CJ-ZELLE-REQUEST",
+  "title": "Consumer requests money or splits a bill with Zelle",
+  "product": "request-to-pay",
+  "segment": "consumer",
+  "direction": "REQUEST",
+  "report_version": "2026-11-06-v1"
+ }
+]

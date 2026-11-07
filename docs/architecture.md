@@ -8,8 +8,8 @@ The descriptor in [`dataproduct.yaml`](../dataproduct.yaml) is the contract. Thi
 
 ```mermaid
 flowchart LR
-  MI["Market-intelligence session<br/>(process:mi-session)"] -->|"reports/&lt;version&gt;/ + extracts"| ING["scripts/refresh.sh<br/>ingest_mi.py"]
-  ING -->|values/&lt;bank&gt;.json + sources| REPO
+  MI["Market-intelligence session<br/>(process:mi-session)"] -->|"reports/&lt;version&gt;/ (html, docx, xlsx)"| ING["scripts/refresh.sh<br/>import_mi_workbook.py → ingest_mi.py"]
+  ING -->|"journeys, findings, scores, sources"| REPO
   JO["Journey owners"] -->|"commits: journeys/&lt;bank&gt;/*.json"| REPO
   DO["Data office"] -->|"commits: registries, schema"| REPO
   LG["CI legal"] -.->|reviews competitor facts| REPO
@@ -51,26 +51,35 @@ erDiagram
   COMPARISON ||--|{ ATTRIBUTE : asks
   COMPARISON ||--|{ ASSERTION : "bank × attribute history"
   ASSERTION }o--o{ SOURCE : cites
+  FINDING }o--|| MOMENT : "gap or strength at"
+  FINDING }o--o| COMPOSITE : "rolls up to"
+  RANKING }o--|| PARTY : ranks
+  VERIFICATION }o--|| PARTY : "challenges a claim about"
 ```
 
 - **Registries** (parties, products, capabilities, applications, metrics, processes, controls, sources) are shared and owned by the data office. Journeys and comparisons reference them by ID or URN.
 - **Identity:** `urn:kos:<kind>:<bank>:<local>`. It is immutable once published. Catalog entities are bank-scoped so journeys reuse them.
-- **Comparability** comes from three shared vocabularies: the six stages, the attribute catalog (datatype, unit, normalization rule, allowed values), and BIAN service domains.
+- **Comparability** comes from shared vocabularies adopted from the MI study ([ADR-0007](adr/0007-adopt-mi-taxonomy.md)): ten banks, sixteen rails, nine stages, six evidence levels, sixteen capability flags and a 0–4 stage-score rubric, plus BIAN service domains for the Wells Fargo backstage.
+- **MI analysis** sits beside the journeys: findings (gaps and strengths at a journey step), composite best-practice journeys, observations, the MI verification round, network participation and the ranking. Each record names the report version it came from.
 
 ## 4. Repository layout
 
 ```
 manifest.json                         manifest: ontology version, study
 dataproduct.yaml                   data product contract: owners, ports, gates, SLOs
-reports/<YYYY-MM-DD-vN>/           MI reports as received (html, docx, xlsx) + extracts → MI session (immutable)
+reports/<YYYY-MM-DD-vN>/           MI reports as received (html, docx, xlsx) + generated extracts → MI session (immutable)
 schema/                            ontology (human) + JSON Schema (machine)
 registries/                        shared catalogs                       → data office
 data/portfolio.json                banks and products in scope
-data/journeys/<bank>/*.json        Wells Fargo journeys                  → journey owners
+data/journeys/<bank>/*.json        MI journeys (mi-*.json, imported) and the Wells Fargo sample blueprint → MI session, journey owners
+data/findings/<bank>.json          gaps and strengths                    → MI session
+data/composites/<product>.json     best-practice composite journeys      → MI session
+data/observations/, verifications/ per-bank observations, MI challenge round
+data/participation.json, rankings.json   network membership, ScoreTotals ranking
 data/comparisons/<product>/
   comparison.json                  attributes + governance               → CI study lead
   values/<bank>.json               one bank's facts                      → MI session, legal review
-tools/                             assemble · validate · build_site · export
+tools/                             import_mi_workbook · ingest_mi · assemble · validate · build_site · export · migrations
 tests/                             negative fixtures (must fail) + runner
 site/template.html                 journey-site renderer (no data inside)
 docs/                              architecture, MI contract, ADRs
@@ -89,7 +98,8 @@ flowchart LR
 |---|---|---|
 | Assemble | `tools/assemble.py` | A file's bank or product disagrees with its folder |
 | Validate | `tools/validate_journey.py` | Schema, integrity, typing, temporal, provenance or publish-gate rule broken |
-| Negative tests | `tests/run_tests.sh` | Any of 31 known-bad fixtures passes |
+| Import | `tools/import_mi_workbook.py` | Workbook sha mismatch, unknown bank, rail, stage or evidence level, unresolved source |
+| Negative tests | `tests/run_tests.sh` | Any of 40 known-bad fixtures passes |
 | Ingest test | `tests/test_ingest.py` | Versioned ingest, history, refusal or immutability behaves wrongly |
 | Build | `tools/build_site.py` | Template or data missing |
 | Export | `tools/export.py` | — (produces facts, coverage, summary; summary is posted to the CI run) |
@@ -125,7 +135,7 @@ This product is deliberately shaped like a KOS knowledge bundle so it can fold i
 
 | Limit | Plan |
 |---|---|
-| Questions per product come from the MI data | `tools/new_comparison.py` creates a product's questions and bank slots; an Excel-to-extract converter follows once the MI workbook layout is known |
+| Workbook layout is fixed to the 2026-11-06 MI delivery (20 sheets) | The importer refuses unknown sheets, banks, rails and levels; a new layout means an importer change, reviewed like code |
 | GRC, CMDB, LEI and BIAN IDs are empty | Filled by system owners. The publish gate blocks release until they are. |
-| The page inlines all data (~200 KB today) | Fine to several MB. Beyond that, load `kjourneys.json` as a sibling file. |
+| The page inlines a compact view model (~2.8 MB from 8 MB of data) | `tools/build_site.py` refuses to build past 15 MB; beyond that, load `kjourneys.json` as a sibling file. |
 | Sample data for Wells Fargo | Replace from KOS bundles and journey owners. Sample is never allowed past draft. |

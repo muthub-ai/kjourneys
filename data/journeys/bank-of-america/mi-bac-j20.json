@@ -1,0 +1,427 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j20",
+ "title": "Small business deposits checks with Remote Deposit Online (scanner)",
+ "bank": "bank-of-america",
+ "product": "cash-atm-branch",
+ "persona": "Business receiving 20+ checks/month",
+ "segment": "small-business",
+ "customer_goal": "Deposit check batches from the office",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Enroll from Business Online Banking (BA360 + Business Advantage…",
+   "customer_action": "Enroll from Business Online Banking (BA360 + Business Advantage checking required); bank ships scanner; 30-day trial then $15/month",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Enroll link"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j20-1",
+     "text": "2-year commitment, $250 early termination"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Business Services menu > Remote Deposit Online > Create New Deposit >…",
+   "customer_action": "Business Services menu > Remote Deposit Online > Create New Deposit > scan checks (or 'Scan checks to deposit' on Account Details for personal-profile users)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Business Services tab > 'Scan checks to deposit' (also from the Business Services drop-down on the far right; personal-profile business accounts: Account Details > 'Scan checks to deposit') > Remote Deposit Online web application Home > 'Create new deposit' > enter total dollar amount > 'start capture'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s907",
+      "src-bank-of-america-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s907",
+      "src-bank-of-america-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Review totals and submit",
+   "customer_action": "Review totals and submit",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Deposit review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Later cutoff than branch; deposit posts; funds availability per hold…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Deposit history"
+    }
+   ],
+   "frontstage": "Later cutoff than branch; deposit posts; funds availability per hold policy",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Deposit confirmation (format UNKNOWN)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Deposit confirmation (format UNKNOWN)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Unenroll (90-day re-enrollment wait); return scanner within 30 days",
+   "customer_action": "Unenroll (90-day re-enrollment wait); return scanner within 30 days",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "877-270-1242"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Deposits are subject to holds and RDO 'does not provide the ability to…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Deposit holds policy; RDO support 877-270-1242"
+    }
+   ],
+   "frontstage": "Deposits are subject to holds and RDO 'does not provide the ability to verify funds at time of deposit'; limits 99 items per deposit and $999,999.99 per day; only one User ID (owner may assign a sub-user to deposit under it); endorsed checks must be retained 14 days then destroyed. Rejected-item handling (return reasons, re-presentment) is still not documented publicly.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j20:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "RDO support line 877-270-1242 Mon–Fri 8–8 ET",
+   "customer_action": "RDO support line 877-270-1242 Mon–Fri 8–8 ET",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Support"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s062"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J20",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P07-S02",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Remote Deposit Online history",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Item rejected",
+   "customer_experience": "Deposits subject to standard holds; no funds verification at capture; rejected-item notification path still not documented publicly.",
+   "bank_handling": "Hold/validation per Deposit Agreement; support via RDO servicing line 877-270-1242 (Mon–Fri 8–8 ET).",
+   "resolution": "UNKNOWN",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s924"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Contract terms are onerous for an SMB product.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

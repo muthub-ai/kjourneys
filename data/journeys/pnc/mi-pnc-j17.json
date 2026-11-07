@@ -1,0 +1,476 @@
+{
+ "id": "urn:kos:journey:pnc:pnc-j17",
+ "title": "Consumer pays a PNC credit card from a PNC or external account ('Make a Payment')",
+ "bank": "pnc",
+ "product": "internal-transfer",
+ "persona": "Cardholder paying statement",
+ "segment": "consumer",
+ "customer_goal": "Pay my PNC card instantly from checking",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Select the credit card account > 'Make a Payment' > 'Pay From Account'…",
+   "customer_action": "Select the credit card account > 'Make a Payment' > 'Pay From Account' (PNC or external) > 'Payment Type' (one-time/same-day/future/Recurring) > 'Payment Option'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account > Make a Payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m02",
+   "code": "M02",
+   "stage": "review-authorize",
+   "title": "Review > 'Submit Payment'",
+   "customer_action": "Review > 'Submit Payment'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Submit Payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Consumer same-day online before midnight ET credited that day; payments…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Consumer same-day online before midnight ET credited that day; payments from PNC checking immediately increase available credit",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Confirmation; posts to card activity",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Confirmation; posts to card activity",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m05",
+   "code": "M05",
+   "stage": "manage",
+   "title": "Recurring: Frequency, Start Date, optional End Date (Online Banking)",
+   "customer_action": "Recurring: Frequency, Start Date, optional End Date (Online Banking)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Make a Payment > Frequency"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m06",
+   "code": "M06",
+   "stage": "exception",
+   "title": "Voice Banking payments cannot be cancelled after submission",
+   "customer_action": "Voice Banking payments cannot be cancelled after submission",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
+   "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Online Banking > Help"
+    }
+   ],
+   "frontstage": "Self-service dispute tool explains 'what to expect and next steps'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer calls PNC (Consumer credit card 1-800-282-7541); fraud line…",
+   "customer_action": "Customer calls PNC (Consumer credit card 1-800-282-7541); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center / branch"
+    }
+   ],
+   "frontstage": "Agent-assisted claims, stop payments, wire inquiries",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j17:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
+   "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Social / email"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "PNC-J17",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "PNC-P02-S03",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": [
+   "phone",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Card activity",
+  "states": [
+   "Scheduled",
+   "Posted"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Clear cutoffs by channel.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

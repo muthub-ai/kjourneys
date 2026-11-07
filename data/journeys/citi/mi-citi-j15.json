@@ -1,0 +1,500 @@
+{
+ "id": "urn:kos:journey:citi:citi-j15",
+ "title": "Consumer stops a pre-authorized recurring ACH debit",
+ "bank": "citi",
+ "product": "other",
+ "persona": "Customer cancelling a gym subscription debit",
+ "segment": "consumer",
+ "customer_goal": "Stop a merchant from debiting my account",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer reviews pre-authorized payments in Citi Online or by phone",
+   "customer_action": "Customer reviews pre-authorized payments in Citi Online or by phone",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pre-authorized payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Request a stop via Citi Online or the number on the card at least 3…",
+   "customer_action": "Request a stop via Citi Online or the number on the card at least 3 Business Days before the scheduled debit, giving account, date, exact amount and payee",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Stop payment"
+    }
+   ],
+   "frontstage": "Phone requests may need written confirmation within 2 weeks",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Citi may require proof the customer revoked authorization with the payee",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Citi may require proof the customer revoked authorization with the payee",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Stop is permanent until removed; converted checks need stops on both…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Stop is permanent until removed; converted checks need stops on both check and ACH",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Confirmation",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Confirmation",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Remove the stop on request",
+   "customer_action": "Remove the stop on request",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Citi fails to stop despite timely request: Citi pays losses",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Citi fails to stop despite timely request: Citi pays losses",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "One-time future-dated ACH: stop by 11:59 PM ET the day before",
+   "customer_action": "One-time future-dated ACH: stop by 11:59 PM ET the day before",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j15:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j15-9",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J15",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P04-S04",
+ "channels": {
+  "entry": [
+   "web",
+   "phone"
+  ],
+  "other": [
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Pre-authorized payments list",
+  "states": [
+   "Active stop"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payment already in process",
+   "customer_experience": "Cannot be stopped",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s031"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Clear Reg E-aligned stop-payment terms.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,122 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Payment center comparing standard ACH, Same Day ACH and real-time by speed, cost and cut-off",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J14#1; jpmorgan-chase:JPM-J15#1",
+    "rationale": "Chase Payment Center comparison."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Single enrollment covering all speeds; role model separating input, release and administration",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J16#3; jpmorgan-chase:JPM-J15#2; td-bank:TD-J12#4",
+    "rationale": "WF Input Only / Input-Release / Control levels; Chase one enrollment for three speeds."
+   },
+   {
+    "stage": "set-up",
+    "n": 3,
+    "action": "Payee add with account validation and fraud screen; CSV/accounting import; groups",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J14#3; wells-fargo:WF-J16#4; td-bank:TD-J12#2",
+    "rationale": "Pre-validation (WF), fraud screen (Chase), import (TD)."
+   },
+   {
+    "stage": "initiate",
+    "n": 4,
+    "action": "Batch by group/template, deliver-by date with auto send date, speed choice incl. same-day/instant",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J14#4; us-bank:USB-J14#4",
+    "rationale": "Deliver-by model."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 5,
+    "action": "Dual control with approval-needed alert and mobile approval by token",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "wells-fargo:WF-J16#7; td-bank:TD-J12#4; citi:CITI-J22#1; citi:CITI-J22#3",
+    "rationale": "TD approval-needed email; Citi push + mobile token approval."
+   },
+   {
+    "stage": "execute-track",
+    "n": 6,
+    "action": "Item and batch statuses (Chase 19 named states)",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "jpmorgan-chase:JPM-J14#7",
+    "rationale": "Most transparent SMB status model."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 7,
+    "action": "Confirmation numbers; optional payee notification emails",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J16#9",
+    "rationale": "WF payee emails."
+   },
+   {
+    "stage": "manage",
+    "n": 8,
+    "action": "Cancel one or series; templates; audit log",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J14#9; jpmorgan-chase:JPM-J19#6",
+    "rationale": "Chase audit view."
+   },
+   {
+    "stage": "exception",
+    "n": 9,
+    "action": "Returned/Rejected/Failed statuses with in-app reversal request; return alerts; NOC handling",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "jpmorgan-chase:JPM-J14#10; td-bank:TD-J12#8; fifth-third:FITB-J19#4",
+    "rationale": "Chase reversal request; TD return alert; Fifth Third Newline documents NOC/recall."
+   },
+   {
+    "stage": "support",
+    "n": 10,
+    "action": "Business line with trace lookup",
+    "actor": "CUSTOMER",
+    "channel": "PHONE",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J14#11; benchmark:R68#None",
+    "rationale": "Phone."
+   }
+  ],
+  "id": "CJ-ACH-ORIG-SMB-SEND",
+  "title": "Small business pays payroll/vendors by ACH (standard, same-day, real-time) with approvals",
+  "product": "ach-origination",
+  "segment": "small_business",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

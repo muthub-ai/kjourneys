@@ -1,0 +1,495 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j20",
+ "title": "Discover Bank (legacy) customer uses Zelle / Bill Pay / transfers and is converted to Capital One 360",
+ "bank": "capital-one",
+ "product": "zelle",
+ "persona": "Discover Cashback Debit customer awaiting conversion",
+ "segment": "consumer",
+ "customer_goal": "Keep paying people and bills through the Discover-to-Capital One transition",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Discover.com banner: 'Discover is part of Capital One'; customers told…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "discover.com/online-banking"
+    }
+   ],
+   "frontstage": "Product-by-product conversion: checking -> 360 Checking; money market -> 360 Performance Savings; savings stays savings; CDs stay CDs",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email/letter before conversion",
+   "source_step": 1,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s055",
+      "src-capital-one-s053",
+      "src-capital-one-s058",
+      "src-capital-one-s059",
+      "src-capital-one-s060",
+      "src-capital-one-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s055",
+      "src-capital-one-s053",
+      "src-capital-one-s058",
+      "src-capital-one-s059",
+      "src-capital-one-s060",
+      "src-capital-one-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s055",
+      "src-capital-one-s053",
+      "src-capital-one-s058",
+      "src-capital-one-s059",
+      "src-capital-one-s060",
+      "src-capital-one-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j20-1",
+     "text": "Legacy Discover money-movement help content has been removed from public web, leaving customers reliant on in-session help"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Pre-conversion Discover journeys (still governed by live Discover…",
+   "customer_action": "Pre-conversion Discover journeys (still governed by live Discover agreements): Zelle on Cashback Debit/Personal Checking — $600/day send, cancel until recipient enrolls, personal use only, Zelle tags; Bill Pay ('Deliver by Date', eBills, Repeating Payments; cancel electronic until 'In-Process'); ACH transfers to external accounts; outgoing wires requested in Account Center ('Transfer' > Wire Transfer), the Discover App ('Transfer' icon > Wire Transfers) or by paper Wire Transfer Form, with multi-level verification (authentication code / ID + selfie / notarized form / card security code), 3 p.m. ET cutoff and a $30 Outgoing Wire Transfer charge (DAA effective 2026-10-08); incoming wires via 1-800-347-7000 instructions, 4 p.m. ET posting cutoff; Add Cash at retailers ($20 min, $1,000 per transaction and per 24 h; $999.99 in AZ/NM).",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Discover app/web"
+    }
+   ],
+   "frontstage": "Bill Pay limits $1-$5,000 (newer) / $10,000 (older) per payment; $20,000 per deliver-by date",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s056",
+      "src-capital-one-s076",
+      "src-capital-one-s928",
+      "src-capital-one-s929",
+      "src-capital-one-s930"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s056",
+      "src-capital-one-s076",
+      "src-capital-one-s928",
+      "src-capital-one-s929",
+      "src-capital-one-s930"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s056",
+      "src-capital-one-s076",
+      "src-capital-one-s928",
+      "src-capital-one-s929",
+      "src-capital-one-s930"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "On conversion: account number unchanged, routing number changes;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Capital One app"
+    }
+   ],
+   "frontstage": "Conversion page 'What to expect': same account number, new Capital One routing number; 'Scheduled checks, transfers scheduled through Discover and direct deposits will still be completed'; 'Any eligible external accounts, joint account holders or beneficiaries will be set up for you'; 'Continue to send and receive Zelle® payments with your Capital One account'; direct deposits still up to 2 days early on checking; wires to the old routing number are returned; third-party apps (PayPal, Venmo, Robinhood) must be relinked per migrated product via Security > 'Linked Apps'.",
+   "actor": "bank-system",
+   "decision": "Existing Capital One login vs new",
+   "notification": "Conversion notice",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s051",
+      "src-capital-one-s053",
+      "src-capital-one-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s051",
+      "src-capital-one-s053",
+      "src-capital-one-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s051",
+      "src-capital-one-s053",
+      "src-capital-one-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j20-3",
+     "text": "Customers with multiple Discover accounts converting at different times need a separate Capital One username per wave"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Zelle available on converted 360 Checking after accepting terms…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "360 Checking"
+    }
+   ],
+   "frontstage": "Zelle available on converted 360 Checking after accepting terms ($3,000/day, $12,500/month); Bill Pay available on checking (not savings); early paycheck replaces Early Pay on checking; Cashback Debit rewards end with a 12-month rewards true-up deposit",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053",
+      "src-capital-one-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053",
+      "src-capital-one-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053",
+      "src-capital-one-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j20-4",
+     "text": "Loss of debit rewards; Early Pay dropped on savings"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m05",
+   "code": "M05",
+   "stage": "manage",
+   "title": "Money can still move between Capital One and Discover bank accounts…",
+   "customer_action": "Money can still move between Capital One and Discover bank accounts during the transition (internal/ACH); AutoSave notes Discover-to-Capital One transfers may take longer",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfers"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s054",
+      "src-capital-one-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s054",
+      "src-capital-one-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m06",
+   "code": "M06",
+   "stage": "exception",
+   "title": "Discover platform maintenance (e.g., Nov 8 2026 1-8 am ET) suspends…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Discover contact"
+    }
+   ],
+   "frontstage": "Discover platform maintenance (e.g., Nov 8 2026 1-8 am ET) suspends online/app/phone and may decline debit; Discover fraud line 1-877-737-1931; Capital One general 1-877-383-4802",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Site banner",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s055",
+      "src-capital-one-s057",
+      "src-capital-one-s054"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s055",
+      "src-capital-one-s057",
+      "src-capital-one-s054"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j20:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Discover accounts: Discover.com/app/1-800-347-7000; converted accounts:…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Dual support model"
+    }
+   ],
+   "frontstage": "Discover accounts: Discover.com/app/1-800-347-7000; converted accounts: Capital One channels",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s054",
+      "src-capital-one-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s054",
+      "src-capital-one-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J20",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P01-S04",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": [
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Discover app until conversion; Capital One app after",
+  "states": [],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Wire sent to old Discover routing number after conversion",
+   "customer_experience": "Wire returned",
+   "bank_handling": "Return",
+   "resolution": "Resend with Capital One routing",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s053"
+   ]
+  },
+  {
+   "trigger": "Discover customer needs to send a wire before conversion",
+   "customer_experience": "Request in Account Center ('Transfer' > Wire Transfer), the Discover App ('Transfer' icon > Wire Transfers) or by paper Wire Transfer Form; pass multi-level verification (authentication code, ID + selfie, notarized form or card security code); $30 outgoing charge; 3 p.m. ET cutoff",
+   "bank_handling": "Discover 'reserve[s] the right to verify or authenticate (or further verify or further authenticate) any request… There may be more than one level of verification'; non-compliant wires are returned",
+   "resolution": "Processed same business day if fully verified by 3 p.m. ET; after conversion the customer uses Capital One 'Wire Money' and the new routing number",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s928",
+    "src-capital-one-s929"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "conversion_notice",
+   "channels": [
+    "email",
+    "mail"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Discover's standalone money-movement journeys are effectively being sunset in favor of Capital One 360; the public documentation gap during the transition is itself a finding.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

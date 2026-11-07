@@ -1,0 +1,582 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j10",
+ "title": "Small business sends an international wire online (Truist Online Banking)",
+ "bank": "truist",
+ "product": "wire-international",
+ "persona": "SMB paying an overseas supplier in USD",
+ "segment": "small-business",
+ "customer_goal": "Pay a foreign vendor",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Online banking > self-enroll in Wire Services; register two…",
+   "customer_action": "Online banking > self-enroll in Wire Services; register two authorization phone numbers",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire Services enrollment"
+    }
+   ],
+   "frontstage": "Dollar limit shown at enrollment; IOLTA excluded",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Add beneficiary: name, address, bank, SWIFT/BIC, IBAN/account;…",
+   "customer_action": "Add beneficiary: name, address, bank, SWIFT/BIC, IBAN/account; intermediary bank if needed",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Beneficiary"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Choose international (USD only per 2022 transition doc; current…",
+   "customer_action": "Choose international (USD only per 2022 transition doc; current currency options unverified), amount, purpose, date (future-dated supported)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire form"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j10-3",
+     "text": "FX wires require branch/Treasury"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Transaction validation: OTP / call / email / text to registered…",
+   "customer_action": "Transaction validation: OTP / call / email / text to registered contact; optional dual validation procedures",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "One-time passcode / transaction validation / Dual Approval (Approver)"
+    }
+   ],
+   "frontstage": "Entitled user enters a one-time passcode 'in order for the wire to be released and processed'; Truist may verify by contacting the user or administrator; optional Dual Approval Feature: a wire initiated by a non-owner User 'will not be processed, executed, or acted upon by the Bank until Secondary Approval is provided' by a User designated by the Business Profile Owner as an 'Approver' or 'Approver Admin' (the feature must be enabled by the Business Profile Owner); bank may cancel a pending wire awaiting approval.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s017",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s017",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s017",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s017",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j10-4",
+     "text": "In-product second approver not evidenced for Online Banking (only Treasury Manager)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Processed until 6pm ET business days; quick confirmation report",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation report"
+    }
+   ],
+   "frontstage": "'Wire transfers are executed real-time throughout the business day'; same-day cut-off 6 pm ET for both domestic and international; after cut-off/weekends → next business day; Truist 'will use reasonable efforts to send a confirmation of each transfer order' (marketing: 'quick confirmation reports').",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s007",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s906",
+      "src-truist-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s007",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s906",
+      "src-truist-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Alerts for ACH/wire available to business users",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Alerts for ACH/wire available to business users",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Wire history; repetitive templates (Treasury platforms); OLB templates…",
+   "customer_action": "Wire history; repetitive templates (Treasury platforms); OLB templates UNKNOWN",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "History"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Returned wire $10, repair $10; recall not guaranteed; wire/ACH fraud…",
+   "customer_action": "Returned wire $10, repair $10; recall not guaranteed; wire/ACH fraud line 800-774-8179; 30-day written error reporting for business",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Treasury/Care"
+    }
+   ],
+   "frontstage": "Cancellation/amendment only if received in time to act before processing; 'To request a wire transfer cancellation or return wire request, please call Truist Online Banking Support at 844-4TRUIST'; recovery not guaranteed and the customer may have to deposit funds to cover recall costs; returned wire $10, repair $10; wire/ACH fraud line 800-774-8179; FAQ: 'the transaction can be reversed—if it's caught and stopped before your account has been debited'.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s015",
+      "src-truist-s041",
+      "src-truist-s903",
+      "src-truist-s904",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s015",
+      "src-truist-s041",
+      "src-truist-s903",
+      "src-truist-s904",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s015",
+      "src-truist-s041",
+      "src-truist-s903",
+      "src-truist-s904",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j10:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "888-228-6654 (OLB) / 844-4TRUIST",
+   "customer_action": "888-228-6654 (OLB) / 844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J10",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P04-S02",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "branch",
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Online banking wire history; confirmation reports",
+  "states": [
+   "Pending validation",
+   "Released",
+   "Confirmed"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Validation not answered",
+   "customer_experience": "Transaction terminated",
+   "bank_handling": "Auto-cancel",
+   "resolution": "Re-initiate",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s013"
+   ]
+  },
+  {
+   "trigger": "Wire awaiting Secondary Approval (Dual Approval Feature enabled)",
+   "customer_experience": "Wire initiated by a non-owner User is held until a designated Approver approves; must be approved before the 6 pm ET cut-off.",
+   "bank_handling": "'will not be processed, executed, or acted upon by the Bank until Secondary Approval is provided'; bank may cancel pending wires awaiting approval without notice.",
+   "resolution": "Approver approves; otherwise re-initiate next business day.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s906"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ach_wire_alert",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "OLB wires rely on contact-validation rather than in-product dual approval; FX only via higher-tier channels.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

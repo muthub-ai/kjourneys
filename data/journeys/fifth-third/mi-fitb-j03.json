@@ -1,0 +1,567 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j03",
+ "title": "Consumer receives a first Zelle payment and enrolls from the notification",
+ "bank": "fifth-third",
+ "product": "zelle",
+ "persona": "New customer who has never used Zelle",
+ "segment": "consumer",
+ "customer_goal": "Collect money someone sent me",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer receives Zelle email/text payment notification",
+   "customer_action": "Customer receives Zelle email/text payment notification",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Email/SMS from Zelle"
+    }
+   ],
+   "frontstage": "",
+   "actor": "recipient",
+   "decision": null,
+   "notification": "payment notification",
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Open notification, select 'Fifth Third Bank', follow prompts; enroll…",
+   "customer_action": "Open notification, select 'Fifth Third Bank', follow prompts; enroll with the SAME email/phone that received the notification",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle enrollment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Token mismatch -> funds don't post",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j03-2",
+     "text": "Must use identical token"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Funds deposit directly into Fifth Third account within minutes of…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account activity"
+    }
+   ],
+   "frontstage": "Funds deposit directly into Fifth Third account within minutes of enrollment (1–3 business days for cross-institution/unenrolled cases)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001",
+      "src-fifth-third-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001",
+      "src-fifth-third-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "No further action; share token/QR with trusted people for future…",
+   "customer_action": "No further action; share token/QR with trusted people for future receipts",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Profile > My Code"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001",
+      "src-fifth-third-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001",
+      "src-fifth-third-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m05",
+   "code": "M05",
+   "stage": "manage",
+   "title": "Change contact method only by calling 800-972-3030 (one method per…",
+   "customer_action": "Change contact method only by calling 800-972-3030 (one method per customer)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j03-5",
+     "text": "Cannot self-serve token change"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m06",
+   "code": "M06",
+   "stage": "exception",
+   "title": "Enrollment error because token registered at another bank -> call…",
+   "customer_action": "Enrollment error because token registered at another bank -> call support to move it",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
+   "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Floating icon at bottom of app/online banking; 'Ask Us'"
+    }
+   ],
+   "frontstage": "Jeanie NLU recognizes intent ~90%; AI interface (6/2026) routes typed requests such as 'transfer funds' to the task screen, Jeanie, or live support",
+   "actor": "customer",
+   "decision": "Self-serve vs. hand-off to representative",
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j03-7",
+     "text": "Jeanie's published task list excludes money movement itself"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
+   "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j03-8",
+     "text": "Two different sets of hours published on the same page"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j03:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "locations.53.com; timetrade scheduling"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J03",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P01-S03",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Account activity",
+  "states": [
+   "Posted"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Sender's payment expires (14 days) before recipient enrolls",
+   "customer_experience": "Payment canceled at sender side",
+   "bank_handling": "Automatic",
+   "resolution": "Sender re-sends",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s011"
+   ]
+  },
+  {
+   "trigger": "Email/mobile already enrolled with Zelle at another bank",
+   "customer_experience": "Enrollment error in the Fifth Third app",
+   "bank_handling": "Customer support can move the token to Fifth Third on request (1-800-972-3030)",
+   "resolution": "Token re-pointed to Fifth Third; payments flow to the Fifth Third account",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s901",
+    "src-fifth-third-s902"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_received",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Standard Zelle receive; single-token policy is more restrictive than peers.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

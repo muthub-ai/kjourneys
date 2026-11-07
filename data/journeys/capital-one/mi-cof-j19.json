@@ -1,0 +1,269 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j19",
+ "title": "Consumer links Capital One account to a third-party wallet (Venmo/PayPal) and manages 'Linked Apps'",
+ "bank": "capital-one",
+ "product": "wallet-intersect",
+ "persona": "Customer funding Venmo from 360 Checking",
+ "segment": "consumer",
+ "customer_goal": "Use my Capital One account inside Venmo/PayPal",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j19:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "In the third-party app select Capital One, log in, choose accounts,…",
+   "customer_action": "In the third-party app select Capital One, log in, choose accounts, consent to share data",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Third-party app > Capital One OAuth"
+    }
+   ],
+   "frontstage": "Consent-based connection",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j19-1",
+     "text": "Must be redone after each Discover product migration"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j19:m02",
+   "code": "M02",
+   "stage": "manage",
+   "title": "Manage/revoke under Security > 'Linked Apps' in Capital One app or…",
+   "customer_action": "Manage/revoke under Security > 'Linked Apps' in Capital One app or website",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Security > 'Linked Apps'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j19:m03",
+   "code": "M03",
+   "stage": "exception",
+   "title": "Unauthorized ACH debit from wallet: Reg E error resolution",
+   "customer_action": "Unauthorized ACH debit from wallet: Reg E error resolution",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "800-655-2265"
+    }
+   ],
+   "frontstage": "10/45/90-day investigation",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j19:m04",
+   "code": "M04",
+   "stage": "support",
+   "title": "Phone",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "Phone",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J19",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P10-S02",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Security > Linked Apps",
+  "states": [
+   "Connected"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Evidence of a consent hub; Paze activation lives separately under Digital Wallet Manager.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

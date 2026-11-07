@@ -1,0 +1,600 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j11",
+ "title": "Consumer pays a Fifth Third credit card or loan ('Make a Payment') and sets autopay",
+ "bank": "fifth-third",
+ "product": "internal-transfer",
+ "persona": "Cardholder",
+ "segment": "consumer",
+ "customer_goal": "Pay my Fifth Third card/loan from my checking",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "App: Move Money > 'Make a Payment'; Web: 'Make a Payment' in account…",
+   "customer_action": "App: Move Money > 'Make a Payment'; Web: 'Make a Payment' in account summary bar",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Move Money > Make a Payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Choose amount (minimum / statement balance / other); one-time or autopay",
+   "customer_action": "Choose amount (minimum / statement balance / other); one-time or autopay",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Make a Payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "One-time vs autopay",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Confirm; online card payments before 7 p.m. ET processed same day",
+   "customer_action": "Confirm; online card payments before 7 p.m. ET processed same day",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirm"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Visible next day",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Card activity"
+    }
+   ],
+   "frontstage": "Visible next day",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Payment reminders and 'Statement Available' alerts",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Payment reminders and 'Statement Available' alerts",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "push/email/SMS",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Autopay enrollment via messaging 'Automatic Payments' or 1-800-837-2000",
+   "customer_action": "Autopay enrollment via messaging 'Automatic Payments' or 1-800-837-2000",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Messaging"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j11-6",
+     "text": "Autopay for loans routed through chat/phone"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Payment not showing -> call 800-972-3030; community reports of…",
+   "customer_action": "Payment not showing -> call 800-972-3030; community reports of failed/double card payments in app",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090",
+      "src-fifth-third-s093"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090",
+      "src-fifth-third-s093"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s090",
+      "src-fifth-third-s093"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j11-7",
+     "text": "COMMUNITY: repeated failed payments / double payment"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
+   "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Floating icon at bottom of app/online banking; 'Ask Us'"
+    }
+   ],
+   "frontstage": "Jeanie NLU recognizes intent ~90%; AI interface (6/2026) routes typed requests such as 'transfer funds' to the task screen, Jeanie, or live support",
+   "actor": "customer",
+   "decision": "Self-serve vs. hand-off to representative",
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j11-8",
+     "text": "Jeanie's published task list excludes money movement itself"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
+   "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j11-9",
+     "text": "Two different sets of hours published on the same page"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j11:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "locations.53.com; timetrade scheduling"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J11",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P02-S04",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "phone",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Card/loan activity",
+  "states": [
+   "Pending",
+   "Posted"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Failed/double payment (community)",
+   "customer_experience": "Reviewer unable to pay via app or web",
+   "bank_handling": "Social media team 877-833-9973",
+   "resolution": "Unknown",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s093"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_reminder",
+   "channels": [
+    "push",
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Paying from an external bank account is not documented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

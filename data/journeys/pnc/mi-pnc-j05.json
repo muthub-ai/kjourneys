@@ -1,0 +1,486 @@
+{
+ "id": "urn:kos:journey:pnc:pnc-j05",
+ "title": "Consumer schedules a future-dated or recurring Zelle payment and later cancels it",
+ "bank": "pnc",
+ "product": "zelle",
+ "persona": "Tenant paying rent to a landlord",
+ "segment": "consumer",
+ "customer_goal": "Automate a monthly payment to a person",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "inferred",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "In Send flow, choose a future date or recurring frequency (option…",
+   "customer_action": "In Send flow, choose a future date or recurring frequency (option documented in Terms of Use; screen label not captured)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send Money with Zelle > Send > schedule"
+    }
+   ],
+   "frontstage": "One-time future-dated or recurring series",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-pnc-pnc-j05-1",
+     "text": "pnc.com help pages do not show the scheduling screen"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m02",
+   "code": "M02",
+   "stage": "review-authorize",
+   "title": "Review and confirm; OTP if new recipient",
+   "customer_action": "Review and confirm; OTP if new recipient",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review > Send"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Payment executes on the scheduled date; if the date is a non-business…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payment executes on the scheduled date; if the date is a non-business day the terms do not specify adjustment (UNKNOWN)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m04",
+   "code": "M04",
+   "stage": "manage",
+   "title": "Edit or cancel future-dated/recurring payments in the Zelle section of…",
+   "customer_action": "Edit or cancel future-dated/recurring payments in the Zelle section of the app until 11:59 PM ET the day before the scheduled date",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Activity > scheduled payment"
+    }
+   ],
+   "frontstage": "After that the payment processes and cannot be stopped (unless recipient unenrolled)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Insufficient funds on scheduled date -> payment may fail or overdraft…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Insufficient funds on scheduled date -> payment may fail or overdraft fees may apply per account fee schedule",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
+   "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Online Banking > Help"
+    }
+   ],
+   "frontstage": "Self-service dispute tool explains 'what to expect and next steps'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s010",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
+   "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center / branch"
+    }
+   ],
+   "frontstage": "Agent-assisted claims, stop payments, wire inquiries",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s021",
+      "src-pnc-s066"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j05:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
+   "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Social / email"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s002",
+      "src-pnc-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "PNC-J05",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "PNC-P01-S06",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Zelle Activity (scheduled)",
+  "states": [
+   "Scheduled",
+   "Sent",
+   "Cancelled"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Missed cancel window",
+   "customer_experience": "Cannot stop once processing",
+   "bank_handling": null,
+   "resolution": "Ask recipient to return",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-pnc-s017"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Scheduling exists contractually but is invisible in public help content.",
+ "x-mi_evidence": "INFERRED"
+}

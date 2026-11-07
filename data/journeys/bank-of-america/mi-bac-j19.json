@@ -1,0 +1,331 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j19",
+ "title": "Commercial client disburses to consumers via Global Digital Disbursements / Recipient Select (Zelle, RTP, Pay to Card, PayPal, Venmo, check)",
+ "bank": "bank-of-america",
+ "product": "zelle",
+ "persona": "Insurer paying claims",
+ "segment": "commercial",
+ "customer_goal": "Pay many individuals fast without collecting bank details",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j19:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Client configures white-labeled Recipient Select portal; recipients…",
+   "customer_action": "Client configures white-labeled Recipient Select portal; recipients enroll and pick method/speed",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Recipient Select portal"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j19:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Submit payment instructions with email/mobile (Digital Disbursements)…",
+   "customer_action": "Submit payment instructions with email/mobile (Digital Disbursements) or recipient ID",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "CashPro / file"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j19:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Routed over Zelle (same-day), Venmo, Interac, PayPal, RTP, Pay to Card,…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payment execution"
+    }
+   ],
+   "frontstage": "Routed over Zelle (same-day), Venmo, Interac, PayPal, RTP, Pay to Card, ACH or check per recipient choice",
+   "actor": "network",
+   "decision": null,
+   "notification": "recipient payment notification",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s052",
+      "src-bank-of-america-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s052",
+      "src-bank-of-america-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j19:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Recipient notified; unenrolled U.S. Zelle recipients are prompted to…",
+   "customer_action": "Recipient notified; unenrolled U.S. Zelle recipients are prompted to enroll a mobile number or email; once enrolled, funds credit as soon as the same day (generally minutes, up to three business days)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Notification"
+    }
+   ],
+   "frontstage": "",
+   "actor": "recipient",
+   "decision": null,
+   "notification": "email/text",
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j19:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Unenrolled/unclaimed payments; method fallback – terms not public",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Reporting"
+    }
+   ],
+   "frontstage": "Unenrolled/unclaimed payments; method fallback – terms not public",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j19:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Treasury representative",
+   "customer_action": "Treasury representative",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Relationship manager"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J19",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P13-S05",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "CashPro reporting",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient never enrolls",
+   "customer_experience": "UNKNOWN",
+   "bank_handling": "UNKNOWN",
+   "resolution": "UNKNOWN",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "recipient_payment_notification",
+   "channels": [
+    "email",
+    "text"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Only place push-to-card ('Pay to Card') appears at BofA – via corporate Recipient Select, not consumer app.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

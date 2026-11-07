@@ -1,0 +1,466 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j15",
+ "title": "Consumer adds cash at a retail store (Add Cash in Store)",
+ "bank": "capital-one",
+ "product": "cash-atm-branch",
+ "persona": "Cash-earning 360 Checking customer without a nearby branch",
+ "segment": "consumer",
+ "customer_goal": "Deposit cash into my online account",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Open account in app, scroll to 'Add Cash in Store'; find participating…",
+   "customer_action": "Open account in app, scroll to 'Add Cash in Store'; find participating store via locator (Walgreens, Duane Reade, CVS, Kroger family, Dollar General, 7-Eleven)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account > 'Add Cash in Store'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j15-1",
+     "text": "Not at CVS-in-Target; excluded in certain FinCEN-order ZIP codes"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Enter cash amount ($1 min; $999/txn) to generate a single-use barcode…",
+   "customer_action": "Enter cash amount ($1 min; $999/txn) to generate a single-use barcode valid 30 minutes; requires internet",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Barcode screen / 'View Barcode'"
+    }
+   ],
+   "frontstage": "Wrong amount -> cancel and regenerate",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j15-2",
+     "text": "Screenshots rejected"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Show barcode to cashier; cashier may request photo ID; hand over cash",
+   "customer_action": "Show barcode to cashier; cashier may request photo ID; hand over cash",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Retail POS"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Instant confirmation; funds typically available within minutes; email…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation / email"
+    }
+   ],
+   "frontstage": "Instant confirmation; funds typically available within minutes; email confirmation; appears in Recent Transactions within 1 business day",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email; optional SMS",
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Keep cashier receipt until money shows in account",
+   "customer_action": "Keep cashier receipt until money shows in account",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Receipt"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "No cancel/withdraw at store after completion; withdraw at ATM if needed",
+   "customer_action": "No cancel/withdraw at store after completion; withdraw at ATM if needed",
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "ATM"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Problem/dispute: 'Report a Problem' in app menu for technical issues;…",
+   "customer_action": "Problem/dispute: 'Report a Problem' in app menu for technical issues; monetary disputes by phone 800-655-2265; Capital One reviews store video footage",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "'Report a Problem' / phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j15:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "800-655-2265",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "800-655-2265",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J15",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P06-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "atm"
+  ]
+ },
+ "status_tracking": {
+  "where": "In-app confirmation; Recent Transactions",
+  "states": [
+   "Barcode active",
+   "Completed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Barcode expired",
+   "customer_experience": "Generate new barcode",
+   "bank_handling": "n/a",
+   "resolution": "Retry",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s041"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "cash_added",
+   "channels": [
+    "email",
+    "sms(optional)"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Strong differentiator compensating for thin branch network; clear limits and exception handling.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

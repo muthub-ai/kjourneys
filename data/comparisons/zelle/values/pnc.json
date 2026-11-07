@@ -2,137 +2,304 @@
   "bank": "pnc",
   "product": "zelle",
   "values": {
-    "attr-enroll-where": [
+    "attr-cap-recurring": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-recurring:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:enroll-where:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S06",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-enroll-steps": [
+    "attr-cap-scheduled-future-dated": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:enroll-steps:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S06",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-payee-name-shown": [
+    "attr-cap-request-money": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-request-money:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s023",
+          "src-pnc-s017"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:payee-name-shown:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-new-payee-warning": [
+    "attr-cap-split": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-split:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023",
+          "src-pnc-s031",
+          "src-pnc-s908",
+          "src-pnc-s909",
+          "src-pnc-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:new-payee-warning:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S04, PNC-P01-S05, PNC-P01-S06, PNC-P14-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-daily-limit": [
+    "attr-cap-qr-code": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-qr-code:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s003",
+          "src-pnc-s023",
+          "src-pnc-s017"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:daily-limit:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S04, PNC-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-stepup-trigger": [
+    "attr-cap-contact-sync": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-contact-sync:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:stepup-trigger:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-time-to-recipient": [
+    "attr-cap-cancel-before-send": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-cancel-before-send:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:time-to-recipient:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S05, PNC-P01-S06",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-notifications": [
+    "attr-cap-status-tracking": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-status-tracking:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:notifications:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S05, PNC-P01-S06",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-cancel-pending": [
+    "attr-cap-push-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-push-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:cancel-pending:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-report-channels": [
+    "attr-cap-email-sms-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:pnc:zelle:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:report-channels:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-scam-reimbursement": [
+    "attr-cap-scam-warning-interstitial": [
       {
         "basis": "awaiting",
         "source_ids": [],
@@ -142,7 +309,391 @@
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:pnc:zelle:scam-reimbursement:1"
+        "id": "urn:kos:assertion:pnc:zelle:cap-scam-warning-interstitial:1"
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — OTP on first payment to a new recipient (CONFIRMED_BANK); out-of-band fraud-alert text 'Did you attempt a Zelle payment' (CONFIRMED_BANK sample); Controlling Party verification at enrollment",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:cap-dual-approval-smb:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023",
+          "src-pnc-s031",
+          "src-pnc-s908",
+          "src-pnc-s909",
+          "src-pnc-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S04, PNC-P01-S05, PNC-P01-S06, PNC-P14-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:cap-international:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023",
+          "src-pnc-s031",
+          "src-pnc-s908",
+          "src-pnc-s909",
+          "src-pnc-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S04, PNC-P01-S05, PNC-P01-S06, PNC-P14-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S04, PNC-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:cap-instant:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-pnc-s002",
+          "src-pnc-s003",
+          "src-pnc-s004",
+          "src-pnc-s017",
+          "src-pnc-s020",
+          "src-pnc-s901",
+          "src-pnc-s917",
+          "src-pnc-s922",
+          "src-pnc-s023",
+          "src-pnc-s031",
+          "src-pnc-s908",
+          "src-pnc-s909",
+          "src-pnc-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: PNC-P01-S01, PNC-P01-S04, PNC-P01-S05, PNC-P14-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-discover:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH CHANNEL_GAP: Zelle is mobile-app only; no web Zelle send. [GAP-PNC-0001]; ZELLE-SMB-RECEIVE=2: MEDIUM CHANNEL_GAP: Zelle for Business is mobile-only. [GAP-PNC-0010]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-set-up:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Feature completeness: Zelle Ready Contacts, widgets, QR send and receive with print/share. [STR-PNC-0001]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-initiate:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Limits shown only deep in the flow. [GAP-PNC-0003]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-review-authorize:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM SECURITY_TRUST: In-flow scam interstitial wording still unverified after browser pass; only 'know and trust' copy is public. [GAP-PNC-0002]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-execute-track:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence PNC-J01, PNC-J04, PNC-J05; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-confirm-complete:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Texting STOP silences Zelle texts along with all alerts; no Zelle-specific alert types. [GAP-PNC-0005]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-manage:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Scheduled/recurring Zelle exists contractually but is invisible in public help. [GAP-PNC-0006]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-exception:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Scam-claim intake is phone/branch only; imposter-scam stance appears only in the Zelle Terms. [GAP-PNC-0004]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence PNC-J20",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:pnc:zelle:score-support:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Post-redesign app reviews report crashes and generic errors with no Zelle web fallback. [GAP-PNC-0007]; ZELLE-SMB-RECEIVE=3: At parity; minor: Dedicated Zelle for Business support line. [STR-PNC-0002]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ]
   }

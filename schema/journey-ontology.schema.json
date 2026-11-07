@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "$id": "urn:kos:schema:kos-journey:0.6.0",
+ "$id": "urn:kos:schema:kos-journey:0.7.0",
  "title": "KOS Journey Ontology instance",
  "type": "object",
  "additionalProperties": false,
@@ -22,7 +22,7 @@
  ],
  "properties": {
   "ontology": {
-   "const": "kos-journey/0.6.0"
+   "const": "kos-journey/0.7.0"
   },
   "codelists": {
    "type": "object",
@@ -99,16 +99,28 @@
      },
      "kind": {
       "enum": [
-       "placeholder",
-       "walkthrough",
-       "screenshot",
-       "web-page",
+       "analyst",
+       "app-store",
+       "bank-help-center",
+       "bank-pdf",
+       "bank-site",
+       "bank-video",
+       "community",
        "filing",
-       "network-rule",
        "internal-system",
-       "kos-bundle",
        "interview",
-       "mi-report"
+       "kos-bundle",
+       "mi-report",
+       "network-operator",
+       "network-rule",
+       "observed-session",
+       "other",
+       "placeholder",
+       "press",
+       "regulator",
+       "screenshot",
+       "walkthrough",
+       "web-page"
       ]
      },
      "title": {
@@ -141,6 +153,39 @@
      "report_version": {
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}-v\\d+$"
+     },
+     "bank": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "local_id": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "publisher": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "access_status": {
+      "enum": [
+       "fetched",
+       "blocked",
+       "summary-only",
+       "observed",
+       null
+      ]
+     },
+     "notes": {
+      "type": [
+       "string",
+       "null"
+      ]
      }
     },
     "patternProperties": {
@@ -200,6 +245,31 @@
        "network",
        "vendor"
       ]
+     },
+     "holding_company": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "assets_usd_bn": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "assets_as_of": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "format": "date"
+     },
+     "platforms": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
      }
     },
     "patternProperties": {
@@ -227,10 +297,15 @@
      "family": {
       "enum": [
        "zelle",
+       "request",
        "ach",
        "wire",
-       "bill-pay",
        "instant",
+       "bill-pay",
+       "internal",
+       "deposit",
+       "cash",
+       "wallet",
        "card-transfer",
        "other"
       ]
@@ -246,6 +321,10 @@
       "items": {
        "$ref": "#/$defs/urn"
       }
+     },
+     "rail": {
+      "type": "string",
+      "pattern": "^[A-Z_]+$"
      }
     },
     "patternProperties": {
@@ -649,6 +728,42 @@
    "items": {
     "$ref": "#/$defs/comparison"
    }
+  },
+  "findings": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/finding"
+   }
+  },
+  "composites": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/composite"
+   }
+  },
+  "observations": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/observation"
+   }
+  },
+  "verifications": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/verification"
+   }
+  },
+  "rankings": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/ranking"
+   }
+  },
+  "participation": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/participation"
+   }
   }
  },
  "$defs": {
@@ -992,6 +1107,154 @@
      "items": {
       "$ref": "#/$defs/variant"
      }
+    },
+    "source_journey_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "report_version": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "channels": {
+     "type": "object",
+     "additionalProperties": false,
+     "patternProperties": {
+      "^x-": {}
+     },
+     "properties": {
+      "entry": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "other": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "status_tracking": {
+     "type": "object",
+     "additionalProperties": false,
+     "patternProperties": {
+      "^x-": {}
+     },
+     "properties": {
+      "where": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "states": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "basis": {
+       "$ref": "#/$defs/basis"
+      }
+     }
+    },
+    "exceptions": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+       "^x-": {}
+      },
+      "required": [
+       "trigger",
+       "basis"
+      ],
+      "properties": {
+       "trigger": {
+        "type": "string"
+       },
+       "customer_experience": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "bank_handling": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "resolution": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "basis": {
+        "$ref": "#/$defs/basis"
+       },
+       "source_ids": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "notifications": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+       "^x-": {}
+      },
+      "required": [
+       "event"
+      ],
+      "properties": {
+       "event": {
+        "type": "string"
+       },
+       "channels": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "configurable": {
+        "type": [
+         "boolean",
+         "null"
+        ]
+       },
+       "basis": {
+        "$ref": "#/$defs/basis"
+       }
+      }
+     }
+    },
+    "assessment": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "sub_product": {
+     "type": [
+      "string",
+      "null"
+     ]
     }
    },
    "patternProperties": {
@@ -1009,14 +1272,6 @@
     "customer_action",
     "touchpoints",
     "frontstage",
-    "process",
-    "controls",
-    "applications",
-    "capabilities",
-    "kpis",
-    "fail_points",
-    "emotion",
-    "hotspot",
     "evidence"
    ],
    "properties": {
@@ -1045,8 +1300,7 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-       "channel",
-       "screen"
+       "channel"
       ],
       "properties": {
        "channel": {
@@ -1060,11 +1314,17 @@
          "email",
          "push",
          "atm",
-         "partner"
+         "partner",
+         "phone",
+         "voice-chat-assistant",
+         "api-treasury-portal"
         ]
        },
        "screen": {
-        "type": "string"
+        "type": [
+         "string",
+         "null"
+        ]
        }
       },
       "patternProperties": {
@@ -1256,6 +1516,34 @@
      "additionalProperties": {
       "$ref": "#/$defs/assertion"
      }
+    },
+    "actor": {
+     "enum": [
+      "customer",
+      "bank-system",
+      "bank-staff",
+      "network",
+      "third-party",
+      "recipient"
+     ]
+    },
+    "decision": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "notification": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "source_step": {
+     "type": [
+      "integer",
+      "null"
+     ]
     }
    },
    "patternProperties": {
@@ -1420,6 +1708,432 @@
    },
    "patternProperties": {
     "^x-": {}
+   }
+  },
+  "finding": {
+   "type": "object",
+   "additionalProperties": false,
+   "patternProperties": {
+    "^x-": {}
+   },
+   "required": [
+    "id",
+    "bank",
+    "type",
+    "severity",
+    "description",
+    "basis",
+    "source_ids",
+    "report_version"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^(GAP|STR)-[A-Z0-9]+-[0-9]{4}$"
+    },
+    "bank": {
+     "type": "string"
+    },
+    "journey": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "product": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "stage": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "step": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "type": {
+     "enum": [
+      "strength",
+      "transparency",
+      "friction",
+      "missing-capability",
+      "security-trust",
+      "exception-handling",
+      "channel-gap"
+     ]
+    },
+    "severity": {
+     "enum": [
+      "critical",
+      "high",
+      "medium",
+      "low"
+     ]
+    },
+    "description": {
+     "type": "string"
+    },
+    "composite": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "composite_step": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "reference_banks": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "basis": {
+     "$ref": "#/$defs/basis"
+    },
+    "source_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "frameworks": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "report_version": {
+     "type": "string"
+    }
+   }
+  },
+  "composite": {
+   "type": "object",
+   "additionalProperties": false,
+   "patternProperties": {
+    "^x-": {}
+   },
+   "required": [
+    "id",
+    "title",
+    "product",
+    "steps",
+    "report_version"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^CJ-[A-Z0-9-]+$"
+    },
+    "title": {
+     "type": "string"
+    },
+    "product": {
+     "type": "string"
+    },
+    "segment": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "direction": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+       "^x-": {}
+      },
+      "required": [
+       "stage",
+       "n",
+       "action"
+      ],
+      "properties": {
+       "stage": {
+        "type": "string"
+       },
+       "n": {
+        "type": "integer"
+       },
+       "action": {
+        "type": "string"
+       },
+       "actor": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "channel": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "job_step": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "moment_of_truth": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "derived_from": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "rationale": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "report_version": {
+     "type": "string"
+    }
+   }
+  },
+  "observation": {
+   "type": "object",
+   "additionalProperties": false,
+   "patternProperties": {
+    "^x-": {}
+   },
+   "required": [
+    "bank",
+    "type",
+    "text",
+    "report_version"
+   ],
+   "properties": {
+    "bank": {
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "strength",
+      "weakness",
+      "differentiator",
+      "recent-change",
+      "open-question"
+     ]
+    },
+    "text": {
+     "type": "string"
+    },
+    "report_version": {
+     "type": "string"
+    }
+   }
+  },
+  "verification": {
+   "type": "object",
+   "additionalProperties": false,
+   "patternProperties": {
+    "^x-": {}
+   },
+   "required": [
+    "id",
+    "bank",
+    "verdict",
+    "report_version"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "bank": {
+     "type": "string"
+    },
+    "target_type": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "target": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "challenge_type": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "claim": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "finding": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "verdict": {
+     "enum": [
+      "accepted",
+      "partial",
+      "rejected",
+      "unresolved"
+     ]
+    },
+    "resolution": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "evidence": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "reviewer": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "report_version": {
+     "type": "string"
+    }
+   }
+  },
+  "participation": {
+   "type": "object",
+   "additionalProperties": false,
+   "patternProperties": {
+    "^x-": {}
+   },
+   "required": [
+    "bank",
+    "network",
+    "participates",
+    "basis",
+    "report_version"
+   ],
+   "properties": {
+    "bank": {
+     "type": "string"
+    },
+    "network": {
+     "enum": [
+      "zelle",
+      "rtp-receive",
+      "rtp-send",
+      "fednow-receive",
+      "fednow-send",
+      "push-to-card",
+      "paze-wallet"
+     ]
+    },
+    "participates": {
+     "type": [
+      "boolean",
+      "null"
+     ]
+    },
+    "note": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "basis": {
+     "$ref": "#/$defs/basis"
+    },
+    "source_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "report_version": {
+     "type": "string"
+    }
+   }
+  },
+  "ranking": {
+   "type": "object",
+   "additionalProperties": false,
+   "patternProperties": {
+    "^x-": {}
+   },
+   "required": [
+    "bank",
+    "rank",
+    "overall_index",
+    "report_version"
+   ],
+   "properties": {
+    "bank": {
+     "type": "string"
+    },
+    "rank": {
+     "type": "integer"
+    },
+    "overall_index": {
+     "type": "number"
+    },
+    "domestic_core_index": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "coverage": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "rail_means": {
+     "type": "object",
+     "additionalProperties": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "report_version": {
+     "type": "string"
+    }
    }
   }
  }

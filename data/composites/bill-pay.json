@@ -1,0 +1,220 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Bills dashboard with due-soon cues and predictive biller discovery ('find bills you already pay')",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J09#1; benchmark:R41#None",
+    "rationale": "U.S. Bank bill finder cited by Forrester."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Add payee by directory search or auto-discovered biller; paste details",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J09#2; bank-of-america:BAC-J09#2",
+    "rationale": "Electronic linking for discovered billers."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Send-on or deliver-by date with delivery method shown; instant pay when the biller supports RTP/RfP",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J09#4; truist:TFC-J08#1; bank-of-america:BAC-J09#5",
+    "rationale": "Truist instant bill pay over RTP; BofA shows payment type incl. virtual card."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Confirm with payment-guarantee reminder",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "jpmorgan-chase:JPM-J09#5; wells-fargo:WF-J07#5",
+    "rationale": "Chase/WF guarantees."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Timeline incl. when money leaves the account and delivered status",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "jpmorgan-chase:JPM-J09#6; us-bank:USB-J09#6; wells-fargo:WF-J07#6",
+    "rationale": "Chase Payment Activity."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Receipt save/share; push when paid",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "jpmorgan-chase:JPM-J09#7; bank-of-america:BAC-J09#6",
+    "rationale": "Save/share receipt."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Edit/cancel to a late cutoff; self-service stop payment on bill-pay checks; history",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J09#8; wells-fargo:WF-J07#8; bank-of-america:BAC-J09#7",
+    "rationale": "U.S. Bank in-app stop payment."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "One-tap late/misapplied claim under a published guarantee; uncashed check auto-voided and re-credited",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J07#9; bank-of-america:BAC-J09#10; benchmark:R49#None",
+    "rationale": "WF Payment Guarantee incl. RfP instant payments."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant adds payees, pays and cancels bills",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J09#12; bank-of-america:BAC-J13#6; benchmark:R41#None",
+    "rationale": "Erica bill pay (Forrester)."
+   }
+  ],
+  "id": "CJ-BILLPAY-SEND",
+  "title": "Consumer adds a payee and pays a bill",
+  "product": "bill-pay",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ },
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "'Get eBills' prompt on payee setup and payee details",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J08#1; pnc:PNC-J09#1",
+    "rationale": "Prompt at the point of need."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "eBill enrollment with biller credentials/terms; presentment timing stated",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "pnc:PNC-J09#2; wells-fargo:WF-J08#2",
+    "rationale": "PNC discloses up to 60-day first eBill."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Autopay rule: full statement / minimum / fixed amount, timing relative to due date",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J08#3; pnc:PNC-J09#3; jpmorgan-chase:JPM-J10#3",
+    "rationale": "Variable autopay tied to eBill due date."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Confirm rules",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "wells-fargo:WF-J08#4",
+    "rationale": "Single confirm."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "eBill arrives with reminder; payment scheduled per rule",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "wells-fargo:WF-J08#5; pnc:PNC-J09#5",
+    "rationale": "Reminder emails."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Email when each autopay is sent",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J08#6",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "eBill archive; cancel one payment vs stop the series",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "td-bank:TD-J08#6; wells-fargo:WF-J08#7",
+    "rationale": "TD 'Cancel only this scheduled payment' vs 'Stop Autopay'."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "eBill activation/presentment failure notified; customer guided to biller",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J08#8; pnc:PNC-J09#8",
+    "rationale": "WF notifies on failure."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Help on eBill timing",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "pnc:PNC-J09#9",
+    "rationale": "PNC self-service dispute tool."
+   }
+  ],
+  "id": "CJ-BILLPAY-EBILL-MANAGE",
+  "title": "Consumer activates eBills and manages autopay",
+  "product": "bill-pay",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

@@ -1,0 +1,489 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j04",
+ "title": "Consumer transfers between own Chase accounts (mobile)",
+ "bank": "jpmorgan-chase",
+ "product": "internal-transfer",
+ "persona": "Any Chase customer",
+ "segment": "consumer",
+ "customer_goal": "Move money from checking to savings or pay my Chase card",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay & Transfer' > 'Transfer' or swipe left on account tile > 'Transfer'",
+   "customer_action": "'Pay & Transfer' > 'Transfer' or swipe left on account tile > 'Transfer'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay & Transfer > Transfer"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010",
+      "src-jpmorgan-chase-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010",
+      "src-jpmorgan-chase-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Choose 'Account or Brokerage Transfer'; enter amount; choose from/to…",
+   "customer_action": "Choose 'Account or Brokerage Transfer'; enter amount; choose from/to accounts; set date; optional memo",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account or Brokerage Transfer"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Optionally 'Set up repeating transfers' (frequency, dates, duration)…",
+   "customer_action": "Optionally 'Set up repeating transfers' (frequency, dates, duration) via 'Schedule transfer'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay & transfer > Transfer money > Schedule transfer"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s009",
+      "src-jpmorgan-chase-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Tap 'Transfer' and confirm (automatic transfer service consent for…",
+   "customer_action": "Tap 'Transfer' and confirm (automatic transfer service consent for repeating)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirm"
+    }
+   ],
+   "frontstage": "Transfers subject to internal review per DSA",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s010",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Immediate posting for same-day; future-dated shown as Pending",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account activity (pending/memo items)"
+    }
+   ],
+   "frontstage": "Immediate posting for same-day; future-dated shown as Pending",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s036",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s036",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Confirmation screen; optional alerts",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation screen; optional alerts",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Edit/cancel pending or repeating transfers in Payment Activity",
+   "customer_action": "Edit/cancel pending or repeating transfers in Payment Activity",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Payment Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Insufficient funds: repeating/future-dated transfer fails; 'Funding…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Insufficient funds: repeating/future-dated transfer fails; 'Funding failed' state; no retry",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j04:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "In-app chat, 1-800-935-9935, branch",
+   "customer_action": "In-app chat, 1-800-935-9935, branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J04",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P02-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "atm",
+   "phone",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Account activity / Payment Activity",
+  "states": [
+   "Pending",
+   "Funded",
+   "Funds Needed",
+   "Funding Failed",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Investment account transfer on Good Friday",
+   "customer_experience": "Business day excludes Good Friday for investment transfers",
+   "bank_handling": "Processed next business day",
+   "resolution": "Delay",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s043"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "transfer_completed",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": true,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Clean, single-screen flow; Autosave and First Banking allowance extend the same rail.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,456 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j21",
+ "title": "Small business sends ACH payments and manages account users (Capital One Business online banking)",
+ "bank": "capital-one",
+ "product": "ach-origination",
+ "persona": "Owner of a Basic/Enhanced Business Checking account paying vendors",
+ "segment": "small-business",
+ "customer_goal": "Pay vendors electronically and delegate access",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Make payments' section: ACH payments (free on Basic Checking, Enhanced…",
+   "customer_action": "'Make payments' section: ACH payments (free on Basic Checking, Enhanced Checking, Business Savings) and wires via online banking",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Small business online banking page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j21-1",
+     "text": "No help article or user guide for ACH origination"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Add account users: Account > 'Account Services & Settings' > 'Manage…",
+   "customer_action": "Add account users: Account > 'Account Services & Settings' > 'Manage Account Users' > 'Add account user' (web only); user completes via email",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "'Manage Account Users'"
+    }
+   ],
+   "frontstage": "Option varies by account type; permission tiers undocumented",
+   "actor": "customer",
+   "decision": null,
+   "notification": "Email to new user",
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s086"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s086"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s086"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s086"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j21-2",
+     "text": "No dual-approval documentation"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Create ACH payment to vendor (steps undocumented)",
+   "customer_action": "Create ACH payment to vendor (steps undocumented)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "unknown"
+    }
+   ],
+   "frontstage": "ACH funds available in 1-3 business days",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Single-user authorization: standard Capital One Business online banking…",
+   "customer_action": "Single-user authorization: standard Capital One Business online banking offers user delegation ('Manage Account Users') and alerts but no maker/checker; 'Dual Control Authorization' (one user creates, another approves before transmission) exists only for payments made via Intellix, i.e., by adopting treasury management (included with Premier Checking)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Business online banking (no approval queue documented) vs Intellix 'Dual Control Authorization'"
+    }
+   ],
+   "frontstage": "Intellix: payment held until a second user approves, then transmitted to Capital One for processing",
+   "actor": "customer",
+   "decision": "Need dual control → move payments to Intellix",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s922",
+      "src-capital-one-s086",
+      "src-capital-one-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s922",
+      "src-capital-one-s086",
+      "src-capital-one-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s922",
+      "src-capital-one-s086",
+      "src-capital-one-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s922",
+      "src-capital-one-s086",
+      "src-capital-one-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j21-4",
+     "text": "Small businesses below Intellix/treasury-management scale have no documented approval control for ACH or wires"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Alerts configurable ('control which alerts you receive')",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Alerts configurable ('control which alerts you receive')",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Configurable alerts",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m06",
+   "code": "M06",
+   "stage": "exception",
+   "title": "Returns / unauthorized ACH",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "unknown",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j21:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Business banker / branch; Contact Us",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact"
+    }
+   ],
+   "frontstage": "Business banker / branch; Contact Us",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J21",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P11-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "unknown",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [],
+ "notifications": [
+  {
+   "event": "account_alerts",
+   "channels": [
+    "unknown"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Capability exists but SMB payment journeys are the least documented area on capitalone.com.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,870 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j01",
+ "title": "Consumer sends money to a new recipient with Zelle® (mobile)",
+ "bank": "jpmorgan-chase",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a person I know instantly using their mobile number or email",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens 'Pay & Transfer' and sees 'Send money with Zelle®' (also…",
+   "customer_action": "Customer opens 'Pay & Transfer' and sees 'Send money with Zelle®' (also in side menu)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay & Transfer > Send money with Zelle®"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "First use (app): side menu 'Send money with Zelle®' > 'Get started' >…",
+   "customer_action": "First use (app): side menu 'Send money with Zelle®' > 'Get started' > tell us your primary email address > accept the service agreement > 'Next' > verify email with one-time activation code > 'Done'. Web: 'Pay & transfer' menu > 'Pay bills & send money with Zelle®' > 'Set up' > choose/enter primary email > accept > 'Next' > activation code > 'Next'. Business: 'Pay and Transfer' > 'Send Money with Zelle®' > 'Get started' > choose account, add email or U.S. mobile > 'Next' > mobile number > 'Next' (up to 5 emails) > code > 'Next' > 'Done' or 'Send or request money'.",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle enrollment screens"
+    }
+   ],
+   "frontstage": "Chase validates token with Zelle directory; up to 5 email addresses allowed; savings accounts cannot enroll",
+   "actor": "customer",
+   "decision": "Token already enrolled at another bank -> must use different token or move it",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s016",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s016",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s016",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Enter one-time activation code sent to phone/email, tap 'Next' then…",
+   "customer_action": "Enter one-time activation code sent to phone/email, tap 'Next' then 'Done' or 'Send or request money'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activation code screen"
+    }
+   ],
+   "frontstage": "One-time code step-up",
+   "actor": "customer",
+   "decision": null,
+   "notification": "Activation code via SMS/email",
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s016",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s016",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s016",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Add recipient: pick from synced phone contacts, type U.S.…",
+   "customer_action": "Add recipient: pick from synced phone contacts, type U.S. mobile/email/Zelle tag, or scan recipient QR from 'Select Recipient' screen",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Select Recipient > add contact / QR icon"
+    }
+   ],
+   "frontstage": "Displays recipient's registered first name for verification",
+   "actor": "customer",
+   "decision": "Enrolled vs not enrolled recipient",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-jpmorgan-chase-jpm-j01-4",
+     "text": "Display name check is the only wrong-recipient safeguard"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Enter amount and select the checking account to send from; optional…",
+   "customer_action": "Enter amount and select the checking account to send from; optional memo; optional recurring/future-dated schedule",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Amount / account screen"
+    }
+   ],
+   "frontstage": "Shows applicable daily tier limit and remaining amount within tier",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Tap 'Review & send'; review recipient, amount, account",
+   "customer_action": "Tap 'Review & send'; review recipient, amount, account",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review & send"
+    }
+   ],
+   "frontstage": "Chase runs internal/fraud review; may delay, hold or contact customer",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "If payment appears to originate from social-media contact, answer…",
+   "customer_action": "If payment appears to originate from social-media contact, answer payment-purpose and contact-origin questions; Chase may block",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Scam interstitial / questionnaire. Published wording (Security Center ALERT): 'For your protection, Chase will not allow you to send Zelle® payments identified as originating from contact through social media.' The in-flow purpose/contact-origin question text itself is still only visible after sign-in."
+    }
+   ],
+   "frontstage": "Policy effective March 23, 2025",
+   "actor": "customer",
+   "decision": "Truthful answers required; untruthful answers can restrict Zelle access",
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s042",
+      "src-jpmorgan-chase-s045",
+      "src-jpmorgan-chase-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s042",
+      "src-jpmorgan-chase-s045",
+      "src-jpmorgan-chase-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s042",
+      "src-jpmorgan-chase-s045",
+      "src-jpmorgan-chase-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s042",
+      "src-jpmorgan-chase-s045",
+      "src-jpmorgan-chase-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-jpmorgan-chase-jpm-j01-7",
+     "text": "Legitimate marketplace payments may be blocked (analyst criticism)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m08",
+   "code": "M08",
+   "stage": "review-authorize",
+   "title": "Tap 'Send it now'",
+   "customer_action": "Tap 'Send it now'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send it now"
+    }
+   ],
+   "frontstage": "Payment funded; Zelle network delivers",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m09",
+   "code": "M09",
+   "stage": "execute-track",
+   "title": "Enrolled recipient usually receives funds within a few minutes; select…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "States: Pending -> In Process -> Completed",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m10",
+   "code": "M10",
+   "stage": "confirm-complete",
+   "title": "Confirmation screen; alerts by push/email/SMS per preferences;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation screen; alerts by push/email/SMS per preferences; recipient notified by Zelle",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Payment sent alert",
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043",
+      "src-jpmorgan-chase-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m11",
+   "code": "M11",
+   "stage": "manage",
+   "title": "View/cancel pending payments (only if recipient unenrolled), manage…",
+   "customer_action": "View/cancel pending payments (only if recipient unenrolled), manage repeating payments, Zelle settings (tokens, QR 'My Code')",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle > See activity / Zelle settings"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m12",
+   "code": "M12",
+   "stage": "exception",
+   "title": "See exception paths (unenrolled, wrong recipient, scam, unauthorized,…",
+   "customer_action": "See exception paths (unenrolled, wrong recipient, scam, unauthorized, social-media block)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity / phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j01:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Scam: 'Please contact our customer support team at 1-800-935-9935, opt.…",
+   "customer_action": "Scam: 'Please contact our customer support team at 1-800-935-9935, opt. 8.' (business: 1-800-242-7338, 'Qualifying imposter scams may be eligible for reimbursement'); wrong recipient: 'see your deposit account agreement for information on your error resolution rights'; Secure Message Center; 24/7 in-app chat; branch.",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s059",
+      "src-jpmorgan-chase-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s059",
+      "src-jpmorgan-chase-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle activity page in app/web ('See activity'); Payment Activity on chase.com",
+  "states": [
+   "Pending",
+   "In Process",
+   "Completed",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled in Zelle",
+   "customer_experience": "Payment shows as pending; sender may 'Cancel This Payment' from activity while recipient remains unenrolled; a hold may be placed on funds.",
+   "bank_handling": "Chase sends first notice on Send On date and a second notice; recipient has 9 succeeding business days to enroll, else the transfer is cancelled (~10 days).",
+   "resolution": "Auto-cancel and release of funds, or completion on enrollment.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s001",
+    "src-jpmorgan-chase-s042"
+   ]
+  },
+  {
+   "trigger": "Sent to wrong person / wrong token (recipient enrolled)",
+   "customer_experience": "Payment is final; 'Zelle payments cannot be reversed'.",
+   "bank_handling": "Customer told to call support immediately (1-800-935-9935 consumer; 1-800-242-7338 business); Chase may attempt recovery but gives no guarantee.",
+   "resolution": "Usually unrecoverable unless recipient returns funds.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s001",
+    "src-jpmorgan-chase-s032",
+    "src-jpmorgan-chase-s012"
+   ]
+  },
+  {
+   "trigger": "Authorized push-payment scam (customer tricked into sending)",
+   "customer_experience": "Customer calls 1-800-935-9935 option 8 to file a claim; told recovery is 'difficult'.",
+   "bank_handling": "Chase states no reimbursement for authorized Zelle payments 'except under a limited program for certain imposter scams' (Zelle network imposter-scam policy, 2023). CFPB suit over Zelle scams (Dec 2024) was dismissed with prejudice March 4, 2025.",
+   "resolution": "Case-by-case; qualifying imposter scams (e.g., bank/government impersonation) may be reimbursed.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s015",
+    "src-jpmorgan-chase-s032",
+    "src-jpmorgan-chase-s042",
+    "src-jpmorgan-chase-s046",
+    "src-jpmorgan-chase-s007"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle transfer (account takeover)",
+   "customer_experience": "Report immediately by phone or Security Center; EFTA protections apply.",
+   "bank_handling": "Full coverage if reported within 2 business days; up to $500 liability after; 60-day statement rule; provisional credit within 10 business days; decision within 10/45/90 days.",
+   "resolution": "Reimbursement for valid, timely-reported unauthorized transactions.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s042",
+    "src-jpmorgan-chase-s057",
+    "src-jpmorgan-chase-s007"
+   ]
+  },
+  {
+   "trigger": "Payment identified as originating from social media contact",
+   "customer_experience": "Chase may ask payment purpose and how the sender contacted the recipient; payment may be delayed, declined or blocked; Zelle access may be restricted for untruthful answers.",
+   "bank_handling": "Policy effective March 23, 2025 under updated Zelle Service Terms; Chase cites ~50% of reported scams starting on social media.",
+   "resolution": "Payment blocked; customer directed to other payment methods with purchase protection.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s007",
+    "src-jpmorgan-chase-s042",
+    "src-jpmorgan-chase-s045"
+   ]
+  },
+  {
+   "trigger": "Daily tier limit exceeded or insufficient funds on Send On date",
+   "customer_experience": "App shows remaining amount within tier at setup; repeating/future-dated transfer fails without retry if funds insufficient.",
+   "bank_handling": "Chase may decline on Send On date if amount exceeds tier limit; no automatic retry.",
+   "resolution": "Customer re-initiates.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s001",
+    "src-jpmorgan-chase-s042"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent_or_received",
+   "channels": [
+    "push",
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "recipient_not_enrolled_notice (1st on Send On date, 2nd reminder)",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "request_received",
+   "channels": [
+    "email",
+    "sms",
+    "push"
+   ],
+   "configurable": null,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Deep in-app embedding (contact sync, QR, split from transaction detail, recurring) is best-in-class; Chase is the only big bank with a published social-media-origin block and purpose questionnaire, trading some false positives for scam reduction. Cancellation only for unenrolled recipients. Exact scam-interstitial wording is not public.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

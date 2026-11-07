@@ -1,0 +1,884 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j01",
+ "title": "Consumer enrolls and sends money to a new recipient with Zelle (mobile)",
+ "bank": "capital-one",
+ "product": "zelle",
+ "persona": "360 Checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a person back in minutes using only their phone number or email",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens the checking account in the Capital One Mobile app and…",
+   "customer_action": "Customer opens the checking account in the Capital One Mobile app and sees 'Send Money with Zelle®' as an account action",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Main menu > [checking account] > 'Send Money with Zelle®'"
+    }
+   ],
+   "frontstage": "Zelle is surfaced per checking account (360 Checking, MONEY Teen Checking eligible); app page lists Zelle as a free feature",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002",
+      "src-capital-one-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002",
+      "src-capital-one-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002",
+      "src-capital-one-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002",
+      "src-capital-one-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-1",
+     "text": "Zelle is account-scoped rather than a top-level 'Pay & Transfer' hub; no global money-movement menu is documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "First-time user accepts Zelle terms, chooses the email or U.S. mobile…",
+   "customer_action": "First-time user accepts Zelle terms, chooses the email or U.S. mobile number to be found by, and completes verification",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Send Money with Zelle®' > enrollment"
+    }
+   ],
+   "frontstage": "Bank registers token with Zelle directory; if token was enrolled at another bank, customer is asked to confirm it can be moved",
+   "actor": "customer",
+   "decision": "Token already enrolled elsewhere -> confirm transfer of token",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-2",
+     "text": "Enrollment must be done in the mobile app (help center: 'you must first enroll through the Capital One Mobile app')"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Customer adds a recipient by full name + U.S. mobile number or email,…",
+   "customer_action": "Customer adds a recipient by full name + U.S. mobile number or email, picks from phone contacts, or scans the recipient's Zelle QR code ('Use a QR Code' on Select Recipient screen)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle > Send > 'Select Recipient' (QR icon)"
+    }
+   ],
+   "frontstage": "For QR, the recipient's name is displayed for confirmation; directory lookup indicates whether recipient is enrolled",
+   "actor": "customer",
+   "decision": "Recipient enrolled vs not enrolled (since 2025-03-31 both parties must be enrolled through a participating bank; unenrolled recipient gets a 14-day claim window)",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-3",
+     "text": "No split-bill or group feature"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Customer enters amount and optional memo",
+   "customer_action": "Customer enters amount and optional memo",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle > Send > amount / 'Memo' field"
+    }
+   ],
+   "frontstage": "Current available send limit is shown while setting up the payment",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s077"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s077"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s077"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s077"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-4",
+     "text": "Limits are dynamic and not published"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Customer reviews recipient details and taps/slides to authorize",
+   "customer_action": "Customer reviews recipient details and taps/slides to authorize",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review screen > slide to send"
+    }
+   ],
+   "frontstage": "Current available send limit is displayed in the app/online 'when setting up a payment'; a one-time passcode may be required (customers without an OTP-capable mobile number cannot send). Public pages instruct only to 'double-check the information… You may not be able to cancel the payment if you use the wrong email address or U.S. mobile number'; no scam-warning interstitial is documented.",
+   "actor": "customer",
+   "decision": "OTP challenge pass/fail",
+   "notification": "OTP via SMS (when triggered)",
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s049",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s049",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s049",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s049",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-5",
+     "text": "No documented scam-warning interstitial on the review screen (unlike several large-bank peers); scam guidance lives on the marketing FAQ"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Payment is submitted to the Zelle network; enrolled recipients…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity page"
+    }
+   ],
+   "frontstage": "Payment appears on the Zelle activity page and in account transactions; payments to unenrolled recipients remain pending up to 14 days",
+   "actor": "network",
+   "decision": null,
+   "notification": "Recipient notified by the method they enrolled with (email/SMS)",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "Customer sees confirmation; transaction posts to checking history",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation / Recent Transactions"
+    }
+   ],
+   "frontstage": "Posts as a Zelle debit",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Push/email alerts configurable via account alert settings (generic)",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Customer can cancel a payment only while the recipient is unenrolled:…",
+   "customer_action": "Customer can cancel a payment only while the recipient is unenrolled: activity page > select payment > 'Cancel This Payment'; scheduled Zelle payments must be canceled by 11:59 PM ET the day before",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity page > payment > 'Cancel This Payment'"
+    }
+   ],
+   "frontstage": "Once recipient is enrolled, payment is irreversible",
+   "actor": "customer",
+   "decision": "Recipient enrolled? -> no cancel",
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Customer manages Zelle settings and QR code ('Zelle settings' > 'Zelle…",
+   "customer_action": "Customer manages Zelle settings and QR code ('Zelle settings' > 'Zelle QR code' > 'My Code' print/share)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send Money with Zelle® > Zelle settings"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Payment to an unenrolled recipient expires after 14 days and funds…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "Auto-reversal",
+   "actor": "network",
+   "decision": null,
+   "notification": "unknown",
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Sent to wrong person / scam: customer calls customer support…",
+   "customer_action": "Sent to wrong person / scam: customer calls customer support immediately (800-655-2265); bank states no purchase protection and authorized payments may not be recoverable; unauthorized (fraud) transfers handled under EFT error-resolution with $0 liability if reported within 2 business days",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone only: Zelle FAQ 'I believe I've been a victim of a scam… Please contact our customer support team at 800-655-2265'. The Fraud & Disputes help center offers 'Common scam types' education but no scam-report article (/report-a-scam/ 404); in-app 'Report a problem' is documented only for card transactions."
+    }
+   ],
+   "frontstage": "EFT investigation: results within 10 business days, up to 45 days (90 for new accounts) with provisional credit if longer",
+   "actor": "customer",
+   "decision": "Authorized (scam) vs unauthorized (fraud)",
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038",
+      "src-capital-one-s044",
+      "src-capital-one-s074",
+      "src-capital-one-s932"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038",
+      "src-capital-one-s044",
+      "src-capital-one-s074",
+      "src-capital-one-s932"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038",
+      "src-capital-one-s044",
+      "src-capital-one-s074",
+      "src-capital-one-s932"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038",
+      "src-capital-one-s044",
+      "src-capital-one-s074",
+      "src-capital-one-s932"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-11",
+     "text": "No in-app Zelle dispute/scam reporting flow documented; Eno is explicitly not a channel for EFT errors"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j01:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Support via Zelle FAQ on capitalone.com, phone banking 800-655-2265 (8…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help Center / Contact Us"
+    }
+   ],
+   "frontstage": "Support via Zelle FAQ on capitalone.com, phone banking 800-655-2265 (8 am-11 pm ET, 7 days), EFT error line 1-888-464-0727, or Eno for informational questions",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s080",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s080",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s002",
+      "src-capital-one-s080",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j01-12",
+     "text": "Help-center Zelle article is thin (3 steps) compared with the marketing FAQ"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "COF-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle activity page in app; account Recent/Upcoming Transactions",
+  "states": [
+   "Pending (recipient not enrolled)",
+   "Sent/Completed",
+   "Expired/returned (14 days)"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 days",
+   "customer_experience": "Payment pending then expires; money returns to account",
+   "bank_handling": "Automatic",
+   "resolution": "Funds restored",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s001"
+   ]
+  },
+  {
+   "trigger": "Wrong recipient / authorized push payment scam",
+   "customer_experience": "Customer must phone 800-655-2265 ('I believe I've been a victim of a scam. Who should I contact? Please contact our customer support team'); no in-app scam report, no scam interstitial documented at send time, and no purchase protection from Capital One or Zelle. Help center provides 'Common scam types' education only.",
+   "bank_handling": "Case-by-case; no published reimbursement commitment for scams",
+   "resolution": "No Capital One-published scam reimbursement commitment and no purchase protection; victims must phone 800-655-2265. Zelle network rules (since 30 June 2023) provide recovery/refund for qualifying imposter scams (government, bank or provider impersonation), assessed case by case; other authorized-payment scams generally not reimbursed.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s001",
+    "src-capital-one-s044",
+    "src-capital-one-s047",
+    "src-capital-one-s932",
+    "src-capital-one-s954"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle transfer",
+   "customer_experience": "Report by phone (800-655-2265) or in writing",
+   "bank_handling": "Reg E investigation 10/45/90 days; provisional credit",
+   "resolution": "$0 liability if reported within 2 business days; up to $500 / full loss tiers thereafter",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s074"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "recipient_notified_of_payment",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "otp_challenge",
+   "channels": [
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_sent_alert",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": true,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Clean account-scoped flow with QR and contact pick; OTP step-up on send. Gaps vs peers: no split, no documented scam interstitial, no in-app scam/dispute reporting, enrollment only in app, and the 2025 Zelle terms expressly exclude business use.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,514 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j12",
+ "title": "Consumer receives a Request for Payment and pays over the RTP network",
+ "bank": "bank-of-america",
+ "product": "rtp",
+ "persona": "Consumer with biller that sends RFPs",
+ "segment": "consumer",
+ "customer_goal": "Pay a bill instantly from an RFP",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "inferred",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "RFP from a participating biller arrives in Online Banking (UI location…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "UNKNOWN"
+    }
+   ],
+   "frontstage": "RFP from a participating biller arrives in Online Banking (UI location not documented)",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j12-1",
+     "text": "No marketing or help content found"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Choose one-time immediate payment or future-scheduled date; no recurring",
+   "customer_action": "Choose one-time immediate payment or future-scheduled date; no recurring",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "RFP payment screen"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Immediate vs scheduled",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Review; payment is irrevocable once sent",
+   "customer_action": "Review; payment is irrevocable once sent",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Sent in real time to payee's bank 24/7 via RTP",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Sent in real time to payee's bank 24/7 via RTP",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Confirmation (details UNKNOWN)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation (details UNKNOWN)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Cancel future-scheduled RTP payment by 11:59 p.m. ET prior business…",
+   "customer_action": "Cancel future-scheduled RTP payment by 11:59 p.m. ET prior business day; turn off duplicate eBills/recurring for same payee",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfers section > Activity (website or mobile app)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Immediate RTP payments cannot be reversed or stopped; disputes with…",
+   "customer_action": "Immediate RTP payments cannot be reversed or stopped; disputes with payee handled directly; Reg E for unauthorized",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "800-432-1000"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
+   "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica / Help"
+    }
+   ],
+   "frontstage": "Erica (non-generative) selects from predefined answers; can connect to financial specialists",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j12-8",
+     "text": "Erica English-only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j12:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
+   "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact us / Report suspicious activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J12",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P08-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "UNKNOWN",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Duplicate payment via eBill/autopay and RFP",
+   "customer_experience": "Double payment",
+   "bank_handling": "Customer responsible to disable duplicates",
+   "resolution": "Refund from payee",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s013"
+   ]
+  },
+  {
+   "trigger": "Customer paid an RFP and did not receive goods/services or was scammed",
+   "customer_experience": "Payment is irrevocable; customer must resolve with the Payee",
+   "bank_handling": "'We do not offer a protection program for authorized payments made through RTP'; bank reimburses Payee late fees only if it failed to process properly",
+   "resolution": "No bank reimbursement for authorized RTP payments; Reg E applies only to unauthorized transfers",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s013"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Terms published since at least 2021 but no visible consumer UI documentation; likely limited biller rollout.",
+ "x-mi_evidence": "INFERRED"
+}

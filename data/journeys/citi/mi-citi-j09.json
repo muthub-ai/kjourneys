@@ -1,0 +1,574 @@
+{
+ "id": "urn:kos:journey:citi:citi-j09",
+ "title": "Consumer sends an international wire in foreign currency (Remittance Transfer)",
+ "bank": "citi",
+ "product": "wire-international",
+ "persona": "Customer paying family abroad",
+ "segment": "consumer",
+ "customer_goal": "Send money overseas with a known delivery amount",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer selects international wire in Citi Online/Citi Mobile App",
+   "customer_action": "Customer selects international wire in Citi Online/Citi Mobile App",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire transfers > International"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enter beneficiary, IBAN/account number and BIC/SORT; indicate the…",
+   "customer_action": "Enter beneficiary, IBAN/account number and BIC/SORT; indicate the currency of the beneficiary account (local currency, another Citi-offered currency, or USD)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Payees and Bills > People > Add a New Payee/Recipient: SWIFT/BIC, SORT or routing; name + account number; account currency; IBAN (Europe) / CLABE (Mexico); country-specific fields (e.g., reason for payment) prompted at payee set-up"
+    }
+   ],
+   "frontstage": "Citi may rely on the customer's currency statement",
+   "actor": "customer",
+   "decision": "Currency known vs. unknown",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Enter amount; Citi shows its exchange rate (commission included) and…",
+   "customer_action": "Enter amount; Citi shows its exchange rate (commission included) and the federally mandated remittance disclosures (fees, rate, amount to be received, availability date)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Remittance disclosure"
+    }
+   ],
+   "frontstage": "If disclosures cannot be provided Citi must reject the request",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review and authenticate per security procedure",
+   "customer_action": "Review and authenticate per security procedure",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Transfer sent via correspondents; intermediary fees may reduce amount…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Transfer sent via correspondents; intermediary fees may reduce amount received",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Receipt with disclosures; cancellation rights notice",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Receipt"
+    }
+   ],
+   "frontstage": "Receipt with disclosures; cancellation rights notice",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Cancel or amend within 30 minutes of authorizing; later only with…",
+   "customer_action": "Cancel or amend within 30 minutes of authorizing; later only with beneficiary bank consent",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Activity Page > specific transaction > cancel (within 30 minutes) or call 1-888-606-9716; refund within 3 business days"
+    }
+   ],
+   "frontstage": "Refund in USD less fees at Citi rate on return date",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Error: contact Citi within 180 days of promised availability; Citi…",
+   "customer_action": "Error: contact Citi within 180 days of promised availability; Citi decides within 90 days; remedy credit or resend",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Remittance error claim"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Non-execution due to sanctions/AML screening: Citi not liable",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "Non-execution due to sanctions/AML screening: Citi not liable",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j09:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j09-10",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J09",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P05-S03",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": [
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Not documented",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "30-minute cancellation",
+   "customer_experience": "Full refund",
+   "bank_handling": "Reg E remittance rule",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s016"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "rejection_notice",
+   "channels": [
+    "email",
+    "in_app_message"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Reg E-compliant remittance flow; FX transparency at initiation.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

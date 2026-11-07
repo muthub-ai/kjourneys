@@ -1,0 +1,467 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j08",
+ "title": "Customer pays a biller instantly over RTP in Bill Pay (incl. responding to a Request for Payment)",
+ "bank": "truist",
+ "product": "rtp",
+ "persona": "Retail/SMB customer paying a last-minute bill",
+ "segment": "consumer",
+ "customer_goal": "Pay a bill in seconds, 24/7, incl. a bill the biller pushed to me",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Within Bill Pay, instant payment option appears for billers reachable…",
+   "customer_action": "Within Bill Pay, instant payment option appears for billers reachable on an instant network; a biller's Request for Payment (RFP) may be presented",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay bills"
+    }
+   ],
+   "frontstage": "Agreement §4(dd) 'Instant Payments' (contract name 'Instant Payment Bill Pay Service'): available 'Where supported by a participating Biller' from an eligible Payment Account (eligibility set at Truist's discretion); applies to payments 'sent over an instant payment network (such as the RTP® network ...) ... whether or not in response to a Request for Payment'. In-UI label still not evidenced (no public FAQ; site search 'instant' returns nothing).",
+   "actor": "customer",
+   "decision": "RFP-initiated vs customer-initiated",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s015",
+      "src-truist-s905",
+      "src-truist-s906",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s015",
+      "src-truist-s905",
+      "src-truist-s906",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s015",
+      "src-truist-s905",
+      "src-truist-s906",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s015",
+      "src-truist-s905",
+      "src-truist-s906",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j08-1",
+     "text": "UI label not evidenced"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Enter amount (cannot exceed RFP amount when responding) and date…",
+   "customer_action": "Enter amount (cannot exceed RFP amount when responding) and date (immediate or scheduled); recurring not available",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Make a bill payment (instant)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Submit; editable/cancellable until processing begins, then irrevocable",
+   "customer_action": "Submit; editable/cancellable until processing begins, then irrevocable",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review & submit"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Debit immediately (or on scheduled date); funds to biller within…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Bills"
+    }
+   ],
+   "frontstage": "Debit immediately (or on scheduled date); funds to biller within seconds 24/7/365 via RTP",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Confirmation of receipt; alias-RfP pilot design adds second…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation of receipt; alias-RfP pilot design adds second confirmation when applied by biller",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "confirmation",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Scheduled future instant payments cancelled if funding account/profile…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Bills"
+    }
+   ],
+   "frontstage": "Scheduled future instant payments cancelled if funding account/profile closed (agreement change 9/17/2026)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Keystroke/typo errors and goods/services disputes are customer's…",
+   "customer_action": "Keystroke/typo errors and goods/services disputes are customer's responsibility; irrevocable after processing",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j08:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "844-4TRUIST",
+   "customer_action": "844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J08",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P03-S05",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Manage Bills",
+  "states": [
+   "Scheduled",
+   "Sent"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Instant payment to wrong amount/biller",
+   "customer_experience": "Irrevocable",
+   "bank_handling": "None",
+   "resolution": "Resolve with biller",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s014"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "instant_payment_confirmation",
+   "channels": [
+    "in-app"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Truist contractually supports consumer RTP bill payments and RFP responses — ahead of many peers; GA of alias-based RfP unclear.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

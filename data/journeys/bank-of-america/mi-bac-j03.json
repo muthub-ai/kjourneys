@@ -1,0 +1,640 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j03",
+ "title": "Consumer enrolls a mobile/email to receive Zelle® and receives a payment (mobile app)",
+ "bank": "bank-of-america",
+ "product": "zelle",
+ "persona": "Customer expecting money from a friend",
+ "segment": "consumer",
+ "customer_goal": "Get paid into my BofA account without sharing account numbers",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Accounts > Pay & Transfer > Zelle® > Settings (or 'Set up Zelle®' if…",
+   "customer_action": "Accounts > Pay & Transfer > Zelle® > Settings (or 'Set up Zelle®' if not enrolled)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > Settings"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Tap 'Add mobile number or email'; on Zelle® Setup enter Contact Info…",
+   "customer_action": "Tap 'Add mobile number or email'; on Zelle® Setup enter Contact Info and choose Deposit Account; read disclosures; tap I AGREE",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Setup"
+    }
+   ],
+   "frontstage": "VOIP/landline/Google Voice/1-800/international numbers rejected; up to 5 tokens each to a different account",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j03-2",
+     "text": "Code delivery issues (spam folder; short codes 739-81 / 992-17 must be enabled)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Enter one-time authorization code; Continue; 'Success' > Done",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Authorization code"
+    }
+   ],
+   "frontstage": "Bank will never call/text to ask for this code",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Sender at any Zelle bank sends to the enrolled token; funds post in…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Bank may delay or block incoming transfers for verification/fraud",
+   "actor": "network",
+   "decision": "Clean vs pending review",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Email/text alert that money was received",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Email/text alert that money was received",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text/push",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Change deposit account, add/remove tokens, share My QR Code (QR icon >…",
+   "customer_action": "Change deposit account, add/remove tokens, share My QR Code (QR icon > My QR Code)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > Settings / QR icon"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Incoming pending review: hold cannot be removed by customer; check…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Message Center"
+    }
+   ],
+   "frontstage": "Incoming pending review: hold cannot be removed by customer; check Message Center; completes or fails after decision",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Message Center",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j03-7",
+     "text": "No ETA given"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Sender used wrong/unenrolled token: Zelle sends enrollment prompt;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle email/text"
+    }
+   ],
+   "frontstage": "Sender used wrong/unenrolled token: Zelle sends enrollment prompt; unclaimed after 14 days returns to sender",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "18 months of inactivity: bank may verify contact info and cancel…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Zelle settings"
+    }
+   ],
+   "frontstage": "18 months of inactivity: bank may verify contact info and cancel enrollment",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
+   "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica / Help"
+    }
+   ],
+   "frontstage": "Erica (non-generative) selects from predefined answers; can connect to financial specialists",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j03-10",
+     "text": "Erica English-only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j03:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
+   "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact us / Report suspicious activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J03",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P01-S03",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Activity; Message Center",
+  "states": [
+   "Incoming pending review",
+   "Received"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Incoming payment held for review",
+   "customer_experience": "Funds not available; Message Center note",
+   "bank_handling": "Fraud review",
+   "resolution": "Completes or fails",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s002"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_received",
+   "channels": [
+    "email",
+    "text"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Clear enrollment; risk holds on inbound are a known friction.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

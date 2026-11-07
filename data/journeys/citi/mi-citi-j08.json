@@ -1,0 +1,674 @@
+{
+ "id": "urn:kos:journey:citi:citi-j08",
+ "title": "Consumer sends a domestic wire online (Citi Online / Citi Mobile App)",
+ "bank": "citi",
+ "product": "wire-domestic",
+ "persona": "Home buyer wiring a down payment",
+ "segment": "consumer",
+ "customer_goal": "Send guaranteed same-day funds to a title company",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens wire transfers in Citi Online/Citi Mobile App…",
+   "customer_action": "Customer opens wire transfers in Citi Online/Citi Mobile App ('Immediate Funds Transfers' in the T&Cs); new accounts may have wires delayed until active",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "citi.com Services > MOVE YOUR MONEY > Transfers > 'Wire or Intra Citi Transfers' / hub CTA 'Make a wire transfer'; Citi Online Payments Dashboard"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s028",
+      "src-citi-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s028",
+      "src-citi-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enter beneficiary name, account number and beneficiary bank (must be a…",
+   "customer_action": "Enter beneficiary name, account number and beneficiary bank (must be a Fed member/correspondent or CHIPS member)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payments Dashboard > 'Manage Payees and Bills' > 'People' tab > 'Add a New Payee/Recipient' (indicate person or business); required: payee name, bank name/location, ABA number, account number"
+    }
+   ],
+   "frontstage": "Citi relies on the account number even if the name does not match",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j08-2",
+     "text": "Name/number mismatch risk borne by customer"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Enter amount (USD only to U.S. beneficiaries) and reference; choose…",
+   "customer_action": "Enter amount (USD only to U.S. beneficiaries) and reference; choose immediate, one-time future-dated or recurring domestic transfer; saved wires can be reused; cutoff 6:45 PM ET for same-business-day processing; online fee $25 Standard/$17.50 Priority (rising to $30/$25 on Aug 1, 2026), waived Citigold/CPC",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire details"
+    }
+   ],
+   "frontstage": "Requests after cutoff or on non-Business Days process next Business Day",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review; authenticate with Online Credentials plus any additional…",
+   "customer_action": "Review; authenticate with Online Credentials plus any additional authorization code/authentication; Citi Mobile biometrics or 6 Digit PIN enhance the procedure; safety tips state Citi will never ask you to wire funds to a 'safe' account",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review / authorization code"
+    }
+   ],
+   "frontstage": "Security procedure verifies authorization, not content",
+   "actor": "customer",
+   "decision": "Daily limit exceeded or insufficient funds -> rejected",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Customer is directed to the General Funds Transfers Safety Tips before…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Appendix 5 'General Funds Transfers Safety Tips' (CDAA); wire page fraud tips"
+    }
+   ],
+   "frontstage": "CDAA 8.1/9.1 instruct customers to read Appendix 5 before using wire services; whether the checklist is rendered as an in-flow interstitial is not confirmed",
+   "actor": "bank-system",
+   "decision": "Customer reconsiders / verifies vs. proceeds",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s911",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s911",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s911",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j08-5",
+     "text": "Acknowledgement shifts responsibility to the customer; no evidence of a mandatory in-flow pause"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Citi executes via Fedwire/CHIPS; status not described in public sources",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payments Dashboard > 'All Transfer Activity' (filter 'Wires & Transfers'; 'Scheduled' tab for future-dated/recurring)"
+    }
+   ],
+   "frontstage": "Citi executes via Fedwire/CHIPS; status not described in public sources",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "Confirmation; if rejected the customer receives an email the same day…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Email"
+    }
+   ],
+   "frontstage": "Confirmation; if rejected the customer receives an email the same day and the request is cancelled after one attempt",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Rejection email",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Cancel/amend only before execution; after execution requires…",
+   "customer_action": "Cancel/amend only before execution; after execution requires beneficiary bank consent and fees",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "All Transfer Activity > Wires & Transfers > Scheduled > 'View' (edit) or 'Cancel'; same-day wires only before execution; future-dated/recurring until the day before; after sending, recall requests depend on the beneficiary bank"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Error claim within 30 days of execution notice; Citi errors remedied…",
+   "customer_action": "Error claim within 30 days of execution notice; Citi errors remedied under UCC 4A with interest at the savings rate; legal action within one year",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Claim"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Wire scam (authorized): recall attempted via beneficiary bank; no…",
+   "customer_action": "Wire scam (authorized): recall attempted via beneficiary bank; no guarantee; no reimbursement right",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Recall request"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j08:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j08-11",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J08",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P05-S01",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": [
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Not documented",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Rejected for limit/insufficient funds/incomplete info",
+   "customer_experience": "Email same day; cancelled after one attempt",
+   "bank_handling": "Automatic",
+   "resolution": "Customer resubmits",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s016"
+   ]
+  },
+  {
+   "trigger": "Recall after execution",
+   "customer_experience": "After the wire is sent it cannot be cancelled; the customer may ask Citi to recall it ('time is of the essence' for scams); funds return only if the beneficiary bank agrees, possibly less fees; returned foreign-currency wires come back in USD at Citi's rate on the date of return",
+   "bank_handling": "Best efforts",
+   "resolution": "May be refused",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s016"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "wire_rejected",
+   "channels": [
+    "email",
+    "in_app_message"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Legal terms are thorough; UX-level documentation (screens, statuses, OTP) is absent publicly.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

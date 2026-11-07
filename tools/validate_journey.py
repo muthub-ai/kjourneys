@@ -122,15 +122,15 @@ for j in d["journeys"]:
         need(m["stage"] in j["stages"], f"ref: {w} stage {m['stage']} not in journey.stages")
         if m["stage"] in stage_order:
             need(stage_order[m["stage"]] >= prev_stage, f"order: {w} stage goes backwards"); prev_stage = stage_order[m["stage"]]
-        need(m["process"] in PROCS, f"ref: {w} process {m['process']}")
-        unique(m["controls"], f"{w} control ref"); unique(m["applications"], f"{w} app ref")
-        for c in m["controls"]: need(c in CTRLS, f"ref: {w} control {c}")
-        for a in m["applications"]: need(a in APPS, f"ref: {w} app {a}")
-        for c in m["capabilities"]:
+        if m.get("process") is not None: need(m["process"] in PROCS, f"ref: {w} process {m['process']}")
+        unique(m.get("controls", []), f"{w} control ref"); unique(m.get("applications", []), f"{w} app ref")
+        for c in m.get("controls", []): need(c in CTRLS, f"ref: {w} control {c}")
+        for a in m.get("applications", []): need(a in APPS, f"ref: {w} app {a}")
+        for c in m.get("capabilities", []):
             need(c in CAPS, f"ref: {w} capability {c}")
-            need(any(c in app_caps.get(a, set()) for a in m["applications"]), f"ref: {w} capability {c} not realized by any of its apps")
-        unique([f["id"] for f in m["fail_points"]], f"{w} fail point")
-        for k in m["kpis"]:
+            need(any(c in app_caps.get(a, set()) for a in m.get("applications", [])), f"ref: {w} capability {c} not realized by any of its apps")
+        unique([f["id"] for f in m.get("fail_points", [])], f"{w} fail point")
+        for k in m.get("kpis", []):
             need(k["metric"] in METS, f"ref: {w} metric {k['metric']}")
             if k.get("actual") is not None:
                 mm = metric.get(k["metric"], {})
@@ -139,7 +139,7 @@ for j in d["journeys"]:
                 need(k.get("period_end") is not None, f"metric: {w} actual for {k['metric']} needs period_end")
         need(set(m["evidence"]) <= LAYERS, f"layer: {w} unknown evidence layer(s) {sorted(set(m['evidence']) - LAYERS)}")
         for L, a in m["evidence"].items(): check_assertion(a, f"{w} evidence.{L}")
-    unique([f["id"] for m in j["moments"] for f in m["fail_points"]], "fail point (journey-wide)")
+    unique([f["id"] for m in j["moments"] for f in m.get("fail_points", [])], "fail point (journey-wide)")
     for v in j.get("variants", []):
         urn_kind(v["id"], "variant", bank, f"variant {v['code']}")
         for x in [v["entry"], v["exit"], *v["moments"], *v["notes"].keys()]: need(x in order, f"ref: variant {v['code']} moment {x}")
@@ -160,13 +160,52 @@ for j in d["journeys"]:
         need(g["steward"] is not None and g["retention_class"], f"gate: journey is {j['status']} without steward and retention class")
         if j["bank"] not in focus_ids:
             need(g["ci_legal_review"]["status"] == "approved", f"gate: competitor journey is {j['status']} without approved CI legal review")
-        for c in (CTRLS & {c for m in j["moments"] for c in m["controls"]}):
+        for c in (CTRLS & {c for m in j["moments"] for c in m.get("controls", [])}):
             cc = next(x for x in d["controls"] if x["id"] == c)
             need(cc["grc_control_id"], f"gate: control {c} has no GRC ID")
         for a in d["applications"]:
-            if a["app_id"] in {x for m in j["moments"] for x in m["applications"]} and a["layer"] != "external":
+            if a["app_id"] in {x for m in j["moments"] for x in m.get("applications", [])} and a["layer"] != "external":
                 need(a["cmdb_ci"], f"gate: app {a['app_id']} has no CMDB link")
     need(g["ci_legal_review"]["status"] != "rejected" or j["status"] not in GATED, "gate: journey with rejected legal review cannot be in review or published")
+
+# ---------- 4b. journey extras ----------
+JIDS = {j["id"] for j in d["journeys"]}
+SRCJ = {(j["bank"], j.get("source_journey_id")): j["id"] for j in d["journeys"] if j.get("source_journey_id")}
+unique([(j["bank"], j.get("source_journey_id")) for j in d["journeys"] if j.get("source_journey_id")], "MI journey id")
+for j in d["journeys"]:
+    for ex in j.get("exceptions", []):
+        for s in ex.get("source_ids", []): need(s in SOURCES, f"ref: journey {j['id']} exception source {s}")
+
+# ---------- 4c. MI analytical collections ----------
+STAGE_IDS = STAGES
+COMPS = {c["id"] for c in d.get("composites", [])}
+unique([c["id"] for c in d.get("composites", [])], "composite")
+for c in d.get("composites", []):
+    need(c["product"] in PRODUCTS, f"ref: composite {c['id']} product {c['product']}")
+    for st in c["steps"]: need(st["stage"] in STAGE_IDS, f"ref: composite {c['id']} step {st['n']} stage {st['stage']}")
+unique([f["id"] for f in d.get("findings", [])], "finding")
+for f in d.get("findings", []):
+    w = f"finding {f['id']}"
+    need(f["bank"] in PARTIES, f"ref: {w} bank {f['bank']}")
+    if f.get("journey"): need(f["journey"] in JIDS, f"ref: {w} journey {f['journey']}")
+    if f.get("product"): need(f["product"] in PRODUCTS, f"ref: {w} product {f['product']}")
+    if f.get("stage"): need(f["stage"] in STAGE_IDS, f"ref: {w} stage {f['stage']}")
+    if f.get("composite"): need(f["composite"] in COMPS, f"ref: {w} composite {f['composite']}")
+    need((f["type"] == "strength") == f["id"].startswith("STR-"), f"type: {w} strength records must use STR- ids and gaps GAP- ids")
+    for s in f["source_ids"]: need(s in SOURCES, f"ref: {w} source {s}")
+for o in d.get("observations", []): need(o["bank"] in PARTIES, f"ref: observation bank {o['bank']}")
+unique([(v["bank"], v["id"]) for v in d.get("verifications", [])], "verification")
+for v in d.get("verifications", []): need(v["bank"] in PARTIES, f"ref: verification {v['id']} bank {v['bank']}")
+unique([(x["bank"], x["network"]) for x in d.get("participation", [])], "participation")
+for x in d.get("participation", []):
+    need(x["bank"] in PARTIES, f"ref: participation bank {x['bank']}")
+    for s in x.get("source_ids", []): need(s in SOURCES, f"ref: participation {x['bank']}/{x['network']} source {s}")
+unique([r["bank"] for r in d.get("rankings", [])], "ranking bank"); unique([r["rank"] for r in d.get("rankings", [])], "ranking rank")
+for r in d.get("rankings", []): need(r["bank"] in PARTIES, f"ref: ranking bank {r['bank']}")
+REPORTS = {s["report_version"] for s in d["sources"] if s["kind"] == "mi-report"}
+for coll in ("findings", "composites", "observations", "verifications", "participation", "rankings"):
+    for x in d.get(coll, []):
+        need(x["report_version"] in REPORTS or not REPORTS, f"ref: {coll} record cites report {x['report_version']}, which is not an ingested mi-report source")
 
 # ---------- 5. portfolio and comparison ----------
 pf = d.get("portfolio", {})

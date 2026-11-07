@@ -1,0 +1,502 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j15",
+ "title": "Small business sends a real-time payment (TCH RTP) to a vendor",
+ "bank": "jpmorgan-chase",
+ "product": "rtp",
+ "persona": "Owner paying a time-critical invoice",
+ "segment": "small-business",
+ "customer_goal": "Pay a vendor in moments",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Payment Center comparison shows 'Real-time payment' (moments, 1% max…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment Center"
+    }
+   ],
+   "frontstage": "Payment Center comparison shows 'Real-time payment' (moments, 1% max $25, not reversible)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enrollment in ACH Payment Services covers all three delivery methods;…",
+   "customer_action": "Enrollment in ACH Payment Services covers all three delivery methods; Company Activation tab shows Approved / Denied / Activate per company; payee must bank at an institution reachable on the RTP network ('60% of accounts can receive Real-Time Payments' per Chase's Feb 2026 guide).",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH Payment Services"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Payee bank not eligible -> option hidden",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Select payees (mixed Standard/Same-Day/Real-Time allowed) > 'Schedule…",
+   "customer_action": "Select payees (mixed Standard/Same-Day/Real-Time allowed) > 'Schedule payments' > choose 'Pay from account', 'Delivery method' = Real-Time, 'Deliver by date', 'Amount', optional 'Addendum line' > 'Schedule payments' > confirmation.",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Schedule payments"
+    }
+   ],
+   "frontstage": "Unavailable 2-6 AM ET business days",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review; Chase Dual Control approval if enabled; processing begins after…",
+   "customer_action": "Review; Chase Dual Control approval if enabled; processing begins after approval and cannot be cancelled",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pending approvals"
+    }
+   ],
+   "frontstage": "'If using Dual Control–Transactions, it will be sent to queue of pending approvals' ('Pay & transfer' > 'Pending approvals'); once approved and processed, real-time payments are irrevocable ('Service Transfers are irrevocable and cannot be reversed').",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Settles 'within moments' over 'the RTP network managed by The Clearing…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity"
+    }
+   ],
+   "frontstage": "Settles 'within moments' over 'the RTP network managed by The Clearing House' (Chase's Feb 2026 Connect ACH guide); cutoff Midnight ET; $25,000 per transaction; typically completes within 15 seconds (DSA); sender is notified if the transfer fails, receiver is not. FedNow is not named in the Connect/Chase Business Online product guide.",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s044",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s044",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Status 'Paid'/'Completed'; alert",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Status 'Paid'/'Completed'; alert",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "No cancel/reversal; history 13 months",
+   "customer_action": "No cancel/reversal; history 13 months",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Failure reasons (DSA): insufficient funds, risk/compliance review,…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity"
+    }
+   ],
+   "frontstage": "Failure reasons (DSA): insufficient funds, risk/compliance review, receiver rejects or declines real-time transfers, limit exceeded, receiver account closed/invalid/ineligible or monitored, sender account monitored, service unavailable; 'If you are the Sender, we will notify you if a Service Transfer fails.' Return request (not guaranteed): call 877-CHASEPC (877-242-7372). Statuses 'Rejected'/'Failed' in Payment activity.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j15:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Business support line",
+   "customer_action": "Business support line",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "1-800-242-7338"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J15",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P09-S03",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Payment activity",
+  "states": [
+   "Pending approval",
+   "In process",
+   "Paid",
+   "Rejected",
+   "Failed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payment initiated during 2-6 AM ET window",
+   "customer_experience": "Option unavailable",
+   "bank_handling": "Scheduling restriction",
+   "resolution": "Wait or use same-day ACH",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s028"
+   ]
+  },
+  {
+   "trigger": "Request to return a completed real-time payment (wrong amount/recipient)",
+   "customer_experience": "No cancel; customer calls 877-CHASEPC (877-242-7372) to submit a Return Request.",
+   "bank_handling": "'Our sole obligation is to transmit the Return Request to the Receiving Financial Institution through the Real-Time Payments Service. We cannot guarantee that funds will be returned in whole or in part.' Receiver is not obligated to return funds; disputes are between sender and receiver.",
+   "resolution": "Funds returned only if the receiver agrees.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s910"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_processed",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Chase is one of few banks offering self-service RTP/FedNow send to SMBs with transparent pricing; consumers have no RTP/FedNow send exposure (receive only, undocumented).",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

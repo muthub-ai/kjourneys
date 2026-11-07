@@ -1,0 +1,652 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j26",
+ "title": "Consumer reviews recurring payments/subscriptions and turns a card off (Control Tower / Card Settings)",
+ "bank": "wells-fargo",
+ "product": "other",
+ "persona": "Consumer auditing subscriptions",
+ "segment": "consumer",
+ "customer_goal": "See every merchant with my card on file and stop unwanted charges",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Menu > Card Settings: 'view recurring payments', 'turn cards on or…",
+   "customer_action": "Menu > Card Settings: 'view recurring payments', 'turn cards on or off', 'add cards to digital wallets', 'manage account access' (Control Tower experience, launched Oct 2018)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Card Settings (App Store: 'Easily activate or turn cards on or off, add cards to digital wallets, view recurring payments, and manage account access with Card Settings'); the 'Control Tower' label is retired on public pages (all URLs 404)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s053",
+      "src-wells-fargo-s054",
+      "src-wells-fargo-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s053",
+      "src-wells-fargo-s054",
+      "src-wells-fargo-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m02",
+   "code": "M02",
+   "stage": "discover",
+   "title": "Or ask Fargo about subscriptions ('subscription tracking')",
+   "customer_action": "Or ask Fargo about subscriptions ('subscription tracking')",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Fargo"
+    }
+   ],
+   "frontstage": "Fargo 'Subscription insights: Keep tabs on recurring charges and subscriptions across your Wells Fargo accounts'; prompt 'I need to turn my card off.' routes to card controls (turning a card off does not stop recurring transactions or refunds).",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m03",
+   "code": "M03",
+   "stage": "discover",
+   "title": "Web (observed): Security & Support > 'Turn Card On or Off' (also listed…",
+   "customer_action": "Web (observed): Security & Support > 'Turn Card On or Off' (also listed in the Accounts menu) opens 'Card Controls' with a tab per card",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Security & Support > Turn Card On or Off"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "None",
+   "customer_action": "None",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Web (observed): per card — 'Card details' · 'Card On or Off' toggle ·…",
+   "customer_action": "Web (observed): per card — 'Card details' · 'Card On or Off' toggle · 'International usage' on/off toggle · 'Digital wallets' panel listing wallets the card is provisioned to · 'Recurring payments & subscriptions' panel listing merchants on file; disclosure 'Turning off your card is not a replacement for reporting your card lost or stolen'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Card Controls"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m06",
+   "code": "M06",
+   "stage": "initiate",
+   "title": "Review list of recurring merchants, wallets and connected…",
+   "customer_action": "Review list of recurring merchants, wallets and connected apps/aggregators for a card",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Recurring payments"
+    }
+   ],
+   "frontstage": "Consolidated digital-footprint view",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s044",
+      "src-wells-fargo-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s044",
+      "src-wells-fargo-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s044",
+      "src-wells-fargo-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Toggle card off / manage data-sharing access",
+   "customer_action": "Toggle card off / manage data-sharing access",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Card on/off"
+    }
+   ],
+   "frontstage": "Turning off also disables digital card numbers; does NOT stop recurring transactions or refunds",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j26-7",
+     "text": "Card-off does not block recurring charges; no in-app 'cancel subscription' action evidenced"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "Card transaction alerts for purchases",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Card transaction alerts for purchases",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m09",
+   "code": "M09",
+   "stage": "confirm-complete",
+   "title": "In-app confirmation of card status",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Card Settings"
+    }
+   ],
+   "frontstage": "In-app confirmation of card status",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m10",
+   "code": "M10",
+   "stage": "manage",
+   "title": "Re-enable card; manage wallets (Paze/Apple/Google/Samsung/PayPal)",
+   "customer_action": "Re-enable card; manage wallets (Paze/Apple/Google/Samsung/PayPal)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Card Settings > Digital Wallet"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s059",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s059",
+      "src-wells-fargo-s065"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Disputed recurring charge → card dispute (Zero Liability); call number…",
+   "customer_action": "Disputed recurring charge → card dispute (Zero Liability); call number on card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s023",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s023",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j26:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "1-800-869-3557; debit claim status 1-800-548-9554",
+   "customer_action": "1-800-869-3557; debit claim status 1-800-548-9554",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J26",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P10-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "Card Settings",
+  "states": [
+   "Card on",
+   "Card off"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recurring charge continues after card off",
+   "customer_experience": "Charge posts",
+   "bank_handling": "By design",
+   "resolution": "Contact merchant / dispute",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s065"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "card_transaction_alert",
+   "channels": [
+    "push",
+    "text",
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Control Tower was an industry first (2018) but Wells Fargo's public pages no longer brand it; the landing/FAQ pages were unreachable (blocked). Capability persists as 'view recurring payments' in Card Settings per app-store listing.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

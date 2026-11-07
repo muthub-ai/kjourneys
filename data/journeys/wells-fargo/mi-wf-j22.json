@@ -1,0 +1,451 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j22",
+ "title": "Commercial instant payment (RTP®/FedNow®) via Gateway API with rail routing",
+ "bank": "wells-fargo",
+ "product": "rtp",
+ "persona": "Treasury analyst/approver at a middle-market company",
+ "segment": "commercial",
+ "customer_goal": "Commercial instant payment (RTP®/FedNow®) via Gateway API with rail routing",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "inferred",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Client system verifies the creditor's routing number for…",
+   "customer_action": "Client system verifies the creditor's routing number for instant-payment reachability before sending",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "GET /instant-payments/v1/routing-numbers/verify/{routing_number}?amount={amount}"
+    }
+   ],
+   "frontstage": "Returns instant_payments_enabled (YES/NO), participant_available (YES/NO), payment_rail (RTP | FEDNOW | RTP_and_FEDNOW | INACTIVE), participant_name and supported_messages (e.g., CRDT Credit Transfer); 7-second timeout; amount parameter checks the network amount limit",
+   "actor": "customer",
+   "decision": "Routing number not enabled / participant unavailable → do not send; choose another rail",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j22-1",
+     "text": "Requires developer integration (mutual TLS, OAuth2 key rotation every 24 hours)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Client system calls instant payments API; bank routes to RTP or FedNow…",
+   "customer_action": "Client system calls instant payments API; bank routes to RTP or FedNow based on receiver reachability",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Wells Fargo Gateway Instant Payments API v1: POST /instant-payments/v1/credit-transfers (after GET /routing-numbers/verify/{rtn}?amount= confirms instant_payments_enabled=YES, participant_available=YES and payment_rail RTP | FEDNOW | RTP_and_FEDNOW)"
+    }
+   ],
+   "frontstage": "'API channel that routes each payment over the most suitable rail'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049",
+      "src-wells-fargo-s912",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049",
+      "src-wells-fargo-s912",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049",
+      "src-wells-fargo-s912",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Entitlements/limits enforced; dual custody for API payments UNKNOWN",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Entitlements/limits enforced; dual custody for API payments UNKNOWN",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Payment settles in seconds 24/7/365; status via API / payment status…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "API response"
+    }
+   ],
+   "frontstage": "Create-credit-transfer call has an 18-second timeout; response carries a UETR; GET /credit-transfers/{uetr} or POST /search return status_information.status RECEIVED | PROCESSING | COMPLETED | REJECTED with code (IN01, IN02, MM20, MM21, NARR) and description; end_to_end_id is visible to the recipient; duplicate_check lookback window prevents duplicates; idempotency-key header supported.",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m05",
+   "code": "M05",
+   "stage": "manage",
+   "title": "Receive instant credits; Perfect Receivables proxy numbers for…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Perfect Receivables"
+    }
+   ],
+   "frontstage": "Receive instant credits; Perfect Receivables proxy numbers for routing/identification",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m06",
+   "code": "M06",
+   "stage": "exception",
+   "title": "REJECTED status with reason code; 'A response with a reason code NARR…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "REJECTED status with reason code; 'A response with a reason code NARR indicates the transaction was rejected and was not successfully processed... please contact Gateway Customer Support before proceeding' with a retry. Request for Payment send/receive for commercial clients remains UNKNOWN (not in public v1 reference).",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j22:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
+   "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s066",
+      "src-wells-fargo-s070"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s066",
+      "src-wells-fargo-s070"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J22",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P13-S04",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "API / Vantage",
+  "states": [
+   "RECEIVED",
+   "PROCESSING",
+   "COMPLETED",
+   "REJECTED"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Receiver not reachable on either rail",
+   "customer_experience": "Fallback rail/ACH UNKNOWN",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  },
+  {
+   "trigger": "Creditor routing number not instant-payments enabled, participant unavailable, or rail INACTIVE",
+   "customer_experience": "Verify-routing-number call returns instant_payments_enabled=NO / participant_available=NO / payment_rail=INACTIVE; client should not submit the credit transfer",
+   "bank_handling": "No payment created; client falls back to ACH or wire via other Gateway APIs",
+   "resolution": "Re-check later or use another rail",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s916"
+   ]
+  },
+  {
+   "trigger": "Credit transfer REJECTED by network or receiving bank",
+   "customer_experience": "status REJECTED with code IN01/IN02/MM20/MM21 or NARR (free-form text from the receiving bank)",
+   "bank_handling": "'Wells Fargo does not control or validate' NARR content; 'If you are troubleshooting or considering a retry due to this field, please contact Gateway Customer Support before proceeding'",
+   "resolution": "Contact Gateway Customer Support; retry only after guidance",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s916"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "pending_decision_alert",
+   "channels": [
+    "push",
+    "email",
+    "text",
+    "Message Center"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Bank page explicitly claims instant send over both RTP and FedNow via API; portal UI for instant payments and commercial RfP not evidenced (dedicated pages blocked).",
+ "x-mi_evidence": "INFERRED"
+}

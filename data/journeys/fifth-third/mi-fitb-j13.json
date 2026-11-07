@@ -1,0 +1,490 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j13",
+ "title": "Consumer receives an instant payment (RTP) e.g., gig payout, insurance claim",
+ "bank": "fifth-third",
+ "product": "rtp",
+ "persona": "Gig worker paid by a platform on Fifth Third/Newline RTP",
+ "segment": "consumer",
+ "customer_goal": "Get paid instantly, 24/7",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Passive: payer platform (e.g., Mazooma/Trustly/Stripe via Newline or…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "Passive: payer platform (e.g., Mazooma/Trustly/Stripe via Newline or any RTP participant) pushes credit to the customer's account number",
+   "actor": "third-party",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s065",
+      "src-fifth-third-s064",
+      "src-fifth-third-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s065",
+      "src-fifth-third-s064",
+      "src-fifth-third-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m02",
+   "code": "M02",
+   "stage": "execute-track",
+   "title": "Fifth Third is an RTP participant (since 2017/18); credit posts in…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account activity"
+    }
+   ],
+   "frontstage": "Fifth Third is an RTP participant (since 2017/18); credit posts in seconds, 24/7/365; Early Pay excludes RTP credits",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s036",
+      "src-fifth-third-s018",
+      "src-fifth-third-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s036",
+      "src-fifth-third-s018",
+      "src-fifth-third-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m03",
+   "code": "M03",
+   "stage": "confirm-complete",
+   "title": "Real-time transaction/deposit alert if configured",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Real-time transaction/deposit alert if configured",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "push/email/SMS",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m04",
+   "code": "M04",
+   "stage": "manage",
+   "title": "No consumer-initiated RTP/FedNow send; no RfP consumer UI evidenced",
+   "customer_action": "No consumer-initiated RTP/FedNow send; no RfP consumer UI evidenced",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "FedNow receive is not available: Fifth Third Bank (and legacy Comerica)…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "FedNow receive is not available: Fifth Third Bank (and legacy Comerica) is absent from the Federal Reserve's FedNow participant list as of 11/2/2026, and the FTD transition page says FedNow receipt is 'unavailable until further notice'. A payer choosing FedNow cannot route to a Fifth Third account; RTP receive works.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s924",
+      "src-fifth-third-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s924",
+      "src-fifth-third-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
+   "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Floating icon at bottom of app/online banking; 'Ask Us'"
+    }
+   ],
+   "frontstage": "Jeanie NLU recognizes intent ~90%; AI interface (6/2026) routes typed requests such as 'transfer funds' to the task screen, Jeanie, or live support",
+   "actor": "customer",
+   "decision": "Self-serve vs. hand-off to representative",
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j13-6",
+     "text": "Jeanie's published task list excludes money movement itself"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m07",
+   "code": "M07",
+   "stage": "support",
+   "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
+   "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j13-7",
+     "text": "Two different sets of hours published on the same page"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j13:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "locations.53.com; timetrade scheduling"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J13",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P08-S05",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Account activity",
+  "states": [
+   "Posted"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payer attempts FedNow credit",
+   "customer_experience": "May fail/return if Fifth Third not receiving on FedNow",
+   "bank_handling": "Fifth Third is not a FedNow participant (Fed list 11/2/2026), so the sending institution cannot route a FedNow credit to a Fifth Third routing number; payer must use RTP, ACH or wire.",
+   "resolution": "Payer uses RTP/ACH",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s025",
+    "src-fifth-third-s047",
+    "src-fifth-third-s924",
+    "src-fifth-third-s925",
+    "src-fifth-third-s927"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "transaction_alert",
+   "channels": [
+    "push",
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "RTP receive is mature; FedNow is the conspicuous gap for a top-10 bank in late 2026.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

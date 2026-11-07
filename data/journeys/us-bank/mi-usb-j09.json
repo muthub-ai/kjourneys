@@ -1,0 +1,924 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j09",
+ "title": "Consumer adds a biller and pays a bill (electronic or check)",
+ "bank": "us-bank",
+ "product": "bill-pay",
+ "persona": "Consumer paying a utility",
+ "segment": "consumer",
+ "customer_goal": "Pay any company or person from one place and know when it arrives",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Transfer & pay > Pay bills (dashboard with Your bills, Activity,…",
+   "customer_action": "Transfer & pay > Pay bills (dashboard with Your bills, Activity, Autopay tabs); Smart Assistant can answer 'Do I have any bills due next week?' and pay card statements",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer & pay > Pay bills"
+    }
+   ],
+   "frontstage": "Bill Pay 'finds bills you already pay' (marketing)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s033",
+      "src-us-bank-s001",
+      "src-us-bank-s083"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s033",
+      "src-us-bank-s001",
+      "src-us-bank-s083"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s033",
+      "src-us-bank-s001",
+      "src-us-bank-s083"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Add bill > search biller name (match to statement) and enter account…",
+   "customer_action": "Add bill > search biller name (match to statement) and enter account info, or Add manually > company or person > statement details, address prefill (PO Box manual) > Continue to first payment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay bills > 'Search for bills' (search box) / 'Let us find your bills' > Get started > disclosure pop-up (merchant networks + credit report; authorization checkbox) > Continue > 'Here's what we found' > 'Add bill' > 'Your bills' confirmation; manual: 'Add a bill' > search > 'Add account info' (account number, bill nickname, ZIP) > Continue"
+    }
+   ],
+   "frontstage": "Billers found via the credit-report/merchant-network search are linked electronically; 'Bills that are added manually will ensure the merchant is paid via paper check.'",
+   "actor": "customer",
+   "decision": "Search vs manual; company vs person",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s039",
+      "src-us-bank-s908"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s039",
+      "src-us-bank-s908"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s039",
+      "src-us-bank-s908"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Optionally add an external bank account as a funding source for U.S.…",
+   "customer_action": "Optionally add an external bank account as a funding source for U.S. Bank bills: Pay from > 'Manage external accounts' > 'Add an external account' > personal/business > log in with other bank or enter routing/account manually (microdeposits)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay bills > bill > Pay from > Manage external accounts"
+    }
+   ],
+   "frontstage": "Credential-linked accounts usable immediately; manual accounts may require 'Request temporary deposit' verification; external accounts cannot be edited, only removed",
+   "actor": "customer",
+   "decision": "Pay from U.S. Bank account vs external account",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s951"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s951"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s951"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Select bill, enter amount, payment (deliver-by) date and from-account;…",
+   "customer_action": "Select bill, enter amount, payment (deliver-by) date and from-account; web adds more bills with running total; expedited same-day/overnight offered where biller supports it ($14.95)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay bills dashboard (U.S. Bank bills auto-listed; 'Other bills' section; shows scheduled/autopay status): type amount inline > deliver-by date and pay-from account (U.S. Bank bills can be paid from an external account via Pay from > 'Manage external accounts') > 'Review & pay N bill(s)' (upper right)"
+    }
+   ],
+   "frontstage": "Deliver-by date ≤2 bd ⇒ electronic; ≥3 bd ⇒ paper check; method cannot be changed by customer",
+   "actor": "customer",
+   "decision": "Standard vs expedited",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s038",
+      "src-us-bank-s909",
+      "src-us-bank-s951",
+      "src-us-bank-s953"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s038",
+      "src-us-bank-s909",
+      "src-us-bank-s951",
+      "src-us-bank-s953"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s038",
+      "src-us-bank-s909",
+      "src-us-bank-s951",
+      "src-us-bank-s953"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s038",
+      "src-us-bank-s909",
+      "src-us-bank-s951",
+      "src-us-bank-s953"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j09-4",
+     "text": "Credit cards cannot fund; Safe Debit electronic-only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Review & pay (web) / Pay now (app)",
+   "customer_action": "Review & pay (web) / Pay now (app)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Review and pay' pop-up confirming payee, amount, date, from-account > 'Pay $X' (web); 'Pay now' (app)"
+    }
+   ],
+   "frontstage": "No step-up documented",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s033",
+      "src-us-bank-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s033",
+      "src-us-bank-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s033",
+      "src-us-bank-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Activity tab shows scheduled, pending and paid; electronic 1–2 bd,…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Payment complete' payment-details page (amount, date, confirmation number) > 'Back to bills'; dashboard shows the bill as 'scheduled for <date>'; Activity tab"
+    }
+   ],
+   "frontstage": "Activity tab shows scheduled, pending and paid; electronic 1–2 bd, check 5–6 bd; most payments covered by Payment Guarantee (not taxes, court orders, securities)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Bill-pay reminders; optional alerts",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s034",
+      "src-us-bank-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s034",
+      "src-us-bank-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s033",
+      "src-us-bank-s034",
+      "src-us-bank-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j09-6",
+     "text": "Check payments may clear early with some billers (fee dispute line)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "On-screen confirmation; reminder/alert options via Notifications",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Notifications"
+    }
+   ],
+   "frontstage": "On-screen confirmation; reminder/alert options via Notifications",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/push/text (configurable)",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s084"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s084"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001",
+      "src-us-bank-s084"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j09-7",
+     "text": "No payment-sent email documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Edit/cancel pending payment (pencil icon; not within 3 business days of…",
+   "customer_action": "Edit/cancel pending payment (pencil icon; not within 3 business days of scheduled date); stop payment on a bill-pay paper check: Pay bills > Activity > select payment > 'Stop this check' > Continue > 'Agree & submit' (≥3 business days before the scheduled date; in-process/completed cannot be stopped)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > pencil icon"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s007",
+      "src-us-bank-s034",
+      "src-us-bank-s038",
+      "src-us-bank-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s007",
+      "src-us-bank-s034",
+      "src-us-bank-s038",
+      "src-us-bank-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s007",
+      "src-us-bank-s034",
+      "src-us-bank-s038",
+      "src-us-bank-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j09-8",
+     "text": "3-business-day lock is restrictive"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Update biller info (KB0069387); groups (min 5 billers)",
+   "customer_action": "Update biller info (KB0069387); groups (min 5 billers)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Settings > Create groups"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s042",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s042",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Payment sent by check unexpectedly: delete and re-add biller with…",
+   "customer_action": "Payment sent by check unexpectedly: delete and re-add biller with latest statement",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Late fee under Payment Guarantee / early-clearing fee: call 800-987-7237",
+   "customer_action": "Late fee under Payment Guarantee / early-clearing fee: call 800-987-7237",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Bill Pay support 800-987-7237"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m12",
+   "code": "M12",
+   "stage": "exception",
+   "title": "Unauthorized bill payment covered by Digital Security Coverage",
+   "customer_action": "Unauthorized bill payment covered by Digital Security Coverage",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
+   "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help & services; Smart Assistant; 800-USBANKS; Make an appointment"
+    }
+   ],
+   "frontstage": "Contact-center or branch handles",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j09-13",
+     "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j09:m14",
+   "code": "M14",
+   "stage": "support",
+   "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
+   "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Fraud claim intake",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J09",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P05-S01",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": [
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "Pay bills > biller > Activity tab",
+  "states": [
+   "Scheduled",
+   "Pending",
+   "Paid"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Early check clearing fee",
+   "customer_experience": "Call bill pay support",
+   "bank_handling": "Fee dispute",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s001"
+   ]
+  },
+  {
+   "trigger": "Unauthorized bill payment",
+   "customer_experience": "Report",
+   "bank_handling": "Digital Security Coverage",
+   "resolution": "Reimbursed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s017"
+   ]
+  },
+  {
+   "trigger": "Need to stop a bill-pay paper check",
+   "customer_experience": "Pay bills > Activity > select the scheduled payment > 'Stop this check' > Continue > review > 'Agree & submit'",
+   "bank_handling": "Stop request must be at least three business days before the scheduled payment date; payments in process or completed cannot be stopped; checks valid six months",
+   "resolution": "Stop placed digitally or via Bill Pay support 800-987-7237",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s952"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "bill_due_reminder",
+   "channels": [
+    "push",
+    "email",
+    "text"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Mature bill pay with payee search/manual, groups, expedited; drawbacks are the inability to choose electronic vs check and the 3-day edit lock. Marketing page still shows legacy 'Pay bills & transfer' / 'Bill payments' labels vs KB 'Transfer & pay > Pay bills' – IA inconsistency.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

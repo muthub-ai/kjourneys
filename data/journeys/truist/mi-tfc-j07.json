@@ -1,0 +1,529 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j07",
+ "title": "Customer enrolls in eBills and sets recurring/auto pay",
+ "bank": "truist",
+ "product": "bill-pay",
+ "persona": "Retail customer automating recurring bills",
+ "segment": "consumer",
+ "customer_goal": "Receive bills electronically and pay automatically",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Within Pay bills, payee shows eBill option for participating billers…",
+   "customer_action": "Within Pay bills, payee shows eBill option for participating billers ('Bill pay and eBills')",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay bills / payee detail"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Biller participates vs not",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Designate the biller and elect eBills (or accept a biller's temporary…",
+   "customer_action": "Designate the biller and elect eBills (or accept a biller's temporary trial); may be asked for biller credentials to retrieve bill data; first eBill up to 60 days",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "eBill enrollment"
+    }
+   ],
+   "frontstage": "Bill Discovery clause allows Truist to surface bills",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j07-2",
+     "text": "60-day activation lag"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Set recurring payment (frequency) or pay each eBill on receipt; 'choose…",
+   "customer_action": "Set recurring payment (frequency) or pay each eBill on receipt; 'choose payment frequency' and 'track due dates'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Make a bill payment (recurring)"
+    }
+   ],
+   "frontstage": "Recurring payments can be modified/cancelled; 'autopay' label not confirmed",
+   "actor": "customer",
+   "decision": "Fixed recurring vs pay-on-receipt",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j07-3",
+     "text": "Autopay-by-eBill-amount not explicitly documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review & submit",
+   "customer_action": "Review & submit",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review & submit"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "eBills arrive in Bill Pay; due-date tracking; payment alerts",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay bills"
+    }
+   ],
+   "frontstage": "eBills arrive in Bill Pay; due-date tracking; payment alerts",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "payment alerts / eBill arrival alert (inferred)",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Payment confirmation per occurrence",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Bills"
+    }
+   ],
+   "frontstage": "Payment confirmation per occurrence",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Edit/cancel recurring series; stop eBills (cancellation up to 60 days)",
+   "customer_action": "Edit/cancel recurring series; stop eBills (cancellation up to 60 days)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Bills"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "eBill accuracy disputes handled with the biller; Truist not liable for…",
+   "customer_action": "eBill accuracy disputes handled with the biller; Truist not liable for biller non-delivery",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Biller"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j07:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "844-4TRUIST",
+   "customer_action": "844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J07",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P03-S03",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Pay bills; Manage Bills",
+  "states": [
+   "eBill received",
+   "Scheduled",
+   "Paid"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Biller does not participate",
+   "customer_experience": "No eBill; manual entry",
+   "bank_handling": "n/a",
+   "resolution": "Pay from paper bill",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s014"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ebill_received_or_due",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Standard eBill model; autopay-full-amount option not explicitly confirmed.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

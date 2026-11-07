@@ -1,0 +1,569 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j12",
+ "title": "Consumer deposits cash/checks at an Easy Deposit ATM and withdraws via Cardless ATM",
+ "bank": "fifth-third",
+ "product": "cash-atm-branch",
+ "persona": "Cash-heavy customer",
+ "segment": "consumer",
+ "customer_goal": "Deposit cash after hours; get cash without my card",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Locator > Advanced Filters > 'ATM Accepts Deposits'; app 'Cardless ATM…",
+   "customer_action": "Locator > Advanced Filters > 'ATM Accepts Deposits'; app 'Cardless ATM feature'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Branch & ATM Locator"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s014",
+      "src-fifth-third-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s014",
+      "src-fifth-third-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Insert checks/cash at Easy Deposit ATM; receipt can include check images",
+   "customer_action": "Insert checks/cash at Easy Deposit ATM; receipt can include check images",
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "Easy Deposit ATM"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s002",
+      "src-fifth-third-s014",
+      "src-fifth-third-s929",
+      "src-fifth-third-s932"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s002",
+      "src-fifth-third-s014",
+      "src-fifth-third-s929",
+      "src-fifth-third-s932"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Card + PIN (ATM) or app authentication (Cardless)",
+   "customer_action": "Card + PIN (ATM) or app authentication (Cardless)",
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "ATM / app"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Deposit posts per Deposit Account Rules; ATM transaction instant alerts",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Deposit posts per Deposit Account Rules; ATM transaction instant alerts",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "push/SMS 'Instant Alerts'",
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s016",
+      "src-fifth-third-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s016",
+      "src-fifth-third-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Receipt with images",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "Receipt"
+    }
+   ],
+   "frontstage": "Receipt with images",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "n/a",
+   "customer_action": "n/a",
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "ATM dispute -> 877-833-6197",
+   "customer_action": "ATM dispute -> 877-833-6197",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Disputes"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
+   "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Floating icon at bottom of app/online banking; 'Ask Us'"
+    }
+   ],
+   "frontstage": "Jeanie NLU recognizes intent ~90%; AI interface (6/2026) routes typed requests such as 'transfer funds' to the task screen, Jeanie, or live support",
+   "actor": "customer",
+   "decision": "Self-serve vs. hand-off to representative",
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s009",
+      "src-fifth-third-s058",
+      "src-fifth-third-s097"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j12-8",
+     "text": "Jeanie's published task list excludes money movement itself"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
+   "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer Service page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j12-9",
+     "text": "Two different sets of hours published on the same page"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j12:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "locations.53.com; timetrade scheduling"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s005",
+      "src-fifth-third-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J12",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P06-S01",
+ "channels": {
+  "entry": [
+   "atm"
+  ],
+  "other": [
+   "mobile-app",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Account activity",
+  "states": [
+   "Pending",
+   "Posted"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Suspicious card activity",
+   "customer_experience": "Card turned off; text asks confirm; reply yes/no",
+   "bank_handling": "Automatic",
+   "resolution": "Card reactivated or reissued",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s059"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "atm_transaction",
+   "channels": [
+    "push",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Cardless ATM step detail page blocked; suspicious-activity card-off/text-confirm control is well documented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

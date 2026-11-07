@@ -1,0 +1,837 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j05",
+ "title": "Consumer transfers between own Wells Fargo accounts (mobile), one-time and recurring",
+ "bank": "wells-fargo",
+ "product": "internal-transfer",
+ "persona": "Consumer topping up checking from savings",
+ "segment": "consumer",
+ "customer_goal": "Move money instantly to cover a purchase or automate savings",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Tap 'Transfer' in bottom bar (web: 'Transfer and Pay' > Transfer…",
+   "customer_action": "Tap 'Transfer' in bottom bar (web: 'Transfer and Pay' > Transfer Money); or ask Fargo 'Make a payment or transfer'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer tab"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "No setup — all WF deposit, credit, loan, brokerage accounts pre-listed",
+   "customer_action": "No setup — all WF deposit, credit, loan, brokerage accounts pre-listed",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "From/To pickers"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Choose From account, To account, 'Frequency' (ONCE or recurring options…",
+   "customer_action": "Choose From account, To account, 'Frequency' (ONCE or recurring options depending on account types), date via calendar icon, amount, optional 'Memo' (appears on statement)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer Money"
+    }
+   ],
+   "frontstage": "Frequency list varies by account pairing",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Tap 'Continue'",
+   "customer_action": "Tap 'Continue'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Continue"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Web (observed): 'Transfer Money' is a single form From / To / Frequency…",
+   "customer_action": "Web (observed): 'Transfer Money' is a single form From / To / Frequency / Amount → Cancel | Continue; From/To pickers list WF deposit accounts, the WF credit card (as a 'To' = pay card) and linked non-WF accounts; Frequency: Once, Daily, Weekly, Every two weeks, Twice a month, Last Friday of month, Monthly",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay > Transfer Money"
+    }
+   ],
+   "frontstage": "Right rail: 'Transfer & payment activity (n)' with scheduled items (View / Edit), 'Manage alerts', 'View your statements'; leaving the form with entries triggers a 'Leave This Page?' guard.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "frontstage": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Web (observed): 'Review and Transfer' shows From / To / Frequency /…",
+   "customer_action": "Web (observed): 'Review and Transfer' shows From / To / Frequency / Send on / Amount with the warning 'Review carefully. Transfer cannot be canceled.' and actions Cancel | Edit | Submit; FAQ links 'When will this transfer be credited to my account?' and 'What happens if there isn't enough money…' (observation stopped here; nothing submitted)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer Money > Review and Transfer"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "'Review and Transfer' page; tap 'Submit'",
+   "customer_action": "'Review and Transfer' page; tap 'Submit'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review and Transfer"
+    }
+   ],
+   "frontstage": "No step-up observed for internal transfers",
+   "actor": "customer",
+   "decision": "Same-day → immediate & irrevocable; future-dated → editable",
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "Same-day transfers post immediately; funds available for…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account Activity"
+    }
+   ],
+   "frontstage": "Immediate availability",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m09",
+   "code": "M09",
+   "stage": "execute-track",
+   "title": "Future/recurring appear in 'Scheduled Transfers & Payments'",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Scheduled Transfers & Payments"
+    }
+   ],
+   "frontstage": "Future/recurring appear in 'Scheduled Transfers & Payments'",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m10",
+   "code": "M10",
+   "stage": "confirm-complete",
+   "title": "Confirmation screen; servicing notification confirming transfer…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation screen; servicing notification confirming transfer (email/secure inbox)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/secure inbox",
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m11",
+   "code": "M11",
+   "stage": "manage",
+   "title": "Web (observed): 'Transfer & Payment Activity' table — Send on | From |…",
+   "customer_action": "Web (observed): 'Transfer & Payment Activity' table — Send on | From | To | Amount | Status | Action (View / Edit); View / Edit on a scheduled card autopay opens 'Autopay Details' (From / To / Frequency / Next payment / Ending / Amount option / Status) with Delete Autopay | Edit Autopay | One-time payment",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay > Transfer & Payment Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m12",
+   "code": "M12",
+   "stage": "manage",
+   "title": "Edit/delete future or recurring transfers via 'Edit Transfer'/'Delete…",
+   "customer_action": "Edit/delete future or recurring transfers via 'Edit Transfer'/'Delete Transfer' (mobile) or View/Edit, View/Delete (web) until 11:59 pm PT the day before",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Scheduled Transfers & Payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m13",
+   "code": "M13",
+   "stage": "exception",
+   "title": "Same-day transfer cannot be canceled after submission; weekend/holiday…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Same-day transfer cannot be canceled after submission; weekend/holiday dated transfers post next business day",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m14",
+   "code": "M14",
+   "stage": "support",
+   "title": "In-app Help/FAQs; Fargo assistant",
+   "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Help; Fargo"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s014",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s014",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m15",
+   "code": "M15",
+   "stage": "support",
+   "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
+   "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 15,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j05:m16",
+   "code": "M16",
+   "stage": "support",
+   "title": "Branch appointment via appointments.wellsfargo.com",
+   "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Make an appointment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 16,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J05",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P02-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "voice-chat-assistant",
+   "atm"
+  ]
+ },
+ "status_tracking": {
+  "where": "Web 'Transfer and payment Activity' (View/Edit, View/Delete); mobile 'Transfer' tab > 'Scheduled Transfers & Payments'; Account Activity shows 'pending' after 8 pm PT",
+  "states": [
+   "Scheduled",
+   "Pending",
+   "Posted/Completed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Insufficient funds",
+   "customer_experience": "WF decides at its discretion to pay (overdraft), or decline",
+   "bank_handling": "Discretionary",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Wrong account chosen on immediate transfer",
+   "customer_experience": "Cannot cancel; must reverse manually",
+   "bank_handling": null,
+   "resolution": "Customer makes offsetting transfer",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s006"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "transfer_scheduled/confirmation",
+   "channels": [
+    "email",
+    "secure inbox"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "deposit_posted / recent deposits alert",
+   "channels": [
+    "email",
+    "text",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "access_code (new external account)",
+   "channels": [
+    "text",
+    "push",
+    "call",
+    "SecurID"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Clean, no-friction; memo field and ATM transfers are nice touches.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

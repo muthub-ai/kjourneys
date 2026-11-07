@@ -1,0 +1,711 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j05",
+ "title": "Consumer links a non-Truist account and transfers money (external transfer)",
+ "bank": "truist",
+ "product": "ach-external-transfer",
+ "persona": "Retail customer consolidating accounts",
+ "segment": "consumer",
+ "customer_goal": "Pull or push money between my Truist account and my account at another bank",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Transfer & Pay > 'Transfer money and pay Truist accounts' tile; or…",
+   "customer_action": "Transfer & Pay > 'Transfer money and pay Truist accounts' tile; or home-screen external-account linking (app 3.4.0, Nov 2024)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfers page"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Select 'Manage external accounts' tab > 'Add non-Truist account'",
+   "customer_action": "Select 'Manage external accounts' tab > 'Add non-Truist account'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage external accounts"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "'Add an external account': enter Account type, Routing number, Account…",
+   "customer_action": "'Add an external account': enter Account type, Routing number, Account number > Continue; Review > Continue",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Add an external account"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Verify: 'Sign in to your external account' > 'Verify account' > enter…",
+   "customer_action": "Verify: 'Sign in to your external account' > 'Verify account' > enter the other bank's username/password > Sign in ('real-time verification of non-Truist transfer accounts' since 4.6.0, Oct 2025)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Verify account"
+    }
+   ],
+   "frontstage": "Real-time credential verification (4.6.0); App Store disclosure 'verification may take 1 – 3 business days'; agreement: 'You will be notified if we are unable to verify your ownership of an account' and additional verification may be required before or after enrollment and before or after any transfer.",
+   "actor": "customer",
+   "decision": "Instant verification succeeds vs fallback",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s010",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s010",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s010",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s010",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j05-4",
+     "text": "Customers may balk at sharing other-bank credentials"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m05",
+   "code": "M05",
+   "stage": "set-up",
+   "title": "Verified account appears in list of non-Truist accounts; edit/delete…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage external accounts"
+    }
+   ],
+   "frontstage": "Verified account appears in list of non-Truist accounts; edit/delete via ellipsis",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m06",
+   "code": "M06",
+   "stage": "initiate",
+   "title": "Make a transfer: choose From/To incl. external account, amount,…",
+   "customer_action": "Make a transfer: choose From/To incl. external account, amount, one-time (up to 1 year ahead) or recurring; choose speed where offered (Standard $3 / Next day $6 / Instant $3 from Oct 2026)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Make a transfer"
+    }
+   ],
+   "frontstage": "Application displays only the transfer option(s) each enrolled account is eligible for — 3-Business-Day (all users), Next-Day (bank discretion) and Instant (bank discretion; RTP network or other instant network; 24/7 incl. weekends/holidays) — plus the applicable cut-off time and limits at scheduling; one-time immediate, future-dated up to 1 year, or recurring.",
+   "actor": "customer",
+   "decision": "Speed selection (where offered)",
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s057",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s057",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s057",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s057",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j05-6",
+     "text": "Outbound external transfers are fee-bearing"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Review and Submit → Send Transfer",
+   "customer_action": "Review and Submit → Send Transfer",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review and Submit"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "3-day: debited next business day, credited third business day; after…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Transfers"
+    }
+   ],
+   "frontstage": "3-day: debited next business day, credited third business day; Next-Day: debited and credited next business day; Instant: 'debited and credited in real-time once a transfer begins processing', 'typically processed in seconds'. Status visible by logging in: 'pending' from request until released for processing → 'in process' until funds transferred → 'complete'. After cut-off → next business day.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m09",
+   "code": "M09",
+   "stage": "confirm-complete",
+   "title": "Confirmation; Payment Notifications alert if enabled",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Confirmation; Payment Notifications alert if enabled",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text",
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m10",
+   "code": "M10",
+   "stage": "manage",
+   "title": "Edit/delete scheduled transfer at no charge before processing",
+   "customer_action": "Edit/delete scheduled transfer at no charge before processing",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Transfers"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Returned/failed transfer (NSF, closed account) → not processed;…",
+   "customer_action": "Returned/failed transfer (NSF, closed account) → not processed; unauthorized → Reg E error resolution via 844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Online Banking Support"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j05:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Developer responses on Google Play route transfer problems to email…",
+   "customer_action": "Developer responses on Google Play route transfer problems to email support; Care Center 844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s010",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s010",
+      "src-truist-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J05",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P02-S04",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Log in to online/mobile banking (Transfers > Manage Transfers)",
+  "states": [
+   "Pending",
+   "In process",
+   "Complete",
+   "Scheduled (future-dated",
+   "inferred)"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "External account cannot be verified instantly",
+   "customer_experience": "1–3 business day verification",
+   "bank_handling": "Agreement: 'You will be notified if we are unable to verify your ownership of an account'; additional verification (ID/account documentation) may be required before or after enrollment; App Store: verification 'may take 1 – 3 business days'.",
+   "resolution": "Account enabled after verification",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s009",
+    "src-truist-s010",
+    "src-truist-s014",
+    "src-truist-s907",
+    "src-truist-s919"
+   ]
+  },
+  {
+   "trigger": "Transfer after cutoff",
+   "customer_experience": "Submitted next business day",
+   "bank_handling": "Queue",
+   "resolution": "Delayed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s014"
+   ]
+  },
+  {
+   "trigger": "Instant or Next-Day transfer option not offered for an account",
+   "customer_experience": "Only the eligible speed options appear for that From/To pair ('The application will display the transfer option(s) available for each account'); customer falls back to 3-Business-Day (available to all) or Next-Day if offered.",
+   "bank_handling": "Next-Day and Instant transfers are 'permitted only at our discretion' and depend on account eligibility for ACH or instant-network (RTP) transactions; Truist may add/remove eligible accounts without notice.",
+   "resolution": "Use an available option or a different account; no documented override path.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s907"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_notification",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Credential-based instant verification (2025) is modern and an Instant outbound tier arrives Oct 2026 (rail undisclosed); but Truist charges $3–$6 for outbound external transfers that most top-10 peers offer free, and the 3-day default lags. Business accounts excluded.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

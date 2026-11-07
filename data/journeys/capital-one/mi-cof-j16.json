@@ -1,0 +1,407 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j16",
+ "title": "Consumer deposits cash/check at a Capital One ATM or Café and uses cardless ATM",
+ "bank": "capital-one",
+ "product": "cash-atm-branch",
+ "persona": "Urban customer near a Café",
+ "segment": "consumer",
+ "customer_goal": "Deposit at a machine",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j16:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Locate deposit-taking Capital One ATM/Café or select Allpoint…",
+   "customer_action": "Locate deposit-taking Capital One ATM/Café or select Allpoint cash-deposit ATM via locations.capitalone.com",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Locator"
+    }
+   ],
+   "frontstage": "MoneyPass/Allpoint do not accept checks; cash at select Allpoint for checking customers only",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s082"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s082"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s082"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j16:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Insert card + PIN (or cardless via app at Capital One ATMs for…",
+   "customer_action": "Insert card + PIN (or cardless via app at Capital One ATMs for withdrawals) > Deposit > select account > insert cash/checks",
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "ATM Deposit"
+    }
+   ],
+   "frontstage": "ATM check limit $999,999.99/day; one-time cash max $5,000; 9 PM ET cutoff",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s078",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s078",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s078",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j16:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Cash into 360 Checking typically available immediately; checks next…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "atm",
+     "screen": "Receipt / transactions"
+    }
+   ],
+   "frontstage": "Cash into 360 Checking typically available immediately; checks next business day (savings 4-day hold)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Receipt",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s082",
+      "src-capital-one-s085"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s082",
+      "src-capital-one-s085"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j16:m04",
+   "code": "M04",
+   "stage": "manage",
+   "title": "Request a temporary ATM withdrawal-limit increase in the app: select…",
+   "customer_action": "Request a temporary ATM withdrawal-limit increase in the app: select the checking account > 'I want to' > 'view all' > 'change ATM withdrawal limit' > receive and enter a one-time PIN > enter the new amount; or at a Café, an Ambassador calls customer service, the customer passes OTP verification with the phone agent, and if approved withdraws at an on-site ATM (may take several transactions)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Account > 'I want to' > 'view all' > 'change ATM withdrawal limit'"
+    }
+   ],
+   "frontstage": "Requests 'are not guaranteed'; 'you will receive an instant notification if your request is approved or if the request could not be processed'; the increase 'will be turned off at the end of the day'. 360 Checking ATM limit $2,000/day; Discover-network Capital One debit cards $5,000/day combined purchases + withdrawals. ATM check deposits at or before 9 p.m. ET post same day.",
+   "actor": "customer",
+   "decision": "Approved vs not processed; app limits vary by customer, some must visit a branch/Café",
+   "notification": "Instant in-app notification of approval/decline",
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s910",
+      "src-capital-one-s912"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s910",
+      "src-capital-one-s912"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s910",
+      "src-capital-one-s912"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s910",
+      "src-capital-one-s912"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j16-4",
+     "text": "Branch/Café path requires an Ambassador-brokered phone call and OTP; increase lasts only until end of day"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j16:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "ATM deposit/withdrawal issues: call 1-866-536-9023 (8 am-11 pm ET, 7…",
+   "customer_action": "ATM deposit/withdrawal issues: call 1-866-536-9023 (8 am-11 pm ET, 7 days)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "ATM issues line"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j16:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Café Ambassadors / branch staff; Bank by Mail PO Box 85123 Richmond VA…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Café/branch"
+    }
+   ],
+   "frontstage": "Café Ambassadors / branch staff; Bank by Mail PO Box 85123 Richmond VA as fallback",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080",
+      "src-capital-one-s073"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080",
+      "src-capital-one-s073"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080",
+      "src-capital-one-s073"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j16-6",
+     "text": "Cafés do not offer full branch services"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "COF-J16",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P07-S01",
+ "channels": {
+  "entry": [
+   "atm"
+  ],
+  "other": [
+   "branch",
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Transactions",
+  "states": [
+   "Posted",
+   "Hold"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Account restricted (transactions declined; banner shown)",
+   "customer_experience": "Notification banner online and in the app; 'Transactions likely won't go through'; customer calls Customer Protection Team 1-866-536-9023 (fraud/disputes), 360 line 1-888-420-9943 or Business line 1-866-399-8973, or visits a branch/Café where an Ambassador calls Customer Protection",
+   "bank_handling": "Agent reviews the account; may request documents via a secure upload link (photo ID, SSN card); a case number is issued and 'the full review will take up to 10 business days'; restriction may be lifted temporarily to allow access to funds",
+   "resolution": "Restriction lifted or explained; multiple departments may be involved depending on hold type",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s918"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "70,000+ ATM network but deposit-taking limited to Capital One ATMs and select Allpoint.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

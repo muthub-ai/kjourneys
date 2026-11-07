@@ -1,0 +1,580 @@
+{
+ "id": "urn:kos:journey:citi:citi-j03",
+ "title": "Small business signer sends and receives payments with Zelle (CitiBusiness)",
+ "bank": "citi",
+ "product": "zelle",
+ "persona": "Sole proprietor with CitiBusiness checking",
+ "segment": "small-business",
+ "customer_goal": "Get paid by customers and pay vendors quickly without card fees",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Authorized signer sees 'Transfer Funds using Zelle' in the Electronic…",
+   "customer_action": "Authorized signer sees 'Transfer Funds using Zelle' in the Electronic Banking feature table (Citibank Online for Small Business / Citi Mobile App)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Citibank Online for Small Business / CitiBusiness Online feature table 'Transfer Funds using Zelle®'; citi.com Cash Management > Payment solutions > 'Enroll with Zelle®'"
+    }
+   ],
+   "frontstage": "Zelle is absent from the CitiBusiness Online (CBOL) help menus, so business Zelle runs through the retail-style digital channel",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s029",
+      "src-citi-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s029",
+      "src-citi-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s029",
+      "src-citi-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s029",
+      "src-citi-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j03-1",
+     "text": "Two business channels (CBOL vs. Citibank Online for Small Business) with different feature sets"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Signer enrolls the business checking account with a business email/U.S.…",
+   "customer_action": "Signer enrolls the business checking account with a business email/U.S. mobile number; limits apply per account not per signer",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle enrollment: enter business email/U.S. mobile > one-time verification code > accept T&Cs; optional 'Zelle® Preferences' > 'Create a Zelle® tag'"
+    }
+   ],
+   "frontstage": "Citi notes it is not responsible for consequences of multiple signers sending money",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Signer sends a one-time payment (no future-dating for business…",
+   "customer_action": "Signer sends a one-time payment (no future-dating for business accounts) or sends a request to an enrolled customer",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send / Request"
+    }
+   ],
+   "frontstage": "Business limits: untenured $1,000/day $4,000/30d; tenured $5,000/day $40,000/30d",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Signer reviews; no dual approval exists for business Zelle (CBOL…",
+   "customer_action": "Signer reviews; no dual approval exists for business Zelle (CBOL approvals do not cover Zelle)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "Citi will never call asking for password/OTP (manual safety language)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s013",
+      "src-citi-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j03-4",
+     "text": "No maker-checker control for business Zelle"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Payment/request processed through the Zelle network; inbound customer…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "Payment/request processed through the Zelle network; inbound customer payments post in minutes",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Confirmation and email/SMS notifications",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "Confirmation and email/SMS notifications",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email/SMS",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Signer reviews activity and statements; reports errors within Zelle…",
+   "customer_action": "Signer reviews activity and statements; reports errors within Zelle review periods per Zelle T&Cs (business manual defers to them)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Statements"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Unauthorized business Zelle: notify Citi as soon as possible; business…",
+   "customer_action": "Unauthorized business Zelle: notify Citi as soon as possible; business EFT claims follow section 7.2.1 (written complaint within 10 Business Days if phoned)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "CitiBusiness Service Center"
+    }
+   ],
+   "frontstage": "Investigation; Reg E consumer protections do not apply to business accounts, Zelle T&Cs govern",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s029",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s029",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s029",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j03:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
+   "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "CBOL Customer Service menu"
+    }
+   ],
+   "frontstage": "Message gets a reference number; reply inside CBOL within two business days; phone hours Mon-Fri 7 AM-11 PM ET, Sat-Sun 9 AM-5:30 PM ET",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s007",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s007",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s007",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "CITI-J03",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P01-S05",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Zelle activity; statements",
+  "states": [
+   "Pending",
+   "Completed"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "No purchase protection",
+   "customer_experience": "Business pays for goods not received",
+   "bank_handling": "Not covered",
+   "resolution": "Loss borne by business",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s013"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent_received",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Business Zelle is supported but lacks approval workflow and sits outside the CBOL control framework.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

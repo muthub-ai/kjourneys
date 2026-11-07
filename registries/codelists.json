@@ -1,34 +1,49 @@
 {
   "stages": [
     {
-      "id": "setup",
-      "name": "Get set up",
-      "customer_goal": "Be able to use Zelle"
+      "id": "discover",
+      "name": "Discover",
+      "customer_goal": "Find the right way to move money"
     },
     {
-      "id": "choose",
-      "name": "Choose who to pay",
-      "customer_goal": "Be sure I'm paying the right person"
+      "id": "set-up",
+      "name": "Set up",
+      "customer_goal": "Be ready to pay or be paid"
     },
     {
-      "id": "send",
-      "name": "Send",
-      "customer_goal": "Send the right amount, quickly"
+      "id": "initiate",
+      "name": "Initiate",
+      "customer_goal": "Say who, how much and when"
     },
     {
-      "id": "move",
-      "name": "Money moves",
-      "customer_goal": "It just works"
+      "id": "review-authorize",
+      "name": "Review & authorize",
+      "customer_goal": "Be sure before it goes"
     },
     {
-      "id": "confirm",
-      "name": "Confirm",
+      "id": "execute-track",
+      "name": "Execute & track",
+      "customer_goal": "See it move"
+    },
+    {
+      "id": "confirm-complete",
+      "name": "Confirm & complete",
       "customer_goal": "Know it arrived"
     },
     {
-      "id": "help",
-      "name": "Get help",
-      "customer_goal": "Fix it if something went wrong"
+      "id": "manage",
+      "name": "Manage",
+      "customer_goal": "Change, cancel or repeat"
+    },
+    {
+      "id": "exception",
+      "name": "Exception",
+      "customer_goal": "Recover when something goes wrong"
+    },
+    {
+      "id": "support",
+      "name": "Support",
+      "customer_goal": "Get help from a person or assistant"
     }
   ],
   "evidence_basis": [
@@ -63,6 +78,9 @@
     "email",
     "push",
     "atm",
-    "partner"
+    "partner",
+    "phone",
+    "voice-chat-assistant",
+    "api-treasury-portal"
   ]
 }

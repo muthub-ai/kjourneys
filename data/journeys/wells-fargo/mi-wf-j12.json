@@ -1,0 +1,757 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j12",
+ "title": "Consumer sends an ExpressSend® remittance for cash pickup or account credit (mobile)",
+ "bank": "wells-fargo",
+ "product": "remittance",
+ "persona": "Consumer sending money home to Mexico",
+ "segment": "consumer",
+ "customer_goal": "Send money to family abroad cheaply, with cash pickup",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Mobile app: 'Pay & Transfer' > 'Transfer Internationally'…",
+   "customer_action": "Mobile app: 'Pay & Transfer' > 'Transfer Internationally' (ExpressSend); accept 'ExpressSend® on Mobile Disclosures'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer Internationally"
+    }
+   ],
+   "frontstage": "ExpressSend Mobile launched nationwide (press release Sep 14 2026; in-app release notes from v26.06.00 Jun 29 2026). Product page: 'We'll waive the transfer fee for your first mobile ExpressSend transfer.' FAQ: 'Go to Pay & Transfer, tap Transfer Internationally, and agree to the ExpressSend® on Mobile Disclosures to get started.' Customers previously enrolled in branch/online ExpressSend who accept mobile terms can only use ExpressSend in the app thereafter.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s908",
+      "src-wells-fargo-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s908",
+      "src-wells-fargo-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s908",
+      "src-wells-fargo-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m02",
+   "code": "M02",
+   "stage": "discover",
+   "title": "Web (observed): 'Send with ExpressSend®' in the logged-in 'Move Money &…",
+   "customer_action": "Web (observed): 'Send with ExpressSend®' in the logged-in 'Move Money & Pay Bills' panel opens a public product page ('Send it in the app'); no web-initiated ExpressSend flow",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay > Send with ExpressSend®"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "fail_points": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j12-2",
+     "text": "The web hub item routes to the app; no web-initiated flow was offered."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "'Who are you sending to?' > 'Add recipient': name, phone, destination…",
+   "customer_action": "'Who are you sending to?' > 'Add recipient': name, phone, destination address (no PO Box), bank account (CLABE/IFSC) or cash pickup location; up to 10 recipients",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Add recipient"
+    }
+   ],
+   "frontstage": "'From the Who are you sending to? page, tap Add recipient. Enter your recipient's name, phone number, and address in the country you're sending money to (no PO Boxes). Add a way to send money to them. You'll need their eligible bank account or their preferred cash pickup location. You can have up to 10 recipients.' Receiving institutions are the named Remittance Network Members (e.g., Mexico: BBVA, Banorte, Santander, Soriana, Walmart, Bodega Aurrera; Philippines: BPI, BDO, PNB, M. Lhuillier, Cebuana Lhuillier).",
+   "actor": "customer",
+   "decision": "Account credit vs. cash pickup availability varies by location",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Select funding account; 'How much are you sending?' shows limits,…",
+   "customer_action": "Select funding account; 'How much are you sending?' shows limits, per-transfer fee (e.g., Mexico $6) and FX rate; min $25",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "How much are you sending?"
+    }
+   ],
+   "frontstage": "Limits: $5,000/day service option; $12,500 rolling 30 days; first mobile transfer fee waived",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s042",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s042",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s042",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Review pre-payment disclosure; send",
+   "customer_action": "Review pre-payment disclosure; send",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "No recurring/future-dated",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Track in 'Activity'; many locations same business day; recipient has 15…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "'Track transfers in real time and receive alerts' (press release); product page: 'See fees and exchange rates upfront, and track your money in real-time.' Cash pickup: recipient name must exactly match government ID; uncollected cash pickups auto-cancel after 15 days and refund to the funding account.",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s009",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s009",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "Receipt/confirmation",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Receipt/confirmation",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "receipt",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Cancel within 30 minutes: Transfer Internationally > 'Activity' >…",
+   "customer_action": "Cancel within 30 minutes: Transfer Internationally > 'Activity' > select transfer, or call; refund incl. fees in 3 business days",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "After 30 minutes best-effort only",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Legacy (branch/online) ExpressSend customers cancel via Wells Fargo…",
+   "customer_action": "Legacy (branch/online) ExpressSend customers cancel via Wells Fargo Online or phone",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "'Transfer and Pay' > 'Send to Another Country' > 'History' (per Service Agreement) > select Remittance; or ExpressSend Customer Service 1-800-556-0605"
+    }
+   ],
+   "frontstage": "30-minute cancellation right with full refund of funds, fees and taxes unless already picked up or deposited; after 30 minutes best-effort; refund credited to the funding account within three business days",
+   "actor": "customer",
+   "decision": "Mobile-enrolled customers lose web/branch/phone access and must use the app's Activity",
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s909",
+      "src-wells-fargo-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s909",
+      "src-wells-fargo-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s909",
+      "src-wells-fargo-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s909",
+      "src-wells-fargo-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j12-9",
+     "text": "Two parallel service tracks with different channels and labels"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Uncollected after 15 days → auto-cancel and refund (check mailed if…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Uncollected after 15 days → auto-cancel and refund (check mailed if account closed); errors within 180 days",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s009",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s009",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "ExpressSend FAQs; 'Estimate fees and exchange rates' tool",
+   "customer_action": "ExpressSend FAQs; 'Estimate fees and exchange rates' tool",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Help"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j12:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "ExpressSend Customer Service 1-800-556-0605 (cancellations, cash pickup…",
+   "customer_action": "ExpressSend Customer Service 1-800-556-0605 (cancellations, cash pickup issues); fraud 1-866-867-5568",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s012",
+      "src-wells-fargo-s013",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J12",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P05-S02",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Pay & Transfer > Transfer Internationally > Activity",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Cash pickup unavailable (disaster, currency, security)",
+   "customer_experience": "Delay; call 1-800-556-0605",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s012"
+   ]
+  },
+  {
+   "trigger": "Not picked up in 15 days",
+   "customer_experience": "Auto-canceled; refund incl. fees",
+   "bank_handling": "'Any cash pick-up transfer not picked up by the recipient within 15 days will be canceled without notice. Unclaimed funds will be credited back to the sender's funding account. If the funding account has been closed, a check will be sent to the sender's most recent address on file.'",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s013"
+   ]
+  },
+  {
+   "trigger": "Cancel within 30 min",
+   "customer_experience": "Full refund in 3 business days",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s013",
+    "src-wells-fargo-s061"
+   ]
+  },
+  {
+   "trigger": "Error/dispute",
+   "customer_experience": "180-day notice; 90-day investigation",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s061"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "transfer_confirmation",
+   "channels": [
+    "in-app receipt"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Only top-4 bank with a proprietary cash-pickup remittance product; recently moved to app-only (Jul 2026 release notes), with no recurring or branch support — a trade-off for the core Hispanic customer base.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

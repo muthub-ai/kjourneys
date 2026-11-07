@@ -1,0 +1,997 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j01",
+ "title": "Consumer sends money to a new recipient with Zelle (TD Bank app)",
+ "bank": "td-bank",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a friend instantly without sharing account numbers",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer finds 'Send Money with Zelle®' in the TD Bank app menu or via…",
+   "customer_action": "Customer finds 'Send Money with Zelle®' in the TD Bank app menu or via td.com Checking & Savings > Make the Most of My Account > Send Money with Zelle®",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app home quick link 'Zelle®' (KB: 'Send Money' quick link) -> Zelle® home; Online Banking: 'Transfers' -> 'Send Money with Zelle®' tab"
+    }
+   ],
+   "frontstage": "Zelle is 'only available in English in secure Online Banking'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s002",
+      "src-td-bank-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s002",
+      "src-td-bank-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s002",
+      "src-td-bank-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s002",
+      "src-td-bank-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-1",
+     "text": "Spanish-language app users must switch to English for Zelle"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Customer confirms email address and U.S. mobile number in profile and…",
+   "customer_action": "Customer confirms email address and U.S. mobile number in profile and selects the Zelle section",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Welcome ('Get Started') -> Zelle® Terms and Conditions -> Zelle® Sign Up (choose on-file email/mobile or add new)"
+    }
+   ],
+   "frontstage": "Bank requires Online Banking profile with U.S. address, unique U.S. mobile, unique email, SSN",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s005",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s005",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s005",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s005",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-2",
+     "text": "Email/mobile already used by another Zelle profile blocks enrollment ('Why can't I enroll' FAQ exists)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Customer enters a one-time verification code sent to the token and…",
+   "customer_action": "Customer enters a one-time verification code sent to the token and accepts Zelle terms",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Notice Regarding Receiving Text Messages -> 'Enter the 6-digit verification code' ('Verify') -> select TD account -> 'Your registration is done!'"
+    }
+   ],
+   "frontstage": "Token registered with Zelle directory; landline/VoIP/non-U.S. carrier numbers rejected; token can be registered at one bank only; new customers may wait up to 24 hours; up to 2 mobile numbers and 4 emails, each mapped to its own deposit account",
+   "actor": "customer",
+   "decision": null,
+   "notification": "SMS/email one-time code",
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Customer adds a recipient: picks from device contacts or enters name +…",
+   "customer_action": "Customer adds a recipient: picks from device contacts or enters name + email / U.S. mobile number / Zelle Tag",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > 'Send' -> 'Access Contacts' (Tips for finding contacts) -> 'New Contact' -> 'Add from device' or manual (first/last name + email, U.S. mobile, or bank account + routing number) -> 'Continue'"
+    }
+   ],
+   "frontstage": "Device contacts sync with the Zelle Network once every 24 hours; risk screening can block a recipient ('There's a problem. For your protection, we cannot send money to this recipient.'); QR path shows recipient's name from the Zelle Network Shared Directory",
+   "actor": "customer",
+   "decision": "Enrolled (minutes) vs not enrolled (held up to 14 days)",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-4",
+     "text": "Verified-name preview only on the QR path; manual add shows none. Choosing account number silently switches to a non-Zelle 1-3 business-day service disclosed only in small print"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Customer enters amount and optional note (memo)",
+   "customer_action": "Customer enters amount and optional note (memo)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Payment details: amount | payment date (one-time or recurring) | from account | 'Review'"
+    }
+   ],
+   "frontstage": "Within-minutes limits $2,500 daily / $10,000 monthly (app 26.10.1, 2026-08-05); if exceeded, payment goes 'Next Day' or 'Three Day ACH'; limits cannot be changed; minimum $1.00",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s009",
+      "src-td-bank-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s009",
+      "src-td-bank-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s009",
+      "src-td-bank-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Customer reviews recipient, amount, note and selects 'Send'",
+   "customer_action": "Customer reviews recipient, amount, note and selects 'Send'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review and send payment (note/memo) -> 'Send' -> Security Reminder screen ('Only send to people you trust. Read this security reminder carefully.') -> acknowledgment checkbox -> 'Send'"
+    }
+   ],
+   "frontstage": "Mandatory acknowledgment of a static security reminder on every send; login OTP may be required at sign-in",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-6",
+     "text": "Interstitial is static (same for every payment), not risk-scored or payee-specific; no transaction-level step-up evidenced"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Bank performs fraud/identity screening; payment may be delayed",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "Terms allow delay 'for identity checks, fraud prevention, or regulatory reasons'",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "Payment sent via Zelle network; within minutes when sender and…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Your payment is processing' -> Zelle® > 'Activity' (Pending | Past tabs)"
+    }
+   ],
+   "frontstage": "Debit same day; 'Standard ACH delivery (1 to 3 days)' listed as free in fee schedule",
+   "actor": "network",
+   "decision": "Both parties enrolled and within instant limits → minutes; otherwise Next Day / Three Day ACH (verification TD-C002)",
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s009",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s009",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m09",
+   "code": "M09",
+   "stage": "confirm-complete",
+   "title": "Confirmation displayed; recipient notified by Zelle via email/SMS",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Success! Payment has been sent' -> 'All done' (returns to Zelle® home); recipient listed under 'Recent Recipients'"
+    }
+   ],
+   "frontstage": "Confirmation displayed; recipient notified by Zelle via email/SMS",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Recipient email/SMS from Zelle network (standard); sender push/email alert not documented",
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-9",
+     "text": "TD Alerts catalogue lists no Zelle-specific alert"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m10",
+   "code": "M10",
+   "stage": "manage",
+   "title": "Customer views activity page; may 'Cancel This Payment' only while…",
+   "customer_action": "Customer views activity page; may 'Cancel This Payment' only while recipient unenrolled; manages recipients",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > 'Activity' > Pending tab: 'Cancel' (future-dated/recurring: 'Cancel the next payment to be sent' or 'Cancel all payments in this recurring plan') or 'Stop payment'; Past tab history (6 months in app, full in Online Banking); 'Manage Recipients' (add / 'Remove Contact'); 'Settings' (Profile tokens, 'My Code')"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Exceptions: 14-day auto-cancel, wrong recipient, scam, unauthorized —…",
+   "customer_action": "Exceptions: 14-day auto-cancel, wrong recipient, scam, unauthorized — see exception_paths",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007",
+      "src-td-bank-s009",
+      "src-td-bank-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007",
+      "src-td-bank-s009",
+      "src-td-bank-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s007",
+      "src-td-bank-s009",
+      "src-td-bank-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-11",
+     "text": "No in-app or Help Center scam-report path: KB queries such as 'I was scammed on Zelle' return only generic Zelle definitions; customers must call 1-888-751-9000"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
+   "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app > Help / 'Call us' / virtual assistant; td.com Help Center"
+    }
+   ],
+   "frontstage": "Logging in to the app before calling 'reaches a live agent faster'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-12",
+     "text": "Help Center answers load client-side and are readable; TD Digital Academy hosts interactive step-by-step demos for Zelle, transfers, Bill Pay, mobile deposit, disputes, direct deposit and SMB wires/ACH/roles (first-wave 'unavailable/unplayable' finding was a fetch-tool artifact). Residual issue: several KB answers are stale or contradictory (app external transfers, consumer wires)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j01:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center"
+    }
+   ],
+   "frontstage": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j01-13",
+     "text": "Three different numbers published for Zelle/fraud issues across pages"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TD-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle activity page in app/Online Banking; account activity",
+  "states": [
+   "Pending (recipient not enrolled)",
+   "Sent/Completed",
+   "Cancelled"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 days",
+   "customer_experience": "Recipient gets email/text with enrollment steps and daily reminders after 5 days; sender sees item under Activity > Pending and can 'Stop payment' until enrollment; expires after 14 days with funds returned.",
+   "bank_handling": "Bank holds funds until recipient enrolls or 14 days elapse",
+   "resolution": "Payment 'automatically cancelled' and funds returned after 14 days",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009"
+   ]
+  },
+  {
+   "trigger": "Sender wants to cancel a payment",
+   "customer_experience": "Zelle® > 'Activity' > Pending tab > 'Cancel' (future-dated/recurring; choose next payment or whole plan) or 'Stop payment' -> confirm -> \"You've canceled this payment\" / \"You've stopped this payment\". Payments already deposited cannot be canceled; payments to unenrolled recipients can be cancelled until they enroll.",
+   "bank_handling": "Payments to enrolled users 'may not be canceled or revoked' once processing begins",
+   "resolution": "Cancel if unenrolled; else call 1-888-751-9000 / 1-800-493-7562",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s006",
+    "src-td-bank-s007",
+    "src-td-bank-s009"
+   ]
+  },
+  {
+   "trigger": "Sent to the wrong person",
+   "customer_experience": "Customer must call immediately",
+   "bank_handling": "Bank makes 'a reasonable effort' to recover funds; no guarantee",
+   "resolution": "Recovery not guaranteed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s007",
+    "src-td-bank-s009"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle transaction (account takeover)",
+   "customer_experience": "Report within 60 days of statement; call immediately",
+   "bank_handling": "Zelle-specific liability rule (Section 3.17): no liability if reported within 60 days; Section 1.16 tiers do not apply; Reg E error-resolution with provisional credit within 10 business days",
+   "resolution": "Reimbursement for unauthorized transactions; transactions by anyone customer gave credentials to are treated as authorized",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009",
+    "src-td-bank-s022"
+   ]
+  },
+  {
+   "trigger": "Authorized push-payment scam (imposter / purchase scam)",
+   "customer_experience": "Sender has already acknowledged the static Security Reminder; no in-app or Help Center scam-claim path (KB returns no scam answer); customer calls 1-888-751-9000.",
+   "bank_handling": "Terms: 'ZELLE® DOES NOT OFFER A PROTECTION PROGRAM FOR AUTHORIZED PAYMENTS'; business page: 'Qualifying imposter scams may be eligible for reimbursement' (network policy since Nov 2023); 2022 class action alleged claim opened then denied",
+   "resolution": "Case-by-case; imposter scams may be reimbursed, purchase scams not",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s007",
+    "src-td-bank-s009",
+    "src-td-bank-s038",
+    "src-td-bank-s039"
+   ]
+  },
+  {
+   "trigger": "Payment delayed beyond minutes",
+   "customer_experience": "Transfer 'may take longer' for identity checks, fraud prevention or regulatory reasons",
+   "bank_handling": "Risk review; also, if sender's instant limits are exceeded the payment is routed 'Next Day' or 'Three Day ACH'; account-number recipients always 1-3 business days.",
+   "resolution": "Completes or is declined",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009"
+   ]
+  },
+  {
+   "trigger": "Recipient blocked by risk screening or token cannot be added",
+   "customer_experience": "Add-contact error: 'There's a problem. For your protection, we cannot send money to this recipient.' or 'You can't add this mobile number to your contact. Call 888-388-0406 to resolve the issue.'",
+   "bank_handling": "Pre-send recipient risk screening blocks the contact",
+   "resolution": "Ask recipient for a different email/mobile or to send a request; call 888-388-0406",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s913"
+   ]
+  },
+  {
+   "trigger": "Sender exceeds within-minutes limit",
+   "customer_experience": "Payment cannot go within minutes; delivered 'Next Day' or 'Three Day ACH'",
+   "bank_handling": "Automatic downgrade to ACH delivery; limits cannot be temporarily or permanently changed",
+   "resolution": "Wait for ACH delivery",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s901"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent_to_recipient",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "inferred"
+  },
+  {
+   "event": "one_time_verification_code",
+   "channels": [
+    "sms",
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Simple four-step flow with contact sync and Zelle Tags; English-only restriction and absence of any published scam interstitial, in-app scam reporting or name-match preview are notable gaps versus top-4 peers. Instant limits raised in 2026 to align with peers.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

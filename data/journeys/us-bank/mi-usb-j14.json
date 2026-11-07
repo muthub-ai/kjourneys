@@ -1,0 +1,729 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j14",
+ "title": "Small business enrolls and sends an ACH payment (standard or same-day) from the Wires & ACH dashboard",
+ "bank": "us-bank",
+ "product": "ach-origination",
+ "persona": "Small business owner paying a contractor",
+ "segment": "small-business",
+ "customer_goal": "Pay a vendor by ACH from online banking without a treasury platform",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Transfer & pay > Wires & ACH > ACH payments tile > Send ACH payment;…",
+   "customer_action": "Transfer & pay > Wires & ACH > ACH payments tile > Send ACH payment; first visit offers enrollment",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & pay > Wires & ACH > ACH payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Enrolled vs not",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s057",
+      "src-us-bank-s055"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s057",
+      "src-us-bank-s055"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enrollment: answer business questions; Enroll (requires registered…",
+   "customer_action": "Enrollment: answer business questions; Enroll (requires registered cellular device on file ≥3 business days)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Send ACH payment > Enroll"
+    }
+   ],
+   "frontstage": "KYB-style questionnaire; no approval timeline published",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j14-2",
+     "text": "3-business-day device ageing"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Add payee: first/last name, account & routing, account type, individual…",
+   "customer_action": "Add payee: first/last name, account & routing, account type, individual vs business (saved recipients must be added before sending; recipient-list KB referenced)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wires & ACH > 'Recipients & accounts' > ACH > 'Add a new ACH recipient' (name, address > Continue > account & routing > optional nickname > 'Add account'); existing recipients: 'Add a new ACH account' / Edit / 'Delete recipient'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "New vs saved payee",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s055",
+      "src-us-bank-s929"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s055",
+      "src-us-bank-s929"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Choose sending account, date (default same day), payment speed…",
+   "customer_action": "Choose sending account, date (default same day), payment speed (standard vs same-day), optional memo > Continue; enter amount > Continue",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Send ACH payment: from-account; date; payment speed — instant, standard or same day ('More about payment speeds' shows cutoffs/arrival); 'How much can I send?' link below Total amount (pop-up: available to send now; daily and weekly limits) > Continue"
+    }
+   ],
+   "frontstage": "Same-day ACH cutoff 1:30 p.m. CT (after that but before 8 p.m. CT sends next business day); standard arrives 1–3 business days (day one if submitted before 8 p.m. CT). First-time users may be asked usage questions before proceeding.",
+   "actor": "customer",
+   "decision": "Standard vs same-day",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053",
+      "src-us-bank-s055",
+      "src-us-bank-s912",
+      "src-us-bank-s930",
+      "src-us-bank-s931"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053",
+      "src-us-bank-s055",
+      "src-us-bank-s912",
+      "src-us-bank-s930",
+      "src-us-bank-s931"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053",
+      "src-us-bank-s055",
+      "src-us-bank-s912",
+      "src-us-bank-s930",
+      "src-us-bank-s931"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Review (Edit per section), read disclaimer and fee; Send/Schedule…",
+   "customer_action": "Review (Edit per section), read disclaimer and fee; Send/Schedule payment; OTP implied by device requirement (not documented); Level-based approvals exist in 'Activity & approvals' (rules not published)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review > Send/Schedule payment"
+    }
+   ],
+   "frontstage": "Review page is 'the final chance to cancel'; 'If Send payment is chosen, the transaction cannot be stopped.' No second-approver/dual-control setting is documented for business ACH, wires or instant payments; access control is per-user (Shared Access / User management: view-only vs transaction access, money-movement permission check boxes, daily transaction limits).",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s055",
+      "src-us-bank-s056",
+      "src-us-bank-s915",
+      "src-us-bank-s930",
+      "src-us-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s055",
+      "src-us-bank-s056",
+      "src-us-bank-s915",
+      "src-us-bank-s930",
+      "src-us-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s055",
+      "src-us-bank-s056",
+      "src-us-bank-s915",
+      "src-us-bank-s930",
+      "src-us-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s055",
+      "src-us-bank-s056",
+      "src-us-bank-s915",
+      "src-us-bank-s930",
+      "src-us-bank-s936"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j14-5",
+     "text": "Dual approval configuration undocumented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Confirmation page with send date, expected arrival, memo, transaction…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation; Activity & approvals"
+    }
+   ],
+   "frontstage": "Confirmation page with send date, expected arrival, memo, transaction number; email when sent",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s059",
+      "src-us-bank-s058"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s059",
+      "src-us-bank-s058"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "Email confirmation once ACH payment is sent",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Email"
+    }
+   ],
+   "frontstage": "Email confirmation once ACH payment is sent",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Wires & ACH > Activity & approvals > open payment to view/edit/cancel;…",
+   "customer_action": "Wires & ACH > Activity & approvals > open payment to view/edit/cancel; no cancel once processing/completed",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Activity & approvals"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s056"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "ACH return/reject handling not documented",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "ACH return/reject handling not documented",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Batch ACH available (steps undocumented)",
+   "customer_action": "Batch ACH available (steps undocumented)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
+   "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help & services; Smart Assistant; 800-USBANKS; Make an appointment"
+    }
+   ],
+   "frontstage": "Contact-center or branch handles",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j14-11",
+     "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j14:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
+   "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Fraud claim intake",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J14",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P09-S01",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Wires & ACH > Activity & approvals",
+  "states": [
+   "Scheduled",
+   "Processing",
+   "Completed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Cancel after processing",
+   "customer_experience": "Not possible",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s056"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ach_sent",
+   "channels": [
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Lightweight single-payee ACH inside online banking with same-day option and tiered pricing; approval workflow and return handling undocumented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

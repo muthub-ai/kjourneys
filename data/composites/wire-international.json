@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "International wire in hub with country/currency coverage and wire-vs-remittance guidance",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J11#1; jpmorgan-chase:JPM-J08#1; benchmark:R51#None",
+    "rationale": "WF 200+ countries / 30 currencies."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Country-aware beneficiary fields (SWIFT/BIC, IBAN, CLABE, IFSC)",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J08#2; wells-fargo:WF-J11#2",
+    "rationale": "BofA country-specific identifiers."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Choose USD or foreign currency with live rate, markup disclosed and $0 FX wire fee",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J11#3; jpmorgan-chase:JPM-J08#3; bank-of-america:BAC-J08#4",
+    "rationale": "WF rate lock with $0 consumer FX fee; Chase $0 at $5,000+; BofA no-fee FX."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Remittance-rule disclosure as a delivery-promise card with guaranteed rate and visible countdown; step-up",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "jpmorgan-chase:JPM-J08#4; wells-fargo:WF-J11#5; bank-of-america:BAC-J08#5",
+    "rationale": "Chase 30-minute guaranteed-rate countdown."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "gpi-style tracker: Sent -> With correspondent -> Credited, with ETA",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "wells-fargo:WF-J11#6; benchmark:R51#None",
+    "rationale": "No bank exposes gpi tracking to consumers; WF state set is the best observed."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Receipt with availability date and rights text; email",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "bank-of-america:BAC-J08#7; wells-fargo:WF-J11#7",
+    "rationale": "Reg E receipt."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "30-minute cancel from activity with full refund",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J08#8; jpmorgan-chase:JPM-J08#5; wells-fargo:WF-J11#8",
+    "rationale": "BofA documents the in-app cancel path step by step."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Report-an-error within 180 days with 90-day SLA; recall forwarded with FX outcome explained",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "bank-of-america:BAC-J08#9; bank-of-america:BAC-J08#10; wells-fargo:WF-J11#9",
+    "rationale": "Reg E Subpart B."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "International desk; assistant checks wire status",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "bank-of-america:BAC-J08#6; wells-fargo:WF-J11#10",
+    "rationale": "Erica wire status."
+   }
+  ],
+  "id": "CJ-WIRE-INTL-CONSUMER-SEND",
+  "title": "Consumer sends an international wire in foreign currency",
+  "product": "wire-international",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

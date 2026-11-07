@@ -1,0 +1,1255 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j01",
+ "title": "Consumer sends money to a new recipient with Zelle® (mobile)",
+ "bank": "wells-fargo",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a friend or landlord in minutes using only their email or U.S. mobile number",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer sees 'Zelle®' in the app's bottom navigation bar (web:…",
+   "customer_action": "Customer sees 'Zelle®' in the app's bottom navigation bar (web: 'Transfer and Pay' > 'Send Money with Zelle®')",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Bottom nav 'Zelle®'"
+    }
+   ],
+   "frontstage": "Zelle hub shows Send / Request / Recipients / Scheduled / Activity. Refreshed marketing page: 'Just three steps to start paying — Open your Wells Fargo® app (Zelle® is already there) / Choose who to pay: Select a contact and verify their info, or scan a QR code / Enter an amount: Review and send.' Enroll CTA deep-links to connect.secure.wellsfargo.com (serviceType=p2p).",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m02",
+   "code": "M02",
+   "stage": "discover",
+   "title": "Alternative entry: Fargo assistant ('Make a payment or transfer')",
+   "customer_action": "Alternative entry: Fargo assistant ('Make a payment or transfer')",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Fargo icon in search bar"
+    }
+   ],
+   "frontstage": "Fargo can send Zelle money to stored contacts",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s015",
+      "src-wells-fargo-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s015",
+      "src-wells-fargo-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s015",
+      "src-wells-fargo-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "First use: accept 'Zelle® Transfer Service Addendum', choose email or…",
+   "customer_action": "First use: accept 'Zelle® Transfer Service Addendum', choose email or U.S. mobile number (no VoIP/landline), select deposit account",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Send Money with Zelle®' enrollment"
+    }
+   ],
+   "frontstage": "Token registered at EWS; transfer of an existing enrollment from another bank supported",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Add recipient under 'Send Money with Zelle® > Recipients': search…",
+   "customer_action": "Add recipient under 'Send Money with Zelle® > Recipients': search contacts, enter email/mobile/Zelle tag, or 'Scan their Zelle® QR code'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Recipients > add"
+    }
+   ],
+   "frontstage": "Directory lookup; if enrolled, recipient's registered name is displayed for confirmation",
+   "actor": "customer",
+   "decision": "Recipient enrolled (name shown) vs. not enrolled (14-day pending path)",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Tap 'Send', choose recipient, enter amount, choose funding account,…",
+   "customer_action": "Tap 'Send', choose recipient, enter amount, choose funding account, optional memo, optionally toggle 'Repeat payment' or pick a future date (up to 1 year)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send screen; 'Repeat payment' toggle; calendar"
+    }
+   ],
+   "frontstage": "Validates against $3,500/24h and $20,000/30d limits (risk-based higher)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m06",
+   "code": "M06",
+   "stage": "initiate",
+   "title": "Select 'Continue'",
+   "customer_action": "Select 'Continue'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Continue"
+    }
+   ],
+   "frontstage": "Builds review screen",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Review details; trust warning ('only send to people you know and…",
+   "customer_action": "Review details; trust warning ('only send to people you know and trust'; no purchase protection)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review screen"
+    }
+   ],
+   "frontstage": "Review screen: 'If your recipient's U.S. mobile number or email address is enrolled with Zelle®, we'll display the name of the recipient on record before you continue (in some cases, this may only be a first name).' Static guidance only ('only use Zelle® when sending money to people or eligible small businesses you know and trust'); 'In some cases, we may need to delay or block a payment for your protection.' No payment-purpose question or dynamic scam interstitial documented.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s002",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s902"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s002",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s902"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s002",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s902"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s002",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s902"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j01-7",
+     "text": "No evidence of dynamic payment-purpose questions; warning copy is generic"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m08",
+   "code": "M08",
+   "stage": "review-authorize",
+   "title": "First-time recipient (and some other payments) requires an access code…",
+   "customer_action": "First-time recipient (and some other payments) requires an access code sent by text to registered mobile, or an RSA SecurID code; Advanced Access may also push a notification",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Advanced Access access-code prompt"
+    }
+   ],
+   "frontstage": "Code from 93557/93733; WF 'will never call or text asking for this code'",
+   "actor": "customer",
+   "decision": "Code verified → send; fail → retry / call 1-866-609-3037",
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s026",
+      "src-wells-fargo-s048"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s026",
+      "src-wells-fargo-s048"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s026",
+      "src-wells-fargo-s048"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m09",
+   "code": "M09",
+   "stage": "review-authorize",
+   "title": "Confirm 'Send'",
+   "customer_action": "Confirm 'Send'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send"
+    }
+   ],
+   "frontstage": "Funds debited immediately and held in suspense until network completes",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s010",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m10",
+   "code": "M10",
+   "stage": "execute-track",
+   "title": "Zelle network delivers to recipient's bank; typically minutes if…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Activity"
+    }
+   ],
+   "frontstage": "WF/Zelle may delay or block for fraud/regulatory reasons",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m11",
+   "code": "M11",
+   "stage": "execute-track",
+   "title": "Customer views status in 'Zelle® Activity' (Completed/Pending) or…",
+   "customer_action": "Customer views status in 'Zelle® Activity' (Completed/Pending) or 'Scheduled'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Activity"
+    }
+   ],
+   "frontstage": "24-month history",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m12",
+   "code": "M12",
+   "stage": "confirm-complete",
+   "title": "Confirmation screen; email and secure-inbox notices when…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation screen"
+    }
+   ],
+   "frontstage": "Texts from 93729 for Zelle",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Confirmation screen with payment details; email + secure inbox message whenever a payment is scheduled or changed; email if a payment fails or is canceled; text messages from short codes 93557 or 93729 when a new recipient is added or money is sent to a first-time recipient; push/text/email per alert preferences",
+   "source_step": 12,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m13",
+   "code": "M13",
+   "stage": "confirm-complete",
+   "title": "Recipient notified by email/text by their bank or Zelle",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Recipient's bank posts credit",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m14",
+   "code": "M14",
+   "stage": "manage",
+   "title": "Cancel a pending payment to an unenrolled recipient from 'Zelle®…",
+   "customer_action": "Cancel a pending payment to an unenrolled recipient from 'Zelle® Activity' > 'Cancel payment'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Activity"
+    }
+   ],
+   "frontstage": "Funds return to account",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m15",
+   "code": "M15",
+   "stage": "manage",
+   "title": "Edit/cancel scheduled or repeating payments in 'Scheduled' until 11:30…",
+   "customer_action": "Edit/cancel scheduled or repeating payments in 'Scheduled' until 11:30 PM PT day before; block a contact",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Scheduled; block contact"
+    }
+   ],
+   "frontstage": "Canceled items remain visible 2 years",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 15,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m16",
+   "code": "M16",
+   "stage": "exception",
+   "title": "Payment fails / recipient unenrolled / scam suspected — see…",
+   "customer_action": "Payment fails / recipient unenrolled / scam suspected — see exception_paths",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® Activity; 1-800-956-4442"
+    }
+   ],
+   "frontstage": "Reg E error resolution for unauthorized; imposter-scam reimbursement case-by-case",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 16,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m17",
+   "code": "M17",
+   "stage": "support",
+   "title": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View…",
+   "customer_action": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View Zelle transactions')",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Help & FAQs; Fargo icon in search bar"
+    }
+   ],
+   "frontstage": "Fargo answers or routes to Customer Service",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 17,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m18",
+   "code": "M18",
+   "stage": "support",
+   "title": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442…",
+   "customer_action": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442 (24/7) for missing payments or suspected scams; fraud line 1-866-867-5568 for unauthorized Zelle",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "Agent investigates; may open Reg E claim",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 18,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j01:m19",
+   "code": "M19",
+   "stage": "support",
+   "title": "Customer can report via 'Report fraud' page or secure Message Center",
+   "customer_action": "Customer can report via 'Report fraud' page or secure Message Center",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "wellsfargo.com/privacy-security/fraud/report/"
+    }
+   ],
+   "frontstage": "Case routed to fraud operations",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 19,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "'Zelle® Activity' (24 months, sorted Completed vs Pending) and 'Scheduled' tab; 'Account Activity' (18 months searchable); Fargo 'View Zelle transactions'",
+  "states": [
+   "Pending",
+   "Completed",
+   "Scheduled",
+   "Canceled",
+   "Failed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 days (Addendum: suspense up to 15 business days)",
+   "customer_experience": "Payment shows 'Pending' in Zelle® Activity with 'Cancel payment' option; expires if recipient never enrolls",
+   "bank_handling": "Funds held in suspense account from moment of send; returned to funding account on expiry; email + secure-inbox message on cancel/fail",
+   "resolution": "Funds returned automatically",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019"
+   ]
+  },
+  {
+   "trigger": "Customer wants to cancel a payment to an enrolled recipient",
+   "customer_experience": "No cancel option — 'cannot be canceled or reversed once sent'",
+   "bank_handling": "Bank directs customer to contact recipient; will not reverse",
+   "resolution": "Customer must ask recipient to send money back",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019",
+    "src-wells-fargo-s024"
+   ]
+  },
+  {
+   "trigger": "Scheduled / repeat payment cancel",
+   "customer_experience": "Cancel entire series or skip one payment in 'Scheduled' until 11:30 PM PT the day before; stop-payment via phone 1-800-869-3557 ≥3 business days before",
+   "bank_handling": "Canceled items remain visible in Scheduled for 2 years; WF liable if it fails to stop after valid notice",
+   "resolution": "Payment stopped",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019"
+   ]
+  },
+  {
+   "trigger": "Payment delayed or blocked by Wells Fargo/Zelle for fraud review or regulatory reasons",
+   "customer_experience": "Payment may be delayed; customer notified per communication preferences",
+   "bank_handling": "Risk engine delays/blocks; may contact customer",
+   "resolution": "Released or declined",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle transfer (account takeover) on a consumer account",
+   "customer_experience": "Customer calls 1-800-956-4442 / 1-866-867-5568 or submits online form; Reg E error-resolution applies",
+   "bank_handling": "WF determines error within 10 business days; may take up to 45 days with provisional credit within 10 business days (90/20 for new accounts); results within 3 business days of completion",
+   "resolution": "Reimbursement for unauthorized transactions per Reg E tiers ($50/$500/unlimited by reporting delay)",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s019",
+    "src-wells-fargo-s022",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Authorized push-payment scam (e.g., bank-imposter 'pay yourself', marketplace)",
+   "customer_experience": "No in-flow scam interstitial documented; customer discovers loss after the fact. Intake: Wells Fargo Online Banking Customer Service 1-800-956-4442 (24/7) — 'Qualifying imposters scams may be eligible for reimbursement'; imposter calls/payments also to 1-866-867-5568 or reportimposter@wellsfargo.com; brochure guidance: 'Don't be pressured to move or send money by someone who contacts you claiming there is fraud on your account.' Purchase scams: 'Neither Wells Fargo nor Zelle® offers purchase protection.'",
+   "bank_handling": "Addendum/FAQ: 'qualifying imposter scams may be eligible for reimbursement' (network-level imposter-scam policy); marketplace/goods-not-received scams not covered. WF was a CFPB defendant (Dec 2024) over Zelle fraud handling; suit dismissed with prejudice Mar 2025",
+   "resolution": "Case-by-case; reimbursement only for qualifying imposter scams",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s005",
+    "src-wells-fargo-s019",
+    "src-wells-fargo-s062",
+    "src-wells-fargo-s063"
+   ]
+  },
+  {
+   "trigger": "Insufficient funds in funding account",
+   "customer_experience": "Payment fails; 'email notifications if a payment fails or is canceled' (FAQ). NSF-specific handling unpublished.",
+   "bank_handling": "WF may reject transfer; may retry a failed transfer then ask customer to contact recipient",
+   "resolution": "Customer re-sends",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s019"
+   ]
+  },
+  {
+   "trigger": "Incoming payment returned",
+   "customer_experience": "Sender notified of return",
+   "bank_handling": "Incoming transfers returned if WF cannot confirm intended recipient or completion would violate law",
+   "resolution": "Funds back to sender",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s019"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_scheduled_or_changed",
+   "channels": [
+    "email",
+    "secure inbox"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_failed_or_canceled",
+   "channels": [
+    "email",
+    "secure inbox"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_sent / request / receipt",
+   "channels": [
+    "email",
+    "push",
+    "text (93729)"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "money_received",
+   "channels": [
+    "email",
+    "text"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "access_code_step_up",
+   "channels": [
+    "text (93557/93733)",
+    "push",
+    "call",
+    "RSA SecurID"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Strength: deep native integration (bottom-nav tab, Fargo voice send, QR, repeat toggle, 24-month activity). Friction: step-up code on first-time recipient (good control, adds friction); only generic trust warnings — no published evidence of dynamic scam interstitials or payment-purpose prompts, which peers (e.g., Chase, BofA) now show; reimbursement limited to 'qualifying imposter scams'.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

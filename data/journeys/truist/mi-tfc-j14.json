@@ -1,0 +1,571 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j14",
+ "title": "Small business runs payroll / pays a vendor via Online Banking ACH",
+ "bank": "truist",
+ "product": "ach-origination",
+ "persona": "SMB owner with ACH Service",
+ "segment": "small-business",
+ "customer_goal": "Pay employees or vendors by direct deposit",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Enroll in optional ACH Service ($15/mo); register two authorization…",
+   "customer_action": "Enroll in optional ACH Service ($15/mo); register two authorization phone numbers",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH enrollment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Create recipients and reusable templates (optional dollar limits); up…",
+   "customer_action": "Create recipients and reusable templates (optional dollar limits); up to 10 funding accounts",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH recipients/templates"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s047",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s047",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Choose template/recipients, amounts, effective date, one-time or…",
+   "customer_action": "Choose template/recipients, amounts, effective date, one-time or recurring",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH payment"
+    }
+   ],
+   "frontstage": "Debit at initiation if effective date 1–2 days out, else 2 business days prior",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j14-3",
+     "text": "Prefunding model; NSF fee risk"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Submit; transaction validation via call/email/text code to registered…",
+   "customer_action": "Submit; transaction validation via call/email/text code to registered number; 'Pending Authorization' hold no longer available",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "One-time passcode / transaction validation / Dual Approval (Approver Secondary Approval)"
+    }
+   ],
+   "frontstage": "Entitled user must enter a one-time passcode to release the entry; transaction validation (call/email/text/validation code) may be required; if the optional Dual Approval Feature is enabled, an entry initiated by a User other than the Business Profile Owner stays in 'pending status' until a User designated as an 'Approver' or 'Approver Admin' (feature enabled by the Business Profile Owner) provides 'Secondary Approval' (bank may cancel pending requests without notice); Truist may also contact the user/administrator to authenticate an entry.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j14-4",
+     "text": "No in-product second approver in OLB evidenced"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Credits fail if funds unavailable at submission; recipients see 'ACH…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH history"
+    }
+   ],
+   "frontstage": "Entries received before the 8 pm ET final deadline are transmitted to the ACH operator the same day (business days only; submit 24/7); credit entries are debited two business days before the effective date (or on the scheduled day for next-business-day credits) and may be held; credits fail if funds unavailable; daily caps may be displayed in online banking/app; rejected and returned entries are notified 'through the service or via other means'.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "ACH alerts (business)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "ACH alerts (business)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Edit templates; recurring management; NOC $3.75; return $5.75",
+   "customer_action": "Edit templates; recurring management; NOC $3.75; return $5.75",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Templates"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Reversal: transaction $20 / batch $75; Fraud Inspector for unauthorized…",
+   "customer_action": "Reversal: transaction $20 / batch $75; Fraud Inspector for unauthorized debits; ACH fraud line 800-774-8179",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Inspector / phone"
+    }
+   ],
+   "frontstage": "Reversal requests (erroneous/duplicate) within 5 banking days of the effective entry date by calling the Care Center 844-4TRUIST; 'Return of funds are not guaranteed'; fees $20 transaction / $75 batch; NOCs corrected by Truist are notified by email, others require customer correction within 6 business days; Fraud Inspector for unauthorized debits; wire/ACH fraud line 800-774-8179.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s015",
+      "src-truist-s041",
+      "src-truist-s904",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s015",
+      "src-truist-s041",
+      "src-truist-s904",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s015",
+      "src-truist-s041",
+      "src-truist-s904",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j14:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "888-228-6654 / 844-4TRUIST",
+   "customer_action": "888-228-6654 / 844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J14",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P09-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "ACH history",
+  "states": [
+   "Scheduled",
+   "Submitted",
+   "Returned"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Insufficient funds 2 days before effective date",
+   "customer_experience": "Payment may fail + NSF fee",
+   "bank_handling": "Rejected",
+   "resolution": "Re-submit",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s008"
+   ]
+  },
+  {
+   "trigger": "ACH request awaiting Secondary Approval (Dual Approval Feature enabled)",
+   "customer_experience": "Entry initiated by a non-owner User remains in pending status until a designated Approver provides Secondary Approval; approver must sign in and approve before cut-off.",
+   "bank_handling": "'will not be processed as an ACH entry or acted upon by the Bank until Secondary Approval is provided. The Bank reserves the right to cancel a pending ACH Transfer request awaiting Secondary Approval at any time without notice.'",
+   "resolution": "Approver approves (or request lapses/cancelled); re-initiate if cancelled.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s906"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ach_alert",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Prefunded ACH with phone-code validation; lacks documented maker-checker in OLB.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

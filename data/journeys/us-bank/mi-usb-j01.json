@@ -1,0 +1,1343 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j01",
+ "title": "Consumer sends money to a new recipient with Zelle® (mobile app)",
+ "bank": "us-bank",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a friend instantly using only their phone number or email",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens Transfer & pay from the app dashboard and sees 'Send &…",
+   "customer_action": "Customer opens Transfer & pay from the app dashboard and sees 'Send & request money with Zelle®'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "App home 'Send | Zelle' shortcut, or bottom nav Transfer & pay > PAYMENTS & BILLS > 'Send & request money with Zelle®' > Zelle screen (Manage recipients / Send money / Request money / Split a bill)"
+    }
+   ],
+   "frontstage": "If not yet enrolled, app shows 'Get started' (web: 'Enroll'); no separate Zelle login",
+   "actor": "customer",
+   "decision": "Enrolled vs not enrolled",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s025",
+      "src-us-bank-s901",
+      "src-us-bank-s903"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s025",
+      "src-us-bank-s901",
+      "src-us-bank-s903"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s025",
+      "src-us-bank-s901",
+      "src-us-bank-s903"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m02",
+   "code": "M02",
+   "stage": "discover",
+   "title": "Customer may instead say/type 'Send 200 bucks to Tony' to Smart…",
+   "customer_action": "Customer may instead say/type 'Send 200 bucks to Tony' to Smart Assistant",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Smart Assistant (red Assistant icon / microphone)"
+    }
+   ],
+   "frontstage": "Assistant initiates a send flow (rail not named on page)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s083"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s083"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s083"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "First-time: choose U.S. mobile number or email tied to the account,…",
+   "customer_action": "First-time: choose U.S. mobile number or email tied to the account, Continue; choose checking/savings to link; review confirmation; Done",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Get started > Continue > choose account > Done"
+    }
+   ],
+   "frontstage": "Mobile number must have been registered in the profile ≥3 calendar days; if token already enrolled elsewhere, U.S. Bank alerts and offers to move/split enrollment",
+   "actor": "customer",
+   "decision": "Token already enrolled at another FI",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s025",
+      "src-us-bank-s002",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s025",
+      "src-us-bank-s002",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s025",
+      "src-us-bank-s002",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s025",
+      "src-us-bank-s002",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-3",
+     "text": "3-day mobile-number ageing rule blocks brand-new customers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Add recipient: Manage recipients > Add new recipient (toggle for…",
+   "customer_action": "Add recipient: Manage recipients > Add new recipient (toggle for business), first/last name, email or mobile; Add recipient — or add inline at Send",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send money > Choose a recipient (sections: 'Add a recipient' with QR-code icon, 'Zelle Ready Contacts', 'My Recipients') > Contact options quick-action (enrolled phone number, or add a new email or phone)"
+    }
+   ],
+   "frontstage": "Purple 'Z' shows the contact is already enrolled; for enrolled tokens the first name registered by the recipient is displayed before sending",
+   "actor": "customer",
+   "decision": "Recipient enrolled vs not",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s009",
+      "src-us-bank-s012",
+      "src-us-bank-s029",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s009",
+      "src-us-bank-s012",
+      "src-us-bank-s029",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s009",
+      "src-us-bank-s012",
+      "src-us-bank-s029",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Select Send money, pick recipient (email / mobile / Zelle tag for…",
+   "customer_action": "Select Send money, pick recipient (email / mobile / Zelle tag for business)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send money > Select recipient"
+    }
+   ],
+   "frontstage": "Zelle tag lookup displays contact name to verify",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m06",
+   "code": "M06",
+   "stage": "initiate",
+   "title": "Enter amount; optional memo; choose from-account; optional future date…",
+   "customer_action": "Enter amount; optional memo; choose from-account; optional future date via calendar icon; optional 'Repeat this payment'; select Review",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Enter the amount' screen: Amount field (send limits viewable here), 'Pay From' account, 'Send on' date, repeat option; 'Review' button"
+    }
+   ],
+   "frontstage": "Limits (daily + 30-day, per person) enforced; limits viewable under Help & services > Know your transaction limits",
+   "actor": "customer",
+   "decision": "One-time vs scheduled vs recurring",
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s010",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s010",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s010",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s010",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-6",
+     "text": "Limits are fixed and 'cannot be changed'"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Review details on the 'Review before sending.' screen and select 'Send…",
+   "customer_action": "Review details on the 'Review before sending.' screen and select 'Send $X'; a 'Keep your money safe.' scam warning follows, where the customer ticks 'I understand that once my payment is sent, it can't be canceled.'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Review before sending.' screen (TO / AMOUNT / FROM / SEND ON / MEMO; footer 'Your money will be sent typically within minutes.'; button 'Send $X') > 'Keep your money safe.' interstitial with checkbox > Continue"
+    }
+   ],
+   "frontstage": "After 'Send $X' the app shows a full-screen scam warning: 'Keep your money safe. Be sure this isn't fraud. U.S. Bank will never ask you to send money to anyone, including yourself. Scammers might ask you to: • Send more money to finalize a payment. • Share a login verification code. • Upgrade an account to receive money.' + link 'Learn how to pay safely with Zelle®' + checkbox 'I understand that once my payment is sent, it can't be canceled.' then 'Continue'. Demo coach-mark: 'Out of caution, U.S. Bank will always warn you to be aware of scams and fraud.'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s008",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m08",
+   "code": "M08",
+   "stage": "review-authorize",
+   "title": "Second warning screen ('Warning screen displays with a message to be…",
+   "customer_action": "Second warning screen ('Warning screen displays with a message to be aware of fraud') – customer selects 'Continue' to release the payment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Keep your money safe' > Continue"
+    }
+   ],
+   "frontstage": "Payment is only sent after the acknowledgment checkbox and Continue; OTP may additionally be prompted",
+   "actor": "customer",
+   "decision": "Abandon vs continue",
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-8",
+     "text": "Two consecutive warning screens on every send add friction but are the bank's only APP-scam control"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m09",
+   "code": "M09",
+   "stage": "review-authorize",
+   "title": "If prompted, enter one-time passcode sent to registered cellular device",
+   "customer_action": "If prompted, enter one-time passcode sent to registered cellular device",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "One-time passcode prompt"
+    }
+   ],
+   "frontstage": "If OTP not verified, 'the Zelle transaction will be cancelled'",
+   "actor": "customer",
+   "decision": "Risk-based OTP trigger (criteria not published)",
+   "notification": "SMS OTP",
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s007",
+      "src-us-bank-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s007",
+      "src-us-bank-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s007",
+      "src-us-bank-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m10",
+   "code": "M10",
+   "stage": "execute-track",
+   "title": "Payment sent to Zelle network; enrolled recipients typically receive…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > Pending payments / history"
+    }
+   ],
+   "frontstage": "Payment to un-enrolled recipient sits Pending up to 14 calendar days",
+   "actor": "bank-system",
+   "decision": "Enrolled (instant) vs un-enrolled (pending)",
+   "notification": "Email to sender when sent and when deposited; push/text optional",
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s030",
+      "src-us-bank-s029",
+      "src-us-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s030",
+      "src-us-bank-s029",
+      "src-us-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m11",
+   "code": "M11",
+   "stage": "confirm-complete",
+   "title": "Sender receives email (and optional push/text) that payment was sent…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Payment sent.' screen ('Your money will be available in <first name>'s account typically in minutes.'; TO; confirmation code; 'Save transaction details' link; 'Done'; 'Send a new payment'); plus Zelle alerts (email automatic, push optional)"
+    }
+   ],
+   "frontstage": "Email automatic; push toggle in Notifications > Zelle®",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email + optional push/text",
+   "source_step": 11,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s026",
+      "src-us-bank-s027",
+      "src-us-bank-s028",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s026",
+      "src-us-bank-s027",
+      "src-us-bank-s028",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s026",
+      "src-us-bank-s027",
+      "src-us-bank-s028",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-11",
+     "text": "Confirmation screen contents not documented in KB"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m12",
+   "code": "M12",
+   "stage": "manage",
+   "title": "View Activity (90 days default, 18 months searchable); cancel pending…",
+   "customer_action": "View Activity (90 days default, 18 months searchable); cancel pending payment to un-enrolled recipient via Activity > Pending payments > Cancel payment > Yes, cancel; edit = cancel and re-create",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > Pending payments > Cancel payment"
+    }
+   ],
+   "frontstage": "Cancel option disappears once processing",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s032",
+      "src-us-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s032",
+      "src-us-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s032",
+      "src-us-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s032",
+      "src-us-bank-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-12",
+     "text": "No in-flight edit"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m13",
+   "code": "M13",
+   "stage": "manage",
+   "title": "Edit/cancel recurring: Activity > Scheduled tab > Edit payment / Cancel…",
+   "customer_action": "Edit/cancel recurring: Activity > Scheduled tab > Edit payment / Cancel payment > next payment or series",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > Scheduled"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m14",
+   "code": "M14",
+   "stage": "exception",
+   "title": "Recipient never enrolls: payment expires after 14 days, refunded within…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Auto-cancel and refund",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email to both",
+   "source_step": 14,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m15",
+   "code": "M15",
+   "stage": "exception",
+   "title": "Wrong recipient/amount: cancel if un-enrolled; otherwise ask recipient…",
+   "customer_action": "Wrong recipient/amount: cancel if un-enrolled; otherwise ask recipient to return or call 800-USBANKS to file a dispute (recipient's bank decides)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "800-USBANKS"
+    }
+   ],
+   "frontstage": "Dispute logged; outcome depends on receiving bank",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 15,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s021",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s021",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s021",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s021",
+      "src-us-bank-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-15",
+     "text": "No in-app dispute path for Zelle"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m16",
+   "code": "M16",
+   "stage": "exception",
+   "title": "Scam (authorized push payment): call 800-USBANKS (Zelle support / Zelle…",
+   "customer_action": "Scam (authorized push payment): call 800-USBANKS (Zelle support / Zelle for business pages) or the Fraud Liaison Center 877-595-6256 (scam guidance page); 'qualifying imposter scams may be eligible for reimbursement' but 'neither Zelle nor U.S. Bank offers a protection program for any authorized payments'",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center 877-595-6256"
+    }
+   ],
+   "frontstage": "Imposter-scam cases assessed under Zelle network policy (Nov 2023)",
+   "actor": "customer",
+   "decision": "Imposter scam vs purchase scam",
+   "notification": null,
+   "source_step": 16,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s012",
+      "src-us-bank-s011",
+      "src-us-bank-s115"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s012",
+      "src-us-bank-s011",
+      "src-us-bank-s115"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s012",
+      "src-us-bank-s011",
+      "src-us-bank-s115"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s002",
+      "src-us-bank-s012",
+      "src-us-bank-s011",
+      "src-us-bank-s115"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-16",
+     "text": "Reimbursement language is hedged and not detailed"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m17",
+   "code": "M17",
+   "stage": "exception",
+   "title": "Unauthorized Zelle transaction: covered by Digital Security Coverage if…",
+   "customer_action": "Unauthorized Zelle transaction: covered by Digital Security Coverage if reported promptly (within 60 days of statement)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Reg E style investigation",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 17,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m18",
+   "code": "M18",
+   "stage": "support",
+   "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
+   "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help & services; Smart Assistant; 800-USBANKS; Make an appointment"
+    }
+   ],
+   "frontstage": "Contact-center or branch handles",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 18,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s011",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s011",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s011",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s011",
+      "src-us-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j01-18",
+     "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j01:m19",
+   "code": "M19",
+   "stage": "support",
+   "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
+   "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Fraud claim intake",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 19,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "Transfer & pay > Send & request money with Zelle® > Activity (Pending payments / Scheduled / Requests; search for older)",
+  "states": [
+   "Pending",
+   "Sent",
+   "Delivered/Deposited",
+   "Scheduled",
+   "Cancelled/Expired (refunded)"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 calendar days",
+   "customer_experience": "Payment shows pending then is cancelled; funds back within 3 business days",
+   "bank_handling": "Auto-expire and refund; notify both",
+   "resolution": "Funds returned",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s015"
+   ]
+  },
+  {
+   "trigger": "Sent to wrong person or wrong amount",
+   "customer_experience": "Cancel if still pending; else contact recipient or call to dispute",
+   "bank_handling": "Dispute filed by phone; recipient's bank decides",
+   "resolution": "Not guaranteed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s021",
+    "src-us-bank-s011"
+   ]
+  },
+  {
+   "trigger": "Authorized push payment scam (imposter)",
+   "customer_experience": "Call 800-USBANKS (Zelle support / Zelle for business pages) or the Fraud Liaison Center 877-595-6256 (scam guidance page); no in-app scam-claim path",
+   "bank_handling": "Case review; 'qualifying imposter scams may be eligible for reimbursement'",
+   "resolution": "Discretionary / network imposter-scam policy",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s002",
+    "src-us-bank-s012"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle payment",
+   "customer_experience": "Report within 60 days",
+   "bank_handling": "Digital Security Coverage – not liable if reported promptly",
+   "resolution": "Reimbursed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s017"
+   ]
+  },
+  {
+   "trigger": "OTP not verified",
+   "customer_experience": "Transaction cancelled",
+   "bank_handling": "System cancels",
+   "resolution": "Customer restarts",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s007"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent",
+   "channels": [
+    "email",
+    "push(optional)",
+    "text(optional)"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_delivered/received",
+   "channels": [
+    "email",
+    "push(optional)"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "recipient_not_enrolled / expired",
+   "channels": [
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "preferences_changed",
+   "channels": [
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Clean, label-consistent flow with explicit irrevocability acknowledgment and purple-Z/first-name recipient verification. Weaknesses: no in-app Zelle dispute or scam-report path (phone only), reimbursement stance is a single hedged sentence, and OTP trigger logic is opaque.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

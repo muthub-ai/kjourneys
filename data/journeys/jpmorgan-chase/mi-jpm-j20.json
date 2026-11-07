@@ -1,0 +1,338 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j20",
+ "title": "Commercial client originates ACH / real-time payments in Chase Connect (sketch)",
+ "bank": "jpmorgan-chase",
+ "product": "ach-origination",
+ "persona": "Middle-market AP team",
+ "segment": "commercial",
+ "customer_goal": "Run payables with entitlements and dual control",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j20:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Primary Administrator sets entitlements in Access & Security Manager;…",
+   "customer_action": "Primary Administrator sets entitlements in Access & Security Manager; add payees (fraud screen 'pending review' up to 48h)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Access & Security Manager"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j20:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "'Pay & transfer' > 'ACH Payment Services' > select payees/group >…",
+   "customer_action": "'Pay & transfer' > 'ACH Payment Services' > select payees/group > 'Schedule payments' > 'Pay from account', 'Delivery method (Standard ACH, Same-Day ACH, or Real-Time)', 'Deliver by date', 'Amount', 'Addendum line' > 'Schedule payments'; or 'ACH file upload' (NACHA/CSV up to 2,000 instructions; validated; approved as a whole; 8:00 PM ET batch cutoff; uploaded items can only be cancelled, not edited).",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH Payment Services"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j20:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Chase Dual Control–Transactions routes to pending approvals (files…",
+   "customer_action": "Chase Dual Control–Transactions routes to pending approvals (files approved whole)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pending approvals"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j20:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Payment activity tab: view/sort/change/cancel pending Standard,…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payments Activity"
+    }
+   ],
+   "frontstage": "Payment activity tab: view/sort/change/cancel pending Standard, Same-Day and Real-Time payments; views Vendor & employee payments / Repeating payments / ACH file upload activity; download PDF/print; 'Request reversal' and 'Cancel reversal request' links under each payment's status tracker (reversal within 5 Business Days of the Deliver By Date; 7-Business-Day hold on the credited amount). Payment comparison: Standard ACH 8 p.m. ET cutoff, up to remaining profile limit; Same-Day ACH 2 p.m. ET, $100,000/txn; Real-Time (TCH RTP) Midnight ET, $25,000/txn, not reversible.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j20:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Edit/Cancel upcoming (file payments cancel only); RTP irreversible",
+   "customer_action": "Edit/Cancel upcoming (file payments cancel only); RTP irreversible",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payments Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j20:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Client Service Professional / Customer Service Professional",
+   "customer_action": "Client Service Professional / Customer Service Professional",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Commercial support"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J20",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P11-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "api-treasury-portal"
+  ]
+ },
+ "status_tracking": {
+  "where": "Payments Activity",
+  "states": [
+   "pending review",
+   "pending approval",
+   "pending"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payee fails screening",
+   "customer_experience": "Pending review 48h then new payee required",
+   "bank_handling": "Fraud screening",
+   "resolution": "Recreate",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s061"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "alerts via Profile & Settings > Manage Alerts",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Connect mirrors Chase Business Online; guide dated 2022 so limits may have changed.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,610 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j06",
+ "title": "Customer adds a payee and pays a bill (Bill Pay, web/mobile)",
+ "bank": "truist",
+ "product": "bill-pay",
+ "persona": "Retail customer paying utilities",
+ "segment": "consumer",
+ "customer_goal": "Pay a company or person by a due date",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Transfer & Pay > 'Pay bills' tile (deep link BILLPAYLANDING)",
+   "customer_action": "Transfer & Pay > 'Pay bills' tile (deep link BILLPAYLANDING)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Manage Payees > Add a Payee > 'Let's add a payee': select company from…",
+   "customer_action": "Manage Payees > Add a Payee > 'Let's add a payee': select company from directory and match address, or manually enter company/individual details > Add Payee; group payees (4.0.0)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Let's add a payee"
+    }
+   ],
+   "frontstage": "Directory match vs manual; individuals paid by check",
+   "actor": "customer",
+   "decision": "Directory vs manual",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Click pay for one payee or select multiple payees (multi-payee flow,…",
+   "customer_action": "Click pay for one payee or select multiple payees (multi-payee flow, 2026); 'Make a bill payment': from account, amount, one-time/recurring, Deliver By date",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Make a bill payment"
+    }
+   ],
+   "frontstage": "Bill Pay Site designates the earliest possible 'Deliver By Date' per biller (typically ≤5 business days) and blocks earlier dates; the debit date (2 business days before or on the Deliver By Date for electronic payments) is displayed; for participating billers 'options for Rush Delivery will be presented' (Same Day Bill Pay / Overnight Check, fee-based, irrevocable); multi-payee flow since 5.1.0 (Feb 2026).",
+   "actor": "customer",
+   "decision": "Standard vs expedited (Same Day Bill Pay / Overnight Check, fee)",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s919"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j06-3",
+     "text": "Deliver-by model requires planning; check payee timing variable"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review & submit > Submit payment",
+   "customer_action": "Review & submit > Submit payment",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review & submit"
+    }
+   ],
+   "frontstage": "Expedited payments cannot be changed after submit",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Payment scheduled; Manage Bills shows history; upcoming transactions on…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Bills"
+    }
+   ],
+   "frontstage": "Payment scheduled; Manage Bills shows history; upcoming transactions on dashboard; improved 'bill payment activity and confirmations' (4.4.0, Aug 2025)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Confirmation; payment alerts (digital banking page: 'set payment…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Confirmation; payment alerts (digital banking page: 'set payment alerts')",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Manage Bills: ellipsis (...) → edit or delete; Manage payees:…",
+   "customer_action": "Manage Bills: ellipsis (...) → edit or delete; Manage payees: edit/delete",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Bills / Manage payees"
+    }
+   ],
+   "frontstage": "'You may cancel or edit any Scheduled Payment (including recurring payments) by following the directions within the application. There is no charge for canceling or editing a Scheduled Payment. Once the Bill Pay Service has begun processing a payment it can not be cancelled or edited, therefore a stop payment request must be submitted.' Recurring bill payments whose deliver-by date falls on a weekend are processed at least one day earlier.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s905",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s905",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s006",
+      "src-truist-s014",
+      "src-truist-s905",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Late posting → Truist covers late fees up to $50/payment if scheduled…",
+   "customer_action": "Late posting → Truist covers late fees up to $50/payment if scheduled per guidelines; returned payment (NSF) → reimburse on demand, 1.5% late fee, possible credit-bureau reporting; stop payment: call 844-4TRUIST or write Truist Bill Payment Research (Whiteville NC), 5 business days before Deliver By",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Bill Payment Research"
+    }
+   ],
+   "frontstage": "Stop payment: call 844-4TRUIST or write to Truist Bill Payment Research, 301 S J.K Powell Blvd., Whiteville, NC 28472; written requests must arrive ≥5 business days before the Deliver By Date; phone requests may require written confirmation within 14 days; stop-payment fee charged; Bill Pay Service bears late charges up to $50 per payment when scheduled per guidelines; Exception Payments excluded from the guarantee.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s013",
+      "src-truist-s014",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j06-8",
+     "text": "Stop-payment by phone/mail only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j06:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Truist Assist pays Truist bills only; third-party bill pay help via…",
+   "customer_action": "Truist Assist pays Truist bills only; third-party bill pay help via 844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Truist Assist"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J06",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P03-S02",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": [
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "Manage Bills; dashboard upcoming transactions",
+  "states": [
+   "Scheduled",
+   "Processing",
+   "Paid"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Biller refused by Truist",
+   "customer_experience": "Notified",
+   "bank_handling": "Refusal",
+   "resolution": "Pay another way",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s013"
+   ]
+  },
+  {
+   "trigger": "Payment to deposit/brokerage ('Exception Payment')",
+   "customer_experience": "Discouraged; no guarantee",
+   "bank_handling": "Processed at own risk",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s013"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_alert",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Mature Deliver-By bill pay with $50 guarantee and multi-payee batch; stop-payment path is analog (phone/mail).",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

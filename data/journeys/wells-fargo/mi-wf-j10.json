@@ -1,0 +1,913 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j10",
+ "title": "Consumer sends a domestic wire online (Digital Wires)",
+ "bank": "wells-fargo",
+ "product": "wire-domestic",
+ "persona": "Consumer closing on a home / paying a contractor",
+ "segment": "consumer",
+ "customer_goal": "Send a large same-day payment to a specific bank account",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Transfer & Pay' > 'Wire Money' (enrollment subject to eligibility;…",
+   "customer_action": "'Transfer & Pay' > 'Wire Money' (enrollment subject to eligibility; requires U.S. residence and U.S. mobile or RSA SecurID)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay > Wire Money"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j10-1",
+     "text": "All published steps reference Wells Fargo Online ('Sign on to Wells Fargo Online, go to Transfer & Pay, and select Wire Money'); product page states a flat $30 digital wire fee while the FAQ says fees 'range from $0-$30' — inconsistent fee messaging; mobile-app wire flow still undocumented."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m02",
+   "code": "M02",
+   "stage": "discover",
+   "title": "Web (observed): 'Wire money' landing shows a rail-specific banner…",
+   "customer_action": "Web (observed): 'Wire money' landing shows a rail-specific banner 'Scammers may alter wire instructions sent by email. Always verify the payment details with a trusted source before sending.' with 'How to avoid wire scams'; tiles Send | Estimate | About wires and Activity | Recipients | Compare options",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay > Wire Money"
+    }
+   ],
+   "frontstage": "'Compare options' (Domestic: Zelle® vs Wires; International: ExpressSend® vs Wires) tabulates fees, delivery speed ('Within minutes or up to 2 business days' vs 'Same day for domestic wires'; 'As soon as same business day' vs '1-5 business days'), to-an-account, cash-to-a-person ('Yes, for many locations' for ExpressSend), how to enroll (ExpressSend: Mobile) and locations; FX disclosure: 'Wells Fargo makes money when it converts one currency to another… includes a markup.'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "frontstage": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Web (observed): Send → 'Select recipient' (Back / Search / Add; empty…",
+   "customer_action": "Web (observed): Send → 'Select recipient' (Back / Search / Add; empty state 'You have no recipients. Please add a recipient to send a wire.'); 'Add recipient' is a 3-step wizard — Step 1 'Recipient's bank info': Individual / Business; Country picker; first and last name; nickname; Routing number (ABA/RTN) with info dialog and 'Find an ABA/RTN' lookup ('If your recipient has a Wells Fargo account, use routing number 121000248'); Account number; Cancel (guard: 'all information you've entered will be discarded') / Next (steps 2-3 not opened)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire Money > Send > Add recipient (Step 1 of 3)"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "From Wire money page select 'Recipients' > add: name, address, bank…",
+   "customer_action": "From Wire money page select 'Recipients' > add: name, address, bank name, routing (ABA) and account number; 'Recipient's bank info' screen helps look up routing",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Recipients"
+    }
+   ],
+   "frontstage": "Recipient saved for future wires",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Select recipient, funding account, amount (daily and rolling 30-day…",
+   "customer_action": "Select recipient, funding account, amount (daily and rolling 30-day limits apply, vary by recipient history); optional schedule/recurring",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire Money"
+    }
+   ],
+   "frontstage": "Fees shown before sending ($30 digital; waived for eligible accounts)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Review; wire scam guidance (verify recipient, beware changed…",
+   "customer_action": "Review; wire scam guidance (verify recipient, beware changed instructions)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "Static education; no published dynamic interstitial",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Enter access code texted to U.S. mobile or RSA SecurID code",
+   "customer_action": "Enter access code texted to U.S. mobile or RSA SecurID code",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Access code"
+    }
+   ],
+   "frontstage": "Mandatory security procedure for every wire",
+   "actor": "customer",
+   "decision": "Code OK → submit; above limit → go to branch",
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "Web (observed): 'Activity' empty state 'You have no wire transfer…",
+   "customer_action": "Web (observed): 'Activity' empty state 'You have no wire transfer activity to show.' (status vocabulary not observable on this profile)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire Money > Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "touchpoint": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m09",
+   "code": "M09",
+   "stage": "execute-track",
+   "title": "Status 'Scheduled' → 'Pending' → 'Completed'; may show 'Under review';…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Activity / Wire details"
+    }
+   ],
+   "frontstage": "Status definitions (verbatim): 'Scheduled means that the wire has not started processing yet and you can still cancel it. Pending means that the wire is in process, and you can no longer cancel it. Completed means that your wire has been sent successfully. Failed means that we were unable to send the money to your recipient. We will return the funds to your account. Canceled means that your wire has been canceled and will not be sent. Returned means that your wire was not accepted by your recipient's bank. We will return the funds to your account. Under review means that your wire is undergoing additional verification for your security.' Cutoffs 3:00 pm PT domestic, 2:20 pm PT international, 4:30 pm PT to another Wells Fargo account; 'We may need to contact you to verify the payment, which could delay its delivery.'",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m10",
+   "code": "M10",
+   "stage": "confirm-complete",
+   "title": "Confirmation page (with cancel option while Scheduled)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation page"
+    }
+   ],
+   "frontstage": "Confirmation page (with cancel option while Scheduled)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "confirmation page; secure inbox on return",
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m11",
+   "code": "M11",
+   "stage": "manage",
+   "title": "Cancel while 'Scheduled' from Confirmation page, Wire details page, or…",
+   "customer_action": "Cancel while 'Scheduled' from Confirmation page, Wire details page, or Activity; recurring wires cancel before next process date",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire details"
+    }
+   ],
+   "frontstage": "'Not all wires can be canceled. You can cancel a wire with a Scheduled status, either from your Confirmation page, from the Wire details page, or from the Activity section on the Wire money home page.' 'While your wire is being reviewed, you may also have the option to cancel it by calling 877-499-6920.' 'Once your wire is processing, we'll update your payment status, and you won't be able to cancel anymore.' Returned wires: secure inbox message + email explaining the reason; returned amount may differ due to other banks' fees or FX movement.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m12",
+   "code": "M12",
+   "stage": "exception",
+   "title": "See exception_paths (review, return, failed, fraud)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "See exception_paths (review, return, failed, fraud)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Wires FAQs; 'Recipient's bank info' lookup screen for routing/SWIFT/IBAN",
+   "customer_action": "Wires FAQs; 'Recipient's bank info' lookup screen for routing/SWIFT/IBAN",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Help"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m14",
+   "code": "M14",
+   "stage": "support",
+   "title": "Wire under review / cancel: 877-499-6920; Online Customer Service…",
+   "customer_action": "Wire under review / cancel: 877-499-6920; Online Customer Service 1-800-956-4442; fraud 1-866-867-5568",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s008",
+      "src-wells-fargo-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j10:m15",
+   "code": "M15",
+   "stage": "support",
+   "title": "Branch for wires above digital limit or when digital wire cannot be…",
+   "customer_action": "Branch for wires above digital limit or when digital wire cannot be completed ($40)",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Branch"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 15,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J10",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P04-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Wire money home 'Activity', 'Wire details' page, Confirmation page",
+  "states": [
+   "Scheduled",
+   "Pending",
+   "Completed",
+   "Failed",
+   "Canceled",
+   "Returned",
+   "Under review"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Wire placed 'Under review' by internal security",
+   "customer_experience": "Status 'Under review'; WF may contact customer; delivery delayed; to cancel call 877-499-6920",
+   "bank_handling": "Manual verification",
+   "resolution": "Bank may contact the customer to verify; 'While your wire is being reviewed, you may also have the option to cancel it by calling 877-499-6920'; once processing (Pending) it can no longer be canceled.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s008"
+   ]
+  },
+  {
+   "trigger": "Wire returned by beneficiary bank",
+   "customer_experience": "Status 'Returned'; secure-inbox message + email; funds credited back less recipient-bank fees; FX wires may return less USD",
+   "bank_handling": "Automatic credit",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s008",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Customer wants to cancel after processing",
+   "customer_experience": "Only 'Scheduled' wires can be canceled in UI; Order is final once accepted; WF may attempt cancellation on request without liability",
+   "bank_handling": "Best-effort recall",
+   "resolution": "Uncertain",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s008",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Consumer international wire – 30-minute cancellation right",
+   "customer_experience": "Cancel within 30 minutes of completing for full refund incl. fees, via Wire Transfers or phone on receipt",
+   "bank_handling": "Reg E remittance rule",
+   "resolution": "Refund",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Error on consumer international wire",
+   "customer_experience": "Notify within 180 days; WF investigates within 90 days, reports within 3 business days",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Error/unauthorized domestic wire",
+   "customer_experience": "Notify within 14 days of acceptance/debit; orders verified via security procedure bind customer even if unauthorized",
+   "bank_handling": "UCC 4A",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s040"
+   ]
+  },
+  {
+   "trigger": "Wire fraud / changed payment instructions scam",
+   "customer_experience": "Call immediately 1-866-867-5568; 'wire transfers typically cannot be canceled or reversed'",
+   "bank_handling": "Attempted recall",
+   "resolution": "Rarely recovered",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s022",
+    "src-wells-fargo-s024"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "wire_returned",
+   "channels": [
+    "secure inbox",
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "security_review_contact",
+   "channels": [
+    "phone/other"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "access_code",
+   "channels": [
+    "text",
+    "SecurID"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Strong status vocabulary (7 states incl. Under review/Returned) and mandatory OTP/SecurID; weakness: no mobile-specific documentation, limits opaque, 'Scheduled'-only cancel window.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

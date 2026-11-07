@@ -1,0 +1,398 @@
+{
+ "bank": "pnc",
+ "product": "bill-pay",
+ "facts": [
+  {
+   "attribute": "attr-cap-recurring",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S02, PNC-P04-S04, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scheduled-future-dated",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S02, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-request-money",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-split",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-qr-code",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-contact-sync",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-cancel-before-send",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S02, PNC-P04-S06, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-status-tracking",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-push-notifications",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-email-sms-notifications",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scam-warning-interstitial",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-step-up-auth",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s025"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   },
+   "display": "Yes — Controlling Party verification at enrollment"
+  },
+  {
+   "attribute": "attr-cap-dual-approval-smb",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-international",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-same-day",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-instant",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-pnc-s009",
+    "src-pnc-s018",
+    "src-pnc-s025",
+    "src-pnc-s921"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: PNC-P04-S01, PNC-P04-S02, PNC-P04-S03, PNC-P04-S04, PNC-P04-S06, PNC-P04-S07, PNC-P11-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-discover",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "MEDIUM FRICTION: Bill pay UI fragmented into multiple variants by account type. [GAP-PNC-0021]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-set-up",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity; minor: Exact screen names published; Quick Switch imports payees from the old bank. [STR-PNC-0006]; BILLPAY-EBILL-MANAGE=2: MEDIUM FRICTION: First eBill can take up to 60 days. [GAP-PNC-0023]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-initiate",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity; minor: Electronic vs check delivery is opaque. [GAP-PNC-0022]; BILLPAY-EBILL-MANAGE=4: Sets composite reference: Variable-amount AutoPay on eBills. [STR-PNC-0007]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-review-authorize",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity with composite; evidence PNC-J08, PNC-J21; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence PNC-J09",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-execute-track",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity with composite; evidence PNC-J08, PNC-J21; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence PNC-J09",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-confirm-complete",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity with composite; evidence PNC-J08, PNC-J21; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence PNC-J09",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-manage",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity with composite; evidence PNC-J08, PNC-J21; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence PNC-J09",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-exception",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity with composite; evidence PNC-J08, PNC-J21; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence PNC-J09",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-support",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "BILLPAY-SEND=3: At parity with composite; evidence PNC-J08, PNC-J21; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence PNC-J09",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  }
+ ]
+}

@@ -1,0 +1,312 @@
+{
+ "bank": "td-bank",
+ "product": "rtp",
+ "facts": [
+  {
+   "attribute": "attr-cap-recurring",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scheduled-future-dated",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-request-money",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-split",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-qr-code",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-contact-sync",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-cancel-before-send",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-status-tracking",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-dual-approval-smb",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-international",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-same-day",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-instant",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-td-bank-s013",
+    "src-td-bank-s016"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P07-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-discover",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity; minor: Inbound RTP not surfaced in app. [GAP-TD-0026]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-set-up",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity with composite; evidence TD-J13",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-initiate",
+   "value": 0,
+   "display": "0 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent)",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-review-authorize",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=2: MEDIUM MISSING_CAPABILITY: No consumer RfP payment found after search. [GAP-TD-0027]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-execute-track",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity with composite; evidence TD-J13",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-confirm-complete",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity with composite; evidence TD-J13",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-manage",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity with composite; evidence TD-J13",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-exception",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity with composite; evidence TD-J13",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-support",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "INSTANT-SEND=0: No consumer/SMB-initiated RTP/FedNow send (transfer speed menus offer ACH tiers only) (absent); INSTANT-RECEIVE-RFP=3: At parity with composite; evidence TD-J13",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  }
+ ]
+}

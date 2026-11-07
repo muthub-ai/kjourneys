@@ -1,0 +1,341 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j18",
+ "title": "Commercial client sends an international wire or cross-border real-time payment via CashPro",
+ "bank": "bank-of-america",
+ "product": "wire-international",
+ "persona": "Treasury analyst",
+ "segment": "commercial",
+ "customer_goal": "Pay overseas supplier or gig worker with tracking",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j18:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Beneficiary set-up; pre-validation of recipient account (cross-border…",
+   "customer_action": "Beneficiary set-up; pre-validation of recipient account (cross-border real-time)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "CashPro beneficiaries"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j18:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Initiate wire (SWIFT) or real-time (SPEI/FPS/UPI) via CashPro or Swift…",
+   "customer_action": "Initiate wire (SWIFT) or real-time (SPEI/FPS/UPI) via CashPro or Swift messaging; FX at live/guaranteed rate via API",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "CashPro Payments / FX"
+    }
+   ],
+   "frontstage": "Real-time corridors (SPEI/FPS/UPI) were announced Jun 2026 and piloted Sep 2026 (Bradesco, Brazil→HK FPS); CashPro availability not confirmed as of 2026-11-06 — SWIFT wire is the live path.",
+   "actor": "customer",
+   "decision": "Wire vs real-time corridor",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027",
+      "src-bank-of-america-s071",
+      "src-bank-of-america-s951",
+      "src-bank-of-america-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027",
+      "src-bank-of-america-s071",
+      "src-bank-of-america-s951",
+      "src-bank-of-america-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027",
+      "src-bank-of-america-s071",
+      "src-bank-of-america-s951",
+      "src-bank-of-america-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j18:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Approvals in CashPro App (Mobile Token)",
+   "customer_action": "Approvals in CashPro App (Mobile Token)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "CashPro App"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s055"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s055"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j18:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Tracking and status; real-time corridors deliver in seconds/minutes",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payment tracking"
+    }
+   ],
+   "frontstage": "Tracking and status; real-time corridors deliver in seconds/minutes",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j18:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Recall/return handled by service; returned funds at retail buy rate…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Service Dashboard"
+    }
+   ],
+   "frontstage": "Recall/return handled by service; returned funds at retail buy rate (consumer analogue) – commercial terms not public",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j18:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "CashPro Chat with Erica → live advisor",
+   "customer_action": "CashPro Chat with Erica → live advisor",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "CashPro Chat"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s072"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s072"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J18",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P13-S04",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "CashPro",
+  "states": [],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Cross-border recall",
+   "customer_experience": "UNKNOWN",
+   "bank_handling": "UNKNOWN",
+   "resolution": "UNKNOWN",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Cross-border real-time launch (Mexico/UK/India) is a 2025–26 differentiator; SWIFT gpi tracking not confirmed on fetched pages.",
+ "x-mi_evidence": "THIRD_PARTY"
+}

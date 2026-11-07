@@ -6,6 +6,8 @@
 #   scripts/refresh.sh reports/2026-11-20-v1 --commit    ...then commit data + report on this branch
 #   scripts/refresh.sh reports/2026-11-20-v1 --commit --push
 #
+# A report whose manifest names a "workbook" is imported first (tools/import_mi_workbook.py):
+# journeys, findings, composites, scores and the per-bank extracts all come from that Excel file.
 # Rerunning a report version rolls back what it wrote before and applies its extracts afresh,
 # so fix an extract and run the same command again.
 # Output: dist/index.html (journey site), dist/kjourneys.json, dist/facts.jsonl, dist/coverage.json, dist/summary.md
@@ -17,7 +19,7 @@ for a in "$@"; do
   case "$a" in
     --commit) COMMIT=1 ;;
     --push)   PUSH=1; COMMIT=1 ;;
-    -h|--help) sed -n '2,13p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,15p' "$0"; exit 0 ;;
     reports/*) REPORT="${a%/}" ;;
     *) echo "unknown argument: $a (see --help)"; exit 2 ;;
   esac
@@ -28,6 +30,11 @@ python3 -c "import jsonschema, rfc3339_validator" 2>/dev/null || { echo "Missing
 
 if [[ -n "$REPORT" ]]; then
   [[ -f "$REPORT/manifest.json" ]] || { echo "$REPORT/manifest.json not found"; exit 1; }
+  if python3 -c "import json,sys; sys.exit(0 if json.load(open('$REPORT/manifest.json')).get('workbook') else 1)"; then
+    step "Import the MI workbook in $REPORT (journeys, findings, scores, extracts)"
+    python3 -c "import openpyxl" 2>/dev/null || { echo "Missing openpyxl. Run: pip install -r requirements.txt"; exit 1; }
+    python3 -I tools/import_mi_workbook.py "$REPORT" || { echo; echo "Workbook import failed; nothing was ingested."; exit 1; }
+  fi
   step "Ingest $REPORT"
   if ! python3 tools/ingest_mi.py "$REPORT"; then
     echo; echo "Nothing was written. Fix the report folder and rerun the same command."; exit 1

@@ -1,0 +1,424 @@
+{
+ "bank": "us-bank",
+ "product": "ach-origination",
+ "facts": [
+  {
+   "attribute": "attr-cap-recurring",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s044",
+    "src-us-bank-s060"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P22-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scheduled-future-dated",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01, USB-P12-S01, USB-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-request-money",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100",
+    "src-us-bank-s052",
+    "src-us-bank-s044"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01, USB-P09-S02, USB-P11-S01, USB-P12-S01, USB-P13-S01, USB-P19-S02, USB-P22-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-split",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100",
+    "src-us-bank-s052",
+    "src-us-bank-s044"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01, USB-P09-S02, USB-P11-S01, USB-P12-S01, USB-P13-S01, USB-P19-S02, USB-P22-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-qr-code",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100",
+    "src-us-bank-s052",
+    "src-us-bank-s044"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01, USB-P09-S02, USB-P11-S01, USB-P12-S01, USB-P13-S01, USB-P19-S02, USB-P22-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-cancel-before-send",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-status-tracking",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100",
+    "src-us-bank-s052",
+    "src-us-bank-s044"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01, USB-P09-S02, USB-P11-S01, USB-P12-S01, USB-P13-S01, USB-P19-S02, USB-P22-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-email-sms-notifications",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091",
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100",
+    "src-us-bank-s052",
+    "src-us-bank-s044"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01, USB-P09-S01, USB-P09-S02, USB-P11-S01, USB-P12-S01, USB-P13-S01, USB-P19-S02, USB-P22-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-step-up-auth",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P09-S01",
+    "mi_level": "CONFIRMED_BANK"
+   },
+   "display": "Yes — Registered cellular device required (OTP implied); explicit step not documented"
+  },
+  {
+   "attribute": "attr-cap-dual-approval-smb",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s040",
+    "src-us-bank-s043",
+    "src-us-bank-s047",
+    "src-us-bank-s091"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P08-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-international",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s053",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100",
+    "src-us-bank-s052"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P11-S01, USB-P12-S01, USB-P13-S01, USB-P19-S02",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-same-day",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s055",
+    "src-us-bank-s053",
+    "src-us-bank-s059",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P09-S01, USB-P11-S01, USB-P12-S01, USB-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-instant",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-us-bank-s053",
+    "src-us-bank-s060",
+    "src-us-bank-s066",
+    "src-us-bank-s104",
+    "src-us-bank-s061",
+    "src-us-bank-s100"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: USB-P11-S01, USB-P12-S01, USB-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-discover",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence USB-J14, USB-J15",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-set-up",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity; minor: Device must be registered 3 business days before ACH enrollment. [GAP-USB-0033]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-initiate",
+   "value": 4,
+   "display": "4 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "Sets composite reference: Standard, same-day or instant chosen in a single-payee flow with a published fee menu (Enhanced Payments). [STR-USB-0017]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-review-authorize",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "HIGH SECURITY_TRUST: No documented dual approval for SMB ACH, wires or instant payments; only business bill pay Pro has an over-limit approval. [GAP-USB-0032]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-execute-track",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence USB-J14, USB-J15",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-confirm-complete",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence USB-J14, USB-J15",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-manage",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence USB-J14, USB-J15",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-exception",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "inferred",
+   "confidence": "low",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "MEDIUM EXCEPTION_HANDLING: ACH return/reject handling not documented. [GAP-USB-0034]",
+    "report_ref": "Scores sheet",
+    "mi_level": "UNKNOWN"
+   }
+  },
+  {
+   "attribute": "attr-score-support",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence USB-J14, USB-J15",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  }
+ ]
+}

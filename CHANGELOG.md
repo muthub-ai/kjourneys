@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.0 — 2026-11-06
+
+- **First MI delivery landed** (`reports/2026-11-06-v1/`: HTML report, dossier, sources and verification, workbook), preserved byte for byte and sha256-pinned.
+- **The MI taxonomy is the ontology's** ([ADR-0007](docs/adr/0007-adopt-mi-taxonomy.md)): ten banks, sixteen rails, nine stages, six evidence levels. `tools/migrate_0_6_to_0_7.py`.
+- **`tools/import_mi_workbook.py`:** reads the workbook into 236 journeys (2,176 steps), 419 gaps and strengths, 17 composites, 595 observations, 206 verifications, 70 participation rows, the ranking, 1,156 sources and 16 product comparisons (16 capability flags, 0–4 stage scores on 12 scored rails). `scripts/refresh.sh` runs it when the manifest names a `workbook`.
+- **Removed:** the drafted Zelle comparison (11 questions, sample values). The Wells Fargo sample blueprint stays, labeled sample.
+- **Schema:** new collections (findings, composites, observations, verifications, participation, rankings); moment backstage fields optional; moments gain actor, decision, notification; journeys gain exceptions, notifications, status tracking and assessment.
+- **Validator:** MI references resolve, STR/GAP IDs match their type, records cite a known report, MI journey IDs are unique per bank. The focus bank may now hold MI facts.
+- **Site rebuilt for MI data:** overview (ranking, rail heat map, top Wells Fargo gaps), stage scores per bank with a gap-to-best mode, any journey as a blueprint with findings and sources, bank-by-bank compare per rail, filterable gaps and strengths, method (files, evidence levels, verification round). A compact view model keeps the page near 2.8 MB.
+- **Exports:** facts.jsonl adds findings and rankings; summary adds the ranking.
+- **Tests:** 40 negative fixtures (9 new for MI collections), now picking attributes by datatype; the ingest test uses its own TEST questions. `openpyxl` added to requirements.
+
 ## 0.6.0 — 2026-11-06
 
 - **Several products:**

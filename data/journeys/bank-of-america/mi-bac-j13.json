@@ -1,0 +1,521 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j13",
+ "title": "Consumer sends money with Zelle® by asking Erica (voice/text)",
+ "bank": "bank-of-america",
+ "product": "zelle",
+ "persona": "Hands-free mobile customer",
+ "segment": "consumer",
+ "customer_goal": "Send money by speaking or typing a request",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Tap Erica icon; talk, type or pick suggested topic",
+   "customer_action": "Tap Erica icon; talk, type or pick suggested topic",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s045"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Say/type e.g. 'send money to [contact] with Zelle'; Erica pre-fills the…",
+   "customer_action": "Say/type e.g. 'send money to [contact] with Zelle'; Erica pre-fills the Zelle flow (recipient, amount)",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica ('Hi, I'm Erica. How can I help?' bar atop Pay & Transfer; prompts 'Send money with Zelle®', 'Show me my Zelle® activity', 'Show me my Zelle® recipients') > pre-filled Zelle flow"
+    }
+   ],
+   "frontstage": "Erica is rules-based (no generative AI); may misunderstand – customer must review",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Customer reviews pre-filled payment in app and authorizes as in J01…",
+   "customer_action": "Customer reviews pre-filled payment in app and authorizes as in J01 (warnings, agreement)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review payment details"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Same processing/statuses as J01; 'view activity' via Erica",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Same processing/statuses as J01; 'view activity' via Erica",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "Same confirmations as app flow",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "'You'll receive the same confirmations as you do today for transactions conducted in the Mobile app. You can also check all transactions in the Mobile app and in Online Banking.'",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email/text",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "Erica can set up recurring transfers, manage alerts, manage Zelle tags…",
+   "customer_action": "Erica can set up recurring transfers, manage alerts, manage Zelle tags (business)",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s004",
+      "src-bank-of-america-s035",
+      "src-bank-of-america-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s004",
+      "src-bank-of-america-s035",
+      "src-bank-of-america-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Voice from another person treated as authorized once Erica is activated…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica terms"
+    }
+   ],
+   "frontstage": "Voice from another person treated as authorized once Erica is activated – customer bears risk; otherwise J01 exceptions",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
+   "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica / Help"
+    }
+   ],
+   "frontstage": "Erica (non-generative) selects from predefined answers; can connect to financial specialists",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j13-8",
+     "text": "Erica English-only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j13:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
+   "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact us / Report suspicious activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J13",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P09-S01",
+ "channels": {
+  "entry": [
+   "voice-chat-assistant"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Activity via Erica or Pay & Transfer",
+  "states": [
+   "as J01"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Erica misinterprets amount/recipient",
+   "customer_experience": "Customer must catch on review",
+   "bank_handling": "None",
+   "resolution": "Edit before authorizing",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s013"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "same_as_app",
+   "channels": [
+    "email",
+    "text",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Erica also sends wires, pays/cancels bills and adds payees – broadest assistant money-movement coverage among peers; Oct 2026 refresh.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

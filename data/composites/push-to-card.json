@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Instant-to-card offered as a speed toggle with fee and arrival inline",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R28#None",
+    "rationale": "No top-10 bank offers consumer push-to-card; fintech wallet pattern."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Card scan with network eligibility check",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R28#None; pnc:PNC-J29#1",
+    "rationale": "PNC Direct to Debit Card (commercial) shows the bank-side capability."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Amount with instant vs 1-3 day choice and fee preview",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R28#None",
+    "rationale": "Composite."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Confirm fee; biometric",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "benchmark:R28#None",
+    "rationale": "Composite."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "On its way -> Deposited within a minute",
+    "actor": "NETWORK",
+    "channel": "MOBILE_APP",
+    "job_step": "EXECUTE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "benchmark:R28#None; us-bank:USB-J20#1",
+    "rationale": "Visa Direct <=1 minute (Apr 2025); U.S. Bank Payee Choice includes push-to-card."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Push with issuer note",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R28#None",
+    "rationale": "Composite."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Saved cards; default rail",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R28#None",
+    "rationale": "Composite."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Fallback to ACH with fee refund if instant fails",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "benchmark:R46#None; pnc:PNC-J29#5",
+    "rationale": "PNC ePayments check fallback."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Chat with transfer ID",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R46#None",
+    "rationale": "Composite."
+   }
+  ],
+  "id": "CJ-PUSH-TO-CARD-SEND",
+  "title": "Consumer sends money instantly to a debit card (Visa Direct / Mastercard Send)",
+  "product": "push-to-card",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

@@ -1,0 +1,576 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j09",
+ "title": "Consumer adds a payee and schedules a bill payment",
+ "bank": "jpmorgan-chase",
+ "product": "bill-pay",
+ "persona": "Retail customer paying utilities",
+ "segment": "consumer",
+ "customer_goal": "Pay a bill on time from one place",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay & Transfer' > 'Pay Bills'",
+   "customer_action": "'Pay & Transfer' > 'Pay Bills'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay & Transfer > Pay Bills"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enroll in Bill Pay (navKey requestBillPayEnrollment) if first time",
+   "customer_action": "Enroll in Bill Pay (navKey requestBillPayEnrollment) if first time",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Enroll"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "'Add a payee': enter biller name, account number, pay-to address; or…",
+   "customer_action": "'Add a payee': enter biller name, account number, pay-to address; or 'Manage payees' to edit",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Add a payee"
+    }
+   ],
+   "frontstage": "Chase matches electronic billers; others paid by paper check",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "'Schedule payment': choose payee, amount, 'Pay from' account, 'Send on'…",
+   "customer_action": "'Schedule payment': choose payee, amount, 'Pay from' account, 'Send on' or 'Deliver by' date; one-time or recurring",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Schedule payment"
+    }
+   ],
+   "frontstage": "Electronic (1-2 days) vs paper check (5 days) is determined per payee; 'The Delivery Method and lead time expected for each type of payment your Payee will ordinarily receive will be indicated on screen when your payment is scheduled.' Chase payees same day before cutoff. Non-Chase payee cutoff 8:00 PM ET on the Send On Date. Default aggregate maximum $100,000 per Business Day.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Review payment information and choose 'Schedule payment' (web) /…",
+   "customer_action": "Review payment information and choose 'Schedule payment' (web) / submit; confirmation shows receipt with save/share.",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "Internal review per DSA",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s043"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Track status and see when money leaves account in Payment Activity",
+   "customer_action": "Track status and see when money leaves account in Payment Activity",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "Confirmation screen with save/share receipt",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation screen with save/share receipt",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Cancel online: 'You may cancel any Pending or Funded Bill Payment if…",
+   "customer_action": "Cancel online: 'You may cancel any Pending or Funded Bill Payment if you do so no later than the Cutoff Time, on the Send On Date. Funds will be returned to your From Account by the following Business Day. You may not stop a Bill Payment after the Cutoff Time has passed.' (8:00 PM ET for non-Chase payees; Chase credit-card payments cancellable any time before sent; automatic/future-dated payments to non-Chase payees before 10:00 AM ET on the processing day). Recurring: stop ≥3 Business Days before the Send On date (online, 877-CHASEPC, or in writing). Automatic payments: 'Pay & Transfers' > 'Payment Activity' > 'Automatic payments' > 'Set up an automatic payment'.",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment Activity > Automatic payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Late fee due to Chase delay covered by Online Bill Payment Guarantee if…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Guarantee"
+    }
+   ],
+   "frontstage": "Late fee due to Chase delay covered by Online Bill Payment Guarantee if scheduled by cutoff with correct info; payee errors excluded",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j09:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "1-800-935-9935; Secure Message Center",
+   "customer_action": "1-800-935-9935; Secure Message Center",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer service"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059",
+      "src-jpmorgan-chase-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059",
+      "src-jpmorgan-chase-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J09",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P05-S02",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Payment Activity",
+  "states": [
+   "Pending",
+   "Funded",
+   "Sent",
+   "Processed",
+   "Completed",
+   "Funds Needed",
+   "Funding Failed",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Unauthorized bill payment",
+   "customer_experience": "Report promptly",
+   "bank_handling": "Reimbursed per DSA/EFTA",
+   "resolution": "Provisional credit",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s060",
+    "src-jpmorgan-chase-s057"
+   ]
+  },
+  {
+   "trigger": "Paper-check payee not cashed / lost",
+   "customer_experience": "Contact Chase",
+   "bank_handling": "Paper checks are not negotiable after the period noted on the check (usually 90 days); 'Occasionally, paper check payments are not cashed by your Payee within the negotiable period. When this happens, we will notify you and credit your From Account.'",
+   "resolution": "Reissue",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s056"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ebill_due_reminder",
+   "channels": [
+    "email",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_sent",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Deliver-by date selection and ATM bill pay for Chase products are strengths; no public list of payment-status labels or edit/cancel steps.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

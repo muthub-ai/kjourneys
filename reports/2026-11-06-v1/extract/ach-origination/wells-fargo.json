@@ -1,0 +1,444 @@
+{
+ "bank": "wells-fargo",
+ "product": "ach-origination",
+ "facts": [
+  {
+   "attribute": "attr-cap-recurring",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scheduled-future-dated",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S08",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-request-money",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s049"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-split",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-qr-code",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-contact-sync",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-cancel-before-send",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-status-tracking",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-push-notifications",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P13-S01, WF-P13-S08",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-email-sms-notifications",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S08, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-step-up-auth",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S08",
+    "mi_level": "CONFIRMED_BANK"
+   },
+   "display": "Yes — RSA SecurID or Advanced Access 6-digit code at enrollment/sensitive actions; RSA SecurID / Advanced Access; RSA SecurID hard token or Vantage mobile token; dual custody; Vantage credentials + token validation"
+  },
+  {
+   "attribute": "attr-cap-dual-approval-smb",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-international",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P13-S08",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-same-day",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P13-S08",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-instant",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [
+    "src-wells-fargo-s031",
+    "src-wells-fargo-s032",
+    "src-wells-fargo-s039",
+    "src-wells-fargo-s931",
+    "src-wells-fargo-s042",
+    "src-wells-fargo-s049",
+    "src-wells-fargo-s055",
+    "src-wells-fargo-s066",
+    "src-wells-fargo-s067",
+    "src-wells-fargo-s951"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: WF-P08-S01, WF-P08-S02, WF-P13-S01, WF-P13-S05, WF-P13-S08, WF-P15-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-discover",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "HIGH CHANNEL_GAP: Direct Pay is desktop-browser only: SMB owners cannot initiate or approve ACH on mobile unless they enrol in Vantage Treasury Management. [GAP-WF-0026]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-set-up",
+   "value": 4,
+   "display": "4 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "Sets composite reference: Direct Pay four-level access model (Input Only, Input/Release, Input/Release/Control, No Access) enforces dual control for SMB ACH. [STR-WF-0017]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-initiate",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "inferred",
+   "confidence": "low",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "MEDIUM MISSING_CAPABILITY: Direct Pay is next-business-day only; no Same Day ACH option documented after a search of the Direct Pay FAQ (S931). [GAP-WF-0027]",
+    "report_ref": "Scores sheet",
+    "mi_level": "UNKNOWN"
+   }
+  },
+  {
+   "attribute": "attr-score-review-authorize",
+   "value": 1,
+   "display": "1 of 4",
+   "basis": "inferred",
+   "confidence": "low",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "HIGH SECURITY_TRUST: SMB wires from Business Online have no dual approval (INFERRED, WF-C003); a single delegate can release a foreign-currency wire. [GAP-WF-0030]",
+    "report_ref": "Scores sheet",
+    "mi_level": "INFERRED"
+   }
+  },
+  {
+   "attribute": "attr-score-execute-track",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence WF-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-confirm-complete",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence WF-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-manage",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "MEDIUM TRANSPARENCY: Edit/cancel rules for scheduled Direct Pay payments are not documented. [GAP-WF-0028]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-exception",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "inferred",
+   "confidence": "low",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "MEDIUM EXCEPTION_HANDLING: Returned ACH, failed validation and NSF handling are not published (UNKNOWN). [GAP-WF-0029]",
+    "report_ref": "Scores sheet",
+    "mi_level": "UNKNOWN"
+   }
+  },
+  {
+   "attribute": "attr-score-support",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-06",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence WF-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  }
+ ]
+}

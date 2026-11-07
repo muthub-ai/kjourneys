@@ -35,9 +35,9 @@ def jdump(p, o):                                   # atomic: write a temp file, 
     tmp = p + ".tmp"
     with open(tmp, "w") as f: json.dump(o, f, ensure_ascii=False, indent=2); f.write("\n")
     os.replace(tmp, p)
-MANIFEST_KEYS = {"report_version", "product", "products", "title", "produced_by", "received_at", "files", "notes"}
+MANIFEST_KEYS = {"report_version", "product", "products", "workbook", "title", "produced_by", "received_at", "files", "notes"}
 EXTRACT_KEYS = {"bank", "product", "facts"}
-FACT_KEYS = {"attribute", "value", "display", "qualifier", "basis", "confidence", "observed_on", "sources", "evidence"}
+FACT_KEYS = {"attribute", "value", "display", "qualifier", "basis", "confidence", "observed_on", "sources", "source_ids", "evidence"}
 SOURCE_KEYS = {"title", "url", "retrieved_at", "kind"}
 def unknown(obj, allowed, where):
     extra = sorted(set(obj) - allowed)
@@ -123,7 +123,9 @@ if rerun:
     log = [e for e in log if e["report_version"] != version]
     if problems: print("INGEST FAIL — nothing written"); [print(" -", p) for p in problems]; sys.exit(1)
 
-# ---------- register the report as a source ----------
+# ---------- register the report as a source (replacing any copy the workbook importer wrote) ----------
+sources = [s for s in sources if s["id"] != report_src]
+src_ids = {s["id"] for s in sources} | {report_src}
 primary = man["files"][0]
 new_sources = [{"id": report_src, "kind": "mi-report", "title": man.get("title", f"Market-intelligence report {version}"),
                 "origin": man["produced_by"], "url": None, "retrieved_at": man["received_at"],
@@ -153,7 +155,6 @@ for product, ex in extracts:
     e = jload(ex); bank = e.get("bank"); where = os.path.relpath(ex, ROOT)
     if os.path.splitext(os.path.basename(ex))[0] != bank: fail(f"{where}: file name must equal bank id"); continue
     if bank not in parties: fail(f"{where}: unknown bank '{bank}'"); continue
-    if parties[bank]["role"] == "focus": fail(f"{where}: MI extracts are for competitors; {bank} facts come from journey owners"); continue
     if e.get("product") != product: fail(f"{where}: product must be '{product}'"); continue
     vpath = os.path.join(cdir, "values", f"{bank}.json")
     if not unknown(e, EXTRACT_KEYS, where): continue
@@ -173,11 +174,15 @@ for product, ex in extracts:
         if f.get("basis") not in ALLOWED_BASIS: fail(f"{w}: basis must be observed, disclosed or inferred"); continue
         if f.get("confidence") not in ALLOWED_CONF: fail(f"{w}: confidence must be high, medium or low"); continue
         if f["basis"] == "inferred" and f["confidence"] != "low": fail(f"{w}: inferred facts must have confidence low"); continue
-        if not f.get("sources") and f["basis"] != "inferred": fail(f"{w}: observed/disclosed facts need at least one source URL"); continue
+        bad_ids = [x for x in f.get("source_ids", []) if x not in src_ids]
+        if bad_ids: fail(f"{w}: source_ids {bad_ids[:3]} are not in registries/sources.json"); continue
+        cites_report = bool((f.get("evidence") or {}).get("report_ref"))
+        if not f.get("sources") and not f.get("source_ids") and f["basis"] != "inferred" and not cites_report:
+            fail(f"{w}: observed/disclosed facts need a source (sources[] URL, source_ids, or evidence.report_ref citing the report)"); continue
         try: obs = date.fromisoformat(f["observed_on"])
         except Exception: fail(f"{w}: observed_on must be YYYY-MM-DD"); continue
         if obs > date.today(): fail(f"{w}: observed_on {obs} is in the future"); continue
-        sids = [report_src] + [url_source(s) for s in f.get("sources", [])]
+        sids = list(dict.fromkeys([report_src] + list(f.get("source_ids", [])) + [url_source(s) for s in f.get("sources", [])]))
         hist = vfile["values"][aid]
         cur = next((a for a in hist if not a.get("valid_to")), None)
         same = cur and cur["basis"] == f["basis"] and cur.get("value") == f.get("value") and cur.get("display") == f.get("display") and cur.get("qualifier") == f.get("qualifier")

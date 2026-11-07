@@ -1,0 +1,644 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j03",
+ "title": "Small business gets paid with Zelle (Zelle Tag, QR code, request) and refunds a customer",
+ "bank": "truist",
+ "product": "zelle",
+ "persona": "Owner of a Truist Dynamic Business Checking account",
+ "segment": "small-business",
+ "customer_goal": "Collect customer payments without sharing account numbers; issue refunds",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Small Business > Banking > Banking services > Zelle® page; in app…",
+   "customer_action": "Small Business > Banking > Banking services > Zelle® page; in app Transfer & Pay > Send Money with Zelle®",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer & Pay"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enroll business email/U.S. mobile: accept T&Cs, enter token, enter…",
+   "customer_action": "Enroll business email/U.S. mobile: accept T&Cs, enter token, enter one-time code, pick eligible business account",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle enrollment"
+    }
+   ],
+   "frontstage": "Both parties must be enrolled through their own bank",
+   "actor": "customer",
+   "decision": null,
+   "notification": "OTP",
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Create a Zelle Tag: Zelle Preferences > Create a Zelle Tag (6–40 chars,…",
+   "customer_action": "Create a Zelle Tag: Zelle Preferences > Create a Zelle Tag (6–40 chars, letters/numbers/hyphens); view/print QR: Send Money with Zelle® > Request > View my QR code",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Preferences"
+    }
+   ],
+   "frontstage": "Tag portable across banks",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Share tag/QR/email/mobile with customer; or send a Request (Request >…",
+   "customer_action": "Share tag/QR/email/mobile with customer; or send a Request (Request > enter email/mobile > confirm)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Request tab"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Refund/pay vendor: Send > enter tag on Select Recipient screen or Scan…",
+   "customer_action": "Refund/pay vendor: Send > enter tag on Select Recipient screen or Scan QR code > amount + note",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send > Select Recipient"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Review and Send/Request; no purchase protection disclosure",
+   "customer_action": "Review and Send/Request; no purchase protection disclosure",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j03-6",
+     "text": "No in-product dual approval for Zelle on business profiles evidenced"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Funds deposited to enrolled business account within minutes; 1% fee…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Fee per Business Deposit Accounts Fee Schedule",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Notification when a request is paid",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j03-7",
+     "text": "Receive fee is unusual vs peers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Notification when customer pays; activity shows reference number",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Notification when customer pays; activity shows reference number",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "push/email",
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Manage Payment Profiles, tag, QR, recipients; multi-user access rules…",
+   "customer_action": "Manage Payment Profiles, tag, QR, recipients; multi-user access rules per business agreement",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Preferences"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Cancel only if recipient unenrolled ('Cancel This Payment'); wrong…",
+   "customer_action": "Cancel only if recipient unenrolled ('Cancel This Payment'); wrong recipient → Care Center; business liability regime (30-day written statement review, duty of care)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center 844-4TRUIST"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j03-10",
+     "text": "Business accounts outside Reg E protections"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j03:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Care Center Mon–Fri 8–8 ET, Sat 8–5 ET; Sunday automated only; Spanish…",
+   "customer_action": "Care Center Mon–Fri 8–8 ET, Sat 8–5 ET; Sunday automated only; Spanish option 9",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "844-4TRUIST"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J03",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P01-S04",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle Activity",
+  "states": [
+   "Pending",
+   "Completed",
+   "Failed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Customer disputes goods not received",
+   "customer_experience": "No purchase protection; not reimbursed",
+   "bank_handling": "None",
+   "resolution": "Resolve with customer",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s011"
+   ]
+  },
+  {
+   "trigger": "Pay-yourself scam on business owner",
+   "customer_experience": "Call Care Center",
+   "bank_handling": "Claim",
+   "resolution": "Case-by-case",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s011"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "request_paid",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": null,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Zelle Tag + printable QR for request is a clear SMB differentiator; receive fee is a friction vs. free peers.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Dedicated remittance entry with fee and FX estimator and Spanish UI",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "wells-fargo:WF-J12#1; wells-fargo:WF-J12#11; pnc:PNC-J13#1; benchmark:R51#None",
+    "rationale": "WF ExpressSend estimator; PNC Spanish-language app flow."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Recipient with delivery-method choice: cash pickup at named retail partners or bank-account credit",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J12#3; pnc:PNC-J13#2",
+    "rationale": "WF cash pickup in 12 countries."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Dual-currency entry with upfront fee and rate; fee-free on-us corridors",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J12#4; citi:CITI-J10#3",
+    "rationale": "Citi Global Transfers free Citi-to-Citi."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Pre-payment disclosure card; step-up by text/voice",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "wells-fargo:WF-J12#5; pnc:PNC-J13#4",
+    "rationale": "Reg E disclosure."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Real-time tracking with milestone alerts",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "wells-fargo:WF-J12#6; benchmark:R51#None",
+    "rationale": "ExpressSend Mobile real-time tracking (Sep 2026)."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Receipt with availability date; recipient notified",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "pnc:PNC-J13#6; wells-fargo:WF-J12#7",
+    "rationale": "PNC receipt with date available."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "30-minute cancel in app; repeat and recurring transfers",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J12#8; pnc:PNC-J13#7; benchmark:R50#None",
+    "rationale": "Recurring absent at every bank; composite."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Uncollected cash auto-cancel and full refund; 180-day error / 90-day investigation",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J12#10",
+    "rationale": "WF 15-day auto-cancel incl. fees."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Dedicated remittance line; CFPB complaint link",
+    "actor": "CUSTOMER",
+    "channel": "PHONE",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J12#12; benchmark:R50#None",
+    "rationale": "WF ExpressSend line."
+   }
+  ],
+  "id": "CJ-REMITTANCE-SEND",
+  "title": "Consumer sends a cross-border remittance (account credit or cash pickup)",
+  "product": "remittance",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

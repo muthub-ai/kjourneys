@@ -1,0 +1,580 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j11",
+ "title": "Customer deposits a check with Truist Mobile (standard or Immediate Availability)",
+ "bank": "truist",
+ "product": "check-deposit-mobile",
+ "persona": "Retail customer depositing a paycheck",
+ "segment": "consumer",
+ "customer_goal": "Deposit a paper check without visiting a branch",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Tap Deposit / check-deposit widget on home screen",
+   "customer_action": "Tap Deposit / check-deposit widget on home screen",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Home > Check deposit widget"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "From the main menu tap Deposits; endorse the check (sign, then write…",
+   "customer_action": "From the main menu tap Deposits; endorse the check (sign, then write 'For deposit only at Truist' under the signature — troubleshooting FAQ also says to add the deposit date); select the account receiving the deposit; enter the check amount; when prompted take photos of the front and back (dark background, all four corners in frame); select Continue. One check per deposit; current daily/monthly limits shown on the Deposits tab.",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Main menu > Deposits > (account) > amount > front/back capture > Continue"
+    }
+   ],
+   "frontstage": "Image quality checks",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s009",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s009",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s009",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s009",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j11-2",
+     "text": "Exact screen labels not evidenced"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "If offered, choose Immediate Availability and accept disclosed fee (2%…",
+   "customer_action": "If offered, choose Immediate Availability and accept disclosed fee (2% ≥$100 / $1 <$100; one check per transaction; ≥$5)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Availability option"
+    }
+   ],
+   "frontstage": "Immediate availability is offered selectively per check ('Several factors are considered ... the check itself, the issuing account, and the depositing account'); if offered the customer must accept the immediate availability service disclosure during each transaction; fee 2% (≥$100) / $1 (<$100); checks under $5 ineligible.",
+   "actor": "customer",
+   "decision": "Standard vs Immediate",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s015",
+      "src-truist-s037",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s015",
+      "src-truist-s037",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s015",
+      "src-truist-s037",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s015",
+      "src-truist-s037",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j11-3",
+     "text": "Fee can be 2% of check"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Deposits by 9pm ET Mon–Fri count same banking day; standard funds next…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Deposit history"
+    }
+   ],
+   "frontstage": "Standard availability: images received before 9 pm ET on a banking day count as that day's deposit; 'pending deposits will appear in your account transaction activity, and your available balance will be updated once the check successfully posts' (next business day unless hold). Immediate availability: available balance updated immediately (minus fee); deposits by 11:59 pm ET included in nightly overdraft processing. Deposit history: 24 months.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009",
+      "src-truist-s037",
+      "src-truist-s054",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009",
+      "src-truist-s037",
+      "src-truist-s054",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009",
+      "src-truist-s037",
+      "src-truist-s054",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j11-4",
+     "text": "Community reports 10–11 day holds on large/cashier's checks"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m05",
+   "code": "M05",
+   "stage": "confirm-complete",
+   "title": "On-screen confirmation; deposit alerts channel UNKNOWN",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "In-app confirmation that Truist received the image ('An image of an item shall be deemed received when you receive a confirmation from Truist'; receipt does not guarantee acceptance). Customizable account alerts exist ('Get customizable account alerts right to your phone') but a deposit-specific alert type is not documented.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "unknown",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s907",
+      "src-truist-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s907",
+      "src-truist-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m06",
+   "code": "M06",
+   "stage": "manage",
+   "title": "View deposit history (24 months); retain the paper check — FAQ: 'Secure…",
+   "customer_action": "View deposit history (24 months); retain the paper check — FAQ: 'Secure and properly destroy your check ten business days after your deposit is confirmed'; agreement minimum: retain at least 7 calendar days from image transmission, then destroy or mark 'VOID', and provide it to Truist on request during retention.",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Deposit history"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m07",
+   "code": "M07",
+   "stage": "exception",
+   "title": "Rejected image / ineligible item / hold → notification and re-deposit…",
+   "customer_action": "Rejected image / ineligible item / hold → notification and re-deposit or branch; hold disputes via Care Center",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Care Center"
+    }
+   ],
+   "frontstage": "Ineligible items (Canadian/foreign checks, US savings bonds, TTL payments, traveler's checks, money orders; third-party, altered, joint-payee mismatch, substitute, remotely created, non-USD, >6 months old, sight drafts, previously deposited) and incorrectly endorsed checks 'may not be deposited'; Truist may reject any item or charge back an ineligible item later; troubleshooting FAQ lists signal/camera/lighting fixes; errors must be reported within 30 days of the statement; more than three returned items in 90 days ends eligibility.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s037",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s037",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s037",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j11:m08",
+   "code": "M08",
+   "stage": "support",
+   "title": "Truist Assist / 844-4TRUIST",
+   "customer_action": "Truist Assist / 844-4TRUIST",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Truist Assist"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J11",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P05-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "atm",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Deposit history",
+  "states": [
+   "Submitted",
+   "Accepted",
+   "Rejected (inferred)"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Hold placed on large check",
+   "customer_experience": "Funds delayed up to ~11 days (community)",
+   "bank_handling": "Reg CC hold",
+   "resolution": "Released at hold expiry",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s054"
+   ]
+  },
+  {
+   "trigger": "Ineligible item or incorrect endorsement",
+   "customer_experience": "Deposit may be refused in-app ('Checks endorsed incorrectly may not be deposited') or accepted then charged back later; customer re-endorses/re-captures or deposits at a branch/ATM.",
+   "bank_handling": "Truist 'reserve[s] the right to reject any item ... without liability' and 'to charge back to your account at any time, any item that we subsequently determine was not an eligible item'; more than three returned items in 90 days removes mobile-deposit eligibility.",
+   "resolution": "Re-deposit correctly or via branch/ATM; errors reported within 30 days of statement.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s902",
+    "src-truist-s907"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "deposit_received",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": null,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Fee-based instant availability (also at ATM) is a monetized differentiator; endorsement/limit disclosure is thin on public pages.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

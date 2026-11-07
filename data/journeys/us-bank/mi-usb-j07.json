@@ -1,0 +1,990 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j07",
+ "title": "Consumer sends a domestic wire to a one-time recipient (app or online)",
+ "bank": "us-bank",
+ "product": "wire-domestic",
+ "persona": "Consumer paying real-estate closing funds",
+ "segment": "consumer",
+ "customer_goal": "Send a large same-day guaranteed payment to a title company",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Transfer & pay > Wires & ACH > Wire transfers (visible only to…",
+   "customer_action": "Transfer & pay > Wires & ACH > Wire transfers (visible only to customers with ≥6 months history, an eligible checking, savings or money market account and a registered cellular device on profile ≥3 business days)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Web: Transfer & Pay (top menu) > 'External transfers & wires' > External transfers screen (cards 'Make an external transfer' / 'Send a wire transfer') > 'Wire money'; KB: Transfer & pay > Wires > Wire transfers; app: Transfer & pay > Wires & ACH"
+    }
+   ],
+   "frontstage": "Eligibility gate: customer ≥6 months, checking/savings/MMA, registered cellular device on profile ≥3 business days; otherwise branch (anyone can wire from a branch).",
+   "actor": "customer",
+   "decision": "Digitally eligible vs not",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s926",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s926",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s926",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s926",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j07-1",
+     "text": "Six-month tenure requirement excludes newer customers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Choose a saved recipient or 'Send to one-time recipient'",
+   "customer_action": "Choose a saved recipient or 'Send to one-time recipient'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Recipient list / Send to one-time recipient"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Saved vs one-time",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j07-2",
+     "text": "How to save a recipient outside the one-time flow is not documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "One-time: individual or business; country = United States; name and…",
+   "customer_action": "One-time: individual or business; country = United States; name and address; Continue; bank account number and routing number; Continue",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Recipient details > Bank details"
+    }
+   ],
+   "frontstage": "Routing-number validation (bank advises confirming with recipient bank for correspondent routing)",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Choose from-account; 'Send on' date (defaults to earliest; calendar for…",
+   "customer_action": "Choose from-account; 'Send on' date (defaults to earliest; calendar for future); purpose of transfer; optional memo; Continue; enter amount — fee calculated and shown with total; Continue to accept",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Wire details' step: 'Pay from' dropdown; amount with 'View all dollar limits' link beneath; 'Send on' date (schedule up to 15 days ahead; time disclaimer below the field); 'Purpose'; 'Reference' info (loan/invoice numbers); fee information; Continue. (Demo order is details → Recipient info → Bank info → Review; the KB describes recipient first.)"
+    }
+   ],
+   "frontstage": "Fee displayed before confirmation ('You'll see U.S. Bank's fee amount before you confirm your submission' — amount not published online; see Consumer/Business Pricing Information). Wire limits viewable only after recipient details are entered ('View all dollar limits').",
+   "actor": "customer",
+   "decision": "Same-day vs future-dated",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s921",
+      "src-us-bank-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Review all sections (Edit available); select 'Read authorization', tick…",
+   "customer_action": "Review all sections (Edit available); select 'Read authorization', tick 'I agree to the wire transfer authorization'; Send transfer",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review screen: recipient bank block; checkbox 'I agree to the Wire Transfer Authorization.' (linked agreement); note 'After selecting submit, you'll receive a one-time pass code to complete the wire transfer process.'; 'Submit' button"
+    }
+   ],
+   "frontstage": "Attestation checkbox then OTP step-up after Submit (confirmed on-screen). No scam interstitial beyond the authorization text; irrevocability stated in video ('wire transfers can't be reversed, so only send them to people you trust').",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017",
+      "src-us-bank-s049",
+      "src-us-bank-s902",
+      "src-us-bank-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j07-5",
+     "text": "No documented scam-specific warning for wires (wires excluded from Digital Security Coverage)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Enter the one-time passcode sent to the registered cellular device to…",
+   "customer_action": "Enter the one-time passcode sent to the registered cellular device to complete the wire",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "One-time pass code prompt after Submit"
+    }
+   ],
+   "frontstage": "'After selecting submit, you'll receive a one-time pass code to complete the wire transfer process.' Registered cellular device must be on profile ≥3 business days",
+   "actor": "customer",
+   "decision": null,
+   "notification": "SMS one-time passcode",
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s902",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s902",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s902",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s902",
+      "src-us-bank-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j07-6",
+     "text": "Step-up on every digital wire"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Same-day wires submitted 7:30 a.m.–4:30 p.m. CT business days (federal…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Wire activity"
+    }
+   ],
+   "frontstage": "Same-day wires submitted 7:30 a.m.–4:30 p.m. CT business days (federal tax 2:30 p.m. CT) are transmitted same day, delivered typically within 24 hours; later submissions next business day",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email status updates",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049",
+      "src-us-bank-s005",
+      "src-us-bank-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s049",
+      "src-us-bank-s005",
+      "src-us-bank-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Email updates on wire status (only channel documented)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'You're all set!' success screen ('Success! The wire transfer has been submitted.'); 'We'll email you an update once your wire transfer is completed.'"
+    }
+   ],
+   "frontstage": "Email updates on wire status (only channel documented)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email",
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s902",
+      "src-us-bank-s925"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s902",
+      "src-us-bank-s925"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Future-dated wire can be changed or cancelled in app/online until 11:59…",
+   "customer_action": "Future-dated wire can be changed or cancelled in app/online until 11:59 p.m. CT the day before send date; same-day wires cannot be cancelled after submission",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Transfer & pay > Wires > 'Past & current activity' > Filter (wire transfer history) > select scheduled wire > 'Edit' or 'Cancel' (until 11:59 p.m. CT the day before)"
+    }
+   ],
+   "frontstage": "'You cannot edit approved wire transfers' — future-dated wires can be cancelled and recreated; same-day digital wire may be edited/cancelled by phone (800-USBANKS) only while still pending.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s923",
+      "src-us-bank-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s923",
+      "src-us-bank-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s049",
+      "src-us-bank-s923",
+      "src-us-bank-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Wire sent with incorrect instructions or to wrong recipient: if the…",
+   "customer_action": "Wire sent with incorrect instructions or to wrong recipient: if the same-day wire is still pending, call 800-USBANKS to edit/cancel; once no longer pending 'you'll need to work with the recipient'; wires are irrevocable and excluded from Digital Security Coverage",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "800-USBANKS"
+    }
+   ],
+   "frontstage": "Discretionary",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s017",
+      "src-us-bank-s913",
+      "src-us-bank-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s017",
+      "src-us-bank-s913",
+      "src-us-bank-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005",
+      "src-us-bank-s017",
+      "src-us-bank-s913",
+      "src-us-bank-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Unauthorized digital wire: bank 'may' reimburse at its discretion",
+   "customer_action": "Unauthorized digital wire: bank 'may' reimburse at its discretion",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j07-11",
+     "text": "Weaker protection than peers that cover unauthorized wires"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m12",
+   "code": "M12",
+   "stage": "exception",
+   "title": "Rejected/returned wire handling not documented",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": null
+    }
+   ],
+   "frontstage": "Rejected/returned wire handling not documented",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
+   "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Help & services; Smart Assistant; 800-USBANKS; Make an appointment"
+    }
+   ],
+   "frontstage": "Contact-center or branch handles",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j07-13",
+     "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j07:m14",
+   "code": "M14",
+   "stage": "support",
+   "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
+   "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Fraud Liaison Center"
+    }
+   ],
+   "frontstage": "Fraud claim intake",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s012",
+      "src-us-bank-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J07",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P04-S01",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": [
+   "branch",
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Email status updates; wire activity screen (name not documented)",
+  "states": [
+   "Scheduled",
+   "Sent"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Future-dated wire cancel",
+   "customer_experience": "Cancel until 11:59 p.m. CT day before",
+   "bank_handling": null,
+   "resolution": "Cancelled",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s005"
+   ]
+  },
+  {
+   "trigger": "Unauthorized wire",
+   "customer_experience": "Report",
+   "bank_handling": "Discretionary reimbursement",
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s017"
+   ]
+  },
+  {
+   "trigger": "Wrong instructions",
+   "customer_experience": null,
+   "bank_handling": "If the same-day digital wire is still pending, 800-USBANKS may be able to edit or cancel it; once no longer pending the customer must work with the recipient; approved wires cannot be edited",
+   "resolution": "Not recoverable",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s005",
+    "src-us-bank-s017",
+    "src-us-bank-s923",
+    "src-us-bank-s924"
+   ]
+  },
+  {
+   "trigger": "Customer not eligible for digital wires (tenure <6 months or no registered cellular device)",
+   "customer_experience": "Wire transfers option not available in digital banking; customer is directed to a branch (anyone can send domestic or international wires from a branch; appointment scheduling offered)",
+   "bank_handling": "Branch-initiated wire",
+   "resolution": "Branch wire or wait for eligibility",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-us-bank-s926",
+    "src-us-bank-s927"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "wire_status_update",
+   "channels": [
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Fully digital domestic wire with one-time recipient and purpose field; email-only status, no documented OTP/scam interstitial, discretionary coverage of unauthorized wires.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

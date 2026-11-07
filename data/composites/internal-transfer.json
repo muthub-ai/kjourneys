@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Transfer in bottom bar; assistant and ATM entry",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J05#1; us-bank:USB-J04#1",
+    "rationale": "WF bottom bar + Fargo; U.S. Bank voice."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "No set-up: all deposit, credit, loan and brokerage accounts pre-listed",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J05#2",
+    "rationale": "Zero set-up."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "From/to, amount, frequency, memo; optional savings rules (round-ups, paycheck %)",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J05#3; capital-one:COF-J07#3",
+    "rationale": "Capital One Automatic Savings rules."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Single review-and-submit",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "wells-fargo:WF-J05#7",
+    "rationale": "One tap."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Immediate posting with updated available balance",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "EXECUTE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J05#8",
+    "rationale": "Real-time book transfer."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Confirmation card and servicing notice",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J05#10",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Scheduled/recurring list with edit/delete",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J05#12; td-bank:TD-J06#6",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Inline NSF/limit explanation; retry rules",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J05#13; benchmark:R43#None",
+    "rationale": "Composite."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant executes the transfer by voice/chat",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "EXECUTE",
+    "moment_of_truth": null,
+    "derived_from": "truist:TFC-J13#2; bank-of-america:BAC-J05#9",
+    "rationale": "Truist Assist and Erica execute transfers."
+   }
+  ],
+  "id": "CJ-INTERNAL-TRANSFER",
+  "title": "Consumer moves money between own accounts",
+  "product": "internal-transfer",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]

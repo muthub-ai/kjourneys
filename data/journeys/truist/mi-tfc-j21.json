@@ -1,0 +1,256 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j21",
+ "title": "Commercial: Disbursements with Zelle (sketch)",
+ "bank": "truist",
+ "product": "zelle",
+ "persona": "Corporate paying individuals (refunds, claims)",
+ "segment": "commercial",
+ "customer_goal": "Pay consumers by email/mobile",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j21:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "File-based: optionally submit a Token Validation file (CSV, UTF-8) to…",
+   "customer_action": "File-based: optionally submit a Token Validation file (CSV, UTF-8) to the MFT mailbox → within 1–2 minutes download Active Token (with Zelle-registered owner name) and Inactive Token response files; build the payment file (token, amount, Customer Reference, memo ≤200 chars, default/alternate account) named xxxxxx_payment.csv → Upload Files tab → Send; if control totals are used, upload the matching _control.txt within 3 hours (count + dollar total).",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "MFT mailbox (File Translation & Delivery Services) > Upload Files > Send"
+    }
+   ],
+   "frontstage": "Channel (file/API/portal) UNKNOWN",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j21:m02",
+   "code": "M02",
+   "stage": "execute-track",
+   "title": "Payments process once the file (and control file, if used) is received;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "File Transmission Summary Report (secure email)"
+    }
+   ],
+   "frontstage": "Payments process once the file (and control file, if used) is received; 'Once all payments in the file have reached a final status, the File Transmission Summary Report will be sent by secure email to the designated recipient' with per-payment details; final statuses: Delivered, Sent, Failed or Denied; funds to enrolled recipients within minutes.",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s026",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j21:m03",
+   "code": "M03",
+   "stage": "exception",
+   "title": "Inactive tokens (not registered in Zelle) cannot receive payments —…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Inactive tokens (not registered in Zelle) cannot receive payments — flagged in the Inactive Token file; duplicate file (same name/amounts within 10 days) rejected with secure-email error; duplicate payment within a file (same token, amount, memo) rejected as Failed; scientific-format cells cause file failure; consumer-side 14-day expiry rule for unenrolled recipients still INFERRED for commercial.",
+   "actor": "network",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j21:m04",
+   "code": "M04",
+   "stage": "support",
+   "title": "Relationship manager / 800-774-8179",
+   "customer_action": "Relationship manager / 800-774-8179",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J21",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P10-S04",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "UNKNOWN",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient token inactive (not enrolled in Zelle) or duplicate file/payment",
+   "customer_experience": "Token Validation returns the token in the Inactive Token file (no owner name); duplicate payments show as Failed in the response file; duplicate files rejected with a 'Duplicate File Received' secure-email notification.",
+   "bank_handling": "Only tokens Active in the Zelle network can be paid; duplicate detection on filename+amounts (10-day window) and on token+amount+memo within a file.",
+   "resolution": "Client corrects the file and resubmits; contact Treasury Solutions client support 800-774-8179.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s915"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": null,
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

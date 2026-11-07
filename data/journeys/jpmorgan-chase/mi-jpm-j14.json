@@ -1,0 +1,642 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j14",
+ "title": "Small business enrolls in ACH Payment Services, adds payees and schedules a standard ACH payment",
+ "bank": "jpmorgan-chase",
+ "product": "ach-origination",
+ "persona": "Owner paying contractors/employees",
+ "segment": "small-business",
+ "customer_goal": "Pay vendors and staff electronically without checks",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Chase Business Online 'Pay & transfer' > 'ACH Payment Services' /…",
+   "customer_action": "Chase Business Online 'Pay & transfer' > 'ACH Payment Services' / Payment Center 'Compare your payment options'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Pay & transfer"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s026"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enroll: accept legal agreement, confirm billing account, wait for…",
+   "customer_action": "Enroll: accept legal agreement, confirm billing account, wait for activation confirmation; 'Add Payee' or 'Close'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ACH enrollment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "May be prompted to contact banker",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Manage payees > 'Add a vendor or employee' (activation code may be…",
+   "customer_action": "Manage payees > 'Add a vendor or employee' (activation code may be requested); choose vendor (business) or employee (personal) type; routing lookup via Fed E-payments directory; optional group; or import up to 100 payees by CSV",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Add ACH Payee"
+    }
+   ],
+   "frontstage": "New payees fraud-screened; 'pending review' up to 48h in Chase Connect",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "'Schedule payments': select payees/group; pay-from account; deliver-by…",
+   "customer_action": "'Schedule payments': select payees/group; pay-from account; deliver-by date (send date auto-calculated); amount; addenda note per payee; delivery method Standard/Same-day/Real-time with fee shown",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Schedule payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Repeating: Manage Payees > 'Schedule a repeating payment' > amount,…",
+   "customer_action": "Repeating: Manage Payees > 'Schedule a repeating payment' > amount, frequency, count > 'Make Payment'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Repeating payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "'Next' > review > 'Schedule'; if Chase Dual Control active, payment…",
+   "customer_action": "'Next' > review > 'Schedule'; if Chase Dual Control active, payment goes to 'Pending approvals' for an authorized user ('Pending approval' status)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review / Pending approvals"
+    }
+   ],
+   "frontstage": "Chase reviews all payments and may request information ('Pending review')",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s028",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Approve by 8 PM ET for next-business-day arrival; statuses Sent/In…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity (13 months; filters)"
+    }
+   ],
+   "frontstage": "Approve by 8 PM ET for next-business-day arrival; statuses Sent/In process/Paid/Completed",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Alerts per Profile & settings > Alerts; notified when processed",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Alerts"
+    }
+   ],
+   "frontstage": "Alerts per Profile & settings > Alerts; notified when processed",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s040",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s040",
+      "src-jpmorgan-chase-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Cancel one-time via Payment activity 'Cancel'; cancel next or entire…",
+   "customer_action": "Cancel one-time via Payment activity 'Cancel'; cancel next or entire repeating series; edit/delete payees (not with pending payments); raise/lower limits under Payment preferences",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity / Manage transaction limits"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Returned/Rejected/Failed/Funding failed statuses; reversal request only…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity"
+    }
+   ],
+   "frontstage": "Returned/Rejected/Failed/Funding failed statuses; reversal request only for 'In process' or 'Paid'; Nacha file errors troubleshoot article",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s049",
+      "src-jpmorgan-chase-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j14:m11",
+   "code": "M11",
+   "stage": "support",
+   "title": "Business banking 1-866-564-2262 (fraud) / Retail Business Servicing…",
+   "customer_action": "Business banking 1-866-564-2262 (fraud) / Retail Business Servicing 1-800-242-7338; Secure Message Center",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Business support"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059",
+      "src-jpmorgan-chase-s032",
+      "src-jpmorgan-chase-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s059",
+      "src-jpmorgan-chase-s032",
+      "src-jpmorgan-chase-s036"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J14",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P09-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Payment activity (13 months)",
+  "states": [
+   "Canceled",
+   "Completed",
+   "Declined",
+   "Suspended",
+   "Failed",
+   "Funded",
+   "Funding failed",
+   "Funds needed",
+   "In process",
+   "Paid",
+   "Pending",
+   "Pending approval",
+   "Pending review",
+   "Rejected",
+   "Returned",
+   "Reversal completed",
+   "Reversal failed",
+   "Reversal initiated",
+   "Sent"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payee fails fraud screen",
+   "customer_experience": "'Pending review' up to 48h; payments blocked; new payee must be created if not approved",
+   "bank_handling": "Chase screens new payees",
+   "resolution": "Create new payee",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s061"
+   ]
+  },
+  {
+   "trigger": "ACH return (R01 NSF etc.)",
+   "customer_experience": "'Returned' status",
+   "bank_handling": "Charged back",
+   "resolution": "Re-send",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s049"
+   ]
+  },
+  {
+   "trigger": "Unauthorized ACH debit on business account",
+   "customer_experience": "Report within 30 days",
+   "bank_handling": "ACH Debit Block available; business error claims may take up to 75 days",
+   "resolution": "Credit/return",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s035",
+    "src-jpmorgan-chase-s057"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_processed",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "pending_approval",
+   "channels": [
+    "email"
+   ],
+   "configurable": null,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Most transparent SMB ACH status model among big banks (19 named states); pay-as-you-go pricing; CSV import and groups; dual control optional.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

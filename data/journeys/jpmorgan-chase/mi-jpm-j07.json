@@ -1,0 +1,562 @@
+{
+ "id": "urn:kos:journey:jpmorgan-chase:jpm-j07",
+ "title": "Consumer sends a domestic wire online",
+ "bank": "jpmorgan-chase",
+ "product": "wire-domestic",
+ "persona": "Home buyer sending closing funds",
+ "segment": "consumer",
+ "customer_goal": "Send a large same-day USD payment to a U.S. bank",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay & transfer' > 'Wires and global transfers'",
+   "customer_action": "'Pay & transfer' > 'Wires and global transfers'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wires and global transfers"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enroll in wires (sign in, 'Enroll now', accept terms); daily limit…",
+   "customer_action": "Enroll in wires (sign in, 'Enroll now', accept terms); daily limit shown before adding a recipient",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire enrollment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "'Add recipient': enter bank details (routing), then recipient name and…",
+   "customer_action": "'Add recipient': enter bank details (routing), then recipient name and address; Chase may require an activation code; review > 'Add recipient'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Add recipient"
+    }
+   ],
+   "frontstage": "Activation code step-up",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s029"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Select recipient, amount, from account, send date (today / future-dated…",
+   "customer_action": "Select recipient, amount, from account, send date (today / future-dated / repeating)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire form"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s008",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s008",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Review summary with scam guidance; authorize",
+   "customer_action": "Review summary with scam guidance; authorize",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire summary"
+    }
+   ],
+   "frontstage": "Authentication: username/password plus possible security questions, one-time codes 'and other methods'; Chase may require a trusted device for a particular wire. 'All scheduled funds transfer requests are subject to an internal review, which includes the recipient, and may not be approved… we may need to contact you to verify information… we may subtract funds from your account or place a hold on your account.' Published scam text (DSA §1 'Protect Yourself Against Wire Scams'): 'Only wire money to people you know or recipients you have verified… once the wire is sent, you may not be able to recover your money' plus eight red flags and six named scam types.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s043",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m06",
+   "code": "M06",
+   "stage": "execute-track",
+   "title": "Check status: web 'Wires and global transfers' > 'Payment activity';…",
+   "customer_action": "Check status: web 'Wires and global transfers' > 'Payment activity'; mobile 'See activity' > 'Wires & global transfers'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m07",
+   "code": "M07",
+   "stage": "confirm-complete",
+   "title": "Confirmation; incoming side posts within 24 hours at receiving bank",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "'We will update Wire Payment activity page in the Chase mobile application and chase.com… regarding the status of your wire transfer. We may also send you an email notification or message via our Digital Platforms… We may also call you or send you an SMS message.' Status reflects Chase processing only, not credit at the recipient bank. Incoming wires can take 24 hours to reflect after reaching Chase.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Future-dated or repeating wires: cancel before 11:59 PM ET (8:59 PM PT)…",
+   "customer_action": "Future-dated or repeating wires: cancel before 11:59 PM ET (8:59 PM PT) the calendar day before processing, online, in the app or by contacting Chase ('Cancel' appears in the Action column only when possible). Same-day wires: 'once you have submitted a funds transfer for the current Business Day, you cannot cancel it after we've begun processing, but you may request us to attempt to return the funds to you. If the recipient's bank agrees, your funds may be returned to you, but likely not the full amount.' Modifications are not possible once processing has begun unless the recipient's bank agrees.",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Wire activity > Action column"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Wrong account: check the Action column for 'Cancel', else call…",
+   "customer_action": "Wrong account: check the Action column for 'Cancel', else call 1-800-935-9935 (recovery 'very unlikely'). Returned wires (reasons: wrong account number; missing bank/country-specific info such as statement of payment purpose; 'Message to recipient bank' conflicts with records; recipient name mismatch) may come back net of intermediary fees or at a different FX rate — call 1-800-935-9935. Errors/unauthorized wires must be reported within 60 days of the statement (non-consumer-international).",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Wire support"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:jpmorgan-chase:jpm-j07:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "1-800-935-9935; schedule branch meeting (bring ID + mobile)",
+   "customer_action": "1-800-935-9935; schedule branch meeting (bring ID + mobile)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Customer service / branch"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012",
+      "src-jpmorgan-chase-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012",
+      "src-jpmorgan-chase-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "JPM-J07",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "JPM-P04-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app",
+   "branch"
+  ]
+ },
+ "status_tracking": {
+  "where": "Wires and global transfers > Payment activity",
+  "states": [
+   "Pending",
+   "In Process",
+   "Completed",
+   "Cancelled"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Suspected wire scam",
+   "customer_experience": "Call 1-800-935-9935 immediately to file claim",
+   "bank_handling": "Claim process; recall attempt not guaranteed",
+   "resolution": "Rarely recovered",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s012"
+   ]
+  },
+  {
+   "trigger": "Chase Secure Banking / First Banking",
+   "customer_experience": "Secure Banking receive-only; First Banking no wires",
+   "bank_handling": "Product restriction",
+   "resolution": "Use branch or other account",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s012",
+    "src-jpmorgan-chase-s058"
+   ]
+  },
+  {
+   "trigger": "Wire returned by receiving/intermediary bank",
+   "customer_experience": "Wire shows as returned; amount may be less than sent.",
+   "bank_handling": "Return reasons published: wrong account number; missing bank/country-specific information (e.g., statement of payment purpose for international); 'Message to recipient bank' conflicts with bank records; recipient name mismatch. Lesser amount: intermediary/recipient bank fees deducted or different FX rate at return.",
+   "resolution": "Call 1-800-935-9935 to learn why; re-send with corrected details (new FX rate applies).",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-jpmorgan-chase-s903",
+    "src-jpmorgan-chase-s910"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "wire_sent",
+   "channels": [
+    "email"
+   ],
+   "configurable": null,
+   "basis": "inferred"
+  }
+ ],
+ "assessment": "Recipient activation code and visible cancel affordance are good; no published wire scam interstitial wording; no same-day cancel.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

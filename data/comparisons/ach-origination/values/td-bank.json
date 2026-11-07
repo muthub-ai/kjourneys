@@ -1,0 +1,644 @@
+{
+  "bank": "td-bank",
+  "product": "ach-origination",
+  "values": {
+    "attr-cap-recurring": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-recurring:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-scheduled-future-dated": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-request-money": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-request-money:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s025",
+          "src-td-bank-s042",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-split": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-split:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s025",
+          "src-td-bank-s042",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-qr-code": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-qr-code:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-contact-sync": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-contact-sync:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s025",
+          "src-td-bank-s042",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-cancel-before-send": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-cancel-before-send:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s025",
+          "src-td-bank-s042",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-status-tracking": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-status-tracking:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s042",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-push-notifications": [
+      {
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-push-notifications:1"
+      }
+    ],
+    "attr-cap-email-sms-notifications": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-scam-warning-interstitial": [
+      {
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-scam-warning-interstitial:1"
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — token (login)",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s014",
+          "src-td-bank-s043"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P10-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-dual-approval-smb:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s042"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S02",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-international:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s025",
+          "src-td-bank-s042",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s014",
+          "src-td-bank-s043"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P10-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:cap-instant:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-td-bank-s023",
+          "src-td-bank-s047",
+          "src-td-bank-s014",
+          "src-td-bank-s043",
+          "src-td-bank-s025",
+          "src-td-bank-s042",
+          "src-td-bank-s026",
+          "src-td-bank-s045",
+          "src-td-bank-s046"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-discover:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity; minor: SMB ACH batches are web-only. [GAP-TD-0030]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-set-up:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence TD-J12, TD-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-initiate:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "MEDIUM MISSING_CAPABILITY: Same-day ACH for SMB not evidenced after search; 2-business-day arrival and $10 per batch. [GAP-TD-0029]",
+          "report_ref": "Scores sheet",
+          "mi_level": "UNKNOWN"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-review-authorize:2",
+        "value": 4,
+        "display": "4 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "Sets composite reference: Per-activity approval types (none/single/dual/deny), release limits and approval-needed alerts. [STR-TD-0009]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-execute-track:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence TD-J12, TD-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-confirm-complete:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence TD-J12, TD-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-manage:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence TD-J12",
+          "report_ref": "Scores sheet",
+          "mi_level": "INFERRED"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-exception:2",
+        "value": 4,
+        "display": "4 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "Sets composite reference: 'ACH return' alert when an item is returned. [STR-TD-0010]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:td-bank:ach-origination:score-support:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence TD-J12, TD-J16",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ]
+  }
+}

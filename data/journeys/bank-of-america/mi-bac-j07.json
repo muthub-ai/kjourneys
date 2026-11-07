@@ -1,0 +1,773 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j07",
+ "title": "Consumer sends a Same Business Day Domestic Wire to a new recipient (mobile app)",
+ "bank": "bank-of-america",
+ "product": "wire-domestic",
+ "persona": "Home buyer sending closing funds",
+ "segment": "consumer",
+ "customer_goal": "Send a guaranteed same-day payment to a U.S. bank account",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Pay & Transfer > Wire > (select account if banking+investing) > Start a…",
+   "customer_action": "Pay & Transfer > Wire > (select account if banking+investing) > Start a wire; 'More' next to lightbulb lists what you need",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay & Transfer > Wire > Start a wire"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Add new recipient > United States > account type > recipient…",
+   "customer_action": "Add new recipient > United States > account type > recipient name/address/state > account number + wire routing number > review > Add",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Add new recipient"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Existing vs new recipient",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j07-2",
+     "text": "FAQ warns 'Some banks use different routing numbers for wire transfers and ACH transfers… Using an incorrect routing number may cause the wire transfer to be delayed, rejected, returned, or sent to an unintended account' – customer must confirm the wire routing number with the recipient."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "'Important scam reminder' interstitial > OK",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Scam reminder"
+    }
+   ],
+   "frontstage": "'Important scam reminder' interstitial > OK",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Choose account > enter amount > review total cost incl. wire fee >…",
+   "customer_action": "Choose account > enter amount > review total cost incl. wire fee > optional notes for recipient's bank",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Amount / total cost"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Secured Transfer enrollment if needed: add U.S. mobile, enter texted…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Secured Transfer"
+    }
+   ],
+   "frontstage": "Secured Transfer enrollment if needed: add U.S. mobile, enter texted Authorization Code, add ATM/debit card details, Add Number, Continue; existing enrollees get an Authorization Code above thresholds",
+   "actor": "bank-system",
+   "decision": "Enrolled vs not; amount above threshold",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j07-5",
+     "text": "Debit card + PIN required"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Review wire details (expand fields), Edit if needed, tap circle to…",
+   "customer_action": "Review wire details (expand fields), Edit if needed, tap circle to authorize, Send",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review > Send"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Submitted; appears on Activity with status; 5 p.m. ET cutoff for…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity"
+    }
+   ],
+   "frontstage": "Submitted; appears on Activity with status; 5 p.m. ET cutoff for same-day receipt; executed via Fedwire or CHIPS",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Confirmation screen with Share (receipt) and Done; email confirmation",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation screen with Share (receipt) and Done; email confirmation",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email",
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Manage recipients; 'Check the status of your wire by viewing Activity…",
+   "customer_action": "Manage recipients; 'Check the status of your wire by viewing Activity in Pay & Transfer' – 'select Pay & Transfer, then select the transaction' for detailed status; or ask Erica 'Check wire status'. No self-service cancel of a submitted domestic wire is documented (Help Center 'cancel wire transfer' returns only the 30-minute Remittance Transfer rule).",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Wire/ACH > Manage recipients"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s016",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s016",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Once In Process/Processed, no right to cancel; bank may attempt…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "877-337-8357"
+    }
+   ],
+   "frontstage": "Once In Process/Processed, no right to cancel; bank may attempt amendment/cancel at its option if all banks agree",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Returned wire credited at current rate; wire fraud/scam: report to wire…",
+   "customer_action": "Returned wire credited at current rate; wire fraud/scam: report to wire line 877-337-8357; liability limited to negligent performance",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Wire fraud line"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s037"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s037"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
+   "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica / Help"
+    }
+   ],
+   "frontstage": "Erica (non-generative) selects from predefined answers; can connect to financial specialists",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j07-12",
+     "text": "Erica English-only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
+   "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact us / Report suspicious activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j07:m14",
+   "code": "M14",
+   "stage": "support",
+   "title": "Book an appointment to send at a financial center",
+   "customer_action": "Book an appointment to send at a financial center",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Appointment scheduler"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J07",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P04-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "branch",
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "Pay & Transfer > Activity > transaction detail",
+  "states": [
+   "Scheduled",
+   "In Process",
+   "Processed",
+   "Canceled",
+   "Returned"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Wrong routing number",
+   "customer_experience": "Delay/reject/return/misdirect",
+   "bank_handling": "Return credited",
+   "resolution": "Customer re-sends",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s005"
+   ]
+  },
+  {
+   "trigger": "Customer-induced scam wire",
+   "customer_experience": "No reversal right",
+   "bank_handling": "Recall attempt only if beneficiary bank agrees",
+   "resolution": "Likely loss",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s013"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "wire_submitted",
+   "channels": [
+    "email",
+    "in_app receipt"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Thorough 22-step guided flow with explicit scam reminder and receipt sharing; low base limit and debit-card/PIN dependency are frictions.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,271 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j22",
+ "title": "Small business pays bills with Online Bill Pay (ACH/debit/credit card funded) and syncs QuickBooks",
+ "bank": "capital-one",
+ "product": "bill-pay",
+ "persona": "Small business owner with <$10M sales",
+ "segment": "small-business",
+ "customer_goal": "Pay vendor invoices and track them",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j22:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "'Pay business bills': pay by ACH, debit or credit card; track invoices…",
+   "customer_action": "'Pay business bills': pay by ACH, debit or credit card; track invoices and payments; connect QuickBooks Online; schedule multiple payments at once",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Capital One Business account > 'Payments & expenses' tab > enroll in 'Accounts Payable' > 'Manage Accounts Payable' (bill pay dashboard); marketed as 'Accounts Payable with Capital One' / 'Pay Vendors'"
+    }
+   ],
+   "frontstage": "Free only for select methods (ACH); not credit card",
+   "actor": "customer",
+   "decision": "Funding method",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s036",
+      "src-capital-one-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s036",
+      "src-capital-one-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s036",
+      "src-capital-one-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j22:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Enter invoice and vendor info (manually, by uploading an invoice, or by…",
+   "customer_action": "Enter invoice and vendor info (manually, by uploading an invoice, or by syncing accounting software) > 'Pay your way': select the funding source (Capital One Business card, any bank account or debit card) and the vendor's delivery method (single-use virtual card emailed to the vendor, ACH 'bank transfer delivery', or paper check); schedule multiple bill payments at once",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Manage Accounts Payable > bill pay dashboard > add vendor/invoice > Pay"
+    }
+   ],
+   "frontstage": "Fee applied by funding/delivery combination: card-funded virtual card 0%; bank-account-funded ACH or check 0%; card- or debit-card-funded ACH or check 2.9% processing fee. Virtual cards 'can only be used once for the exact amount sent'. Payments tracked from the dashboard; QuickBooks Online sync.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s036",
+      "src-capital-one-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s036",
+      "src-capital-one-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s036",
+      "src-capital-one-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j22:m03",
+   "code": "M03",
+   "stage": "exception",
+   "title": "Late fee claim",
+   "customer_action": "Late fee claim",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "unknown",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j22:m04",
+   "code": "M04",
+   "stage": "support",
+   "title": "Business banker / Contact Us",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Accounts Payable help line 1-800-867-0904; SBB voice team 1-888-755-2172 (8am–11pm ET M–F); business banker; no SMB help-center article exists for bill pay"
+    }
+   ],
+   "frontstage": "Business banker / Contact Us",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s916",
+      "src-capital-one-s920"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s033",
+      "src-capital-one-s916",
+      "src-capital-one-s920"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J22",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P03-S04",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Invoice/payment tracking (named)",
+  "states": [],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Card-funded vendor pay plus QuickBooks sync suggests an embedded third-party AP platform; vendor and flow not disclosed.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

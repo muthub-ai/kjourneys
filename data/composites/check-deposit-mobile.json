@@ -1,0 +1,111 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "Deposit in bottom nav with daily/30-day limits visible before capture",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "DEFINE",
+    "moment_of_truth": null,
+    "derived_from": "pnc:PNC-J14#1; wells-fargo:WF-J13#1; us-bank:USB-J12#1",
+    "rationale": "PNC/WF show limits up front."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Endorsement guidance and default account",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J13#5; wells-fargo:WF-J13#3",
+    "rationale": "WF endorsement text and default account."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Auto-capture with real-time image feedback; amount entry with limits shown",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "EXECUTE",
+    "moment_of_truth": null,
+    "derived_from": "fifth-third:FITB-J08#4; fifth-third:FITB-J08#5; bank-of-america:BAC-J11#3",
+    "rationale": "Auto-capture."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Hold/availability disclosed before submit, with optional fee-based immediate availability",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "us-bank:USB-J12#3; fifth-third:FITB-J08#6; pnc:PNC-J14#4; td-bank:TD-J09#4",
+    "rationale": "U.S. Bank pre-confirm hold notice; Fifth Third/PNC instant-funds choice; TD availability estimate."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Two-stage receipt: received, then accepted; pending tab",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "us-bank:USB-J12#4; citi:CITI-J11#5",
+    "rationale": "U.S. Bank and Citi two emails."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "On-screen + email + secure message confirmation",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "wells-fargo:WF-J13#8; bank-of-america:BAC-J11#6",
+    "rationale": "WF three-channel confirmation."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "History with images and decline reasons (30 days)",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MONITOR",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J12#5",
+    "rationale": "U.S. Bank Completed tab."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Decline reason and next steps by email; no clawback on instant-funds NSF",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "us-bank:USB-J12#7; pnc:PNC-J14#9; capital-one:COF-J14#8",
+    "rationale": "U.S. Bank reasons; PNC Express Funds no-recourse."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant locates deposit and explains holds",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R41#None; wells-fargo:WF-J13#11",
+    "rationale": "Composite."
+   }
+  ],
+  "id": "CJ-MOBILE-DEPOSIT",
+  "title": "Consumer deposits a check with the mobile app",
+  "product": "check-deposit-mobile",
+  "segment": "consumer",
+  "direction": "DEPOSIT",
+  "report_version": "2026-11-06-v1"
+ }
+]

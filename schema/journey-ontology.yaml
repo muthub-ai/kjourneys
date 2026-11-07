@@ -1,11 +1,20 @@
-# KOS Journey Ontology — kos-journey/0.6.0
+# KOS Journey Ontology — kos-journey/0.7.0
 # Human-readable schema. The machine contract is journey-ontology.schema.json (JSON Schema 2020-12),
 # enforced in CI with validate_journey.py (structure, integrity, typing, temporal rules, publish gates)
-# and tests/run_tests.sh (31 negative fixtures that must fail) plus tests/test_ingest.py.
+# and tests/run_tests.sh (40 negative fixtures that must fail) plus tests/test_ingest.py.
 # Canonical instance: JSON, split across registries/ and data/ and assembled by tools/assemble.py.
 
-ontology: kos-journey/0.6.0
+ontology: kos-journey/0.7.0
 changelog:
+  "0.7.0":
+    - "Breaking: adopts the MI study's taxonomy (tools/migrate_0_6_to_0_7.py) - ten banks, sixteen products (one per payment rail, with rail and family), nine stages DISCOVER to SUPPORT"
+    - "Breaking: the placeholder Zelle comparison is removed; comparisons are generated from the MI workbook (tools/import_mi_workbook.py) as capability flags (boolean) and stage scores (integer 0-4)"
+    - Moment backstage fields (process, controls, applications, capabilities, kpis, fail_points, hotspot) become optional, so outside-in MI journeys need not invent them; moments gain actor, decision, notification, source_step
+    - Journeys gain source_journey_id, sub_product, report_version, channels, status_tracking, exceptions[], notifications[], assessment
+    - "New collections: findings (gaps and strengths), composites (best-practice journeys), observations, verifications (the MI challenge round), participation (network membership), rankings"
+    - Source kinds extended to the MI source types; sources carry bank, local_id, publisher, access_status, notes
+    - MI evidence levels map onto basis + confidence; the original level is kept as x-mi_evidence (or evidence.mi_level on comparison facts)
+    - The focus bank may now hold MI facts in comparisons (the study scores Wells Fargo too)
   "0.6.0":
     - "Breaking: comparison (one) becomes comparisons[] (one per product); data/comparisons/<product>/ per product (tools/migrate_0_5_to_0_6.py)"
     - MI reports may cover several products; extracts live in extract/<product>/<bank>.json
@@ -51,6 +60,13 @@ conventions:
 # ---------------------------------------------------------------------------
 types:
   URN: { type: string, pattern: "^urn:kos:[a-z]+:[a-z0-9-]+(:[a-z0-9-]+)*$" }
+  MIEvidenceLevel:   # market-intelligence level → basis, confidence (kept verbatim as x-mi_evidence)
+    CONFIRMED_BANK:   [disclosed, high]
+    OBSERVED_SESSION: [observed, high]
+    THIRD_PARTY:      [disclosed, medium]
+    COMMUNITY:        [inferred, low]
+    INFERRED:         [inferred, low]
+    UNKNOWN:          [inferred, low]
   EvidenceBasis:
     observed:  "Seen first-hand (mystery shop, app walkthrough, screenshots)"
     disclosed: "Public source (bank help pages, filings, network rules, press)"
@@ -92,9 +108,13 @@ types:
 # Catalogs (shared across journeys)
 # ---------------------------------------------------------------------------
 catalogs:
-  Source:     { fields: [id, kind, title, origin, url, retrieved_at, path, sha256, report_version], kind_values: [placeholder, walkthrough, screenshot, web-page, filing, network-rule, internal-system, kos-bundle, interview, mi-report], note: "mi-report sources point at an immutable file in reports/<version>/ and carry its sha256" }
-  Party:      { fields: [id, name, lei, lei_basis, role], role_values: [focus, competitor, network, vendor], note: "Banks keyed by LEI once populated; exactly one focus bank (Wells Fargo)" }
-  Product:    { fields: [id, name, family, fibo_class, journeys], family_values: [zelle, ach, wire, bill-pay, instant, card-transfer, other] }
+  Source:
+    fields: [id, kind, title, origin, url, retrieved_at, path, sha256, report_version, bank, local_id, publisher, access_status, notes]
+    kind_values: [placeholder, walkthrough, screenshot, web-page, filing, network-rule, internal-system, kos-bundle, interview, mi-report,
+                  bank-site, bank-help-center, bank-pdf, bank-video, press, network-operator, app-store, regulator, community, observed-session, analyst, other]
+    note: "mi-report sources point at an immutable file in reports/<version>/ and carry its sha256. MI source IDs are per bank, so ingested IDs are src-<bank>-<sNNN>; every MI record also cites src-mi-<version>."
+  Party:      { fields: [id, name, lei, lei_basis, role, holding_company, assets_usd_bn, assets_as_of, platforms], role_values: [focus, competitor, network, vendor], note: "Banks keyed by LEI once populated; exactly one focus bank (Wells Fargo)" }
+  Product:    { fields: [id, name, rail, family, fibo_class, journeys], note: "One product per MI rail (ZELLE, ACH_EXTERNAL_TRANSFER, …)", family_values: [zelle, request, ach, wire, instant, bill-pay, internal, deposit, cash, wallet, card-transfer, other] }
   Capability: { fields: [id, name, bian_id, bian_version, basis], note: "BIAN service domain; ID + version required before publish" }
   Application:
     fields: [app_id, name, layer, owner_team, capabilities, bundle, cmdb_ci, depends_on, basis]
@@ -119,17 +139,24 @@ catalogs:
 # Journey
 # ---------------------------------------------------------------------------
 Journey:
-  fields: [id, title, bank, product, persona, segment, lob, customer_goal, scope, version, as_of, status, basis, governance, stages, moments, variants]
+  fields: [id, title, bank, product, persona, segment, lob, customer_goal, scope, version, as_of, status, basis, governance, stages, moments, variants,
+           source_journey_id, sub_product, report_version, channels, status_tracking, exceptions, notifications, assessment]
   status: [draft, in-review, published, retired]
+  mi: "MI journeys carry source_journey_id (e.g. WF-J01, unique per bank) and cite their report; exceptions are {trigger, customer_experience, bank_handling, resolution, basis, source_ids}"
 Moment:
   fields:
     id: URN
     code: "M01…"
     stage: "ref codelists.stages"
     title: string
-    customer_action: "string | null (null = backstage only)"
+    customer_action: "string | null (null = backstage only, or a step taken by the bank, network or a third party)"
+    actor: "customer | recipient | bank-staff | bank-system | network | third-party — places the step in its lane"
+    decision: "string | null — branch point at this step"
+    notification: "string | null — message the customer gets"
+    source_step: "int — step number in the MI workbook"
     touchpoints: "Touchpoint[] {channel, screen}"
     frontstage: string
+    optional: "From 0.7.0 every field below up to handoff is optional: competitor journeys are observed from outside the line of visibility"
     process: "ref BusinessProcess"
     controls: "ref Control[]"
     applications: "ref Application[]"
@@ -164,6 +191,28 @@ Comparison:
     attributes: "Attribute[] {id, stage, name, datatype, unit, normalization, allowed_values (enum, enum_list)}"
     values: "map<Party.id, map<Attribute.id, Assertion[]>> — every bank × attribute present; exactly one current assertion; missing data = basis awaiting"
   datatype: [text, integer, boolean, money, duration, enum, enum_list]
+  mi_attributes: "attr-cap-<flag> (boolean: Yes if any sub-product on the rail has it, No only if all lack it) and attr-score-<stage> (integer 0-4; U is left awaiting, never 0)"
+mi_score_rubric:
+  4: "Sets the reference"
+  3: "At parity"
+  2: "Material friction"
+  1: "Only via channel switch, or a critical/high gap"
+  0: "Absent (evidenced)"
+  U: "Unknown — not scored, excluded from means"
+
+# ---------------------------------------------------------------------------
+# Market-intelligence analysis (0.7.0). Every record names its report_version, which must match an mi-report source.
+# ---------------------------------------------------------------------------
+Finding:
+  fields: [id, bank, journey, product, stage, step, type, severity, description, composite, composite_step, reference_banks, basis, source_ids, frameworks, report_version]
+  type: [strength, transparency, friction, missing-capability, security-trust, exception-handling, channel-gap]
+  severity: [critical, high, medium, low]
+  rules: ["STR- ids are strengths and GAP- ids are gaps", "journey, product, stage and composite must resolve"]
+Composite: { fields: [id, title, product, segment, direction, steps], note: "Best-practice journey assembled across banks; steps cite derived_from bank:journey#step" }
+Observation: { fields: [bank, type, text], type: [strength, weakness, differentiator, recent-change, open-question] }
+Verification: { fields: [id, bank, target_type, target, challenge_type, claim, finding, verdict, resolution, evidence, reviewer], verdict: [accepted, partial, rejected, unresolved] }
+Participation: { fields: [bank, network, participates, note, basis, source_ids], network: [zelle, rtp-receive, rtp-send, fednow-receive, fednow-send, push-to-card, paze-wallet] }
+Ranking: { fields: [bank, rank, overall_index, domestic_core_index, coverage, rail_means], note: "From the MI ScoreTotals sheet; one per bank per report" }
 
 # ---------------------------------------------------------------------------
 # Relations
@@ -182,21 +231,21 @@ relations:
   - [Application, dependsOn, Application]
   - [Variant, traverses, Moment]
   - [Comparison, about, Product]
+  - [Finding, about, Moment]
+  - [Finding, rollsUpTo, Composite]
+  - [Ranking, ranks, Party]
+  - [Journey, citedBy, Source]
 
 # ---------------------------------------------------------------------------
 # Rendering
 # ---------------------------------------------------------------------------
 layers: [feeling, action, touchpoint, "— line of interaction —", frontstage, "— line of visibility (limit of competitive intelligence) —", process, controls, "— line of internal interaction —", applications, interfaces, capabilities, hotspot, kpis, fail_points]
 views:
-  portfolio: "Level 0 · hypothesis, products × stages heat map, products × banks coverage"
-  journey:   "Level 1 · experience curve, stage cards, ranked hot spots"
-  blueprint: "Level 2 · full blueprint with lenses and paths"
-  compare:   "Level 1 · one product across banks, attribute by attribute"
-lenses:
-  executive:   [feeling, action, controls, hotspot, kpis, fail_points]
-  product:     [feeling, action, touchpoint, frontstage, process, hotspot, kpis, fail_points]
-  engineering: [action, frontstage, process, controls, applications, interfaces, capabilities]
-  full:        all
+  overview:  "Level 0 · ranking, rail × bank heat map of mean stage scores, Wells Fargo's highest-severity gaps"
+  stages:    "Level 1 · one bank, rails × nine stages, score or points behind the best bank"
+  journeys:  "Level 2 · any journey as a blueprint: customer, touchpoint, frontstage, decision, backstage, fail points, findings, sources"
+  compare:   "Level 1 · one rail across banks: stage scores and capability flags"
+  findings:  "Gaps and strengths, filterable by bank, type, severity, rail and stage"
 
 # ---------------------------------------------------------------------------
 # Required before publish (needs owners of these systems)

@@ -1,0 +1,291 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j21",
+ "title": "Business decisions ACH Positive Pay exceptions in Fifth Third Direct",
+ "bank": "fifth-third",
+ "product": "ach-origination",
+ "persona": "Treasury/AP user with payment entitlements",
+ "segment": "small-business",
+ "customer_goal": "Stop unauthorized debits",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j21:m01",
+   "code": "M01",
+   "stage": "review-authorize",
+   "title": "Pay or Return decision: decisions before 12:00 p.m. ET post the same…",
+   "customer_action": "Pay or Return decision: decisions before 12:00 p.m. ET post the same day; the final deadline is 8:00 p.m. ET; the default decision applies if no decision is made by the final deadline",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Decision screen"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Pay vs Return",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j21:m02",
+   "code": "M02",
+   "stage": "execute-track",
+   "title": "ACH debits post, exceptions presented next banking day; only items…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Positive Pay exceptions"
+    }
+   ],
+   "frontstage": "ACH debits post, exceptions presented next banking day; only items requiring action shown; rules auto-approve",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email exception alert + hourly reminders",
+   "source_step": 2,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j21:m03",
+   "code": "M03",
+   "stage": "manage",
+   "title": "Maintain rules (Company ID, min/max amounts); ACH credits no longer…",
+   "customer_action": "Maintain rules (Company ID, min/max amounts); ACH credits no longer reviewable; Transaction Control for blocks/filters",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Rules"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024",
+      "src-fifth-third-s037"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024",
+      "src-fifth-third-s037"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j21:m04",
+   "code": "M04",
+   "stage": "exception",
+   "title": "Missed final decision deadline (8:00 p.m. ET) → client's default…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "Missed final decision deadline (8:00 p.m. ET) → client's default Pay/Return decision applies",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j21:m05",
+   "code": "M05",
+   "stage": "support",
+   "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
+   "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Commercial Support Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J21",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P08-S07",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app",
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Centralized Exceptions",
+  "states": [
+   "Exception",
+   "Paid",
+   "Returned"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [
+  {
+   "event": "payment_status",
+   "channels": [
+    "email",
+    "in_portal"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Standard but with free hourly reminder alerts.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

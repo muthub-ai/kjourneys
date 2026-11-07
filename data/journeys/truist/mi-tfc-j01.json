@@ -1,0 +1,1000 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j01",
+ "title": "Consumer sends money to a new recipient with Zelle (Truist Mobile)",
+ "bank": "truist",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a person instantly using only their email or U.S. mobile number",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens Transfer & Pay from main menu or taps the Zelle widget…",
+   "customer_action": "Customer opens Transfer & Pay from main menu or taps the Zelle widget on the home screen",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Main menu > Transfer & Pay > Send Money with Zelle®; device home-screen Zelle widget (3.2.0, Jul 2024)"
+    }
+   ],
+   "frontstage": "Zelle landing shows Send / Request / Activity",
+   "actor": "customer",
+   "decision": "Enrolled vs not-enrolled → first-time enrollment flow",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "First use: accept Zelle terms, enter email or U.S. mobile number, enter…",
+   "customer_action": "First use: accept Zelle terms, enter email or U.S. mobile number, enter one-time verification code, choose account to link",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle enrollment screens"
+    }
+   ],
+   "frontstage": "Token bound to one account; blocked enrollments routed to 888-228-6654",
+   "actor": "customer",
+   "decision": "Enrollment blocked → call",
+   "notification": "One-time verification code via SMS/email",
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j01-2",
+     "text": "Pay-yourself scam exploits this OTP step (Truist warns explicitly)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Add recipient: Send Money with Zelle® > Recipients (bottom) > search by…",
+   "customer_action": "Add recipient: Send Money with Zelle® > Recipients (bottom) > search by name, U.S. mobile or email; or import device contacts",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Recipients / Select Recipient screen"
+    }
+   ],
+   "frontstage": "Recipient saved only within Zelle (not phone contacts); network directory lookup",
+   "actor": "customer",
+   "decision": "Recipient enrolled vs not enrolled",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Tap Send, pick recipient from Recent recipients, Added recipients,…",
+   "customer_action": "Tap Send, pick recipient from Recent recipients, Added recipients, device contacts or search; or tap QR icon on Select Recipient screen and scan recipient's Zelle QR",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Send > Select Recipient (QR icon)"
+    }
+   ],
+   "frontstage": "Displays recipient's registered name for QR; Truist says confirm name before sending",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Enter amount and optional note; optionally set a future date or…",
+   "customer_action": "Enter amount and optional note; optionally set a future date or recurring schedule",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Amount screen"
+    }
+   ],
+   "frontstage": "Send limit shown on the transaction page (third-party) / 'current limits shown in app' (agreement)",
+   "actor": "customer",
+   "decision": "One-time vs scheduled/recurring",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j01-5",
+     "text": "Limits not published; discovered only in-flow"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Review recipient, amount, memo; tap Send",
+   "customer_action": "Review recipient, amount, memo; tap Send",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review screen"
+    }
+   ],
+   "frontstage": "Truist pages warn 'like sending cash'; no purchase protection. Whether a dynamic scam interstitial appears for new recipients is UNKNOWN",
+   "actor": "customer",
+   "decision": "Confirm vs edit",
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s901",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s901",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s901",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s901",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j01-6",
+     "text": "No dynamic scam interstitial evidenced (public FAQ and the agreement carry only static 'like sending cash'/'only people you trust' warnings; FAQ instructs the user to 'confirm the recipient is correct by reviewing the displayed name before sending'). Sending to a Zelle-app-only consumer triggers a pop-up 'the payment cannot be completed'."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Truist submits to Zelle network; enrolled recipients receive funds…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle Activity page (Pending / completed) with per-payment reference number"
+    }
+   ],
+   "frontstage": "Payment to unenrolled token stays pending up to 14 days",
+   "actor": "bank-system",
+   "decision": "Recipient enrolls within 14 days vs not",
+   "notification": "Recipient notified by Zelle (text/email)",
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Confirmation in app; scheduled/recurring sends generate a reminder 7…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation / Activity"
+    }
+   ],
+   "frontstage": "Confirmation in app; scheduled/recurring sends generate a reminder 7 days before, a sent notice, and a failure alert",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Push/email notice when scheduled payment is sent; 7-day reminder; failure alert",
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "View upcoming scheduled/recurring payments in Pending section of…",
+   "customer_action": "View upcoming scheduled/recurring payments in Pending section of Activity; edit or delete next payment or entire series; change receiving account via Zelle Preferences > Manage Payment Profiles; view/print QR under Preferences",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > Pending; Preferences"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Delete next vs delete series",
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Cancel: open payment in Activity > 'Cancel This Payment' (only if…",
+   "customer_action": "Cancel: open payment in Activity > 'Cancel This Payment' (only if recipient not yet enrolled); otherwise call Care Center",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > payment detail"
+    }
+   ],
+   "frontstage": "Cancel option hidden once recipient enrolled/paid",
+   "actor": "customer",
+   "decision": "Cancel available vs not",
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Wrong recipient / scam: call 844-4TRUIST immediately to file a claim;…",
+   "customer_action": "Wrong recipient / scam: call 844-4TRUIST immediately to file a claim; reimbursement available for unauthorized transactions and 'certain qualifying imposter scams' (agreement)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Truist Care Center"
+    }
+   ],
+   "frontstage": "Phone-only intake: 'call the Truist Care Center immediately at 844-4TRUIST to file a claim'; wrong recipient: 'immediately contact our Truist Care Center ... to determine what options are available'; payment issues: 888-228-6654 quoting the reference number from the Zelle activity page; agreement: reimbursement for unauthorized transactions and 'certain qualifying imposter scams'; Zelle network: 'Qualifying Zelle® transactions may be eligible for reimbursement'.",
+   "actor": "customer",
+   "decision": "Unauthorized vs authorized (scam) vs qualifying imposter scam",
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s021",
+      "src-truist-s901",
+      "src-truist-s904",
+      "src-truist-s907",
+      "src-truist-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s021",
+      "src-truist-s901",
+      "src-truist-s904",
+      "src-truist-s907",
+      "src-truist-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s021",
+      "src-truist-s901",
+      "src-truist-s904",
+      "src-truist-s907",
+      "src-truist-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014",
+      "src-truist-s021",
+      "src-truist-s901",
+      "src-truist-s904",
+      "src-truist-s907",
+      "src-truist-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j01-11",
+     "text": "No in-app Zelle dispute flow; phone only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Customer opens Truist Assist (icon at bottom of screen) or taps…",
+   "customer_action": "Customer opens Truist Assist (icon at bottom of screen) or taps Help/FAQs; Assist can hand off to a live agent",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Truist Assist / Help & support"
+    }
+   ],
+   "frontstage": "Assist answers account questions; Zelle actions not listed in Assist capabilities",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004",
+      "src-truist-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004",
+      "src-truist-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004",
+      "src-truist-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s004",
+      "src-truist-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j01-12",
+     "text": "Assist cannot act on Zelle issues; phone remains primary"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j01:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the…",
+   "customer_action": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the payment reference number from Zelle activity; cancel/claim/scam: Truist Care Center 844-4TRUIST (option 1 fraud 24/7; option 9 Spanish)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Zelle FAQ 'issue regarding a Zelle payment'"
+    }
+   ],
+   "frontstage": "Care Center files claim / case number",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s005",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s005",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s005",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s005",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j01-13",
+     "text": "Two different numbers for Zelle issues vs. claims"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TFC-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle Activity page (Pending section; reference number per payment); Zelle widget on home",
+  "states": [
+   "Pending",
+   "Sent/Completed",
+   "Failed",
+   "Expired (14 days)",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 days",
+   "customer_experience": "Payment expires; money returned to sender's account",
+   "bank_handling": "Automatic expiry",
+   "resolution": "Funds restored",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s001"
+   ]
+  },
+  {
+   "trigger": "Enrollment blocked",
+   "customer_experience": "Message on enrollment",
+   "bank_handling": "Call 888-228-6654",
+   "resolution": "Manual unblock",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s001"
+   ]
+  },
+  {
+   "trigger": "Customer sent to wrong person",
+   "customer_experience": "Cannot reverse; call Care Center",
+   "bank_handling": "Claim filed; recovery attempted",
+   "resolution": "Not guaranteed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s001"
+   ]
+  },
+  {
+   "trigger": "Authorized push-payment scam (e.g., pay-yourself)",
+   "customer_experience": "Call 844-4TRUIST to file claim",
+   "bank_handling": "Phone-only claim intake at 844-4TRUIST ('call the Truist Care Center immediately ... to file a claim'); agreement: reimbursement available for 'transactions resulting from certain qualifying imposter scams'; network guidance: 'Qualifying Zelle® transactions may be eligible for reimbursement'; purchase scams (goods not received) explicitly not covered.",
+   "resolution": "Case-by-case",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s001",
+    "src-truist-s014",
+    "src-truist-s021",
+    "src-truist-s060",
+    "src-truist-s904",
+    "src-truist-s907",
+    "src-truist-s923"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle transfer",
+   "customer_experience": "Report at once; $50/$500/60-day Reg E tiers",
+   "bank_handling": "Error resolution 10 business days (45/90 extended); provisional credit",
+   "resolution": "Per Reg E",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s013",
+    "src-truist-s014"
+   ]
+  },
+  {
+   "trigger": "Payment placed on hold by Truist fraud controls",
+   "customer_experience": "Customer reports 1.5h call to release (community)",
+   "bank_handling": "Manual review",
+   "resolution": "Released after verification",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s054"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "scheduled_payment_reminder_7_days",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": null,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_sent",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": null,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_failed",
+   "channels": [
+    "push",
+    "email"
+   ],
+   "configurable": null,
+   "basis": "disclosed"
+  },
+  {
+   "event": "recipient_enrollment_prompt",
+   "channels": [
+    "sms",
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Strong: QR send/receive, scheduled & recurring with 7-day reminders, cancel-in-app when possible, explicit pay-yourself scam education. Weak: no documented scam interstitial, no in-app claim path for Zelle, two support numbers, limits opaque.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

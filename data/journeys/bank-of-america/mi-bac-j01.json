@@ -1,0 +1,1182 @@
+{
+ "id": "urn:kos:journey:bank-of-america:bac-j01",
+ "title": "Consumer sends money to a new recipient with Zelle® (mobile app)",
+ "bank": "bank-of-america",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a person instantly with only their phone number or email",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "From Accounts, tap Pay & Transfer; Zelle® tile reads 'send or receive…",
+   "customer_action": "From Accounts, tap Pay & Transfer; Zelle® tile reads 'send or receive money with Zelle®'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Accounts > Pay & Transfer hub (tiles: Transfer – between my accounts | Zelle® – send or receive money | Pay Bills – pay new or schedule | Wire – U.S. or international; Activity: SCHEDULED / HISTORY; bottom tab bar Accounts | Pay & Transfer | Deposit Checks | Research | Trade) > Zelle®"
+    }
+   ],
+   "frontstage": "If not enrolled, 'Set up Zelle®' screen appears",
+   "actor": "customer",
+   "decision": "Enrolled vs not enrolled",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Tap Pay; on 'Who would you like to pay?' search contacts, scan QR, or…",
+   "customer_action": "Tap Pay; on 'Who would you like to pay?' search contacts, scan QR, or tap 'Add new person or company'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > Pay > Who would you like to pay?"
+    }
+   ],
+   "frontstage": "Registered Zelle users shown with purple 'Z'; BofA customers shown with BofA logo (routed as internal transfer)",
+   "actor": "customer",
+   "decision": "Existing recipient vs add new",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Add a Recipient: 'Who are you adding?' (Person) > 'How are you adding…",
+   "customer_action": "Add a Recipient: 'Who are you adding?' (Person) > 'How are you adding them?' (mobile number or email) > enter details or 'Add from Contacts' > Review > Add Recipient",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Add a Recipient screens"
+    }
+   ],
+   "frontstage": "Bank validates token with Zelle directory; shows 'Enrolled with Zelle® as' name",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j01-3",
+     "text": "Customer must verify displayed enrolled name matches intended payee"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "Zelle disclaimer 'OK'; if verification required, authorization code…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Authorization code screen"
+    }
+   ],
+   "frontstage": "'Confirm contact info' disclaimer (OK); if verification is required the customer picks a delivery method > 'Send code' > enters the one-time authorization code > Submit. On the web (Online Banking) the same step also requires the Debit card PIN. 'Your recipient is added' confirmation (mobile) / 'You've successfully added the new recipient' with 'Send a payment' or 'Add another recipient' (web).",
+   "actor": "bank-system",
+   "decision": "Step-up triggered vs not",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "Pay page: select account, enter amount; choose payment type (recurring…",
+   "customer_action": "Pay page: select account, enter amount; choose payment type (recurring toggle) and date (calendar, ET); optional 'Add a message'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay > Amount > Payment type > Payment date > Message"
+    }
+   ],
+   "frontstage": "Recurring/scheduled unavailable for unregistered recipients and require 60 days of Zelle enrollment",
+   "actor": "customer",
+   "decision": "Immediate vs scheduled vs recurring",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Review payment details (Edit / Next or Pay)",
+   "customer_action": "Review payment details (Edit / Next or Pay)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review payment details"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Interstitial 'You're authorizing a payment to someone new' (OK);…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "New-recipient warning + disclaimer screen"
+    }
+   ],
+   "frontstage": "Pop-up 'You're authorizing a payment to someone new' (OK) on mobile and web; may trigger a second one-time authorization code (web: code + Debit card PIN). For scheduled/recurring payments a disclosure block must be scrolled and an acknowledgement box/circle checked before 'Schedule'. Public pages document no payment-purpose question or recipient-risk-specific warning beyond this; Zelle product page carries static scam block ('We will never ask you to send money to yourself or anyone using Zelle®… Treat Zelle® payments like cash').",
+   "actor": "bank-system",
+   "decision": "Customer accepts warning or abandons",
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s023",
+      "src-bank-of-america-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s023",
+      "src-bank-of-america-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s023",
+      "src-bank-of-america-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j01-7",
+     "text": "Warnings are generic; no payment-purpose question documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m08",
+   "code": "M08",
+   "stage": "review-authorize",
+   "title": "Tap Pay (immediate) or Schedule",
+   "customer_action": "Tap Pay (immediate) or Schedule",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay / Schedule button"
+    }
+   ],
+   "frontstage": "Immediate payments cannot be edited or cancelled",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m09",
+   "code": "M09",
+   "stage": "execute-track",
+   "title": "Bank submits to Zelle network; status visible in Activity as Pending…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Pay & Transfer > Activity"
+    }
+   ],
+   "frontstage": "Immediate payment: status Pending acceptance (recipient unenrolled; cancelable; auto-cancels after 14 days with funds released), Pending review (bank hold; cannot be canceled; 'Check your alerts in Message Center to see if action is required'; completes or fails automatically) or Paid (may still be delayed by recipient FI; cannot cancel while processing). Scheduled/recurring: Payment Activity > Scheduled; moves to Processing on the payment date, then History when complete; email confirmations on scheduling, reminders before each payment, and notices if a payment fails or is canceled; statement shows 'Zelle® Scheduled payment' / 'Zelle® Recurring payment'. Bank emails if it blocks or cancels a payment.",
+   "actor": "bank-system",
+   "decision": "Enrolled (Paid) vs unenrolled (Pending acceptance, 14-day window)",
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j01-9",
+     "text": "Pending review cannot be cancelled by customer"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m10",
+   "code": "M10",
+   "stage": "confirm-complete",
+   "title": "Success screen 'Your payment is scheduled' / sent > Done > Activity;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Success screen; email"
+    }
+   ],
+   "frontstage": "Success screen 'Your payment is scheduled' / sent > Done > Activity; email alert with transaction details; recipient notified by Zelle text/email",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email (and text) on send; recipient email/text",
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s014",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m11",
+   "code": "M11",
+   "stage": "manage",
+   "title": "Scheduled/recurring: Payment Activity > Scheduled > Edit or Cancel…",
+   "customer_action": "Scheduled/recurring: Payment Activity > Scheduled > Edit or Cancel until 11:59 p.m. ET the day before the payment date; a single payment within a series can be cancelled (not edited) or the entire series cancelled. Web: 'Go to Activity' after scheduling; 'For scheduled and recurring payments, you can view, edit and cancel on the Activity screen'.",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Payment Activity > Scheduled"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": "Email confirmations, upcoming-payment reminders, failure/cancellation emails",
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m12",
+   "code": "M12",
+   "stage": "manage",
+   "title": "Manage alerts in Settings > Contact Info / Alert Settings; deactivate…",
+   "customer_action": "Manage alerts in Settings > Contact Info / Alert Settings; deactivate Zelle by deleting all tokens",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > Settings"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s035"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s035"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m13",
+   "code": "M13",
+   "stage": "exception",
+   "title": "Recipient not enrolled within 14 days: payment auto-cancels, funds…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Activity > Pending acceptance > Cancel"
+    }
+   ],
+   "frontstage": "Recipient not enrolled within 14 days: payment auto-cancels, funds return; customer may cancel earlier from Activity",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email on cancellation",
+   "source_step": 13,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m14",
+   "code": "M14",
+   "stage": "exception",
+   "title": "Payment fails (closed/underfunded account, ineligible account, invalid…",
+   "customer_action": "Payment fails (closed/underfunded account, ineligible account, invalid recipient info, security, limits) or sits in Pending review: check Message Center; cannot cancel",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Message Center / Activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": "Message Center alert",
+   "source_step": 14,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j01-14",
+     "text": "Opaque review; community reports of multi-day holds"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m15",
+   "code": "M15",
+   "stage": "exception",
+   "title": "Scam (authorized push payment): FAQ 'I believe I've been a victim of a…",
+   "customer_action": "Scam (authorized push payment): FAQ 'I believe I've been a victim of a scam' routes only to the Security Center 'Report Suspicious Activity' page ('ATM, debit, check & Zelle®: Log into Online Banking or call 800-432-1000 / 877-366-1121') and states 'Qualifying imposter scams may be eligible for reimbursement'; no in-app Zelle scam-claim button is documented. Once a claim exists, 'most claims can be tracked through Mobile and Online Banking… Log in to the app and go to your Inbox. Select your claim in Status Tracker to view details. Go to View More Details if you have messages or action items' (business account claims not viewable). Authorized payments carry no purchase protection.",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Report Suspicious Activity page; 877-366-1121"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Imposter scam qualifying under Zelle network rule vs other scam",
+   "notification": null,
+   "source_step": 15,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s024",
+      "src-bank-of-america-s026",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s901",
+      "src-bank-of-america-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s024",
+      "src-bank-of-america-s026",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s901",
+      "src-bank-of-america-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s024",
+      "src-bank-of-america-s026",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s901",
+      "src-bank-of-america-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j01-15",
+     "text": "Policy criteria undisclosed; CFPB suit (Dec 2024) alleged $290M BofA customer losses, dropped Mar 2025"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m16",
+   "code": "M16",
+   "stage": "exception",
+   "title": "Unauthorized transaction: Reg E error resolution – notify within 60…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Claims; Inbox > Status Tracker > View More Details (messages / action items)"
+    }
+   ],
+   "frontstage": "Dispute Transaction button in-app covers card transactions; Zelle digital dispute path not confirmed",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 16,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s056",
+      "src-bank-of-america-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s056",
+      "src-bank-of-america-s044"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m17",
+   "code": "M17",
+   "stage": "support",
+   "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
+   "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "touchpoints": [
+    {
+     "channel": "voice-chat-assistant",
+     "screen": "Erica / Help"
+    }
+   ],
+   "frontstage": "Erica (non-generative) selects from predefined answers; can connect to financial specialists",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 17,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-bank-of-america-bac-j01-17",
+     "text": "Erica English-only"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:bank-of-america:bac-j01:m18",
+   "code": "M18",
+   "stage": "support",
+   "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
+   "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact us / Report suspicious activity"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 18,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s037",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "BAC-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "BAC-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web",
+   "voice-chat-assistant"
+  ]
+ },
+ "status_tracking": {
+  "where": "Pay & Transfer > Activity (Payment Activity: Scheduled / Action Needed / History); Message Center for review holds",
+  "states": [
+   "Pending acceptance",
+   "Pending review",
+   "Paid",
+   "Incoming pending review",
+   "Canceled",
+   "Expired (requests)",
+   "Failed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 days",
+   "customer_experience": "Payment shows Pending acceptance; auto-cancelled day 14",
+   "bank_handling": "Hold released; funds returned",
+   "resolution": "Funds back to sender; email notice",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s002",
+    "src-bank-of-america-s012"
+   ]
+  },
+  {
+   "trigger": "Outgoing payment placed in Pending review",
+   "customer_experience": "Status 'Pending review'; payment cannot be canceled while under review; customer told to 'Check your alerts in Message Center to see if action is required'; payment then completes automatically or fails with funds returned to the sender's account; bank emails when it blocks or cancels a payment.",
+   "bank_handling": "Fraud/risk review; completes or fails",
+   "resolution": "Completion or failure notice",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s002"
+   ]
+  },
+  {
+   "trigger": "Customer reports imposter scam (APP fraud)",
+   "customer_experience": "FAQ directs the customer to the Security Center 'Report Suspicious Activity' page and the 'ATM, debit, check & Zelle®' line (800-432-1000 / 877-366-1121; 'Log into Online Banking or call'); no in-app Zelle scam-claim flow is documented. After filing, most claims are trackable in the app: Inbox > Status Tracker > View More Details (business account claims not viewable).",
+   "bank_handling": "Evaluates against Zelle network imposter-scam reimbursement rule (effective Jun 30 2023)",
+   "resolution": "'Qualifying imposter scams may be eligible for reimbursement'; criteria not public",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s002",
+    "src-bank-of-america-s024",
+    "src-bank-of-america-s037",
+    "src-bank-of-america-s901",
+    "src-bank-of-america-s915"
+   ]
+  },
+  {
+   "trigger": "Unauthorized Zelle transaction (account takeover)",
+   "customer_experience": "Reports within 60 days",
+   "bank_handling": "Reg E investigation; provisional credit within 10 business days",
+   "resolution": "No liability if reported promptly",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s013",
+    "src-bank-of-america-s056"
+   ]
+  },
+  {
+   "trigger": "Sent to wrong token",
+   "customer_experience": "Payment to enrolled wrong person cannot be reversed",
+   "bank_handling": "Bank does not guarantee recipient identity",
+   "resolution": "Customer must ask recipient to return funds",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s002",
+    "src-bank-of-america-s013"
+   ]
+  },
+  {
+   "trigger": "Scheduled or recurring Zelle payment fails or is canceled on the payment date",
+   "customer_experience": "Email notice that the payment failed or was canceled (reasons: closed/underfunded/ineligible account, recipient deleted or invalid token, security reasons, limit exceeded); item leaves Scheduled and appears in History",
+   "bank_handling": "Automatic cancellation; email to primary email address; reminders before each scheduled payment are configurable in Alert Settings",
+   "resolution": "Customer re-initiates or edits the series (entire series) before 11:59 p.m. ET the day before the next date",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-bank-of-america-s901",
+    "src-bank-of-america-s013"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent",
+   "channels": [
+    "email",
+    "text"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_received",
+   "channels": [
+    "email",
+    "text",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "scheduled_payment_reminder_confirmation_failure",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "pending_review_message",
+   "channels": [
+    "in_app_message_center"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "security_text_short_code_80814_zelle_wires_ach_billpay",
+   "channels": [
+    "text"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Strong step-up and warning layering (new-recipient OTP, 'authorizing a payment to someone new', disclaimer acknowledgement) but warnings are generic rather than purpose-based; 60-day tenure gate on recurring; no web split/request; opaque 'Pending review'.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

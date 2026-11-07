@@ -2,137 +2,378 @@
   "bank": "truist",
   "product": "zelle",
   "values": {
-    "attr-enroll-where": [
+    "attr-cap-recurring": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-recurring:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:enroll-where:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-enroll-steps": [
+    "attr-cap-scheduled-future-dated": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:enroll-steps:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-payee-name-shown": [
+    "attr-cap-request-money": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-request-money:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:payee-name-shown:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-new-payee-warning": [
+    "attr-cap-split": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-split:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007",
+          "src-truist-s026",
+          "src-truist-s915"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:new-payee-warning:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04, TFC-P10-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-daily-limit": [
+    "attr-cap-qr-code": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-qr-code:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:daily-limit:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-stepup-trigger": [
+    "attr-cap-contact-sync": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-contact-sync:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:stepup-trigger:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-time-to-recipient": [
+    "attr-cap-cancel-before-send": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-cancel-before-send:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:time-to-recipient:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-notifications": [
+    "attr-cap-status-tracking": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-status-tracking:2",
+        "value": true,
+        "display": "Yes — true — 'File Transmission Summary Report' by secure email once all payments reach a final status; final statuses 'Delivered, Sent, Failed or Denied'",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007",
+          "src-truist-s026",
+          "src-truist-s915"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:notifications:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04, TFC-P10-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-cancel-pending": [
+    "attr-cap-push-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-push-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:cancel-pending:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-report-channels": [
+    "attr-cap-email-sms-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:truist:zelle:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:report-channels:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-scam-reimbursement": [
+    "attr-cap-scam-warning-interstitial": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:cap-scam-warning-interstitial:2",
+        "value": true,
+        "display": "Yes — not evidenced — only static warnings: FAQ ('Payments made with Zelle® are like sending cash and may not be able to be recovered'; 'confirm the recipient is correct by reviewing the displayed name before sending') and agreement §(j) capitalized warning; no dynamic in-flow interstitial found on public",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — OTP at enrollment (one-time verification code); in-flow step-up unknown",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
       {
         "basis": "awaiting",
         "source_ids": [],
@@ -142,7 +383,322 @@
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:truist:zelle:scam-reimbursement:1"
+        "id": "urn:kos:assertion:truist:zelle:cap-dual-approval-smb:1"
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:cap-international:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007",
+          "src-truist-s026",
+          "src-truist-s915"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04, TFC-P10-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007",
+          "src-truist-s026",
+          "src-truist-s915"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04, TFC-P10-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:cap-instant:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-truist-s001",
+          "src-truist-s009",
+          "src-truist-s011",
+          "src-truist-s014",
+          "src-truist-s901",
+          "src-truist-s907",
+          "src-truist-s919",
+          "src-truist-s015",
+          "src-truist-s007",
+          "src-truist-s026",
+          "src-truist-s915"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: TFC-P01-S01, TFC-P01-S03, TFC-P01-S04, TFC-P10-S04",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-discover:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence TFC-J01; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-set-up:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Explicit pay-yourself scam education at the OTP step. [STR-TFC-0002]; ZELLE-SMB-RECEIVE=3: At parity; minor: Zelle Tag and 'View my QR code' for business. [STR-TFC-0003]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-initiate:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Limits not published; discovered only in flow. [GAP-TFC-0004]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-review-authorize:2",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH SECURITY_TRUST: No dynamic scam interstitial evidenced; only static 'like sending cash' copy. [GAP-TFC-0001]; ZELLE-SMB-RECEIVE=1: HIGH SECURITY_TRUST: No in-product dual approval for business Zelle. [GAP-TFC-0006]",
+          "report_ref": "Scores sheet",
+          "mi_level": "INFERRED"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-execute-track:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence TFC-J01; ZELLE-SMB-RECEIVE=2: MEDIUM FRICTION: Business Zelle receive fee (1% capped $15) where peers are free. [GAP-TFC-0007]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-confirm-complete:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence TFC-J01; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-manage:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Scheduled/recurring Zelle with 7-day reminders and in-app 'Cancel This Payment'. [STR-TFC-0001]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-exception:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Zelle claims are phone-only; Dispute Tracker covers cards only. [GAP-TFC-0002]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-support:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM FRICTION: Different phone numbers for Zelle issues vs claims; Truist Assist cannot act on Zelle. [GAP-TFC-0003]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ]
   }

@@ -1,0 +1,384 @@
+{
+ "id": "urn:kos:journey:pnc:pnc-j29",
+ "title": "Commercial client disburses to consumers via ePayments / Direct to Debit Card / Zelle Disbursements / FedNow (Integrated Payables with Intelligent Routing)",
+ "bank": "pnc",
+ "product": "push-to-card",
+ "persona": "Insurer or gig platform payouts team",
+ "segment": "commercial",
+ "customer_goal": "Pay many consumers quickly by the method they choose",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "inferred",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:pnc:pnc-j29:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Submit a consolidated payment file (Integrated Payables) or an…",
+   "customer_action": "Submit a consolidated payment file (Integrated Payables) or an ePayments Instruction with the payee's email/mobile (Alias Information), amount, memo, Days to Expiration and optional Payee Approver, through PINACLE, API ('ePayments: initiate, check status, or cancel') or Direct File Transmission; optionally set Intelligent Routing Payment Preferences (Instant Payments > Same Day ACH > ACH > Wire).",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Integrated Payables / ePayments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s030",
+      "src-pnc-s055",
+      "src-pnc-s057",
+      "src-pnc-s908",
+      "src-pnc-s910",
+      "src-pnc-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s030",
+      "src-pnc-s055",
+      "src-pnc-s057",
+      "src-pnc-s908",
+      "src-pnc-s910",
+      "src-pnc-s923"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j29:m02",
+   "code": "M02",
+   "stage": "review-authorize",
+   "title": "Client controls release timing; Intelligent Routing selects…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payee Approver (if configured) must approve initiation by the Expiration Date; PNC may impose dollar/payee-count limits and risk procedures; Intelligent Routing selects the Payment Type per client preferences subject to limits, cutoffs and network rules; modification/cancel impossible once PNC begins processing as a Payment Type or sends to the network.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s031",
+      "src-pnc-s055",
+      "src-pnc-s057",
+      "src-pnc-s908",
+      "src-pnc-s910"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s031",
+      "src-pnc-s055",
+      "src-pnc-s057",
+      "src-pnc-s908",
+      "src-pnc-s910"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j29:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Recipient gets an email/text (ePayments short code 26489;…",
+   "customer_action": "Recipient gets an email/text (ePayments short code 26489; client-enabled Text Platform may also send OTPs) that a Pending Payment is available, registers if the network requires it, and on the white-labeled portal selects a Permissible Payment Method - ACH, Instant Payment, check, debit card, Zelle, Direct to Debit (Visa), PayPal/Venmo - supplying routing/account or debit card details as needed; Registered Recipients may auto-accept recurring payments; settlement account charged on acceptance.",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "ePayments payee portal"
+    }
+   ],
+   "frontstage": "Statuses in the Status file / PINACLE ePayments module: 'Released' (ACH, check) and 'Delivered' (Instant Payments, Zelle, Direct to Debit Card, PayPal/Venmo); PNC Trace ID links to BAI2 (Zelle settles as ACH 455; Instant Payments and PayPal/Venmo 458; Direct to Debit Card 699; checks 475).",
+   "actor": "recipient",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s031",
+      "src-pnc-s055",
+      "src-pnc-s908",
+      "src-pnc-s909",
+      "src-pnc-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s031",
+      "src-pnc-s055",
+      "src-pnc-s908",
+      "src-pnc-s909",
+      "src-pnc-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s031",
+      "src-pnc-s055",
+      "src-pnc-s908",
+      "src-pnc-s909",
+      "src-pnc-s913"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j29:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Remittance/EDI reporting; reconciliation feeds via PINACLE Connect",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Remittance/EDI reporting; reconciliation feeds via PINACLE Connect",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s027",
+      "src-pnc-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s027",
+      "src-pnc-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j29:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Unaccepted payment becomes an 'Expired Payment' handled per client…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Unaccepted payment becomes an 'Expired Payment' handled per client preference (check number assigned and sent to the check print vendor); ACH returns on Direct Deposit-ACH and Zelle payments present as 'Failed' and PNC will NOT print a check - client must contact the payee; returned Instant Payments are rerouted only if reroute-eligible and subscribed, otherwise rejected for resubmission; cancel only while Pending/Future-Dated.",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s908",
+      "src-pnc-s909",
+      "src-pnc-s910"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s908",
+      "src-pnc-s909",
+      "src-pnc-s910"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:pnc:pnc-j29:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Treasury Management Officer / TMCC",
+   "customer_action": "Treasury Management Officer / TMCC",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "PNC-J29",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "PNC-P14-S03",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Integrated Payables reporting",
+  "states": [
+   "Released",
+   "Claimed",
+   "Paid"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "ePayment not accepted by Expiration Date / ACH return on Zelle or Direct Deposit ePayment",
+   "customer_experience": "Client sees 'Expired' or 'Failed' in the Status file / PINACLE ePayments module",
+   "bank_handling": "Expired payments handled per client preference (check printed and mailed, check number assigned); ACH returns show Failed and PNC does not print a check; client contacts payee",
+   "resolution": "Resubmit or alternative method",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-pnc-s908",
+    "src-pnc-s909"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payee_notification",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": null,
+ "x-mi_evidence": "INFERRED"
+}

@@ -2,147 +2,717 @@
   "bank": "jpmorgan-chase",
   "product": "zelle",
   "values": {
-    "attr-enroll-where": [
+    "attr-cap-recurring": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-recurring:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:enroll-where:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-enroll-steps": [
+    "attr-cap-scheduled-future-dated": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-scheduled-future-dated:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:enroll-steps:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-payee-name-shown": [
+    "attr-cap-request-money": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-request-money:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:payee-name-shown:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-new-payee-warning": [
+    "attr-cap-split": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-split:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:new-payee-warning:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-daily-limit": [
+    "attr-cap-qr-code": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-qr-code:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:daily-limit:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-stepup-trigger": [
+    "attr-cap-contact-sync": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-contact-sync:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:stepup-trigger:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-time-to-recipient": [
+    "attr-cap-cancel-before-send": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-cancel-before-send:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:time-to-recipient:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-notifications": [
+    "attr-cap-status-tracking": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-status-tracking:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:notifications:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-cancel-pending": [
+    "attr-cap-push-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-push-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cancel-pending:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-report-channels": [
+    "attr-cap-email-sms-notifications": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-email-sms-notifications:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:report-channels:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
-    "attr-scam-reimbursement": [
+    "attr-cap-scam-warning-interstitial": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-scam-warning-interstitial:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:jpmorgan-chase:zelle:scam-reimbursement:1"
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-step-up-auth": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-step-up-auth:2",
+        "value": true,
+        "display": "Yes — activation code at enrollment; payment-purpose/contact-origin questions may be asked (DSA/Zelle terms)",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-dual-approval-smb": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-dual-approval-smb:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-international": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-international:2",
+        "value": false,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-same-day": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-same-day:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-cap-instant": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:cap-instant:2",
+        "value": true,
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1",
+          "src-jpmorgan-chase-s001",
+          "src-jpmorgan-chase-s014",
+          "src-jpmorgan-chase-s042",
+          "src-jpmorgan-chase-s045",
+          "src-jpmorgan-chase-s901",
+          "src-jpmorgan-chase-s902",
+          "src-jpmorgan-chase-s910",
+          "src-jpmorgan-chase-s923",
+          "src-jpmorgan-chase-s027",
+          "src-jpmorgan-chase-s032"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "report_ref": "Capabilities sheet: JPM-P01-S01, JPM-P01-S04, JPM-P01-S05",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-discover": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-discover:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Hub naming is inconsistent ('Pay & Transfer' / 'Pay and transfer' / 'Pay & Transfers'; Bill Pay under three names). [GAP-JPM-0004]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-set-up": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-set-up:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Registered first-name display is the only wrong-recipient safeguard at set-up; no mismatch warning. [GAP-JPM-0002]; ZELLE-SMB-RECEIVE=3: At parity; minor: Business-only Zelle tags. [STR-JPM-0004]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-initiate": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-initiate:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity; minor: Daily tier limit and remaining amount shown in the send flow. [STR-JPM-0002]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-review-authorize": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-review-authorize:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=4: Sets composite reference: Only bank with a published social-media-origin block plus payment-purpose and contact-origin questions (effective Mar 23, 2025) — sets the scam-intervention reference. [STR-JPM-0001]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-execute-track": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-execute-track:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence JPM-J01; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-confirm-complete": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-confirm-complete:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence JPM-J01; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-manage": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-manage:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence JPM-J01; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-exception": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-exception:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Scam claims are phone-only (1-800-935-9935 option 8); no in-app scam or unauthorized-claim intake for Zelle. [GAP-JPM-0003]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
+      }
+    ],
+    "attr-score-support": [
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:zelle:score-support:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-06-v1"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-06T21:03:00-06:00",
+        "observed_on": "2026-11-06",
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence JPM-J01; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence JPM-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ]
   }

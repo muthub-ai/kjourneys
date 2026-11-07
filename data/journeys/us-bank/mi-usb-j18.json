@@ -1,0 +1,353 @@
+{
+ "id": "urn:kos:journey:us-bank:usb-j18",
+ "title": "Commercial client sends an instant payment over RTP or FedNow (SinglePoint / API / file)",
+ "bank": "us-bank",
+ "product": "rtp",
+ "persona": "Corporate treasury user",
+ "segment": "commercial",
+ "customer_goal": "Commercial client sends an instant payment over RTP or FedNow (SinglePoint / API / file)",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:us-bank:usb-j18:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Client connects via API, file transmission or SinglePoint and is…",
+   "customer_action": "Client connects via API, file transmission or SinglePoint and is enabled for instant payments",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "SinglePoint / API"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s100"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s100"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j18:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Submit credit with payee account/routing, amount and remittance data;…",
+   "customer_action": "Submit credit with payee account/routing, amount and remittance data; API lets client set preferred network (TCH RTP, FedNow, or 'Instant' = bank chooses by business rules) at onboarding or per request; $10M limit on both networks (API; FedNow network limit raised to $10M Nov 2025; U.S. Bank commercial marketing page still shows FedNow $1M)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Intelligent routing picks RTP or FedNow by business rules; Pay Smart may recommend instant vs alternatives",
+   "actor": "customer",
+   "decision": "RTP vs FedNow routing",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s065",
+      "src-us-bank-s943"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s065",
+      "src-us-bank-s943"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s065",
+      "src-us-bank-s943"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j18:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Entitlement/approval per SinglePoint system administration ('Manage…",
+   "customer_action": "Entitlement/approval per SinglePoint system administration ('Manage approvals, set payment limits and whitelist computer IP addresses'); dashboard shows transfers and approvals; Mobile SinglePoint for approvals on the go",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "SinglePoint entitlements"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s104",
+      "src-us-bank-s938"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s104",
+      "src-us-bank-s938"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s104",
+      "src-us-bank-s938"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j18-3",
+     "text": "Dual-approval specifics not published"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j18:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Payment settles and is confirmed within seconds; irrevocable",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Payment settles and is confirmed within seconds; irrevocable",
+   "actor": "network",
+   "decision": null,
+   "notification": "API/portal confirmation",
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j18:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Receiving bank must be on RTP or FedNow; originated credit transfers…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": null
+    }
+   ],
+   "frontstage": "Receiving bank must be on RTP or FedNow; originated credit transfers are irrevocable; API returns transaction statuses/reject reasons and webhook notifications (status catalogue behind developer login); fallback via Pay Smart / Payee Choice",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s062",
+      "src-us-bank-s943"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061",
+      "src-us-bank-s062",
+      "src-us-bank-s943"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j18:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Treasury management support / relationship team ('Connect with us')",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": null
+    }
+   ],
+   "frontstage": "Treasury management support / relationship team ('Connect with us')",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "USB-J18",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "USB-P14-S01",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "SinglePoint / API callbacks",
+  "states": [],
+  "basis": "inferred"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Dual-rail instant send with intelligent routing is a leading commercial capability; FedNow send/receive confirmed by bank fact sheet; FedNow operator list not verified.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

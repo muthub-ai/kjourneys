@@ -1,0 +1,372 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j23",
+ "title": "Commercial client originates and approves payments in Capital One Intellix (ACH/wire) — sketch",
+ "bank": "capital-one",
+ "product": "ach-origination",
+ "persona": "Treasury analyst and approver at a middle-market company",
+ "segment": "commercial",
+ "customer_goal": "Initiate and dual-approve vendor payments",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j23:m01",
+   "code": "M01",
+   "stage": "set-up",
+   "title": "Client Administrator provisions users and tokens (Token Manager…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Intellix admin"
+    }
+   ],
+   "frontstage": "Client Administrator provisions users and tokens (Token Manager supports up to 10 Intellix tokens); enrollment via TM Client Service 866-632-8888 opt 2 / TMHelp@capitalone.com",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j23:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Initiator creates ACH batch or wire (domestic/international) or uploads…",
+   "customer_action": "Initiator creates ACH batch or wire (domestic/international) or uploads Integrated Payables file",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Intellix Payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s030"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s030"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j23:m03",
+   "code": "M03",
+   "stage": "review-authorize",
+   "title": "Approver reviews 'payments pending approval' and approves/rejects in…",
+   "customer_action": "Approver reviews 'payments pending approval' and approves/rejects in Intellix web or Intellix Mobile (Face ID/Touch ID)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Intellix Mobile > pending approvals"
+    }
+   ],
+   "frontstage": "'Dual Control Authorization' (named Intellix feature for wires and ACH): 'requiring one person to create the payment and another to approve it before transmitting to Capital One for processing'. Approver acts on 'payments pending approval' in Intellix web or Intellix Mobile (Face ID/Touch ID).",
+   "actor": "customer",
+   "decision": "Approve / reject",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s922",
+      "src-capital-one-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s922",
+      "src-capital-one-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s922",
+      "src-capital-one-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j23:m04",
+   "code": "M04",
+   "stage": "execute-track",
+   "title": "Payment released to Nacha/Fedwire; dashboard shows recent activity and…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Dashboard"
+    }
+   ],
+   "frontstage": "Payment released to Nacha/Fedwire; dashboard shows recent activity and balances",
+   "actor": "network",
+   "decision": null,
+   "notification": "unknown",
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j23-4",
+     "text": "App reviews: wire deposits show no detail; no transaction filtering (COMMUNITY)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j23:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Positive Pay exceptions reviewed and decided in web/mobile",
+   "customer_action": "Positive Pay exceptions reviewed and decided in web/mobile",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Positive Pay exceptions"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Pay / return",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s030"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s030"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s030"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j23-5",
+     "text": "COMMUNITY (Google Play review, 2026-08-25): a client could not obtain a token in Intellix Mobile to set up Positive Pay for four days; 'payments are being rejected as we speak because we can't get into the system to approve them' — token/approval access failures block payment release. Android listing 3.8★ (167 reviews)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j23:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Treasury Management Client Service 866-632-8888",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Treasury Management Client Service 866-632-8888, Option 2; TMHelp@capitalone.com; company's Intellix Client Administrator"
+    }
+   ],
+   "frontstage": "Treasury Management Client Service 866-632-8888",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s063",
+      "src-capital-one-s926"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J23",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P12-S01",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Intellix dashboard",
+  "states": [
+   "Pending approval",
+   "Approved",
+   "Rejected"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [],
+ "notifications": [],
+ "assessment": "Portal is behind a login wall and Capital One publishes no user guide; mobile app rated 2.9/5 with complaints about missing wire detail.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

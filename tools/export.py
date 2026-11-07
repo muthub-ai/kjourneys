@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Output ports beyond the page: machine-readable exports for analytics, KOS ingestion and agents.
 
-  dist/facts.jsonl     one line per current fact (comparison cells + moment layer evidence), flat and joinable
+  dist/facts.jsonl     one line per current fact (comparison cells, moment layer evidence, MI findings and rankings), flat and joinable
   dist/coverage.json   completeness by basis, bank and product: the data product's own health metrics
   dist/summary.md      human summary (also written to the CI job summary)
 """
@@ -23,6 +23,7 @@ for cmp in CMPS:
                           "stage": at["stage"], "attribute": aid, "attribute_name": at["name"], "datatype": at["datatype"],
                           "value": a.get("value"), "display": a.get("display"), "qualifier": a.get("qualifier"),
                           "basis": a["basis"], "source_ids": a.get("source_ids", []), "assertion_id": a.get("id"),
+                          "mi_evidence": (a.get("x-evidence") or {}).get("mi_level"),
                           "valid_from": a.get("valid_from"), "history_length": len(hist)})
 for j in d["journeys"]:
     for m in j["moments"]:
@@ -30,7 +31,15 @@ for j in d["journeys"]:
             facts.append({"kind": "moment_layer", "product": j["product"], "bank": j["bank"], "bank_name": party[j["bank"]]["name"],
                           "journey": j["id"], "stage": m["stage"], "moment": m["id"], "moment_code": m["code"],
                           "moment_title": m["title"], "layer": layer, "basis": a["basis"],
-                          "intended_basis": a.get("intended_basis"), "source_ids": a.get("source_ids", [])})
+                          "intended_basis": a.get("intended_basis"), "mi_evidence": a.get("x-mi_evidence"), "source_ids": a.get("source_ids", [])})
+for f in d.get("findings", []):
+    facts.append({"kind": "finding", "product": f.get("product"), "bank": f["bank"], "bank_name": party[f["bank"]]["name"], "journey": f.get("journey"),
+                  "stage": f.get("stage"), "finding": f["id"], "type": f["type"], "severity": f.get("severity"), "description": f["description"],
+                  "composite": f.get("composite"), "basis": f.get("basis"), "mi_evidence": f.get("x-mi_evidence"), "source_ids": f.get("source_ids", []),
+                  "report_version": f.get("report_version")})
+for r in d.get("rankings", []):
+    facts.append({"kind": "ranking", "bank": r["bank"], "bank_name": party[r["bank"]]["name"], "rank": r["rank"], "overall_index": r["overall_index"],
+                  "domestic_core_index": r.get("domestic_core_index"), "coverage": r.get("coverage"), "report_version": r.get("report_version")})
 with open(os.path.join(ROOT, "dist/facts.jsonl"), "w") as f:
     for x in facts: f.write(json.dumps(x, ensure_ascii=False) + "\n")
 
@@ -40,7 +49,7 @@ for x in cmp_facts: by_bank[x["bank"]][x["basis"]] += 1
 by_product = defaultdict(Counter)
 for x in cmp_facts: by_product[x["product"]][x["basis"]] += 1
 slots = len(d["portfolio"]["products"]) * len(d["portfolio"]["banks"])
-mapped = sum(len(p["journeys"]) for p in d["products"])
+mapped = len({(j["bank"], j["product"]) for j in d["journeys"] if j["basis"] != "sample"})
 real = lambda c: sum(v for k, v in c.items() if k in ("observed", "disclosed", "inferred", "internal"))
 from datetime import date, timedelta
 AS_OF = max((j["as_of"] for j in d["journeys"]), default=str(date.today()))
@@ -55,12 +64,14 @@ for cmp in CMPS:
                 if not seen or date.fromisoformat(seen) < cutoff: stale.append(f"{cmp['product']}/{bank}/{aid}")
 coverage = {
     "ontology": d["ontology"],
-    "journeys": {"mapped": mapped, "slots": slots},
+    "journeys": {"mapped": mapped, "slots": slots, "count": len(d["journeys"]), "moments": sum(len(j["moments"]) for j in d["journeys"])},
+    "findings": {"count": len(d.get("findings", [])), "by_type": dict(Counter(f["type"] for f in d.get("findings", []))),
+                 "by_severity": dict(Counter(f.get("severity") for f in d.get("findings", []) if f["type"] != "strength"))},
     "comparison": {"products": {p: dict(c) for p, c in sorted(by_product.items())},
                    "cells": len(cmp_facts), "by_basis": dict(Counter(x["basis"] for x in cmp_facts)),
                    "by_bank": {b: dict(c) for b, c in sorted(by_bank.items())},
                    "real_data_ratio": round(real(Counter(x["basis"] for x in cmp_facts)) / max(1, len(cmp_facts)), 3)},
-    "moment_layers": {"facts": len(facts) - len(cmp_facts),
+    "moment_layers": {"facts": sum(1 for x in facts if x["kind"] == "moment_layer"),
                       "by_basis": dict(Counter(x["basis"] for x in facts if x["kind"] == "moment_layer"))},
     "freshness": {"as_of": AS_OF, "max_age_days": 90, "stale_facts": stale},
     "legal_review": {"comparisons": {c["product"]: c["governance"]["ci_legal_review"]["status"] for c in CMPS},
@@ -70,7 +81,8 @@ json.dump(coverage, open(os.path.join(ROOT, "dist/coverage.json"), "w"), indent=
 
 lines = ["## kjourneys — data status", "",
          f"- Ontology: `{d['ontology']}`",
-         f"- Journeys mapped: **{mapped} of {slots}** bank × product slots",
+         f"- Journeys: **{len(d['journeys'])}** ({coverage['journeys']['moments']} steps), covering **{mapped} of {slots}** bank × product slots",
+         f"- Findings: **{len(d.get('findings', []))}** ({sum(1 for f in d.get('findings', []) if f['type'] == 'strength')} strengths)",
          f"- Comparison cells with real data: **{coverage['comparison']['real_data_ratio']:.0%}** of {len(cmp_facts)}",
          "- Comparison legal review: " + (", ".join(f"{p} **{s}**" for p, s in coverage['legal_review']['comparisons'].items()) or "none"),
          f"- Stale competitor facts (> 90 days): **{len(stale)}**", "",
@@ -78,6 +90,10 @@ lines = ["## kjourneys — data status", "",
 for b in d["portfolio"]["banks"]:
     c = by_bank.get(b, Counter())
     lines.append(f"| {party[b]['name']} | {c['observed']} | {c['disclosed']} | {c['inferred']} | {c['sample']} | {c['awaiting']} |")
+if d.get("rankings"):
+    lines += ["", "| # | Bank | Overall index | Domestic core | Coverage |", "|---:|---|---:|---:|---:|"]
+    for r in sorted(d["rankings"], key=lambda r: r["rank"]):
+        lines.append(f"| {r['rank']} | {party[r['bank']]['name']} | {r['overall_index']} | {r.get('domestic_core_index')} | {round((r.get('coverage') or 0) * 100)}% |")
 lines += ["", "| Product | observed | disclosed | inferred | sample | awaiting |", "|---|---:|---:|---:|---:|---:|"]
 names = {p["id"]: p["name"] for p in d["products"]}
 for prod, c in sorted(by_product.items()):

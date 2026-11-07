@@ -1,0 +1,710 @@
+{
+ "id": "urn:kos:journey:td-bank:td-j04",
+ "title": "Consumer links an external account and sends an outbound external transfer",
+ "bank": "td-bank",
+ "product": "ach-external-transfer",
+ "persona": "Customer moving savings to a brokerage/other bank",
+ "segment": "consumer",
+ "customer_goal": "Move money to my account at another bank",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer opens the 'Transfer' tab in Online Banking (or Transfers in…",
+   "customer_action": "Customer opens the 'Transfer' tab in Online Banking (or Transfers in the app)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "App: 'Pay & Transfer' quick link -> 'External Transfer'; Online Banking: 'Transfers' -> 'Transfer Your Money: With My Accounts Outside TD'"
+    }
+   ],
+   "frontstage": "Mobile app page says app supports 'one-time, immediate transfers' to external accounts; scheduling via Online Banking",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j04-1",
+     "text": "TD help content contradicts itself: KB 2215/2178/2213 say external transfers are Online Banking-only, while Dec 2024 app demos show full app enrollment, linking and transfers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Customer adds a non-TD account (routing/account number) and represents…",
+   "customer_action": "Customer adds a non-TD account (routing/account number) and represents ownership; account must be verified before transfers can be scheduled",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "External Transfers enrollment (email, 'Get Started') -> Consent for Receiving Text Messages -> Confirm Phone Number -> Verify Email (code) -> 'Add a New Account' (type, nickname, routing, account, re-enter) -> verify: 'Verify Instantly' (external online-banking credentials) or 'Send me two deposits' -> later Menu > 'Preferences' > 'My Other Accounts' > 'Verify' (Deposit 1 / Deposit 2)"
+    }
+   ],
+   "frontstage": "Instant credential-based verification (aggregator-style; credentials 'never read or saved') or two trial deposits under $10 in 1-3 business days; an account set up as a Zelle account-number contact cannot also be linked here",
+   "actor": "customer",
+   "decision": "Verified vs pending",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j04-2",
+     "text": "Long enrollment (~9 screens incl. email verification); trial-deposit path requires returning 1-3 days later via Menu > Preferences"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Customer chooses from/to accounts, amount, and delivery option (3…",
+   "customer_action": "Customer chooses from/to accounts, amount, and delivery option (3 Business Days or Next Business Day), one-time now, scheduled up to one year, or recurring",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Create Transfer: from | to | amount (transfer limit shown) | transfer date | One-time or recurring | 'Fees and delivery info' (funds availability, cutoff times, fees) | 'Memo to self' | 'Transfer Disclaimer' | 'Review'"
+    }
+   ],
+   "frontstage": "Limits: 3-day outbound $3,000/day, $5,000/month; next-day $2,500/$4,000; $20,000/month combined",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j04-3",
+     "text": "Low outbound limits versus peers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Customer reviews and submits; one-time security code / 2-step…",
+   "customer_action": "Customer reviews and submits; one-time security code / 2-step verification applies at login",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review Transfer: 'Edit' | 'Cancel' | 'Confirm'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s033"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j04-4",
+     "text": "No scam warning or transaction-level step-up on external-transfer review (unlike Zelle's Security Reminder)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Transfer appears as pending in Transfer tab and dashboard widget until…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer tab > pending; dashboard widgets"
+    }
+   ],
+   "frontstage": "Transfer appears as pending in Transfer tab and dashboard widget until it begins processing; ACH debit/credit per delivery option",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Transfer shows in past transfers; 'ACH debit alerts' available for…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer Confirmed screen -> 'Activity' (all scheduled and completed external transfers) | 'New Transfer'; OLB 'See My Activity'"
+    }
+   ],
+   "frontstage": "Transfer shows in past transfers; 'ACH debit alerts' available for outbound debits",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "ACH debit alert (email/SMS/push) if enabled",
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Cancel 'at any time until it begins processing'; recurring series…",
+   "customer_action": "Cancel 'at any time until it begins processing'; recurring series editable; stop processed transfer only via customer care (written request within 14 days; fee may apply)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer tab"
+    }
+   ],
+   "frontstage": "Cancel any time until processing begins; future-dated up to 1 year or recurring; Instant Transfers cannot be cancelled",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Failed/returned transfer: bank corrects/voids/returns to debited…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "Failed/returned transfer: bank corrects/voids/returns to debited account; NSF returns incur repayment on demand + 1.5% late fee; wrong-recipient recovery best-effort",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
+   "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "TD Bank app > Help / 'Call us' / virtual assistant; td.com Help Center"
+    }
+   ],
+   "frontstage": "Logging in to the app before calling 'reaches a live agent faster'",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s005",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j04-9",
+     "text": "Help Center answers load client-side and are readable; TD Digital Academy hosts interactive step-by-step demos for Zelle, transfers, Bill Pay, mobile deposit, disputes, direct deposit and SMB wires/ACH/roles (first-wave 'unavailable/unplayable' finding was a fetch-tool artifact). Residual issue: several KB answers are stale or contradictory (app external transfers, consumer wires)."
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:td-bank:td-j04:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact center"
+    }
+   ],
+   "frontstage": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s006",
+      "src-td-bank-s007",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j04-10",
+     "text": "Three different numbers published for Zelle/fraud issues across pages"
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "TD-J04",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TD-P02-S03",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": [
+   "mobile-app"
+  ]
+ },
+ "status_tracking": {
+  "where": "Transfer tab (past/future), dashboard widgets",
+  "states": [
+   "Pending/Scheduled",
+   "Processing",
+   "Completed",
+   "Failed/Returned"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Insufficient funds",
+   "customer_experience": "Return; repayment on demand",
+   "bank_handling": "1.5% late fee + collection; credit-bureau reporting possible",
+   "resolution": "Customer funds account",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009"
+   ]
+  },
+  {
+   "trigger": "Unauthorized external transfer (consumer)",
+   "customer_experience": "Report within 2 business days to cap liability at $50 (else $500); 60 days from statement",
+   "bank_handling": "Reg E investigation; provisional credit within 10 business days",
+   "resolution": "Reimbursement per Reg E",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s009"
+   ]
+  },
+  {
+   "trigger": "External account fails instant verification",
+   "customer_experience": "Offered 'Send me two deposits' (<$10); 'Two deposits are on the way' screen; return in 1-3 business days via Menu > Preferences > 'My Other Accounts' > 'Verify'",
+   "bank_handling": "Trial micro-deposits to external account within 2 business days",
+   "resolution": "Matching amounts make the account 'instantly available for funds transfers'",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-td-bank-s906",
+    "src-td-bank-s902"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "ach_debit_posted",
+   "channels": [
+    "email",
+    "sms",
+    "push"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Free next-day delivery is a plus; monthly caps are restrictive and verification UX is undocumented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

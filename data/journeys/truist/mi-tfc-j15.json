@@ -1,0 +1,386 @@
+{
+ "id": "urn:kos:journey:truist:tfc-j15",
+ "title": "Customer reports an unauthorized transaction or scam (claims & disputes)",
+ "bank": "truist",
+ "product": "other",
+ "persona": "Any digital customer",
+ "segment": "consumer",
+ "customer_goal": "Get my money back after fraud",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:truist:tfc-j15:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Report Fraud page / Help Center / Security Center checklist in app…",
+   "customer_action": "Report Fraud page / Help Center / Security Center checklist in app (4.0.0)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Report fraud"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j15:m02",
+   "code": "M02",
+   "stage": "initiate",
+   "title": "Debit card/ATM: file unauthorized claim online in OLB; ACH, wire,…",
+   "customer_action": "Debit card/ATM: file unauthorized claim online in OLB; ACH, wire, Zelle, checks: call 844-4TRUIST (option 1 fraud, 24/7) with account, date, amount",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Claim intake"
+    }
+   ],
+   "frontstage": "FAQ 'I believe I've been a victim of a scam. Whom should I contact?': 'Please call the Truist Care Center immediately at 844-4TRUIST (844-487-8478) to file a claim.' Business: option 1 for fraud 24/7; wire or ACH fraud 800-774-8179. Zelle agreement §(j): 'REIMBURSEMENT IS AVAILABLE FOR UNAUTHORIZED TRANSACTIONS OR TRANSACTIONS RESULTING FROM CERTAIN QUALIFYING IMPOSTER SCAMS. CONTACT US TO DISPUTE A TRANSACTION.' Zelle error-resolution: report within 60 days of statement; oral reports may require written follow-up within 10 business days. No online scam-claim form for Zelle/ACH/wire.",
+   "actor": "customer",
+   "decision": "Card (self-serve) vs other rails (phone)",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s036",
+      "src-truist-s904",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s036",
+      "src-truist-s904",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s036",
+      "src-truist-s904",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s036",
+      "src-truist-s904",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-truist-tfc-j15-2",
+     "text": "No digital intake for Zelle/ACH/wire claims"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j15:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Track card claims in Dispute Tracker (OLB/app); ACH/wire status next…",
+   "customer_action": "Track card claims in Dispute Tracker (OLB/app); ACH/wire status next business day at 800-448-5493; other products 866-472-9786",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Dispute Tracker"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j15:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Decision by mail/email; provisional credit within 10 business days for…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Letter/email"
+    }
+   ],
+   "frontstage": "Decision by mail/email; provisional credit within 10 business days for consumer EFTs (45/90-day extensions)",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": "mail/email",
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j15:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Second review: call 866-472-9786 / 844-4TRUIST; business accounts:…",
+   "customer_action": "Second review: call 866-472-9786 / 844-4TRUIST; business accounts: 30-day written reporting, duty of care, 1-year suit limit",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "EFM 866-802-4955"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021",
+      "src-truist-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:truist:tfc-j15:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Forward phishing to emailabuse@truist.com; branch visit to close…",
+   "customer_action": "Forward phishing to emailabuse@truist.com; branch visit to close compromised account",
+   "touchpoints": [
+    {
+     "channel": "branch",
+     "screen": "Branch"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s021"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "TFC-J15",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "TFC-P01-S01",
+ "channels": {
+  "entry": [
+   "phone",
+   "web",
+   "mobile-app"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Dispute Tracker (cards only)",
+  "states": [
+   "Open",
+   "Decided"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Zelle imposter scam",
+   "customer_experience": "Phone claim",
+   "bank_handling": "Customer calls 844-4TRUIST to file a claim; Truist's Zelle terms state reimbursement 'IS AVAILABLE FOR UNAUTHORIZED TRANSACTIONS OR TRANSACTIONS RESULTING FROM CERTAIN QUALIFYING IMPOSTER SCAMS'; error-resolution window 60 days from statement, written confirmation within 10 business days may be required.",
+   "resolution": "Case-by-case",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-truist-s014",
+    "src-truist-s021",
+    "src-truist-s904",
+    "src-truist-s907"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "claim_decision",
+   "channels": [
+    "mail",
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Dispute Tracker covers cards only; Zelle/ACH/wire claims remain phone-driven with multiple numbers.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

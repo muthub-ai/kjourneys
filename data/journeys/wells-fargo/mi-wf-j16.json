@@ -1,0 +1,770 @@
+{
+ "id": "urn:kos:journey:wells-fargo:wf-j16",
+ "title": "Small business enrolls in Direct Pay, adds payees and runs an ACH payroll/vendor payment with dual control",
+ "bank": "wells-fargo",
+ "product": "ach-origination",
+ "persona": "Owner + bookkeeper at a 10-employee firm",
+ "segment": "small-business",
+ "customer_goal": "Pay employees and vendors electronically next business day with separation of duties",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Business Online: 'Transfer & Pay' > 'Direct Pay for Business' (desktop…",
+   "customer_action": "Business Online: 'Transfer & Pay' > 'Direct Pay for Business' (desktop browser; mobile not supported for Direct Pay)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transfer & Pay > Direct Pay for Business"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Enroll: identity via Advanced Access 6-digit text code or RSA SecurID;…",
+   "customer_action": "Enroll: identity via Advanced Access 6-digit text code or RSA SecurID; 'Enroll Now'; choose billing account and business funding checking account; choose 'Higher' or 'Lower' payment limits; email for notices; accept Direct Pay Agreement",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Enrollment wizard"
+    }
+   ],
+   "frontstage": "Higher: $50k/individual, $250k/business, $500k/day; Lower: $5k/payment, $25k/day; $10/month",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Set user access levels: Input/Release/Control, Input/Release, Input…",
+   "customer_action": "Set user access levels: Input/Release/Control, Input/Release, Input Only, No Access (bookkeeper = Input Only)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "User access"
+    }
+   ],
+   "frontstage": "Input Only payments require approval by a higher-level user → dual control",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m04",
+   "code": "M04",
+   "stage": "set-up",
+   "title": "'Payees' tab > 'Add Payee' > Payee Type (Individual/Business) > name,…",
+   "customer_action": "'Payees' tab > 'Add Payee' > Payee Type (Individual/Business) > name, routing, account, type, up to 2 notification emails > 'Continue' > verify > 'Save'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payees > Add Payee"
+    }
+   ],
+   "frontstage": "Validation 2 business days (WF accounts) / up to 3 (others); payee active after validation",
+   "actor": "customer",
+   "decision": "Validated → payable; edited routing/account → re-validation",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m05",
+   "code": "M05",
+   "stage": "initiate",
+   "title": "'Payments' > 'Create Payment' > pay group 'Individual Master List' (or…",
+   "customer_action": "'Payments' > 'Create Payment' > pay group 'Individual Master List' (or 'Business Master List' with remittance info) > one-time or recurring > 'Continue' > select payees and amounts > 'Pay By Date' and 'Send On Date'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payments > Create Payment"
+    }
+   ],
+   "frontstage": "Schedule up to 13 months ahead",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Verify and 'Submit' (Input Only user) → payment awaits approval",
+   "customer_action": "Verify and 'Submit' (Input Only user) → payment awaits approval",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Submit"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m07",
+   "code": "M07",
+   "stage": "review-authorize",
+   "title": "Input/Release user reviews and approves/releases funds from Funding…",
+   "customer_action": "Input/Release user reviews and approves/releases funds from Funding Account (token/Advanced Access may be required)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Approve/Release"
+    }
+   ],
+   "frontstage": "Dual control enforced by access level",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m08",
+   "code": "M08",
+   "stage": "execute-track",
+   "title": "Funds leave at 3:00 pm PT on Send On Date (by 3 pm PT cutoff → received…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payments list"
+    }
+   ],
+   "frontstage": "Funds leave at 3:00 pm PT on Send On Date (by 3 pm PT cutoff → received as soon as next business day)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m09",
+   "code": "M09",
+   "stage": "confirm-complete",
+   "title": "Confirmation page; payee notification emails (optional, up to 2 per…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Confirmation"
+    }
+   ],
+   "frontstage": "Confirmation page; payee notification emails (optional, up to 2 per payee); enrollment notice email",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email to business and payee",
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s039"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m10",
+   "code": "M10",
+   "stage": "manage",
+   "title": "Edit payees (re-validation if bank details change); manage recurring;…",
+   "customer_action": "Edit payees (re-validation if bank details change); manage recurring; 'Enroll Another TIN'",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payees / General"
+    }
+   ],
+   "frontstage": "Edit/cancel payment rules not published",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-wells-fargo-wf-j16-10",
+     "text": "Cancel/edit rules for scheduled Direct Pay payments not documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Returned ACH / failed validation / insufficient funds — handling not…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "—"
+    }
+   ],
+   "frontstage": "Returned ACH / failed validation / insufficient funds — handling not published (UNKNOWN); Reg E does not apply to business",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s068"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s032",
+      "src-wells-fargo-s068"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m12",
+   "code": "M12",
+   "stage": "support",
+   "title": "Direct Pay FAQs; Quick Help panel",
+   "customer_action": "Direct Pay FAQs; Quick Help panel",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Help"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s031",
+      "src-wells-fargo-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:wells-fargo:wf-j16:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Business Online Customer Service 1-800-956-4442; business fraud…",
+   "customer_action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Phone"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022",
+      "src-wells-fargo-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s022",
+      "src-wells-fargo-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "WF-J16",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "WF-P08-S01",
+ "channels": {
+  "entry": [
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Direct Pay Payments list / Business Online activity",
+  "states": [
+   "Scheduled",
+   "Pending approval",
+   "Sent"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Payee validation fails / wrong routing",
+   "customer_experience": "Payee not active; FAQ warns check routing numbers may not support ACH",
+   "bank_handling": null,
+   "resolution": "Correct and re-validate",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s032"
+   ]
+  },
+  {
+   "trigger": "Returned ACH credit",
+   "customer_experience": "UNKNOWN — not published",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-06-v1"
+   ]
+  },
+  {
+   "trigger": "Unauthorized payment on business account",
+   "customer_experience": "Call 1-866-867-5568; non-Reg E",
+   "bank_handling": null,
+   "resolution": null,
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-wells-fargo-s022",
+    "src-wells-fargo-s068"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payee_payment_notice",
+   "channels": [
+    "email"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  },
+  {
+   "event": "business_notices",
+   "channels": [
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Genuine SMB ACH origination with four-tier access model (dual control) inside Business Online — stronger than most peers' SMB offerings; weaknesses: desktop-only, next-day only (no Same Day ACH option documented), monthly fee, no published exception handling.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

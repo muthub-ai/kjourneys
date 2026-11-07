@@ -1,0 +1,702 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j08",
+ "title": "Consumer sets up Bill Pay, adds a payee and sends a one-time or recurring payment",
+ "bank": "capital-one",
+ "product": "bill-pay",
+ "persona": "360 Checking customer paying a utility",
+ "segment": "consumer",
+ "customer_goal": "Pay a bill from checking on a date I choose",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Select checking account > 'Pay Bills' (web) or 'Bill Pay' (app)",
+   "customer_action": "Select checking account > 'Pay Bills' (web) or 'Bill Pay' (app)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Checking account > 'Pay Bills' / 'Bill Pay'"
+    }
+   ],
+   "frontstage": "First use: accept online bill pay terms; requires U.S. physical address",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j08-1",
+     "text": "Label differs by platform"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "From 'Overview' > 'Payees' > 'Add payee' (a.k.a. 'Add New Payee'):…",
+   "customer_action": "From 'Overview' > 'Payees' > 'Add payee' (a.k.a. 'Add New Payee'): search the payee directory; if absent try alternate spelling/acronym, else enter manually (paid by paper check). First time: enter account number (optional) and payee address",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Overview > Payees > 'Add payee'"
+    }
+   ],
+   "frontstage": "Directory payees are registered for electronic delivery; directory selection does not guarantee electronic payment",
+   "actor": "customer",
+   "decision": "Directory vs manual",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s017",
+      "src-capital-one-s067",
+      "src-capital-one-s019",
+      "src-capital-one-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s017",
+      "src-capital-one-s067",
+      "src-capital-one-s019",
+      "src-capital-one-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s017",
+      "src-capital-one-s067",
+      "src-capital-one-s019",
+      "src-capital-one-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s017",
+      "src-capital-one-s067",
+      "src-capital-one-s019",
+      "src-capital-one-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j08-2",
+     "text": "After the platform migration, payees did not transfer; a legacy payee list was shown for 6+ weeks"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m03",
+   "code": "M03",
+   "stage": "initiate",
+   "title": "Overview > Payees > find payee > '…' > choose payment type (one-time or…",
+   "customer_action": "Overview > Payees > find payee > '…' > choose payment type (one-time or recurring) > complete form (amount, send-on date up to 365 days out, optional memo for check payees)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payees > '…' > payment type"
+    }
+   ],
+   "frontstage": "Form takes amount, send-on date (up to 365 days out), frequency and an optional memo. Memo is printed on the check memo line for paper-check payees only; electronically paid payees never see it, but memos remain visible in transaction details. Bank notifies the customer if a directory payee is paid by paper check instead of electronically.",
+   "actor": "customer",
+   "decision": "One-time vs recurring",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s015",
+      "src-capital-one-s016",
+      "src-capital-one-s020",
+      "src-capital-one-s074",
+      "src-capital-one-s904"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s015",
+      "src-capital-one-s016",
+      "src-capital-one-s020",
+      "src-capital-one-s074",
+      "src-capital-one-s904"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s015",
+      "src-capital-one-s016",
+      "src-capital-one-s020",
+      "src-capital-one-s074",
+      "src-capital-one-s904"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Review and submit",
+   "customer_action": "Review and submit",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Review"
+    }
+   ],
+   "frontstage": "No step-up documented",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Electronic payments typically post in 1-2 business days; paper checks…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Overview > Scheduled payments / 'Payment history' tab"
+    }
+   ],
+   "frontstage": "Capital One notifies the customer if a payment is sent as a paper check",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Paper-check notice",
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j08-5",
+     "text": "Migrated payments do not show payment method"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Payment posts; Bill Pay guarantee covers late fees up to $100 if…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Payment history"
+    }
+   ],
+   "frontstage": "Payment posts; Bill Pay guarantee covers late fees up to $100 if scheduled per terms",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Cancel: Overview > Scheduled payments > '…' > 'Cancel payment' >…",
+   "customer_action": "Cancel: Overview > Scheduled payments > '…' > 'Cancel payment' > confirm — allowed until 1 business day before the 'Send on' date; sent payments cannot be canceled or edited; stop paper checks via Customer Service 800-655-2265 (written request may be required within 14 days)",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Scheduled payments > '…' > 'Cancel payment'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s018",
+      "src-capital-one-s074",
+      "src-capital-one-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s018",
+      "src-capital-one-s074",
+      "src-capital-one-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s018",
+      "src-capital-one-s074",
+      "src-capital-one-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j08-7",
+     "text": "Editing a scheduled payment is not documented (cancel-and-recreate implied)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m08",
+   "code": "M08",
+   "stage": "manage",
+   "title": "Edit or delete a payee: Overview > Payees > find payee > '…' > 'Edit…",
+   "customer_action": "Edit or delete a payee: Overview > Payees > find payee > '…' > 'Edit payee info' (make and save changes) or 'Delete payee' > confirm; deleting a payee cancels all of its scheduled payments",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "'Pay Bills' (web) / 'Bill Pay' (app) > Overview > Payees > '…' > 'Edit payee info' / 'Delete payee'"
+    }
+   ],
+   "frontstage": "Payee record updated or removed; scheduled payments for a deleted payee are canceled",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s906",
+      "src-capital-one-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s906",
+      "src-capital-one-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s906",
+      "src-capital-one-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s906",
+      "src-capital-one-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j08-8",
+     "text": "Same path on app and web; no bulk tools documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m09",
+   "code": "M09",
+   "stage": "exception",
+   "title": "Returned payment: on the new platform, returned payments show as sent…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Transactions"
+    }
+   ],
+   "frontstage": "Returned payment: on the new platform, returned payments show as sent with a credit in checking transactions (migration note); Bill Pay ACH payments cannot be canceled once processing has begun",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "unknown",
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j08:m10",
+   "code": "M10",
+   "stage": "support",
+   "title": "Customer Service 800-655-2265, 8 am-11 pm ET, 7 days; EFT/bill pay…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact Us"
+    }
+   ],
+   "frontstage": "Customer Service 800-655-2265, 8 am-11 pm ET, 7 days; EFT/bill pay errors 1-888-464-0727",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J08",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P03-S02",
+ "channels": {
+  "entry": [
+   "web",
+   "mobile-app"
+  ],
+  "other": [
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Overview > Scheduled payments; 'Payment history' tab; checking transactions",
+  "states": [
+   "Scheduled",
+   "Sent",
+   "Paid by check (notice)"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Need to stop a paper check already sent",
+   "customer_experience": "Call 800-655-2265",
+   "bank_handling": "Stop payment; written confirmation within 14 days",
+   "resolution": "Check stopped",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s018",
+    "src-capital-one-s074"
+   ]
+  },
+  {
+   "trigger": "Late fee due to bank delay",
+   "customer_experience": "Claim under Bill Pay guarantee",
+   "bank_handling": "Reimburse up to $100",
+   "resolution": "Credit",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s074"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent_as_paper_check",
+   "channels": [
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Recently re-platformed ('New Bill Pay'); migration forced payee re-entry — a significant one-time friction. Status vocabulary and eBill flow are thinly documented.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

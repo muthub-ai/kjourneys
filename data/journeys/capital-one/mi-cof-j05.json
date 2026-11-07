@@ -1,0 +1,599 @@
+{
+ "id": "urn:kos:journey:capital-one:cof-j05",
+ "title": "Consumer links an external bank account (Add an External Account + verification)",
+ "bank": "capital-one",
+ "product": "ach-external-transfer",
+ "persona": "New 360 customer funding from a legacy bank",
+ "segment": "consumer",
+ "customer_goal": "Connect my other bank so I can move money in and out",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Open Profile Menu (lower right in app) or name/icon (top right on web)…",
+   "customer_action": "Open Profile Menu (lower right in app) or name/icon (top right on web) > 'Account & Feature Settings'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Profile Menu > 'Account & Feature Settings'"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j05-1",
+     "text": "External accounts live under profile settings, not under Transfers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Select 'Manage My External Accounts' (app) / 'external accounts' (web)…",
+   "customer_action": "Select 'Manage My External Accounts' (app) / 'external accounts' (web) > 'Add an External Account'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Manage My External Accounts' > 'Add an External Account'"
+    }
+   ],
+   "frontstage": "Cannot add while another link is unconfirmed; max 3 external accounts",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j05-2",
+     "text": "3-account cap"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Choose use: 'Payments and Transfers' or 'Payments' (card/loan payments…",
+   "customer_action": "Choose use: 'Payments and Transfers' or 'Payments' (card/loan payments only); enter 'Choose Account Type', 'Bank Routing or ABA Number', 'Account Number', 'Verify Account Number'; optional 'Make Primary Payment Account'; tap 'Add Account'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Add External Account form"
+    }
+   ],
+   "frontstage": "Additional security verification may be requested for 'Payments and Transfers'; name on external account must match; business accounts not allowed on personal profile",
+   "actor": "customer",
+   "decision": "Payments-only vs Payments and Transfers",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j05-3",
+     "text": "Manual routing/account entry; no documented instant login-based aggregator path on the help page"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m04",
+   "code": "M04",
+   "stage": "review-authorize",
+   "title": "Confirmation message states whether instant verification succeeded or…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Confirmation message"
+    }
+   ],
+   "frontstage": "If not instantly verified, two deposits under $1 are sent (immediately to 3 business days), then debited back as one ACH",
+   "actor": "bank-system",
+   "decision": "Instant verification vs micro-deposits",
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s009",
+      "src-capital-one-s081"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s009",
+      "src-capital-one-s081"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s009",
+      "src-capital-one-s081"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j05-4",
+     "text": "Learn article says linking 'can take about a week'"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m05",
+   "code": "M05",
+   "stage": "execute-track",
+   "title": "Customer finds the two amounts at the other bank, returns to 'Manage My…",
+   "customer_action": "Customer finds the two amounts at the other bank, returns to 'Manage My External Accounts', selects the account (shows 'verify this account to enable transfers'), enters both amounts (any order), taps 'Verify'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "'Manage My External Accounts' > account > 'Verify'"
+    }
+   ],
+   "frontstage": "Three attempts allowed",
+   "actor": "customer",
+   "decision": "Correct amounts vs retry",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j05-5",
+     "text": "Outcome after 3 failures undocumented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m06",
+   "code": "M06",
+   "stage": "confirm-complete",
+   "title": "Success message: account can now be used for transfers",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Success message"
+    }
+   ],
+   "frontstage": "Success message: account can now be used for transfers",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m07",
+   "code": "M07",
+   "stage": "manage",
+   "title": "Delete an unconfirmed link; joint owners link separately; linked…",
+   "customer_action": "Delete an unconfirmed link; joint owners link separately; linked account must be on file 30+ days before it can be a wire destination",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Manage My External Accounts"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-capital-one-cof-j05-7",
+     "text": "Removal steps not documented"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m08",
+   "code": "M08",
+   "stage": "exception",
+   "title": "Three failed verification attempts",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Verify screen"
+    }
+   ],
+   "frontstage": "unknown",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:capital-one:cof-j05:m09",
+   "code": "M09",
+   "stage": "support",
+   "title": "Phone 800-655-2265",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact Us"
+    }
+   ],
+   "frontstage": "Phone 800-655-2265",
+   "actor": "bank-staff",
+   "decision": null,
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s080"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "COF-J05",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "COF-P02-S02",
+ "channels": {
+  "entry": [
+   "mobile-app",
+   "web"
+  ],
+  "other": []
+ },
+ "status_tracking": {
+  "where": "Manage My External Accounts list",
+  "states": [
+   "Unconfirmed ('verify this account to enable transfers')",
+   "Verified"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Unconfirmed link blocks adding another",
+   "customer_experience": "Must confirm or delete first",
+   "bank_handling": "n/a",
+   "resolution": "Confirm or delete",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-capital-one-s005"
+   ]
+  }
+ ],
+ "notifications": [],
+ "assessment": "Dual-purpose linking (payments vs transfers) is thoughtful; but the 3-account cap and settings-buried placement are friction. Instant verification exists but the mechanism is not described.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

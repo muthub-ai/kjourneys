@@ -3,8 +3,27 @@ Run from the repo root:  make test"""
 import json, copy, os
 SRC = json.load(open("dist/kjourneys.json"))
 OUT = "tests/fixtures"; os.makedirs(OUT, exist_ok=True)
-J = lambda d: d["journeys"][0]
-WF = lambda d: d["comparisons"][0]["values"]["wells-fargo"]
+SAMPLE = "urn:kos:journey:wells-fargo:zelle-send"     # the hand-built blueprint: every optional layer filled in
+J = lambda d: next(j for j in d["journeys"] if j["id"] == SAMPLE)
+MI = lambda d: next(j for j in d["journeys"] if j.get("source_journey_id"))
+C = lambda d: d["comparisons"][0]
+WF = lambda d: C(d)["values"]["wells-fargo"]
+def cur(d, datatype):
+    """the focus bank's current assertion for the first attribute of this datatype that has a value"""
+    for a in C(d)["attributes"]:
+        if a["datatype"] == datatype:
+            h = WF(d).get(a["id"]) or []
+            if h and h[-1]["basis"] != "awaiting": return h
+    raise SystemExit(f"fixtures: no filled {datatype} attribute in {C(d)['product']}")
+def add_enum(d, with_values=True):
+    a = {"id": "attr-fixture-enum", "stage": C(d)["attributes"][0]["stage"], "name": "fixture enum", "datatype": "enum", "unit": None,
+         "normalization": "fixture"}
+    if with_values: a["allowed_values"] = ["a", "b"]
+    C(d)["attributes"].append(a)
+    for b, row in C(d)["values"].items():
+        row[a["id"]] = [{"id": f"urn:kos:assertion:{b}:{C(d)['product']}:fixture-enum:1", "basis": "awaiting", "source_ids": [],
+                         "asserted_by": None, "asserted_at": None, "observed_on": None, "valid_to": None, "verified_by": None, "verified_at": None}]
+    return a["id"]
 cases = {}
 def case(name):
     def deco(f): cases[name] = f; return f
@@ -22,27 +41,29 @@ def _(d): J(d)["moments"][1]["fail_points"][0]["id"] = J(d)["moments"][0]["fail_
 def _(d): v = J(d)["variants"][1]; v["entry"], v["exit"] = v["exit"], v["entry"]; v["moments"] = list(reversed(v["moments"]))
 @case("m2b_variant_entry_off_path")
 def _(d): J(d)["variants"][2]["entry"] = J(d)["moments"][10]["id"]
-@case("m3a_money_not_number")
-def _(d): WF(d)["attr-daily-limit"][0].update(value="lots of money", basis="disclosed")
+@case("m3a_boolean_not_boolean")
+def _(d): cur(d, "boolean")[-1]["value"] = "lots"
 @case("m3b_enum_not_allowed")
-def _(d): WF(d)["attr-cancel-pending"][0]["value"] = "whenever-you-like"
+def _(d):
+    aid = add_enum(d); src = cur(d, "boolean")[-1]
+    WF(d)[aid] = [dict(src, id=src["id"].rsplit(":", 2)[0] + ":fixture-enum:1", value="whenever-you-like")]
 @case("m3c_integer_as_text")
-def _(d): WF(d)["attr-enroll-steps"][0]["value"] = "three"
+def _(d): cur(d, "integer")[-1]["value"] = "three"
 @case("m3d_valid_from_after_to")
-def _(d): WF(d)["attr-payee-name-shown"][0].update(valid_from="2027-01-01", valid_to="2026-01-01")
+def _(d): cur(d, "boolean")[-1].update(valid_from="2027-01-01", valid_to="2026-01-01")
 @case("m3e_bad_datetime")
-def _(d): WF(d)["attr-notifications"][0]["asserted_at"] = "last tuesday"
+def _(d): cur(d, "boolean")[-1]["asserted_at"] = "last tuesday"
 @case("m3f_dangling_supersedes")
-def _(d): WF(d)["attr-stepup-trigger"][0]["supersedes"] = "urn:kos:assertion:does-not-exist:1"
+def _(d): cur(d, "integer")[-1]["supersedes"] = "urn:kos:assertion:does-not-exist:1"
 @case("m3g_unprefixed_principal")
-def _(d): WF(d)["attr-stepup-trigger"][0]["verified_by"] = "bob"
+def _(d): cur(d, "integer")[-1]["verified_by"] = "bob"
 @case("m3h_awaiting_with_value")
 def _(d):
     slot = next(h for b, row in d["comparisons"][0]["values"].items() if b != d["portfolio"]["focus_bank"]
                 for h in row.values() if h[-1]["basis"] == "awaiting")
     slot[-1]["value"] = 5000
 @case("m3i_two_current_assertions")
-def _(d): h = WF(d)["attr-enroll-steps"]; h.append(dict(h[0], id=h[0]["id"][:-1] + "2"))
+def _(d): h = cur(d, "integer"); h.append(dict(h[-1], id=h[-1]["id"] + "0"))
 @case("m4a_published_with_sample")
 def _(d): J(d)["status"] = "published"
 @case("m4b_mnpi_public")
@@ -52,7 +73,7 @@ def _(d): J(d)["status"] = "in-review"; J(d)["governance"]["ci_legal_review"]["s
 @case("m4d_actual_from_uncertified")
 def _(d): J(d)["moments"][0]["kpis"][0].update(actual=99.0, period_end="2026-10-31")
 @case("m5a_stage_not_in_journey")
-def _(d): J(d)["stages"] = ["setup", "choose"]
+def _(d): J(d)["stages"] = ["set-up", "initiate"]
 @case("m5b_wrong_kind_urn")
 def _(d):
     old = J(d)["moments"][0]["id"]; new = "urn:kos:control:citi:whatever:m01"
@@ -77,15 +98,36 @@ def _(d): d["comparisons"].append(copy.deepcopy(d["comparisons"][0]))
 @case("m8b_comparison_product_not_in_portfolio")
 def _(d): d["portfolio"]["products"].remove(d["comparisons"][0]["product"])
 @case("m6_enum_without_allowed_values")
-def _(d): d["comparisons"][0]["attributes"][0].pop("allowed_values")
+def _(d): add_enum(d, with_values=False)
+# ---------- MI analytical collections (0.7.0) ----------
+@case("m9a_finding_unknown_bank")
+def _(d): d["findings"][0]["bank"] = "nowhere-bank"
+@case("m9b_gap_typed_as_strength")
+def _(d): next(f for f in d["findings"] if f["id"].startswith("GAP-"))["type"] = "strength"
+@case("m9c_finding_unknown_journey")
+def _(d): d["findings"][0]["journey"] = "urn:kos:journey:citi:does-not-exist"
+@case("m9d_duplicate_finding")
+def _(d): d["findings"].append(copy.deepcopy(d["findings"][0]))
+@case("m9e_composite_unknown_product")
+def _(d): d["composites"][0]["product"] = "carrier-pigeon"
+@case("m9f_ranking_duplicate_bank")
+def _(d): d["rankings"].append(copy.deepcopy(d["rankings"][0]))
+@case("m9g_report_version_unknown")
+def _(d): d["observations"][0]["report_version"] = "1999-01-01-v1"
+@case("m9h_mi_journey_duplicate_source_id")
+def _(d):
+    a, b = [j for j in d["journeys"] if j.get("source_journey_id") and j["bank"] == MI(d)["bank"]][:2]
+    b["source_journey_id"] = a["source_journey_id"]
+@case("m9i_mi_step_unknown_stage")
+def _(d): MI(d)["moments"][0]["stage"] = "teleport"
 
 for name, f in cases.items():
     d = copy.deepcopy(SRC); f(d); json.dump(d, open(f"{OUT}/{name}.json", "w"), indent=1)
 
 # competitor facts may never be sample or internal (added with the repo)
 d = copy.deepcopy(SRC)
-comp = next(b for b in d["comparisons"][0]["values"] if b != d["portfolio"]["focus_bank"])
-d["comparisons"][0]["values"][comp]["attr-enroll-steps"] = [dict(SRC["comparisons"][0]["values"]["wells-fargo"]["attr-enroll-steps"][0],
-    id=f"urn:kos:assertion:{comp}:zelle:enroll-steps:9")]
+comp = next(b for b in C(d)["values"] if b != d["portfolio"]["focus_bank"])
+aid = next(a for a, h in C(d)["values"][comp].items())
+h = C(d)["values"][comp][aid]; h[-1] = dict(h[-1], basis="sample", value=True)
 json.dump(d, open(f"{OUT}/m7_competitor_sample_fact.json", "w"), indent=1)
 print(len(cases) + 1, "fixtures written")

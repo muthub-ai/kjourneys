@@ -1,0 +1,399 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j18",
+ "title": "Commercial client sends an instant payment (RTP) and uses Request for Payment",
+ "bank": "fifth-third",
+ "product": "rtp",
+ "persona": "Treasury/AP user with payment entitlements",
+ "segment": "commercial",
+ "customer_goal": "Pay gig workers/vendors instantly 24/7 and collect via RfP",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j18:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "Originate Instant Payments (RTP) by Data Exchange file upload in Fifth…",
+   "customer_action": "Originate Instant Payments (RTP) by Data Exchange file upload in Fifth Third Direct or a single API call (Instant Payments API / Newline). No single-entry RTP type is documented in FTD New Payment, and RTP items appear in FTD Historical Payments. Account Validation is available before RTP. Migrated Comerica clients cannot originate RTP.",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Instant Payments"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": "Portal vs API",
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s022",
+      "src-fifth-third-s074",
+      "src-fifth-third-s045",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s022",
+      "src-fifth-third-s074",
+      "src-fifth-third-s045",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j18:m02",
+   "code": "M02",
+   "stage": "review-authorize",
+   "title": "Approval/Dual Transaction Approval per MTMA; funds must be available…",
+   "customer_action": "Approval/Dual Transaction Approval per MTMA; funds must be available (no holds)",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Approvals"
+    }
+   ],
+   "frontstage": "API channel: Client ID/Client Secret → access token, declared originating IP addresses (the Security Procedure 'currently available ... for Instant Payments'); portal/file channels use token Credentials and optional Dual Transaction Approval; proprietary monitoring may halt an instant payment pending confirmation. Migrated Comerica clients cannot originate RTP in FTD ('receive ... through the RTP Network only').",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s047",
+      "src-fifth-third-s072",
+      "src-fifth-third-s915",
+      "src-fifth-third-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s047",
+      "src-fifth-third-s072",
+      "src-fifth-third-s915",
+      "src-fifth-third-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s047",
+      "src-fifth-third-s072",
+      "src-fifth-third-s915",
+      "src-fifth-third-s927"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j18:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Settles in seconds on TCH RTP; immediate confirmation and real-time…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Status"
+    }
+   ],
+   "frontstage": "Settles in seconds on TCH RTP; immediate confirmation and real-time status; irrevocable",
+   "actor": "network",
+   "decision": null,
+   "notification": "real-time status",
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j18:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Request for Payment: biller sends RfP, payer reviews e-invoice in their…",
+   "customer_action": "Request for Payment: biller sends RfP, payer reviews e-invoice in their bank channel and pays instantly",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "RfP"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s071",
+      "src-fifth-third-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s071",
+      "src-fifth-third-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j18:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Rejection by network/bank; errors must be reported same business day;…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "Rejection by network/bank; errors must be reported same business day; FedNow fallback/rerouting marketed but FedNow not live (receive unavailable 9/2026; Newline 'coming soon')",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s072",
+      "src-fifth-third-s071",
+      "src-fifth-third-s025",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s072",
+      "src-fifth-third-s071",
+      "src-fifth-third-s025",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s072",
+      "src-fifth-third-s071",
+      "src-fifth-third-s025",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-fifth-third-fitb-j18-5",
+     "text": "Dual-network claim vs. actual FedNow status conflict"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j18:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
+   "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Commercial Support Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J18",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P08-S05",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app",
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "FTD Payments / Newline webhooks",
+  "states": [
+   "Pending Approval",
+   "Processed",
+   "Rejected",
+   "Failed",
+   "Queued (Newline)"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "RTP network outage (Newline)",
+   "customer_experience": "Payment queued and retried; fails if queue duration exceeded",
+   "bank_handling": "RTP queueing",
+   "resolution": "Processed or failed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s088"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_status",
+   "channels": [
+    "email",
+    "in_portal"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Fifth Third ranks itself #4 in RTP among banks; RfP early adopter; FedNow gap is the main weakness.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

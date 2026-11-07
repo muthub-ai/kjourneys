@@ -35,18 +35,21 @@
     "access_policy": "Need-to-know: study sponsors and journey owners"
   },
   "stages": [
-    "setup",
-    "choose",
-    "send",
-    "move",
-    "confirm",
-    "help"
+    "discover",
+    "set-up",
+    "initiate",
+    "review-authorize",
+    "execute-track",
+    "confirm-complete",
+    "manage",
+    "exception",
+    "support"
   ],
   "moments": [
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m01",
       "code": "M01",
-      "stage": "setup",
+      "stage": "discover",
       "title": "Open Zelle",
       "customer_action": "Taps Send & Receive with Zelle in the app",
       "touchpoints": [
@@ -246,7 +249,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m02",
       "code": "M02",
-      "stage": "setup",
+      "stage": "set-up",
       "title": "Enroll email or mobile",
       "customer_action": "Chooses email or U.S. mobile number and enters a one-time code",
       "touchpoints": [
@@ -462,7 +465,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m03",
       "code": "M03",
-      "stage": "choose",
+      "stage": "initiate",
       "title": "Find recipient",
       "customer_action": "Picks a contact or types an email or mobile number",
       "touchpoints": [
@@ -665,7 +668,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m04",
       "code": "M04",
-      "stage": "choose",
+      "stage": "initiate",
       "title": "Confirm who it is",
       "customer_action": "Checks the name shown before continuing",
       "touchpoints": [
@@ -859,7 +862,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m05",
       "code": "M05",
-      "stage": "send",
+      "stage": "initiate",
       "title": "Enter amount",
       "customer_action": "Enters the amount and an optional memo",
       "touchpoints": [
@@ -1058,7 +1061,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m06",
       "code": "M06",
-      "stage": "send",
+      "stage": "review-authorize",
       "title": "Review and send",
       "customer_action": "Reviews the details and taps Send",
       "touchpoints": [
@@ -1268,7 +1271,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m07",
       "code": "M07",
-      "stage": "move",
+      "stage": "execute-track",
       "title": "Payment executes",
       "customer_action": "Waits a few seconds on the sending screen",
       "touchpoints": [
@@ -1483,7 +1486,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m08",
       "code": "M08",
-      "stage": "move",
+      "stage": "execute-track",
       "title": "Settle and reconcile",
       "customer_action": null,
       "touchpoints": [],
@@ -1679,7 +1682,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m09",
       "code": "M09",
-      "stage": "confirm",
+      "stage": "confirm-complete",
       "title": "Get confirmation",
       "customer_action": "Sees confirmation; the recipient hears from their own bank",
       "touchpoints": [
@@ -1884,7 +1887,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m10",
       "code": "M10",
-      "stage": "confirm",
+      "stage": "manage",
       "title": "Track activity",
       "customer_action": "Checks status in Activity and cancels if still pending",
       "touchpoints": [
@@ -2077,7 +2080,7 @@
     {
       "id": "urn:kos:moment:wells-fargo:zelle-send:m11",
       "code": "M11",
-      "stage": "help",
+      "stage": "exception",
       "title": "Report a problem",
       "customer_action": "Reports a wrong recipient, a scam or an unauthorized payment",
       "touchpoints": [

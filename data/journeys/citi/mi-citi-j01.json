@@ -1,0 +1,926 @@
+{
+ "id": "urn:kos:journey:citi:citi-j01",
+ "title": "Consumer sends money to a new recipient with Zelle (Citi Mobile App)",
+ "bank": "citi",
+ "product": "zelle",
+ "persona": "Retail checking customer, mobile-first",
+ "segment": "consumer",
+ "customer_goal": "Pay a friend back in minutes using only their email or U.S. mobile number",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m01",
+   "code": "M01",
+   "stage": "discover",
+   "title": "Customer finds Zelle inside the Citi Mobile App (App Store/Google Play…",
+   "customer_action": "Customer finds Zelle inside the Citi Mobile App (App Store/Google Play list 'Zelle: pay and split payments'); Citi's guide says Zelle is 'built into the Citi Mobile App'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Citi Mobile App / Citi Online menu item 'Zelle®' or 'Send Money with Zelle®' (citi.com: Services > MOVE YOUR MONEY > Send Money with Zelle®)"
+    }
+   ],
+   "frontstage": "App surfaces Zelle to eligible checking customers",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018",
+      "src-citi-s019",
+      "src-citi-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018",
+      "src-citi-s019",
+      "src-citi-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018",
+      "src-citi-s019",
+      "src-citi-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s018",
+      "src-citi-s019",
+      "src-citi-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j01-1",
+     "text": "Marketing pages (citi.com/banking/zelle) are JS shells; public navigation labels not verifiable"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m02",
+   "code": "M02",
+   "stage": "set-up",
+   "title": "Customer enrolls with an email address, U.S. mobile number or Zelle tag…",
+   "customer_action": "Customer enrolls with an email address, U.S. mobile number or Zelle tag (landline/VoIP/Google Voice not eligible) and accepts the Citibank with Zelle Terms via 'I Agree'",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle enrollment"
+    }
+   ],
+   "frontstage": "Citi may validate the email/mobile (one-time code) and may decline enrollment; token registered to the Zelle directory; a Z logo marks enrolled tokens",
+   "actor": "customer",
+   "decision": "Validation passes vs. Citi declines enrollment",
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m03",
+   "code": "M03",
+   "stage": "set-up",
+   "title": "Customer optionally allows the Citi Mobile App to access phone contacts…",
+   "customer_action": "Customer optionally allows the Citi Mobile App to access phone contacts (device privacy settings) and adds a recipient by email, U.S. mobile number, Zelle tag or by scanning the recipient's Zelle QR code",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Add recipient / scan QR"
+    }
+   ],
+   "frontstage": "Bank checks the Zelle directory; shows whether the token is enrolled",
+   "actor": "customer",
+   "decision": "Recipient enrolled vs. not enrolled -> 14-day enrollment window applies if not enrolled",
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m04",
+   "code": "M04",
+   "stage": "initiate",
+   "title": "Customer selects the funding checking account, enters the amount (up to…",
+   "customer_action": "Customer selects the funding checking account, enters the amount (up to available balance and send limits) and optional memo; consumer accounts may pick a future send date (one-time only; recurring not allowed)",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® > Send Money > Select Recipient (device contacts, add email/U.S. mobile, or QR icon at top of screen) > amount > optional note"
+    }
+   ],
+   "frontstage": "Applies untenured/tenured daily and rolling-30-day limits; lower limits after new enrollment or profile/device/carrier changes, with in-service notice",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 4,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j01-4",
+     "text": "Untenured status caps new enrollees at $500/day for consumers"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m05",
+   "code": "M05",
+   "stage": "review-authorize",
+   "title": "Customer reviews recipient and amount; Citi warns that money goes only…",
+   "customer_action": "Customer reviews recipient and amount; Citi warns that money goes only to the token entered 'even if it belongs to someone other than your intended recipient' and that Zelle is for people you know and trust with no purchase protection",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Review screen > 'Send' (confirm displayed name for new recipients; no purchase protection; limits displayed when sending)"
+    }
+   ],
+   "frontstage": "Zelle network rules require in-app alerts before a payment is sent and real-time risk tools; Citi may delay or block transfers for fraud/regulatory reasons and notifies the sender",
+   "actor": "customer",
+   "decision": "Proceed vs. edit; bank risk engine may hold or block",
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j01-5",
+     "text": "Specific Citi scam-interstitial wording and any step-up OTP at send are not documented publicly (INFERRED from network rules)"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m06",
+   "code": "M06",
+   "stage": "review-authorize",
+   "title": "Customer is signed on via biometrics (Touch ID/Face ID) or a 6 Digit…",
+   "customer_action": "Customer is signed on via biometrics (Touch ID/Face ID) or a 6 Digit PIN (documented for funds-transfer sign-on in the Online Funds Transfer terms) and taps 'Send'; no Zelle-specific step-up authentication is published",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Face ID / Touch ID / 6 Digit PIN"
+    }
+   ],
+   "frontstage": "Citi treats requests meeting the security procedure as authorized",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s016",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m07",
+   "code": "M07",
+   "stage": "execute-track",
+   "title": "Citi submits the payment to the Zelle network; funds typically arrive…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "Debit posts to checking; payment appears on statement as a Zelle transfer",
+   "actor": "bank-system",
+   "decision": "Enrolled recipient -> deposited directly; not enrolled -> pending up to 14 calendar days",
+   "notification": null,
+   "source_step": 7,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m08",
+   "code": "M08",
+   "stage": "confirm-complete",
+   "title": "Customer and recipient receive confirmation; recipient gets email/SMS…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity / Account Alerts"
+    }
+   ],
+   "frontstage": "Emails and texts from Citi (short code 50449), Zelle, other users or institutions",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "Email/SMS to recipient; in-app activity for sender",
+   "source_step": 8,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m09",
+   "code": "M09",
+   "stage": "manage",
+   "title": "Customer views Zelle activity and statements; a scheduled one-time…",
+   "customer_action": "Customer views Zelle activity and statements; a scheduled one-time payment can be cancelled up to one calendar day before its send date in the Citi Mobile App; a sent payment can be cancelled only while the recipient is not yet enrolled",
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle® activity page > choose payment > 'Cancel' (only shown while recipient is not enrolled; otherwise Contact Us)"
+    }
+   ],
+   "frontstage": "Cancellation removes the pending payment; once an enrolled recipient's bank has the funds it cannot be stopped",
+   "actor": "customer",
+   "decision": "Recipient enrolled (no cancel) vs. pending (cancel allowed)",
+   "notification": null,
+   "source_step": 9,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m10",
+   "code": "M10",
+   "stage": "exception",
+   "title": "Recipient does not enroll within 14 calendar days (or does not accept…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "mobile-app",
+     "screen": "Zelle activity"
+    }
+   ],
+   "frontstage": "Automatic cancellation; sender notified",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 10,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m11",
+   "code": "M11",
+   "stage": "exception",
+   "title": "Customer sent to the wrong token: Citi states the customer remains…",
+   "customer_action": "Customer sent to the wrong token: Citi states the customer remains responsible if funds cannot be recovered; customer contacts Citi to attempt recovery",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "CitiPhone 1-800-374-9700"
+    }
+   ],
+   "frontstage": "Citi may attempt recovery; no guarantee",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 11,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j01-11",
+     "text": "No in-app 'recall' for misdirected Zelle payments"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m12",
+   "code": "M12",
+   "stage": "exception",
+   "title": "Unauthorized Zelle transfer or qualifying imposter scam: customer…",
+   "customer_action": "Unauthorized Zelle transfer or qualifying imposter scam: customer reports to Citi; Citi investigates under the Electronic Banking section of the Client Manual (Reg E procedures: provisional credit within 10 Business Days, up to 45/90 days)",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Contact Us (post-login Chat) or CitiPhone / number on back of card; 'Qualifying imposter scams may be eligible for reimbursement'"
+    }
+   ],
+   "frontstage": "Reimbursement 'available for unauthorized transactions and certain qualifying imposter scams' per Citi's Zelle T&Cs (aligned to the Zelle network policy); authorized purchase scams are not covered",
+   "actor": "customer",
+   "decision": "Unauthorized or qualifying imposter scam (reimbursed) vs. authorized purchase scam (not covered)",
+   "notification": null,
+   "source_step": 12,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020",
+      "src-citi-s016",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020",
+      "src-citi-s016",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s020",
+      "src-citi-s016",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:citi:citi-j01:m13",
+   "code": "M13",
+   "stage": "support",
+   "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
+   "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Citi Mobile App help / CitiPhone Banking"
+    }
+   ],
+   "frontstage": "Contact center authenticates and opens a claim or investigation; written follow-up may be required within 10 Business Days for phone claims",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 13,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "fail_points": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s031",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-citi-citi-j01-13",
+     "text": "No evidence of an in-app virtual assistant handling money-movement disputes; phone remains the escalation path."
+    }
+   ]
+  }
+ ],
+ "source_journey_id": "CITI-J01",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "CITI-P01-S01",
+ "channels": {
+  "entry": [
+   "mobile-app"
+  ],
+  "other": [
+   "web"
+  ]
+ },
+ "status_tracking": {
+  "where": "Zelle activity in Citi Mobile App / Citi Online; statement line items",
+  "states": [
+   "Pending (recipient not enrolled)",
+   "Sent/Completed",
+   "Cancelled",
+   "Scheduled"
+  ],
+  "basis": "inferred"
+ },
+ "exceptions": [
+  {
+   "trigger": "Recipient not enrolled within 14 days",
+   "customer_experience": "Payment shows pending then is cancelled; funds stay in checking",
+   "bank_handling": "Automatic network expiry",
+   "resolution": "Funds returned; customer may resend",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s001"
+   ]
+  },
+  {
+   "trigger": "Customer reports unauthorized Zelle transfer",
+   "customer_experience": "Customer calls Citi; may need written confirmation within 10 Business Days",
+   "bank_handling": "Reg E investigation; provisional credit within 10 Business Days (20 for new accounts); up to 45/90 days",
+   "resolution": "Reimbursement for unauthorized transactions",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s001",
+    "src-citi-s031",
+    "src-citi-s016"
+   ]
+  },
+  {
+   "trigger": "Customer reports an imposter scam (authorized push payment)",
+   "customer_experience": "Customer is told to 'Please Contact Us' (post-login Chat or phone); Citi states 'Qualifying imposter scams may be eligible for reimbursement'; Fraud and Scam Prevention Central lists post-scam steps (report, FTC/IC3, safeguard accounts, secure devices)",
+   "bank_handling": "Citi evaluates against Zelle network imposter-scam criteria (bank/government/business impersonation); authorized purchase scams excluded",
+   "resolution": "Reimbursed if qualifying; otherwise denied with no purchase protection",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s001",
+    "src-citi-s020"
+   ]
+  },
+  {
+   "trigger": "Payment delayed/blocked by Citi or Zelle risk controls",
+   "customer_experience": "Customer sees delayed status and is notified",
+   "bank_handling": "Fraud/regulatory screening",
+   "resolution": "Released or blocked; customer may contact Citi",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-citi-s001"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_sent",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "recipient_enrollment_reminder",
+   "channels": [
+    "email",
+    "sms"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "payment_delayed_or_blocked",
+   "channels": [
+    "in_app",
+    "email"
+   ],
+   "configurable": false,
+   "basis": "disclosed"
+  },
+  {
+   "event": "account_alerts_general",
+   "channels": [
+    "push",
+    "email",
+    "sms"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Mature Zelle implementation with QR, Zelle tag, scheduling and Split; strong tenure-based limit model. Weak public documentation of the actual in-app screens and scam interstitial copy; cancellation of scheduled payments is mobile-only per T&Cs.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

@@ -1,0 +1,383 @@
+{
+ "id": "urn:kos:journey:fifth-third:fitb-j16",
+ "title": "Commercial user sends a domestic wire in Fifth Third Direct (template or freeform)",
+ "bank": "fifth-third",
+ "product": "wire-domestic",
+ "persona": "Treasury/AP user with payment entitlements",
+ "segment": "commercial",
+ "customer_goal": "Send a same-day high-value payment",
+ "version": "1.0.0",
+ "as_of": "2026-11-06",
+ "status": "draft",
+ "basis": "disclosed",
+ "governance": {
+  "owner": "role:ci-study-lead",
+  "steward": null,
+  "classification": "internal",
+  "contains_pii": false,
+  "mnpi": false,
+  "ci_legal_review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null
+  },
+  "retention_class": null,
+  "access_policy": "Public-source competitive intelligence; legal review before external sharing"
+ },
+ "stages": [
+  "discover",
+  "set-up",
+  "initiate",
+  "review-authorize",
+  "execute-track",
+  "confirm-complete",
+  "manage",
+  "exception",
+  "support"
+ ],
+ "moments": [
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j16:m01",
+   "code": "M01",
+   "stage": "initiate",
+   "title": "New Payment > Freeform Entry / From Template / Express Templates > Wire…",
+   "customer_action": "New Payment > Freeform Entry / From Template / Express Templates > Wire Type; Originating Party Details (Debit Account, Currency USD, Business Unit, Security Level, Sender's Reference); amount and Payment Date; Select Receiver or Create New Receiver (beneficiary address line 1, town/city, country required); Originator Information, Bank-to-Bank and Originator-to-Beneficiary info; optional 'Payment By Order Of'",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "New Payment"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 1,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s019",
+      "src-fifth-third-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s019",
+      "src-fifth-third-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j16:m02",
+   "code": "M02",
+   "stage": "review-authorize",
+   "title": "Submit -> Pending Approval; OTP/token step-up; approvals per profile",
+   "customer_action": "Submit -> Pending Approval; OTP/token step-up; approvals per profile",
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payments"
+    }
+   ],
+   "frontstage": "Two-factor Credentials (token passcode) required to originate and to approve; if Dual Transaction Approval is enabled a second User releases the wire on a separate device; Approval Workflows may require multiple approvers; approvals above customer-set daily limits are blocked; bank transaction monitoring may halt the wire pending a call-back to an Authorized Agent. Telephone PIN wires over $250,000 (non-repetitive) require a second PIN holder's confirmation by bank call-back.",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 2,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s019",
+      "src-fifth-third-s072",
+      "src-fifth-third-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s019",
+      "src-fifth-third-s072",
+      "src-fifth-third-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s019",
+      "src-fifth-third-s072",
+      "src-fifth-third-s915"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j16:m03",
+   "code": "M03",
+   "stage": "execute-track",
+   "title": "Processed; released via Fedwire/CHIPS; alternative channels: PIN-based…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Payments"
+    }
+   ],
+   "frontstage": "Processed; released via Fedwire/CHIPS; alternative channels: PIN-based phone wires (8 a.m.–6 p.m.), batch wire CPU-to-CPU, Automatic Standing Orders (from 8 a.m., slots to 5 p.m.)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 3,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j16:m04",
+   "code": "M04",
+   "stage": "confirm-complete",
+   "title": "Email wire advices (and mailed advices unless discontinued)",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "Advices"
+    }
+   ],
+   "frontstage": "Email wire advices (and mailed advices unless discontinued)",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": "email",
+   "source_step": 4,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s020"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j16:m05",
+   "code": "M05",
+   "stage": "exception",
+   "title": "Bank may delay/reject payment orders flagged for fraud (MTMA 8.6);…",
+   "customer_action": null,
+   "touchpoints": [
+    {
+     "channel": "api-treasury-portal",
+     "screen": "n/a"
+    }
+   ],
+   "frontstage": "Bank may delay/reject payment orders flagged for fraud (MTMA 8.6); same-business-day error reporting requirement; recall mechanics not public",
+   "actor": "bank-system",
+   "decision": null,
+   "notification": null,
+   "source_step": 5,
+   "evidence": {
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s072"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s072"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  },
+  {
+   "id": "urn:kos:moment:fifth-third:fitb-j16:m06",
+   "code": "M06",
+   "stage": "support",
+   "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
+   "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "touchpoints": [
+    {
+     "channel": "phone",
+     "screen": "Commercial Support Center"
+    }
+   ],
+   "frontstage": "",
+   "actor": "customer",
+   "decision": null,
+   "notification": null,
+   "source_step": 6,
+   "evidence": {
+    "action": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "touchpoint": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s025",
+      "src-fifth-third-s019",
+      "src-fifth-third-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    }
+   }
+  }
+ ],
+ "source_journey_id": "FITB-J16",
+ "report_version": "2026-11-06-v1",
+ "sub_product": "FITB-P08-S02",
+ "channels": {
+  "entry": [
+   "api-treasury-portal"
+  ],
+  "other": [
+   "mobile-app",
+   "phone"
+  ]
+ },
+ "status_tracking": {
+  "where": "Payments list",
+  "states": [
+   "Pending Approval",
+   "Processed"
+  ],
+  "basis": "disclosed"
+ },
+ "exceptions": [
+  {
+   "trigger": "Migrated Comerica template lacks beneficiary town/city/country",
+   "customer_experience": "Prompted to complete before first use",
+   "bank_handling": "Validation",
+   "resolution": "Completed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s020"
+   ]
+  },
+  {
+   "trigger": "Proprietary transaction-monitoring halt on an initiated wire/ACH/instant payment",
+   "customer_experience": "Payment is halted or delayed; an Authorized FTB Person calls an Authorized Agent to confirm",
+   "bank_handling": "'Bank will not release any affected payment until such time as Bank receives any necessary confirmation that Bank seeks'; monitoring is explicitly not part of the Security Procedures",
+   "resolution": "Released after confirmation, otherwise not executed",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s915"
+   ]
+  },
+  {
+   "trigger": "Manual (email/in-person) wire request fails call-back or out-of-wallet confirmation",
+   "customer_experience": "Order 'deemed to have been canceled prior to acceptance by Bank'; if signer/authority does not match, bank calls an Authorized Agent and requests a new Outgoing Wire Transfer Request Agreement",
+   "bank_handling": "Signature/authority verification against the Outgoing Wire Agreement, then call-back to a secondary individual and/or in-/out-of-wallet questions",
+   "resolution": "Resubmit via recommended channel (FTD) or new signed agreement; Dual Control Security Waiver required to proceed without recommended procedures",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-06-v1",
+    "src-fifth-third-s915"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "payment_status",
+   "channels": [
+    "email",
+    "in_portal"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
+ "assessment": "Multi-channel wire origination (portal, PIN phone, batch, standing order); cutoff 6:15 p.m. ET.",
+ "x-mi_evidence": "CONFIRMED_BANK"
+}

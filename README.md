@@ -2,17 +2,17 @@
 
 A git-native data product for customer journeys in banking. It holds Wells Fargo service blueprints and sourced, dated competitor facts on the same stages. Every change is validated, reviewed and versioned, and is published as an executive journey site plus machine-readable outputs.
 
-First study: **money movement** (Zelle, ACH, wire, bill pay, instant payments) across the top 10 US banks. Each product has its own comparison under `data/comparisons/<product>/`; add one with `tools/new_comparison.py`.
+First study: **money movement** across the ten largest US retail banks: 16 payment rails (Zelle, request to pay, ACH, wires, remittance, RTP, FedNow, push to card, bill pay, internal transfers, mobile deposit, cash, wallets), nine journey stages from Discover to Support. The first MI delivery (`reports/2026-11-06-v1/`) supplies 236 journeys, 2,176 steps, 419 gaps and strengths, 0–4 stage scores and 16 capability flags per rail, all traced to 1,156 sources.
 
-> **Prototype.** This repo holds sample data only. Real bank internals and competitor research belong in enterprise GitHub (see [architecture §6](docs/architecture.md#6-governance)).
+> **Prototype.** The competitor data is public-source competitive intelligence, with CI legal review still pending, so share the site only after that review. The Wells Fargo backstage (processes, controls, app IDs) is sample data. Real bank internals belong in enterprise GitHub (see [architecture §6](docs/architecture.md#6-governance)).
 
 ## Quick start
 
 ```bash
 pip install -r requirements.txt
 scripts/refresh.sh                                   # validate, test, rebuild site + exports
-scripts/refresh.sh reports/2026-11-20-v1             # ingest an MI report first (rerunnable)
-scripts/refresh.sh reports/2026-11-20-v1 --commit    # commit on the current branch when it passes
+scripts/refresh.sh reports/2026-11-06-v1             # import + ingest an MI report first (rerunnable)
+scripts/refresh.sh reports/2026-11-06-v1 --commit    # commit on the current branch when it passes
 open dist/index.html
 ```
 
@@ -22,7 +22,7 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 
 | You are | You change | Reviewed by | Guide |
 |---|---|---|---|
-| Market-intelligence session | `reports/<version>/` (report + extracts), then `scripts/refresh.sh` | CI legal + study lead | [MI contract](docs/market-intelligence-contract.md) · [extraction](docs/mi-extraction.md) · [reports](reports/README.md) |
+| Market-intelligence session | `reports/<version>/` (report files + the MI workbook), then `scripts/refresh.sh` | CI legal + study lead | [MI contract](docs/market-intelligence-contract.md) · [extraction](docs/mi-extraction.md) · [reports](reports/README.md) |
 | Journey owner | `data/journeys/<bank>/<journey>.json` | Journey owners | [Ontology](schema/journey-ontology.yaml) |
 | Data office | `registries/`, `schema/`, `tools/` | Data office | [Architecture](docs/architecture.md) |
 
@@ -30,16 +30,16 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 
 | Port | File | For |
 |---|---|---|
-| Journey site | `dist/index.html` | Executives, product, engineering: portfolio, journey, blueprint, compare, method, present mode |
+| Journey site | `dist/index.html` | Executives, product, engineering: ranking and rail heat map, stage scores, journey blueprints, bank-by-bank compare, gaps and strengths, method |
 | Canonical instance | `dist/kjourneys.json` | KOS ingestion, tooling |
-| Facts | `dist/facts.jsonl` | BI, agents, retrieval: one row per current fact with basis and sources |
+| Facts | `dist/facts.jsonl` | BI, agents, retrieval: one row per current fact (comparison cells, step evidence, findings, rankings) with basis and sources |
 | Coverage | `dist/coverage.json` | Health: completeness by bank and basis, staleness, legal status |
 
 ## Why trust it
 
-- **Provenance on every fact:** basis (observed, disclosed, inferred, internal, sample, awaiting), sources, who asserted it and when, and validity dates.
+- **Provenance on every fact:** basis (observed, disclosed, inferred, internal, sample, awaiting), the MI evidence level it came from, sources, who asserted it and when, and validity dates.
 - **History is never lost:** facts are superseded, never overwritten, and git keeps every prior state. Tag the commit you present from.
-- **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 31 negative tests prove the rules hold.
+- **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 40 negative tests prove the rules hold.
 - **The line of visibility is a provenance boundary:** competitors' backstage is never presented as fact.
 
 ## Repo map

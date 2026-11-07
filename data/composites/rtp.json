@@ -1,0 +1,307 @@
+[
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "'Instant' offered as a delivery speed inside the ordinary transfer/payment flow, with a speed/fee comparison",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "DEFINE",
+    "moment_of_truth": "FIRST_USE",
+    "derived_from": "us-bank:USB-J16#1; jpmorgan-chase:JPM-J15#1; benchmark:R66#None",
+    "rationale": "U.S. Bank puts instant inside Send ACH; Chase Payment Center comparison."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Recipient validated for instant reachability by routing number, with an instant-eligible badge",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J22#1; benchmark:R02#None",
+    "rationale": "WF Instant Payments API returns the reachable rail (RTP|FEDNOW); not yet in any consumer UI."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Choose instant; fee shown; bank auto-selects RTP or FedNow by reach",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J05#4; jpmorgan-chase:JPM-J15#3; us-bank:USB-J18#2",
+    "rationale": "U.S. Bank auto fastest rail."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Irrevocability + scam interstitial; step-up; SMB dual control routes to approvals",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "SCAM_INTERVENTION",
+    "derived_from": "jpmorgan-chase:JPM-J15#4; us-bank:USB-J16#4",
+    "rationale": "Chase dual control for RTP."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "Accepted/rejected in seconds; 'under review by recipient bank' state",
+    "actor": "NETWORK",
+    "channel": "WEB",
+    "job_step": "EXECUTE",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "jpmorgan-chase:JPM-J15#5; benchmark:R62#None",
+    "rationale": "FedNow ACWP messaging."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Confirmation with transaction number and network reference",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J16#5; jpmorgan-chase:JPM-J15#6",
+    "rationale": "Standard."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "History with rail tag (13 months)",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "MONITOR",
+    "moment_of_truth": null,
+    "derived_from": "jpmorgan-chase:JPM-J15#7",
+    "rationale": "Chase history."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Rejected with reason code; automatic fallback to ACH; return-of-funds request and Reg E path",
+    "actor": "BANK_SYSTEM",
+    "channel": "WEB",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "us-bank:USB-J05#10; wells-fargo:WF-J22#6; benchmark:R45#None",
+    "rationale": "U.S. Bank auto-downgrade; WF reason codes."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant explains finality",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R41#None",
+    "rationale": "Composite."
+   }
+  ],
+  "id": "CJ-INSTANT-SEND",
+  "title": "Consumer or small business sends an instant (RTP/FedNow) credit transfer to any bank account",
+  "product": "rtp",
+  "segment": "consumer",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ },
+ {
+  "steps": [
+   {
+    "stage": "discover",
+    "n": 1,
+    "action": "RfP appears in a Bill Pay requests inbox with push/email alert",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J11#3; pnc:PNC-J10#1; wells-fargo:WF-J09#1",
+    "rationale": "U.S. Bank, PNC, WF surface RfPs in bill pay."
+   },
+   {
+    "stage": "set-up",
+    "n": 2,
+    "action": "Customer opts in at biller; alias-based RfP using enrolled tokens; trusted-biller marking",
+    "actor": "CUSTOMER",
+    "channel": "WEB",
+    "job_step": "PREPARE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J11#1; benchmark:R54#None",
+    "rationale": "Truist alias-based RfP pilot (Apr 2025)."
+   },
+   {
+    "stage": "initiate",
+    "n": 3,
+    "action": "Inbound instant credits (RTP/FedNow) post in real time with a clear label; RfP shows biller, amount, due date",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "LOCATE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J11#3; wells-fargo:WF-J15#6",
+    "rationale": "Labeling of inbound instant credits is undocumented at most banks."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 4,
+    "action": "Payer chooses Pay instantly / Schedule / Dismiss; amount editable when biller allows; unexpected-request warning",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "us-bank:USB-J11#4; pnc:PNC-J10#2",
+    "rationale": "U.S. Bank three-way choice; PNC amount change."
+   },
+   {
+    "stage": "execute-track",
+    "n": 5,
+    "action": "RTP credit sent immediately, no fee, no cutoff, 24/7",
+    "actor": "NETWORK",
+    "channel": "MOBILE_APP",
+    "job_step": "EXECUTE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J11#5; pnc:PNC-J10#3",
+    "rationale": "RTP."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 6,
+    "action": "Confirmation in app + email when biller receives; second confirmation when applied",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "us-bank:USB-J11#6; truist:TFC-J08#5; wells-fargo:WF-J15#7",
+    "rationale": "Truist pilot adds 'applied' confirmation."
+   },
+   {
+    "stage": "manage",
+    "n": 7,
+    "action": "Edit/cancel scheduled RfP payment before execution",
+    "actor": "CUSTOMER",
+    "channel": "MOBILE_APP",
+    "job_step": "MODIFY",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J11#7",
+    "rationale": "U.S. Bank."
+   },
+   {
+    "stage": "exception",
+    "n": 8,
+    "action": "Expired/dismissed RfP handled; NSF/legal delay notified electronically; fraudulent-RfP report",
+    "actor": "BANK_SYSTEM",
+    "channel": "MOBILE_APP",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "pnc:PNC-J10#6; pnc:PNC-J10#7; us-bank:USB-J11#8",
+    "rationale": "PNC electronic notification."
+   },
+   {
+    "stage": "support",
+    "n": 9,
+    "action": "Assistant explains request provenance",
+    "actor": "CUSTOMER",
+    "channel": "VOICE_CHAT_ASSISTANT",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "benchmark:R41#None",
+    "rationale": "Composite."
+   }
+  ],
+  "id": "CJ-INSTANT-RECEIVE-RFP",
+  "title": "Consumer receives an instant credit and pays a biller Request for Payment (payer side)",
+  "product": "rtp",
+  "segment": "consumer",
+  "direction": "RECEIVE",
+  "report_version": "2026-11-06-v1"
+ },
+ {
+  "steps": [
+   {
+    "stage": "set-up",
+    "n": 1,
+    "action": "Pre-send reachability and account validation by routing number",
+    "actor": "CUSTOMER",
+    "channel": "API_TREASURY_PORTAL",
+    "job_step": "LOCATE",
+    "moment_of_truth": null,
+    "derived_from": "wells-fargo:WF-J22#1; pnc:PNC-J28#1",
+    "rationale": "WF verify-routing-number returns RTP|FEDNOW; PNC Routing Number Verification."
+   },
+   {
+    "stage": "initiate",
+    "n": 2,
+    "action": "Submit credit with remittance data; bank routes RTP or FedNow by rules or client preference",
+    "actor": "CUSTOMER",
+    "channel": "API_TREASURY_PORTAL",
+    "job_step": "EXECUTE",
+    "moment_of_truth": null,
+    "derived_from": "us-bank:USB-J18#2; wells-fargo:WF-J22#2; jpmorgan-chase:JPM-J21#2",
+    "rationale": "U.S. Bank network preference; JPM one API for both."
+   },
+   {
+    "stage": "review-authorize",
+    "n": 3,
+    "action": "Dual approval and real-time fraud screening",
+    "actor": "BANK_SYSTEM",
+    "channel": "API_TREASURY_PORTAL",
+    "job_step": "CONFIRM",
+    "moment_of_truth": "COMMIT",
+    "derived_from": "pnc:PNC-J28#2",
+    "rationale": "PNC."
+   },
+   {
+    "stage": "execute-track",
+    "n": 4,
+    "action": "Status RECEIVED/PROCESSING/COMPLETED/REJECTED with UETR and webhooks",
+    "actor": "BANK_SYSTEM",
+    "channel": "API_TREASURY_PORTAL",
+    "job_step": "MONITOR",
+    "moment_of_truth": "STATUS_CHECK",
+    "derived_from": "wells-fargo:WF-J22#4; fifth-third:FITB-J19#3",
+    "rationale": "WF statuses; Fifth Third webhooks."
+   },
+   {
+    "stage": "confirm-complete",
+    "n": 5,
+    "action": "Delivery notice and remittance advice for auto cash application",
+    "actor": "BANK_SYSTEM",
+    "channel": "API_TREASURY_PORTAL",
+    "job_step": "CONCLUDE",
+    "moment_of_truth": "ARRIVAL",
+    "derived_from": "pnc:PNC-J28#4",
+    "rationale": "PNC."
+   },
+   {
+    "stage": "exception",
+    "n": 6,
+    "action": "Reject reason codes; return request via RFI/RFP messaging",
+    "actor": "BANK_SYSTEM",
+    "channel": "API_TREASURY_PORTAL",
+    "job_step": "RESOLVE",
+    "moment_of_truth": "FAILURE_RECOVERY",
+    "derived_from": "wells-fargo:WF-J22#6; pnc:PNC-J28#5; fifth-third:FITB-J19#4",
+    "rationale": "Network-native exception messages."
+   },
+   {
+    "stage": "support",
+    "n": 7,
+    "action": "Treasury client service",
+    "actor": "CUSTOMER",
+    "channel": "PHONE",
+    "job_step": "RESOLVE",
+    "moment_of_truth": null,
+    "derived_from": "pnc:PNC-J28#6",
+    "rationale": "Phone."
+   }
+  ],
+  "id": "CJ-COMMERCIAL-INSTANT",
+  "title": "Commercial instant payments (RTP/FedNow) via API or treasury portal — sketch",
+  "product": "rtp",
+  "segment": "commercial",
+  "direction": "SEND",
+  "report_version": "2026-11-06-v1"
+ }
+]
