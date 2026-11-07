@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "acd85533cbd7144972bb06524fcafa18290ca0543c1a5098080b06a1737a8fbd",
+  "content_sha256": "0b83d516064b4df2226b65c65bbf1d92f624c6e1101602e0a4a1151fc7e19c8e",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -91,17 +91,17 @@ Where it sits in the bank's app and site: Sign-on wellsoffice.ceo.wellsfargo.com
 - `WF-J23` — limits: Wire limits at company/account/user level[^13]
 - `WF-J25` — limits: Wire limits at company/account/user level[^14]
 
-[^1]: kj · product/WF-P13 · 8d686fdb6385
-[^2]: kj · sub-product/WF-P13-S01 · d47d872c35b3
-[^3]: kj · sub-product/WF-P13-S02 · fcdcd0d9bd23
-[^4]: kj · sub-product/WF-P13-S03 · 09da1d723a6a
-[^5]: kj · sub-product/WF-P13-S04 · b1d1dec413e7
-[^6]: kj · sub-product/WF-P13-S05 · f44e78fc1421
-[^7]: kj · sub-product/WF-P13-S06 · d87de4a70317
-[^8]: kj · sub-product/WF-P13-S07 · f793bcdc6041
-[^9]: kj · sub-product/WF-P13-S08 · c4c278b878d7
-[^10]: kj · journey/WF-J20 · a09dfa7d417c
-[^11]: kj · journey/WF-J21 · a9e16e59c03f
-[^12]: kj · journey/WF-J22 · 30a8718f1eaf
-[^13]: kj · journey/WF-J23 · 194624059efa
-[^14]: kj · journey/WF-J25 · 982023d3f4b5
+[^1]: kj · product/WF-P13 · b3c19188f55a
+[^2]: kj · sub-product/WF-P13-S01 · ded60df73563
+[^3]: kj · sub-product/WF-P13-S02 · 05565cc0302e
+[^4]: kj · sub-product/WF-P13-S03 · 4c6b4d5ffa9a
+[^5]: kj · sub-product/WF-P13-S04 · 018bb34f5188
+[^6]: kj · sub-product/WF-P13-S05 · 0e0fdb067b70
+[^7]: kj · sub-product/WF-P13-S06 · d815ddabce53
+[^8]: kj · sub-product/WF-P13-S07 · 282f71a0fbdc
+[^9]: kj · sub-product/WF-P13-S08 · 7b6897ce2e68
+[^10]: kj · journey/WF-J20 · aed31b6fcb25
+[^11]: kj · journey/WF-J21 · f36035bd9611
+[^12]: kj · journey/WF-J22 · 1ca66149586f
+[^13]: kj · journey/WF-J23 · d8e43801cb3c
+[^14]: kj · journey/WF-J25 · 4d80482f689e

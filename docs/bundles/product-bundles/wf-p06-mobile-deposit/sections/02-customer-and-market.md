@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P06",
   "line_of_business": "wf-cbl",
-  "content_sha256": "248020f44669efee8f89dacbc80d80ecccf9ae67f0ed2f5032a074e1c66cb5a3",
+  "content_sha256": "0eb8c6e4cf7efcc1dd200ca5c2a94b973612806abe14d1034510db1dbaddd623",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -52,7 +52,7 @@ Network or vendor: Wells Fargo (vendor not disclosed).[^1]
 - `WF-J13` Consumer deposits a check with Mobile Deposit — persona: Consumer depositing a paycheck; goal: “Deposit a check without visiting a branch”[^3]
 - `WF-J19` Small business deposits checks via mobile and manages delegate access — persona: Retail store owner with a bookkeeper; goal: “Deposit customer checks and let staff view/transact safely”[^4]
 
-[^1]: kj · product/WF-P06 · aa0e6fda3732
-[^2]: kj · customer-journey/CJ-MOBILE-DEPOSIT · 6dd6d232e8bd
-[^3]: kj · journey/WF-J13 · e4ae53b47a45
-[^4]: kj · journey/WF-J19 · 2f91942d8e13
+[^1]: kj · product/WF-P06 · 7447c97a0fac
+[^2]: kj · customer-journey/CJ-MOBILE-DEPOSIT · c134e8cc0f1e
+[^3]: kj · journey/WF-J13 · 0dcdd11b8e8d
+[^4]: kj · journey/WF-J19 · 2d1ad618854b

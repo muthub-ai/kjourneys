@@ -7,7 +7,7 @@
  "segment": "consumer",
  "customer_goal": "Get paid immediately, any day",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,33 +58,33 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -112,24 +112,24 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s028",
       "src-citi-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s028",
       "src-citi-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -157,22 +157,22 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s018"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s018"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -200,22 +200,22 @@
     "action": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s015"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s015"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -234,7 +234,7 @@
      "screen": null
     }
    ],
-   "frontstage": "",
+   "frontstage": "For commercial receivers, Citi's Treasury Solutions Guide states: 'A sender may request that you return funds sent through the service. If Citi receives such a return request, we will contact you through usual service or relationship channels' and return is 'entirely voluntary'. No consumer-side equivalent is published; the consumer path stays INFERRED.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -243,22 +243,36 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s014"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s014",
+      "src-citi-s981"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-citi-s014",
+      "src-citi-s981"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s014"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s014",
+      "src-citi-s981"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -286,52 +300,52 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -345,7 +359,7 @@
   }
  ],
  "source_journey_id": "CITI-J13",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "CITI-P10-S01",
  "channels": {
   "entry": [
@@ -369,7 +383,7 @@
    "resolution": null,
    "basis": "inferred",
    "source_ids": [
-    "src-mi-2026-11-06-v1",
+    "src-mi-2026-11-07-v2",
     "src-citi-s024",
     "src-citi-s032"
    ]

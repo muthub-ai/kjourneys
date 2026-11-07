@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P03",
   "line_of_business": "wf-cbl",
-  "content_sha256": "2600beb00a3f2d94b3dd75a85a45f93bd003fe955614824c5c6577cc61339876",
+  "content_sha256": "35823f22c354f125085c0c9435818e187fc3dadae46b981b8cb4a52da92c7e6b",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -53,21 +53,21 @@ MI documented 4 journey(s) for it, delivering 4 customer journey(s); they carry 
 - **medium** · Review & authorize · Business Bill Pay has no dual control; any 'View and Transact' delegate can pay.[^13]
 - **low** · Manage · Public Bill Pay FAQs omit edit/cancel and return handling (deferred to post-sign-on Help).[^14]
 
-[^1]: kj · product/WF-P03 · b839aacb8026
+[^1]: kj · product/WF-P03 · 0c4750f70904
 [^2]: kj · assignment/WF-P03 · e2aaf98a158a
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P03-S01 · f5bd218ab193
-[^5]: kj · sub-product/WF-P03-S02 · 41e23afe6f1e
-[^6]: kj · sub-product/WF-P03-S03 · 4de9c1aaf8f5
-[^7]: kj · sub-product/WF-P03-S04 · e6c346f56e63
-[^8]: kj · journey/WF-J07 · add9e5f0ca96
-[^9]: kj · journey/WF-J08 · 3a462c0bcc44
-[^10]: kj · journey/WF-J09 · 92c2140a6c2a
-[^11]: kj · journey/WF-J17 · adbdce251781
-[^12]: kj · finding/GAP-WF-0021 · 6a96d04bb8de
-[^13]: kj · finding/GAP-WF-0031 · 2c6179b4c9e0
-[^14]: kj · finding/GAP-WF-0020 · 7a3608b53b50
-[^15]: kj · finding/GAP-WF-0024 · acf7de526324
-[^16]: kj · finding/STR-WF-0010 · e804199b7d4b
-[^17]: kj · finding/STR-WF-0011 · cdaca39c7bba
-[^18]: kj · finding/STR-WF-0016 · 0796d10725fb
+[^4]: kj · sub-product/WF-P03-S01 · ef7e8dc2e01b
+[^5]: kj · sub-product/WF-P03-S02 · 800c26956d68
+[^6]: kj · sub-product/WF-P03-S03 · be9a70601860
+[^7]: kj · sub-product/WF-P03-S04 · e26a28ffd5a7
+[^8]: kj · journey/WF-J07 · 8270f6fa66c5
+[^9]: kj · journey/WF-J08 · 43861b5c7ba6
+[^10]: kj · journey/WF-J09 · 57b4cafbf531
+[^11]: kj · journey/WF-J17 · 161d120bfa87
+[^12]: kj · finding/GAP-WF-0021 · 5e5beba3e875
+[^13]: kj · finding/GAP-WF-0030 · 7bc98ff7c9c1
+[^14]: kj · finding/GAP-WF-0020 · 47488cd765b0
+[^15]: kj · finding/GAP-WF-0023 · bb31f6be7f9e
+[^16]: kj · finding/STR-WF-0011 · 783b030bc6fa
+[^17]: kj · finding/STR-WF-0012 · fe40b315e4b6
+[^18]: kj · finding/STR-WF-0017 · caf214179018

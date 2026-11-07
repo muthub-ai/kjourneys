@@ -7,7 +7,7 @@
  "segment": "consumer",
  "customer_goal": "Stop a merchant from debiting my account",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,22 +58,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -101,33 +101,33 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -155,22 +155,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -198,22 +198,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -232,7 +232,7 @@
      "screen": null
     }
    ],
-   "frontstage": "",
+   "frontstage": "Agreement text (Citi Alliance CDAA 6.3, eff. Feb 13, 2024): 'If you request a stop payment by phone, we may also ask you to confirm your request in writing within two (2) weeks'; Citi 'may require that you confirm, in writing or orally, that you have previously revoked your authorization with the originator (payee)'; request must arrive 'at least three (3) Business Days before the transfer is scheduled'; 'Payment cannot be stopped on a transfer that has already been paid or that is in the process of being paid.' The on-screen confirmation in Citi Online is not documented; mainline CDAA 8-9 still unreadable, so step stays INFERRED.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -241,22 +241,36 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s031"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s031",
+      "src-citi-s978"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-citi-s031",
+      "src-citi-s978"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s031"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s031",
+      "src-citi-s978"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -284,22 +298,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -327,22 +341,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -370,22 +384,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -413,52 +427,52 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s001",
       "src-citi-s031",
       "src-citi-s028"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -472,7 +486,7 @@
   }
  ],
  "source_journey_id": "CITI-J15",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "CITI-P04-S04",
  "channels": {
   "entry": [
@@ -498,7 +512,7 @@
    "resolution": null,
    "basis": "disclosed",
    "source_ids": [
-    "src-mi-2026-11-06-v1",
+    "src-mi-2026-11-07-v2",
     "src-citi-s031"
    ]
   }

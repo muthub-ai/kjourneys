@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "9940ef697c630660d0e5d1b5c1de054e32d5a201c8be6e7466bd4759031327fb",
+  "content_sha256": "42a1ec76677a1d1a720a4dc34f3633af900468d98738164e8296064db37d5e45",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -67,10 +67,10 @@
 - `WF-J11` · Wire fraud / changed payment instructions scam: Call immediately 1-866-867-5568; 'wire transfers typically cannot be canceled or reversed' → Rarely recovered[^6]
 - `WF-J18` · Return: Converted back; may be less → [^7]
 
-[^1]: kj · finding/GAP-WF-0030 · f8866096040e
-[^2]: kj · finding/GAP-WF-0016 · a80da4c53fb1
-[^3]: kj · step/WF-J10#M01 · 0aa77c24b856
-[^4]: kj · step/WF-J18#M04 · df0f5a6191a0
-[^5]: kj · journey/WF-J10 · 47452d55448b
-[^6]: kj · journey/WF-J11 · e4ed66bc72f0
-[^7]: kj · journey/WF-J18 · 7f1916a52a55
+[^1]: kj · finding/GAP-WF-0029 · a87fe000d932
+[^2]: kj · finding/GAP-WF-0016 · 3613671e20fa
+[^3]: kj · step/WF-J10#M01 · 8d1eef4271c1
+[^4]: kj · step/WF-J18#M04 · f441c075049b
+[^5]: kj · journey/WF-J10 · ca29755fbe66
+[^6]: kj · journey/WF-J11 · 5759e78f0c18
+[^7]: kj · journey/WF-J18 · da9c57fe16e4

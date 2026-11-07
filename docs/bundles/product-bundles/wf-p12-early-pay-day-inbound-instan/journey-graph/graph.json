@@ -32,25 +32,25 @@
    "label": "Consumer receives an instant credit and pays a biller Request for Payment (payer side)"
   },
   {
-   "id": "finding/GAP-WF-0023",
-   "type": "gap",
-   "label": "How inbound RTP/FedNow credits are labelled and alerted is unpublished.",
-   "severity": "medium"
-  },
-  {
-   "id": "finding/GAP-WF-0038",
+   "id": "finding/GAP-WF-0037",
    "type": "gap",
    "label": "Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit ",
    "severity": "medium"
   },
   {
-   "id": "finding/GAP-WF-0039",
+   "id": "finding/GAP-WF-0038",
    "type": "gap",
    "label": "Observed: the web 'Manage Alerts' page offers checking accounts only balance (ze",
    "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0015",
+   "id": "finding/STR-WF-0001",
+   "type": "strength",
+   "label": "Second-wave evidence: inbound RTP/FedNow credits display as 'Instant Pmt' with t",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0016",
    "type": "strength",
    "label": "Early Pay Day applies automatically with no enrollment.",
    "severity": "low"
@@ -84,7 +84,7 @@
   },
   {
    "from": "journey/WF-J15",
-   "to": "finding/GAP-WF-0023",
+   "to": "finding/GAP-WF-0037",
    "rel": "finding"
   },
   {
@@ -94,12 +94,12 @@
   },
   {
    "from": "journey/WF-J15",
-   "to": "finding/GAP-WF-0039",
+   "to": "finding/STR-WF-0001",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J15",
-   "to": "finding/STR-WF-0015",
+   "to": "finding/STR-WF-0016",
    "rel": "finding"
   }
  ]

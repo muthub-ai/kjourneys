@@ -7,7 +7,7 @@
  "segment": "small-business",
  "customer_goal": "Send an international wire without visiting a branch",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,24 +58,24 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050",
       "src-us-bank-s049"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050",
       "src-us-bank-s049"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -103,22 +103,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -146,36 +146,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -209,22 +209,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -233,6 +233,85 @@
   {
    "id": "urn:kos:moment:us-bank:usb-j17:m05",
    "code": "M05",
+   "stage": "review-authorize",
+   "title": "For multi-owner businesses, a second owner approves the digital wire…",
+   "customer_action": "For multi-owner businesses, a second owner approves the digital wire before it is released",
+   "action": "For multi-owner businesses, a second owner approves the digital wire before it is released",
+   "touchpoints": [
+    {
+     "channel": "web",
+     "screen": "Approval email with 'approval deadline'; notification at login to mobile or online banking"
+    }
+   ],
+   "frontstage": "'If your business has more than one owner, at least two owners are required to send a digital wire.' 'A digital wire can't move forward until approved by another owner.' A banker at a branch can send without secondary authorization. KB says 'digital wire' without distinguishing domestic and international, so this step applies to international USD wires by inference.",
+   "actor": "customer",
+   "decision": "Approve before deadline or wire does not proceed",
+   "notification": "Email to other owners; in-app notification; email to all eligible owners once approved",
+   "source_step": 5,
+   "evidence": {
+    "action": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s982",
+      "src-us-bank-s983",
+      "src-us-bank-s994"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "touchpoint": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s982",
+      "src-us-bank-s983",
+      "src-us-bank-s994"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s982",
+      "src-us-bank-s983",
+      "src-us-bank-s994"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s982",
+      "src-us-bank-s983",
+      "src-us-bank-s994"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    }
+   },
+   "fail_points": [
+    {
+     "id": "fp-us-bank-usb-j17-5",
+     "text": "Same-day-only international wires (7:30 a.m.–3 p.m. CT) plus a second-owner approval can push a wire past cutoff"
+    }
+   ]
+  },
+  {
+   "id": "urn:kos:moment:us-bank:usb-j17:m06",
+   "code": "M06",
    "stage": "execute-track",
    "title": "Same-day only 7:30 a.m.–3 p.m. CT business days; cannot future-date",
    "customer_action": null,
@@ -247,46 +326,46 @@
    "actor": "bank-system",
    "decision": null,
    "notification": "email status (inferred)",
-   "source_step": 5,
+   "source_step": 6,
    "evidence": {
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
   {
-   "id": "urn:kos:moment:us-bank:usb-j17:m06",
-   "code": "M06",
+   "id": "urn:kos:moment:us-bank:usb-j17:m07",
+   "code": "M07",
    "stage": "confirm-complete",
    "title": "Email updates (inferred from domestic)",
    "customer_action": null,
@@ -297,39 +376,53 @@
      "screen": null
     }
    ],
-   "frontstage": "",
+   "frontstage": "For business digital wires the bank emails all eligible (digitally enrolled) owners once a second owner approves; status under External transfers and wires > Manage external transfers (S983). KB does not say whether international wires get the same emails.",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
-   "source_step": 6,
+   "source_step": 7,
    "evidence": {
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-us-bank-s005"
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s005",
+      "src-us-bank-s983"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s005",
+      "src-us-bank-s983"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-us-bank-s005"
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s005",
+      "src-us-bank-s983"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
    }
   },
   {
-   "id": "urn:kos:moment:us-bank:usb-j17:m07",
-   "code": "M07",
+   "id": "urn:kos:moment:us-bank:usb-j17:m08",
+   "code": "M08",
    "stage": "manage",
    "title": "No cancel once sent",
    "customer_action": "No cancel once sent",
@@ -344,35 +437,35 @@
    "actor": "customer",
    "decision": null,
    "notification": null,
-   "source_step": 7,
+   "source_step": 8,
    "evidence": {
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s050"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
   {
-   "id": "urn:kos:moment:us-bank:usb-j17:m08",
-   "code": "M08",
+   "id": "urn:kos:moment:us-bank:usb-j17:m09",
+   "code": "M09",
    "stage": "exception",
    "title": "Recall/trace undocumented",
    "customer_action": null,
@@ -387,33 +480,33 @@
    "actor": "bank-system",
    "decision": null,
    "notification": null,
-   "source_step": 8,
+   "source_step": 9,
    "evidence": {
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     }
    }
   },
   {
-   "id": "urn:kos:moment:us-bank:usb-j17:m09",
-   "code": "M09",
+   "id": "urn:kos:moment:us-bank:usb-j17:m10",
+   "code": "M10",
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
@@ -428,63 +521,63 @@
    "actor": "customer",
    "decision": null,
    "notification": null,
-   "source_step": 9,
+   "source_step": 10,
    "evidence": {
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
    },
    "fail_points": [
     {
-     "id": "fp-us-bank-usb-j17-9",
+     "id": "fp-us-bank-usb-j17-10",
      "text": "No in-app chat with a human documented; phone is the escalation path for every exception"
     }
    ]
   },
   {
-   "id": "urn:kos:moment:us-bank:usb-j17:m10",
-   "code": "M10",
+   "id": "urn:kos:moment:us-bank:usb-j17:m11",
+   "code": "M11",
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
@@ -499,41 +592,41 @@
    "actor": "customer",
    "decision": null,
    "notification": null,
-   "source_step": 10,
+   "source_step": 11,
    "evidence": {
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s012",
       "src-us-bank-s017"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s012",
       "src-us-bank-s017"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s012",
       "src-us-bank-s017"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -541,7 +634,7 @@
   }
  ],
  "source_journey_id": "USB-J17",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "USB-P04-S02",
  "channels": {
   "entry": [
@@ -566,7 +659,18 @@
    "resolution": null,
    "basis": "inferred",
    "source_ids": [
-    "src-mi-2026-11-06-v1"
+    "src-mi-2026-11-07-v2"
+   ]
+  },
+  {
+   "trigger": "Second owner does not approve the digital wire",
+   "customer_experience": "Wire stays pending; approver has an emailed approval deadline",
+   "bank_handling": "'A digital wire can't move forward until approved by another owner'",
+   "resolution": "Owner approves, or the wire is sent by a banker at a branch without secondary authorization",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-us-bank-s982"
    ]
   }
  ],

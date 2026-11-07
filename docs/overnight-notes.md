@@ -2,6 +2,16 @@
 
 What was built while you were away, and what needs your decision. Newest first.
 
+## MI v2 landed and is live
+
+`reports/2026-11-07-v2/` arrived at 01:09 Central and is imported, checked, pushed and republished.
+
+- **Wells Fargo:** index **69.6, #3** (v1: 69.3, #3), domestic core 68.4. Only the ACH-origination rail mean moved (2.33 → 2.44). 63 findings (24 strengths, 6 high, 18 medium, 15 low); one is new, STR-WF-0024 (domestic wire: in-flow routing-number lookup). Nothing was dropped.
+- **Ranking:** Chase 74.4, Citi 72.7, Wells Fargo 69.6, Bank of America 68.6, PNC 68.1, Truist 63.5, U.S. Bank 63.4, Fifth Third 54.3, TD Bank 53.8, Capital One 52.0. The top 10 order is unchanged from v1.
+- **The index now reproduces.** v2 publishes its rule (25 × the mean of eleven rail means, push-to-card excluded). The recompute follows it and matches MI exactly, so the "totals don't match" callout is gone. To be candid about v1: my recompute there averaged all cells instead of rail means, so part of v1's 69.3 vs 61.8 gap was method, not only MI's rounding defect.
+- **What I changed to take v2:** half-point scores (cells are means), duplicate v1 sources cleared on replace, `supersedes` accepted in manifests. See CHANGELOG 0.9.0.
+- **For you:** v2 merges a Wells Fargo logged-in session as its own evidence tier (WF-J29, "observed session"). You deferred the public-repo/observed-session question; it now covers a whole journey, not just one source.
+
 ## Decisions to confirm
 
 1. **Commercial products' line of business.** Treasury management and payments is reported in both Commercial Banking and Corporate and Investment Banking (Q3 2026 10-Q). I made Commercial Banking the owner, with Corporate and Investment Banking as "also serves", for WF-P13 Vantage, WF-P14 Gateway APIs and WF-P15 commercial receivables. Vantage also lists Consumer Banking and Lending, because small businesses use it. Change these in `registries/lines-of-business.json`.
@@ -24,3 +34,4 @@ Checked every 30 minutes. See the log below; when v2 lands it is imported, every
 
 | Time (Central) | Result |
 |---|---|
+| 01:40 | v2 found on main; imported, all checks passed, pushed, republished |

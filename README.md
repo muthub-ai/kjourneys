@@ -2,7 +2,7 @@
 
 A git-native data product for customer journeys in banking. It holds Wells Fargo service blueprints and sourced, dated competitor facts on the same stages. Every change is validated, reviewed and versioned, and is published as an executive journey site plus machine-readable outputs.
 
-First study: **money movement** across the ten largest US retail banks: 16 payment rails (Zelle, request to pay, ACH, wires, remittance, RTP, FedNow, push to card, bill pay, internal transfers, mobile deposit, cash, wallets), nine journey stages from Discover to Support. The first MI delivery (`reports/2026-11-06-v1/`) supplies 236 journeys, 2,176 steps, 419 gaps and strengths, 0–4 stage scores and 16 capability flags per rail, all traced to 1,156 sources.
+First study: **money movement** across the ten largest US retail banks: 16 payment rails (Zelle, request to pay, ACH, wires, remittance, RTP, FedNow, push to card, bill pay, internal transfers, mobile deposit, cash, wallets), nine journey stages from Discover to Support. The current MI delivery (`reports/2026-11-07-v2/`, which supersedes `2026-11-06-v1/`) supplies 236 journeys, 2,179 steps, 444 gaps and strengths, 0–4 stage scores (half points are means across customer journeys) and 16 capability flags per rail, all traced to 1,374 sources.
 
 > **Prototype.** The competitor data is public-source competitive intelligence, with CI legal review still pending, so share the site only after that review. The Wells Fargo backstage (processes, controls, app IDs) is sample data. Real bank internals belong in enterprise GitHub (see [architecture §6](docs/architecture.md#6-governance)).
 
@@ -11,8 +11,8 @@ First study: **money movement** across the ten largest US retail banks: 16 payme
 ```bash
 pip install -r requirements.txt
 scripts/refresh.sh                                   # validate, test, rebuild site + exports
-scripts/refresh.sh reports/2026-11-06-v1             # import + ingest an MI report first (rerunnable)
-scripts/refresh.sh reports/2026-11-06-v1 --commit    # commit on the current branch when it passes
+scripts/refresh.sh reports/2026-11-07-v2             # import + ingest an MI report first (rerunnable)
+scripts/refresh.sh reports/2026-11-07-v2 --commit    # commit on the current branch when it passes
 open dist/index.html
 ```
 

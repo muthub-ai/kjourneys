@@ -7,7 +7,7 @@
  "segment": "small-business",
  "customer_goal": "Get paid on invoices electronically",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,22 +58,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -101,24 +101,24 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s045",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s045",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -146,22 +146,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -189,22 +189,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -223,33 +223,50 @@
      "screen": "Autobooks"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Autobooks (the TD Online Accounting provider) handles payer disputes: 'Autobooks is responsible to manage any chargeback or disputes to an end resolution.' 'Our processing partner will debit the disputed amount from the customer's business checking account'; 'The business owner is sent an email from Autobooks with details of the dispute'; the business accepts or disputes by a 'reply by' date 'established by the chargeback financial institution'; 'Autobooks will debit a $10 fee from the business checking account for each chargeback'.",
    "actor": "third-party",
    "decision": null,
-   "notification": null,
+   "notification": "Email from Autobooks with dispute details (no in-app notice described).",
    "source_step": 5,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-td-bank-s046"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s046",
+      "src-td-bank-s976",
+      "src-td-bank-s977"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s046",
+      "src-td-bank-s976",
+      "src-td-bank-s977"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-td-bank-s046"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s046",
+      "src-td-bank-s976",
+      "src-td-bank-s977"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "medium",
+     "x-mi_evidence": "THIRD_PARTY"
     }
    }
   },
@@ -275,44 +292,44 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s046"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -346,39 +363,39 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s006",
       "src-td-bank-s007",
       "src-td-bank-s022"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s006",
       "src-td-bank-s007",
       "src-td-bank-s022"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s006",
       "src-td-bank-s007",
       "src-td-bank-s022"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -392,7 +409,7 @@
   }
  ],
  "source_journey_id": "TD-J16",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "TD-P13-S01",
  "channels": {
   "entry": [
@@ -410,7 +427,20 @@
   ],
   "basis": "disclosed"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Payer disputes a card payment or returns an ACH payment received via TD Online Accounting",
+   "customer_experience": "Business receives an email from Autobooks with dispute details and a 'reply by' date; disputed amount and a $10 fee are debited from the business checking account.",
+   "bank_handling": "Autobooks and its processing partner manage the chargeback with the card issuer; TD is not described as a party (vendor identity per S046).",
+   "resolution": "If the business wins, funds are returned to its checking account; otherwise they go to the cardholder.",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-td-bank-s976",
+    "src-td-bank-s977"
+   ]
+  }
+ ],
  "notifications": [],
  "assessment": "Embedded fintech (Autobooks) rather than native.",
  "x-mi_evidence": "CONFIRMED_BANK",

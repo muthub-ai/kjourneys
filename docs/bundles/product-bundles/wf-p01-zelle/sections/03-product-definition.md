@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "60f8d0a7beb7d40d5c9ae0ff9d269b788b98534fe206781981039d2418266901",
+  "content_sha256": "a18e6af117d28787e7cf6d890666bf67e18943617bdc06776eb476e2212143fd",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -90,14 +90,14 @@ Where it sits in the bank's app and site: Mobile: 'Zelle®' in bottom navigation
 - `WF-J28` — cutoffs: Report within 60 days (Reg E); 2 business days for device loss tier[^10]
 - `WF-J29` — cutoffs: Scheduled payments cancellable until 11:30 pm PT the day before (Help); fees: None shown; limits: Daily and 30-day limits shown inline on the amount screen (values not recorded)[^11]
 
-[^1]: kj · product/WF-P01 · 7db18a666d60
-[^2]: kj · sub-product/WF-P01-S01 · dac14fe19dea
-[^3]: kj · sub-product/WF-P01-S02 · 22b37fa1ea11
-[^4]: kj · sub-product/WF-P01-S03 · 677aab3d9fbb
-[^5]: kj · sub-product/WF-P01-S04 · 05811c9bbdb1
-[^6]: kj · sub-product/WF-P01-S05 · 8377db259ff9
-[^7]: kj · journey/WF-J01 · 251e989b61ea
-[^8]: kj · journey/WF-J02 · 14bc08a80f04
-[^9]: kj · journey/WF-J03 · b89c841e1309
-[^10]: kj · journey/WF-J28 · b20fda0a115f
-[^11]: kj · journey/WF-J29 · d718f795aee2
+[^1]: kj · product/WF-P01 · f217122e121a
+[^2]: kj · sub-product/WF-P01-S01 · fd892338eb7b
+[^3]: kj · sub-product/WF-P01-S02 · 88b81a74ed86
+[^4]: kj · sub-product/WF-P01-S03 · 459b1ae65d26
+[^5]: kj · sub-product/WF-P01-S04 · d167429d7fc3
+[^6]: kj · sub-product/WF-P01-S05 · 9d7ee732e4a6
+[^7]: kj · journey/WF-J01 · c3b8e132fd5c
+[^8]: kj · journey/WF-J02 · 2eca5861046f
+[^9]: kj · journey/WF-J03 · 558dd3d0215c
+[^10]: kj · journey/WF-J28 · cf400c417393
+[^11]: kj · journey/WF-J29 · f76130105e87

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P12",
   "line_of_business": "wf-cbl",
-  "content_sha256": "7910bc017082b440459b1b6959cd330113dd1e79f983999e2f86a7ee22b54e61",
+  "content_sha256": "aca368ee55528eabe3999d0e9876b2613839ca9acef631b6ba6909042abe946c",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -80,8 +80,8 @@ Where it sits in the bank's app and site: Automatic; deposit alerts via 'Manage 
 
 - `WF-J15` — cutoffs: ACH up to 2 business days early; fees: None[^5]
 
-[^1]: kj · product/WF-P12 · d73da35d0cb8
-[^2]: kj · sub-product/WF-P12-S01 · cdbc7b849c06
-[^3]: kj · sub-product/WF-P12-S02 · df182af38e17
-[^4]: kj · sub-product/WF-P12-S03 · 9a2db967acf9
-[^5]: kj · journey/WF-J15 · e61f32bb5fb1
+[^1]: kj · product/WF-P12 · 932e654a57de
+[^2]: kj · sub-product/WF-P12-S01 · c723b9c2703e
+[^3]: kj · sub-product/WF-P12-S02 · 3ac178eec85d
+[^4]: kj · sub-product/WF-P12-S03 · 67cfc08066bd
+[^5]: kj · journey/WF-J15 · c6f5929e58f1

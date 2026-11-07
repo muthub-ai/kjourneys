@@ -457,7 +457,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "low",
@@ -466,6 +466,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "UNKNOWN"
         }
+      },
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:rtp:score-review-authorize:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "INSTANT-SEND=3: At parity with composite; evidence JPM-J15; INSTANT-RECEIVE-RFP=2: MEDIUM MISSING_CAPABILITY: DSA defines consumer RfP response limits, but no consumer RfP payment UI or help content was found after search. [GAP-JPM-0020]",
+          "report_ref": "Scores sheet",
+          "mi_level": "UNKNOWN"
+        },
+        "supersedes": "urn:kos:assertion:jpmorgan-chase:rtp:score-review-authorize:2"
       }
     ],
     "attr-score-execute-track": [

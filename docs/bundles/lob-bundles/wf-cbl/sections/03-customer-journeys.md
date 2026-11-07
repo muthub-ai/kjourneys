@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "8ad0143967b036ed8757bd9a78cf3e0345726ee21a5e16864f86c98605d89fb5",
+  "content_sha256": "af517867b1c0e88ae8c9e3834bdaa2e8aa4763e756133b0bc408e9cbd47ada77",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -52,35 +52,35 @@
 - **Consumer requests money or splits a bill with Zelle** — delivered by `WF-J02`[^29][^30]
 - **Small business gets paid with a Zelle tag/QR and pays vendors under controls** — delivered by `WF-J03`[^31][^32]
 
-[^1]: kj · customer-journey/CJ-ACH-EXT-SEND · 74e77a0ea302
-[^2]: kj · journey/WF-J06 · ee855eb97a21
-[^3]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9
-[^4]: kj · journey/WF-J17 · adbdce251781
-[^5]: kj · journey/WF-J18 · 7f1916a52a55
-[^6]: kj · journey/WF-J16 · 67eed586f4fc
-[^7]: kj · customer-journey/CJ-BILLPAY-EBILL-MANAGE · 10f51b6b94d0
-[^8]: kj · journey/WF-J08 · 3a462c0bcc44
-[^9]: kj · customer-journey/CJ-BILLPAY-SEND · 2108d8b1b57d
-[^10]: kj · journey/WF-J07 · add9e5f0ca96
-[^11]: kj · customer-journey/CJ-INSTANT-RECEIVE-RFP · faad41fab3cd
-[^12]: kj · journey/WF-J09 · 92c2140a6c2a
-[^13]: kj · journey/WF-J15 · e61f32bb5fb1
-[^14]: kj · customer-journey/CJ-INTERNAL-TRANSFER · 2d8719aff17e
-[^15]: kj · journey/WF-J05 · 961155a3b7eb
-[^16]: kj · customer-journey/CJ-MOBILE-DEPOSIT · 6dd6d232e8bd
-[^17]: kj · journey/WF-J13 · e4ae53b47a45
-[^18]: kj · customer-journey/CJ-REMITTANCE-SEND · e13395512089
-[^19]: kj · journey/WF-J12 · 94fc27116502
-[^20]: kj · customer-journey/CJ-WIRE-DOM-CONSUMER-SEND · 5229e78a1d68
-[^21]: kj · journey/WF-J10 · 47452d55448b
-[^22]: kj · customer-journey/CJ-WIRE-INTL-CONSUMER-SEND · eee82a62d089
-[^23]: kj · journey/WF-J11 · e4ed66bc72f0
-[^24]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 54cdbe9360ea
-[^25]: kj · journey/WF-J01 · 251e989b61ea
-[^26]: kj · journey/WF-J28 · b20fda0a115f
-[^27]: kj · journey/WF-J29 · d718f795aee2
-[^28]: kj · journey/WF-J04 · 292f135b2287
-[^29]: kj · customer-journey/CJ-ZELLE-REQUEST · ff349a4a3d24
-[^30]: kj · journey/WF-J02 · 14bc08a80f04
-[^31]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · 1a1ab5a1e86e
-[^32]: kj · journey/WF-J03 · b89c841e1309
+[^1]: kj · customer-journey/CJ-ACH-EXT-SEND · 2ec667c942b3
+[^2]: kj · journey/WF-J06 · 5ac14c85b11a
+[^3]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · cfd851265b11
+[^4]: kj · journey/WF-J17 · 161d120bfa87
+[^5]: kj · journey/WF-J18 · da9c57fe16e4
+[^6]: kj · journey/WF-J16 · 38a8b7c0348a
+[^7]: kj · customer-journey/CJ-BILLPAY-EBILL-MANAGE · 24c5b603c3ec
+[^8]: kj · journey/WF-J08 · 43861b5c7ba6
+[^9]: kj · customer-journey/CJ-BILLPAY-SEND · ebd10948d1ce
+[^10]: kj · journey/WF-J07 · 8270f6fa66c5
+[^11]: kj · customer-journey/CJ-INSTANT-RECEIVE-RFP · f0a2b8d96952
+[^12]: kj · journey/WF-J09 · 57b4cafbf531
+[^13]: kj · journey/WF-J15 · c6f5929e58f1
+[^14]: kj · customer-journey/CJ-INTERNAL-TRANSFER · edfddfd7c154
+[^15]: kj · journey/WF-J05 · 8cc99d20c29f
+[^16]: kj · customer-journey/CJ-MOBILE-DEPOSIT · c134e8cc0f1e
+[^17]: kj · journey/WF-J13 · 0dcdd11b8e8d
+[^18]: kj · customer-journey/CJ-REMITTANCE-SEND · c2ae3445c9e7
+[^19]: kj · journey/WF-J12 · 98b1c3096cb7
+[^20]: kj · customer-journey/CJ-WIRE-DOM-CONSUMER-SEND · ba0b56b8b7ed
+[^21]: kj · journey/WF-J10 · ca29755fbe66
+[^22]: kj · customer-journey/CJ-WIRE-INTL-CONSUMER-SEND · 556725478191
+[^23]: kj · journey/WF-J11 · 5759e78f0c18
+[^24]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 1f6b6a0e7521
+[^25]: kj · journey/WF-J01 · c3b8e132fd5c
+[^26]: kj · journey/WF-J28 · cf400c417393
+[^27]: kj · journey/WF-J29 · f76130105e87
+[^28]: kj · journey/WF-J04 · 2e981edf18c3
+[^29]: kj · customer-journey/CJ-ZELLE-REQUEST · cda300f4d27d
+[^30]: kj · journey/WF-J02 · 2eca5861046f
+[^31]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · dd3d94ee596e
+[^32]: kj · journey/WF-J03 · 558dd3d0215c

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P06",
   "line_of_business": "wf-cbl",
-  "content_sha256": "36b341375aefd5807373247c8c11d1752ea67680fe1bc319c813efcff14c454d",
+  "content_sha256": "9895d4fce9cd80c4932f3398086634769464f66bf5b41f37272ef5382fd5dcbe",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -51,12 +51,12 @@ MI documented 2 journey(s) for it, delivering 1 customer journey(s); they carry 
 
 - **low** · Exception · Returned-check notice is a written letter; no digital return notification documented.[^7]
 
-[^1]: kj · product/WF-P06 · aa0e6fda3732
+[^1]: kj · product/WF-P06 · 7447c97a0fac
 [^2]: kj · assignment/WF-P06 · 14c5b738cdf5
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P06-S01 · 91e8f2a090b8
-[^5]: kj · journey/WF-J13 · e4ae53b47a45
-[^6]: kj · journey/WF-J19 · 2f91942d8e13
-[^7]: kj · finding/GAP-WF-0032 · aaf39ff632ca
-[^8]: kj · finding/STR-WF-0012 · 3dff85a0574b
-[^9]: kj · finding/STR-WF-0013 · ff17d44548b8
+[^4]: kj · sub-product/WF-P06-S01 · adf0bd6e0f63
+[^5]: kj · journey/WF-J13 · 0dcdd11b8e8d
+[^6]: kj · journey/WF-J19 · 2d1ad618854b
+[^7]: kj · finding/GAP-WF-0031 · ca82807356e3
+[^8]: kj · finding/STR-WF-0013 · e5a788c526fb
+[^9]: kj · finding/STR-WF-0014 · a216597059a7

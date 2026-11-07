@@ -73,7 +73,7 @@
    "severity": "high"
   },
   {
-   "id": "finding/GAP-WF-0031",
+   "id": "finding/GAP-WF-0030",
    "type": "gap",
    "label": "Business Bill Pay has no dual control; any 'View and Transact' delegate can pay.",
    "severity": "medium"
@@ -85,25 +85,25 @@
    "severity": "low"
   },
   {
-   "id": "finding/GAP-WF-0024",
+   "id": "finding/GAP-WF-0023",
    "type": "gap",
    "label": "RfP instant pay is not marketed; discoverability depends entirely on biller part",
    "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0010",
+   "id": "finding/STR-WF-0011",
    "type": "strength",
    "label": "Bill Pay Payment Guarantee covers late fees and explicitly includes RfP instant ",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0011",
+   "id": "finding/STR-WF-0012",
    "type": "strength",
    "label": "Consumers can pay a biller Request for Payment instantly in mobile Bill Pay (RTP",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0016",
+   "id": "finding/STR-WF-0017",
    "type": "strength",
    "label": "Autopay rules cover full statement, minimum or fixed amount.",
    "severity": "low"
@@ -177,7 +177,7 @@
   },
   {
    "from": "journey/WF-J17",
-   "to": "finding/GAP-WF-0031",
+   "to": "finding/GAP-WF-0030",
    "rel": "finding"
   },
   {
@@ -187,22 +187,22 @@
   },
   {
    "from": "journey/WF-J09",
-   "to": "finding/GAP-WF-0024",
+   "to": "finding/GAP-WF-0023",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J07",
-   "to": "finding/STR-WF-0010",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J09",
    "to": "finding/STR-WF-0011",
    "rel": "finding"
   },
   {
+   "from": "journey/WF-J09",
+   "to": "finding/STR-WF-0012",
+   "rel": "finding"
+  },
+  {
    "from": "journey/WF-J08",
-   "to": "finding/STR-WF-0016",
+   "to": "finding/STR-WF-0017",
    "rel": "finding"
   }
  ]

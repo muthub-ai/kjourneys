@@ -529,7 +529,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -538,6 +538,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:check-deposit-mobile:score-execute-track:3",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity; minor: Second-wave evidence: Remote Deposit Online publishes a six-state deposit status model (Open with Incomplete/Processing/Balanced/Jammed/Cancelled sub-states, Transmitting, Received, Received Pending, Perfected, Perfected Adjusted) and rejected-item reason codes with resubmission rules in its small-business user guide (04-2024, S971). [STR-BAC-0016]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:check-deposit-mobile:score-execute-track:2"
       }
     ],
     "attr-score-confirm-complete": [

@@ -551,7 +551,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "low",
@@ -560,6 +560,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "INFERRED"
         }
+      },
+      {
+        "id": "urn:kos:assertion:pnc:request-to-pay:score-manage:3",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "At parity; minor: No cancel-request step documented (the Zelle guide covers payments, requests and splits with a 14-day expiry but no request-cancel step). [GAP-PNC-0009]",
+          "report_ref": "Scores sheet",
+          "mi_level": "INFERRED"
+        },
+        "supersedes": "urn:kos:assertion:pnc:request-to-pay:score-manage:2"
       }
     ],
     "attr-score-exception": [

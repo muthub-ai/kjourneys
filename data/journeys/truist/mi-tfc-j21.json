@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Pay consumers by email/mobile",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,36 +58,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s026",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s026",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s026",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -115,24 +115,24 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s026",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s026",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -160,24 +160,24 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s001",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s001",
       "src-truist-s915"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -205,22 +205,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-truist-s023"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -228,7 +228,7 @@
   }
  ],
  "source_journey_id": "TFC-J21",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "TFC-P10-S04",
  "channels": {
   "entry": [
@@ -237,9 +237,14 @@
   "other": []
  },
  "status_tracking": {
-  "where": "UNKNOWN",
-  "states": [],
-  "basis": "inferred"
+  "where": "File Transmission Summary Report (secure email to designated recipient once all payments in the file reach a final status); Active/Inactive Token files for pre-validation",
+  "states": [
+   "Delivered",
+   "Sent",
+   "Failed",
+   "Denied"
+  ],
+  "basis": "disclosed"
  },
  "exceptions": [
   {
@@ -249,7 +254,7 @@
    "resolution": "Client corrects the file and resubmits; contact Treasury Solutions client support 800-774-8179.",
    "basis": "disclosed",
    "source_ids": [
-    "src-mi-2026-11-06-v1",
+    "src-mi-2026-11-07-v2",
     "src-truist-s915"
    ]
   }

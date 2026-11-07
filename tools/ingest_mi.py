@@ -35,7 +35,7 @@ def jdump(p, o):                                   # atomic: write a temp file, 
     tmp = p + ".tmp"
     with open(tmp, "w") as f: json.dump(o, f, ensure_ascii=False, indent=2); f.write("\n")
     os.replace(tmp, p)
-MANIFEST_KEYS = {"report_version", "product", "products", "workbook", "title", "produced_by", "received_at", "files", "notes", "import_warnings"}
+MANIFEST_KEYS = {"report_version", "product", "products", "workbook", "title", "produced_by", "received_at", "files", "notes", "import_warnings", "supersedes"}
 EXTRACT_KEYS = {"bank", "product", "facts"}
 FACT_KEYS = {"attribute", "value", "display", "qualifier", "basis", "confidence", "observed_on", "sources", "source_ids", "evidence"}
 SOURCE_KEYS = {"title", "url", "retrieved_at", "kind"}
@@ -61,6 +61,8 @@ version = os.path.basename(rdir.rstrip("/"))
 if not os.path.isfile(os.path.join(rdir, "manifest.json")): sys.exit(f"INGEST FAIL — {args.report_dir}/manifest.json not found (see reports/README.md)")
 man = jload(os.path.join(rdir, "manifest.json"))
 unknown(man, MANIFEST_KEYS, "manifest")
+if "supersedes" in man:   # names the earlier report this one replaces; that report must be in the repo
+    if not os.path.exists(os.path.join(ROOT, "reports", str(man["supersedes"]), "manifest.json")): fail(f"manifest: supersedes {man['supersedes']!r}, which is not in reports/")
 try: datetime.fromisoformat(str(man.get("received_at", "")).replace("Z", "+00:00"))
 except ValueError: fail("manifest: received_at must be an ISO 8601 date-time, e.g. 2026-11-20T17:30:00-06:00")
 for k in ["report_version", "produced_by", "received_at", "files"]:

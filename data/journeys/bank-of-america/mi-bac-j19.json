@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Pay many individuals fast without collecting bank details",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,22 +58,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -101,22 +101,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -132,7 +132,7 @@
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
-     "screen": "Payment execution"
+     "screen": "Payer tracks payment status via 'the Detailed Listing report on CashPro® Online' or file-transmission data [S972]."
     }
    ],
    "frontstage": "",
@@ -144,24 +144,26 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s052",
-      "src-bank-of-america-s053"
+      "src-bank-of-america-s053",
+      "src-bank-of-america-s972"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s052",
-      "src-bank-of-america-s053"
+      "src-bank-of-america-s053",
+      "src-bank-of-america-s972"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -189,22 +191,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -223,31 +225,47 @@
      "screen": "Reporting"
     }
    ],
-   "frontstage": "",
+   "frontstage": "'Unregistered recipients receive notification of funds with a call-to-action to enroll to accept the funds'; 'Reminder Notification – four day reminder' and 'ten day reminder' each 'Provides notice of upcoming expiration'; client can submit a cancellation (cancellation email to recipient) [S972, 2017 collateral]. Expiry period and fallback (check / return to payer) not stated by the bank. A Recipient Select payer FAQ that does not name BofA (S973, THIRD_PARTY, attribution inferred) describes a 5-day action window with 3 reminder emails, then a default check if the payer enabled it, otherwise 'your payment will be cancelled, and a new payment request must be made' – configuration appears client-specific.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
    "source_step": 5,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s972",
+      "src-bank-of-america-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s972",
+      "src-bank-of-america-s973"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s972",
+      "src-bank-of-america-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -273,22 +291,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s053"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -296,7 +314,7 @@
   }
  ],
  "source_journey_id": "BAC-J19",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "BAC-P13-S05",
  "channels": {
   "entry": [
@@ -305,19 +323,21 @@
   "other": []
  },
  "status_tracking": {
-  "where": "CashPro reporting",
+  "where": "Detailed Listing report on CashPro Online (payer side)",
   "states": [],
-  "basis": "inferred"
+  "basis": "disclosed"
  },
  "exceptions": [
   {
    "trigger": "Recipient never enrolls",
-   "customer_experience": "UNKNOWN",
+   "customer_experience": "Unregistered recipient gets a funds notification with call-to-action to enroll, then reminders (4-day and 10-day in 2017 collateral) warning of upcoming expiration; payment expires or the client cancels it. Expiry length and fallback not public (Recipient Select payer FAQs suggest client-configurable default check vs cancellation).",
    "bank_handling": "UNKNOWN",
    "resolution": "UNKNOWN",
    "basis": "inferred",
    "source_ids": [
-    "src-mi-2026-11-06-v1"
+    "src-mi-2026-11-07-v2",
+    "src-bank-of-america-s972",
+    "src-bank-of-america-s973"
    ]
   }
  ],

@@ -3,306 +3,360 @@
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "Zelle is deeply embedded: contact sync, QR 'My Code', split-from-transaction (incl. credit-card charges), recurring/future-dated, and business-only Zelle tags [S001][S015][S032].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "Most transparent SMB payables rail in the peer set: single enrollment for Standard ACH, Same-day ACH and Real-time payments with on-screen fee/speed comparison, CSV payee import, groups, 19 published payment statuses and self-service real-time (TCH RTP) send [S049][S026][S044].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "International FX wires with a 30-minute guaranteed-rate countdown and $0 online fee at $5,000+; 40+ currencies/90+ countries consumer, 240+ countries/territories business [S012][S024][S056].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "Three external-account verification paths (instant login, manual, trial deposits) [S009].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "Clear, published cancellation rules per rail (Zelle unenrolled-only; domestic future-dated until 11:59 PM ET day before; international 30 minutes; standard ACH before 8 PM ET; RTP never) [S012][S042][S028].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "Layered SMB controls: Access & Security Manager, Chase Dual Control, transaction limit self-service, ACH Debit Block, Check Monitoring/Protection, Instant Action Alerts [S031][S035][S039][S041].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "The Digital Services Agreement publishes complete status vocabularies and cancel windows per rail (Transfers: 11 PM/8 PM ET; Bill Pay: 8 PM ET Send On Date, 10 AM ET for automatic payments; Wires: 11:59 PM ET day-before, 30-minute consumer international window; RTP: irrevocable) [S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "Connect gives commercial users self-service wire recall/amendment ('Report a problem' up to 13 months), a per-payment status tracker with in-line ACH reversal requests, Payment Tracker end-to-end status, FX wires in ~70 currencies, and granular Dual Control (Administration and Transaction) [S926][S927][S928][S917].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "strength",
   "text": "J.P. Morgan Payments offers both FedNow and TCH RTP behind one API and routes per transaction [S915].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "strength",
+  "text": "Bank-stated (PSI testimony, July 2024): warning screens requiring affirmative continue for likely marketplace purchases, risk algorithm that delays/stops payments, monthly manual review of 'hundreds of thousands' of Zelle payments, 0.05% of transactions disputed [S962].",
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "strength",
+  "text": "From March 2025 Chase blocks Zelle payments identified as originating from social-media contact — the only bank-specific block cited in the July 2025 congressional letters [S967].",
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "No consumer push-to-card; consumer real-time (RTP) send and request-for-payment are defined in Chase terms ($5,000/txn, $10,000/day, $50,000/month) but no consumer UI label or help content documents them publicly; external transfers remain 2-3 day ACH [S009][S957][S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Consumer wire send flow has no published step-by-step guide; in-flow scam-interstitial text is not public, though wire-scam red flags are published in the DSA wire addendum and Security Center [S904][S910][S902].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Bill pay statuses, cancel rules and limits are published only in the DSA, not in help or marketing pages; autopay setup is buried under Payment Activity [S910][S905][S003].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Naming inconsistency: 'Pay & Transfer' vs 'Pay & transfer' vs 'Pay and transfer' vs 'Pay & Transfers'; 'Wires & global transfers' vs 'Wires and global transfers'; Bill Pay called three names [S002][S003][S012].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Business alert catalogue (ACH/wire/approval-needed alerts) is not documented publicly [S040][S041].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Zelle social-media block risks false positives for legitimate marketplace payments (analyst criticism) [S045].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "App-store release notes are uninformative: all 25 iOS versions Apr–Nov 2026 and the Google Play listing say only 'Minor bug fixes and improvements' — no dated money-movement feature history is published [S913][S925].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Consumer wire cutoff time is still not published (DSA refers to 'the cutoff times we establish') [S910][S903].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "No consumer Bill Pay help/tip page exists in the Helpful Tips catalog (only credit-card payment tips); bill-pay status labels are discoverable only in the 152-page DSA [S905][S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "The business Alerts catalogue has no 'transaction pending your approval' alert; approvers must check 'Pending approvals' [S929].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "weakness",
   "text": "Chase's own SMB real-time payments guide names only the TCH RTP network ('60% of accounts can receive'), so FedNow-only receivers may be unreachable from Chase Business Online despite press claims of dual-rail support [S927][S044].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "weakness",
+  "text": "Senate PSI (July 2024): Chase reimbursed 33 of 14,978 Zelle scam disputes in 2019 (.22%), 3 of 41,390 in 2020 (.01%) and 2% in 2023; its dispute policy did not direct review of the circumstances or bank records, and intake categorisation 'cannot be revisited' [S961].",
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "weakness",
+  "text": "CFPB complaint (Dec 2024; allegation, dismissed with prejudice Mar 2025) attributed ~$360M of losses across about 420,000 complaints/customers (press summaries differ; complaint PDF not read) to Zelle fraud [S963].",
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "weakness",
+  "text": "Warren 2022 staff report: Chase supplied an aggregate count (about 335,000 unauthorized-transaction claims, 2017–Aug 2022) but not the requested breakdown; its figures were excluded from the report's statistics [S966].",
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "Published policy to block Zelle payments originating from social-media contact and to question payment purpose (effective March 23, 2025) [S042][S045][S007].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "Business Zelle tags (consumers can pay tags but cannot create them) [S042][S032].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "Pay-as-you-go real-time (TCH RTP; FedNow routing unconfirmed) send for small businesses at 1% capped $25; Chase says it moves >$10.5B/quarter in same-day + real-time SMB payments [S044].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "Chase First Banking: parent-funded child account with in-app money requests, allowance and chores; P2P deliberately excluded [S054][S055].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
-  "text": "ATM bill pay for Chase card/mortgage/HE with cash, cardless NFC ATM access, and in-app scheduled withdrawals [S022][S023][S013].",
-  "report_version": "2026-11-06-v1"
+  "text": "ATM bill pay for Chase card/mortgage/HE with cash and cardless NFC ATM access [S022][S023][S013]; 'Schedule a withdrawal' is no longer published (help pages redirect; checked 2026-11-07) [S958][S976].",
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "DSA Real-Time Payments addendum defines consumer-account real-time send limits ($5,000/txn, $10,000/day, $50,000/month) and request-for-payment response limits ($25,000/$50,000) via Chase Online/Chase Mobile — a terms-level consumer instant-payment capability that peers rarely document (UI exposure unconfirmed) [S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "Published wire-scam red-flag list embedded in the wire service terms ('Protect Yourself Against Wire Scams') [S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "differentiator",
   "text": "Variable automatic bill payments tied to e-Bill due dates, plus a published $100,000/day bill-pay ceiling [S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Feb 2025 announcement / March 23, 2025 effective: Zelle Service Terms allow Chase to delay, decline or block payments identified as originating from social-media contact and to ask purpose/contact-origin questions [S045][S042].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Dec 2024 CFPB lawsuit over Zelle scam losses (JPM: 420k customers, $360M alleged) dismissed with prejudice March 4, 2025 [S046].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Zelle Service Terms last updated 10/16/2026; Digital Services Agreement updated Oct 2026 (credential-sharing/aggregator rules effective Oct 27, 2026; Trusted Device + mobile-app requirement effective Jan 1, 2027) [S042][S043].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "ACH Payment Services and ACH Collections addenda updated 12/11/2025 [S043].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Fee schedule effective June 14, 2026: online FX wire $5 ($0 at $5,000+), online USD international $40, domestic online $25 [S056].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Zelle standalone app retired April 2025 (network-level); no Chase-specific flow change documented (INFERRED).",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "DSA (last updated October 2026): Transfers Service addendum June 2026; Online Wire Transfer & Chase Global Transfer addendum 12/11/2025; ACH Payment Services addendum 12/11/2025; Invoicing addendum June 2026; Digital Wallets addendum 8/7/2025; Zelle addendum 10/16/2026; Trusted Device + mobile-app requirement effective Jan 1, 2027 [S910].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Connect Go-To Guides refreshed: Wires Oct 2026, Access & Security Manager Sep 2026, Alerts Apr 2026, ACH/Real-Time Payments Feb 2026 (all hosted on jpmorgan.com) [S918][S926][S927][S928][S929].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "FedNow participant list as of 11/02/2026 includes JPMorgan Chase Bank, NA [S914].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Chase Mobile iOS 4.804 (Nov 4, 2026) / Android updated Nov 2, 2026 — generic notes only [S913][S925].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Helpful-tips wire-transfer-send and ATM schedule-withdrawal pages retired (301 to overview pages) [S904][S905].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Sep 16, 2025: JPMorganChase and Plaid renewed their consumer-permissioned data-access agreement with a pricing structure for aggregator access [S955].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Aug 2025: New York Attorney General sued Early Warning Services (Zelle operator; JPMorgan Chase is a co-owner) over fraud and account-security controls (network-level) [S956].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "recent-change",
   "text": "Nov 12, 2025: Kinexys by J.P. Morgan rolled out JPM Coin (JPMD) USD deposit token to institutional clients on Base [S951].",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "recent-change",
+  "text": "Mar 2025: CFPB v. EWS/Chase/BofA/WF dismissed with prejudice; Jul 2025: Warren/Waters/Blumenthal letter on social-media scams; Jul 20, 2026: NY court denied EWS motion to dismiss NY AG suit (Chase named only as EWS owner) [S963][S964][S967].",
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "recent-change",
+  "text": "Nacha credit-push fraud monitoring rules (Phase 1 Mar 20, 2026 for all ODFIs and large RDFIs; Phase 2 Jun 19, 2026) apply to Chase ACH origination and receipt [S969].",
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Whether Chase offers any consumer push-to-card / Visa Direct instant transfer (none found).",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Consumer wire cutoff time (business 6 PM ET published; consumer not found).",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Whether the DSA Real-Time Payments Service (consumer send / request for payment with $5k/$10k/$50k limits) is actually exposed in the consumer Chase Mobile/Chase Online UI, and under what label.",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Whether Chase Business Online real-time payments can route over FedNow (Feb 2026 Connect guide names only TCH RTP; press/Chase statements say both).",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Exact in-flow text of the Zelle payment-purpose / contact-origin questions (login-gated).",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Consumer online wire cutoff time (DSA: 'cutoff times we establish').",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
   "text": "Whether Chase Business Online wire statuses match the Connect labels (Scheduled / Processing / Sent / Failed / Needs approval) — INFERRED only.",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
-  "text": "What the DSA \"PayPal Provisioning Platform\" and \"Gifting Service\" addenda enable for Chase customers and where they appear in the app (addendum bodies not read in verification) [S910].",
-  "report_version": "2026-11-06-v1"
+  "text": "Did Chase respond to the July 2025 congressional letter with social-media scam share or reimbursement data? No response located [S967].",
+  "report_version": "2026-11-07-v2"
  },
  {
   "bank": "jpmorgan-chase",
   "type": "open-question",
-  "text": "Whether in-app \"Schedule a withdrawal\" for Chase ATMs is still offered (personal and business help pages now redirect to /digital/atms) [S958].",
-  "report_version": "2026-11-06-v1"
+  "text": "Whether the consumer 'Gifting' (digital gift card) menu item launched in 2019 [S983] is still live in Chase Mobile/chase.com in 2026, and where 'Chase P3 card' activation for PayPal sits in the app (Digital Wallets?) [S981, S982].",
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "open-question",
+  "text": "Whether Chase sends the requester a 'request paid' notice for Zelle requests, or only a generic deposit alert (no bank text found).",
+  "report_version": "2026-11-07-v2"
+ },
+ {
+  "bank": "jpmorgan-chase",
+  "type": "open-question",
+  "text": "Whether Chase Dual Control applies to Online Bill Pay and to Zelle for business users (Access & Security Manager page is generic) [S980].",
+  "report_version": "2026-11-07-v2"
  }
 ]

@@ -7,7 +7,7 @@
  "segment": "consumer",
  "customer_goal": "Never miss a bill",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,33 +58,33 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -112,36 +112,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004",
       "src-td-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004",
       "src-td-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004",
       "src-td-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -175,26 +175,46 @@
     "action": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-td-bank-s004"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s004",
+      "src-td-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-td-bank-s004"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s004",
+      "src-td-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "fail_points": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s004",
+      "src-td-bank-s052"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
-   }
+   },
+   "fail_points": [
+    {
+     "id": "fp-td-bank-td-j08-3",
+     "text": "Still INFERRED: the Bill Pay page, app page and Online Banking Service Agreement do not describe an AutoPay review/confirm screen or the amount rule (amount due, minimum, fixed). The Academy demo 'Set up one-time payments and AutoPay with Bill Pay' (content/73) is still marked 'unplayable' / 'invalid configuration' to WebFetch on 2026-11-07."
+    }
+   ]
   },
   {
    "id": "urn:kos:moment:td-bank:td-j08:m04",
@@ -218,22 +238,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -252,33 +272,53 @@
      "screen": "History"
     }
    ],
-   "frontstage": "",
+   "frontstage": "TD app page: 'Make one-time, recurring and rush bill payments, view payment history and upcoming bills'; Bill Pay page transcript: 'View payment history and upcoming bills'. Bill Pay payments 'will appear on your Account statement as a bill payment' (Online Banking Service Agreement sec. 12). Help Center: Paid status (S903).",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
    "source_step": 5,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-td-bank-s004"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s004",
+      "src-td-bank-s903",
+      "src-td-bank-s970",
+      "src-td-bank-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s004",
+      "src-td-bank-s903",
+      "src-td-bank-s970",
+      "src-td-bank-s973"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-td-bank-s004"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s004",
+      "src-td-bank-s903",
+      "src-td-bank-s970",
+      "src-td-bank-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -304,33 +344,33 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -346,40 +386,53 @@
    "id": "urn:kos:moment:td-bank:td-j08:m07",
    "code": "M07",
    "stage": "exception",
-   "title": "Disputed eBill amount: customer must act before AutoPay date; process…",
-   "customer_action": "Disputed eBill amount: customer must act before AutoPay date; process undocumented",
-   "action": "Disputed eBill amount: customer must act before AutoPay date; process undocumented",
+   "title": "Customer who disputes an eBill amount takes it up with the biller…",
+   "customer_action": "Customer who disputes an eBill amount takes it up with the biller directly; to stop the AutoPay payment, the customer edits or cancels the scheduled payment before it processes (free). Once processing has begun, only a stop-payment request is possible.",
+   "action": "Customer who disputes an eBill amount takes it up with the biller directly; to stop the AutoPay payment, the customer edits or cancels the scheduled payment before it processes (free). Once processing has begun, only a stop-payment request is possible.",
    "touchpoints": [
     {
      "channel": "web",
-     "screen": "n/a"
+     "screen": "Bill Pay > scheduled payment > edit/cancel; biller contact (outside TD); stop payment request (phone/written)"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Online Banking Service Agreement (form 800356 (0124)) sec. 8(l): 'Neither the Bank nor its Bill Payment Service Provider is responsible for the accuracy of your electronic bill(s)'; discrepancies 'must be addressed with the Biller directly'; 'it is your sole responsibility to contact your Billers directly if you do not receive your statements'. Sec. 8(h)-(i): 'There is no charge for canceling or editing a Scheduled Payment prior to processing'; after processing begins 'the payment cannot be edited and a stop payment request must be submitted'; TD 'may also require you to present your request in writing within fourteen (14) days.' No in-app dispute flow or AutoPay hold for a disputed eBill.",
    "actor": "customer",
    "decision": null,
    "notification": null,
    "source_step": 7,
    "evidence": {
     "action": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-td-bank-s970"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -405,44 +458,44 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s004"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -476,39 +529,39 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s006",
       "src-td-bank-s007",
       "src-td-bank-s022"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s006",
       "src-td-bank-s007",
       "src-td-bank-s022"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-td-bank-s006",
       "src-td-bank-s007",
       "src-td-bank-s022"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -522,7 +575,7 @@
   }
  ],
  "source_journey_id": "TD-J08",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "TD-P03-S04",
  "channels": {
   "entry": [
@@ -540,7 +593,19 @@
   ],
   "basis": "inferred"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Customer disputes the amount on an eBill before AutoPay runs",
+   "customer_experience": "No dispute control in Bill Pay; customer must contact the biller and edit/cancel the scheduled AutoPay payment before it processes.",
+   "bank_handling": "Bank and Bill Payment Service Provider disclaim eBill accuracy; discrepancies 'must be addressed with the Biller directly'.",
+   "resolution": "Edit/cancel free before processing; stop payment after processing begins (written confirmation may be required within 14 days).",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-td-bank-s970"
+   ]
+  }
+ ],
  "notifications": [
   {
    "event": "new_ebill",

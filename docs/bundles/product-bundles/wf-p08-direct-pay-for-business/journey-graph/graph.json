@@ -27,13 +27,13 @@
    "label": "Small business pays payroll/vendors by ACH (standard, same-day, real-time) with approvals"
   },
   {
-   "id": "finding/GAP-WF-0026",
+   "id": "finding/GAP-WF-0025",
    "type": "gap",
    "label": "Direct Pay is desktop-browser only: SMB owners cannot initiate or approve ACH on",
    "severity": "high"
   },
   {
-   "id": "finding/GAP-WF-0027",
+   "id": "finding/GAP-WF-0026",
    "type": "gap",
    "label": "Direct Pay is next-business-day only; no Same Day ACH option documented after a ",
    "severity": "medium"
@@ -41,23 +41,23 @@
   {
    "id": "finding/GAP-WF-0028",
    "type": "gap",
-   "label": "Edit/cancel rules for scheduled Direct Pay payments are not documented.",
+   "label": "Returned ACH credits from the payee's bank and Same Day ACH are not published; s",
    "severity": "medium"
   },
   {
-   "id": "finding/GAP-WF-0029",
+   "id": "finding/GAP-WF-0027",
    "type": "gap",
-   "label": "Returned ACH, failed validation and NSF handling are not published (UNKNOWN).",
-   "severity": "medium"
+   "label": "Second-wave evidence: the Direct Pay Agreement publishes the cancel/change cutof",
+   "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0017",
+   "id": "finding/STR-WF-0018",
    "type": "strength",
    "label": "Direct Pay four-level access model (Input Only, Input/Release, Input/Release/Con",
    "severity": "high"
   },
   {
-   "id": "finding/STR-WF-0018",
+   "id": "finding/STR-WF-0019",
    "type": "strength",
    "label": "Payee pre-validation with re-validation on bank-detail change; 13-month scheduli",
    "severity": "medium"
@@ -86,12 +86,12 @@
   },
   {
    "from": "journey/WF-J16",
-   "to": "finding/GAP-WF-0026",
+   "to": "finding/GAP-WF-0025",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J16",
-   "to": "finding/GAP-WF-0027",
+   "to": "finding/GAP-WF-0026",
    "rel": "finding"
   },
   {
@@ -101,17 +101,17 @@
   },
   {
    "from": "journey/WF-J16",
-   "to": "finding/GAP-WF-0029",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J16",
-   "to": "finding/STR-WF-0017",
+   "to": "finding/GAP-WF-0027",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J16",
    "to": "finding/STR-WF-0018",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J16",
+   "to": "finding/STR-WF-0019",
    "rel": "finding"
   }
  ]

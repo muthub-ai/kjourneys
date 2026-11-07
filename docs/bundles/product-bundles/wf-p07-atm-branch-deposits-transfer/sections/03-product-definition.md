@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P07",
   "line_of_business": "wf-cbl",
-  "content_sha256": "91c1c3dee19418f8501efe804b8edff59258bedab9d387ebaf04c425eb89b301",
+  "content_sha256": "849580f04edb2952bf609fd54b0bd851b1ac7663c44cb3570532862c0075a4ba",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -80,9 +80,9 @@ Where it sits in the bank's app and site: ATM menu (transfers, credit card payme
 
 - `WF-J14` — cutoffs: 9 pm local; fees: None[^6]
 
-[^1]: kj · product/WF-P07 · 60c66e3aae03
-[^2]: kj · sub-product/WF-P07-S01 · aa32b478be83
-[^3]: kj · sub-product/WF-P07-S02 · 99c24b809b94
-[^4]: kj · sub-product/WF-P07-S03 · 679662e56f3c
-[^5]: kj · sub-product/WF-P07-S04 · 23f5e215875f
-[^6]: kj · journey/WF-J14 · d4a1b057205c
+[^1]: kj · product/WF-P07 · 4fe5c088f5d6
+[^2]: kj · sub-product/WF-P07-S01 · 8a11b3f23726
+[^3]: kj · sub-product/WF-P07-S02 · 08f430a9459d
+[^4]: kj · sub-product/WF-P07-S03 · f542571f980a
+[^5]: kj · sub-product/WF-P07-S04 · c012027ab795
+[^6]: kj · journey/WF-J14 · 5120bc547ac2

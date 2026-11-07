@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "2b38ce9109d7268b89f459885c8105177bf9baba12653ddbc5fd5ad2cc694877",
+  "content_sha256": "5163b320d00b58e3210cf9ff398eb261b1ee43842da278139d59e8ca348d5133",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -55,23 +55,23 @@ MI documented 5 journey(s) for it, delivering 1 customer journey(s); they carry 
 - **low** · Set up · The routing-number reachability check (RTP | FEDNOW) exists only in the API; no consumer/SMB surface shows instant eligibility.[^18]
 - **low** · Exception · Fallback when a receiver is unreachable on both rails is undocumented.[^19]
 
-[^1]: kj · product/WF-P13 · 8d686fdb6385
+[^1]: kj · product/WF-P13 · b3c19188f55a
 [^2]: kj · assignment/WF-P13 · c64f59363a8c
 [^3]: kj · lob/wf-cb · 56d63ed70382
-[^4]: kj · sub-product/WF-P13-S01 · d47d872c35b3
-[^5]: kj · sub-product/WF-P13-S02 · fcdcd0d9bd23
-[^6]: kj · sub-product/WF-P13-S03 · 09da1d723a6a
-[^7]: kj · sub-product/WF-P13-S04 · b1d1dec413e7
-[^8]: kj · sub-product/WF-P13-S05 · f44e78fc1421
-[^9]: kj · sub-product/WF-P13-S06 · d87de4a70317
-[^10]: kj · sub-product/WF-P13-S07 · f793bcdc6041
-[^11]: kj · sub-product/WF-P13-S08 · c4c278b878d7
-[^12]: kj · journey/WF-J20 · a09dfa7d417c
-[^13]: kj · journey/WF-J21 · a9e16e59c03f
-[^14]: kj · journey/WF-J22 · 30a8718f1eaf
-[^15]: kj · journey/WF-J23 · 194624059efa
-[^16]: kj · journey/WF-J25 · 982023d3f4b5
-[^17]: kj · finding/GAP-WF-0034 · 6985b24955d0
-[^18]: kj · finding/GAP-WF-0022 · 5bf6f52632fa
-[^19]: kj · finding/GAP-WF-0035 · 0a84506564fc
-[^20]: kj · finding/STR-WF-0019 · c2bf4588e07b
+[^4]: kj · sub-product/WF-P13-S01 · ded60df73563
+[^5]: kj · sub-product/WF-P13-S02 · 05565cc0302e
+[^6]: kj · sub-product/WF-P13-S03 · 4c6b4d5ffa9a
+[^7]: kj · sub-product/WF-P13-S04 · 018bb34f5188
+[^8]: kj · sub-product/WF-P13-S05 · 0e0fdb067b70
+[^9]: kj · sub-product/WF-P13-S06 · d815ddabce53
+[^10]: kj · sub-product/WF-P13-S07 · 282f71a0fbdc
+[^11]: kj · sub-product/WF-P13-S08 · 7b6897ce2e68
+[^12]: kj · journey/WF-J20 · aed31b6fcb25
+[^13]: kj · journey/WF-J21 · f36035bd9611
+[^14]: kj · journey/WF-J22 · 1ca66149586f
+[^15]: kj · journey/WF-J23 · d8e43801cb3c
+[^16]: kj · journey/WF-J25 · 4d80482f689e
+[^17]: kj · finding/GAP-WF-0033 · 73eff2ab59a7
+[^18]: kj · finding/GAP-WF-0022 · b4cf64e39188
+[^19]: kj · finding/GAP-WF-0034 · 11d66ca955c7
+[^20]: kj · finding/STR-WF-0020 · 2e5d23c39cf2

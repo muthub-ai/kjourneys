@@ -542,7 +542,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -551,6 +551,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:zelle:score-set-up:3",
+        "value": 3.5,
+        "display": "3.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence BAC-J01, BAC-J03; ZELLE-SMB-RECEIVE=4: Sets composite reference: Zelle tag plus printable QR for point-of-sale acceptance. [STR-BAC-0006]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:zelle:score-set-up:2"
       }
     ],
     "attr-score-initiate": [
@@ -686,7 +709,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -695,6 +718,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:zelle:score-exception:3",
+        "value": 1.5,
+        "display": "1.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Scam intake routes to the Security Center page and phone; no mobile in-app scam-report path, and reimbursement criteria stay 'qualifying imposter scams'. [GAP-BAC-0003]; ZELLE-SMB-RECEIVE=2: MEDIUM EXCEPTION_HANDLING: Business-account fraud claims are not viewable in the in-app Status Tracker (consumer only). [GAP-BAC-0008]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:zelle:score-exception:2"
       }
     ],
     "attr-score-support": [
@@ -710,7 +756,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -719,6 +765,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:zelle:score-support:3",
+        "value": 3.5,
+        "display": "3.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=4: Sets composite reference: Erica initiates Zelle send/request, recurring transfers, bill payments and wires and checks wire status — the broadest assistant money movement. [STR-BAC-0004]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence BAC-J04",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:zelle:score-support:2"
       }
     ]
   }

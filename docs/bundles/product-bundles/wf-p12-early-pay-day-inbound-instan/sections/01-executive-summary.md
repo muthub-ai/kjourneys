@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P12",
   "line_of_business": "wf-cbl",
-  "content_sha256": "6a1d03fe64dafafa494d0449c98e0a97dfe4ddfcaa915ed9423e078fe4015a40",
+  "content_sha256": "5ec357b3a7c4df6e984d59acde354b049f246587f4894083f4f9d907b3dcc75c",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -45,22 +45,21 @@ It is owned by **Consumer Banking and Lending** (Consumer, Small and Business Ba
 
 It has 3 sub-products, 1 of them with a mapped journey, across the FedNow, Other money movement, RTP (The Clearing House) rail(s).[^1][^4][^5][^6]
 
-MI documented 1 journey(s) for it, delivering 1 customer journey(s); they carry 3 gap(s) (2 medium, 1 low) and 1 strength(s).[^7][^8][^9][^10][^11]
+MI documented 1 journey(s) for it, delivering 1 customer journey(s); they carry 2 gap(s) (1 medium, 1 low) and 2 strength(s).[^7][^8][^9][^10][^11]
 
 ## Most severe gaps
 
-- **medium** · Initiate · How inbound RTP/FedNow credits are labelled and alerted is unpublished.[^8]
-- **medium** · Set up · Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit form' → 'Create Form' → hand to the employer).[^9]
-- **low** · Confirm & complete · Observed: the web 'Manage Alerts' page offers checking accounts only balance (zero/low/high), Direct Deposit and Returned Deposited Item alerts — no transfer-sent, transfer-received or Zelle alert options on the web (app alert catalogue not observed).[^10]
+- **medium** · Set up · Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit form' → 'Create Form' → hand to the employer).[^8]
+- **low** · Confirm & complete · Observed: the web 'Manage Alerts' page offers checking accounts only balance (zero/low/high), Direct Deposit and Returned Deposited Item alerts — no transfer-sent, transfer-received or Zelle alert options on the web (app alert catalogue not observed).[^9]
 
-[^1]: kj · product/WF-P12 · d73da35d0cb8
+[^1]: kj · product/WF-P12 · 932e654a57de
 [^2]: kj · assignment/WF-P12 · 64f7eaee3789
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P12-S01 · cdbc7b849c06
-[^5]: kj · sub-product/WF-P12-S02 · df182af38e17
-[^6]: kj · sub-product/WF-P12-S03 · 9a2db967acf9
-[^7]: kj · journey/WF-J15 · e61f32bb5fb1
-[^8]: kj · finding/GAP-WF-0023 · bbb6b037be46
-[^9]: kj · finding/GAP-WF-0038 · afdbdd7ae471
-[^10]: kj · finding/GAP-WF-0039 · d396e36594a3
-[^11]: kj · finding/STR-WF-0015 · 2a19538886f3
+[^4]: kj · sub-product/WF-P12-S01 · c723b9c2703e
+[^5]: kj · sub-product/WF-P12-S02 · 3ac178eec85d
+[^6]: kj · sub-product/WF-P12-S03 · 67cfc08066bd
+[^7]: kj · journey/WF-J15 · c6f5929e58f1
+[^8]: kj · finding/GAP-WF-0037 · fdd4036ab323
+[^9]: kj · finding/GAP-WF-0038 · c93bd0348369
+[^10]: kj · finding/STR-WF-0001 · 4ca71ea482b2
+[^11]: kj · finding/STR-WF-0016 · b860c5256638

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P11",
   "line_of_business": "wf-cbl",
-  "content_sha256": "344e5da24104ce1916c04d6b605cd751259536b04fc4a86aad2909d33db6a371",
+  "content_sha256": "4ad157a939155b8e6d708e62c750bddaa579e48fe4b15e7fe9bc6108894babbc",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,9 +47,9 @@ It has 2 sub-products, 1 of them with a mapped journey, across the Digital walle
 
 MI documented 1 journey(s) for it, delivering 0 customer journey(s); they carry 0 gap(s) () and 0 strength(s).[^6]
 
-[^1]: kj · product/WF-P11 · df9119f7188e
+[^1]: kj · product/WF-P11 · 18c5f5e9f2bf
 [^2]: kj · assignment/WF-P11 · eccf60df1390
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P11-S01 · bccee3eda68f
-[^5]: kj · sub-product/WF-P11-S02 · 0e74f1f42074
-[^6]: kj · journey/WF-J27 · 25ca42f849dc
+[^4]: kj · sub-product/WF-P11-S01 · 59c4d727fe78
+[^5]: kj · sub-product/WF-P11-S02 · 7b0aa7156903
+[^6]: kj · journey/WF-J27 · 49e51d4414ad

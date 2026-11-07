@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P03",
   "line_of_business": "wf-cbl",
-  "content_sha256": "74e0e41c399248247dfcabd8a2627a8f96e5cdedc138e8bf00e429c8d8756487",
+  "content_sha256": "13ca77317a6a05d127bee46ee435a341b47154d71b35c66953abc4ba2b432f89",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -73,11 +73,11 @@ MI assessment: Card-funded bill pay is a differentiator for SMB cash flow.[^7]
 
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1][^3][^5][^7]
 
-[^1]: kj · journey/WF-J07 · add9e5f0ca96
-[^2]: kj · customer-journey/CJ-BILLPAY-SEND · 2108d8b1b57d
-[^3]: kj · journey/WF-J08 · 3a462c0bcc44
-[^4]: kj · customer-journey/CJ-BILLPAY-EBILL-MANAGE · 10f51b6b94d0
-[^5]: kj · journey/WF-J09 · 92c2140a6c2a
-[^6]: kj · customer-journey/CJ-INSTANT-RECEIVE-RFP · faad41fab3cd
-[^7]: kj · journey/WF-J17 · adbdce251781
-[^8]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9
+[^1]: kj · journey/WF-J07 · 8270f6fa66c5
+[^2]: kj · customer-journey/CJ-BILLPAY-SEND · ebd10948d1ce
+[^3]: kj · journey/WF-J08 · 43861b5c7ba6
+[^4]: kj · customer-journey/CJ-BILLPAY-EBILL-MANAGE · 24c5b603c3ec
+[^5]: kj · journey/WF-J09 · 57b4cafbf531
+[^6]: kj · customer-journey/CJ-INSTANT-RECEIVE-RFP · f0a2b8d96952
+[^7]: kj · journey/WF-J17 · 161d120bfa87
+[^8]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · cfd851265b11

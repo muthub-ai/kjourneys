@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P02",
   "line_of_business": "wf-cbl",
-  "content_sha256": "eab1c9b9706ef9e5f566dae657007d668d8d127b96c248c8379f40492cf701f2",
+  "content_sha256": "1864ac6eb073a255ec85ade035fcab9e5e4bb973145a715a59d47cbed72faf3f",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -39,18 +39,18 @@
 
 # Transfers (Transfer Money) — experience assessment
 
-*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.
+*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. From report v2, each score is the mean across MI's customer journeys, so half points occur. Best practice is the highest score any bank in the study reached; no bank is named.
 
 | Rail | Stage | Wells Fargo | Best practice | Gap |
 |---|---|---|---|---|
 | ACH external transfer | Discover | 3 | 3 | at best practice[^1] |
-| ACH external transfer | Set up | 2 | 3 | −1[^2] |
+| ACH external transfer | Set up | 2 | 3.5 | −1.5[^2] |
 | ACH external transfer | Initiate | 2 | 4 | −2[^3] |
 | ACH external transfer | Review & authorize | 3 | 3 | at best practice[^4] |
 | ACH external transfer | Execute & track | 3 | 3 | at best practice[^5] |
 | ACH external transfer | Confirm & complete | 3 | 3 | at best practice[^6] |
-| ACH external transfer | Manage | 3 | 3 | at best practice[^7] |
-| ACH external transfer | Exception | 2 | 3 | −1[^8] |
+| ACH external transfer | Manage | 3 | 3.5 | −0.5[^7] |
+| ACH external transfer | Exception | 2.5 | 3 | −0.5[^8] |
 | ACH external transfer | Support | 3 | 3 | at best practice[^9] |
 | Internal transfer | Discover | 3 | 4 | −1[^10] |
 | Internal transfer | Set up | 3 | 3 | at best practice[^11] |
@@ -77,28 +77,28 @@
 - Discover · Transfer on the bottom bar, via Fargo and at ATMs.[^26]
 
 [^1]: kj · score/ach-external-transfer/discover · 516e0c8f9b3a
-[^2]: kj · score/ach-external-transfer/set-up · 583615d6bc29
+[^2]: kj · score/ach-external-transfer/set-up · 15d596cfb20c
 [^3]: kj · score/ach-external-transfer/initiate · 485f4a13f91d
 [^4]: kj · score/ach-external-transfer/review-authorize · ee3085b5cb36
 [^5]: kj · score/ach-external-transfer/execute-track · ee3085b5cb36
-[^6]: kj · score/ach-external-transfer/confirm-complete · 40b39d959133
-[^7]: kj · score/ach-external-transfer/manage · ee3085b5cb36
-[^8]: kj · score/ach-external-transfer/exception · 8b72238450b6
+[^6]: kj · score/ach-external-transfer/confirm-complete · 31a7c40a8502
+[^7]: kj · score/ach-external-transfer/manage · fd772c289e01
+[^8]: kj · score/ach-external-transfer/exception · 8e804d0d24df
 [^9]: kj · score/ach-external-transfer/support · ee3085b5cb36
-[^10]: kj · score/internal-transfer/discover · 5e0adabac2df
+[^10]: kj · score/internal-transfer/discover · 6bf8de0e67f3
 [^11]: kj · score/internal-transfer/set-up · ad9fea561b11
 [^12]: kj · score/internal-transfer/initiate · b6f4a071e141
 [^13]: kj · score/internal-transfer/review-authorize · fdb4992e1029
 [^14]: kj · score/internal-transfer/execute-track · ad9fea561b11
 [^15]: kj · score/internal-transfer/confirm-complete · ad9fea561b11
 [^16]: kj · score/internal-transfer/manage · fdb4992e1029
-[^17]: kj · score/internal-transfer/exception · 6e98a0705895
+[^17]: kj · score/internal-transfer/exception · c5eb205122b4
 [^18]: kj · score/internal-transfer/support · b6f4a071e141
-[^19]: kj · finding/GAP-WF-0009 · 0194eced10a6
-[^20]: kj · finding/GAP-WF-0010 · ce6ee0b68b21
-[^21]: kj · finding/GAP-WF-0011 · 907c3416ca30
-[^22]: kj · finding/GAP-WF-0013 · 82e2204f8b74
-[^23]: kj · finding/GAP-WF-0012 · 4d065129c300
-[^24]: kj · finding/GAP-WF-0033 · deb4b6489d31
-[^25]: kj · finding/GAP-WF-0037 · 966f77825654
-[^26]: kj · finding/STR-WF-0014 · 3d1262fa3bd4
+[^19]: kj · finding/GAP-WF-0009 · e2a53e131f01
+[^20]: kj · finding/GAP-WF-0010 · a8ddf215d92c
+[^21]: kj · finding/GAP-WF-0011 · 2a4a77043815
+[^22]: kj · finding/GAP-WF-0013 · e429c2ad51cd
+[^23]: kj · finding/GAP-WF-0012 · 2d644efd9069
+[^24]: kj · finding/GAP-WF-0032 · 277f2a8e776e
+[^25]: kj · finding/GAP-WF-0036 · 8d671b1b3d0a
+[^26]: kj · finding/STR-WF-0015 · 708faa6b9cdd

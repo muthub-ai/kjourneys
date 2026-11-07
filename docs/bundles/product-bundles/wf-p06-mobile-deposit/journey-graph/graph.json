@@ -27,19 +27,19 @@
    "label": "Consumer deposits a check with the mobile app"
   },
   {
-   "id": "finding/GAP-WF-0032",
+   "id": "finding/GAP-WF-0031",
    "type": "gap",
    "label": "Returned-check notice is a written letter; no digital return notification docume",
    "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0012",
+   "id": "finding/STR-WF-0013",
    "type": "strength",
    "label": "Mobile Deposit shows remaining daily and 30-day limits on screen before capture.",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0013",
+   "id": "finding/STR-WF-0014",
    "type": "strength",
    "label": "Three-channel deposit confirmation: screen, email and Message Center.",
    "severity": "medium"
@@ -68,17 +68,17 @@
   },
   {
    "from": "journey/WF-J13",
-   "to": "finding/GAP-WF-0032",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J13",
-   "to": "finding/STR-WF-0012",
+   "to": "finding/GAP-WF-0031",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J13",
    "to": "finding/STR-WF-0013",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J13",
+   "to": "finding/STR-WF-0014",
    "rel": "finding"
   }
  ]

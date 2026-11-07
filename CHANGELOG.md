@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0 — 2026-11-07 · MI report v2
+
+- **Imported `reports/2026-11-07-v2/`** (supersedes v1): 236 journeys, 2,179 steps, 444 gaps and strengths, 664 observations, 1,374 sources. Wells Fargo: 30 journeys, 63 findings (one new strength, STR-WF-0024 on domestic wire), index 69.6, #3 (domestic core 68.4).
+- **Half-point scores.** v2 Scores cells are means across customer journeys, so 2.5 and 3.5 occur. Stage scores are now a `number` datatype, valid in half points from 0 to 4 (importer, validator, schema, a new fixture). On the site, a half point colours as the lower band, and the drawer says it is a mean.
+- **Index recompute follows MI's rule** (README, v2): 25 × the mean of the rail means, push-to-card excluded; domestic core also drops international wire and remittance. v2 reproduces exactly from its Scores sheet, so the mismatch callout no longer shows. Note: the v1 recompute averaged all cells rather than rail means, so part of v1's gap (69.3 vs 61.8) was a difference in method, not only MI's rounding defect.
+- **Importer:** with `--replace`, the replaced report's MI sources are dropped too (they were left as duplicates); MI-owned attribute definitions are refreshed on import. `ingest_mi.py` accepts `supersedes`, which must name a report in the repo. CI checks only the current report.
+
 ## 0.8.1 — 2026-11-07 · Map and bundles review
 
 A second independent review (map, export and bundles) found these; each was checked, then fixed.

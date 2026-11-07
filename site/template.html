@@ -682,7 +682,7 @@ const bn = id => BANK[id]?.name || id, pn = id => PROD[id]?.name || id;
 const FOCUS = V.focus, REP = V.reports[0] || {};
 const RANK = [...V.rankings].sort((a, b) => a.rank - b.rank);
 const RM = r => r.calc?.rail_means || r.rail_means || {};          // rail means recomputed from the stage scores, so every view agrees
-const IDXDIFF = RANK.some(r => r.calc?.overall_index != null && Math.abs(r.overall_index - r.calc.overall_index) > 0.5);
+const IDXDIFF = RANK.some(r => r.calc?.overall_index != null && Math.abs(r.overall_index - r.calc.overall_index) > 0.05);
 const SCORED = V.products.map(p => p.id).filter(p => V.banks.some(b => V.scores[b.id]?.[p]));
 const EVN = {CONFIRMED_BANK:"bank-confirmed", OBSERVED_SESSION:"observed session", THIRD_PARTY:"third party", COMMUNITY:"community", INFERRED:"inferred", UNKNOWN:"unknown", sample:"sample", internal:"internal", disclosed:"disclosed", observed:"observed", inferred:"inferred", awaiting:"awaiting"};
 const ev = e => e ? `<span class="ev ev-${esc(e)}" title="Evidence: ${esc(EVN[e] || e)}">${esc(EVN[e] || e)}</span>` : "";
@@ -698,8 +698,8 @@ const FBYJ = {}; V.findings.forEach(f => { if (f.j) (FBYJ[f.j] ||= []).push(f); 
 const JBYID = by(V.journeys);
 const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
 const sevChip = f => `<span class="sev ${isGap(f) ? "sev-" + esc(f.sev) : "sev-strength"}">${isGap(f) ? esc(f.sev) : "strength"}</span>`;
-const scCls = v => v == null ? "scU" : "sc" + Math.max(0, Math.min(4, Math.round(v)));
-const scoreKey = el => { el.innerHTML = [0,1,2,3,4].map(i => `<span><i class="sc${i}"></i>${i} ${RUBRIC[i]}</span>`).join("") + `<span><i class="scU"></i>U could not score</span>`; };
+const scCls = v => v == null ? "scU" : "sc" + Math.max(0, Math.min(4, Math.floor(v)));   // a half point colours as the lower band, never as best practice
+const scoreKey = el => { el.innerHTML = [0,1,2,3,4].map(i => `<span><i class="sc${i}"></i>${i} ${RUBRIC[i]}</span>`).join("") + `<span><i class="scU"></i>U could not score</span><span>Half points (e.g. 3.5) are means across customer journeys</span>`; };
 const cut = (t, n) => (t || "").length > n ? t.slice(0, t.lastIndexOf(" ", n)) + "…" : (t || "");
 function best(p, s) { let m = null, who = []; V.banks.forEach(b => { const v = V.scores[b.id]?.[p]?.[s]?.[0]; if (v == null) return; if (m == null || v > m) { m = v; who = [b.id]; } else if (v === m) who.push(b.id); }); return [m, who]; }
 
@@ -764,7 +764,7 @@ function overview() {
   $("#hyp").innerHTML = WFR ? `${esc(bn(FOCUS))} ranks <em>#${WFR.rank} of ${RANK.length}</em> on money movement, ${fmt1(LEAD.overall_index - WFR.overall_index)} points behind ${esc(bn(LEAD.bank))}.` : "No ranking in this report.";
   $("#hypSub").textContent = WFR ? `MI's overall index: ${fmt1(WFR.overall_index)} against ${fmt1(LEAD.overall_index)} for the leader, with ${pct(WFR.coverage)} of Wells Fargo's rail × stage cells scored. MI recorded ${WFF.filter(isGap).length} gaps and ${WFF.filter(f => !isGap(f)).length} strengths for Wells Fargo.` : "";
   $("#idxWarn").hidden = !IDXDIFF;
-  if (IDXDIFF && WFR?.calc) $("#idxWarn").innerHTML = `<b>MI's totals don't match its own stage scores.</b> Recomputed as the mean of each bank's stage scores, Wells Fargo is ${fmt1(WFR.calc.overall_index)} (#${WFR.calc.rank}) and ${esc(bn(RANK.find(r => r.calc?.rank === 1)?.bank))} leads at ${fmt1(RANK.find(r => r.calc?.rank === 1)?.calc.overall_index)}. The ranking shows both; the heat map and stage views use the stage scores. Being confirmed with the MI team.`;
+  if (IDXDIFF && WFR?.calc) $("#idxWarn").innerHTML = `<b>MI's totals don't match its own stage scores.</b> Recomputed from the Scores sheet with MI's own rule (25 × the mean of the rail means), Wells Fargo is ${fmt1(WFR.calc.overall_index)} (#${WFR.calc.rank}) and ${esc(bn(RANK.find(r => r.calc?.rank === 1)?.bank))} leads at ${fmt1(RANK.find(r => r.calc?.rank === 1)?.calc.overall_index)}. The ranking shows both; the heat map and stage views use the stage scores. Being confirmed with the MI team.`;
   $("#dataline").innerHTML = [["journeys", V.counts.journeys], ["steps", V.counts.steps], ["findings", V.counts.findings], ["scored cells", V.counts.score_cells], ["sources", V.counts.sources], ["verification checks", V.counts.verifications]]
     .map(([k, v]) => `<span><b>${v.toLocaleString()}</b> ${k}</span>`).join("");
   const top = WFF.filter(isGap).sort((a, b) => SEVO[a.sev] - SEVO[b.sev] || a.id.localeCompare(b.id)).slice(0, 5);
@@ -800,7 +800,7 @@ $("#stHeat").onclick = e => { const c = e.target.closest(".sc[data-s]"); if (c) 
 function showScore(bank, p, s) {
   const c = V.scores[bank]?.[p]?.[s]; const fs = V.findings.filter(f => f.bank === bank && f.p === p && f.s === s);
   const [m, whoB] = best(p, s);
-  openDrawer(`<span class="eyebrow">${esc(bn(bank))} · ${esc(pn(p))}</span><h3>${esc(STGN[s])}: ${c ? c[0] + " of 4, " + RUBRIC[c[0]] : "not scored (U)"}</h3>
+  openDrawer(`<span class="eyebrow">${esc(bn(bank))} · ${esc(pn(p))}</span><h3>${esc(STGN[s])}: ${c ? c[0] + " of 4, " + RUBRIC[Math.floor(c[0])] + (c[0] % 1 ? " (a half point: the mean across customer journeys)" : "") : "not scored (U)"}</h3>
     ${c ? `<div>${ev(c[1])}</div>` : ""}<p class="muted small">Best on this rail and stage: ${m == null ? "—" : m + " · " + esc(whoB.map(bn).join(", "))}</p>
     ${c?.[2] ? `<span class="lbl">Analyst rationale</span><div class="q">${esc(c[2])}</div>` : ""}
     <span class="lbl">Findings at this stage (${fs.length})</span>${fs.map(fcard).join("") || `<p class="blank">None recorded</p>`}`);
@@ -952,7 +952,7 @@ function renderJourney() {
       worst += `<span class="lbl">Owner</span><p style="font-size:13px">${esc([...new Set(qs.map(q => who(q.owner)))].join(", "))}</p>`;
     } else worst = g ? `<span class="lbl">Worst gap · ${esc(g.sev)}</span><button type="button" class="fnd" data-f="${esc(g.id)}">${esc(cut(g.d, 150))}</button>` : `<span class="lbl">Gaps</span><p class="blank small">None recorded on this journey</p>`;
     return `<div class="stagecard"><div class="strip ${sc ? scCls(sc[0]) : "scU"}"></div><h3>${esc(st.name)}</h3><p class="sg">${esc(st.customer_goal || "")}</p>
-      <span class="lbl">Stage score · ${esc(pn(j.p))}</span><p style="font-size:13.5px">${sc ? `<b>${sc[0]} of 4</b> · ${esc(RUBRIC[sc[0]])}` : `<span class="blank">not scored</span>`}${bm != null ? `<br><span class="muted small">Best ${bm}: ${esc(cut(bw.map(bn).join(", "), 60))}</span>` : ""}</p>
+      <span class="lbl">Stage score · ${esc(pn(j.p))}</span><p style="font-size:13.5px">${sc ? `<b>${sc[0]} of 4</b> · ${esc(RUBRIC[Math.floor(sc[0])])}` : `<span class="blank">not scored</span>`}${bm != null ? `<br><span class="muted small">Best ${bm}: ${esc(cut(bw.map(bn).join(", "), 60))}</span>` : ""}</p>
       <p class="muted small">${plural(qs.length, "step")} · ${plural(nf, "fail point")}</p>${worst}</div>`;
   }).join("");
   let rank;

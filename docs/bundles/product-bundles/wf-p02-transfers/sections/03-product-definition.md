@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P02",
   "line_of_business": "wf-cbl",
-  "content_sha256": "dfc108aad374bde6f39414c32191e73822df694f22a45d4cf6f4b52dec470c1e",
+  "content_sha256": "48a05c60b1b832b192bdf59e396ef9453b81c1df84e17c31f98ebe8404cd7bd9",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -85,12 +85,12 @@ Where it sits in the bank's app and site: Mobile: 'Transfer' in bottom bar; 'Sch
 - `WF-J05` — cutoffs: 8 pm PT availability cutoff; edit until 11:59 pm PT day before; fees: None[^8]
 - `WF-J06` — cutoffs: WF→ext 2 biz days; ext→WF 3 biz days; expedited may be offered; fees: None from WF; limits: Not published; higher-limit service discretionary[^9]
 
-[^1]: kj · product/WF-P02 · 9eb25008fe7d
-[^2]: kj · sub-product/WF-P02-S01 · 9d6d0e037925
-[^3]: kj · sub-product/WF-P02-S02 · 341dc9701a79
-[^4]: kj · sub-product/WF-P02-S03 · 3e7dc4b77244
-[^5]: kj · sub-product/WF-P02-S04 · be32b5135cc9
-[^6]: kj · sub-product/WF-P02-S05 · bd7ce3138d2d
-[^7]: kj · sub-product/WF-P02-S06 · 74d7e77234fa
-[^8]: kj · journey/WF-J05 · 961155a3b7eb
-[^9]: kj · journey/WF-J06 · ee855eb97a21
+[^1]: kj · product/WF-P02 · 0b29dca0b27f
+[^2]: kj · sub-product/WF-P02-S01 · 38cc9de650d6
+[^3]: kj · sub-product/WF-P02-S02 · 66f02e827ee4
+[^4]: kj · sub-product/WF-P02-S03 · 1b4d45d19976
+[^5]: kj · sub-product/WF-P02-S04 · 881dbd9b1863
+[^6]: kj · sub-product/WF-P02-S05 · 9bd759243dd7
+[^7]: kj · sub-product/WF-P02-S06 · 29d5a0af6c15
+[^8]: kj · journey/WF-J05 · 8cc99d20c29f
+[^9]: kj · journey/WF-J06 · 5ac14c85b11a

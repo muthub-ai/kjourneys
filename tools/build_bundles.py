@@ -188,7 +188,7 @@ for p in X["products"]:
     sec["04-experience"] = ("Journeys and experience", f"Each {p['name']} journey: steps, stages, channels and MI's assessment", D)
     # 5 experience assessment
     D = Doc(pr, f"{p['name']} — experience assessment")
-    D.method("Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.")
+    D.method("Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. From report v2, each score is the mean across MI's customer journeys, so half points occur. Best practice is the highest score any bank in the study reached; no bank is named.")
     D.table(["Rail", "Stage", f"{BANK}", "Best practice", "Gap"], stage_rows(rails))
     D.h("Gaps")
     D.li([(f"**{f['severity']}** · {STG.get(f.get('stage'), '')} · {f['type'].replace('-', ' ')} · {f['description']}", [f"finding/{f['id']}"]) for f in gaps])

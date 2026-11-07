@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P10",
   "line_of_business": "wf-cbl",
-  "content_sha256": "6ccee7c1b0b640d1068f6e98fd382f5cf7a9e9eea9cc6361e793a3e7c4f1ce82",
+  "content_sha256": "2dc6d8a1008a17765e98feebb1132a4b4c2c0f50cccf7ca49268c36dc777280c",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -69,5 +69,5 @@ Where it sits in the bank's app and site: Mobile: Menu > Card Settings — 'Easi
 | Split a payment | ✗ | [^2] |
 | Status tracking | ✓ | [^2] |
 
-[^1]: kj · product/WF-P10 · ae4ea79539a2
-[^2]: kj · sub-product/WF-P10-S01 · 4dcbb04ef48b
+[^1]: kj · product/WF-P10 · 5dc2c6e95e66
+[^2]: kj · sub-product/WF-P10-S01 · cd1edc9e772c

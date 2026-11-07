@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Pay a supplier with immediate finality",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,22 +58,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -92,7 +92,7 @@
      "screen": "Approvals"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Treasury Solutions Guide Sec. 1.7: 'Approval requirements can be established for each User's initiated transaction when setting up each User's account entitlements.' Sec. 11 does not state Instant-Payment-specific approval rules; insufficient funds cause the payment to 'reject upon initiation'; payments over the client's single/daily/weekly/monthly limits (Citi's April 2024 guide states a $1,000,000 per-transaction RTP limit (the network cap has since risen; Citi may set lower client limits)) may be blocked. General CBOL entitlement rule only, so the step stays INFERRED for Instant Payments specifically.",
    "actor": "customer",
    "decision": null,
    "notification": null,
@@ -101,22 +101,36 @@
     "action": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s009"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s009",
+      "src-citi-s981"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s009"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s009",
+      "src-citi-s981"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-citi-s009",
+      "src-citi-s981"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -144,22 +158,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -169,13 +183,13 @@
    "id": "urn:kos:moment:citi:citi-j23:m04",
    "code": "M04",
    "stage": "exception",
-   "title": "No recall; request-for-return bank-to-bank",
+   "title": "Sender cannot recall: 'Instant Payments sent through RTP are…",
    "customer_action": null,
-   "action": "No recall; request-for-return bank-to-bank",
+   "action": "Sender cannot recall: 'Instant Payments sent through RTP are irrevocable and cannot be reversed by the sender'; client asks its Citi Service Representative to send a Request for Return of Funds; return 'is entirely voluntary' for the recipient and Citi 'cannot guarantee that funds will be returned in whole or in part'",
    "touchpoints": [
     {
      "channel": "web",
-     "screen": null
+     "screen": "Citi Service Representative (not self-service in CBOL)"
     }
    ],
    "frontstage": "",
@@ -185,26 +199,28 @@
    "source_step": 4,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s014"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s014",
+      "src-citi-s981"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-citi-s014"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s014",
+      "src-citi-s981"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -230,36 +246,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s007",
       "src-citi-s010"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s007",
       "src-citi-s010"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s007",
       "src-citi-s010"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -267,7 +283,7 @@
   }
  ],
  "source_journey_id": "CITI-J23",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "CITI-P13-S01",
  "channels": {
   "entry": [
@@ -278,12 +294,39 @@
   ]
  },
  "status_tracking": {
-  "where": "CBOL",
-  "states": [],
-  "basis": "inferred"
+  "where": "CitiBusiness Online (near-immediate success/failure status) and the client's chosen notification settings",
+  "states": [
+   "successful",
+   "unsuccessful/failed (e.g.",
+   "receiving bank unable to process within RTP timing",
+   "RTP or participant limit exceeded",
+   "insufficient funds - rejects upon initiation)"
+  ],
+  "basis": "disclosed"
  },
- "exceptions": [],
- "notifications": [],
+ "exceptions": [
+  {
+   "trigger": "Insufficient funds or limit exceeded at initiation",
+   "customer_experience": "Payment rejects upon initiation (insufficient funds) or is blocked (over single-transaction $1,000,000 per-transaction RTP limit stated in Citi's April 2024 guide (the network cap has since risen; Citi may set lower client limits) or client daily/weekly/monthly limits)",
+   "bank_handling": "Citi rejects/blocks; may set lower limits and adjust them with notice",
+   "resolution": "Fund the account or reduce the amount",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-citi-s981"
+   ]
+  }
+ ],
+ "notifications": [
+  {
+   "event": "instant_payment_status",
+   "channels": [
+    "per client notification settings"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
+  }
+ ],
  "assessment": "Sketch only.",
  "x-mi_evidence": "CONFIRMED_BANK",
  "bank_product": "CITI-P13",

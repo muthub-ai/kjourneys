@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Initiate multi-rail payments from ERP",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "inferred",
  "governance": {
@@ -58,22 +58,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -101,22 +101,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -126,44 +126,68 @@
    "id": "urn:kos:moment:jpmorgan-chase:jpm-j21:m03",
    "code": "M03",
    "stage": "review-authorize",
-   "title": "Multi-level approval and OFAC/fraud screening (Trust and Safety)",
+   "title": "Payments pass client approval rules in Access (approval…",
    "customer_action": null,
-   "action": "Multi-level approval and OFAC/fraud screening (Trust and Safety)",
+   "action": "Payments pass client approval rules in Access (approval categories/rules with a configurable number of approvers; security token required for 'wire payment approval and release' and for Wire, US ACH Initiation, Global ACH, FX, Tax and Utility entitlements [S974]) and bank compliance/fraud review holds ('Pending Compliance Review', 'Pending Fraud Review' [S973]; sanctions BLOCKED [S972]).",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Access approvals"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Bank screening is visible as explicit payment states in J.P. Morgan developer documentation: track-and-trace internal statuses include 'Pending Compliance Review', 'Pending Fraud Review', 'Pending Credit Decision' and 'Pending Client Review' [S973]; Global Payments 2 wires show PROCESSING/PENDING_JPM_REVIEW – 'J.P. Morgan placed the payment on hold pending review' [S971]; callbacks report BLOCKED – 'The payment was blocked due to a sanctions issue' [S972]. Client-side multi-level approval wording not found in developer docs.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
    "source_step": 3,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
+      "src-jpmorgan-chase-s043",
       "src-jpmorgan-chase-s063",
-      "src-jpmorgan-chase-s043"
+      "src-jpmorgan-chase-s971",
+      "src-jpmorgan-chase-s972",
+      "src-jpmorgan-chase-s973",
+      "src-jpmorgan-chase-s974"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-jpmorgan-chase-s043",
+      "src-jpmorgan-chase-s063",
+      "src-jpmorgan-chase-s971",
+      "src-jpmorgan-chase-s972",
+      "src-jpmorgan-chase-s973",
+      "src-jpmorgan-chase-s974"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
+      "src-jpmorgan-chase-s043",
       "src-jpmorgan-chase-s063",
-      "src-jpmorgan-chase-s043"
+      "src-jpmorgan-chase-s971",
+      "src-jpmorgan-chase-s972",
+      "src-jpmorgan-chase-s973",
+      "src-jpmorgan-chase-s974"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -189,22 +213,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -223,7 +247,7 @@
      "screen": "Global Client Service"
     }
    ],
-   "frontstage": "Recall/investigation via Global Client Service",
+   "frontstage": "Developer docs expose cancellation outcomes but not a recall workflow: status 'Canceled' ('The payment was canceled'), gpi reason FOCR 'Return following a cancellation request', CUST 'Requested by customer' [S973]; callbacks report RETURNED 'The payment was returned to the debtor party' [S972]. Recall/investigation channel (Global Client Service) remains INFERRED.",
    "actor": "bank-staff",
    "decision": null,
    "notification": null,
@@ -232,22 +256,26 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-jpmorgan-chase-s063"
+      "src-mi-2026-11-07-v2",
+      "src-jpmorgan-chase-s063",
+      "src-jpmorgan-chase-s972",
+      "src-jpmorgan-chase-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-jpmorgan-chase-s063"
+      "src-mi-2026-11-07-v2",
+      "src-jpmorgan-chase-s063",
+      "src-jpmorgan-chase-s972",
+      "src-jpmorgan-chase-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -275,22 +303,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-jpmorgan-chase-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -298,7 +326,7 @@
   }
  ],
  "source_journey_id": "JPM-J21",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "JPM-P12-S06",
  "channels": {
   "entry": [
@@ -310,24 +338,41 @@
   ]
  },
  "status_tracking": {
-  "where": "Access reporting",
-  "states": [],
-  "basis": "inferred"
+  "where": "J.P. Morgan Payments API status endpoints and callbacks (Global Payments / Global Payments 2; Payment Status Track and Trace with gpi); Access reporting / Payment Tracker",
+  "states": [
+   "(GP2 wires) ACCEPTED",
+   "SCHEDULED",
+   "PROCESSING_BY_JPM",
+   "PENDING_JPM_REVIEW",
+   "SENT_TO_CLEARING",
+   "COMPLETED_BY_JPM",
+   "REJECTED",
+   "(Global Payments callbacks) PENDING",
+   "PENDING_POSTING",
+   "WAREHOUSED",
+   "COMPLETED",
+   "COMPLETED_CREDITED",
+   "RETURNED",
+   "BLOCKED",
+   "(Track & Trace) Pending Compliance Review",
+   "Pending Fraud Review",
+   "Pending Client Review",
+   "Canceled"
+  ],
+  "basis": "disclosed"
  },
- "exceptions": [
+ "exceptions": [],
+ "notifications": [
   {
-   "trigger": "Detail pages not fetched",
-   "customer_experience": "RESOLVED: jpmorgan.com Access, FedNow, Payments (payables), Receivables and Cross-Currency pages captured; Connect guides captured. Wire recall in Connect: Payment activity > All wire activity > 'Report a problem' > 'request a recall' (authorized users, up to 13 months); real-time payment return requests via 877-242-7372.",
-   "bank_handling": "n/a",
-   "resolution": "n/a",
-   "basis": "disclosed",
-   "source_ids": [
-    "src-mi-2026-11-06-v1"
-   ]
+   "event": "payment_status_change",
+   "channels": [
+    "api_callback"
+   ],
+   "configurable": true,
+   "basis": "disclosed"
   }
  ],
- "notifications": [],
- "assessment": "Inventory confirmed from jpmorgan.com navigation; operational detail not fetched in this cycle.",
+ "assessment": "Inventory confirmed from jpmorgan.com navigation; operational detail not fetched in this cycle. Coverage note: jpmorgan.com Access, FedNow, Payments (payables), Receivables and Cross-Currency pages captured; Connect guides captured. Wire recall in Connect: Payment activity > All wire activity > 'Report a problem' > 'request a recall' (authorized users, up to 13 months); real-time payment return requests via 877-242-7372.",
  "x-mi_evidence": "INFERRED",
  "bank_product": "JPM-P12",
  "composite": "CJ-COMMERCIAL-INSTANT",

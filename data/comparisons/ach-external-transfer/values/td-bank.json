@@ -350,7 +350,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -359,6 +359,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:td-bank:ach-external-transfer:score-discover:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ACH-EXT-SEND=2: MEDIUM TRANSPARENCY: Help content contradicts itself (KB says Online Banking-only; app demos show full app flow). [GAP-TD-0011]; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:td-bank:ach-external-transfer:score-discover:2"
       }
     ],
     "attr-score-set-up": [
@@ -398,7 +421,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -407,6 +430,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:td-bank:ach-external-transfer:score-initiate:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ACH-EXT-SEND=2: MEDIUM FRICTION: Low external-transfer caps ($20,000 combined monthly). [GAP-TD-0013]; ACH-EXT-RECEIVE=3: At parity; minor: 'Within minutes' inbound option exists only in terms; rail undisclosed. [GAP-TD-0015]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:td-bank:ach-external-transfer:score-initiate:2"
       }
     ],
     "attr-score-review-authorize": [
@@ -422,7 +468,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -431,6 +477,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:td-bank:ach-external-transfer:score-review-authorize:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ACH-EXT-SEND=2: MEDIUM SECURITY_TRUST: No scam warning or step-up on external-transfer review. [GAP-TD-0014]; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:td-bank:ach-external-transfer:score-review-authorize:2"
       }
     ],
     "attr-score-execute-track": [

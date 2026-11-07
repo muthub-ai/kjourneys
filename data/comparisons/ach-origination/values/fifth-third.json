@@ -504,7 +504,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -513,6 +513,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:fifth-third:ach-origination:score-review-authorize:3",
+        "value": 4,
+        "display": "4 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "Sets composite reference: Approval profiles with token step-up; Dual Transaction Approval and customer-set limits. [STR-FITB-0005]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:fifth-third:ach-origination:score-review-authorize:2"
       }
     ],
     "attr-score-execute-track": [
@@ -600,7 +623,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -609,6 +632,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:fifth-third:ach-origination:score-exception:3",
+        "value": 4,
+        "display": "4 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "Sets composite reference: Newline documents ACH returns, NOCs, reversal and recall semantics publicly. [STR-FITB-0006]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:fifth-third:ach-origination:score-exception:2"
       }
     ],
     "attr-score-support": [

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "fca5490f3ebddfa6d0731b03e5a17206cd86f3f48d1c93e265f789f90e5548b3",
+  "content_sha256": "5d3c2169fd47ef3df770c0d25b651e1b00c9a92ba2bced70a9a43bade1b5b588",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -82,10 +82,10 @@ Where it sits in the bank's app and site: Web/mobile: 'Transfer & Pay' > 'Wire M
 - `WF-J11` — cutoffs: 2:20 pm PT international; fees: $30 USD international; $0 foreign-currency (consumer); FX markup; limits: Undisclosed[^6]
 - `WF-J18` — cutoffs: 2:20 pm PT; fees: $30 USD; $0 FX (non-analyzed); $25 analyzed; limits: Daily/30-day undisclosed[^7]
 
-[^1]: kj · product/WF-P04 · 7ae69c334eed
-[^2]: kj · sub-product/WF-P04-S01 · 3c9c3eb660ba
-[^3]: kj · sub-product/WF-P04-S02 · 474bb477f97e
-[^4]: kj · sub-product/WF-P04-S03 · 7ef4ebeda48b
-[^5]: kj · journey/WF-J10 · 47452d55448b
-[^6]: kj · journey/WF-J11 · e4ed66bc72f0
-[^7]: kj · journey/WF-J18 · 7f1916a52a55
+[^1]: kj · product/WF-P04 · 728ab1540360
+[^2]: kj · sub-product/WF-P04-S01 · 6f24fe64a471
+[^3]: kj · sub-product/WF-P04-S02 · e70a46bc9ff4
+[^4]: kj · sub-product/WF-P04-S03 · 4d2ac294b702
+[^5]: kj · journey/WF-J10 · ca29755fbe66
+[^6]: kj · journey/WF-J11 · 5759e78f0c18
+[^7]: kj · journey/WF-J18 · da9c57fe16e4

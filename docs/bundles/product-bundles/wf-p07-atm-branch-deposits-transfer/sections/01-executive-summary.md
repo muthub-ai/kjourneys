@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P07",
   "line_of_business": "wf-cbl",
-  "content_sha256": "c750d2ecf96ff62df0ec7af99a9abc1f6901815ee17d534bfa3dc3b7b336f394",
+  "content_sha256": "ababdd03eb5c78840f82758342ce081cfa47bda503393244864960902992c110",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,11 +47,11 @@ It has 4 sub-products, 1 of them with a mapped journey, across the Cash, ATM and
 
 MI documented 1 journey(s) for it, delivering 0 customer journey(s); they carry 0 gap(s) () and 0 strength(s).[^8]
 
-[^1]: kj · product/WF-P07 · 60c66e3aae03
+[^1]: kj · product/WF-P07 · 4fe5c088f5d6
 [^2]: kj · assignment/WF-P07 · a7162a28f27a
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P07-S01 · aa32b478be83
-[^5]: kj · sub-product/WF-P07-S02 · 99c24b809b94
-[^6]: kj · sub-product/WF-P07-S03 · 679662e56f3c
-[^7]: kj · sub-product/WF-P07-S04 · 23f5e215875f
-[^8]: kj · journey/WF-J14 · d4a1b057205c
+[^4]: kj · sub-product/WF-P07-S01 · 8a11b3f23726
+[^5]: kj · sub-product/WF-P07-S02 · 08f430a9459d
+[^6]: kj · sub-product/WF-P07-S03 · f542571f980a
+[^7]: kj · sub-product/WF-P07-S04 · c012027ab795
+[^8]: kj · journey/WF-J14 · 5120bc547ac2

@@ -1,0 +1,303 @@
+{
+ "bank": "td-bank",
+ "product": "ach-external-transfer",
+ "facts": [
+  {
+   "attribute": "attr-cap-recurring",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S03, TD-P02-S04",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scheduled-future-dated",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S03, TD-P02-S04",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-request-money",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04, TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-split",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04, TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-qr-code",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04, TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-contact-sync",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04, TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-cancel-before-send",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S03, TD-P02-S04",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-status-tracking",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-dual-approval-smb",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04, TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-international",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s001",
+    "src-td-bank-s009",
+    "src-td-bank-s012"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S02, TD-P02-S03, TD-P02-S04, TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-same-day",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s009"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P02-S05",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-discover",
+   "value": 2.5,
+   "display": "2.5 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=2: MEDIUM TRANSPARENCY: Help content contradicts itself (KB says Online Banking-only; app demos show full app flow). [GAP-TD-0011]; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-set-up",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=3: Reference-level practice offset by MEDIUM FRICTION: ~9-screen enrollment; trial-deposit path requires returning 1-3 days later via Menu > Preferences. [GAP-TD-0012]; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-initiate",
+   "value": 2.5,
+   "display": "2.5 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=2: MEDIUM FRICTION: Low external-transfer caps ($20,000 combined monthly). [GAP-TD-0013]; ACH-EXT-RECEIVE=3: At parity; minor: 'Within minutes' inbound option exists only in terms; rail undisclosed. [GAP-TD-0015]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-review-authorize",
+   "value": 2.5,
+   "display": "2.5 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=2: MEDIUM SECURITY_TRUST: No scam warning or step-up on external-transfer review. [GAP-TD-0014]; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-execute-track",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=3: At parity; minor: Free next-day external transfers in both directions. [STR-TD-0005]; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-confirm-complete",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=3: At parity with composite; evidence TD-J04; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-manage",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=3: At parity with composite; evidence TD-J04; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-exception",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=3: At parity with composite; evidence TD-J04; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-support",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "ACH-EXT-SEND=3: At parity with composite; evidence TD-J04; ACH-EXT-RECEIVE=3: At parity with composite; evidence TD-J04, TD-J05",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  }
+ ]
+}

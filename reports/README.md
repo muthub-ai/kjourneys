@@ -5,7 +5,8 @@ Market-intelligence (MI) reports, kept exactly as received, one folder per versi
 ```
 reports/
   ingest-log.json             every version ingested: when, how many runs, facts applied, banks touched
-  2026-11-06-v1/              <delivery date>-v<n>: the first money-movement delivery
+  2026-11-06-v1/              <delivery date>-v<n>: the first money-movement delivery (superseded, kept pinned)
+  2026-11-07-v2/              second delivery: scoring correction, second research wave; "supersedes": "2026-11-06-v1"
     manifest.json             version, products, producer, received_at, workbook, files + sha256
     money-movement-intelligence.html             the report as read by people
     Money_Movement_CI_Dossier.docx               17 chapters
@@ -56,3 +57,4 @@ scripts/refresh.sh reports/2026-11-20-v1 --commit   # commit on the current bran
 ```
 
 This imports the workbook (journeys, findings, composites, scores, extracts), applies the extracts, registers the report and its sources, keeps history for changed facts, logs the version, validates, runs the tests, and rebuilds the site (`dist/index.html`) and exports.
+- **A later report supersedes an earlier one.** Its manifest says `"supersedes": "<version>"`; `import_mi_workbook.py --replace` then replaces the earlier report's MI data and sources (MI IDs are not version-scoped). The earlier report stays in the repo, byte for byte and pinned; CI checks the import only for the current report.

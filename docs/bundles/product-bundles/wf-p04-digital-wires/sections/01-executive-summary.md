@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "c83ab9a394e26b0a5d51382f678f8f01a4ecc58ecc07e3337c3c16804a629759",
+  "content_sha256": "4e52630407913247274b778013a3b7931e3f0872c98c217dbcd09fe73f1495c8",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -55,22 +55,22 @@ MI documented 3 journey(s) for it, delivering 3 customer journey(s); they carry 
 - **medium** · Initiate · Digital wire fee messaging conflicts ($30 flat on product page vs '$0-$30' in FAQ) and limits are opaque until entry.[^11]
 - **medium** · Exception · Cancellation is possible only while 'Scheduled'; once Pending, recall requires a call to 877-499-6920 and there is no in-app recall request.[^12]
 
-[^1]: kj · product/WF-P04 · 7ae69c334eed
+[^1]: kj · product/WF-P04 · 728ab1540360
 [^2]: kj · assignment/WF-P04 · 70de3dac3dfc
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P04-S01 · 3c9c3eb660ba
-[^5]: kj · sub-product/WF-P04-S02 · 474bb477f97e
-[^6]: kj · sub-product/WF-P04-S03 · 7ef4ebeda48b
-[^7]: kj · journey/WF-J10 · 47452d55448b
-[^8]: kj · journey/WF-J11 · e4ed66bc72f0
-[^9]: kj · journey/WF-J18 · 7f1916a52a55
-[^10]: kj · finding/GAP-WF-0030 · f8866096040e
-[^11]: kj · finding/GAP-WF-0014 · d0dbb9e7f48b
-[^12]: kj · finding/GAP-WF-0016 · a80da4c53fb1
-[^13]: kj · finding/GAP-WF-0017 · 04e895889ce3
-[^14]: kj · finding/GAP-WF-0015 · 8ef1e8b3b41e
-[^15]: kj · finding/STR-WF-0005 · 11afe95e45b8
-[^16]: kj · finding/STR-WF-0007 · f309c9fffd63
-[^17]: kj · finding/STR-WF-0006 · b5476d0aaece
-[^18]: kj · finding/STR-WF-0022 · 7cf8dedc0711
-[^19]: kj · finding/STR-WF-0023 · 4867db231dfa
+[^4]: kj · sub-product/WF-P04-S01 · 6f24fe64a471
+[^5]: kj · sub-product/WF-P04-S02 · e70a46bc9ff4
+[^6]: kj · sub-product/WF-P04-S03 · 4d2ac294b702
+[^7]: kj · journey/WF-J10 · ca29755fbe66
+[^8]: kj · journey/WF-J11 · 5759e78f0c18
+[^9]: kj · journey/WF-J18 · da9c57fe16e4
+[^10]: kj · finding/GAP-WF-0029 · a87fe000d932
+[^11]: kj · finding/GAP-WF-0014 · 1b33694647db
+[^12]: kj · finding/GAP-WF-0016 · 3613671e20fa
+[^13]: kj · finding/GAP-WF-0017 · cb93b1938aa9
+[^14]: kj · finding/GAP-WF-0015 · 38cf398e4fca
+[^15]: kj · finding/STR-WF-0006 · 122172aba700
+[^16]: kj · finding/STR-WF-0008 · 94263ca0c11c
+[^17]: kj · finding/STR-WF-0007 · c982fc56f2d8
+[^18]: kj · finding/STR-WF-0023 · 5f1179bd2b02
+[^19]: kj · finding/STR-WF-0024 · ce7383770d37

@@ -478,7 +478,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -487,6 +487,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:jpmorgan-chase:bill-pay:score-execute-track:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "BILLPAY-SEND=2: MEDIUM TRANSPARENCY: Bill-pay status labels and cancel rules appear only in the 152-page DSA; no consumer Bill Pay help page exists. [GAP-JPM-0014]; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence JPM-J10",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:jpmorgan-chase:bill-pay:score-execute-track:2"
       }
     ],
     "attr-score-confirm-complete": [

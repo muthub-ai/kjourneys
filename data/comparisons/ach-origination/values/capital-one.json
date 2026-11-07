@@ -321,7 +321,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -330,6 +330,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:capital-one:ach-origination:score-discover:3",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "MEDIUM TRANSPARENCY: No help article or user guide for SMB ACH origination. [GAP-COF-0031]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:capital-one:ach-origination:score-discover:2"
       }
     ],
     "attr-score-set-up": [
@@ -358,15 +381,26 @@
     ],
     "attr-score-initiate": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:ach-origination:score-initiate:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:ach-origination:score-initiate:1"
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence COF-J21",
+          "report_ref": "Scores sheet",
+          "mi_level": "INFERRED"
+        }
       }
     ],
     "attr-score-review-authorize": [
@@ -382,7 +416,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -391,6 +425,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:capital-one:ach-origination:score-review-authorize:3",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "HIGH SECURITY_TRUST: Small businesses below Intellix scale have no documented approval control for ACH or wires. [GAP-COF-0030]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:capital-one:ach-origination:score-review-authorize:2"
       }
     ],
     "attr-score-execute-track": [
@@ -432,28 +489,50 @@
     ],
     "attr-score-manage": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:ach-origination:score-manage:2",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:ach-origination:score-manage:1"
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "MEDIUM EXCEPTION_HANDLING: Second-wave evidence: the small-business and commercial terms give the customer no right to cancel, amend or modify a payment order after submission, no separate notice when the bank rejects a payment order ('Customer's responsibility to resubmit'), and require ACH errors to be reported 'immediately' (S971, S979); Treasury ACH clients are notified of returned entries (S9",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
     "attr-score-exception": [
       {
-        "basis": "awaiting",
-        "source_ids": [],
-        "asserted_by": null,
-        "asserted_at": null,
-        "observed_on": null,
+        "id": "urn:kos:assertion:capital-one:ach-origination:score-exception:2",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "id": "urn:kos:assertion:capital-one:ach-origination:score-exception:1"
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity with composite; evidence COF-J21",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        }
       }
     ],
     "attr-score-support": [

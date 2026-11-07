@@ -11,7 +11,7 @@
   "resolution": "Add JPM-P12-S07 Kinexys / JPM Coin (JPMD) USD deposit token; recent change Nov 12, 2025: JPM Coin rolled out to institutional clients on Base.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C002",
@@ -25,7 +25,7 @@
   "resolution": "Add JPM-P12-S08 Emerging payments disbursements (Push to Wallet, Zelle, Interac, Prepaid Card), CONFIRMED_BANK S919.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C003",
@@ -39,7 +39,7 @@
   "resolution": "Name: \"Push to Card (real-time card disbursements)\"; sources [\"S919\"]; networks unconfirmed.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C004",
@@ -53,7 +53,7 @@
   "resolution": "Add invoicing as a sub-product (rail OTHER, with Zelle payment option); keep QuickAccept/POS out of scope but mention in notes.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C005",
@@ -67,7 +67,7 @@
   "resolution": "Add JPM-P12-S09 Pay-by-bank (ACH + Mastercard open banking), THIRD_PARTY; verify on jpmorgan.com in next pass.",
   "evidence": "THIRD_PARTY",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C006",
@@ -81,7 +81,7 @@
   "resolution": "Keep P08 claims; add open questions: what the DSA \"PayPal Provisioning Platform\" and \"Gifting Service\" addenda enable and where they live in the UI. Settled by reading DSA pp. 85 and 97.",
   "evidence": "UNKNOWN",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C007",
@@ -95,7 +95,7 @@
   "resolution": "No consumer push-to-card; consumer RTP send is defined in the terms but not surfaced in any public UI/help content; external transfers remain 2-3 day ACH.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C008",
@@ -109,7 +109,7 @@
   "resolution": "Keep nesting; add RTP to JPM-P03 rails; note \"terms-level service, no consumer UI label found\".",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C009",
@@ -123,7 +123,7 @@
   "resolution": "Bill pay statuses, cancel rules and limits are published only in the DSA (not in help/marketing pages); autopay setup is buried under Payment Activity.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C010",
@@ -137,7 +137,7 @@
   "resolution": "states_shown: Pending, Funded, Sent, Processed, Completed, Funds Needed, Funding Failed, Cancelled (CONFIRMED_BANK, S910).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C011",
@@ -151,7 +151,7 @@
   "resolution": "states_shown: Pending, Sent, Completed, Funds Needed, Funding Failed, Cancelled (CONFIRMED_BANK, S957/S910).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C012",
@@ -165,7 +165,7 @@
   "resolution": "Usually a few minutes; select transactions next business day (Chase recipient) or 1-2 business days (other bank).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C013",
@@ -179,7 +179,7 @@
   "resolution": "SMB wording: \"Pay-as-you-go real-time payments (TCH RTP per Chase guide; FedNow routing unconfirmed) at 1% capped $25\"; P09 FEDNOW rail marked INFERRED. Open question retained.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C014",
@@ -193,7 +193,7 @@
   "resolution": "Evidence downgraded to INFERRED; open question added. Settled by an in-app check or a current Chase page describing scheduled ATM withdrawals.",
   "evidence": "INFERRED",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C015",
@@ -207,7 +207,7 @@
   "resolution": "Consumer wire status labels: INFERRED (no published list); Connect labels shown as the nearest bank-documented vocabulary.",
   "evidence": "INFERRED",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C016",
@@ -221,7 +221,7 @@
   "resolution": "states_shown: Scheduled, Processing, Sent, Failed, Needs approval (Connect-confirmed; INFERRED for Chase Business Online).",
   "evidence": "INFERRED",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C017",
@@ -235,7 +235,7 @@
   "resolution": "JPM-P11-S02 evidence CONFIRMED_BANK, sources S926, S063.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C018",
@@ -249,7 +249,7 @@
   "resolution": "No public step-by-step consumer wire guide; in-flow interstitial text not public; wire-scam red flags published in DSA wire addendum and Security Center.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C019",
@@ -263,7 +263,7 @@
   "resolution": "Add: \"Sep 16, 2025 — JPMorganChase–Plaid renewed data-access agreement introduces a pricing structure for aggregator access (bank press release).\"",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C020",
@@ -277,7 +277,7 @@
   "resolution": "Add: \"Aug 2025 — NY AG sued Early Warning Services (Zelle operator; Chase is a co-owner) over scam/fraud controls (network-level, THIRD_PARTY).\"",
   "evidence": "THIRD_PARTY",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C021",
@@ -291,7 +291,7 @@
   "resolution": "zelle: true, CONFIRMED_BANK (S001, S042).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C022",
@@ -305,7 +305,7 @@
   "resolution": "rtp_receive: true, CONFIRMED_BANK (S910, S915, S050).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C023",
@@ -319,7 +319,7 @@
   "resolution": "push_to_card: true (commercial disbursements via J.P. Morgan Payments only; no consumer/SMB push-to-card).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C024",
@@ -333,7 +333,7 @@
   "resolution": "fednow_send: true (J.P. Morgan Payments commercial; not documented for Chase consumer/SMB channels). the participation baseline \"unknown\" should be updated from S915.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C025",
@@ -347,7 +347,7 @@
   "resolution": "Keep flags true for business; add other_flags {\"consumer_recurring_or_future_dated\": false} and note.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C026",
@@ -361,7 +361,7 @@
   "resolution": "Name: \"Chase Global Transfer (international wire in foreign currency)\".",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C027",
@@ -375,7 +375,7 @@
   "resolution": "Original stands as analyst judgement; FedNow portion corrected under JPM-C013. Synthesis team should confirm the peer superlative.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C028",
@@ -389,7 +389,7 @@
   "resolution": "Original wording stands; it already reflects both numbers in the terms.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "JPM-C029",
@@ -403,6 +403,6 @@
   "resolution": "\"Usually within minutes; no incoming (receive) limit is published.\"",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  }
 ]

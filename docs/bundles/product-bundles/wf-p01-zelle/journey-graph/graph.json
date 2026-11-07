@@ -119,43 +119,43 @@
    "severity": "low"
   },
   {
-   "id": "finding/GAP-WF-0036",
+   "id": "finding/GAP-WF-0035",
    "type": "gap",
    "label": "Observed: on the web, Zelle is the fourth item of the 'Move Money & Pay Bills' p",
    "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0001",
+   "id": "finding/STR-WF-0002",
    "type": "strength",
    "label": "Zelle has its own bottom-nav tab and can be initiated by Fargo, the deepest navi",
    "severity": "high"
   },
   {
-   "id": "finding/STR-WF-0002",
+   "id": "finding/STR-WF-0003",
    "type": "strength",
    "label": "Step-up access code (text or RSA SecurID) on first payment to a new recipient.",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0003",
+   "id": "finding/STR-WF-0004",
    "type": "strength",
    "label": "Skip-one or cancel-series for scheduled Zelle until 11:30 PM PT the day before; ",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0004",
+   "id": "finding/STR-WF-0005",
    "type": "strength",
    "label": "Business Zelle tag plus QR code displaying the business name.",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0021",
+   "id": "finding/STR-WF-0022",
    "type": "strength",
    "label": "Observed: Zelle 'Family controls' lets a parent enable or disable Zelle for a te",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0020",
+   "id": "finding/STR-WF-0021",
    "type": "strength",
    "label": "Observed: the web amount screen shows the recipient's Zelle-registered name ('En",
    "severity": "low"
@@ -279,12 +279,7 @@
   },
   {
    "from": "journey/WF-J29",
-   "to": "finding/GAP-WF-0036",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J01",
-   "to": "finding/STR-WF-0001",
+   "to": "finding/GAP-WF-0035",
    "rel": "finding"
   },
   {
@@ -298,18 +293,23 @@
    "rel": "finding"
   },
   {
-   "from": "journey/WF-J03",
+   "from": "journey/WF-J01",
    "to": "finding/STR-WF-0004",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J03",
+   "to": "finding/STR-WF-0005",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J29",
+   "to": "finding/STR-WF-0022",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J29",
    "to": "finding/STR-WF-0021",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J29",
-   "to": "finding/STR-WF-0020",
    "rel": "finding"
   }
  ]

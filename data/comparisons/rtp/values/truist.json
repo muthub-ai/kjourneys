@@ -564,7 +564,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -573,6 +573,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:truist:rtp:score-confirm-complete:3",
+        "value": 3.5,
+        "display": "3.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "INSTANT-SEND=3: At parity with composite; evidence TFC-J05; INSTANT-RECEIVE-RFP=4: Sets composite reference: Industry-first alias-based Request-for-Payment bill-pay pilot (phase-one validation Apr 2025; Zelle Forward pilot from Apr 23, 2026 with Truist as lead partner, 'limited, exploratory, and controlled', employee testers plus a handful of external checking customers) with a second confirmation",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:truist:rtp:score-confirm-complete:2"
       }
     ],
     "attr-score-manage": [

@@ -52,7 +52,7 @@
    "label": "Consumer sends an international wire in foreign currency"
   },
   {
-   "id": "finding/GAP-WF-0030",
+   "id": "finding/GAP-WF-0029",
    "type": "gap",
    "label": "SMB wires from Business Online have no dual approval (INFERRED, WF-C003); a sing",
    "severity": "high"
@@ -82,31 +82,31 @@
    "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0005",
+   "id": "finding/STR-WF-0006",
    "type": "strength",
    "label": "Richest public wire status vocabulary of the peer set (Scheduled, Pending, Compl",
    "severity": "high"
   },
   {
-   "id": "finding/STR-WF-0007",
+   "id": "finding/STR-WF-0008",
    "type": "strength",
    "label": "Foreign-currency rate lock with markup disclosed and a $0 consumer FX wire fee a",
    "severity": "high"
   },
   {
-   "id": "finding/STR-WF-0006",
+   "id": "finding/STR-WF-0007",
    "type": "strength",
    "label": "Mandatory OTP or RSA SecurID on every digital wire, plus wire-scam guidance on r",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0022",
+   "id": "finding/STR-WF-0023",
    "type": "strength",
    "label": "Observed: Wire Money opens with a rail-specific wire-scam banner and a 'Compare ",
    "severity": "medium"
   },
   {
-   "id": "finding/STR-WF-0023",
+   "id": "finding/STR-WF-0024",
    "type": "strength",
    "label": "Observed: the add-recipient wizard (3 steps) offers an in-flow 'Find an ABA/RTN'",
    "severity": "low"
@@ -160,7 +160,7 @@
   },
   {
    "from": "journey/WF-J18",
-   "to": "finding/GAP-WF-0030",
+   "to": "finding/GAP-WF-0029",
    "rel": "finding"
   },
   {
@@ -185,27 +185,27 @@
   },
   {
    "from": "journey/WF-J10",
-   "to": "finding/STR-WF-0005",
+   "to": "finding/STR-WF-0006",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J11",
+   "to": "finding/STR-WF-0008",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
    "to": "finding/STR-WF-0007",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J10",
-   "to": "finding/STR-WF-0006",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J10",
-   "to": "finding/STR-WF-0022",
-   "rel": "finding"
-  },
-  {
-   "from": "journey/WF-J10",
    "to": "finding/STR-WF-0023",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/STR-WF-0024",
    "rel": "finding"
   }
  ]

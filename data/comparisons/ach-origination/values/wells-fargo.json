@@ -455,7 +455,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -464,6 +464,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-discover:3",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "HIGH CHANNEL_GAP: Direct Pay is desktop-browser only: SMB owners cannot initiate or approve ACH on mobile unless they enrol in Vantage Treasury Management. [GAP-WF-0025]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:wells-fargo:ach-origination:score-discover:2"
       }
     ],
     "attr-score-set-up": [
@@ -479,7 +502,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -488,6 +511,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-set-up:3",
+        "value": 4,
+        "display": "4 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "Sets composite reference: Direct Pay four-level access model (Input Only, Input/Release, Input/Release/Control, No Access) enforces dual control for SMB ACH. [STR-WF-0018]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:wells-fargo:ach-origination:score-set-up:2"
       }
     ],
     "attr-score-initiate": [
@@ -503,7 +549,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "low",
@@ -512,6 +558,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "UNKNOWN"
         }
+      },
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-initiate:3",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "MEDIUM MISSING_CAPABILITY: Direct Pay is next-business-day only; no Same Day ACH option documented after a search of the Direct Pay FAQ (S931). [GAP-WF-0026]",
+          "report_ref": "Scores sheet",
+          "mi_level": "UNKNOWN"
+        },
+        "supersedes": "urn:kos:assertion:wells-fargo:ach-origination:score-initiate:2"
       }
     ],
     "attr-score-review-authorize": [
@@ -527,7 +596,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "low",
@@ -536,6 +605,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "INFERRED"
         }
+      },
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-review-authorize:3",
+        "value": 1,
+        "display": "1 of 4",
+        "basis": "inferred",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "x-evidence": {
+          "quote": "HIGH SECURITY_TRUST: SMB wires from Business Online have no dual approval (INFERRED, WF-C003); a single delegate can release a foreign-currency wire. [GAP-WF-0029]",
+          "report_ref": "Scores sheet",
+          "mi_level": "INFERRED"
+        },
+        "supersedes": "urn:kos:assertion:wells-fargo:ach-origination:score-review-authorize:2"
       }
     ],
     "attr-score-execute-track": [
@@ -599,7 +691,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -608,6 +700,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-manage:3",
+        "value": 3,
+        "display": "3 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "At parity; minor: Second-wave evidence: the Direct Pay Agreement publishes the cancel/change cutoff (before 3 p.m. Pacific on the Send On Date; payments in process cannot be cancelled or changed) and the rejection notice ('on or before the Pay By Date'), closing most of the first-wave transparency gap; the FAQ and Quick Start Guide still do not surface these rules in the flow. [GAP-WF-0027]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:wells-fargo:ach-origination:score-manage:2"
       }
     ],
     "attr-score-exception": [
@@ -623,7 +738,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "low",
@@ -632,6 +747,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "UNKNOWN"
         }
+      },
+      {
+        "id": "urn:kos:assertion:wells-fargo:ach-origination:score-exception:3",
+        "value": 2,
+        "display": "2 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "MEDIUM EXCEPTION_HANDLING: Returned ACH credits from the payee's bank and Same Day ACH are not published; second-wave evidence closes only part of the gap — insufficient funds ('we may either decline the transfer' or complete it and overdraw), payment by account number only with no name check, and rejection notices are now published in the Direct Pay Agreement (S970). [GAP-WF-0028]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:wells-fargo:ach-origination:score-exception:2"
       }
     ],
     "attr-score-support": [

@@ -7,7 +7,7 @@
  "segment": "consumer",
  "customer_goal": "Receive instant payouts into my Capital One account",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,7 +58,7 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s022",
       "src-capital-one-s027",
       "src-capital-one-s901",
@@ -66,14 +66,14 @@
       "src-capital-one-s924"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s022",
       "src-capital-one-s027",
       "src-capital-one-s901",
@@ -81,14 +81,14 @@
       "src-capital-one-s924"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s022",
       "src-capital-one-s027",
       "src-capital-one-s901",
@@ -96,14 +96,14 @@
       "src-capital-one-s924"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s022",
       "src-capital-one-s027",
       "src-capital-one-s901",
@@ -111,7 +111,7 @@
       "src-capital-one-s924"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -136,7 +136,7 @@
      "screen": "Transactions"
     }
    ],
-   "frontstage": "unknown labeling",
+   "frontstage": "Bank help article tells customers Venmo/PayPal 'you can still get your money instantly without a debit card by connecting your bank account' — consistent with account-level instant credits (RTP/FedNow) posting to checking; rail and transaction labeling not named. Remains INFERRED.",
    "actor": "network",
    "decision": null,
    "notification": "unknown",
@@ -145,33 +145,36 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s027"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s027",
+      "src-capital-one-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s027"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s027",
+      "src-capital-one-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s027"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s027",
+      "src-capital-one-s973"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -190,7 +193,7 @@
      "screen": "n/a"
     }
    ],
-   "frontstage": "unknown",
+   "frontstage": "No instant-payment-specific language in consumer terms. 360 Checking agreement: 'We also may refuse a deposit after initially accepting it. If we do that, we will reverse the amount added to your account'; Reg E error resolution: report within 60 days of first statement, results within 10 business days. Return-of-funds / unrecognized-credit flow for RTP/FedNow not published.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -199,32 +202,35 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -250,22 +256,22 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s080"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s080"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -273,7 +279,7 @@
   }
  ],
  "source_journey_id": "COF-J18",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "COF-P09-S01",
  "channels": {
   "entry": [

@@ -1,6 +1,6 @@
 # Transfers (Transfer Money) · product bundle
 
-Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`749175201ed7`).
+Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`053f4c412d7d`).
 
 ## Sections
 

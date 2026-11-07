@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "be178d022443425ec577b103c70dcb11389270d152e3b4cf153746991288972d",
+  "content_sha256": "0182982bf83c886d26da1b38b3b9bd9d2a8b924932e2f7a617c5d05bb6d73da4",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -53,7 +53,7 @@
 | `WF-P09` Fargo® virtual assistant | Consumer, Small and Business Banking | 1 | 1 | 1 | [wf-p09-fargo-virtual-assistant](../../product-bundles/wf-p09-fargo-virtual-assistant/index.md)[^17][^18] |
 | `WF-P10` Card Settings (card on/off, view recurring payments, digital wallets, account access) — formerly Control Tower℠ | Consumer, Small and Business Banking | 1 | 1 | 0 | [wf-p10-card-settings](../../product-bundles/wf-p10-card-settings/index.md)[^19][^20] |
 | `WF-P11` Digital wallet intersections (Paze, PayPal, Apple/Google/Samsung Pay, card-free ATM) | Consumer, Small and Business Banking | 2 | 1 | 0 | [wf-p11-digital-wallet-intersections](../../product-bundles/wf-p11-digital-wallet-intersections/index.md)[^21][^22] |
-| `WF-P12` Early Pay Day & inbound instant receive (RTP/FedNow/Zelle credits) | Consumer, Small and Business Banking | 3 | 1 | 3 | [wf-p12-early-pay-day-inbound-instan](../../product-bundles/wf-p12-early-pay-day-inbound-instan/index.md)[^23][^24] |
+| `WF-P12` Early Pay Day & inbound instant receive (RTP/FedNow/Zelle credits) | Consumer, Small and Business Banking | 3 | 1 | 2 | [wf-p12-early-pay-day-inbound-instan](../../product-bundles/wf-p12-early-pay-day-inbound-instan/index.md)[^23][^24] |
 
 ## Products it also serves
 
@@ -61,28 +61,28 @@
 |---|---|---|
 | `WF-P13` Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®) | Commercial Banking | [wf-p13-wells-fargo-vantage](../../product-bundles/wf-p13-wells-fargo-vantage/index.md)[^25] |
 
-[^1]: kj · product/WF-P01 · 7db18a666d60
+[^1]: kj · product/WF-P01 · f217122e121a
 [^2]: kj · assignment/WF-P01 · daf9fc88d74e
-[^3]: kj · product/WF-P02 · 9eb25008fe7d
+[^3]: kj · product/WF-P02 · 0b29dca0b27f
 [^4]: kj · assignment/WF-P02 · 8fdf77850db2
-[^5]: kj · product/WF-P03 · b839aacb8026
+[^5]: kj · product/WF-P03 · 0c4750f70904
 [^6]: kj · assignment/WF-P03 · e2aaf98a158a
-[^7]: kj · product/WF-P04 · 7ae69c334eed
+[^7]: kj · product/WF-P04 · 728ab1540360
 [^8]: kj · assignment/WF-P04 · 70de3dac3dfc
-[^9]: kj · product/WF-P05 · 4247b60967aa
+[^9]: kj · product/WF-P05 · 0e61b73c4811
 [^10]: kj · assignment/WF-P05 · 607b1c155d64
-[^11]: kj · product/WF-P06 · aa0e6fda3732
+[^11]: kj · product/WF-P06 · 7447c97a0fac
 [^12]: kj · assignment/WF-P06 · 14c5b738cdf5
-[^13]: kj · product/WF-P07 · 60c66e3aae03
+[^13]: kj · product/WF-P07 · 4fe5c088f5d6
 [^14]: kj · assignment/WF-P07 · a7162a28f27a
-[^15]: kj · product/WF-P08 · 3868912428e5
+[^15]: kj · product/WF-P08 · 53a0b5f81ba1
 [^16]: kj · assignment/WF-P08 · 59a2dcfc7280
-[^17]: kj · product/WF-P09 · d4d1ce4a76b1
+[^17]: kj · product/WF-P09 · 4787881df475
 [^18]: kj · assignment/WF-P09 · 335f6c8682e1
-[^19]: kj · product/WF-P10 · ae4ea79539a2
+[^19]: kj · product/WF-P10 · 5dc2c6e95e66
 [^20]: kj · assignment/WF-P10 · 61f49f4b4a83
-[^21]: kj · product/WF-P11 · df9119f7188e
+[^21]: kj · product/WF-P11 · 18c5f5e9f2bf
 [^22]: kj · assignment/WF-P11 · eccf60df1390
-[^23]: kj · product/WF-P12 · d73da35d0cb8
+[^23]: kj · product/WF-P12 · 932e654a57de
 [^24]: kj · assignment/WF-P12 · 64f7eaee3789
 [^25]: kj · assignment/WF-P13 · c64f59363a8c

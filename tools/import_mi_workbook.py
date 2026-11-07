@@ -29,7 +29,7 @@ wins), otherwise "rail-segment" when rail and segment match (direction words in 
 match stay unlinked rather than being forced onto a composite for another segment.
 
 Capability flags follow MI's own counting (CapabilityClasses sheet): only a literal "Yes" is true; "No", "None observed"
-and text starting "not evidenced" are false; any other text is unknown (kept as detail). Stage scores must be integers
+and text starting "not evidenced" are false; any other text is unknown (kept as detail). Stage scores must be multiples of 0.5 (v2 cells are means over customer journeys)
 0-4 or U. ScoreTotals are kept as MI published them, alongside means and an index recomputed from the Scores sheet,
 with a warning where they differ. A finding keeps MI's stage (relative to the best-practice journey); when the bank step it
 sits on is in another stage, that stage is kept as step_stage.
@@ -349,23 +349,27 @@ participation = [{"bank": p["bank_slug"], "network": str(p["Rail / network"]).re
 cell = defaultdict(list)                              # (bank, rail) -> stage scores, recomputed from the Scores sheet
 for r in X["Scores"]:
     v = r["Score (0-4, U=unknown)"]
-    if isinstance(v, (int, float)) and float(v).is_integer() and 0 <= v <= 4 and r["Rail"] in RAIL: cell[(r["bank_slug"], RAIL[r["Rail"]])].append(int(v))
+    if isinstance(v, (int, float)) and not isinstance(v, bool) and 0 <= v <= 4 and r["Rail"] in RAIL: cell[(r["bank_slug"], RAIL[r["Rail"]])].append(float(v))
+INDEX_EXCLUDE = {"push-to-card"}; DOMESTIC_EXCLUDE = {"wire-international", "remittance"}
 rankings = []
 for r in X["ScoreTotals"]:
     if not bank_ok(r["bank_slug"], "ScoreTotals"): continue
     means = {RAIL[k.split(" mean")[0]]: v for k, v in r.items() if k.endswith("mean (0-4)") and k.split(" mean")[0] in RAIL}
-    b = r["bank_slug"]; mine = {p: round(sum(v) / len(v), 2) for (bb, p), v in cell.items() if bb == b and v}
-    allv = [x for (bb, _), v in cell.items() if bb == b for x in v]
+    b = r["bank_slug"]; raw_means = {p: sum(v) / len(v) for (bb, p), v in cell.items() if bb == b and v}
+    mine = {p: round(m, 2) for p, m in raw_means.items()}
+    idx = lambda drop: (lambda ms: round(25 * sum(ms) / len(ms), 1) if ms else None)([m for p, m in raw_means.items() if p not in drop])
     rankings.append({"bank": b, "rank": int(r["Rank"]), "overall_index": float(r["Overall index (0-100)"]),
         "domestic_core_index": r.get("Domestic-core index"), "coverage": r.get("Scored cell coverage"), "rail_means": means, "report_version": version,
-        "x-computed": {"overall_index": round(sum(allv) / len(allv) * 25, 1) if allv else None, "rail_means": mine,
-                       "method": "mean of the bank's numeric stage scores on the Scores sheet × 25; rail means are the mean of that rail's stage scores; U excluded"}})
+        "x-computed": {"overall_index": idx(INDEX_EXCLUDE), "domestic_core_index": idx(INDEX_EXCLUDE | DOMESTIC_EXCLUDE), "rail_means": mine,
+                       "method": "MI's rule (README, v2): each rail mean is the mean of that rail's scored cells (U excluded, half points kept); "
+                                 "the overall index is 25 × the mean of the rail means, push-to-card excluded; the domestic-core index also drops "
+                                 "international wire and remittance"}})
 order = sorted(rankings, key=lambda x: -(x["x-computed"]["overall_index"] or 0))
 for i, x in enumerate(order, 1): x["x-computed"]["rank"] = i
 diff_means = [(x["bank"], p) for x in rankings for p, v in x["rail_means"].items() if v is not None and p in x["x-computed"]["rail_means"] and abs(v - x["x-computed"]["rail_means"][p]) > 0.05]
 if diff_means: warnings.append(f"ScoreTotals: {len(diff_means)} bank × rail means differ from the mean of their Scores cells (e.g. {diff_means[0][0]} {diff_means[0][1]})")
-diff_idx = [x["bank"] for x in rankings if x["x-computed"]["overall_index"] is not None and abs(x["overall_index"] - x["x-computed"]["overall_index"]) > 0.5]
-if diff_idx: warnings.append(f"ScoreTotals: overall index differs from the Scores sheet by more than 0.5 points for {len(diff_idx)} of {len(rankings)} banks; the site shows both")
+diff_idx = [x["bank"] for x in rankings if x["x-computed"]["overall_index"] is not None and abs(x["overall_index"] - x["x-computed"]["overall_index"]) > 0.05]
+if diff_idx: warnings.append(f"ScoreTotals: overall index differs from the Scores sheet by more than rounding for {len(diff_idx)} of {len(rankings)} banks; the site shows both")
 
 # ---------- comparisons: questions + facts ----------
 caps_by = defaultdict(list)       # (bank, product) -> capability rows
@@ -386,7 +390,7 @@ def attributes_for(p):
             "normalization": "True if any of the bank's sub-products on this rail has it (MI Capabilities sheet); false only when every one is No; otherwise awaiting"}
            for f in FLAGS]
     if p in scored:
-        out += [{"id": f"attr-score-{st}", "stage": st, "name": f"Stage score: {st.replace('-', ' ')}", "datatype": "integer", "unit": "score 0-4",
+        out += [{"id": f"attr-score-{st}", "stage": st, "name": f"Stage score: {st.replace('-', ' ')}", "datatype": "number", "unit": "score 0-4",
                  "normalization": rubric} for st in stages]
     return out
 def flag_value(v):
@@ -418,10 +422,12 @@ for (b, p), byst in scores_by.items():
     for st, r in byst.items():
         raw = r["Score (0-4, U=unknown)"]; sc = str(raw).strip()
         if sc.upper() == "U": continue
-        if isinstance(raw, float) and raw.is_integer(): sc = str(int(raw))
-        if not sc.isdigit() or not 0 <= int(sc) <= 4: problems.append(f"Scores {b}/{p}/{st}: score {raw!r} is not 0-4 or U"); continue
+        try: num = float(sc)
+        except ValueError: num = None
+        if num is None or not 0 <= num <= 4 or (num * 2) % 1: problems.append(f"Scores {b}/{p}/{st}: score {raw!r} is not 0-4 in half points, or U"); continue
+        num = int(num) if num.is_integer() else num; sc = str(num)
         basis, conf = ev(r.get("Evidence") or "UNKNOWN")
-        extracts[p][b].append({"attribute": f"attr-score-{st}", "value": int(sc), "display": f"{sc} of 4", "basis": basis, "confidence": conf,
+        extracts[p][b].append({"attribute": f"attr-score-{st}", "value": num, "display": f"{sc} of 4", "basis": basis, "confidence": conf,
                                "observed_on": AS_OF, "source_ids": [], "evidence": {"quote": (s(r.get("Rationale")) or "")[:600], "report_ref": "Scores sheet",
                                                                           "mi_level": r.get("Evidence") or "UNKNOWN"}})
 
@@ -451,7 +457,8 @@ if others and not args.replace:
     die(f"MI data from {others} is already imported. MI IDs (journeys, sources, findings) are not version-scoped yet, so a second "
         f"version replaces the first: rerun with --replace once that is intended")
 rel_report = os.path.relpath(rdir, ROOT)
-sources = [x for x in jl("registries/sources.json") if not (x.get("report_version") == version and x.get("kind") != "mi-report") and x["id"] != REPORT_SRC]
+# MI sources from this version, or from a version this import replaces, are rewritten; each report's own record stays
+sources = [x for x in jl("registries/sources.json") if not (x.get("report_version") in {version, *others} and x.get("kind") != "mi-report") and x["id"] != REPORT_SRC]
 report_source = {"id": REPORT_SRC, "kind": "mi-report", "title": man.get("title") or f"Market-intelligence report {version}",
                  "origin": man.get("produced_by", MI), "url": None, "retrieved_at": received, "path": f"{rel_report}/{wbname}",
                  "sha256": sha, "report_version": version}       # the workbook is the canonical deliverable every MI record cites
@@ -472,7 +479,8 @@ pf = jl("data/portfolio.json")
 for pid in cmp_products:
     cpath = f"data/comparisons/{pid}/comparison.json"
     comp = jl(cpath) if os.path.exists(os.path.join(ROOT, cpath)) else {"product": pid, "governance": gov, "attributes": []}
-    have = {a["id"] for a in comp["attributes"]}; comp["attributes"] += [a for a in attributes_for(pid) if a["id"] not in have]
+    fresh = {a["id"]: a for a in attributes_for(pid)}       # MI-owned attributes (scores, capability flags) take the importer's current definition
+    comp["attributes"] = [fresh.pop(a["id"], a) for a in comp["attributes"]] + list(fresh.values())
     put(cpath, comp)
     for b in pf["banks"]:
         vp = f"data/comparisons/{pid}/values/{b}.json"

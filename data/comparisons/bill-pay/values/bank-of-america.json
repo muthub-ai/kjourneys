@@ -505,7 +505,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -514,6 +514,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:bill-pay:score-initiate:3",
+        "value": 3.5,
+        "display": "3.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "BILLPAY-SEND=4: Sets composite reference: Payment type shown on confirmation, incl. single-use virtual card delivery. [STR-BAC-0011]; BILLPAY-EBILL-MANAGE=3: At parity; minor: AutoPay is coupled to eBills; fixed-amount autopay without an eBill is not documented. [GAP-BAC-0020]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:bill-pay:score-initiate:2"
       }
     ],
     "attr-score-review-authorize": [
@@ -601,7 +624,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -610,6 +633,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:bill-pay:score-manage:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "BILLPAY-SEND=2: MEDIUM FRICTION: Cancel window closes 5 p.m. ET three business days before delivery. [GAP-BAC-0018]; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence BAC-J10",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:bill-pay:score-manage:2"
       }
     ],
     "attr-score-exception": [
@@ -649,7 +695,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -658,6 +704,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:bank-of-america:bill-pay:score-support:3",
+        "value": 3.5,
+        "display": "3.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "BILLPAY-SEND=4: Sets composite reference: Erica pays and cancels bills and adds payees. [STR-BAC-0012]; BILLPAY-EBILL-MANAGE=3: At parity with composite; evidence BAC-J10",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:bank-of-america:bill-pay:score-support:2"
       }
     ]
   }

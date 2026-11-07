@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Collect and deposit customer payments faster",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "inferred",
  "governance": {
@@ -49,7 +49,7 @@
      "screen": "Implementation"
     }
    ],
-   "frontstage": "Treasury team implements Lockbox, Remote Deposit scanners/mobile, or Vault Services",
+   "frontstage": "Treasury Management T&C index lists separate service schedules for 'Lockbox Services', 'Remote Deposit', 'Vault Services', 'Image Cash Letter', 'Return Services' and 'OneBillConnect' — each contracted and implemented as a TM service.",
    "actor": "bank-staff",
    "decision": null,
    "notification": null,
@@ -58,22 +58,24 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s031"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s031",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s031"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s031",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -101,24 +103,24 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s031",
       "src-capital-one-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s031",
       "src-capital-one-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -146,22 +148,22 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s031"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -180,41 +182,47 @@
      "screen": "n/a"
     }
    ],
-   "frontstage": "unknown",
+   "frontstage": "'Customer is responsible for returned Items'; Bank may charge a fee and debit the item amount plus fee 'without advance notice', even if settlement was treated as final; 'Customer may not receive the original deposited Item' (image instead) (Rules §2.5); 'a deposit Item can be returned and charged back to the Account' (§2.2). A separate 'Return Services' TM schedule exists.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
    "source_step": 4,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s971",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s971",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s971",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -240,22 +248,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s063"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -263,7 +271,7 @@
   }
  ],
  "source_journey_id": "COF-J24",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "COF-P13-S01",
  "channels": {
   "entry": [
@@ -279,7 +287,20 @@
   "states": [],
   "basis": "inferred"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Deposited item returned unpaid",
+   "customer_experience": "Account debited for item plus fee, possibly without advance notice; image instead of original",
+   "bank_handling": "Rules §2.2, §2.5 chargeback; separate Return Services TM schedule",
+   "resolution": "Customer pursues payer; may redeposit per Return Services",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-capital-one-s971",
+    "src-capital-one-s976"
+   ]
+  }
+ ],
  "notifications": [],
  "assessment": "No RTP receive / Request for Payment receivables product named.",
  "x-mi_evidence": "INFERRED",

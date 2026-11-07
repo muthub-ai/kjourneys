@@ -63,6 +63,7 @@ def check_assertion(a, where, attr=None):
     if attr and a["basis"] != "awaiting" and a.get("value") is not None:
         v, dt = a["value"], attr["datatype"]
         ok = {"text": isinstance(v, str), "integer": isinstance(v, int) and not isinstance(v, bool),
+              "number": isinstance(v, (int, float)) and not isinstance(v, bool),
               "boolean": isinstance(v, bool), "money": isinstance(v, (int, float)) and not isinstance(v, bool),
               "duration": isinstance(v, str) and re.fullmatch(r"P(?!$)(\d+(\.\d+)?Y)?(\d+(\.\d+)?M)?(\d+(\.\d+)?W)?(\d+(\.\d+)?D)?(T(?=\d)(\d+(\.\d+)?H)?(\d+(\.\d+)?M)?(\d+(\.\d+)?S)?)?", v or "") is not None,
               "enum": isinstance(v, str), "enum_list": isinstance(v, list)}[dt]
@@ -314,7 +315,7 @@ for cmp in CMPS:
         for at, hist in row.items():
             if at.startswith("attr-score-"):
                 for x in hist:
-                    if x.get("basis") != "awaiting": need(isinstance(x.get("value"), int) and 0 <= x["value"] <= 4, f"range: {P} {b}/{at} score {x.get('value')!r} is outside the 0-4 rubric")
+                    if x.get("basis") != "awaiting": v = x.get("value"); need(isinstance(v, (int, float)) and not isinstance(v, bool) and 0 <= v <= 4 and (v * 2) % 1 == 0, f"range: {P} {b}/{at} score {v!r} is outside the 0-4 rubric (half points allowed)")
     for b in pf.get("banks", []):
         need(b in cmp["values"], f"slot: {P} comparison missing bank {b}")
         for at in attrs: need(at in cmp["values"].get(b, {}), f"slot: {P} comparison missing {b}/{at}")

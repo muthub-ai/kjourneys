@@ -1,0 +1,386 @@
+{
+ "bank": "td-bank",
+ "product": "ach-origination",
+ "facts": [
+  {
+   "attribute": "attr-cap-recurring",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-scheduled-future-dated",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-request-money",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s025",
+    "src-td-bank-s042",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-split",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s025",
+    "src-td-bank-s042",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-qr-code",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-contact-sync",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s025",
+    "src-td-bank-s042",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-cancel-before-send",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s025",
+    "src-td-bank-s042",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-status-tracking",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s042",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-email-sms-notifications",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-dual-approval-smb",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s042"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S02",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-international",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s025",
+    "src-td-bank-s042",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-same-day",
+   "value": true,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s014",
+    "src-td-bank-s043"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P10-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-cap-instant",
+   "value": false,
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [
+    "src-td-bank-s023",
+    "src-td-bank-s047",
+    "src-td-bank-s014",
+    "src-td-bank-s043",
+    "src-td-bank-s025",
+    "src-td-bank-s042",
+    "src-td-bank-s026",
+    "src-td-bank-s045",
+    "src-td-bank-s046"
+   ],
+   "evidence": {
+    "report_ref": "Capabilities sheet: TD-P09-S01, TD-P10-S01, TD-P11-S01, TD-P11-S02, TD-P12-S02, TD-P13-S01",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-discover",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity; minor: SMB ACH batches are web-only. [GAP-TD-0030]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-set-up",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence TD-J12, TD-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-initiate",
+   "value": 2,
+   "display": "2 of 4",
+   "basis": "inferred",
+   "confidence": "low",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "MEDIUM MISSING_CAPABILITY: Same-day ACH for SMB not evidenced after search; 2-business-day arrival and $10 per batch. [GAP-TD-0029]",
+    "report_ref": "Scores sheet",
+    "mi_level": "UNKNOWN"
+   }
+  },
+  {
+   "attribute": "attr-score-review-authorize",
+   "value": 4,
+   "display": "4 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "Sets composite reference: Per-activity approval types (none/single/dual/deny), release limits and approval-needed alerts. [STR-TD-0009]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-execute-track",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence TD-J12, TD-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-confirm-complete",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence TD-J12, TD-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-manage",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "inferred",
+   "confidence": "low",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence TD-J12",
+    "report_ref": "Scores sheet",
+    "mi_level": "INFERRED"
+   }
+  },
+  {
+   "attribute": "attr-score-exception",
+   "value": 4,
+   "display": "4 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "Sets composite reference: 'ACH return' alert when an item is returned. [STR-TD-0010]",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  },
+  {
+   "attribute": "attr-score-support",
+   "value": 3,
+   "display": "3 of 4",
+   "basis": "disclosed",
+   "confidence": "high",
+   "observed_on": "2026-11-07",
+   "source_ids": [],
+   "evidence": {
+    "quote": "At parity with composite; evidence TD-J12, TD-J16",
+    "report_ref": "Scores sheet",
+    "mi_level": "CONFIRMED_BANK"
+   }
+  }
+ ]
+}

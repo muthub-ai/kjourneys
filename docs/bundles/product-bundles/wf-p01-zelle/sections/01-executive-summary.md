@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "cc5439fc788a7d61c640d0fe6abf1b388333165639367c09f30c51cb0579c5cf",
+  "content_sha256": "2693ca28ab3ff9596899518a4aa10caffd9a64b39fc856b6ce4124ca0705a845",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -53,33 +53,33 @@ MI documented 5 journey(s) for it (plus the hand-built sample blueprint), delive
 
 - **high** · Review & authorize · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^15]
 - **high** · Exception · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^16]
-- **high** · Review & authorize · Business Zelle sends in Business Online can be executed by a single 'View and Transact' delegate; no secondary approval (INFERRED from OAA per WF-C003). Dual custody exists only for Vantage Treasury Management enrollees.[^17]
+- **high** · Review & authorize · Business Zelle sends in Business Online can be executed by a single 'View and Transact' delegate; no secondary approval (INFERRED from OAA per WF-C003; the second-wave check of the Zelle for Your Business FAQ confirms the review screen, recipient-name display and first-time access code but says nothing about dual approval, S956). Dual custody exists only for Vantage Treasury Management enrollees.[^17]
 
-[^1]: kj · product/WF-P01 · 7db18a666d60
+[^1]: kj · product/WF-P01 · f217122e121a
 [^2]: kj · assignment/WF-P01 · daf9fc88d74e
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P01-S01 · dac14fe19dea
-[^5]: kj · sub-product/WF-P01-S02 · 22b37fa1ea11
-[^6]: kj · sub-product/WF-P01-S03 · 677aab3d9fbb
-[^7]: kj · sub-product/WF-P01-S04 · 05811c9bbdb1
-[^8]: kj · sub-product/WF-P01-S05 · 8377db259ff9
-[^9]: kj · journey/WF-J01 · 251e989b61ea
-[^10]: kj · journey/WF-J02 · 14bc08a80f04
-[^11]: kj · journey/WF-J03 · b89c841e1309
-[^12]: kj · journey/WF-J28 · b20fda0a115f
-[^13]: kj · journey/WF-J29 · d718f795aee2
+[^4]: kj · sub-product/WF-P01-S01 · fd892338eb7b
+[^5]: kj · sub-product/WF-P01-S02 · 88b81a74ed86
+[^6]: kj · sub-product/WF-P01-S03 · 459b1ae65d26
+[^7]: kj · sub-product/WF-P01-S04 · d167429d7fc3
+[^8]: kj · sub-product/WF-P01-S05 · 9d7ee732e4a6
+[^9]: kj · journey/WF-J01 · c3b8e132fd5c
+[^10]: kj · journey/WF-J02 · 2eca5861046f
+[^11]: kj · journey/WF-J03 · 558dd3d0215c
+[^12]: kj · journey/WF-J28 · cf400c417393
+[^13]: kj · journey/WF-J29 · f76130105e87
 [^14]: kj · journey/sample · e85b2befb3b0
-[^15]: kj · finding/GAP-WF-0001 · 38c101614c6a
-[^16]: kj · finding/GAP-WF-0002 · 4e09e7353ec2
-[^17]: kj · finding/GAP-WF-0008 · 35e06b5dbd70
-[^18]: kj · finding/GAP-WF-0003 · a9b601e4c21e
-[^19]: kj · finding/GAP-WF-0004 · 069260253e2f
-[^20]: kj · finding/GAP-WF-0006 · 3782e8a4f392
-[^21]: kj · finding/GAP-WF-0007 · 8cfc91935657
-[^22]: kj · finding/GAP-WF-0036 · 100d7a3aaf40
-[^23]: kj · finding/STR-WF-0001 · bb3dd7fabeb8
-[^24]: kj · finding/STR-WF-0002 · 63a6e9b96a41
-[^25]: kj · finding/STR-WF-0003 · db967ece611f
-[^26]: kj · finding/STR-WF-0004 · f24f20dbe1a5
-[^27]: kj · finding/STR-WF-0021 · 1fa52835558b
-[^28]: kj · finding/STR-WF-0020 · 9d37e3577ce0
+[^15]: kj · finding/GAP-WF-0001 · 1e4eff85a315
+[^16]: kj · finding/GAP-WF-0002 · 5f257a86aa4a
+[^17]: kj · finding/GAP-WF-0008 · 2074ba55f5b7
+[^18]: kj · finding/GAP-WF-0003 · d7739d2d4711
+[^19]: kj · finding/GAP-WF-0004 · 2b1a133e331a
+[^20]: kj · finding/GAP-WF-0006 · d4cf77ecd112
+[^21]: kj · finding/GAP-WF-0007 · 521fc1be3252
+[^22]: kj · finding/GAP-WF-0035 · 0713fae04ce2
+[^23]: kj · finding/STR-WF-0002 · 5debf3f862e8
+[^24]: kj · finding/STR-WF-0003 · fb1b6dc2f235
+[^25]: kj · finding/STR-WF-0004 · 0a23a8ab1ce7
+[^26]: kj · finding/STR-WF-0005 · 9050d412286d
+[^27]: kj · finding/STR-WF-0022 · e07b4ec8bedd
+[^28]: kj · finding/STR-WF-0021 · 2fcca8416a99

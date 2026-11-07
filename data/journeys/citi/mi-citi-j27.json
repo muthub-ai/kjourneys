@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Move USD any time, any day",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,22 +58,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s024"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s024"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     }
@@ -101,22 +101,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s024"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s024"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     }
@@ -126,16 +126,16 @@
    "id": "urn:kos:moment:citi:citi-j27:m03",
    "code": "M03",
    "stage": "exception",
-   "title": "Unknown",
+   "title": "Beneficiary credit not applied by the receiving institution: Citi…",
    "customer_action": null,
-   "action": "Unknown",
+   "action": "Beneficiary credit not applied by the receiving institution: Citi states that 'Credit to final beneficiary's account remains at discretion of the receiving financial institution' (24/7 USD Clearing / Citi Token Services release); no public description of reject, return or investigation handling",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
-     "screen": null
+     "screen": "CitiDirect > Payments > Repair ('Repair Req'd' tab)"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Payments rejected by Citibank host systems appear on CitiDirect's 'Repair Req'd' tab with status 'CB Rejected' (or 'Repair Required'); user goes Payments > Repair > Other Options > 'View Error Messages', corrects fields and clicks 'Submit'; 'Once repaired, a payment transaction is treated as new and is subject to all Flow Control requirements' (re-approval). Pending items may be 'Sent to exception processing' or 'Held for funding'; returned items: 'Citi is reviewing the payment for repair.' Applies to CitiDirect payments generally; no 24/7 USD Clearing-specific exception text is published.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -144,22 +144,41 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s972",
+      "src-citi-s976",
+      "src-citi-s977"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
+    },
+    "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-citi-s972",
+      "src-citi-s976",
+      "src-citi-s977"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
     },
     "process": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-citi-s972",
+      "src-citi-s976",
+      "src-citi-s977"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -185,36 +204,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s007",
       "src-citi-s010"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s007",
       "src-citi-s010"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-citi-s007",
       "src-citi-s010"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -222,7 +241,7 @@
   }
  ],
  "source_journey_id": "CITI-J27",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "CITI-P14-S02",
  "channels": {
   "entry": [
@@ -231,13 +250,45 @@
   "other": []
  },
  "status_tracking": {
-  "where": "CitiDirect",
-  "states": [],
+  "where": "CitiDirect BE Payment Module > 'View All' (status and sub-status; preview pane shows status description); optional proactive email (up to two addresses) / SMS notifications set up by a Security Administrator",
+  "states": [
+   "CB Accepted",
+   "CB Pending (Sent to exception processing / Held for funding / Ready for release for value date / Sent to clearing system)",
+   "Processed (Settled at clearing system / Beneficiary account credited at Citi)",
+   "CB Rejected (Insufficient Funds / Duplicate Payment)",
+   "Returned (Closed Beneficiary Account Number / Refund Request By End Customer)"
+  ],
   "basis": "inferred"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Insufficient balance at release (Held for funding)",
+   "customer_experience": "Payment shows CB Pending / 'Held for funding'; optional proactive email/SMS notification",
+   "bank_handling": "'Due to insufficient balance, balance check will keep retrying until sufficient balance is available'; payments that cannot complete on the value date are 'Rescheduled to next available value date'",
+   "resolution": "Fund the account; otherwise CB Rejected with sub-status 'Insufficient Funds'",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-citi-s976"
+   ]
+  },
+  {
+   "trigger": "Payment fails at clearing or beneficiary account closed",
+   "customer_experience": "Status 'Returned' (e.g., 'Closed Beneficiary Account Number'); email/SMS notification if subscribed",
+   "bank_handling": "'The payment failed to settle at the local clearing system. Citi is reviewing the payment for repair.' Exception items 'Might require some type of repair.' Credit to the final beneficiary 'remains at discretion of the receiving financial institution' [S972]",
+   "resolution": "Contact Citi Account Manager or Service Representative",
+   "basis": "inferred",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-citi-s976",
+    "src-citi-s972"
+   ]
+  }
+ ],
  "notifications": [],
  "assessment": "Sketch only; institutional.",
  "x-mi_evidence": "THIRD_PARTY",
- "bank_product": "CITI-P14"
+ "bank_product": "CITI-P14",
+ "composite": "CJ-COMMERCIAL-INSTANT",
+ "composite_match": "mi-reference"
 }

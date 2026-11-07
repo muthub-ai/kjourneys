@@ -7,7 +7,7 @@
  "segment": "small-business",
  "customer_goal": "Pay vendors electronically and delegate access",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,36 +58,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033",
       "src-capital-one-s036"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033",
       "src-capital-one-s036"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033",
       "src-capital-one-s036"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -112,7 +112,7 @@
      "screen": "'Manage Account Users'"
     }
    ],
-   "frontstage": "Option varies by account type; permission tiers undocumented",
+   "frontstage": "Digital Portal Terms §3: 'You must designate at least one individual as your Administrator with full authority to access and use the Portal'; 'Each User may access and use the Portal and Services based on the Permissions applicable to such User.'",
    "actor": "customer",
    "decision": null,
    "notification": "Email to new user",
@@ -121,44 +121,44 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s086"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s086"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s086"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s086"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -183,7 +183,7 @@
      "screen": "unknown"
     }
    ],
-   "frontstage": "ACH funds available in 1-3 business days",
+   "frontstage": "Business online banking marketing only: 'Access ACH payments for free and send wires. Pay your business bills and invoices, all in one place.' The only published SMB vendor-payment step sequence is Accounts Payable with Capital One: 'Manage Accounts Payable' tab above transaction history > 'Add Business Bill' > pay 'with your Capital One Business card or an ACH bank transfer' > vendor receives 'a paper check or a bank transfer' > deduction date + delivery speed > 'Confirm'; tracks 'scheduled, upcoming and past payments'. Whether standard business-checking ACH uses this flow is not stated.",
    "actor": "customer",
    "decision": null,
    "notification": null,
@@ -192,35 +192,41 @@
     "action": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s036"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s036",
+      "src-capital-one-s974",
+      "src-capital-one-s975"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     },
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s036"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s036",
+      "src-capital-one-s974",
+      "src-capital-one-s975"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s036"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s036",
+      "src-capital-one-s974",
+      "src-capital-one-s975"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -246,52 +252,52 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s922",
       "src-capital-one-s086",
       "src-capital-one-s923"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s922",
       "src-capital-one-s086",
       "src-capital-one-s923"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s922",
       "src-capital-one-s086",
       "src-capital-one-s923"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s922",
       "src-capital-one-s086",
       "src-capital-one-s923"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -325,22 +331,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -359,41 +365,47 @@
      "screen": "n/a"
     }
    ],
-   "frontstage": "unknown",
+   "frontstage": "Small-business deposit rules: 'Errors involving ACH entries must be reported to Bank immediately' so Bank can act within 'the time frame for return requests under the Nacha Rules' — late requests may not be accepted and 'Customer could incur Losses' (§6.7); other errors must be reported in writing within 30 days of the statement (§4.1). For outgoing payments that are returned, 'Bank has no obligation to separately notify Customer' and 'it will be Customer's responsibility to resubmit the Payment Order' (§6.4). Treasury clients can add ACH Debit Protection (TM schedule).",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
    "source_step": 6,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s971",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s971",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s971",
+      "src-capital-one-s976"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -419,22 +431,22 @@
     "touchpoint": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
      "basis": "inferred",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s033"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     }
@@ -442,7 +454,7 @@
   }
  ],
  "source_journey_id": "COF-J21",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "COF-P11-S01",
  "channels": {
   "entry": [
@@ -457,7 +469,19 @@
   "states": [],
   "basis": "inferred"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Unauthorized or erroneous ACH entry on business account",
+   "customer_experience": "Must report immediately",
+   "bank_handling": "Rules §6.7: Bank acts within Nacha return time frames; late requests may not be honored; §4.1 written notice within 30 days for other errors",
+   "resolution": "Return if timely; otherwise customer bears losses",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-capital-one-s971"
+   ]
+  }
+ ],
  "notifications": [
   {
    "event": "account_alerts",

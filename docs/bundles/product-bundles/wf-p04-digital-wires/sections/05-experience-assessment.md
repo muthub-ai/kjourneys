@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "f786ae73536af2ae193a0eb7567a608ec5e35e504268dc55d06bcf65bf244a38",
+  "content_sha256": "f8e2aac04e1b0ea7a9c897386c07d24947f80e4cb6c93a9a658f6e2f3b82f5fa",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -39,7 +39,7 @@
 
 # Digital Wires (Wire Money) — experience assessment
 
-*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.
+*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. From report v2, each score is the mean across MI's customer journeys, so half points occur. Best practice is the highest score any bank in the study reached; no bank is named.
 
 | Rail | Stage | Wells Fargo | Best practice | Gap |
 |---|---|---|---|---|
@@ -79,30 +79,30 @@
 - Set up · Observed: the add-recipient wizard (3 steps) offers an in-flow 'Find an ABA/RTN' lookup and a Wells Fargo routing hint on the recipient's bank-info step.[^28]
 
 [^1]: kj · score/wire-domestic/discover · a7eda35b2559
-[^2]: kj · score/wire-domestic/set-up · ca81496610da
+[^2]: kj · score/wire-domestic/set-up · b1ac6d947794
 [^3]: kj · score/wire-domestic/initiate · 2df0c37cba04
-[^4]: kj · score/wire-domestic/review-authorize · 5ada8599fcd1
-[^5]: kj · score/wire-domestic/execute-track · 12930d4bae3c
+[^4]: kj · score/wire-domestic/review-authorize · ede3c9a5d788
+[^5]: kj · score/wire-domestic/execute-track · 7ce523a435ef
 [^6]: kj · score/wire-domestic/confirm-complete · 2814a728a910
 [^7]: kj · score/wire-domestic/manage · 2814a728a910
 [^8]: kj · score/wire-domestic/exception · ec3f316bff3e
 [^9]: kj · score/wire-domestic/support · 2814a728a910
 [^10]: kj · score/wire-international/discover · 6260b23c8d9a
 [^11]: kj · score/wire-international/set-up · 6260b23c8d9a
-[^12]: kj · score/wire-international/initiate · 7a3db9e89d6a
+[^12]: kj · score/wire-international/initiate · adc77a4c5488
 [^13]: kj · score/wire-international/review-authorize · 25add189f337
 [^14]: kj · score/wire-international/execute-track · e924cf09b15f
 [^15]: kj · score/wire-international/confirm-complete · 6260b23c8d9a
 [^16]: kj · score/wire-international/manage · 25add189f337
 [^17]: kj · score/wire-international/exception · 6260b23c8d9a
 [^18]: kj · score/wire-international/support · 6260b23c8d9a
-[^19]: kj · finding/GAP-WF-0030 · f8866096040e
-[^20]: kj · finding/GAP-WF-0014 · d0dbb9e7f48b
-[^21]: kj · finding/GAP-WF-0016 · a80da4c53fb1
-[^22]: kj · finding/GAP-WF-0017 · 04e895889ce3
-[^23]: kj · finding/GAP-WF-0015 · 8ef1e8b3b41e
-[^24]: kj · finding/STR-WF-0005 · 11afe95e45b8
-[^25]: kj · finding/STR-WF-0007 · f309c9fffd63
-[^26]: kj · finding/STR-WF-0006 · b5476d0aaece
-[^27]: kj · finding/STR-WF-0022 · 7cf8dedc0711
-[^28]: kj · finding/STR-WF-0023 · 4867db231dfa
+[^19]: kj · finding/GAP-WF-0029 · a87fe000d932
+[^20]: kj · finding/GAP-WF-0014 · 1b33694647db
+[^21]: kj · finding/GAP-WF-0016 · 3613671e20fa
+[^22]: kj · finding/GAP-WF-0017 · cb93b1938aa9
+[^23]: kj · finding/GAP-WF-0015 · 38cf398e4fca
+[^24]: kj · finding/STR-WF-0006 · 122172aba700
+[^25]: kj · finding/STR-WF-0008 · 94263ca0c11c
+[^26]: kj · finding/STR-WF-0007 · c982fc56f2d8
+[^27]: kj · finding/STR-WF-0023 · 5f1179bd2b02
+[^28]: kj · finding/STR-WF-0024 · ce7383770d37

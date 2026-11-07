@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "0936c5246ce11fb7ba4727f869b99c21e5c402a67a628ebd8e1e29a4f791f765",
+  "content_sha256": "69d9a1db204d22d29749925ae5a8026012e1e3acd3bdc6f603511e36a43bf3d6",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,7 +47,7 @@ MI assessment: Mature controls; Same Day ACH availability not confirmed from pub
 
 ## `WF-J21` Commercial wire (domestic/international/FX) creation, approval and status search
 
-6 steps across Initiate, Review & authorize, Execute & track, Manage, Exception, Support. Channels: api-treasury-portal, mobile-app. Status tracking: Wires Status Search.[^2]
+6 steps across Initiate, Review & authorize, Execute & track, Manage, Exception, Support. Channels: api-treasury-portal, mobile-app. Status tracking: Wires Status Search (Vantage); for international wires, Wells Fargo Payment Tracker (SWIFT gpi-based, 'near real-time status' up to the final beneficiary, incl. date, currency and amount credited and gpi duration; launched Oct 2020, 'Access the tool from any device').[^2]
 
 MI assessment: Mobile wire approval and status search shipped in 2025; clear momentum on Vantage mobile.[^2]
 
@@ -73,9 +73,9 @@ MI assessment: Deposit approval workflow is a differentiator vs. SMB app.[^6]
 
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1][^2][^3][^5][^6]
 
-[^1]: kj · journey/WF-J20 · a09dfa7d417c
-[^2]: kj · journey/WF-J21 · a9e16e59c03f
-[^3]: kj · journey/WF-J22 · 30a8718f1eaf
-[^4]: kj · customer-journey/CJ-COMMERCIAL-INSTANT · a7aa87a86868
-[^5]: kj · journey/WF-J23 · 194624059efa
-[^6]: kj · journey/WF-J25 · 982023d3f4b5
+[^1]: kj · journey/WF-J20 · aed31b6fcb25
+[^2]: kj · journey/WF-J21 · f36035bd9611
+[^3]: kj · journey/WF-J22 · 1ca66149586f
+[^4]: kj · customer-journey/CJ-COMMERCIAL-INSTANT · 39b78e3dcf64
+[^5]: kj · journey/WF-J23 · d8e43801cb3c
+[^6]: kj · journey/WF-J25 · 4d80482f689e

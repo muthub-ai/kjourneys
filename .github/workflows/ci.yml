@@ -21,11 +21,13 @@ jobs:
         run: python3 tools/validate_journey.py dist/kjourneys.json schema/journey-ontology.schema.json
       - name: Data matches its workbooks (no hand edits to imported MI data)
         run: |
-          for m in reports/*/manifest.json; do
-            d=$(dirname "$m")
-            if python3 -c "import json,sys; sys.exit(0 if json.load(open('$m')).get('workbook') else 1)"; then
-              python3 -I tools/import_mi_workbook.py "$d" --check
-            fi
+          # only the current report: a report another manifest supersedes is kept, pinned, but no longer imported
+          for d in $(python3 -c "
+          import glob, json, os
+          ms = {os.path.dirname(m): json.load(open(m)) for m in glob.glob('reports/*/manifest.json')}
+          gone = {m.get('supersedes') for m in ms.values()}
+          print(' '.join(d for d, m in sorted(ms.items()) if m.get('workbook') and m.get('report_version') not in gone))"); do
+            python3 -I tools/import_mi_workbook.py "$d" --check
           done
       - name: Wells Fargo export and bundles are current and valid
         run: |

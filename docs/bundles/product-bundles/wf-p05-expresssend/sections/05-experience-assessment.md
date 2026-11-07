@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P05",
   "line_of_business": "wf-cbl",
-  "content_sha256": "8b865aaa249e59cf07ba21f21e7aa2fdb179d74d63ac2ca1c2f35ec40406de33",
+  "content_sha256": "5ec466efb7babdc8a4094c193a6a079c16ec4ce584252b7bb89648087ecd6d45",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -39,7 +39,7 @@
 
 # ExpressSend® — experience assessment
 
-*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.
+*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. From report v2, each score is the mean across MI's customer journeys, so half points occur. Best practice is the highest score any bank in the study reached; no bank is named.
 
 | Rail | Stage | Wells Fargo | Best practice | Gap |
 |---|---|---|---|---|
@@ -64,15 +64,15 @@
 - Execute & track · ExpressSend Mobile (nationwide Sep 2026): real-time tracking and alerts, upfront fee/FX display, first-transfer fee waiver.[^13]
 
 [^1]: kj · score/remittance/discover · 17a0bd5ea943
-[^2]: kj · score/remittance/set-up · 49ae40d3e583
+[^2]: kj · score/remittance/set-up · 9a329b2647e1
 [^3]: kj · score/remittance/initiate · b5762c609a52
 [^4]: kj · score/remittance/review-authorize · 1e5fe25e9536
-[^5]: kj · score/remittance/execute-track · f45bd4e64a0d
+[^5]: kj · score/remittance/execute-track · 5edb1d7ffccf
 [^6]: kj · score/remittance/confirm-complete · 1e5fe25e9536
 [^7]: kj · score/remittance/manage · 716e589ec4d5
 [^8]: kj · score/remittance/exception · 1e5fe25e9536
 [^9]: kj · score/remittance/support · 1e5fe25e9536
-[^10]: kj · finding/GAP-WF-0018 · 59b1c988973b
-[^11]: kj · finding/GAP-WF-0019 · e5190615f7b0
-[^12]: kj · finding/STR-WF-0008 · a381b8d38fc5
-[^13]: kj · finding/STR-WF-0009 · 376b9cc3c369
+[^10]: kj · finding/GAP-WF-0018 · e188881f4b71
+[^11]: kj · finding/GAP-WF-0019 · 3cbbaf201625
+[^12]: kj · finding/STR-WF-0009 · 681c2f8bbf3d
+[^13]: kj · finding/STR-WF-0010 · 8f532125f072

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P05",
   "line_of_business": "wf-cbl",
-  "content_sha256": "f7f322c4839a076803fb83e449317b4f76144c602ae14e198256a4e8021dd67e",
+  "content_sha256": "3b7ebbf278da92863e2d44eb53f2de3502f7cc4c76479dbb62d19e9039e7f719",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -49,5 +49,5 @@ MI assessment: Only top-4 bank with a proprietary cash-pickup remittance product
 
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1]
 
-[^1]: kj · journey/WF-J12 · 94fc27116502
-[^2]: kj · customer-journey/CJ-REMITTANCE-SEND · e13395512089
+[^1]: kj · journey/WF-J12 · 98b1c3096cb7
+[^2]: kj · customer-journey/CJ-REMITTANCE-SEND · c2ae3445c9e7

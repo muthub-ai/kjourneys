@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "c46bbd580b101773168fcb82565d2387c7dce977bc69f28dd9037b527238f1f7",
+  "content_sha256": "d0cb04b2fcde2c72b9b4245e9fd2c4f60fa6cadcace39758e42534139b8d1634",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -89,12 +89,12 @@ Delivers the customer journey **Consumer sends money to a new recipient with Zel
 
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1][^3][^5][^7][^8][^9]
 
-[^1]: kj · journey/WF-J01 · 251e989b61ea
-[^2]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 54cdbe9360ea
-[^3]: kj · journey/WF-J02 · 14bc08a80f04
-[^4]: kj · customer-journey/CJ-ZELLE-REQUEST · ff349a4a3d24
-[^5]: kj · journey/WF-J03 · b89c841e1309
-[^6]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · 1a1ab5a1e86e
-[^7]: kj · journey/WF-J28 · b20fda0a115f
-[^8]: kj · journey/WF-J29 · d718f795aee2
+[^1]: kj · journey/WF-J01 · c3b8e132fd5c
+[^2]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 1f6b6a0e7521
+[^3]: kj · journey/WF-J02 · 2eca5861046f
+[^4]: kj · customer-journey/CJ-ZELLE-REQUEST · cda300f4d27d
+[^5]: kj · journey/WF-J03 · 558dd3d0215c
+[^6]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · dd3d94ee596e
+[^7]: kj · journey/WF-J28 · cf400c417393
+[^8]: kj · journey/WF-J29 · f76130105e87
 [^9]: kj · journey/sample · e85b2befb3b0

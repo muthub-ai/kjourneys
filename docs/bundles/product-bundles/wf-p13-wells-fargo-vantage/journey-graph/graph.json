@@ -77,7 +77,7 @@
    "label": "Commercial instant payments (RTP/FedNow) via API or treasury portal — sketch"
   },
   {
-   "id": "finding/GAP-WF-0034",
+   "id": "finding/GAP-WF-0033",
    "type": "gap",
    "label": "Commercial Request for Payment is absent from the public Instant Payments API v1",
    "severity": "medium"
@@ -89,13 +89,13 @@
    "severity": "low"
   },
   {
-   "id": "finding/GAP-WF-0035",
+   "id": "finding/GAP-WF-0034",
    "type": "gap",
    "label": "Fallback when a receiver is unreachable on both rails is undocumented.",
    "severity": "low"
   },
   {
-   "id": "finding/STR-WF-0019",
+   "id": "finding/STR-WF-0020",
    "type": "strength",
    "label": "Public Instant Payments API returns the reachable rail (RTP | FEDNOW | both) bef",
    "severity": "high"
@@ -174,7 +174,7 @@
   },
   {
    "from": "journey/WF-J22",
-   "to": "finding/GAP-WF-0034",
+   "to": "finding/GAP-WF-0033",
    "rel": "finding"
   },
   {
@@ -184,12 +184,12 @@
   },
   {
    "from": "journey/WF-J22",
-   "to": "finding/GAP-WF-0035",
+   "to": "finding/GAP-WF-0034",
    "rel": "finding"
   },
   {
    "from": "journey/WF-J22",
-   "to": "finding/STR-WF-0019",
+   "to": "finding/STR-WF-0020",
    "rel": "finding"
   }
  ]

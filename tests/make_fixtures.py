@@ -48,22 +48,24 @@ def _(d):
     aid = add_enum(d); src = cur(d, "boolean")[-1]
     WF(d)[aid] = [dict(src, id=src["id"].rsplit(":", 2)[0] + ":fixture-enum:1", value="whenever-you-like")]
 @case("m3c_integer_as_text")
-def _(d): cur(d, "integer")[-1]["value"] = "three"
+def _(d): cur(d, "number")[-1]["value"] = "three"
+@case("m3j_score_not_half_point")
+def _(d): cur(d, "number")[-1]["value"] = 2.3
 @case("m3d_valid_from_after_to")
 def _(d): h = cur(d, "boolean"); h.insert(0, dict(h[-1], id=h[-1]["id"] + "0", valid_from="2027-01-01", valid_to="2026-01-01"))
 @case("m3e_bad_datetime")
 def _(d): cur(d, "boolean")[-1]["asserted_at"] = "last tuesday"
 @case("m3f_dangling_supersedes")
-def _(d): cur(d, "integer")[-1]["supersedes"] = "urn:kos:assertion:does-not-exist:1"
+def _(d): cur(d, "number")[-1]["supersedes"] = "urn:kos:assertion:does-not-exist:1"
 @case("m3g_unprefixed_principal")
-def _(d): cur(d, "integer")[-1]["verified_by"] = "bob"
+def _(d): cur(d, "number")[-1]["verified_by"] = "bob"
 @case("m3h_awaiting_with_value")
 def _(d):
     slot = next(h for b, row in d["comparisons"][0]["values"].items() if b != d["portfolio"]["focus_bank"]
                 for h in row.values() if h[-1]["basis"] == "awaiting")
     slot[-1]["value"] = 5000
 @case("m3i_two_current_assertions")
-def _(d): h = cur(d, "integer"); h.append(dict(h[-1], id=h[-1]["id"] + "0"))
+def _(d): h = cur(d, "number"); h.append(dict(h[-1], id=h[-1]["id"] + "0"))
 @case("m4a_published_with_sample")
 def _(d): J(d)["status"] = "published"
 @case("m4b_mnpi_public")
@@ -171,7 +173,7 @@ h = C(d)["values"][comp][aid]; h[-1] = dict(h[-1], basis="sample", value=True)
 json.dump(d, open(f"{OUT}/m7_competitor_sample_fact.json", "w"), indent=1)
 # each fixture must fail for its own reason: run_tests.sh checks the validator output contains this text
 EXPECT = {"m1a": "unique: app_id", "m1b": "unique: metric", "m1c": "unique: control", "m1d": "unique: fail point",
-  "m2a": "out of journey order", "m2b": "must be on its own path", "m3a": "is not a valid boolean", "m3b": "whenever-you-like",
+  "m2a": "out of journey order", "m2b": "must be on its own path", "m3a": "is not a valid boolean", "m3j": "half points allowed", "m3b": "whenever-you-like",
   "m3c": "score 'three'", "m3d": "valid_from after valid_to", "m3e": "last tuesday", "m3f": "supersedes unknown", "m3g": "'bob'",
   "m3h": "awaiting", "m3i": "exactly one current", "m4a": "published but still holds sample", "m4b": "MNPI content must be",
   "m4c": "rejected legal review", "m4d": "not certified real data", "m5a": "not in journey.stages", "m5b": "should be a moment URN",

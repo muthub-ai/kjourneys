@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "31c8a088402a53a411eae2cbe6f3cc9a80e82af91704e51010de7f50c9f4e4d5",
+  "content_sha256": "7ed92c2a21aed765f57caf0af4479be2f02fbc0f53351831a64c8e69583e1d95",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -57,10 +57,10 @@
 - `WF-J23` · File rejects: UNKNOWN → [^6]
 - `WF-J25` · Capture failures (community reviews): Retry → [^7]
 
-[^1]: kj · finding/GAP-WF-0035 · 0a84506564fc
-[^2]: kj · step/WF-J22#M01 · fd9fa0deae21
-[^3]: kj · journey/WF-J20 · a09dfa7d417c
-[^4]: kj · journey/WF-J21 · a9e16e59c03f
-[^5]: kj · journey/WF-J22 · 30a8718f1eaf
-[^6]: kj · journey/WF-J23 · 194624059efa
-[^7]: kj · journey/WF-J25 · 982023d3f4b5
+[^1]: kj · finding/GAP-WF-0034 · 11d66ca955c7
+[^2]: kj · step/WF-J22#M01 · 6d15965dc645
+[^3]: kj · journey/WF-J20 · aed31b6fcb25
+[^4]: kj · journey/WF-J21 · f36035bd9611
+[^5]: kj · journey/WF-J22 · 1ca66149586f
+[^6]: kj · journey/WF-J23 · d8e43801cb3c
+[^7]: kj · journey/WF-J25 · 4d80482f689e

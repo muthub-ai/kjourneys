@@ -7,7 +7,7 @@
  "segment": "commercial",
  "customer_goal": "Commercial client originates ACH (incl. international ACH) and wires via SinglePoint / file / API",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,24 +58,24 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s100",
       "src-us-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s100",
       "src-us-bank-s052"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -103,36 +103,36 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s104",
       "src-us-bank-s938"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s104",
       "src-us-bank-s938"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s104",
       "src-us-bank-s938"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -166,26 +166,26 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s052",
       "src-us-bank-s066",
       "src-us-bank-s939"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s052",
       "src-us-bank-s066",
       "src-us-bank-s939"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -213,24 +213,24 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s066",
       "src-us-bank-s100"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s066",
       "src-us-bank-s100"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -240,40 +240,59 @@
    "id": "urn:kos:moment:us-bank:usb-j21:m05",
    "code": "M05",
    "stage": "exception",
-   "title": "Returns/NOCs via reporting – not documented",
+   "title": "NOCs auto-update ACH templates; client requests adjustment (deletion or…",
    "customer_action": null,
-   "action": "Returns/NOCs via reporting – not documented",
+   "action": "NOCs auto-update ACH templates; client requests adjustment (deletion or reversal) of incorrectly submitted entries; incoming ACH debit exceptions reviewed via ACH Positive Pay",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "",
+   "frontstage": "SinglePoint ACH Origination: 'automatically updating your ACH template information based on notifications of change (NOCs)'; 'request the adjustment (deletion or reversal) of incorrectly submitted transactions'; email notifications to payment recipients (S974). Fraud checklist: 'Review exceptions online for incoming ACH (debits): SinglePoint ACH Positive Pay'; 'ACH Filter Rejected Item report' (S979). Wires: Swift GPI status updates via SinglePoint (S984). An ACH return report is not named in any fetched page.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
    "source_step": 5,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s974",
+      "src-us-bank-s979",
+      "src-us-bank-s984"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s974",
+      "src-us-bank-s979",
+      "src-us-bank-s984"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-us-bank-s974",
+      "src-us-bank-s979",
+      "src-us-bank-s984"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -299,22 +318,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s103"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-us-bank-s103"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -322,7 +341,7 @@
   }
  ],
  "source_journey_id": "USB-J21",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "USB-P13-S01",
  "channels": {
   "entry": [
@@ -331,11 +350,30 @@
   "other": []
  },
  "status_tracking": {
-  "where": "SinglePoint / API callbacks",
-  "states": [],
-  "basis": "inferred"
+  "where": "SinglePoint / API callbacks; Swift GPI wire tracking in SinglePoint",
+  "states": [
+   "Pending Approval-1",
+   "Rejected",
+   "In Process",
+   "Completed",
+   "Cancelled"
+  ],
+  "basis": "disclosed"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Notification of change or incorrectly submitted ACH entry",
+   "customer_experience": "Templates update automatically from NOCs; client requests deletion or reversal of erroneous entries",
+   "bank_handling": "SinglePoint ACH Origination adjustment requests; ACH Filter Rejected Item report for ACH Positive Pay",
+   "resolution": "Corrected template / adjustment request",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-us-bank-s974",
+    "src-us-bank-s979"
+   ]
+  }
+ ],
  "notifications": [],
  "assessment": "SinglePoint portal page itself was not retrievable, so module-level detail is thin.",
  "x-mi_evidence": "CONFIRMED_BANK",

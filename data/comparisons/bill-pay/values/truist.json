@@ -516,7 +516,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -525,6 +525,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:truist:bill-pay:score-set-up:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "BILLPAY-SEND=3: At parity with composite; evidence TFC-J06; BILLPAY-EBILL-MANAGE=2: MEDIUM FRICTION: Up to 60-day eBill activation lag. [GAP-TFC-0019]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:truist:bill-pay:score-set-up:2"
       }
     ],
     "attr-score-initiate": [
@@ -540,7 +563,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -549,6 +572,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:truist:bill-pay:score-initiate:3",
+        "value": 3.5,
+        "display": "3.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "BILLPAY-SEND=4: Sets composite reference: Instant bill pay over RTP inside Bill Pay for reachable billers, incl. RfP responses. [STR-TFC-0006]; BILLPAY-EBILL-MANAGE=3: At parity; minor: Autopay-by-eBill-amount not documented. [GAP-TFC-0020]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:truist:bill-pay:score-initiate:2"
       }
     ],
     "attr-score-review-authorize": [

@@ -7,7 +7,7 @@
  "segment": "consumer",
  "customer_goal": "Receive my bill in the bank and pay it automatically",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "inferred",
  "governance": {
@@ -58,33 +58,33 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -118,52 +118,52 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014",
       "src-capital-one-s016",
       "src-capital-one-s903"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014",
       "src-capital-one-s016",
       "src-capital-one-s903"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014",
       "src-capital-one-s016",
       "src-capital-one-s903"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s014",
       "src-capital-one-s016",
       "src-capital-one-s903"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -188,41 +188,47 @@
      "screen": "Scheduled payments"
     }
    ],
-   "frontstage": "unknown",
+   "frontstage": "Bill Pay terms: 'The presentment of your first electronic bill may vary from Biller to Biller and may take up to sixty (60) days'; billers may send eBills on a 'trial basis'; recurring payments may be set 'on an automatic recurring basis in such manner as you direct', with 'the right to receive 10 days' advance notice when a recurring payment varies'. Payment may be remitted by 'an electronic debit, virtual card, a paper check drawn on the account of our Service Provider.' How a recurring eBill rule (e.g., pay amount due on due date) executes is not described.",
    "actor": "third-party",
    "decision": null,
-   "notification": "unknown",
+   "notification": "eBill arrival: 'In addition to notification on the website, we may send an email notification to your email address on file with us.'",
    "source_step": 3,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s014",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s014",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s014",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -239,33 +245,47 @@
      "screen": "Scheduled payments"
     }
    ],
-   "frontstage": "",
+   "frontstage": "'You can cancel or edit any Scheduled Payment (including recurring payments) free of charge'; 'Once we've begun processing a payment, though, it can't be cancelled or edited' (stop payment then required via 1-800-655-2265).",
    "actor": "customer",
    "decision": null,
    "notification": null,
    "source_step": 4,
    "evidence": {
     "action": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s018"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s018",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-capital-one-s018"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s018",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s018",
+      "src-capital-one-s970"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -282,41 +302,44 @@
      "screen": "n/a"
     }
    ],
-   "frontstage": "unknown",
+   "frontstage": "'Each electronic Biller reserves the right to accept or deny your request to receive electronic bills'; 'You and Your Biller can each cancel the presentment of electronic bills at any time'; 'You agree to hold us harmless if the Biller fails to deliver your electronic bills' — customer must obtain copies from the biller and remains 'solely responsible for contacting your Billers directly'. Failed payment: 'In certain circumstances, we will attempt to debit the Payment Account a second time'; customer must reimburse on demand; return may be reported to a credit reporting agency.",
    "actor": "third-party",
    "decision": null,
    "notification": null,
    "source_step": 5,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-capital-one-s970"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -342,22 +365,22 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s016"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-capital-one-s016"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -365,7 +388,7 @@
   }
  ],
  "source_journey_id": "COF-J09",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "COF-P03-S03",
  "channels": {
   "entry": [
@@ -379,7 +402,30 @@
   "states": [],
   "basis": "inferred"
  },
- "exceptions": [],
+ "exceptions": [
+  {
+   "trigger": "Biller declines or stops eBill presentment / eBill not delivered",
+   "customer_experience": "eBill not shown; customer must contact biller and obtain bill copies directly",
+   "bank_handling": "'Each electronic Biller reserves the right to accept or deny your request'; either party may cancel presentment at any time; bank held harmless if biller fails to deliver",
+   "resolution": "Pay manually from Bill Pay; first eBill can take up to 60 days",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-capital-one-s970"
+   ]
+  },
+  {
+   "trigger": "Bill payment cannot be completed (e.g., insufficient funds)",
+   "customer_experience": "Payment instruction 'may or may not be completed'",
+   "bank_handling": "'In certain circumstances, we will attempt to debit the Payment Account a second time'; customer must reimburse on demand; may be reported to a credit reporting agency",
+   "resolution": "Customer funds account / reschedules",
+   "basis": "disclosed",
+   "source_ids": [
+    "src-mi-2026-11-07-v2",
+    "src-capital-one-s970"
+   ]
+  }
+ ],
  "notifications": [],
  "assessment": "Existence confirmed; flow undocumented publicly — gap for browser pass.",
  "x-mi_evidence": "INFERRED",

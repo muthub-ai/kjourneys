@@ -533,7 +533,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "low",
@@ -542,6 +542,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "INFERRED"
         }
+      },
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-review-authorize:3",
+        "value": 1.5,
+        "display": "1.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM SECURITY_TRUST: No dynamic scam interstitial evidenced on public pages; only static 'like sending cash' copy. Second-wave evidence: Truist told WFTV (June 2024) that its Zelle experience includes 'prompts within the user experience for users to identify red flags that may indicate scams' — trigger and wording unpublished (S970, press). [GAP-TFC-0001]; ZELLE-SMB-RECEIV",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:truist:zelle:score-review-authorize:2"
       }
     ],
     "attr-score-execute-track": [
@@ -557,7 +580,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -566,6 +589,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-execute-track:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=3: At parity with composite; evidence TFC-J01; ZELLE-SMB-RECEIVE=2: MEDIUM FRICTION: Business Zelle receive fee (1% capped $15) where peers are free. [GAP-TFC-0007]",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:truist:zelle:score-execute-track:2"
       }
     ],
     "attr-score-confirm-complete": [
@@ -653,7 +699,7 @@
         "asserted_at": "2026-11-06T21:03:00-06:00",
         "observed_on": "2026-11-06",
         "valid_from": "2026-11-06",
-        "valid_to": null,
+        "valid_to": "2026-11-07",
         "verified_by": null,
         "verified_at": null,
         "confidence": "high",
@@ -662,6 +708,29 @@
           "report_ref": "Scores sheet",
           "mi_level": "CONFIRMED_BANK"
         }
+      },
+      {
+        "id": "urn:kos:assertion:truist:zelle:score-support:3",
+        "value": 2.5,
+        "display": "2.5 of 4",
+        "basis": "disclosed",
+        "source_ids": [
+          "src-mi-2026-11-07-v2"
+        ],
+        "asserted_by": "process:mi-session",
+        "asserted_at": "2026-11-07T01:09:00-06:00",
+        "observed_on": "2026-11-07",
+        "valid_from": "2026-11-07",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "high",
+        "x-evidence": {
+          "quote": "ZELLE-CONSUMER-SEND=2: MEDIUM FRICTION: Different phone numbers for Zelle issues vs claims; Truist Assist cannot act on Zelle. [GAP-TFC-0003]; ZELLE-SMB-RECEIVE=3: At parity with composite; evidence TFC-J03",
+          "report_ref": "Scores sheet",
+          "mi_level": "CONFIRMED_BANK"
+        },
+        "supersedes": "urn:kos:assertion:truist:zelle:score-support:2"
       }
     ]
   }

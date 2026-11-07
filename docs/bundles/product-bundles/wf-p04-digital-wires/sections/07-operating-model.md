@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "1b2e94d4e1860f9cb35236c55b231a9cceae6fdf773f78d2f8dd2f062bce6259",
+  "content_sha256": "a7345538e68e01774cae9c403856301579c2ee7336b25645b628663a1598242f",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,4 +47,4 @@ No application IDs are mapped to this product's journeys yet; they come from the
 
 [^1]: kj · assignment/WF-P04 · 70de3dac3dfc
 [^2]: kj · lob/wf-cbl · 9bd65bef07df
-[^3]: kj · product/WF-P04 · 7ae69c334eed
+[^3]: kj · product/WF-P04 · 728ab1540360

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P03",
   "line_of_business": "wf-cbl",
-  "content_sha256": "d07a6b3e93ec7a41407bebc5440aeb5c62e656d44e8d17edaa8f6ed9fad6d36e",
+  "content_sha256": "72fde2fa614e9244dfa09846cf267b2633f215bb744e9e85f076b9ee1e0b9181",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -84,12 +84,12 @@ Where it sits in the bank's app and site: Web: 'Transfer and Pay' > Bill Pay ('A
 - `WF-J09` — cutoffs: 24/7/365, seconds; fees: Not stated (none documented); limits: $50,000 per payment[^8]
 - `WF-J17` — cutoffs: 7 pm PT; fees: None; limits: $10,000 per payment/day on business credit card[^9]
 
-[^1]: kj · product/WF-P03 · b839aacb8026
-[^2]: kj · sub-product/WF-P03-S01 · f5bd218ab193
-[^3]: kj · sub-product/WF-P03-S02 · 41e23afe6f1e
-[^4]: kj · sub-product/WF-P03-S03 · 4de9c1aaf8f5
-[^5]: kj · sub-product/WF-P03-S04 · e6c346f56e63
-[^6]: kj · journey/WF-J07 · add9e5f0ca96
-[^7]: kj · journey/WF-J08 · 3a462c0bcc44
-[^8]: kj · journey/WF-J09 · 92c2140a6c2a
-[^9]: kj · journey/WF-J17 · adbdce251781
+[^1]: kj · product/WF-P03 · 0c4750f70904
+[^2]: kj · sub-product/WF-P03-S01 · ef7e8dc2e01b
+[^3]: kj · sub-product/WF-P03-S02 · 800c26956d68
+[^4]: kj · sub-product/WF-P03-S03 · be9a70601860
+[^5]: kj · sub-product/WF-P03-S04 · e26a28ffd5a7
+[^6]: kj · journey/WF-J07 · 8270f6fa66c5
+[^7]: kj · journey/WF-J08 · 43861b5c7ba6
+[^8]: kj · journey/WF-J09 · 57b4cafbf531
+[^9]: kj · journey/WF-J17 · 161d120bfa87

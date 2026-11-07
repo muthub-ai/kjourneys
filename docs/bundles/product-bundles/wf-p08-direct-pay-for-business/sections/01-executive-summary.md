@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P08",
   "line_of_business": "wf-cbl",
-  "content_sha256": "78a6ba92ef13afc6d13410c90cda3d9243ace35c70ee2e9c67b7e333ecba0e54",
+  "content_sha256": "d06e1df29d29168126391d12fce1b558417b7eaeb8ef01e4c12d5ce7d3c7c993",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -45,23 +45,23 @@ It is owned by **Consumer Banking and Lending** (Consumer, Small and Business Ba
 
 It has 2 sub-products, 1 of them with a mapped journey, across the ACH origination (business) rail(s).[^1][^4][^5]
 
-MI documented 1 journey(s) for it, delivering 1 customer journey(s); they carry 4 gap(s) (1 high, 3 medium) and 2 strength(s).[^6][^7][^8][^9][^10][^11][^12]
+MI documented 1 journey(s) for it, delivering 1 customer journey(s); they carry 4 gap(s) (1 high, 2 medium, 1 low) and 2 strength(s).[^6][^7][^8][^9][^10][^11][^12]
 
 ## Most severe gaps
 
 - **high** · Discover · Direct Pay is desktop-browser only: SMB owners cannot initiate or approve ACH on mobile unless they enrol in Vantage Treasury Management.[^7]
 - **medium** · Initiate · Direct Pay is next-business-day only; no Same Day ACH option documented after a search of the Direct Pay FAQ (S931).[^8]
-- **medium** · Manage · Edit/cancel rules for scheduled Direct Pay payments are not documented.[^9]
+- **medium** · Exception · Returned ACH credits from the payee's bank and Same Day ACH are not published; second-wave evidence closes only part of the gap — insufficient funds ('we may either decline the transfer' or complete it and overdraw), payment by account number only with no name check, and rejection notices are now published in the Direct Pay Agreement (S970).[^9]
 
-[^1]: kj · product/WF-P08 · 3868912428e5
+[^1]: kj · product/WF-P08 · 53a0b5f81ba1
 [^2]: kj · assignment/WF-P08 · 59a2dcfc7280
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P08-S01 · db68e67b33e1
-[^5]: kj · sub-product/WF-P08-S02 · 70fa5adeaa25
-[^6]: kj · journey/WF-J16 · 67eed586f4fc
-[^7]: kj · finding/GAP-WF-0026 · 98f60378df46
-[^8]: kj · finding/GAP-WF-0027 · 3f10807fa15d
-[^9]: kj · finding/GAP-WF-0028 · fa0fe1897d28
-[^10]: kj · finding/GAP-WF-0029 · c7d7360df8f3
-[^11]: kj · finding/STR-WF-0017 · ebeb4dc413cc
-[^12]: kj · finding/STR-WF-0018 · 64c7f9a8f46b
+[^4]: kj · sub-product/WF-P08-S01 · 49d1af9a29ac
+[^5]: kj · sub-product/WF-P08-S02 · 76fa6c9a0dcb
+[^6]: kj · journey/WF-J16 · 38a8b7c0348a
+[^7]: kj · finding/GAP-WF-0025 · c507ffb51a47
+[^8]: kj · finding/GAP-WF-0026 · 78c5f344fbea
+[^9]: kj · finding/GAP-WF-0028 · 631690a78ab9
+[^10]: kj · finding/GAP-WF-0027 · cb8e2556a07e
+[^11]: kj · finding/STR-WF-0018 · fc01adb0b7c4
+[^12]: kj · finding/STR-WF-0019 · a3bb48aa2a09

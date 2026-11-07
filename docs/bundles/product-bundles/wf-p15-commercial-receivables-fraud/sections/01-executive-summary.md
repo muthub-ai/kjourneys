@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P15",
   "line_of_business": "wf-cb",
-  "content_sha256": "83c57469516079288f1b0513b50351d032d1e17f22722e8966eb787afff8603c",
+  "content_sha256": "3f0f2bf94c50d24ad5053ff5f327de446ab9ea118c05597daa38e57161f3e5d2",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,9 +47,9 @@ It has 2 sub-products, 1 of them with a mapped journey, across the ACH originati
 
 MI documented 1 journey(s) for it, delivering 0 customer journey(s); they carry 0 gap(s) () and 0 strength(s).[^6]
 
-[^1]: kj · product/WF-P15 · 1b70c83e2760
+[^1]: kj · product/WF-P15 · 8d59fa7b533b
 [^2]: kj · assignment/WF-P15 · 0dd0a5a36565
 [^3]: kj · lob/wf-cb · 56d63ed70382
-[^4]: kj · sub-product/WF-P15-S01 · 8329a58bb402
-[^5]: kj · sub-product/WF-P15-S02 · 9ea8fd1b8b2b
-[^6]: kj · journey/WF-J24 · 72f66a396d8c
+[^4]: kj · sub-product/WF-P15-S01 · 13ddd347e96a
+[^5]: kj · sub-product/WF-P15-S02 · 87362be9aaea
+[^6]: kj · journey/WF-J24 · e6ceb8fc7dba

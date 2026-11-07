@@ -1,6 +1,6 @@
 # Card Settings (card on/off, view recurring payments, digital wallets, account access) — formerly Control Tower℠ · product bundle
 
-Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`749175201ed7`).
+Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`053f4c412d7d`).
 
 ## Sections
 

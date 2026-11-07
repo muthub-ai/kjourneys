@@ -8,19 +8,20 @@
   "step": 1,
   "type": "channel-gap",
   "severity": "high",
-  "description": "Zelle is mobile-app only; no web Zelle send.",
+  "description": "Zelle is mobile-app only; no web Zelle send (the 2026 Online Banking tutorial set only points to the app).",
   "composite": "CJ-ZELLE-CONSUMER-SEND",
   "composite_step": 1,
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
+   "src-pnc-s975",
    "src-pnc-s002",
    "src-pnc-s003",
    "src-pnc-s034"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Navigation; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -38,12 +39,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s003",
    "src-pnc-s002"
   ],
   "frameworks": "Javelin2025 – Security Empowerment; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -61,13 +62,13 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s003",
    "src-pnc-s004",
    "src-pnc-s002"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -85,12 +86,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s003",
    "src-pnc-s017"
   ],
   "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -108,14 +109,14 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s922",
    "src-pnc-s906",
    "src-pnc-s015",
    "src-pnc-s003"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -134,11 +135,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s017"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -156,14 +157,14 @@
   "reference_banks": null,
   "basis": "inferred",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s917",
    "src-pnc-s918",
    "src-pnc-s010",
    "src-pnc-s066"
   ],
   "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "COMMUNITY"
  },
  {
@@ -181,11 +182,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s003"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -197,17 +198,20 @@
   "step": 7,
   "type": "transparency",
   "severity": "low",
-  "description": "No cancel-request step documented.",
+  "description": "No cancel-request step documented (the Zelle guide covers payments, requests and splits with a 14-day expiry but no request-cancel step).",
   "composite": "CJ-ZELLE-REQUEST",
   "composite_step": 7,
   "reference_banks": null,
   "basis": "inferred",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
-   "src-pnc-s003"
+   "src-mi-2026-11-07-v2",
+   "src-pnc-s984",
+   "src-pnc-s985",
+   "src-pnc-s003",
+   "src-pnc-s017"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "UNKNOWN"
  },
  {
@@ -225,11 +229,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s023"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Navigation; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -247,11 +251,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s018"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -270,13 +274,13 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s006",
    "src-pnc-s018",
    "src-pnc-s906"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -295,13 +299,13 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s006",
    "src-pnc-s018",
    "src-pnc-s906"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -319,12 +323,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s004",
    "src-pnc-s905"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -342,12 +346,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s905",
    "src-pnc-s010"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -365,11 +369,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s021"
   ],
   "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -387,13 +391,13 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s004",
    "src-pnc-s010",
    "src-pnc-s905"
   ],
   "frameworks": "Javelin2025 – Security Empowerment; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -411,11 +415,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s004"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -433,11 +437,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s007"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -455,11 +459,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s007"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -478,11 +482,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s009"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Navigation; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -500,14 +504,14 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s009",
    "src-pnc-s018",
    "src-pnc-s906",
    "src-pnc-s921"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -525,12 +529,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s009",
    "src-pnc-s018"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -548,12 +552,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s018",
    "src-pnc-s906"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Navigation; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -571,11 +575,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s018"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -593,13 +597,13 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s039",
    "src-pnc-s040",
    "src-pnc-s038"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Navigation; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -617,11 +621,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s018"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -639,14 +643,14 @@
   "reference_banks": null,
   "basis": "inferred",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s023",
    "src-pnc-s024",
    "src-pnc-s036",
    "src-pnc-s049"
   ],
   "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "UNKNOWN"
  },
  {
@@ -664,12 +668,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s049",
    "src-pnc-s048"
   ],
   "frameworks": "Javelin2025 – Security Empowerment; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -687,12 +691,57 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s024"
   ],
   "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Navigation; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "GAP-PNC-0031",
+  "bank": "pnc",
+  "journey": null,
+  "product": null,
+  "stage": "exception",
+  "step": null,
+  "type": "exception-handling",
+  "severity": "low",
+  "description": "Complaint and enforcement lens: fraud-or-scam complaints 36 per $100B of assets (peer median 35), the flattest fraud trend of the ten (+8%), a 5.3% monetary-relief share and no non-monetary relief; about 14% repayment of unauthorized-transaction Zelle claims in 2021–H1 2022 (Warren staff report). Reported beside the index.",
+  "composite": "CJ-ZELLE-CONSUMER-SEND",
+  "composite_step": 10,
+  "reference_banks": null,
+  "basis": "disclosed",
+  "source_ids": [
+   "src-mi-2026-11-07-v2",
+   "src-pnc-s960",
+   "src-pnc-s966"
+  ],
+  "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
+  "report_version": "2026-11-07-v2",
+  "x-mi_evidence": "THIRD_PARTY"
+ },
+ {
+  "id": "GAP-PNC-0032",
+  "bank": "pnc",
+  "journey": null,
+  "product": null,
+  "stage": "support",
+  "step": null,
+  "type": "friction",
+  "severity": "low",
+  "description": "Complaint lens: the highest share of money-transfer complaints still open at the pull date (31 of 469, 6.6%); all responses were timely, so this is a snapshot of open cases rather than evidence of slow resolution.",
+  "composite": "CJ-ZELLE-CONSUMER-SEND",
+  "composite_step": 11,
+  "reference_banks": null,
+  "basis": "disclosed",
+  "source_ids": [
+   "src-mi-2026-11-07-v2",
+   "src-pnc-s960"
+  ],
+  "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
+  "report_version": "2026-11-07-v2",
+  "x-mi_evidence": "THIRD_PARTY"
  },
  {
   "id": "STR-PNC-0001",
@@ -709,12 +758,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s002",
    "src-pnc-s017"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -732,14 +781,14 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s023",
    "src-pnc-s024",
    "src-pnc-s036",
    "src-pnc-s049"
   ],
   "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -757,12 +806,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s004",
    "src-pnc-s010"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Navigation; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -780,12 +829,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s905",
    "src-pnc-s004"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -803,13 +852,13 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s007",
    "src-pnc-s004",
    "src-pnc-s016"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Navigation; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -827,12 +876,12 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s921",
    "src-pnc-s009"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -850,11 +899,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s009"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -872,11 +921,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s018"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -894,11 +943,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s005"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -916,11 +965,11 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s024"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  },
  {
@@ -939,14 +988,14 @@
   "reference_banks": null,
   "basis": "disclosed",
   "source_ids": [
-   "src-mi-2026-11-06-v1",
+   "src-mi-2026-11-07-v2",
    "src-pnc-s032",
    "src-pnc-s055",
    "src-pnc-s912",
    "src-pnc-s923"
   ],
   "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
-  "report_version": "2026-11-06-v1",
+  "report_version": "2026-11-07-v2",
   "x-mi_evidence": "CONFIRMED_BANK"
  }
 ]

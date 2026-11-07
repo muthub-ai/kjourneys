@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P08",
   "line_of_business": "wf-cbl",
-  "content_sha256": "c44bd21125969df2689675f0745e35d91a957d9d01fc55fda5baa63614f9fe09",
+  "content_sha256": "32dae7169dd362592a85bc70159332a7960ed302df5175c503f851e2015bd64d",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -79,7 +79,7 @@ Where it sits in the bank's app and site: Business Online: 'Transfer & Pay' (pag
 
 - `WF-J16` — cutoffs: 3:00 pm PT; next business day; fees: $10/month; $0/$0.50/$3 per payment; SecurID free for Direct Pay customers; limits: Higher/Lower tiers as above[^4]
 
-[^1]: kj · product/WF-P08 · 3868912428e5
-[^2]: kj · sub-product/WF-P08-S01 · db68e67b33e1
-[^3]: kj · sub-product/WF-P08-S02 · 70fa5adeaa25
-[^4]: kj · journey/WF-J16 · 67eed586f4fc
+[^1]: kj · product/WF-P08 · 53a0b5f81ba1
+[^2]: kj · sub-product/WF-P08-S01 · 49d1af9a29ac
+[^3]: kj · sub-product/WF-P08-S02 · 76fa6c9a0dcb
+[^4]: kj · journey/WF-J16 · 38a8b7c0348a

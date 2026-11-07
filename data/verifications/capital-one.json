@@ -11,7 +11,7 @@
   "resolution": "zelle: true, evidence CONFIRMED_BANK, sources S001, S049, S076.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C002",
@@ -25,7 +25,7 @@
   "resolution": "Scheduled and recurring transfers appear under 'Upcoming Transactions' and can be cancelled before they run; the UI path and cut-off are not published (the 11:59 PM ET day-before rule is documented only for Zelle Scheduled Payments).",
   "evidence": "INFERRED",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C003",
@@ -39,7 +39,7 @@
   "resolution": "Cancel scheduled one-time/recurring external transfers from Upcoming Transactions; cut-off UNKNOWN (11:59 PM ET rule is Zelle-only).",
   "evidence": "INFERRED",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C004",
@@ -53,7 +53,7 @@
   "resolution": "Payee account number required when first adding a payee; manual (non-directory) payees paid by mailed paper check.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C005",
@@ -67,7 +67,7 @@
   "resolution": "other_flags: {subscriber_us_physical_address_required: true}; remove us_or_military_address_only.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C006",
@@ -81,7 +81,7 @@
   "resolution": "Keep original wording (Basic/Enhanced/Premier Checking and Business Savings).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C007",
@@ -95,7 +95,7 @@
   "resolution": "Name: \"Accounts Payable with Capital One Business Cards (SMB bill pay / 'Pay Vendors')\". Note: marketed as a Business Card benefit and reached inside the Capital One Business account; eligibility 'dynamic'. The SMB online-banking page [S033] currently offers business bill pay (ACH/debit/credit funding, QuickBooks Online, up to $50 late-fee reimbursement, not for clients with annual sales above $10M).",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C008",
@@ -109,7 +109,7 @@
   "resolution": "No Capital One-published scam reimbursement commitment and no purchase protection; victims phone 800-655-2265. Zelle network rules (since 30 June 2023) provide recovery/refund for qualifying imposter scams (government, bank or provider impersonation), assessed case by case; other authorized-payment scams generally not reimbursed.",
   "evidence": "THIRD_PARTY",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C009",
@@ -123,7 +123,7 @@
   "resolution": "Add COF-P02-S06 'Free transfer (automatic overdraft-covering transfer)': set via checking account > More Services > Overdraft Settings; one of three overdraft options (No-fee overdraft, Auto-decline, Free transfer); source account not stated on page.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C010",
@@ -137,7 +137,7 @@
   "resolution": "Add COF-P02-S07 'MONEY teen allowance and parent/teen transfers' [S911].",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C011",
@@ -151,7 +151,7 @@
   "resolution": "Differentiator: 'Capital One is one of the seven bank owners of Early Warning Services (operator of Zelle and Paze).'",
   "evidence": "THIRD_PARTY",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C012",
@@ -165,7 +165,7 @@
   "resolution": "Recent change: '2026-06-11: EWS announced Zelle cross-border P2P (India first, planned before end-2026) and a ZelleUSD (ZLUSD) stablecoin; Capital One (an EWS owner) has not announced customer availability.' Plus an open question.",
   "evidence": "THIRD_PARTY",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C013",
@@ -179,7 +179,7 @@
   "resolution": "Both positions stand. Settled by a Capital One disclosure or app screen showing (or ruling out) a debit-card push send, or a Visa Direct/Mastercard Send participant list. Until then, the research dataset and the participation baseline should agree. Recommend the research dataset keep false with scope 'no bank-originated send product' and the participation baseline footnote the scope.",
   "evidence": "INFERRED",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C014",
@@ -193,7 +193,7 @@
   "resolution": "Record both statements as conflicting bank guidance. Settled by the current Funds Availability Policy for savings products or an authenticated deposit confirmation.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C015",
@@ -207,7 +207,7 @@
   "resolution": "Renumber as proposed in COF-C015.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C016",
@@ -221,7 +221,7 @@
   "resolution": "Beyond Zelle P2P, consumers have no instant outbound option: no push-to-card, no marketed RTP/FedNow send, and transfers to their own external accounts take 1–3 business days by ACH [S008][S007][S001].",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  },
  {
   "id": "COF-C017",
@@ -235,6 +235,6 @@
   "resolution": "Keep COF-P09 evidence CONFIRMED_BANK (receive only); send stays unknown.",
   "evidence": "CONFIRMED_BANK",
   "reviewer": "Claude Opus 5.5 (claude-opus-5-5)",
-  "report_version": "2026-11-06-v1"
+  "report_version": "2026-11-07-v2"
  }
 ]

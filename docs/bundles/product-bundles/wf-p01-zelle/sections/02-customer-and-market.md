@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "ae8186e2951039a8a78378a63c97ddbefd09ef988022fe7dd498f6e3f836e656",
+  "content_sha256": "beb202e30e460a3b3606ada4cf5662c6ece6a8c45dc16a4e97401c4f69d9fe66",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -58,13 +58,13 @@ Network or vendor: Early Warning Services (Zelle network); Wells Fargo is an EWS
 - `WF-J29` Consumer sends, requests and manages Zelle® payments on the web (observed logged-in session) — persona: Tenured consumer checking customer using Wells Fargo Online on a desktop; goal: “Pay or request money from a person and keep control of who can pay me, including a teen's access”[^9]
 - `sample` Send money with Zelle — persona: Retail checking customer paying a friend back; goal: “Get money to someone I know, in minutes, without worrying”[^10]
 
-[^1]: kj · product/WF-P01 · 7db18a666d60
-[^2]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 54cdbe9360ea
-[^3]: kj · customer-journey/CJ-ZELLE-REQUEST · ff349a4a3d24
-[^4]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · 1a1ab5a1e86e
-[^5]: kj · journey/WF-J01 · 251e989b61ea
-[^6]: kj · journey/WF-J02 · 14bc08a80f04
-[^7]: kj · journey/WF-J03 · b89c841e1309
-[^8]: kj · journey/WF-J28 · b20fda0a115f
-[^9]: kj · journey/WF-J29 · d718f795aee2
+[^1]: kj · product/WF-P01 · f217122e121a
+[^2]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 1f6b6a0e7521
+[^3]: kj · customer-journey/CJ-ZELLE-REQUEST · cda300f4d27d
+[^4]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · dd3d94ee596e
+[^5]: kj · journey/WF-J01 · c3b8e132fd5c
+[^6]: kj · journey/WF-J02 · 2eca5861046f
+[^7]: kj · journey/WF-J03 · 558dd3d0215c
+[^8]: kj · journey/WF-J28 · cf400c417393
+[^9]: kj · journey/WF-J29 · f76130105e87
 [^10]: kj · journey/sample · e85b2befb3b0

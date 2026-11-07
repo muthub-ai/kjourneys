@@ -7,7 +7,7 @@
  "segment": "small-business",
  "customer_goal": "Deposit check batches from the office",
  "version": "1.0.0",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "status": "draft",
  "basis": "disclosed",
  "governance": {
@@ -58,33 +58,33 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "fail_points": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -118,26 +118,26 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062",
       "src-bank-of-america-s907",
       "src-bank-of-america-s924"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062",
       "src-bank-of-america-s907",
       "src-bank-of-america-s924"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -147,9 +147,9 @@
    "id": "urn:kos:moment:bank-of-america:bac-j20:m03",
    "code": "M03",
    "stage": "review-authorize",
-   "title": "Review totals and submit",
-   "customer_action": "Review totals and submit",
-   "action": "Review totals and submit",
+   "title": "Confirm Declared Amount (entered) matches Current Amount (scanned items…",
+   "customer_action": "Confirm Declared Amount (entered) matches Current Amount (scanned items total); Balancing Difference must show $0.00 and 'the Complete button will be BLUE' (red when out of balance); press Complete to transmit",
+   "action": "Confirm Declared Amount (entered) matches Current Amount (scanned items total); Balancing Difference must show $0.00 and 'the Complete button will be BLUE' (red when out of balance); press Complete to transmit",
    "touchpoints": [
     {
      "channel": "web",
@@ -163,26 +163,28 @@
    "source_step": 3,
    "evidence": {
     "action": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-bank-of-america-s062"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-bank-of-america-s062"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "INFERRED"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -199,7 +201,7 @@
      "screen": "Deposit history"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Status model (CONFIRMED_BANK, S971): RDO Deposit List Status column shows Open (Incomplete / Processing / Balanced / Jammed / Cancelled), Transmitting ('being sent to Bank of America'), Received ('successfully received by Bank of America'), Received Pending ('Do NOT rescan the deposit'), Perfected ('processed this deposit without making adjustments'), Perfected Adjusted ('processed this deposit and made adjustments').",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -208,22 +210,36 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-bank-of-america-s062"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s971"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-bank-of-america-s062"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s062",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -233,9 +249,9 @@
    "id": "urn:kos:moment:bank-of-america:bac-j20:m05",
    "code": "M05",
    "stage": "confirm-complete",
-   "title": "Deposit confirmation (format UNKNOWN)",
+   "title": "After Complete, 'The Deposit List screen displays and the status is…",
    "customer_action": null,
-   "action": "Deposit confirmation (format UNKNOWN)",
+   "action": "After Complete, 'The Deposit List screen displays and the status is updated as the deposit processes' (Transmitting -> Received -> Perfected / Perfected Adjusted); deposit also appears as a pending transaction in Online Banking; Deposit Details page can be printed. No confirmation number or confirmation email is documented.",
    "touchpoints": [
     {
      "channel": "web",
@@ -249,24 +265,26 @@
    "source_step": 5,
    "evidence": {
     "touchpoint": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
-     "basis": "inferred",
+     "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
-     "confidence": "low",
-     "x-mi_evidence": "UNKNOWN"
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -292,22 +310,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -326,7 +344,7 @@
      "screen": "Deposit holds policy; RDO support 877-270-1242"
     }
    ],
-   "frontstage": "",
+   "frontstage": "Bank adjustments show as deposit status 'Perfected Adjusted' ('Bank of America processed this deposit and made adjustments'); Customer Adjustments reason codes define required action, e.g. 002 wrong declared amount (no action), 005 non-negotiable item / 018 IQA bad-quality image ('should be re-deposited through a channel other than Remote Deposit Online'), 701 improper endorsement ('Ensure endorsements are updated correctly and resubmit in Remote Deposit Online'). Returned items 'must be deposited inside a banking center'. Duplicate-flagged items not truly duplicate: deposit at banking center, Mobile or ATM. Delivery channel for adjustment notices not documented.",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -335,22 +353,36 @@
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-bank-of-america-s924"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s924",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s924",
+      "src-bank-of-america-s971"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "process": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
-      "src-bank-of-america-s924"
+      "src-mi-2026-11-07-v2",
+      "src-bank-of-america-s924",
+      "src-bank-of-america-s971"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -378,22 +410,22 @@
     "action": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "touchpoint": {
      "basis": "disclosed",
      "source_ids": [
-      "src-mi-2026-11-06-v1",
+      "src-mi-2026-11-07-v2",
       "src-bank-of-america-s062"
      ],
      "asserted_by": "process:mi-session",
-     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "asserted_at": "2026-11-07T01:09:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     }
@@ -401,7 +433,7 @@
   }
  ],
  "source_journey_id": "BAC-J20",
- "report_version": "2026-11-06-v1",
+ "report_version": "2026-11-07-v2",
  "sub_product": "BAC-P07-S02",
  "channels": {
   "entry": [
@@ -412,20 +444,32 @@
   ]
  },
  "status_tracking": {
-  "where": "Remote Deposit Online history",
-  "states": [],
-  "basis": "inferred"
+  "where": "Remote Deposit Online 'Deposit List' screen (status updates as the deposit processes); deposit also shows as pending in Online Banking; Deposit Details printable",
+  "states": [
+   "Open — Incomplete",
+   "Open — Processing",
+   "Open — Balanced",
+   "Open — Jammed",
+   "Open — Cancelled",
+   "Transmitting",
+   "Received",
+   "Received Pending",
+   "Perfected",
+   "Perfected Adjusted"
+  ],
+  "basis": "disclosed"
  },
  "exceptions": [
   {
    "trigger": "Item rejected",
    "customer_experience": "Deposits subject to standard holds; no funds verification at capture; rejected-item notification path still not documented publicly.",
    "bank_handling": "Hold/validation per Deposit Agreement; support via RDO servicing line 877-270-1242 (Mon–Fri 8–8 ET).",
-   "resolution": "UNKNOWN",
+   "resolution": "Per Customer Adjustments reason code: resubmit in RDO (e.g., 701/702 endorsement), or re-deposit via another channel (005, 018); returned items only at a banking center",
    "basis": "disclosed",
    "source_ids": [
-    "src-mi-2026-11-06-v1",
-    "src-bank-of-america-s924"
+    "src-mi-2026-11-07-v2",
+    "src-bank-of-america-s924",
+    "src-bank-of-america-s971"
    ]
   }
  ],
@@ -436,5 +480,7 @@
  "terms": {
   "fees": "$15/month; $250 ETF; $250 late scanner return",
   "cutoffs": "Later cutoff (unspecified)"
- }
+ },
+ "composite": "CJ-MOBILE-DEPOSIT",
+ "composite_match": "mi-reference"
 }

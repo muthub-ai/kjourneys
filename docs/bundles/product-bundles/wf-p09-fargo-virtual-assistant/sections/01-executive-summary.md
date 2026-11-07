@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P09",
   "line_of_business": "wf-cbl",
-  "content_sha256": "993ad65f4332d2197dc29bd3578636bdd975097113497ab73b3396a9626fd508",
+  "content_sha256": "926f2204987754d9efd73972a437a3bbea0ea1ca3c2654f4433000cf65fc075d",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -51,9 +51,9 @@ MI documented 1 journey(s) for it, delivering 1 customer journey(s); they carry 
 
 - **low** · Support · Fargo can initiate a Zelle send, but its confirmation UX is unpublished (INFERRED hand-off to the standard review screen).[^6]
 
-[^1]: kj · product/WF-P09 · d4d1ce4a76b1
+[^1]: kj · product/WF-P09 · 4787881df475
 [^2]: kj · assignment/WF-P09 · 335f6c8682e1
 [^3]: kj · lob/wf-cbl · 9bd65bef07df
-[^4]: kj · sub-product/WF-P09-S01 · c81b73e86911
-[^5]: kj · journey/WF-J04 · 292f135b2287
-[^6]: kj · finding/GAP-WF-0005 · aed989733509
+[^4]: kj · sub-product/WF-P09-S01 · a2a787230b72
+[^5]: kj · journey/WF-J04 · 2e981edf18c3
+[^6]: kj · finding/GAP-WF-0005 · 23ad46977fbc

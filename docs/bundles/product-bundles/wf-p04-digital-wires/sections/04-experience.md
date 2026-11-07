@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "81b2c7ecc26e877229464bc9fda4830d04faab188bb8e87834b20dd184605f84",
+  "content_sha256": "852af532b473d3ecddd1016f841a32bd2f96893fa0837e960db14ca27e360c62",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -65,9 +65,9 @@ MI assessment: Same engine as consumer; FX rate lock and receive-in-27-currencie
 
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1][^3][^5]
 
-[^1]: kj · journey/WF-J10 · 47452d55448b
-[^2]: kj · customer-journey/CJ-WIRE-DOM-CONSUMER-SEND · 5229e78a1d68
-[^3]: kj · journey/WF-J11 · e4ed66bc72f0
-[^4]: kj · customer-journey/CJ-WIRE-INTL-CONSUMER-SEND · eee82a62d089
-[^5]: kj · journey/WF-J18 · 7f1916a52a55
-[^6]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9
+[^1]: kj · journey/WF-J10 · ca29755fbe66
+[^2]: kj · customer-journey/CJ-WIRE-DOM-CONSUMER-SEND · ba0b56b8b7ed
+[^3]: kj · journey/WF-J11 · 5759e78f0c18
+[^4]: kj · customer-journey/CJ-WIRE-INTL-CONSUMER-SEND · 556725478191
+[^5]: kj · journey/WF-J18 · da9c57fe16e4
+[^6]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · cfd851265b11

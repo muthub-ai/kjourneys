@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P05",
   "line_of_business": "wf-cbl",
-  "content_sha256": "798e9833f261a090d32c7ec099cf8ef220f35073ce9e429b17784364b54a56a8",
+  "content_sha256": "cb9af05eddab75746e6a3c68ddad0b716a00fa2dad01a1d3d34cc9531edc6834",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -79,7 +79,7 @@ Where it sits in the bank's app and site: Mobile: 'Pay & Transfer' (a.k.a. Trans
 
 - `WF-J12` — cutoffs: Same business day for many locations; fees: Per-country $3–$12; first mobile transfer free; limits: $25 min; $5,000/day; $12,500/30 days; 10 recipients[^4]
 
-[^1]: kj · product/WF-P05 · 4247b60967aa
-[^2]: kj · sub-product/WF-P05-S01 · 9697c6c44150
-[^3]: kj · sub-product/WF-P05-S02 · dfcb6ac16268
-[^4]: kj · journey/WF-J12 · 94fc27116502
+[^1]: kj · product/WF-P05 · 0e61b73c4811
+[^2]: kj · sub-product/WF-P05-S01 · f975b8e7294f
+[^3]: kj · sub-product/WF-P05-S02 · 79d38fd49e62
+[^4]: kj · journey/WF-J12 · 98b1c3096cb7

@@ -7,18 +7,18 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
+   "sha256": "053f4c412d7d3780c7d905451ccabb460abdf36275b1bf937a9a115910add0cb"
   },
   {
-   "id": "mi-2026-11-06-v1",
-   "report_version": "2026-11-06-v1",
-   "path": "reports/2026-11-06-v1/Money_Movement_CI_Data.xlsx",
-   "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88"
+   "id": "mi-2026-11-07-v2",
+   "report_version": "2026-11-07-v2",
+   "path": "reports/2026-11-07-v2/Money_Movement_CI_Data.xlsx",
+   "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa"
   }
  ],
  "generated": {
   "by": "process:build-bundles",
-  "at": "2026-11-06T23:59:00-06:00"
+  "at": "2026-11-07T23:59:00-06:00"
  },
  "verified": [],
  "x_kf": {
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "4b22fb5a0c543048900a86f7c2a0729b0b60b688336dddee799774cb766aafe7",
+  "content_sha256": "da819409de0eb72ea02eac523fd5261d53bedd45dc958a08d572160039f1647a",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -44,7 +44,7 @@ It reports through: Consumer, Small and Business Banking, Credit Card, Home Lend
 
 In this study it owns 12 money-movement product(s) and also serves 1 owned elsewhere.[^1][^2][^3][^4][^5][^6][^7][^8][^9][^10][^11][^12][^13][^14]
 
-Across its products MI recorded 35 gap(s): 6 high, 18 medium, 11 low.[^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25][^26]
+Across its products MI recorded 34 gap(s): 6 high, 16 medium, 12 low.[^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25][^26]
 
 [^1]: kj · lob/wf-cbl · 9bd65bef07df
 [^2]: kj · assignment/WF-P01 · daf9fc88d74e
@@ -60,15 +60,15 @@ Across its products MI recorded 35 gap(s): 6 high, 18 medium, 11 low.[^15][^16][
 [^12]: kj · assignment/WF-P11 · eccf60df1390
 [^13]: kj · assignment/WF-P12 · 64f7eaee3789
 [^14]: kj · assignment/WF-P13 · c64f59363a8c
-[^15]: kj · product/WF-P01 · 7db18a666d60
-[^16]: kj · product/WF-P02 · 9eb25008fe7d
-[^17]: kj · product/WF-P03 · b839aacb8026
-[^18]: kj · product/WF-P04 · 7ae69c334eed
-[^19]: kj · product/WF-P05 · 4247b60967aa
-[^20]: kj · product/WF-P06 · aa0e6fda3732
-[^21]: kj · product/WF-P07 · 60c66e3aae03
-[^22]: kj · product/WF-P08 · 3868912428e5
-[^23]: kj · product/WF-P09 · d4d1ce4a76b1
-[^24]: kj · product/WF-P10 · ae4ea79539a2
-[^25]: kj · product/WF-P11 · df9119f7188e
-[^26]: kj · product/WF-P12 · d73da35d0cb8
+[^15]: kj · product/WF-P01 · f217122e121a
+[^16]: kj · product/WF-P02 · 0b29dca0b27f
+[^17]: kj · product/WF-P03 · 0c4750f70904
+[^18]: kj · product/WF-P04 · 728ab1540360
+[^19]: kj · product/WF-P05 · 0e61b73c4811
+[^20]: kj · product/WF-P06 · 7447c97a0fac
+[^21]: kj · product/WF-P07 · 4fe5c088f5d6
+[^22]: kj · product/WF-P08 · 53a0b5f81ba1
+[^23]: kj · product/WF-P09 · 4787881df475
+[^24]: kj · product/WF-P10 · 5dc2c6e95e66
+[^25]: kj · product/WF-P11 · 18c5f5e9f2bf
+[^26]: kj · product/WF-P12 · 932e654a57de
