@@ -371,6 +371,17 @@ dl.mi{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0;font
 .flow text{font-family:var(--f-body);font-size:11px;fill:var(--ink)}
 .flow .fl{fill:none;stroke-opacity:.28}
 .flow .fl:hover,.flow .fl.on{stroke-opacity:.7}
+.flow.picked .fl:not(.on){stroke-opacity:.06}.flow.picked rect:not(.on){opacity:.25}.flow.picked text:not(.on){opacity:.3}
+.mn.hl text{font-weight:700}
+.mn:hover text.hid{display:inline}.mn text.hid{display:none}
+.mapbox svg.minimap{position:absolute;left:10px;bottom:10px;width:180px;height:116px;border:1px solid var(--rule);border-radius:8px;background:rgba(255,255,255,.92);cursor:pointer}
+.minimap rect.vp{fill:rgba(39,69,214,.08);stroke:#2745D6;stroke-width:6}
+.focusbar{position:absolute;left:10px;top:10px;display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.95);border:1px solid var(--rule);border-radius:8px;padding:6px 10px;font-size:13px;z-index:2}
+.focusbar button{border:1px solid var(--rule);border-radius:7px;background:var(--bg);padding:4px 10px;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.focus-svg text{font-family:var(--f-body);font-size:12px;fill:var(--ink);paint-order:stroke;stroke:#FFFFFF;stroke-width:3px;stroke-linejoin:round}
+.focus-svg .fh{stroke:none;font-family:var(--f-display);font-weight:700;font-size:11px;fill:var(--muted);letter-spacing:.06em}
+.focus-svg .fe{fill:none;stroke:#C4CAD6;stroke-width:1.3}
+.focus-svg .fn{cursor:pointer}.focus-svg .fn:focus{outline:none}.focus-svg .fn:focus-visible circle{stroke:#2745D6;stroke-width:3}
 .flow rect{cursor:pointer}
 
 /* Compare */
@@ -1283,7 +1294,8 @@ const MT = {bank: {c: "#0B1220", r: 18, n: "Wells Fargo"}, lob: {c: "#152036", r
   journey: {c: "#3B4660", r: 4.5, n: "Journey"}, cj: {c: "#6D28D9", r: 8, n: "Customer journey"}, gap: {c: "#B42318", r: 3.5, n: "Gap"},
   strength: {c: "#15803D", r: 3.5, n: "Strength"}, app: {c: "#8A93A6", r: 4, n: "App ID (sample)"}};
 const SEVR = {critical: 6, high: 5, medium: 3.8, low: 3};
-let mapMode = "net", mapSel = null, mapShow = {bank: 1, lob: 1, product: 1, sub: 1, journey: 1, cj: 1, gap: 1, strength: 0, app: 1}, mapT = {k: 1, x: 0, y: 0};
+let mapMode = "net", mapSel = null, mapShow = {bank: 1, lob: 1, product: 1, sub: 1, journey: 1, cj: 1, gap: 1, strength: 1, app: 1}, mapT = {k: 1, x: 0, y: 0}, mapFocus = null;
+const TRANK = {bank: 0, lob: 1, product: 2, sub: 3, journey: 4, cj: 5, gap: 6, strength: 6, app: 7};
 const MN = MAP ? Object.fromEntries(MAP.nodes.map(n => [n.id, n])) : {};
 const MADJ = {}; (MAP?.edges || []).forEach(e => { (MADJ[e.a] ||= []).push([e.b, e.r]); (MADJ[e.b] ||= []).push([e.a, e.r]); });
 function setMapFull(on) {
@@ -1306,43 +1318,120 @@ function renderMap() {
   $("#mapLine").innerHTML = `<span><b>${MAP.lobs.length}</b> lines of business</span><span><b>${c.products}</b> products</span><span><b>${c.subs}</b> sub-products (${c.subs_unmapped} with no journey)</span><span><b>${c.journeys}</b> journeys</span><span><b>${c.cjs}</b> customer journeys</span><span><b>${c.gaps}</b> gaps · <b>${c.strengths}</b> strengths</span>`;
   $$("#mapMode button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mm === mapMode)));
   $("#mapKey").innerHTML = mapMode === "net" ? Object.entries(MT).map(([k, t]) => `<label><input type="checkbox" data-mk="${k}" ${mapShow[k] ? "checked" : ""}><i style="background:${t.c}"></i>${t.n}</label>`).join("") +
-    `<span><i style="background:#FFFFFF;border:1.5px dashed #0E7490"></i> hollow = sub-product with no journey mapped</span><span>Drag to pan · scroll to zoom · click a node</span>`
-    : `<span>Width shows how many journeys flow through each product and sub-product; thin grey bands are sub-products with no journey mapped. Click a block for details.</span>`;
+    `<span><i style="background:#FFFFFF;border:1.5px dashed #0E7490"></i> hollow = sub-product with no journey mapped</span><span>Drag to pan · scroll to zoom · click a node · double-click to focus on its chain · hover for hidden labels</span>`
+    : `<span>Width shows how many journeys flow through each product and sub-product; thin grey bands are sub-products with no journey mapped. Click a block to light up every path through it; click it again to clear.</span>`;
   if (mapMode === "net") drawNet(); else drawFlow();
   mapDetail(mapSel);
 }
 function visible(n) { return mapShow[n.t]; }
 function drawNet() {
+  if (mapFocus) return drawFocus();
   const q = $("#mapQ").value.trim().toLowerCase(), hit = q ? new Set(MAP.nodes.filter(n => n.l.toLowerCase().includes(q) || (n.ref || "").toLowerCase().includes(q)).map(n => n.id)) : null;
   const nb = mapSel ? new Set([mapSel, ...(MADJ[mapSel] || []).map(x => x[0])]) : null;
   const R = n => n.t === "gap" ? SEVR[n.sev] || 3.5 : MT[n.t].r + (["product", "cj"].includes(n.t) ? Math.min(6, Math.sqrt(n.d)) : 0);
-  const lab = n => ["bank", "lob", "product", "cj"].includes(n.t) || (nb && nb.has(n.id)) || (hit && hit.has(n.id)) || (mapT.k > 2.2 && ["sub", "journey"].includes(n.t));
   const short = t => t.length > 34 ? t.slice(0, 32) + "…" : t;
+  const k = mapT.k, big = n => ["bank", "lob", "product"].includes(n.t);
+  // labels: placed in priority order; a label that would overlap one already placed (or a big node) is hidden until hover or zoom
+  const prio = n => n.id === mapSel ? 0 : hit && hit.has(n.id) ? 1 : nb && nb.has(n.id) ? 2 : {bank: 3, lob: 3, product: 4, cj: 5, sub: 6, journey: 6, app: 7, gap: 8, strength: 8}[n.t];
+  const want = n => !(nb && !nb.has(n.id)) && !(hit && !hit.has(n.id)) && (prio(n) <= 5 || k > 1.8 || (nb && nb.has(n.id)) || (hit && hit.has(n.id)));
+  const vis = MAP.nodes.filter(visible), boxes = [], place = {};
+  vis.filter(big).forEach(n => { const r = R(n); boxes.push([n.x - r, n.y - r, n.x + r, n.y + r]); });
+  const fs = n => (big(n) ? 12.5 : 11) / k, cw = n => fs(n) * .56;
+  [...vis].sort((a, b) => prio(a) - prio(b)).forEach(n => {
+    if (!want(n)) return;
+    const r = R(n), t = short(n.l), w = t.length * cw(n), h = fs(n) * 1.25, gp = 3 / k;
+    const cands = [[n.x + r + gp, n.y + h * .35, "start"], [n.x - r - gp, n.y + h * .35, "end"], [n.x, n.y - r - gp - 1 / k, "middle"], [n.x, n.y + r + h * .9, "middle"]];
+    for (const [x, y, a] of cands) {
+      const x0 = a === "start" ? x : a === "end" ? x - w : x - w / 2, b = [x0, y - h * .8, x0 + w, y + h * .2];
+      const out = b[0] < (-36 - mapT.x) / k || b[2] > (1136 - mapT.x) / k || b[1] < (-26 - mapT.y) / k || b[3] > (726 - mapT.y) / k;
+      if ((out || boxes.some(o => !(b[2] < o[0] || b[0] > o[2] || b[3] < o[1] || b[1] > o[3]))) && prio(n) > 0) continue;
+      boxes.push(b); place[n.id] = [x, y, a]; break;
+    }
+  });
   let g = "";
   MAP.edges.forEach(e => { const a = MN[e.a], b = MN[e.b]; if (!visible(a) || !visible(b)) return;
     const dim = (nb && !(nb.has(e.a) && nb.has(e.b) && (e.a === mapSel || e.b === mapSel))) || (hit && !(hit.has(e.a) || hit.has(e.b)));
-    g += `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${e.r === "serves" ? "#8A93A6" : "#C4CAD6"}" stroke-width="${e.r === "owns" ? 1.6 : 1}" ${e.r === "serves" ? 'stroke-dasharray="4 4"' : ""} class="${dim ? "dimmed" : ""}"/>`; });
-  MAP.nodes.forEach(n => { if (!visible(n)) return; const t = MT[n.t], r = R(n), dim = (nb && !nb.has(n.id)) || (hit && !hit.has(n.id));
-    const fill = n.hollow ? "#FFFFFF" : n.sample ? "#B45309" : t.c;
-    g += `<g class="mn ${dim ? "dimmed" : ""}" data-mn="${esc(n.id)}" tabindex="0" role="button" aria-pressed="${n.id === mapSel}" aria-label="${esc(t.n)}: ${esc(n.l)}"><circle cx="${n.x}" cy="${n.y}" r="${r}" fill="${fill}" stroke="${n.hollow ? t.c : n.id === mapSel ? "#2745D6" : "#FFFFFF"}" stroke-width="${n.id === mapSel ? 3 : n.hollow ? 1.5 : 1}" ${n.hollow ? 'stroke-dasharray="2 2"' : ""}><title>${esc(t.n)}: ${esc(n.l)}</title></circle>
-      ${lab(n) ? `<text x="${n.x + r + 3}" y="${n.y + 4}" class="${["bank", "lob", "product"].includes(n.t) ? "big" : ""}">${esc(short(n.l))}</text>` : ""}</g>`; });
-  $("#mapBox").innerHTML = `<svg id="mapSvg" viewBox="-40 -30 1180 760" role="img" aria-label="Wells Fargo knowledge map"><g id="mapG" transform="translate(${mapT.x},${mapT.y}) scale(${mapT.k})">${g}</g></svg>
-    <div class="zoom"><button type="button" data-z="1.4" aria-label="Zoom in">+</button><button type="button" data-z="0.7" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Fit">⤢</button></div>`;
-  wirePan();
+    g += `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${e.r === "serves" ? "#8A93A6" : "#C4CAD6"}" stroke-width="${(e.r === "owns" ? 1.6 : 1) / Math.sqrt(k)}" ${e.r === "serves" ? 'stroke-dasharray="4 4"' : ""} class="${dim ? "dimmed" : ""}"/>`; });
+  vis.forEach(n => { const t = MT[n.t], r = R(n), dim = (nb && !nb.has(n.id)) || (hit && !hit.has(n.id));
+    const fill = n.hollow ? "#FFFFFF" : n.sample ? "#B45309" : t.c, P = place[n.id];
+    const label = P ? `<text x="${P[0]}" y="${P[1]}" text-anchor="${P[2]}" style="font-size:${fs(n)}px;stroke-width:${3 / k}px" class="${big(n) ? "big" : ""}">${esc(short(n.l))}</text>`
+                    : `<text x="${n.x + r + 3 / k}" y="${n.y + 4 / k}" class="hid" style="font-size:${fs(n)}px;stroke-width:${3 / k}px">${esc(short(n.l))}</text>`;
+    g += `<g class="mn ${dim ? "dimmed" : ""} ${hit && hit.has(n.id) ? "hl" : ""}" data-mn="${esc(n.id)}" tabindex="0" role="button" aria-pressed="${n.id === mapSel}" aria-label="${esc(t.n)}: ${esc(n.l)}"><circle cx="${n.x}" cy="${n.y}" r="${r}" fill="${fill}" stroke="${n.hollow ? t.c : n.id === mapSel ? "#2745D6" : "#FFFFFF"}" stroke-width="${(n.id === mapSel ? 3 : n.hollow ? 1.5 : 1) / Math.sqrt(k)}" ${n.hollow ? 'stroke-dasharray="2 2"' : ""}><title>${esc(t.n)}: ${esc(n.l)}${["journey", "product", "sub", "lob", "cj", "bank"].includes(n.t) ? " · double-click to focus" : ""}</title></circle>${label}</g>`; });
+  // overview in the corner while zoomed in
+  const mm = k > 1.25 ? `<svg class="minimap" id="miniMap" viewBox="-40 -30 1180 760" aria-label="Overview: click to move there">${vis.map(n => `<circle cx="${n.x}" cy="${n.y}" r="${big(n) ? 12 : 6}" fill="${MT[n.t].c}" opacity=".55"/>`).join("")}<rect class="vp" id="miniVp"/></svg>` : "";
+  $("#mapBox").innerHTML = `<svg id="mapSvg" viewBox="-40 -30 1180 760" role="img" aria-label="Wells Fargo knowledge map"><g id="mapG" transform="translate(${mapT.x},${mapT.y}) scale(${mapT.k})">${g}</g></svg>${mm}
+    <div class="zoom"><button type="button" data-z="1.4" aria-label="Zoom in" title="Zoom in">+</button><button type="button" data-z="0.7" aria-label="Zoom out" title="Zoom out">−</button><button type="button" data-z="0" aria-label="Fit the whole map" title="Fit the whole map">⤢</button></div>`;
+  wirePan(); miniVp();
+}
+function miniVp() {
+  const r = $("#miniVp"); if (!r) return;
+  r.setAttribute("x", (-40 - mapT.x) / mapT.k); r.setAttribute("y", (-30 - mapT.y) / mapT.k); r.setAttribute("width", 1180 / mapT.k); r.setAttribute("height", 760 / mapT.k);
+  $("#miniMap").onclick = e => { const b = e.currentTarget.getBoundingClientRect(), gx = -40 + (e.clientX - b.left) / b.width * 1180, gy = -30 + (e.clientY - b.top) / b.height * 760;
+    mapT.x = 550 - gx * mapT.k; mapT.y = 350 - gy * mapT.k; drawNet(); };
+}
+/* focus: one node's whole chain, laid out left to right (line of business → product → sub-product → journey → customer journey / gaps) */
+function focusSet(id) {
+  const keep = new Set([id]);
+  const walk = (dir) => { let front = [id]; while (front.length) { const nx = []; front.forEach(a => (MADJ[a] || []).forEach(([b]) => {
+    if (keep.has(b) || !MN[b] || !visible(MN[b])) return; const ra = TRANK[MN[a].t], rb = TRANK[MN[b].t];
+    if (dir > 0 ? rb > ra : rb < ra) { keep.add(b); nx.push(b); } })); front = nx; } };
+  walk(-1); walk(1);
+  return keep;
+}
+function drawFocus() {
+  const keep = focusSet(mapFocus), f = MN[mapFocus];
+  if (f.t !== "journey" && f.t !== "app") [...keep].forEach(id => { if (MN[id].t === "app") keep.delete(id); });   // sample app IDs only when focused on a journey
+  const cols = [[], [], [], [], [], [], [], []]; keep.forEach(id => cols[TRANK[MN[id].t]].push(id));
+  const used = cols.map((c, i) => [c, i]).filter(([c]) => c.length);
+  const order = {}; // order each column by its neighbours in the previous one, to keep lines from crossing
+  used.forEach(([c], ci) => { c.sort((a, b) => {
+    const m = x => { const ps = (MADJ[x] || []).map(([o]) => order[o]).filter(v => v != null); return ps.length ? ps.reduce((p, q) => p + q, 0) / ps.length : 1e3; };
+    const sv = x => MN[x].t === "gap" ? {critical: 0, high: 1, medium: 2, low: 3}[MN[x].sev] ?? 4 : MN[x].t === "strength" ? 5 : 0;
+    return sv(a) - sv(b) || m(a) - m(b) || MN[a].l.localeCompare(MN[b].l); }); c.forEach((id, i) => order[id] = i); });
+  // column widths follow their content (a column of short app IDs needs less room than one of gap descriptions)
+  const LIM = {0: 14, 1: 26, 2: 22, 3: 28, 4: 32, 5: 30, 6: 36, 7: 10};
+  const colW = used.map(([c, i]) => Math.min(LIM[i], Math.max(...c.map(id => MN[id].l.length))) * 6.7 + 30 + Math.max(...c.map(id => (MN[id].t === "gap" ? SEVR[MN[id].sev] || 3.5 : Math.min(MT[MN[id].t].r, 10)) + (id === mapFocus ? 3 : 0))));
+  const X = colW.reduce((a, w, i) => (a.push(i ? a[i - 1] + colW[i - 1] : 16), a), []);
+  const rowH = 26, H = Math.max(360, Math.max(...used.map(([c]) => c.length)) * rowH + 60), W = X[X.length - 1] + colW[colW.length - 1];
+  const P = {}; used.forEach(([c], ci) => { const top = 46 + (H - 46 - c.length * rowH) / 2; c.forEach((id, i) => P[id] = [X[ci] + 6, top + i * rowH + rowH / 2]); });
+  const R = n => n.t === "gap" ? SEVR[n.sev] || 3.5 : Math.min(MT[n.t].r, 10);
+  const heads = {0: "Wells Fargo", 1: "Line of business", 2: "Product", 3: "Sub-product", 4: "Journey", 5: "Customer journey", 6: "Gaps · strengths", 7: "App IDs (sample)"};
+  let g = used.map(([, i], ci) => `<text class="fh" x="${X[ci]}" y="22">${heads[i].toUpperCase()}</text>`).join("");
+  MAP.edges.forEach(e => { if (!keep.has(e.a) || !keep.has(e.b)) return; const [x0, y0] = P[e.a], [x1, y1] = P[e.b]; const mx = (x0 + x1) / 2;
+    g += `<path class="fe" d="M${x0},${y0} C${mx},${y0} ${mx},${y1} ${x1},${y1}" ${e.r === "serves" ? 'stroke-dasharray="4 4"' : ""}/>`; });
+  keep.forEach(id => { const n = MN[id], [x, y] = P[id], r = R(n), lim = LIM[TRANK[n.t]], t = n.l.length > lim ? n.l.slice(0, lim - 1) + "…" : n.l;
+    g += `<g class="fn" data-mn="${esc(id)}" tabindex="0" role="button" aria-label="${esc(MT[n.t].n)}: ${esc(n.l)}"><circle cx="${x}" cy="${y}" r="${r + (id === mapFocus ? 3 : 0)}" fill="${n.hollow ? "#FFFFFF" : n.sample ? "#B45309" : MT[n.t].c}" stroke="${id === mapSel ? "#2745D6" : n.hollow ? MT[n.t].c : "#FFFFFF"}" stroke-width="${id === mapSel ? 3 : 1.5}" ${n.hollow ? 'stroke-dasharray="2 2"' : ""}><title>${esc(n.l)}</title></circle>
+      <text x="${x + r + 6}" y="${y + 4}" style="${id === mapFocus ? "font-weight:700" : ""}">${esc(t)}</text></g>`; });
+  $("#mapBox").innerHTML = `<div class="focusbar"><span>Focused on <b>${esc(f.l.length > 40 ? f.l.slice(0, 38) + "…" : f.l)}</b> · ${keep.size} linked items</span><button type="button" id="focusBack">← Whole map</button></div>
+    <div class="tbl-scroll" style="padding-top:44px"><svg class="focus-svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="width:${W}px;height:${H}px;max-width:none" role="img" aria-label="Everything linked to ${esc(f.l)}">${g}</svg></div>`;
+  { const sv = $("#mapBox .focus-svg"), cw = $("#mapBox").clientWidth - 24, k = W > cw ? Math.max(.8, cw / W) : 1;   // fit when nearly fits; otherwise scroll sideways
+    if (k < 1) { sv.style.width = W * k + "px"; sv.style.height = H * k + "px"; } }
+  $("#focusBack").onclick = () => { mapFocus = null; drawNet(); };
+  const svg = $("#mapBox .focus-svg");
+  const act = (el, dbl) => { const id = el.dataset.mn; if (dbl) { mapFocus = id; mapSel = id; drawNet(); } else { mapSel = id; drawNet(); } mapDetail(mapSel); };
+  svg.onclick = e => { const el = e.target.closest("[data-mn]"); if (el) act(el, false); };
+  svg.ondblclick = e => { const el = e.target.closest("[data-mn]"); if (el) act(el, true); };
+  svg.onkeydown = e => { const el = e.target.closest?.("[data-mn]"); if (el && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); act(el, e.shiftKey); } };
 }
 function wirePan() {
   const svg = $("#mapSvg"), G = $("#mapG"); let drag = null, moved = false;
   const pt = e => { const r = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal; return {x: vb.x + (e.clientX - r.left) / r.width * vb.width, y: vb.y + (e.clientY - r.top) / r.height * vb.height}; };
-  const apply = () => G.setAttribute("transform", `translate(${mapT.x},${mapT.y}) scale(${mapT.k})`);
+  const apply = () => { G.setAttribute("transform", `translate(${mapT.x},${mapT.y}) scale(${mapT.k})`); miniVp(); };
   svg.addEventListener("wheel", e => { e.preventDefault(); const p = pt(e), f = e.deltaY < 0 ? 1.15 : 1 / 1.15, k = Math.max(.5, Math.min(6, mapT.k * f));
-    mapT.x = p.x - (p.x - mapT.x) * k / mapT.k; mapT.y = p.y - (p.y - mapT.y) * k / mapT.k; mapT.k = k; apply(); }, {passive: false});
+    mapT.x = p.x - (p.x - mapT.x) * k / mapT.k; mapT.y = p.y - (p.y - mapT.y) * k / mapT.k; mapT.k = k; apply();
+    clearTimeout(wirePan.t); wirePan.t = setTimeout(drawNet, 140); }, {passive: false});
   const pick = (id, kb) => { mapSel = id ? (mapSel === id ? null : id) : null; drawNet(); mapDetail(mapSel); if (kb && id) $(`#mapSvg [data-mn="${CSS.escape(id)}"]`)?.focus(); };
   svg.addEventListener("keydown", e => { const n = e.target.closest?.("[data-mn]"); if (n && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); pick(n.dataset.mn, true); } });
   svg.addEventListener("pointerdown", e => { if (e.button !== 0) return; drag = {p: pt(e), x: mapT.x, y: mapT.y}; moved = false; svg.setPointerCapture(e.pointerId); });
   svg.addEventListener("pointermove", e => { if (!drag) return; const p = pt(e); if (Math.abs(p.x - drag.p.x) + Math.abs(p.y - drag.p.y) > 3) { moved = true; svg.classList.add("dragging"); }
     mapT.x = drag.x + (p.x - drag.p.x); mapT.y = drag.y + (p.y - drag.p.y); apply(); });
   svg.addEventListener("pointerup", e => { if (!drag) return; svg.classList.remove("dragging"); const wasDrag = moved; drag = null;
-    if (!wasDrag) pick(document.elementFromPoint(e.clientX, e.clientY)?.closest("[data-mn]")?.dataset.mn); });
+    if (wasDrag) return;
+    const id = document.elementFromPoint(e.clientX, e.clientY)?.closest("[data-mn]")?.dataset.mn, now = Date.now();
+    // a second click on the same node within 400 ms is a double-click: focus on its chain (the first click redrew the map, so no native dblclick)
+    if (id && wirePan.last && wirePan.last.id === id && now - wirePan.last.t < 400 && ["journey", "product", "sub", "lob", "cj", "bank"].includes(MN[id].t)) {
+      wirePan.last = null; mapFocus = id; mapSel = id; drawNet(); mapDetail(id); return; }
+    wirePan.last = {id, t: now}; pick(id); });
   svg.addEventListener("pointercancel", () => { drag = null; svg.classList.remove("dragging"); });
 }
 function drawFlow() {
@@ -1363,13 +1452,22 @@ function drawFlow() {
     g += `<path class="fl" d="M${x0},${y0} C${mx},${y0} ${mx},${y1} ${x1},${y1}" stroke="${l.v < 1 ? "#C4CAD6" : colr(a.ci)}" stroke-width="${w}" data-fa="${esc(l.a)}" data-fb="${esc(l.b)}"><title>${esc(F.label[l.a] || l.a)} → ${esc(F.label[l.b] || l.b)}</title></path>`; });
   Object.entries(pos).forEach(([id, p]) => { const lbl = F.label[id] || id, right = true;
     g += `<rect x="${p.x}" y="${p.y}" width="${cw}" height="${p.h}" fill="${id === "none" ? "#C4CAD6" : colr(p.ci)}" data-fid="${esc(id)}" data-fc="${p.ci}" tabindex="0" role="button" aria-label="${esc(heads[p.ci])}: ${esc(lbl)}"><title>${esc(lbl)}</title></rect>`;
-    if (p.h >= 8 || p.ci <= 1 || p.ci === 4) g += `<text x="${right ? p.x + cw + 4 : p.x - 4}" y="${p.y + p.h / 2 + 4}" text-anchor="start" style="${p.ci <= 1 ? "font-weight:700;font-size:12px" : ""}">${esc(lbl.length > (p.ci === 4 ? 34 : 40) ? lbl.slice(0, p.ci === 4 ? 32 : 38) + "…" : lbl)}</text>`; });
+    if (p.h >= 8 || p.ci <= 1 || p.ci === 4) g += `<text x="${right ? p.x + cw + 4 : p.x - 4}" y="${p.y + p.h / 2 + 4}" text-anchor="start" data-ft="${esc(id)}" style="${p.ci <= 1 ? "font-weight:700;font-size:12px" : ""}">${esc(lbl.length > (p.ci === 4 ? 34 : 40) ? lbl.slice(0, p.ci === 4 ? 32 : 38) + "…" : lbl)}</text>`; });
   g += heads.map((h, i) => `<text x="${colX[i]}" y="-12" text-anchor="start" style="font-family:var(--f-display);font-weight:700;font-size:12px;fill:var(--muted);letter-spacing:.06em">${h.toUpperCase()}</text>`).join("");
   $("#mapBox").innerHTML = `<div class="tbl-scroll"><svg class="flow" viewBox="-10 -30 ${W + 10} ${H + 40}" style="min-width:980px;cursor:default" role="img" aria-label="Wells Fargo flow from line of business to customer journey">${g}</svg></div>`;
   $("#mapBox svg").onkeydown = e => { if ((e.key === "Enter" || e.key === " ") && e.target.closest?.("[data-fid]")) { e.preventDefault(); $("#mapBox svg").onclick(e); } };
   $("#mapBox svg").onclick = e => { const r = e.target.closest("[data-fid]"); if (!r) return;
     const pre = ["lob/", "product/", "sub/", "journey/", "cj/"][+r.dataset.fc], id = r.dataset.fid;
-    $$("#mapBox .fl").forEach(p => p.classList.toggle("on", p.dataset.fa === id || p.dataset.fb === id));
+    const svg = $("#mapBox svg");
+    if (svg.dataset.picked === id) { svg.dataset.picked = ""; svg.classList.remove("picked"); $$("#mapBox .on").forEach(x => x.classList.remove("on")); mapSel = null; mapDetail(null); return; }
+    // every path through the block: walk the links upstream and downstream from it
+    const up = new Set([id]), dn = new Set([id]), L = MAP.flow.links; let grew = true;
+    while (grew) { grew = false; L.forEach(l => { if (up.has(l.b) && !up.has(l.a)) { up.add(l.a); grew = true; } if (dn.has(l.a) && !dn.has(l.b)) { dn.add(l.b); grew = true; } }); }
+    const on = new Set([...up, ...dn]);
+    $$("#mapBox .fl").forEach(p => p.classList.toggle("on", (up.has(p.dataset.fa) && up.has(p.dataset.fb)) || (dn.has(p.dataset.fa) && dn.has(p.dataset.fb))));
+    $$("#mapBox rect[data-fid]").forEach(x => x.classList.toggle("on", on.has(x.dataset.fid)));
+    $$("#mapBox text[data-ft]").forEach(x => x.classList.toggle("on", on.has(x.dataset.ft)));
+    svg.dataset.picked = id; svg.classList.add("picked");
     mapSel = id === "none" ? null : pre + id; mapDetail(mapSel); };
 }
 function mapDetail(id) {
@@ -1380,18 +1478,21 @@ function mapDetail(id) {
   const group = {}; nbrs.forEach(([o, r]) => (group[MT[o.t].n] ||= []).push([o, r]));
   const act = (n.i || []).length ? `<dl class="mi">${n.i.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${/^docs\//.test(v) ? `<code>${esc(v)}</code>` : esc(v)}</dd>`).join("")}</dl>` : "";
   const lob = n.t === "lob" ? MAP.lobs.find(l => "lob/" + l.id === id) : null;
+  const canFocus = mapMode === "net" && ["journey", "product", "sub", "lob", "cj", "bank"].includes(n.t) && mapFocus !== id;
   S.innerHTML = `<span class="kind">${esc(MT[n.t].n)}${n.sev ? " · " + esc(n.sev) : ""}${n.sample ? " · sample" : ""}</span><h3>${esc(n.l)}</h3>
+    ${canFocus ? `<p><button type="button" class="fsbtn" data-mfocus="${esc(id)}">Focus on this: show its whole chain</button></p>` : ""}
     ${lob ? `<p class="small">${esc(lob.description)}</p>${lob.components?.length ? `<p class="muted small">Reports through: ${esc(lob.components.join(", "))}</p>` : ""}` : ""}
     ${n.hollow ? `<p class="small" style="color:var(--warn)">No journey mapped for this sub-product yet.</p>` : ""}
     ${n.t === "product" ? (a => a ? `<p class="small">Owned by <b>${esc(MAP.lobs.find(l => l.id === a.owner)?.name)}</b>${a.also?.length ? `; also serves ${esc(a.also.map(x => MAP.lobs.find(l => l.id === x)?.name).join(", "))}` : ""}. <span class="muted">${esc(a.rule)}</span>${a.confirm ? ` <span class="ev ev-sample">to confirm</span>` : ""}</p>` : "")(MAP.assign.find(a => a.product === n.ref)) : ""}
     <div>${act}</div>
     ${Object.entries(group).map(([k, xs]) => `<span class="lbl">${esc(k)} (${xs.length})</span><ul>${xs.map(([o, r]) => `<li><button type="button" class="textbtn" data-msel="${esc(o.id)}">${esc(o.l)}</button> <span class="muted small">${esc(r)}</span></li>`).join("")}</ul>`).join("")}`;
 }
-$("#mapMode").onclick = e => { const b = e.target.closest("[data-mm]"); if (b) { mapMode = b.dataset.mm; renderMap(); } };
+$("#mapMode").onclick = e => { const b = e.target.closest("[data-mm]"); if (b) { mapMode = b.dataset.mm; mapFocus = null; renderMap(); } };
 $("#mapKey").onchange = e => { const c = e.target.closest("[data-mk]"); if (c) { mapShow[c.dataset.mk] = c.checked ? 1 : 0; if (mapSel && !mapShow[MN[mapSel]?.t]) { mapSel = null; mapDetail(null); } drawNet(); } };
-$("#mapQ").oninput = () => { if (mapMode === "net") drawNet(); };
+$("#mapQ").oninput = () => { if (mapMode === "net") { mapFocus = null; drawNet(); } };
 document.addEventListener("click", e => {
-  const z = e.target.closest("[data-z]"); if (z) { const f = +z.dataset.z; if (!f) mapT = {k: 1, x: 0, y: 0}; else { const cx = 560, cy = 350, k = Math.max(.5, Math.min(6, mapT.k * f)); mapT.x = cx - (cx - mapT.x) * k / mapT.k; mapT.y = cy - (cy - mapT.y) * k / mapT.k; mapT.k = k; } drawNet(); return; }
+  const z = e.target.closest("[data-z]"); if (z) { const f = +z.dataset.z; if (!f) { mapT = {k: 1, x: 0, y: 0}; mapFocus = null; } else { const cx = 560, cy = 350, k = Math.max(.5, Math.min(6, mapT.k * f)); mapT.x = cx - (cx - mapT.x) * k / mapT.k; mapT.y = cy - (cy - mapT.y) * k / mapT.k; mapT.k = k; } drawNet(); return; }
+  const mf = e.target.closest("[data-mfocus]"); if (mf) { mapFocus = mf.dataset.mfocus; mapSel = mapFocus; drawNet(); mapDetail(mapSel); return; }
   const ms = e.target.closest("[data-msel]"); if (ms) { mapSel = ms.dataset.msel; if (mapMode === "net") drawNet(); mapDetail(mapSel); }
 });
 

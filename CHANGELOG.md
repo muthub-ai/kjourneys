@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.3 — 2026-11-07 · Map readability
+
+- **Labels no longer collide.** Placed in priority order (selection, search hits, Wells Fargo and lines of business, products, customer journeys, then the rest), trying four positions each; any that would overlap or fall outside the view stay hidden until you hover or zoom in. Labels keep a constant size on screen as you zoom, so zooming in reveals more of them.
+- **Focus mode.** Double-click a node (or "Focus on this" in the side panel) to see its whole chain left to right: Wells Fargo → line of business → product → sub-product → journey → customer journey → gaps and strengths (sorted by severity). Sample app IDs appear only when focusing on a journey. "← Whole map" returns.
+- **Flow: whole path highlight.** Clicking a block lights every band upstream and downstream of it and fades the rest; click again to clear.
+- **Overview map** in the corner while zoomed in; click it to jump. Strengths are shown by default. The ⤢ button fits the whole map.
+
 ## 0.9.2 — 2026-11-07 · Map full screen
 
 - The Wells Fargo map has a full-screen mode (button, or F; Esc leaves). It uses the browser's full screen where the page is allowed to, and otherwise fills the window. Map and side panel both stretch; works in Network and Flow.
