@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Client Administrator provisions users and tokens (Token Manager…",
    "customer_action": null,
+   "action": "Client Administrator provisions users and tokens (Token Manager supports up to 10 Intellix tokens); enrollment via TM Client Service 866-632-8888 opt 2 / TMHelp@capitalone.com",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Initiator creates ACH batch or wire (domestic/international) or uploads…",
    "customer_action": "Initiator creates ACH batch or wire (domestic/international) or uploads Integrated Payables file",
+   "action": "Initiator creates ACH batch or wire (domestic/international) or uploads Integrated Payables file",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Approver reviews 'payments pending approval' and approves/rejects in…",
    "customer_action": "Approver reviews 'payments pending approval' and approves/rejects in Intellix web or Intellix Mobile (Face ID/Touch ID)",
+   "action": "Approver reviews 'payments pending approval' and approves/rejects in Intellix web or Intellix Mobile (Face ID/Touch ID)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -185,13 +188,14 @@
    "stage": "execute-track",
    "title": "Payment released to Nacha/Fedwire; dashboard shows recent activity and…",
    "customer_action": null,
+   "action": "Payment released to Nacha/Fedwire; dashboard shows recent activity and balances",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Dashboard"
     }
    ],
-   "frontstage": "Payment released to Nacha/Fedwire; dashboard shows recent activity and balances",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "unknown",
@@ -208,7 +212,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -244,6 +248,7 @@
    "stage": "exception",
    "title": "Positive Pay exceptions reviewed and decided in web/mobile",
    "customer_action": "Positive Pay exceptions reviewed and decided in web/mobile",
+   "action": "Positive Pay exceptions reviewed and decided in web/mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -306,6 +311,7 @@
    "stage": "support",
    "title": "Treasury Management Client Service 866-632-8888",
    "customer_action": null,
+   "action": "Treasury Management Client Service 866-632-8888",
    "touchpoints": [
     {
      "channel": "phone",

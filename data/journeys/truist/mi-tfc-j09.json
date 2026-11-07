@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & Pay > wire origination option (enroll in 'Wire Services' if…",
    "customer_action": "Transfer & Pay > wire origination option (enroll in 'Wire Services' if prompted; limits displayed at enrollment). Online wire service is available to Truist Wealth and Premier relationships; other consumers must use branch or phone",
+   "action": "Transfer & Pay > wire origination option (enroll in 'Wire Services' if prompted; limits displayed at enrollment). Online wire service is available to Truist Wealth and Premier relationships; other consumers must use branch or phone",
    "touchpoints": [
     {
      "channel": "web",
@@ -124,6 +125,7 @@
    "stage": "set-up",
    "title": "Register phone number(s) for OTP; add recipient: name, address, bank…",
    "customer_action": "Register phone number(s) for OTP; add recipient: name, address, bank name/ABA, account number (domestic wire info FAQ on Help Center)",
+   "action": "Register phone number(s) for OTP; add recipient: name, address, bank name/ABA, account number (domestic wire info FAQ on Help Center)",
    "touchpoints": [
     {
      "channel": "web",
@@ -180,6 +182,7 @@
    "stage": "initiate",
    "title": "Select domestic, recipient, amount, memo/purpose, (future date if…",
    "customer_action": "Select domestic, recipient, amount, memo/purpose, (future date if offered)",
+   "action": "Select domestic, recipient, amount, memo/purpose, (future date if offered)",
    "touchpoints": [
     {
      "channel": "web",
@@ -254,6 +257,7 @@
    "stage": "review-authorize",
    "title": "Review; enter one-time passcode sent to registered phone to release the…",
    "customer_action": "Review; enter one-time passcode sent to registered phone to release the wire",
+   "action": "Review; enter one-time passcode sent to registered phone to release the wire",
    "touchpoints": [
     {
      "channel": "web",
@@ -328,6 +332,7 @@
    "stage": "execute-track",
    "title": "Accepted before same-day cutoff (table in agreement; 6pm ET for…",
    "customer_action": null,
+   "action": "Accepted before same-day cutoff (table in agreement; 6pm ET for business) → processed same day via Fedwire; after cutoff/weekend → next business day",
    "touchpoints": [
     {
      "channel": "web",
@@ -363,6 +368,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -372,13 +389,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; business alerts for ACH/wire available; consumer wire…",
    "customer_action": null,
+   "action": "Confirmation; business alerts for ACH/wire available; consumer wire notification channel UNKNOWN",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation; business alerts for ACH/wire available; consumer wire notification channel UNKNOWN",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "unknown",
@@ -395,7 +413,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -414,6 +432,7 @@
    "stage": "manage",
    "title": "View history; recurring/template for consumer UNKNOWN",
    "customer_action": "View history; recurring/template for consumer UNKNOWN",
+   "action": "View history; recurring/template for consumer UNKNOWN",
    "touchpoints": [
     {
      "channel": "web",
@@ -456,6 +475,7 @@
    "stage": "exception",
    "title": "Cancel/amend only if Truist receives instruction in time to act; recall…",
    "customer_action": "Cancel/amend only if Truist receives instruction in time to act; recall via Online Banking Support 844-4TRUIST, not guaranteed, customer may bear recovery costs; returned foreign-currency funds converted at Truist buying rate; wire fraud claims by phone, status via 800-448-5493",
+   "action": "Cancel/amend only if Truist receives instruction in time to act; recall via Online Banking Support 844-4TRUIST, not guaranteed, customer may bear recovery costs; returned foreign-currency funds converted at Truist buying rate; wire fraud claims by phone, status via 800-448-5493",
    "touchpoints": [
     {
      "channel": "phone",
@@ -500,6 +520,7 @@
    "stage": "support",
    "title": "844-4TRUIST; wire investigation no charge (business schedule)",
    "customer_action": "844-4TRUIST; wire investigation no charge (business schedule)",
+   "action": "844-4TRUIST; wire investigation no charge (business schedule)",
    "touchpoints": [
     {
      "channel": "phone",

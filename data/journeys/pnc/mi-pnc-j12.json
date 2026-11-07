@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Online: 'Pay and Transfer' > 'Wires and International Transfers' >…",
    "customer_action": "Online: 'Pay and Transfer' > 'Wires and International Transfers' > 'Make an International Transfer'; Mobile: 'Pay & Transfer' > 'International Transfers' > 'Make a Transfer'",
+   "action": "Online: 'Pay and Transfer' > 'Wires and International Transfers' > 'Make an International Transfer'; Mobile: 'Pay & Transfer' > 'International Transfers' > 'Make a Transfer'",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Provide recipient name, address, IBAN or account number + SWIFT/BIC",
    "customer_action": "Provide recipient name, address, IBAN or account number + SWIFT/BIC",
+   "action": "Provide recipient name, address, IBAN or account number + SWIFT/BIC",
    "touchpoints": [
     {
      "channel": "web",
@@ -154,6 +156,7 @@
    "stage": "initiate",
    "title": "Accept terms (first time), enter details incl. currency;…",
    "customer_action": "Accept terms (first time), enter details incl. currency; intermediary/recipient bank fees disclosed when possible",
+   "action": "Accept terms (first time), enter details incl. currency; intermediary/recipient bank fees disclosed when possible",
    "touchpoints": [
     {
      "channel": "web",
@@ -210,6 +213,7 @@
    "stage": "review-authorize",
    "title": "Submit and verify identity",
    "customer_action": "Submit and verify identity",
+   "action": "Submit and verify identity",
    "touchpoints": [
     {
      "channel": "web",
@@ -266,13 +270,14 @@
    "stage": "execute-track",
    "title": "Wire sent via SWIFT; timing varies by country, bank, amount",
    "customer_action": null,
+   "action": "Wire sent via SWIFT; timing varies by country, bank, amount",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Wire sent via SWIFT; timing varies by country, bank, amount",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -289,7 +294,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -308,13 +313,14 @@
    "stage": "confirm-complete",
    "title": "Consumer International Transfers: PNC provides a pre-payment disclosure…",
    "customer_action": null,
+   "action": "Consumer International Transfers: PNC provides a pre-payment disclosure and a post-payment receipt (or a combined disclosure with proof of payment) showing the 'Date Available'; non-consumer international orders get no written confirmation unless required by law.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Consumer International Transfers: PNC provides a pre-payment disclosure and a post-payment receipt (or a combined disclosure with proof of payment) showing the 'Date Available'; non-consumer international orders get no written confirmation unless required by law.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -332,7 +338,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -352,6 +358,7 @@
    "stage": "manage",
    "title": "Consumer international transfer: cancel orally or in writing within 30…",
    "customer_action": "Consumer international transfer: cancel orally or in writing within 30 minutes of the time stamped on the post-payment receipt, provided funds have not been picked up or deposited and the customer identifies the transaction; written cancel is submitted electronically via the Service using the same authentication as the original order, oral cancel by calling the number on the receipt or at a branch; refund of the full amount within three business days. Outside that window there is no absolute right to cancel or amend.",
+   "action": "Consumer international transfer: cancel orally or in writing within 30 minutes of the time stamped on the post-payment receipt, provided funds have not been picked up or deposited and the customer identifies the transaction; written cancel is submitted electronically via the Service using the same authentication as the original order, oral cancel by calling the number on the receipt or at a branch; refund of the full amount within three business days. Outside that window there is no absolute right to cancel or amend.",
    "touchpoints": [
     {
      "channel": "phone",
@@ -396,6 +403,7 @@
    "stage": "exception",
    "title": "Error resolution for Consumer International Transfers: notify PNC…",
    "customer_action": "Error resolution for Consumer International Transfers: notify PNC (number on the receipt or a branch) no later than 180 days after the disclosed availability date; PNC determines whether an error occurred within 90 days and corrects promptly; Reg E applies in addition to UCC 4A.",
+   "action": "Error resolution for Consumer International Transfers: notify PNC (number on the receipt or a branch) no later than 180 days after the disclosed availability date; PNC determines whether an error occurred within 90 days and corrects promptly; Reg E applies in addition to UCC 4A.",
    "touchpoints": [
     {
      "channel": "phone",
@@ -438,6 +446,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -494,6 +503,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -553,6 +563,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

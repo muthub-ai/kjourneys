@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Transfers (web) / Send transfer > Choose an account…",
    "customer_action": "Transfer & pay > Transfers (web) / Send transfer > Choose an account (app); External account transfers tab appears if account eligible; may be asked to validate email",
+   "action": "Transfer & pay > Transfers (web) / Send transfer > Choose an account (app); External account transfers tab appears if account eligible; may be asked to validate email",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Link an external account > Link a new bank account > choose how to…",
    "customer_action": "Link an external account > Link a new bank account > choose how to link: log in to the other bank (instant verification, often <1 minute) or 'Share your account info' (routing/account, nickname) > Submit",
+   "action": "Link an external account > Link a new bank account > choose how to link: log in to the other bank (instant verification, often <1 minute) or 'Share your account info' (routing/account, nickname) > Submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -180,6 +182,7 @@
    "stage": "set-up",
    "title": "Micro-deposit path: Transfers > Linked accounts tab > Verify > enter…",
    "customer_action": "Micro-deposit path: Transfers > Linked accounts tab > Verify > enter two amounts > 'Account Activated'",
+   "action": "Micro-deposit path: Transfers > Linked accounts tab > Verify > enter two amounts > 'Account Activated'",
    "touchpoints": [
     {
      "channel": "web",
@@ -242,6 +245,7 @@
    "stage": "initiate",
    "title": "Choose from (U.S. Bank) and to (external) accounts > Continue; enter…",
    "customer_action": "Choose from (U.S. Bank) and to (external) accounts > Continue; enter amount; choose delivery speed; 'send on' date; optional memo; Review",
+   "action": "Choose from (U.S. Bank) and to (external) accounts > Continue; enter amount; choose delivery speed; 'send on' date; optional memo; Review",
    "touchpoints": [
     {
      "channel": "web",
@@ -304,6 +308,7 @@
    "stage": "review-authorize",
    "title": "Review details; Send transfer (recurring set-up additionally requires…",
    "customer_action": "Review details; Send transfer (recurring set-up additionally requires identity verification with a 6-digit code)",
+   "action": "Review details; Send transfer (recurring set-up additionally requires identity verification with a 6-digit code)",
    "touchpoints": [
     {
      "channel": "web",
@@ -360,6 +365,7 @@
    "stage": "execute-track",
    "title": "Confirmation with reference number; Account activity lists external…",
    "customer_action": null,
+   "action": "Confirmation with reference number; Account activity lists external transfer requests for 180 days; instant transfers land in moments, standard debited next business day (after cutoff: second) and available in 1–3 (typically 2–3) business days",
    "touchpoints": [
     {
      "channel": "web",
@@ -389,6 +395,22 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s003",
+      "src-us-bank-s075",
+      "src-us-bank-s082",
+      "src-us-bank-s948",
+      "src-us-bank-s949",
+      "src-us-bank-s950"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -434,13 +456,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation with reference number; 'We'll email you updates about your…",
    "customer_action": null,
+   "action": "Confirmation with reference number; 'We'll email you updates about your transfer' / email update on status when complete",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation with reference number; 'We'll email you updates about your transfer' / email update on status when complete",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -459,7 +482,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -480,6 +503,7 @@
    "stage": "manage",
    "title": "Edit/cancel scheduled or recurring from Account activity > Edit > Edit…",
    "customer_action": "Edit/cancel scheduled or recurring from Account activity > Edit > Edit all remaining transfers; manage linked accounts on Linked accounts tab",
+   "action": "Edit/cancel scheduled or recurring from Account activity > Edit > Edit all remaining transfers; manage linked accounts on Linked accounts tab",
    "touchpoints": [
     {
      "channel": "web",
@@ -542,13 +566,14 @@
    "stage": "exception",
    "title": "Instant verification fails → micro-deposits; account removed if…",
    "customer_action": null,
+   "action": "Instant verification fails → micro-deposits; account removed if unverified in 15 days",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Linked accounts"
     }
    ],
-   "frontstage": "Instant verification fails → micro-deposits; account removed if unverified in 15 days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -566,7 +591,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -586,13 +611,14 @@
    "stage": "exception",
    "title": "Instant not possible → standard ACH 1–3 days (automatic downgrade)",
    "customer_action": null,
+   "action": "Instant not possible → standard ACH 1–3 days (automatic downgrade)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Instant not possible → standard ACH 1–3 days (automatic downgrade)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -610,7 +636,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -630,13 +656,14 @@
    "stage": "exception",
    "title": "Returned/rejected ACH handling not documented",
    "customer_action": null,
+   "action": "Returned/rejected ACH handling not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Returned/rejected ACH handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -652,7 +679,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -670,6 +697,7 @@
    "stage": "exception",
    "title": "Unauthorized account-to-account transfer covered by Digital Security…",
    "customer_action": "Unauthorized account-to-account transfer covered by Digital Security Coverage (report within 60 days)",
+   "action": "Unauthorized account-to-account transfer covered by Digital Security Coverage (report within 60 days)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -712,6 +740,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -782,6 +811,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

@@ -90,6 +90,16 @@ for s in d["sources"]:
             h = hashlib.sha256(open(rp, "rb").read()).hexdigest()
             need(h == s["sha256"], f"report: {s['path']} changed after ingestion (sha256 mismatch) — reports are immutable")
         need(s["path"].startswith(f"reports/{s['report_version']}/"), f"report: source {s['id']} path is not in its version folder")
+# every file every manifest pins, not only the one the report source names
+_rr = os.path.dirname(os.path.dirname(os.path.abspath(inst_path)))
+if not os.path.isdir(os.path.join(_rr, "reports")) and os.path.isdir(os.path.join(_rr, "..", "reports")): _rr = os.path.dirname(_rr)
+import glob as _glob, json as _json
+for _mp in sorted(_glob.glob(os.path.join(_rr, "reports", "*", "manifest.json"))):
+    _m = _json.load(open(_mp)); _dir = os.path.dirname(_mp)
+    for _f in _m.get("files", []):
+        _fp = os.path.join(_dir, _f["path"])
+        if not os.path.exists(_fp): errors.append(f"report: {_m['report_version']}/{_f['path']} is pinned in the manifest but missing")
+        else: need(hashlib.sha256(open(_fp, "rb").read()).hexdigest() == _f["sha256"], f"report: {_m['report_version']}/{_f['path']} changed after it was pinned (sha256 mismatch) — reports are immutable")
 for a in d["applications"]:
     for c in a["capabilities"]: need(c in CAPS, f"ref: app {a['app_id']} capability {c}")
     for x in a.get("depends_on", []): need(x in APPS, f"ref: app {a['app_id']} depends_on {x}")
@@ -176,14 +186,25 @@ for j in d["journeys"]:
     for ex in j.get("exceptions", []):
         for s in ex.get("source_ids", []): need(s in SOURCES, f"ref: journey {j['id']} exception source {s}")
 
+# line of visibility (ADR-0004): a competitor's backstage is what it discloses or what MI infers, never observed or internal
+for j in d["journeys"]:
+    if j["bank"] in focus_ids: continue
+    for m in j["moments"]:
+        a = m.get("evidence", {}).get("process")
+        if a: need(a["basis"] in ("disclosed", "inferred"), f"basis: competitor {j['id']} {m['code']} backstage cannot be {a['basis']} (line of visibility)")
+
 # ---------- 4c. MI analytical collections ----------
 STAGE_IDS = STAGES
 COMPS = {c["id"] for c in d.get("composites", [])}
+COMPN = {c["id"]: {st["n"] for st in c["steps"]} for c in d.get("composites", [])}
+COMPP = {c["id"]: c["product"] for c in d.get("composites", [])}
+JBY = {j["id"]: j for j in d["journeys"]}
 CAPFLAGS = {a["id"][9:] for c in d.get("comparisons", []) for a in c["attributes"] if a["id"].startswith("attr-cap-")}
 unique([c["id"] for c in d.get("composites", [])], "composite")
 for c in d.get("composites", []):
     need(c["product"] in PRODUCTS, f"ref: composite {c['id']} product {c['product']}")
     for st in c["steps"]: need(st["stage"] in STAGE_IDS, f"ref: composite {c['id']} step {st['n']} stage {st['stage']}")
+    unique([st["n"] for st in c["steps"]], f"composite {c['id']} step number")
 # catalog: each bank's products as marketed, and their sub-products
 CAT = d.get("catalog", [])
 unique([(p["bank"], p["id"]) for p in CAT], "catalog product")
@@ -209,11 +230,27 @@ for j in d["journeys"]:
     if j.get("composite"):
         need(j["composite"] in COMPS, f"ref: {w} customer journey {j['composite']}")
         need(bool(j.get("composite_match")), f"ref: {w} links a customer journey without saying how (composite_match)")
+        if j.get("composite_match") == "rail-segment" and j["composite"] in COMPP:
+            need(COMPP[j["composite"]] == j["product"], f"ref: {w} is linked by rail and segment to {j['composite']}, a customer journey on another rail")
 unique([f["id"] for f in d.get("findings", [])], "finding")
 for f in d.get("findings", []):
     w = f"finding {f['id']}"
     need(f["bank"] in PARTIES, f"ref: {w} bank {f['bank']}")
-    if f.get("journey"): need(f["journey"] in JIDS, f"ref: {w} journey {f['journey']}")
+    if f.get("journey"):
+        need(f["journey"] in JIDS, f"ref: {w} journey {f['journey']}")
+        fj = JBY.get(f["journey"])
+        if fj:
+            need(fj["bank"] == f["bank"], f"ref: {w} bank {f['bank']} differs from its journey's bank {fj['bank']}")
+            if f.get("product"): need(fj["product"] == f["product"], f"ref: {w} product {f['product']} differs from its journey's product {fj['product']}")
+            if f.get("step") is not None:
+                ok = 1 <= f["step"] <= len(fj["moments"])
+                need(ok, f"ref: {w} step {f['step']} is outside its journey (1..{len(fj['moments'])})")
+                if ok:
+                    actual = fj["moments"][f["step"] - 1]["stage"]
+                    need(f.get("step_stage", f.get("stage")) == actual, f"ref: {w} stage {f.get('step_stage', f.get('stage'))} is not the stage of step {f['step']} ({actual}); a best-practice stage that differs goes in stage, the step's in step_stage")
+                    if f.get("step_stage"): need(f["step_stage"] != f.get("stage"), f"ref: {w} step_stage repeats stage")
+    if f.get("composite") and f.get("composite_step") is not None and f["composite"] in COMPN:
+        need(f["composite_step"] in COMPN[f["composite"]], f"ref: {w} composite step {f['composite_step']} is not in {f['composite']}")
     if f.get("product"): need(f["product"] in PRODUCTS, f"ref: {w} product {f['product']}")
     if f.get("stage"): need(f["stage"] in STAGE_IDS, f"ref: {w} stage {f['stage']}")
     if f.get("composite"): need(f["composite"] in COMPS, f"ref: {w} composite {f['composite']}")
@@ -227,7 +264,14 @@ for x in d.get("participation", []):
     need(x["bank"] in PARTIES, f"ref: participation bank {x['bank']}")
     for s in x.get("source_ids", []): need(s in SOURCES, f"ref: participation {x['bank']}/{x['network']} source {s}")
 unique([r["bank"] for r in d.get("rankings", [])], "ranking bank"); unique([r["rank"] for r in d.get("rankings", [])], "ranking rank")
-for r in d.get("rankings", []): need(r["bank"] in PARTIES, f"ref: ranking bank {r['bank']}")
+for r in d.get("rankings", []):
+    need(r["bank"] in PARTIES, f"ref: ranking bank {r['bank']}")
+    need(0 <= r["overall_index"] <= 100, f"range: ranking {r['bank']} overall_index {r['overall_index']} is outside 0-100")
+    if r.get("domestic_core_index") is not None: need(0 <= r["domestic_core_index"] <= 100, f"range: ranking {r['bank']} domestic_core_index outside 0-100")
+    if r.get("coverage") is not None: need(0 <= r["coverage"] <= 1, f"range: ranking {r['bank']} coverage outside 0-1")
+    for k, v in (r.get("rail_means") or {}).items():
+        need(k in PRODUCTS, f"ref: ranking {r['bank']} rail {k}")
+        if v is not None: need(0 <= v <= 4, f"range: ranking {r['bank']} {k} mean {v} is outside 0-4")
 REPORTS = {s["report_version"] for s in d["sources"] if s["kind"] == "mi-report"}
 for coll in ("findings", "composites", "observations", "verifications", "participation", "rankings"):
     for x in d.get(coll, []):
@@ -252,6 +296,11 @@ for cmp in CMPS:
     for a in cmp["attributes"]:
         need(a["stage"] in STAGES, f"ref: {P} attribute {a['id']} stage")
         need(a["datatype"] not in ("enum", "enum_list") or "allowed_values" in a, f"type: attribute {a['id']} is {a['datatype']} without allowed_values")
+    for b, row in cmp["values"].items():
+        for at, hist in row.items():
+            if at.startswith("attr-score-"):
+                for x in hist:
+                    if x.get("basis") != "awaiting": need(isinstance(x.get("value"), int) and 0 <= x["value"] <= 4, f"range: {P} {b}/{at} score {x.get('value')!r} is outside the 0-4 rubric")
     for b in pf.get("banks", []):
         need(b in cmp["values"], f"slot: {P} comparison missing bank {b}")
         for at in attrs: need(at in cmp["values"].get(b, {}), f"slot: {P} comparison missing {b}/{at}")

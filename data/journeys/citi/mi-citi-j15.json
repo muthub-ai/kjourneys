@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer reviews pre-authorized payments in Citi Online or by phone",
    "customer_action": "Customer reviews pre-authorized payments in Citi Online or by phone",
+   "action": "Customer reviews pre-authorized payments in Citi Online or by phone",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Request a stop via Citi Online or the number on the card at least 3…",
    "customer_action": "Request a stop via Citi Online or the number on the card at least 3 Business Days before the scheduled debit, giving account, date, exact amount and payee",
+   "action": "Request a stop via Citi Online or the number on the card at least 3 Business Days before the scheduled debit, giving account, date, exact amount and payee",
    "touchpoints": [
     {
      "channel": "web",
@@ -137,13 +139,14 @@
    "stage": "review-authorize",
    "title": "Citi may require proof the customer revoked authorization with the payee",
    "customer_action": null,
+   "action": "Citi may require proof the customer revoked authorization with the payee",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Citi may require proof the customer revoked authorization with the payee",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -160,7 +163,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -179,13 +182,14 @@
    "stage": "execute-track",
    "title": "Stop is permanent until removed; converted checks need stops on both…",
    "customer_action": null,
+   "action": "Stop is permanent until removed; converted checks need stops on both check and ACH",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Stop is permanent until removed; converted checks need stops on both check and ACH",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -202,7 +206,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -221,13 +225,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation",
    "customer_action": null,
+   "action": "Confirmation",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Confirmation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -244,7 +249,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -263,6 +268,7 @@
    "stage": "manage",
    "title": "Remove the stop on request",
    "customer_action": "Remove the stop on request",
+   "action": "Remove the stop on request",
    "touchpoints": [
     {
      "channel": "phone",
@@ -305,13 +311,14 @@
    "stage": "exception",
    "title": "Citi fails to stop despite timely request: Citi pays losses",
    "customer_action": null,
+   "action": "Citi fails to stop despite timely request: Citi pays losses",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Citi fails to stop despite timely request: Citi pays losses",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -328,7 +335,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -347,6 +354,7 @@
    "stage": "exception",
    "title": "One-time future-dated ACH: stop by 11:59 PM ET the day before",
    "customer_action": "One-time future-dated ACH: stop by 11:59 PM ET the day before",
+   "action": "One-time future-dated ACH: stop by 11:59 PM ET the day before",
    "touchpoints": [
     {
      "channel": "web",
@@ -389,6 +397,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

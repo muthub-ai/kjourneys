@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "'Pay and Transfer' > 'Bill Pay'; verify Controlling Party; 'Add Payment…",
    "customer_action": "'Pay and Transfer' > 'Bill Pay'; verify Controlling Party; 'Add Payment Accounts'; 'Preferred Payment Account'; Submit",
+   "action": "'Pay and Transfer' > 'Bill Pay'; verify Controlling Party; 'Add Payment Accounts'; 'Preferred Payment Account'; Submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Add payee ('Add a Payee' / 'Add a Company or Person'); enter amount and…",
    "customer_action": "Add payee ('Add a Payee' / 'Add a Company or Person'); enter amount and date; one-time or recurring",
+   "action": "Add payee ('Add a Payee' / 'Add a Company or Person'); enter amount and date; one-time or recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -130,6 +132,7 @@
    "stage": "review-authorize",
    "title": "Review > Submit (single user; no dual approval in Business Online…",
    "customer_action": "Review > Submit (single user; no dual approval in Business Online Banking)",
+   "action": "Review > Submit (single user; no dual approval in Business Online Banking)",
    "touchpoints": [
     {
      "channel": "web",
@@ -204,13 +207,14 @@
    "stage": "execute-track",
    "title": "Electronic or check; next-business-day for most",
    "customer_action": null,
+   "action": "Electronic or check; next-business-day for most",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Electronic or check; next-business-day for most",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -228,7 +232,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -248,13 +252,14 @@
    "stage": "confirm-complete",
    "title": "'Payment Scheduled'; email reminders",
    "customer_action": null,
+   "action": "'Payment Scheduled'; email reminders",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "'Payment Scheduled'; email reminders",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -271,7 +276,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -290,6 +295,7 @@
    "stage": "manage",
    "title": "Cancel/edit before processing; stop payment orders online",
    "customer_action": "Cancel/edit before processing; stop payment orders online",
+   "action": "Cancel/edit before processing; stop payment orders online",
    "touchpoints": [
     {
      "channel": "web",
@@ -334,6 +340,7 @@
    "stage": "exception",
    "title": "Guarantee reimburses eligible unauthorized losses if guidelines…",
    "customer_action": null,
+   "action": "Guarantee reimburses eligible unauthorized losses if guidelines followed (business agreement)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -376,6 +383,7 @@
    "stage": "support",
    "title": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business…",
    "customer_action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
+   "action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
    "touchpoints": [
     {
      "channel": "phone",
@@ -424,6 +432,7 @@
    "stage": "support",
    "title": "Business Banker locator / branch appointment",
    "customer_action": "Business Banker locator / branch appointment",
+   "action": "Business Banker locator / branch appointment",
    "touchpoints": [
     {
      "channel": "branch",
@@ -496,6 +505,6 @@
  "terms": {
   "fees": "No charge"
  },
- "composite": "CJ-BILLPAY-SEND",
- "composite_match": "rail"
+ "composite": "CJ-ACH-ORIG-SMB-SEND",
+ "composite_match": "mi-reference"
 }

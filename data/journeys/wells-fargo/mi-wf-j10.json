@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Transfer & Pay' > 'Wire Money' (enrollment subject to eligibility;…",
    "customer_action": "'Transfer & Pay' > 'Wire Money' (enrollment subject to eligibility; requires U.S. residence and U.S. mobile or RSA SecurID)",
+   "action": "'Transfer & Pay' > 'Wire Money' (enrollment subject to eligibility; requires U.S. residence and U.S. mobile or RSA SecurID)",
    "touchpoints": [
     {
      "channel": "web",
@@ -104,6 +105,7 @@
    "stage": "discover",
    "title": "Web (observed): 'Wire money' landing shows a rail-specific banner…",
    "customer_action": "Web (observed): 'Wire money' landing shows a rail-specific banner 'Scammers may alter wire instructions sent by email. Always verify the payment details with a trusted source before sending.' with 'How to avoid wire scams'; tiles Send | Estimate | About wires and Activity | Recipients | Compare options",
+   "action": "Web (observed): 'Wire money' landing shows a rail-specific banner 'Scammers may alter wire instructions sent by email. Always verify the payment details with a trusted source before sending.' with 'How to avoid wire scams'; tiles Send | Estimate | About wires and Activity | Recipients | Compare options",
    "touchpoints": [
     {
      "channel": "web",
@@ -157,6 +159,7 @@
    "stage": "set-up",
    "title": "Web (observed): Send → 'Select recipient' (Back / Search / Add; empty…",
    "customer_action": "Web (observed): Send → 'Select recipient' (Back / Search / Add; empty state 'You have no recipients. Please add a recipient to send a wire.'); 'Add recipient' is a 3-step wizard — Step 1 'Recipient's bank info': Individual / Business; Country picker; first and last name; nickname; Routing number (ABA/RTN) with info dialog and 'Find an ABA/RTN' lookup ('If your recipient has a Wells Fargo account, use routing number 121000248'); Account number; Cancel (guard: 'all information you've entered will be discarded') / Next (steps 2-3 not opened)",
+   "action": "Web (observed): Send → 'Select recipient' (Back / Search / Add; empty state 'You have no recipients. Please add a recipient to send a wire.'); 'Add recipient' is a 3-step wizard — Step 1 'Recipient's bank info': Individual / Business; Country picker; first and last name; nickname; Routing number (ABA/RTN) with info dialog and 'Find an ABA/RTN' lookup ('If your recipient has a Wells Fargo account, use routing number 121000248'); Account number; Cancel (guard: 'all information you've entered will be discarded') / Next (steps 2-3 not opened)",
    "touchpoints": [
     {
      "channel": "web",
@@ -199,6 +202,7 @@
    "stage": "set-up",
    "title": "From Wire money page select 'Recipients' > add: name, address, bank…",
    "customer_action": "From Wire money page select 'Recipients' > add: name, address, bank name, routing (ABA) and account number; 'Recipient's bank info' screen helps look up routing",
+   "action": "From Wire money page select 'Recipients' > add: name, address, bank name, routing (ABA) and account number; 'Recipient's bank info' screen helps look up routing",
    "touchpoints": [
     {
      "channel": "web",
@@ -255,6 +259,7 @@
    "stage": "initiate",
    "title": "Select recipient, funding account, amount (daily and rolling 30-day…",
    "customer_action": "Select recipient, funding account, amount (daily and rolling 30-day limits apply, vary by recipient history); optional schedule/recurring",
+   "action": "Select recipient, funding account, amount (daily and rolling 30-day limits apply, vary by recipient history); optional schedule/recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -314,6 +319,7 @@
    "stage": "review-authorize",
    "title": "Review; wire scam guidance (verify recipient, beware changed…",
    "customer_action": "Review; wire scam guidance (verify recipient, beware changed instructions)",
+   "action": "Review; wire scam guidance (verify recipient, beware changed instructions)",
    "touchpoints": [
     {
      "channel": "web",
@@ -367,6 +373,7 @@
    "stage": "review-authorize",
    "title": "Enter access code texted to U.S. mobile or RSA SecurID code",
    "customer_action": "Enter access code texted to U.S. mobile or RSA SecurID code",
+   "action": "Enter access code texted to U.S. mobile or RSA SecurID code",
    "touchpoints": [
     {
      "channel": "web",
@@ -420,6 +427,7 @@
    "stage": "execute-track",
    "title": "Web (observed): 'Activity' empty state 'You have no wire transfer…",
    "customer_action": "Web (observed): 'Activity' empty state 'You have no wire transfer activity to show.' (status vocabulary not observable on this profile)",
+   "action": "Web (observed): 'Activity' empty state 'You have no wire transfer activity to show.' (status vocabulary not observable on this profile)",
    "touchpoints": [
     {
      "channel": "web",
@@ -462,6 +470,7 @@
    "stage": "execute-track",
    "title": "Status 'Scheduled' → 'Pending' → 'Completed'; may show 'Under review';…",
    "customer_action": null,
+   "action": "Status 'Scheduled' → 'Pending' → 'Completed'; may show 'Under review'; same business day if by 3:00 pm PT",
    "touchpoints": [
     {
      "channel": "web",
@@ -497,6 +506,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s004",
+      "src-wells-fargo-s008"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -506,13 +527,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation page (with cancel option while Scheduled)",
    "customer_action": null,
+   "action": "Confirmation page (with cancel option while Scheduled)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation page"
     }
    ],
-   "frontstage": "Confirmation page (with cancel option while Scheduled)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "confirmation page; secure inbox on return",
@@ -529,7 +551,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -548,6 +570,7 @@
    "stage": "manage",
    "title": "Cancel while 'Scheduled' from Confirmation page, Wire details page, or…",
    "customer_action": "Cancel while 'Scheduled' from Confirmation page, Wire details page, or Activity; recurring wires cancel before next process date",
+   "action": "Cancel while 'Scheduled' from Confirmation page, Wire details page, or Activity; recurring wires cancel before next process date",
    "touchpoints": [
     {
      "channel": "web",
@@ -604,13 +627,14 @@
    "stage": "exception",
    "title": "See exception_paths (review, return, failed, fraud)",
    "customer_action": null,
+   "action": "See exception_paths (review, return, failed, fraud)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "See exception_paths (review, return, failed, fraud)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -627,7 +651,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -646,6 +670,7 @@
    "stage": "support",
    "title": "Wires FAQs; 'Recipient's bank info' lookup screen for routing/SWIFT/IBAN",
    "customer_action": "Wires FAQs; 'Recipient's bank info' lookup screen for routing/SWIFT/IBAN",
+   "action": "Wires FAQs; 'Recipient's bank info' lookup screen for routing/SWIFT/IBAN",
    "touchpoints": [
     {
      "channel": "web",
@@ -690,6 +715,7 @@
    "stage": "support",
    "title": "Wire under review / cancel: 877-499-6920; Online Customer Service…",
    "customer_action": "Wire under review / cancel: 877-499-6920; Online Customer Service 1-800-956-4442; fraud 1-866-867-5568",
+   "action": "Wire under review / cancel: 877-499-6920; Online Customer Service 1-800-956-4442; fraud 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -734,6 +760,7 @@
    "stage": "support",
    "title": "Branch for wires above digital limit or when digital wire cannot be…",
    "customer_action": "Branch for wires above digital limit or when digital wire cannot be completed ($40)",
+   "action": "Branch for wires above digital limit or when digital wire cannot be completed ($40)",
    "touchpoints": [
     {
      "channel": "branch",

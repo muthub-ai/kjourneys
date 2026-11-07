@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "At the biller, customer selects 'Instant payment/RfP' as digital…",
    "customer_action": "At the biller, customer selects 'Instant payment/RfP' as digital payment method and provides bank account information; biller confirms enrollment",
+   "action": "At the biller, customer selects 'Instant payment/RfP' as digital payment method and provides bank account information; biller confirms enrollment",
    "touchpoints": [
     {
      "channel": "web",
@@ -112,6 +113,7 @@
    "stage": "set-up",
    "title": "Customer agrees to pay through the Real Time Payment network; biller…",
    "customer_action": null,
+   "action": "Customer agrees to pay through the Real Time Payment network; biller sends RfP bill to U.S. Bank",
    "touchpoints": [
     {
      "channel": "web",
@@ -147,6 +149,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s046"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -156,13 +170,14 @@
    "stage": "initiate",
    "title": "Customer gets email + digital-banking notification with biller name,…",
    "customer_action": null,
+   "action": "Customer gets email + digital-banking notification with biller name, amount, due date; request sits on Bill Pay dashboard until biller's expiration",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Pay bills dashboard (RfP)"
     }
    ],
-   "frontstage": "Customer gets email + digital-banking notification with biller name, amount, due date; request sits on Bill Pay dashboard until biller's expiration",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email + in-app notification",
@@ -180,7 +195,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -200,6 +215,7 @@
    "stage": "review-authorize",
    "title": "Choose Pay instantly, Schedule for a future date, or Dismiss;…",
    "customer_action": "Choose Pay instantly, Schedule for a future date, or Dismiss; partial/extra amount only if biller allows modification",
+   "action": "Choose Pay instantly, Schedule for a future date, or Dismiss; partial/extra amount only if biller allows modification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -242,6 +258,7 @@
    "stage": "execute-track",
    "title": "Approved payments sent immediately via RTP; no fee; no cutoff;…",
    "customer_action": null,
+   "action": "Approved payments sent immediately via RTP; no fee; no cutoff; non-business days OK",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -277,6 +294,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -286,13 +315,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation in mobile/online banking and email from U.S. Bank when the…",
    "customer_action": null,
+   "action": "Confirmation in mobile/online banking and email from U.S. Bank when the biller receives the payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Confirmation in mobile/online banking and email from U.S. Bank when the biller receives the payment",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "in-app + email",
@@ -309,7 +339,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -328,6 +358,7 @@
    "stage": "manage",
    "title": "Edit/cancel a scheduled RfP payment in the biller's dashboard within…",
    "customer_action": "Edit/cancel a scheduled RfP payment in the biller's dashboard within bill pay",
+   "action": "Edit/cancel a scheduled RfP payment in the biller's dashboard within bill pay",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -370,13 +401,14 @@
    "stage": "exception",
    "title": "Request expires at biller's expiration date/time (may differ from due…",
    "customer_action": null,
+   "action": "Request expires at biller's expiration date/time (may differ from due date); dismissed requests removed",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Request expires at biller's expiration date/time (may differ from due date); dismissed requests removed",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -393,7 +425,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -412,13 +444,14 @@
    "stage": "exception",
    "title": "Fraudulent RfP handling not documented",
    "customer_action": null,
+   "action": "Fraudulent RfP handling not documented",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Fraudulent RfP handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -434,7 +467,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -452,6 +485,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -522,6 +556,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

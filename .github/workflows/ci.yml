@@ -19,7 +19,15 @@ jobs:
         run: python3 tools/assemble.py
       - name: Validate (schema, integrity, typing, temporal, publish gates, report integrity)
         run: python3 tools/validate_journey.py dist/kjourneys.json schema/journey-ontology.schema.json
-      - name: Negative tests (every fixture must fail)
+      - name: Data matches its workbooks (no hand edits to imported MI data)
+        run: |
+          for m in reports/*/manifest.json; do
+            d=$(dirname "$m")
+            if python3 -c "import json,sys; sys.exit(0 if json.load(open('$m')).get('workbook') else 1)"; then
+              python3 -I tools/import_mi_workbook.py "$d" --check
+            fi
+          done
+      - name: Negative tests (every fixture must fail, for its own reason)
         run: bash tests/run_tests.sh
       - name: Ingest flow test
         run: python3 tests/test_ingest.py

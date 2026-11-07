@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Wires & ACH > ACH payments tile > Send ACH payment;…",
    "customer_action": "Transfer & pay > Wires & ACH > ACH payments tile > Send ACH payment; first visit offers enrollment",
+   "action": "Transfer & pay > Wires & ACH > ACH payments tile > Send ACH payment; first visit offers enrollment",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Enrollment: answer business questions; Enroll (requires registered…",
    "customer_action": "Enrollment: answer business questions; Enroll (requires registered cellular device on file ≥3 business days)",
+   "action": "Enrollment: answer business questions; Enroll (requires registered cellular device on file ≥3 business days)",
    "touchpoints": [
     {
      "channel": "web",
@@ -156,6 +158,7 @@
    "stage": "set-up",
    "title": "Add payee: first/last name, account & routing, account type, individual…",
    "customer_action": "Add payee: first/last name, account & routing, account type, individual vs business (saved recipients must be added before sending; recipient-list KB referenced)",
+   "action": "Add payee: first/last name, account & routing, account type, individual vs business (saved recipients must be added before sending; recipient-list KB referenced)",
    "touchpoints": [
     {
      "channel": "web",
@@ -200,6 +203,7 @@
    "stage": "initiate",
    "title": "Choose sending account, date (default same day), payment speed…",
    "customer_action": "Choose sending account, date (default same day), payment speed (standard vs same-day), optional memo > Continue; enter amount > Continue",
+   "action": "Choose sending account, date (default same day), payment speed (standard vs same-day), optional memo > Continue; enter amount > Continue",
    "touchpoints": [
     {
      "channel": "web",
@@ -265,6 +269,7 @@
    "stage": "review-authorize",
    "title": "Review (Edit per section), read disclaimer and fee; Send/Schedule…",
    "customer_action": "Review (Edit per section), read disclaimer and fee; Send/Schedule payment; OTP implied by device requirement (not documented); Level-based approvals exist in 'Activity & approvals' (rules not published)",
+   "action": "Review (Edit per section), read disclaimer and fee; Send/Schedule payment; OTP implied by device requirement (not documented); Level-based approvals exist in 'Activity & approvals' (rules not published)",
    "touchpoints": [
     {
      "channel": "web",
@@ -351,13 +356,14 @@
    "stage": "execute-track",
    "title": "Confirmation page with send date, expected arrival, memo, transaction…",
    "customer_action": null,
+   "action": "Confirmation page with send date, expected arrival, memo, transaction number; email when sent",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation; Activity & approvals"
     }
    ],
-   "frontstage": "Confirmation page with send date, expected arrival, memo, transaction number; email when sent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -375,7 +381,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -395,13 +401,14 @@
    "stage": "confirm-complete",
    "title": "Email confirmation once ACH payment is sent",
    "customer_action": null,
+   "action": "Email confirmation once ACH payment is sent",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email"
     }
    ],
-   "frontstage": "Email confirmation once ACH payment is sent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -418,7 +425,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -437,6 +444,7 @@
    "stage": "manage",
    "title": "Wires & ACH > Activity & approvals > open payment to view/edit/cancel;…",
    "customer_action": "Wires & ACH > Activity & approvals > open payment to view/edit/cancel; no cancel once processing/completed",
+   "action": "Wires & ACH > Activity & approvals > open payment to view/edit/cancel; no cancel once processing/completed",
    "touchpoints": [
     {
      "channel": "web",
@@ -479,13 +487,14 @@
    "stage": "exception",
    "title": "ACH return/reject handling not documented",
    "customer_action": null,
+   "action": "ACH return/reject handling not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "ACH return/reject handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -501,7 +510,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -519,6 +528,7 @@
    "stage": "exception",
    "title": "Batch ACH available (steps undocumented)",
    "customer_action": "Batch ACH available (steps undocumented)",
+   "action": "Batch ACH available (steps undocumented)",
    "touchpoints": [
     {
      "channel": "web",
@@ -561,6 +571,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -631,6 +642,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

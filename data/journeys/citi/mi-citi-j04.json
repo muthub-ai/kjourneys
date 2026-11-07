@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer signs on to Citi Online and clicks the 'Payments' tab (legacy…",
    "customer_action": "Customer signs on to Citi Online and clicks the 'Payments' tab (legacy QSG); in the Citi Mobile App, 'Payments' supports same-day or scheduled payments",
+   "action": "Customer signs on to Citi Online and clicks the 'Payments' tab (legacy QSG); in the Citi Mobile App, 'Payments' supports same-day or scheduled payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Click 'Add a New Payee'; choose payee type 'Credit Card', 'Other type…",
    "customer_action": "Click 'Add a New Payee'; choose payee type 'Credit Card', 'Other type of business' or 'Pay an Individual'; select a category and enter details; click 'Next'",
+   "action": "Click 'Add a New Payee'; choose payee type 'Credit Card', 'Other type of business' or 'Pay an Individual'; select a category and enter details; click 'Next'",
    "touchpoints": [
     {
      "channel": "web",
@@ -139,13 +141,14 @@
    "stage": "set-up",
    "title": "Confirm payee; payee appears in the payee list (activation timing for…",
    "customer_action": null,
+   "action": "Confirm payee; payee appears in the payee list (activation timing for consumer individual payees is not published; CitiBusiness Online applies a two-business-day rule to new individual payees)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payee list"
     }
    ],
-   "frontstage": "Confirm payee; payee appears in the payee list (activation timing for consumer individual payees is not published; CitiBusiness Online applies a two-business-day rule to new individual payees)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -162,7 +165,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -181,6 +184,7 @@
    "stage": "initiate",
    "title": "Click 'One-Time Payment', select payee, choose funding account, enter…",
    "customer_action": "Click 'One-Time Payment', select payee, choose funding account, enter amount and payment date (next day to one year ahead), click 'Next'",
+   "action": "Click 'One-Time Payment', select payee, choose funding account, enter amount and payment date (next day to one year ahead), click 'Next'",
    "touchpoints": [
     {
      "channel": "web",
@@ -234,6 +238,7 @@
    "stage": "review-authorize",
    "title": "Review entry and confirm with 'OK'",
    "customer_action": "Review entry and confirm with 'OK'",
+   "action": "Review entry and confirm with 'OK'",
    "touchpoints": [
     {
      "channel": "web",
@@ -304,6 +309,7 @@
    "stage": "execute-track",
    "title": "Citi sends the payment within 24 hours of the specified date (or next…",
    "customer_action": null,
+   "action": "Citi sends the payment within 24 hours of the specified date (or next business day) electronically or by official check",
    "touchpoints": [
     {
      "channel": "web",
@@ -339,6 +345,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s002",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -348,13 +366,14 @@
    "stage": "confirm-complete",
    "title": "Account alerts for payments due, low balance; payment history shows the…",
    "customer_action": null,
+   "action": "Account alerts for payments due, low balance; payment history shows the item",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Account alerts / history"
     }
    ],
-   "frontstage": "Account alerts for payments due, low balance; payment history shows the item",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Bill payment alerts (configurable)",
@@ -372,7 +391,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -392,6 +411,7 @@
    "stage": "manage",
    "title": "Cancel or change a scheduled payment by 11:59 PM ET the day before via…",
    "customer_action": "Cancel or change a scheduled payment by 11:59 PM ET the day before via Citi Online or 1-800-374-9700; review payee spending report",
+   "action": "Cancel or change a scheduled payment by 11:59 PM ET the day before via Citi Online or 1-800-374-9700; review payee spending report",
    "touchpoints": [
     {
      "channel": "web",
@@ -436,6 +456,7 @@
    "stage": "exception",
    "title": "Payee says payment not received: customer gives the payee the Trace ID;…",
    "customer_action": "Payee says payment not received: customer gives the payee the Trace ID; if more is needed, Contact Us by Chat with the scheduled date, amount, payee name and the online payment reference number; Citi researches the payment",
+   "action": "Payee says payment not received: customer gives the payee the Trace ID; if more is needed, Contact Us by Chat with the scheduled date, amount, payee name and the online payment reference number; Citi researches the payment",
    "touchpoints": [
     {
      "channel": "web",
@@ -492,13 +513,14 @@
    "stage": "exception",
    "title": "Electronic payment already issued cannot be stopped; check payments may…",
    "customer_action": null,
+   "action": "Electronic payment already issued cannot be stopped; check payments may be stopped in limited circumstances",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Stop payment"
     }
    ],
-   "frontstage": "Electronic payment already issued cannot be stopped; check payments may be stopped in limited circumstances",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -515,7 +537,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -534,6 +556,7 @@
    "stage": "exception",
    "title": "Unauthorized bill payment: report to Citi; Reg E error resolution (60…",
    "customer_action": "Unauthorized bill payment: report to Citi; Reg E error resolution (60 days from statement)",
+   "action": "Unauthorized bill payment: report to Citi; Reg E error resolution (60 days from statement)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -576,6 +599,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

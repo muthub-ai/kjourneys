@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "'Deposit' tab; endorse; capture images",
    "customer_action": "'Deposit' tab; endorse; capture images",
+   "action": "'Deposit' tab; endorse; capture images",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "review-authorize",
    "title": "Choose Express Funds (2.50% >$100; $2 $25-$100) or standard",
    "customer_action": "Choose Express Funds (2.50% >$100; $2 $25-$100) or standard",
+   "action": "Choose Express Funds (2.50% >$100; $2 $25-$100) or standard",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Before 10 p.m. ET = nightly processing",
    "customer_action": null,
+   "action": "Before 10 p.m. ET = nightly processing",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Before 10 p.m. ET = nightly processing",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "confirm-complete",
    "title": "Funds available; no debit if Express check returned NSF",
    "customer_action": null,
+   "action": "Funds available; no debit if Express check returned NSF",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Funds available; no debit if Express check returned NSF",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "manage",
    "title": "Higher-volume: Deposit On-Site via PINACLE",
    "customer_action": "Higher-volume: Deposit On-Site via PINACLE",
+   "action": "Higher-volume: Deposit On-Site via PINACLE",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -254,6 +259,7 @@
    "stage": "exception",
    "title": "Deposit missing -> branch",
    "customer_action": "Deposit missing -> branch",
+   "action": "Deposit missing -> branch",
    "touchpoints": [
     {
      "channel": "branch",
@@ -296,6 +302,7 @@
    "stage": "support",
    "title": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business…",
    "customer_action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
+   "action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
    "touchpoints": [
     {
      "channel": "phone",
@@ -344,6 +351,7 @@
    "stage": "support",
    "title": "Business Banker locator / branch appointment",
    "customer_action": "Business Banker locator / branch appointment",
+   "action": "Business Banker locator / branch appointment",
    "touchpoints": [
     {
      "channel": "branch",
@@ -410,7 +418,5 @@
   "limits": "In-app",
   "fees": "Express Funds",
   "cutoffs": "10 p.m. ET"
- },
- "composite": "CJ-MOBILE-DEPOSIT",
- "composite_match": "rail"
+ }
 }

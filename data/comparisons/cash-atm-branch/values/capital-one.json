@@ -274,29 +274,15 @@
     ],
     "attr-cap-step-up-auth": [
       {
-        "id": "urn:kos:assertion:capital-one:cash-atm-branch:cap-step-up-auth:2",
-        "value": true,
-        "display": "Yes — cashier may require photo ID; card + PIN; app sign-in",
-        "basis": "disclosed",
-        "source_ids": [
-          "src-mi-2026-11-06-v1",
-          "src-capital-one-s041",
-          "src-capital-one-s082",
-          "src-capital-one-s074",
-          "src-capital-one-s085"
-        ],
-        "asserted_by": "process:mi-session",
-        "asserted_at": "2026-11-06T21:03:00-06:00",
-        "observed_on": "2026-11-06",
-        "valid_from": "2026-11-06",
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "high",
-        "x-evidence": {
-          "report_ref": "Capabilities sheet: COF-P06-S01, COF-P07-S01, COF-P07-S02",
-          "mi_level": "CONFIRMED_BANK"
-        }
+        "id": "urn:kos:assertion:capital-one:cash-atm-branch:cap-step-up-auth:1"
       }
     ],
     "attr-cap-dual-approval-smb": [
@@ -384,14 +370,12 @@
       {
         "id": "urn:kos:assertion:capital-one:cash-atm-branch:cap-instant:2",
         "value": true,
-        "display": "Yes — cash yes",
         "basis": "disclosed",
         "source_ids": [
           "src-mi-2026-11-06-v1",
           "src-capital-one-s041",
           "src-capital-one-s082",
-          "src-capital-one-s074",
-          "src-capital-one-s085"
+          "src-capital-one-s074"
         ],
         "asserted_by": "process:mi-session",
         "asserted_at": "2026-11-06T21:03:00-06:00",
@@ -402,7 +386,7 @@
         "verified_at": null,
         "confidence": "high",
         "x-evidence": {
-          "report_ref": "Capabilities sheet: COF-P06-S01, COF-P07-S01, COF-P07-S02",
+          "report_ref": "Capabilities sheet: COF-P06-S01, COF-P07-S02",
           "mi_level": "CONFIRMED_BANK"
         }
       }

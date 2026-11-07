@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "'Pay and Transfer' > 'Bill Pay' > select payee > on 'Payee Details'…",
    "customer_action": "'Pay and Transfer' > 'Bill Pay' > select payee > on 'Payee Details' select 'Enroll in E-Bills'",
+   "action": "'Pay and Transfer' > 'Bill Pay' > select payee > on 'Payee Details' select 'Enroll in E-Bills'",
    "touchpoints": [
     {
      "channel": "web",
@@ -95,6 +96,7 @@
    "stage": "set-up",
    "title": "Complete 'Enter Enrollment Details' > Next; accept Terms; choose 'Bill…",
    "customer_action": "Complete 'Enter Enrollment Details' > Next; accept Terms; choose 'Bill Delivery' method; Review > Submit",
+   "action": "Complete 'Enter Enrollment Details' > Next; accept Terms; choose 'Bill Delivery' method; Review > Submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -169,6 +171,7 @@
    "stage": "initiate",
    "title": "After at least one eBill is received, select 'Set Up Autopay' in the…",
    "customer_action": "After at least one eBill is received, select 'Set Up Autopay' in the eBills section of 'Payee Details'; enter details (incl. 'automatic payments can be scheduled even when the monthly amount changes')",
+   "action": "After at least one eBill is received, select 'Set Up Autopay' in the eBills section of 'Payee Details'; enter details (incl. 'automatic payments can be scheduled even when the monthly amount changes')",
    "touchpoints": [
     {
      "channel": "web",
@@ -222,6 +225,7 @@
    "stage": "review-authorize",
    "title": "Review > Submit",
    "customer_action": "Review > Submit",
+   "action": "Review > Submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -264,13 +268,14 @@
    "stage": "execute-track",
    "title": "Each eBill triggers an automatic payment per rule; email reminders when…",
    "customer_action": null,
+   "action": "Each eBill triggers an automatic payment per rule; email reminders when due/sent",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Bill Pay Dashboard"
     }
    ],
-   "frontstage": "Each eBill triggers an automatic payment per rule; email reminders when due/sent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -287,7 +292,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -306,13 +311,14 @@
    "stage": "confirm-complete",
    "title": "Payment appears as scheduled/paid; notice of varying amounts rules…",
    "customer_action": null,
+   "action": "Payment appears as scheduled/paid; notice of varying amounts rules apply under EFT disclosure",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Payment appears as scheduled/paid; notice of varying amounts rules apply under EFT disclosure",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -330,7 +336,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -350,6 +356,7 @@
    "stage": "manage",
    "title": "Edit/cancel autopay or eBill enrollment (cancellation may take up to 60…",
    "customer_action": "Edit/cancel autopay or eBill enrollment (cancellation may take up to 60 days)",
+   "action": "Edit/cancel autopay or eBill enrollment (cancellation may take up to 60 days)",
    "touchpoints": [
     {
      "channel": "web",
@@ -392,6 +399,7 @@
    "stage": "exception",
    "title": "eBill not delivered/inaccurate -> dispute with biller; customer remains…",
    "customer_action": "eBill not delivered/inaccurate -> dispute with biller; customer remains responsible to pay on time",
+   "action": "eBill not delivered/inaccurate -> dispute with biller; customer remains responsible to pay on time",
    "touchpoints": [
     {
      "channel": "web",
@@ -434,6 +442,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -490,6 +499,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -549,6 +559,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

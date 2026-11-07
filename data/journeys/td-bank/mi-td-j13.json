@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer learns via TDBank.com/RTP (stories.td.com) that TD receives…",
    "customer_action": "Customer learns via TDBank.com/RTP (stories.td.com) that TD receives RTPs",
+   "action": "Customer learns via TDBank.com/RTP (stories.td.com) that TD receives RTPs",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "set-up",
    "title": "Customer shares TD routing and account number with a trusted sender",
    "customer_action": "Customer shares TD routing and account number with a trusted sender",
+   "action": "Customer shares TD routing and account number with a trusted sender",
    "touchpoints": [
     {
      "channel": "web",
@@ -143,6 +145,7 @@
    "stage": "execute-track",
    "title": "Sender's bank sends RTP; TD applies real-time fraud screening; credit…",
    "customer_action": null,
+   "action": "Sender's bank sends RTP; TD applies real-time fraud screening; credit posts immediately 24/7/365 (cap $100,000)",
    "touchpoints": [
     {
      "channel": "web",
@@ -178,6 +181,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s013",
+      "src-td-bank-s016"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -187,13 +202,14 @@
    "stage": "confirm-complete",
    "title": "Payment visible in Online Banking/app and statement with sender message…",
    "customer_action": null,
+   "action": "Payment visible in Online Banking/app and statement with sender message (≤60 chars); confirmation sent to sender",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Payment visible in Online Banking/app and statement with sender message (≤60 chars); confirmation sent to sender",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "No TD alert specific to RTP",
@@ -210,7 +226,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -229,6 +245,7 @@
    "stage": "manage",
    "title": "Nothing to manage; cannot send",
    "customer_action": "Nothing to manage; cannot send",
+   "action": "Nothing to manage; cannot send",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -291,13 +308,14 @@
    "stage": "exception",
    "title": "RTP is final; sender cannot revoke; disputes via Reg E for unauthorized…",
    "customer_action": null,
+   "action": "RTP is final; sender cannot revoke; disputes via Reg E for unauthorized credits only",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Phone"
     }
    ],
-   "frontstage": "RTP is final; sender cannot revoke; disputes via Reg E for unauthorized credits only",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -314,7 +332,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -333,6 +351,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -403,6 +422,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -490,6 +510,6 @@
   "fees": "None",
   "cutoffs": "24/7/365"
  },
- "composite": "CJ-INSTANT-SEND",
+ "composite": "CJ-INSTANT-RECEIVE-RFP",
  "composite_match": "mi-reference"
 }

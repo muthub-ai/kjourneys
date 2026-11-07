@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap 'Deposit' in the bottom navigation (limits displayed here)",
    "customer_action": "Tap 'Deposit' in the bottom navigation (limits displayed here)",
+   "action": "Tap 'Deposit' in the bottom navigation (limits displayed here)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Endorse: sign and write 'For PNC Mobile Deposit Only' below signature",
    "customer_action": "Endorse: sign and write 'For PNC Mobile Deposit Only' below signature",
+   "action": "Endorse: sign and write 'For PNC Mobile Deposit Only' below signature",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Select account, enter amount, photograph front and back (dark surface,…",
    "customer_action": "Select account, enter amount, photograph front and back (dark surface, good light, no flash)",
+   "action": "Select account, enter amount, photograph front and back (dark surface, good light, no flash)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,6 +175,7 @@
    "stage": "review-authorize",
    "title": "Choose standard availability or 'PNC Express Funds'; acknowledge fee…",
    "customer_action": "Choose standard availability or 'PNC Express Funds'; acknowledge fee (2.50% over $100; $2 for $25-$100) if Express; submit",
+   "action": "Choose standard availability or 'PNC Express Funds'; acknowledge fee (2.50% over $100; $2 for $25-$100) if Express; submit",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -225,6 +229,7 @@
    "stage": "execute-track",
    "title": "Deposit pending; shown in italic all-caps in Recent Transactions;…",
    "customer_action": null,
+   "action": "Deposit pending; shown in italic all-caps in Recent Transactions; before 10 p.m. ET = same business day; PNC-drawn checks available that evening",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -260,6 +265,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -269,13 +286,14 @@
    "stage": "confirm-complete",
    "title": "Funds available next business day (standard) or immediately (Express);…",
    "customer_action": null,
+   "action": "Funds available next business day (standard) or immediately (Express); direct-deposit-style alerts available for deposits",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Funds available next business day (standard) or immediately (Express); direct-deposit-style alerts available for deposits",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -293,7 +311,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -313,6 +331,7 @@
    "stage": "manage",
    "title": "Retain and safeguard the original check for 14 days after transmitting;…",
    "customer_action": "Retain and safeguard the original check for 14 days after transmitting; after confirming the funds posted, mark it 'VOID' and dispose of it (DSA).",
+   "action": "Retain and safeguard the original check for 14 days after transmitting; after confirming the funds posted, mark it 'VOID' and dispose of it (DSA).",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -357,6 +376,7 @@
    "stage": "exception",
    "title": "Deposit not showing -> check Recent Transactions; if absent take check…",
    "customer_action": "Deposit not showing -> check Recent Transactions; if absent take check to a branch",
+   "action": "Deposit not showing -> check Recent Transactions; if absent take check to a branch",
    "touchpoints": [
     {
      "channel": "branch",
@@ -413,13 +433,14 @@
    "stage": "exception",
    "title": "Express Funds check returned NSF -> PNC does not debit customer",
    "customer_action": null,
+   "action": "Express Funds check returned NSF -> PNC does not debit customer",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Express Funds check returned NSF -> PNC does not debit customer",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -436,7 +457,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -455,6 +476,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -511,6 +533,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -570,6 +593,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

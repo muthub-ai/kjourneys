@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & Pay > 'Transfer money and pay Truist accounts' tile; or…",
    "customer_action": "Transfer & Pay > 'Transfer money and pay Truist accounts' tile; or home-screen external-account linking (app 3.4.0, Nov 2024)",
+   "action": "Transfer & Pay > 'Transfer money and pay Truist accounts' tile; or home-screen external-account linking (app 3.4.0, Nov 2024)",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Select 'Manage external accounts' tab > 'Add non-Truist account'",
    "customer_action": "Select 'Manage external accounts' tab > 'Add non-Truist account'",
+   "action": "Select 'Manage external accounts' tab > 'Add non-Truist account'",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "set-up",
    "title": "'Add an external account': enter Account type, Routing number, Account…",
    "customer_action": "'Add an external account': enter Account type, Routing number, Account number > Continue; Review > Continue",
+   "action": "'Add an external account': enter Account type, Routing number, Account number > Continue; Review > Continue",
    "touchpoints": [
     {
      "channel": "web",
@@ -170,6 +173,7 @@
    "stage": "set-up",
    "title": "Verify: 'Sign in to your external account' > 'Verify account' > enter…",
    "customer_action": "Verify: 'Sign in to your external account' > 'Verify account' > enter the other bank's username/password > Sign in ('real-time verification of non-Truist transfer accounts' since 4.6.0, Oct 2025)",
+   "action": "Verify: 'Sign in to your external account' > 'Verify account' > enter the other bank's username/password > Sign in ('real-time verification of non-Truist transfer accounts' since 4.6.0, Oct 2025)",
    "touchpoints": [
     {
      "channel": "web",
@@ -256,13 +260,14 @@
    "stage": "set-up",
    "title": "Verified account appears in list of non-Truist accounts; edit/delete…",
    "customer_action": null,
+   "action": "Verified account appears in list of non-Truist accounts; edit/delete via ellipsis",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Manage external accounts"
     }
    ],
-   "frontstage": "Verified account appears in list of non-Truist accounts; edit/delete via ellipsis",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -279,7 +284,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -298,6 +303,7 @@
    "stage": "initiate",
    "title": "Make a transfer: choose From/To incl. external account, amount,…",
    "customer_action": "Make a transfer: choose From/To incl. external account, amount, one-time (up to 1 year ahead) or recurring; choose speed where offered (Standard $3 / Next day $6 / Instant $3 from Oct 2026)",
+   "action": "Make a transfer: choose From/To incl. external account, amount, one-time (up to 1 year ahead) or recurring; choose speed where offered (Standard $3 / Next day $6 / Instant $3 from Oct 2026)",
    "touchpoints": [
     {
      "channel": "web",
@@ -380,6 +386,7 @@
    "stage": "review-authorize",
    "title": "Review and Submit → Send Transfer",
    "customer_action": "Review and Submit → Send Transfer",
+   "action": "Review and Submit → Send Transfer",
    "touchpoints": [
     {
      "channel": "web",
@@ -422,6 +429,7 @@
    "stage": "execute-track",
    "title": "3-day: debited next business day, credited third business day; after…",
    "customer_action": null,
+   "action": "3-day: debited next business day, credited third business day; after cutoff → next business day; status by logging in",
    "touchpoints": [
     {
      "channel": "web",
@@ -459,6 +467,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s907",
+      "src-truist-s952"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -468,13 +489,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; Payment Notifications alert if enabled",
    "customer_action": null,
+   "action": "Confirmation; Payment Notifications alert if enabled",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Confirmation; Payment Notifications alert if enabled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -491,7 +513,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -510,6 +532,7 @@
    "stage": "manage",
    "title": "Edit/delete scheduled transfer at no charge before processing",
    "customer_action": "Edit/delete scheduled transfer at no charge before processing",
+   "action": "Edit/delete scheduled transfer at no charge before processing",
    "touchpoints": [
     {
      "channel": "web",
@@ -554,6 +577,7 @@
    "stage": "exception",
    "title": "Returned/failed transfer (NSF, closed account) → not processed;…",
    "customer_action": "Returned/failed transfer (NSF, closed account) → not processed; unauthorized → Reg E error resolution via 844-4TRUIST",
+   "action": "Returned/failed transfer (NSF, closed account) → not processed; unauthorized → Reg E error resolution via 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "phone",
@@ -596,6 +620,7 @@
    "stage": "support",
    "title": "Developer responses on Google Play route transfer problems to email…",
    "customer_action": "Developer responses on Google Play route transfer problems to email support; Care Center 844-4TRUIST",
+   "action": "Developer responses on Google Play route transfer problems to email support; Care Center 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "phone",

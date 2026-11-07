@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Early Pay Day is automatic (no enrollment); payer sends RTP/FedNow…",
    "customer_action": null,
+   "action": "Early Pay Day is automatic (no enrollment); payer sends RTP/FedNow credit to WF routing/account number",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -77,6 +78,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s057"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -86,6 +99,7 @@
    "stage": "set-up",
    "title": "Optionally set deposit alerts in 'Manage Alerts' (email/text/push);…",
    "customer_action": "Optionally set deposit alerts in 'Manage Alerts' (email/text/push); create Direct Deposit form in app for ACH payroll",
+   "action": "Optionally set deposit alerts in 'Manage Alerts' (email/text/push); create Direct Deposit form in app for ACH payroll",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -130,6 +144,7 @@
    "stage": "set-up",
    "title": "Web (observed): Accounts > 'Set Up Direct Deposit' = 'Prefill your…",
    "customer_action": "Web (observed): Accounts > 'Set Up Direct Deposit' = 'Prefill your direct deposit form' — select up to 3 accounts → allocate → verify → 'Create Form' (prefilled PDF to give to the payer) or 'download a blank form'; Accounts > 'Manage Alerts' offers, per checking account, Account balance (zero/low/high), Direct Deposit Alert and Returned Deposited Item Alert by email / text / push",
+   "action": "Web (observed): Accounts > 'Set Up Direct Deposit' = 'Prefill your direct deposit form' — select up to 3 accounts → allocate → verify → 'Create Form' (prefilled PDF to give to the payer) or 'download a blank form'; Accounts > 'Manage Alerts' offers, per checking account, Account balance (zero/low/high), Direct Deposit Alert and Returned Deposited Item Alert by email / text / push",
    "touchpoints": [
     {
      "channel": "web",
@@ -189,13 +204,14 @@
    "stage": "initiate",
    "title": "N/A — payer initiates",
    "customer_action": null,
+   "action": "N/A — payer initiates",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "—"
     }
    ],
-   "frontstage": "N/A — payer initiates",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -212,7 +228,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -231,6 +247,7 @@
    "stage": "review-authorize",
    "title": "N/A",
    "customer_action": null,
+   "action": "N/A",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -264,6 +281,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -273,6 +301,7 @@
    "stage": "execute-track",
    "title": "RTP/FedNow credit posts in real time to Available Balance; ACH direct…",
    "customer_action": null,
+   "action": "RTP/FedNow credit posts in real time to Available Balance; ACH direct deposit may post up to 2 business days early",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -299,6 +328,19 @@
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s021",
+      "src-wells-fargo-s071",
+      "src-wells-fargo-s911"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -338,13 +380,14 @@
    "stage": "confirm-complete",
    "title": "'deposit posted alert' / recent deposits alert",
    "customer_action": null,
+   "action": "'deposit posted alert' / recent deposits alert",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "'deposit posted alert' / recent deposits alert",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text/push",
@@ -362,7 +405,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -382,6 +425,7 @@
    "stage": "manage",
    "title": "View deposit details; Early Pay Day pending vs posted balance semantics",
    "customer_action": "View deposit details; Early Pay Day pending vs posted balance semantics",
+   "action": "View deposit details; Early Pay Day pending vs posted balance semantics",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -424,13 +468,14 @@
    "stage": "exception",
    "title": "Missing/incorrect deposit → contact sender; early availability not…",
    "customer_action": null,
+   "action": "Missing/incorrect deposit → contact sender; early availability not guaranteed",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "—"
     }
    ],
-   "frontstage": "Missing/incorrect deposit → contact sender; early availability not guaranteed",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -448,7 +493,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -468,6 +513,7 @@
    "stage": "support",
    "title": "1-800-869-3557",
    "customer_action": "1-800-869-3557",
+   "action": "1-800-869-3557",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Submit 'Account Linking Request' to add accounts with different TINs…",
    "customer_action": "Submit 'Account Linking Request' to add accounts with different TINs under one Business Online Banking User ID",
+   "action": "Submit 'Account Linking Request' to add accounts with different TINs under one Business Online Banking User ID",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "initiate",
    "title": "'Transfer Funds' between eligible PNC deposit/loan accounts or to/from…",
    "customer_action": "'Transfer Funds' between eligible PNC deposit/loan accounts or to/from external accounts; business credit card payments in app",
+   "action": "'Transfer Funds' between eligible PNC deposit/loan accounts or to/from external accounts; business credit card payments in app",
    "touchpoints": [
     {
      "channel": "web",
@@ -157,6 +159,7 @@
    "stage": "review-authorize",
    "title": "Submit (single-user)",
    "customer_action": "Submit (single-user)",
+   "action": "Submit (single-user)",
    "touchpoints": [
     {
      "channel": "web",
@@ -213,13 +216,14 @@
    "stage": "execute-track",
    "title": "Internal immediate; external 3-4 banking days; prior-day balance info…",
    "customer_action": null,
+   "action": "Internal immediate; external 3-4 banking days; prior-day balance info by 10 AM ET",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Internal immediate; external 3-4 banking days; prior-day balance info by 10 AM ET",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -236,7 +240,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -255,13 +259,14 @@
    "stage": "confirm-complete",
    "title": "Activity alerts by email/text",
    "customer_action": null,
+   "action": "Activity alerts by email/text",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Activity alerts by email/text",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -278,7 +283,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -297,6 +302,7 @@
    "stage": "manage",
    "title": "Modify scheduled until 3 a.m. ET on date",
    "customer_action": "Modify scheduled until 3 a.m. ET on date",
+   "action": "Modify scheduled until 3 a.m. ET on date",
    "touchpoints": [
     {
      "channel": "web",
@@ -339,13 +345,14 @@
    "stage": "exception",
    "title": "Failed transfer per DSA",
    "customer_action": null,
+   "action": "Failed transfer per DSA",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Failed transfer per DSA",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -362,7 +369,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -381,6 +388,7 @@
    "stage": "support",
    "title": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business…",
    "customer_action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
+   "action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
    "touchpoints": [
     {
      "channel": "phone",
@@ -429,6 +437,7 @@
    "stage": "support",
    "title": "Business Banker locator / branch appointment",
    "customer_action": "Business Banker locator / branch appointment",
+   "action": "Business Banker locator / branch appointment",
    "touchpoints": [
     {
      "channel": "branch",
@@ -498,7 +507,5 @@
  ],
  "assessment": null,
  "x-mi_evidence": "CONFIRMED_BANK",
- "bank_product": "PNC-P11",
- "composite": "CJ-INTERNAL-TRANSFER",
- "composite_match": "rail"
+ "bank_product": "PNC-P11"
 }

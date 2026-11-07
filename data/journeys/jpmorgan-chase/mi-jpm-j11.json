@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Deposit checks' in top navigation / 'Pay & Transfer' > 'Deposit checks'",
    "customer_action": "'Deposit checks' in top navigation / 'Pay & Transfer' > 'Deposit checks'",
+   "action": "'Deposit checks' in top navigation / 'Pay & Transfer' > 'Deposit checks'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Select receiving account; enter amount; daily/monthly limit shown",
    "customer_action": "Select receiving account; enter amount; daily/monthly limit shown",
+   "action": "Select receiving account; enter amount; daily/monthly limit shown",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Tap 'Front'; Auto Capture photographs front; endorse back with…",
    "customer_action": "Tap 'Front'; Auto Capture photographs front; endorse back with signature and 'For electronic deposit only at Chase'; tap 'Next'; capture back",
+   "action": "Tap 'Front'; Auto Capture photographs front; endorse back with signature and 'For electronic deposit only at Chase'; tap 'Next'; capture back",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -216,6 +219,7 @@
    "stage": "review-authorize",
    "title": "Review amount and details; 'Next' > 'Deposit'",
    "customer_action": "Review amount and details; 'Next' > 'Deposit'",
+   "action": "Review amount and details; 'Next' > 'Deposit'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -258,13 +262,14 @@
    "stage": "execute-track",
    "title": "Email 'deposit received' then 'accepted'; before 11 PM ET -> next…",
    "customer_action": null,
+   "action": "Email 'deposit received' then 'accepted'; before 11 PM ET -> next business day availability; review may delay",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Email"
     }
    ],
-   "frontstage": "Email 'deposit received' then 'accepted'; before 11 PM ET -> next business day availability; review may delay",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Received / Accepted / Rejected emails",
@@ -281,7 +286,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -300,13 +305,14 @@
    "stage": "confirm-complete",
    "title": "Receipt; option to deposit another check",
    "customer_action": null,
+   "action": "Receipt; option to deposit another check",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Receipt"
     }
    ],
-   "frontstage": "Receipt; option to deposit another check",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -323,7 +329,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -342,6 +348,7 @@
    "stage": "manage",
    "title": "Write 'deposited' + date on check; keep 2 business days or until…",
    "customer_action": "Write 'deposited' + date on check; keep 2 business days or until acceptance; then destroy; view check images in activity",
+   "action": "Write 'deposited' + date on check; keep 2 business days or until acceptance; then destroy; view check images in activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -386,13 +393,14 @@
    "stage": "exception",
    "title": "Rejected deposit -> emailed explanation; holds notified by email;…",
    "customer_action": null,
+   "action": "Rejected deposit -> emailed explanation; holds notified by email; returned item may come back months later",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Email"
     }
    ],
-   "frontstage": "Rejected deposit -> emailed explanation; holds notified by email; returned item may come back months later",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -410,7 +418,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -430,6 +438,7 @@
    "stage": "support",
    "title": "Customer service / branch",
    "customer_action": "Customer service / branch",
+   "action": "Customer service / branch",
    "touchpoints": [
     {
      "channel": "phone",

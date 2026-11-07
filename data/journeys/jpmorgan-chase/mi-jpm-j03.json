@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business page 'Zelle®' > 'Create a Zelle® tag' (sign-in,…",
    "customer_action": "Business page 'Zelle®' > 'Create a Zelle® tag' (sign-in, navKey=requestQuickPaySettings)",
+   "action": "Business page 'Zelle®' > 'Create a Zelle® tag' (sign-in, navKey=requestQuickPaySettings)",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enroll business checking in Zelle under 'Pay and Transfer' with a…",
    "customer_action": "Enroll business checking in Zelle under 'Pay and Transfer' with a business email/mobile distinct from any personal enrollment; verification code; each business checking account must be enrolled in Zelle settings",
+   "action": "Enroll business checking in Zelle under 'Pay and Transfer' with a business email/mobile distinct from any personal enrollment; verification code; each business checking account must be enrolled in Zelle settings",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -126,6 +128,7 @@
    "stage": "set-up",
    "title": "Zelle settings > 'Create a Zelle® tag' (6-40 chars…",
    "customer_action": "Zelle settings > 'Create a Zelle® tag' (6-40 chars letters/numbers/hyphens; tied to a U.S. mobile; one per checking account, max 5 Zelle IDs)",
+   "action": "Zelle settings > 'Create a Zelle® tag' (6-40 chars letters/numbers/hyphens; tied to a U.S. mobile; one per checking account, max 5 Zelle IDs)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,6 +175,7 @@
    "stage": "initiate",
    "title": "Share tag or QR; payer types tag on 'Select Recipient' and confirms…",
    "customer_action": "Share tag or QR; payer types tag on 'Select Recipient' and confirms displayed business name",
+   "action": "Share tag or QR; payer types tag on 'Select Recipient' and confirms displayed business name",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -214,6 +218,7 @@
    "stage": "review-authorize",
    "title": "Payer authorizes; business cannot reverse incoming payments",
    "customer_action": "Payer authorizes; business cannot reverse incoming payments",
+   "action": "Payer authorizes; business cannot reverse incoming payments",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -256,13 +261,14 @@
    "stage": "execute-track",
    "title": "Funds land in business checking usually within minutes; no incoming…",
    "customer_action": null,
+   "action": "Funds land in business checking usually within minutes; no incoming (receive) limit is published",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Funds land in business checking usually within minutes; no incoming (receive) limit is published",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -280,7 +286,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -300,13 +306,14 @@
    "stage": "confirm-complete",
    "title": "Alert; 13 months activity; invoicing tool lets customers pay invoices…",
    "customer_action": null,
+   "action": "Alert; 13 months activity; invoicing tool lets customers pay invoices via Zelle",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity / Invoicing"
     }
    ],
-   "frontstage": "Alert; 13 months activity; invoicing tool lets customers pay invoices via Zelle",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -324,7 +331,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -344,6 +351,7 @@
    "stage": "manage",
    "title": "Manage tags/tokens; delegate Zelle to users via Access & Security…",
    "customer_action": "Manage tags/tokens; delegate Zelle to users via Access & Security Manager (approval scope not published)",
+   "action": "Manage tags/tokens; delegate Zelle to users via Access & Security Manager (approval scope not published)",
    "touchpoints": [
     {
      "channel": "web",
@@ -386,6 +394,7 @@
    "stage": "exception",
    "title": "Chargeback-style disputes not supported; scam -> 1-800-242-7338;…",
    "customer_action": "Chargeback-style disputes not supported; scam -> 1-800-242-7338; qualifying imposter scams may be eligible for reimbursement",
+   "action": "Chargeback-style disputes not supported; scam -> 1-800-242-7338; qualifying imposter scams may be eligible for reimbursement",
    "touchpoints": [
     {
      "channel": "phone",
@@ -428,6 +437,7 @@
    "stage": "support",
    "title": "Retail Business Servicing 1-800-242-7338; Secure Message Center",
    "customer_action": "Retail Business Servicing 1-800-242-7338; Secure Message Center",
+   "action": "Retail Business Servicing 1-800-242-7338; Secure Message Center",
    "touchpoints": [
     {
      "channel": "phone",

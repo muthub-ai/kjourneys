@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer selects an account and taps 'Transfer' / 'Transfer Money'…",
    "customer_action": "Customer selects an account and taps 'Transfer' / 'Transfer Money' (app: under the 'I Want To' menu below the balance; web: next to the balance)",
+   "action": "Customer selects an account and taps 'Transfer' / 'Transfer Money' (app: under the 'I Want To' menu below the balance; web: next to the balance)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "initiate",
    "title": "Choose 'From' and 'To' accounts, frequency (one time, weekly, every…",
    "customer_action": "Choose 'From' and 'To' accounts, frequency (one time, weekly, every other week, monthly, quarterly), date/start date, optional end date, amount, optional memo",
+   "action": "Choose 'From' and 'To' accounts, frequency (one time, weekly, every other week, monthly, quarterly), date/start date, optional end date, amount, optional memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -160,6 +162,7 @@
    "stage": "review-authorize",
    "title": "App: slide to confirm 'Transfer'. Web: click 'Review', optionally 'Edit…",
    "customer_action": "App: slide to confirm 'Transfer'. Web: click 'Review', optionally 'Edit Transfer', then 'Transfer'",
+   "action": "App: slide to confirm 'Transfer'. Web: click 'Review', optionally 'Edit Transfer', then 'Transfer'",
    "touchpoints": [
     {
      "channel": "web",
@@ -216,6 +219,7 @@
    "stage": "execute-track",
    "title": "Internal transfers are instant (no cutoff); future-dated items appear…",
    "customer_action": null,
+   "action": "Internal transfers are instant (no cutoff); future-dated items appear under 'Upcoming Transactions'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -253,6 +257,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008",
+      "src-capital-one-s069",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -262,13 +279,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation shown; transaction posts",
    "customer_action": null,
+   "action": "Confirmation shown; transaction posts",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation shown; transaction posts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Account alerts (generic; configurable)",
@@ -285,7 +303,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -304,6 +322,7 @@
    "stage": "manage",
    "title": "Cancel or manage scheduled one-time and recurring transfers from…",
    "customer_action": "Cancel or manage scheduled one-time and recurring transfers from 'Upcoming Transactions' (UI path and cancel cut-off not published; the 11:59 PM ET day-before rule is documented only for Zelle Scheduled Payments); Automatic Savings rules edited under 'Automatic Savings'",
+   "action": "Cancel or manage scheduled one-time and recurring transfers from 'Upcoming Transactions' (UI path and cancel cut-off not published; the 11:59 PM ET day-before rule is documented only for Zelle Scheduled Payments); Automatic Savings rules edited under 'Automatic Savings'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -375,6 +394,7 @@
    "stage": "exception",
    "title": "Insufficient funds on a scheduled transfer",
    "customer_action": null,
+   "action": "Insufficient funds on a scheduled transfer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -406,6 +426,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -415,6 +445,7 @@
    "stage": "support",
    "title": "Phone banking 800-655-2265 (8 am-11 pm ET, 7 days) can perform…",
    "customer_action": null,
+   "action": "Phone banking 800-655-2265 (8 am-11 pm ET, 7 days) can perform transfers; Eno for balance questions",
    "touchpoints": [
     {
      "channel": "phone",

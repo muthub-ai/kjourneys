@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Select the credit card account > 'Make a Payment' > 'Pay From Account'…",
    "customer_action": "Select the credit card account > 'Make a Payment' > 'Pay From Account' (PNC or external) > 'Payment Type' (one-time/same-day/future/Recurring) > 'Payment Option'",
+   "action": "Select the credit card account > 'Make a Payment' > 'Pay From Account' (PNC or external) > 'Payment Type' (one-time/same-day/future/Recurring) > 'Payment Option'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Review > 'Submit Payment'",
    "customer_action": "Review > 'Submit Payment'",
+   "action": "Review > 'Submit Payment'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -126,13 +128,14 @@
    "stage": "execute-track",
    "title": "Consumer same-day online before midnight ET credited that day; payments…",
    "customer_action": null,
+   "action": "Consumer same-day online before midnight ET credited that day; payments from PNC checking immediately increase available credit",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Consumer same-day online before midnight ET credited that day; payments from PNC checking immediately increase available credit",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -149,7 +152,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -168,13 +171,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; posts to card activity",
    "customer_action": null,
+   "action": "Confirmation; posts to card activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Confirmation; posts to card activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -191,7 +195,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -210,6 +214,7 @@
    "stage": "manage",
    "title": "Recurring: Frequency, Start Date, optional End Date (Online Banking)",
    "customer_action": "Recurring: Frequency, Start Date, optional End Date (Online Banking)",
+   "action": "Recurring: Frequency, Start Date, optional End Date (Online Banking)",
    "touchpoints": [
     {
      "channel": "web",
@@ -252,6 +257,7 @@
    "stage": "exception",
    "title": "Voice Banking payments cannot be cancelled after submission",
    "customer_action": "Voice Banking payments cannot be cancelled after submission",
+   "action": "Voice Banking payments cannot be cancelled after submission",
    "touchpoints": [
     {
      "channel": "phone",
@@ -294,6 +300,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -350,6 +357,7 @@
    "stage": "support",
    "title": "Customer calls PNC (Consumer credit card 1-800-282-7541); fraud line…",
    "customer_action": "Customer calls PNC (Consumer credit card 1-800-282-7541); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (Consumer credit card 1-800-282-7541); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -409,6 +417,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

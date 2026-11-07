@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Insert cash/checks at ATM or hand to teller",
    "customer_action": "Insert cash/checks at ATM or hand to teller",
+   "action": "Insert cash/checks at ATM or hand to teller",
    "touchpoints": [
     {
      "channel": "atm",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "ATM check deposits may offer Immediate Availability for fee",
    "customer_action": "ATM check deposits may offer Immediate Availability for fee",
+   "action": "ATM check deposits may offer Immediate Availability for fee",
    "touchpoints": [
     {
      "channel": "atm",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "ATM cash immediate by 9pm ET; branch cash same day (coins after count);…",
    "customer_action": null,
+   "action": "ATM cash immediate by 9pm ET; branch cash same day (coins after count); checks next business day unless hold; night depository by 7am ET",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Receipt"
     }
    ],
-   "frontstage": "ATM cash immediate by 9pm ET; branch cash same day (coins after count); checks next business day unless hold; night depository by 7am ET",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "confirm-complete",
    "title": "Receipt; balance alerts",
    "customer_action": null,
+   "action": "Receipt; balance alerts",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Receipt"
     }
    ],
-   "frontstage": "Receipt; balance alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "balance alert",
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "exception",
    "title": "Hold placed → notice; dispute at branch/Care Center",
    "customer_action": "Hold placed → notice; dispute at branch/Care Center",
+   "action": "Hold placed → notice; dispute at branch/Care Center",
    "touchpoints": [
     {
      "channel": "branch",
@@ -254,6 +259,7 @@
    "stage": "support",
    "title": "Branch / 844-4TRUIST",
    "customer_action": "Branch / 844-4TRUIST",
+   "action": "Branch / 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "branch",

@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "File-based: optionally submit a Token Validation file (CSV, UTF-8) to…",
    "customer_action": "File-based: optionally submit a Token Validation file (CSV, UTF-8) to the MFT mailbox → within 1–2 minutes download Active Token (with Zelle-registered owner name) and Inactive Token response files; build the payment file (token, amount, Customer Reference, memo ≤200 chars, default/alternate account) named xxxxxx_payment.csv → Upload Files tab → Send; if control totals are used, upload the matching _control.txt within 3 hours (count + dollar total).",
+   "action": "File-based: optionally submit a Token Validation file (CSV, UTF-8) to the MFT mailbox → within 1–2 minutes download Active Token (with Zelle-registered owner name) and Inactive Token response files; build the payment file (token, amount, Customer Reference, memo ≤200 chars, default/alternate account) named xxxxxx_payment.csv → Upload Files tab → Send; if control totals are used, upload the matching _control.txt within 3 hours (count + dollar total).",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -98,13 +99,14 @@
    "stage": "execute-track",
    "title": "Payments process once the file (and control file, if used) is received;…",
    "customer_action": null,
+   "action": "Payments process once the file (and control file, if used) is received; 'Once all payments in the file have reached a final status, the File Transmission Summary Report will be sent by secure email to the designated recipient' with per-payment details; final statuses: Delivered, Sent, Failed or Denied; funds to enrolled recipients within minutes.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "File Transmission Summary Report (secure email)"
     }
    ],
-   "frontstage": "Payments process once the file (and control file, if used) is received; 'Once all payments in the file have reached a final status, the File Transmission Summary Report will be sent by secure email to the designated recipient' with per-payment details; final statuses: Delivered, Sent, Failed or Denied; funds to enrolled recipients within minutes.",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -122,7 +124,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -142,13 +144,14 @@
    "stage": "exception",
    "title": "Inactive tokens (not registered in Zelle) cannot receive payments —…",
    "customer_action": null,
+   "action": "Inactive tokens (not registered in Zelle) cannot receive payments — flagged in the Inactive Token file; duplicate file (same name/amounts within 10 days) rejected with secure-email error; duplicate payment within a file (same token, amount, memo) rejected as Failed; scientific-format cells cause file failure; consumer-side 14-day expiry rule for unenrolled recipients still INFERRED for commercial.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Inactive tokens (not registered in Zelle) cannot receive payments — flagged in the Inactive Token file; duplicate file (same name/amounts within 10 days) rejected with secure-email error; duplicate payment within a file (same token, amount, memo) rejected as Failed; scientific-format cells cause file failure; consumer-side 14-day expiry rule for unenrolled recipients still INFERRED for commercial.",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -166,7 +169,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -186,6 +189,7 @@
    "stage": "support",
    "title": "Relationship manager / 800-774-8179",
    "customer_action": "Relationship manager / 800-774-8179",
+   "action": "Relationship manager / 800-774-8179",
    "touchpoints": [
     {
      "channel": "phone",
@@ -253,7 +257,5 @@
  "notifications": [],
  "assessment": null,
  "x-mi_evidence": "CONFIRMED_BANK",
- "bank_product": "TFC-P10",
- "composite": "CJ-ZELLE-CONSUMER-SEND",
- "composite_match": "rail"
+ "bank_product": "TFC-P10"
 }

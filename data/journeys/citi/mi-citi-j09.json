@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer selects international wire in Citi Online/Citi Mobile App",
    "customer_action": "Customer selects international wire in Citi Online/Citi Mobile App",
+   "action": "Customer selects international wire in Citi Online/Citi Mobile App",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enter beneficiary, IBAN/account number and BIC/SORT; indicate the…",
    "customer_action": "Enter beneficiary, IBAN/account number and BIC/SORT; indicate the currency of the beneficiary account (local currency, another Citi-offered currency, or USD)",
+   "action": "Enter beneficiary, IBAN/account number and BIC/SORT; indicate the currency of the beneficiary account (local currency, another Citi-offered currency, or USD)",
    "touchpoints": [
     {
      "channel": "web",
@@ -137,6 +139,7 @@
    "stage": "initiate",
    "title": "Enter amount; Citi shows its exchange rate (commission included) and…",
    "customer_action": "Enter amount; Citi shows its exchange rate (commission included) and the federally mandated remittance disclosures (fees, rate, amount to be received, availability date)",
+   "action": "Enter amount; Citi shows its exchange rate (commission included) and the federally mandated remittance disclosures (fees, rate, amount to be received, availability date)",
    "touchpoints": [
     {
      "channel": "web",
@@ -190,6 +193,7 @@
    "stage": "review-authorize",
    "title": "Review and authenticate per security procedure",
    "customer_action": "Review and authenticate per security procedure",
+   "action": "Review and authenticate per security procedure",
    "touchpoints": [
     {
      "channel": "web",
@@ -232,13 +236,14 @@
    "stage": "execute-track",
    "title": "Transfer sent via correspondents; intermediary fees may reduce amount…",
    "customer_action": null,
+   "action": "Transfer sent via correspondents; intermediary fees may reduce amount received",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Transfer sent via correspondents; intermediary fees may reduce amount received",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -256,7 +261,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -276,13 +281,14 @@
    "stage": "confirm-complete",
    "title": "Receipt with disclosures; cancellation rights notice",
    "customer_action": null,
+   "action": "Receipt with disclosures; cancellation rights notice",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Receipt"
     }
    ],
-   "frontstage": "Receipt with disclosures; cancellation rights notice",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -299,7 +305,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -318,6 +324,7 @@
    "stage": "manage",
    "title": "Cancel or amend within 30 minutes of authorizing; later only with…",
    "customer_action": "Cancel or amend within 30 minutes of authorizing; later only with beneficiary bank consent",
+   "action": "Cancel or amend within 30 minutes of authorizing; later only with beneficiary bank consent",
    "touchpoints": [
     {
      "channel": "web",
@@ -371,6 +378,7 @@
    "stage": "exception",
    "title": "Error: contact Citi within 180 days of promised availability; Citi…",
    "customer_action": "Error: contact Citi within 180 days of promised availability; Citi decides within 90 days; remedy credit or resend",
+   "action": "Error: contact Citi within 180 days of promised availability; Citi decides within 90 days; remedy credit or resend",
    "touchpoints": [
     {
      "channel": "phone",
@@ -413,13 +421,14 @@
    "stage": "exception",
    "title": "Non-execution due to sanctions/AML screening: Citi not liable",
    "customer_action": null,
+   "action": "Non-execution due to sanctions/AML screening: Citi not liable",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Non-execution due to sanctions/AML screening: Citi not liable",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -436,7 +445,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -455,6 +464,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

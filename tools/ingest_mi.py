@@ -185,7 +185,9 @@ for product, ex in extracts:
         sids = list(dict.fromkeys([report_src] + list(f.get("source_ids", [])) + [url_source(s) for s in f.get("sources", [])]))
         hist = vfile["values"][aid]
         cur = next((a for a in hist if not a.get("valid_to")), None)
-        same = cur and cur["basis"] == f["basis"] and cur.get("value") == f.get("value") and cur.get("display") == f.get("display") and cur.get("qualifier") == f.get("qualifier")
+        same = (cur and cur["basis"] == f["basis"] and cur.get("value") == f.get("value") and cur.get("display") == f.get("display")
+                and cur.get("qualifier") == f.get("qualifier") and cur.get("confidence") == f["confidence"]
+                and sorted(x for x in cur.get("source_ids", []) if not x.startswith("src-mi-")) == sorted(x for x in sids if not x.startswith("src-mi-")) and cur.get("x-evidence") == f.get("evidence"))
         if same: unchanged += 1; continue
         short = aid[5:]
         nxt = 1 + max([int(a["id"].rsplit(":", 1)[1]) for a in hist if a.get("id")] or [0])

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Biller detail shows 'Digital bills' option when the biller offers…",
    "customer_action": "Biller detail shows 'Digital bills' option when the biller offers eBills (app: Bill details > Digital bills; web: right sidebar)",
+   "action": "Biller detail shows 'Digital bills' option when the biller offers eBills (app: Bill details > Digital bills; web: right sidebar)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Enter the bill's account information; Link bill",
    "customer_action": "Enter the bill's account information; Link bill",
+   "action": "Enter the bill's account information; Link bill",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Biller > 'Autopay set up now' > amount, frequency (weekly…annual),…",
    "customer_action": "Biller > 'Autopay set up now' > amount, frequency (weekly…annual), start date, account; Start autopay. Without eBill, only a self-set schedule",
+   "action": "Biller > 'Autopay set up now' > amount, frequency (weekly…annual), start date, account; Start autopay. Without eBill, only a self-set schedule",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -224,6 +227,7 @@
    "stage": "review-authorize",
    "title": "Start autopay (no further step-up documented)",
    "customer_action": "Start autopay (no further step-up documented)",
+   "action": "Start autopay (no further step-up documented)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -266,13 +270,14 @@
    "stage": "execute-track",
    "title": "Autopay tab lists series; each instance appears in Activity as…",
    "customer_action": null,
+   "action": "Autopay tab lists series; each instance appears in Activity as scheduled/pending/paid",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Pay bills > Autopay tab"
     }
    ],
-   "frontstage": "Autopay tab lists series; each instance appears in Activity as scheduled/pending/paid",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Autopay scheduled/processed alerts (card autopay alerts listed)",
@@ -290,7 +295,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -310,13 +315,14 @@
    "stage": "confirm-complete",
    "title": "Alerts configurable",
    "customer_action": null,
+   "action": "Alerts configurable",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Notifications"
     }
    ],
-   "frontstage": "Alerts configurable",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/push/text",
@@ -333,7 +339,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -352,6 +358,7 @@
    "stage": "manage",
    "title": "Autopay tab > biller > Manage autopay > edit & Save, or Remove autopay…",
    "customer_action": "Autopay tab > biller > Manage autopay > edit & Save, or Remove autopay > 'Yes, remove my autopay'; edit next payment or whole series; locked <3 business days before scheduled date",
+   "action": "Autopay tab > biller > Manage autopay > edit & Save, or Remove autopay > 'Yes, remove my autopay'; edit next payment or whole series; locked <3 business days before scheduled date",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -396,6 +403,7 @@
    "stage": "exception",
    "title": "Instance already in process cannot be modified; cancel pending instance…",
    "customer_action": "Instance already in process cannot be modified; cancel pending instance and make a manual payment",
+   "action": "Instance already in process cannot be modified; cancel pending instance and make a manual payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -438,13 +446,14 @@
    "stage": "exception",
    "title": "eBill fails to arrive / biller stops eBills – not documented",
    "customer_action": null,
+   "action": "eBill fails to arrive / biller stops eBills – not documented",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "eBill fails to arrive / biller stops eBills – not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -460,7 +469,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -478,6 +487,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -548,6 +558,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

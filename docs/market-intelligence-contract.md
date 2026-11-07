@@ -49,11 +49,13 @@ Vocabularies the importer accepts, and nothing else:
 | COMMUNITY, INFERRED, UNKNOWN | inferred | low |
 
 - **Scores:** 0–4 on the MI rubric (4 sets the reference, 3 parity, 2 material friction, 1 only by switching channel or a critical/high gap, 0 absent) or `U`. U stays awaiting and is never counted as 0.
-- **Capability flags:** Yes, No, Unknown, or free text (read as Yes, with the text kept as detail). A rail's flag is Yes if any of the bank's sub-products on it has it, No only if every one lacks it, and awaiting otherwise.
+- **Capability flags:** counted the way MI's CapabilityClasses sheet counts them. Only a literal Yes is true. No, None observed and text starting "not evidenced" are false. Any other text (for example "OTP to registered device") is unknown, and the text is kept on the sub-product. A rail's flag is Yes if any of the bank's sub-products on it is Yes, No only if every one is No, and awaiting otherwise.
+- **Customer journeys:** each bank journey is linked to the composite it delivers, by MI's own references (composite steps or gaps that cite it; the most-cited wins) or, failing that, by the same rail and segment. Journeys that match neither stay unlinked.
+- **Gap stages:** a gap keeps MI's stage (relative to the best-practice journey). When the bank step it sits on is in another stage, that stage is recorded as `step_stage`.
 
 ## Rules the import and validator enforce
 
-1. **The workbook matches its sha256** in the manifest, and the report files never change after ingest. Corrections arrive as a new version.
+1. **Every pinned report file matches its sha256** in the manifest, checked by the importer and by every validation. Corrections arrive as a new version. The workbook is listed first: it is the source every MI record cites.
 2. **Every reference resolves:** sources cited by steps, exceptions, findings and capabilities exist in the Sources sheet; findings point at real journeys, stages and composites; journey IDs are unique per bank.
 3. **IDs and types agree:** STR- findings are strengths and GAP- findings are gaps; severities are critical, high, medium or low.
 4. **Every record cites its report.** Each imported fact also cites `src-mi-<version>`, the report itself.

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Pay & Transfer > Pay Bills > select company > 'Request eBills'",
    "customer_action": "Pay & Transfer > Pay Bills > select company > 'Request eBills'",
+   "action": "Pay & Transfer > Pay Bills > select company > 'Request eBills'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Complete biller credentials/fields > Request (mobile) / Add > Confirm…",
    "customer_action": "Complete biller credentials/fields > Request (mobile) / Add > Confirm and Submit (web); enrollment data shared with payee",
+   "action": "Complete biller credentials/fields > Request (mobile) / Add > Confirm and Submit (web); enrollment data shared with payee",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,13 +144,14 @@
    "stage": "set-up",
    "title": "New/unpaid eBills appear in 'Incoming eBills' and the eBills overview…",
    "customer_action": null,
+   "action": "New/unpaid eBills appear in 'Incoming eBills' and the eBills overview page; email notification when a new eBill arrives",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Incoming eBills"
     }
    ],
-   "frontstage": "New/unpaid eBills appear in 'Incoming eBills' and the eBills overview page; email notification when a new eBill arrives",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -165,7 +168,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -184,6 +187,7 @@
    "stage": "initiate",
    "title": "Select payee > Add AutoPay (mobile) / AutoPay > Set Up AutoPay (web):…",
    "customer_action": "Select payee > Add AutoPay (mobile) / AutoPay > Set Up AutoPay (web): amount (full / minimum / fixed) and timing (due date / on receipt / N days before) > Save / Start Sending Payments",
+   "action": "Select payee > Add AutoPay (mobile) / AutoPay > Set Up AutoPay (web): amount (full / minimum / fixed) and timing (due date / on receipt / N days before) > Save / Start Sending Payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -240,13 +244,14 @@
    "stage": "execute-track",
    "title": "AutoPay triggers payments from each new eBill; deduction on requested…",
    "customer_action": null,
+   "action": "AutoPay triggers payments from each new eBill; deduction on requested date (prior business day if non-business)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "AutoPay triggers payments from each new eBill; deduction on requested date (prior business day if non-business)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "reminder emails",
@@ -263,7 +268,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -282,13 +287,14 @@
    "stage": "confirm-complete",
    "title": "Payment confirmations in Activity; due reminders",
    "customer_action": null,
+   "action": "Payment confirmations in Activity; due reminders",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Payment confirmations in Activity; due reminders",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/push",
@@ -306,7 +312,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -326,6 +332,7 @@
    "stage": "manage",
    "title": "Change AutoPay Options > Save Changes; Stop AutoPay; 'Edit eBill…",
    "customer_action": "Change AutoPay Options > Save Changes; Stop AutoPay; 'Edit eBill options' > 'Cancel eBill' (7 business days for payee to process)",
+   "action": "Change AutoPay Options > Save Changes; Stop AutoPay; 'Edit eBill options' > 'Cancel eBill' (7 business days for payee to process)",
    "touchpoints": [
     {
      "channel": "web",
@@ -372,6 +379,7 @@
    "stage": "exception",
    "title": "Payee fails to deliver eBill on time: bank not responsible; contact…",
    "customer_action": "Payee fails to deliver eBill on time: bank not responsible; contact payee; duplicate payment risk if RTP RFP or other autopay also active",
+   "action": "Payee fails to deliver eBill on time: bank not responsible; contact payee; duplicate payment risk if RTP RFP or other autopay also active",
    "touchpoints": [
     {
      "channel": "phone",
@@ -414,6 +422,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -492,6 +501,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

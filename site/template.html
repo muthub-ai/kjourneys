@@ -443,6 +443,7 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
         <h2 id="hyp"></h2>
         <p class="muted" id="hypSub"></p>
         <div class="dataline" id="dataline"></div>
+        <div class="callout warn small" id="idxWarn" hidden></div>
       </div>
       <div class="side"><span class="lbl">Wells Fargo's highest-severity gaps</span><div id="topGaps"></div>
         <a class="linkbtn" href="#findings" id="allGaps" style="align-self:flex-start;margin-top:6px">All Wells Fargo gaps →</a></div>
@@ -456,7 +457,7 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
         <div class="key" id="scoreKey"></div>
         <p class="muted small">Click a bank to open its stage scores, or a rail to compare all banks on it.</p></div>
     </div>
-    <div class="panel" id="railPanel"><div class="sec-head" style="margin-bottom:8px"><h3>Rail by rail · mean stage score</h3></div><div class="tbl-scroll"><table class="heat" id="railHeat"></table></div></div>
+    <div class="panel" id="railPanel"><div class="sec-head" style="margin-bottom:8px"><h3>Rail by rail · mean stage score</h3><span class="muted small">Mean of each bank's stage scores on the rail, from the Scores sheet</span></div><div class="tbl-scroll"><table class="heat" id="railHeat"></table></div></div>
   </section>
 
   <!-- L1 STAGES -->
@@ -634,13 +635,16 @@ const V = __DATA__;
 const SCHEMA = __SCHEMA__;
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
-const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "").trim()) ? String(u).trim() : null;   // only plain http(s) links are clickable
 const by = (arr, k = "id") => Object.fromEntries((arr || []).map(x => [x[k], x]));
 const BANK = by(V.banks), PROD = by(V.products);
 const STG = V.stages, STGN = Object.fromEntries(STG.map(s => [s.id, s.name]));
 const bn = id => BANK[id]?.name || id, pn = id => PROD[id]?.name || id;
 const FOCUS = V.focus, REP = V.reports[0] || {};
 const RANK = [...V.rankings].sort((a, b) => a.rank - b.rank);
+const RM = r => r.calc?.rail_means || r.rail_means || {};          // rail means recomputed from the stage scores, so every view agrees
+const IDXDIFF = RANK.some(r => r.calc?.overall_index != null && Math.abs(r.overall_index - r.calc.overall_index) > 0.5);
 const SCORED = V.products.map(p => p.id).filter(p => V.banks.some(b => V.scores[b.id]?.[p]));
 const EVN = {CONFIRMED_BANK:"bank-confirmed", OBSERVED_SESSION:"observed session", THIRD_PARTY:"third party", COMMUNITY:"community", INFERRED:"inferred", UNKNOWN:"unknown", sample:"sample", internal:"internal", disclosed:"disclosed", observed:"observed", inferred:"inferred", awaiting:"awaiting"};
 const ev = e => e ? `<span class="ev ev-${esc(e)}" title="Evidence: ${esc(EVN[e] || e)}">${esc(EVN[e] || e)}</span>` : "";
@@ -693,7 +697,18 @@ function model(j) {
       tp: s.tp ? s.tp.split("; ").map(x => { const k = x.indexOf(": "); return k > 0 ? {channel: x.slice(0, k), screen: x.slice(k + 2)} : {channel: x, screen: ""}; }) : [],
       fs: s.fs, dec: s.dec, ntf: s.ntf, fp: s.fp, find: byStep[i + 1] || [], src: s.src, e: s.e, ctl: [], apps: [], ifc: [], data: [], caps: [], kpis: []}));
   }
-  return j._m = {steps, variants, sample: !!j.sample};
+  // Wells Fargo's own MI journeys on the sample's rail borrow the sample backstage, stage by stage (labeled sample)
+  let wfs = null;
+  if (!j.sample && j.bank === FOCUS && SM.journey && SM.journey.product === j.p) {
+    wfs = {};
+    SM.journey.moments.forEach(mm => { const a = wfs[mm.stage] ||= {proc: [], ctl: [], apps: [], ifc: []};
+      const pr = PROC[mm.process]; if (pr && !a.proc.includes(pr)) a.proc.push(pr);
+      (mm.controls || []).forEach(c => { const x = CTRL[c]; if (x && !a.ctl.includes(x)) a.ctl.push(x); });
+      (mm.applications || []).forEach(x => { if (!a.apps.includes(x)) a.apps.push(x); });
+      (mm.interfaces || []).forEach(x => { if (!a.ifc.includes(x)) a.ifc.push(x); }); });
+    steps.forEach(q => { q.apps = wfs[q.stage]?.apps || []; });
+  }
+  return j._m = {steps, variants, sample: !!j.sample, wfs};
 }
 
 /* ---------- header ---------- */
@@ -709,16 +724,18 @@ $("#lede").textContent = `${V.counts.journeys} journeys and ${V.counts.steps.toL
 const WFR = RANK.find(r => r.bank === FOCUS), LEAD = RANK[0], WFF = V.findings.filter(f => f.bank === FOCUS);
 function overview() {
   $("#hyp").innerHTML = WFR ? `${esc(bn(FOCUS))} ranks <em>#${WFR.rank} of ${RANK.length}</em> on money movement, ${fmt1(LEAD.overall_index - WFR.overall_index)} points behind ${esc(bn(LEAD.bank))}.` : "No ranking in this report.";
-  $("#hypSub").textContent = WFR ? `Overall index ${fmt1(WFR.overall_index)} against ${fmt1(LEAD.overall_index)} for the leader, with ${pct(WFR.coverage)} of Wells Fargo's rail × stage cells scored. MI recorded ${WFF.filter(isGap).length} gaps and ${WFF.filter(f => !isGap(f)).length} strengths for Wells Fargo.` : "";
+  $("#hypSub").textContent = WFR ? `MI's overall index: ${fmt1(WFR.overall_index)} against ${fmt1(LEAD.overall_index)} for the leader, with ${pct(WFR.coverage)} of Wells Fargo's rail × stage cells scored. MI recorded ${WFF.filter(isGap).length} gaps and ${WFF.filter(f => !isGap(f)).length} strengths for Wells Fargo.` : "";
+  $("#idxWarn").hidden = !IDXDIFF;
+  if (IDXDIFF && WFR?.calc) $("#idxWarn").innerHTML = `<b>MI's totals don't match its own stage scores.</b> Recomputed as the mean of each bank's stage scores, Wells Fargo is ${fmt1(WFR.calc.overall_index)} (#${WFR.calc.rank}) and ${esc(bn(RANK.find(r => r.calc?.rank === 1)?.bank))} leads at ${fmt1(RANK.find(r => r.calc?.rank === 1)?.calc.overall_index)}. The ranking shows both; the heat map and stage views use the stage scores. Being confirmed with the MI team.`;
   $("#dataline").innerHTML = [["journeys", V.counts.journeys], ["steps", V.counts.steps], ["findings", V.counts.findings], ["scored cells", V.counts.score_cells], ["sources", V.counts.sources], ["verification checks", V.counts.verifications]]
     .map(([k, v]) => `<span><b>${v.toLocaleString()}</b> ${k}</span>`).join("");
   const top = WFF.filter(isGap).sort((a, b) => SEVO[a.sev] - SEVO[b.sev] || a.id.localeCompare(b.id)).slice(0, 5);
   $("#topGaps").innerHTML = top.map(f => `<button type="button" class="gaprow" data-f="${esc(f.id)}">${sevChip(f)}<span>${esc(cut(f.d, 150))}<br><span class="muted small">${esc(pn(f.p))} · ${esc(STGN[f.s] || f.s)} · ${esc(f.id)}</span></span></button>`).join("");
-  $("#rankTbl").innerHTML = `<thead><tr><th class="num">#</th><th>Bank</th><th>Overall</th><th class="num">Index</th><th class="num">Domestic core</th><th class="num">Coverage</th></tr></thead><tbody>` +
-    RANK.map(r => `<tr class="${r.bank === FOCUS ? "us" : ""}"><td class="num">${r.rank}</td><td><button type="button" class="textbtn" data-stbank="${esc(r.bank)}">${esc(bn(r.bank))}</button></td><td style="width:32%"><div class="bar"><span style="width:${r.overall_index}%"></span></div></td><td class="num">${fmt1(r.overall_index)}</td><td class="num">${fmt1(r.domestic_core_index)}</td><td class="num">${pct(r.coverage)}</td></tr>`).join("") + "</tbody>";
+  $("#rankTbl").innerHTML = `<thead><tr><th class="num">#</th><th>Bank</th><th>MI index</th><th class="num">MI</th><th class="num" title="Mean of the bank's stage scores × 25">From scores</th><th class="num">Domestic core</th><th class="num">Coverage</th></tr></thead><tbody>` +
+    RANK.map(r => `<tr class="${r.bank === FOCUS ? "us" : ""}"><td class="num">${r.rank}</td><td><button type="button" class="textbtn" data-stbank="${esc(r.bank)}">${esc(bn(r.bank))}</button></td><td style="width:26%"><div class="bar"><span style="width:${r.overall_index}%"></span></div></td><td class="num">${fmt1(r.overall_index)}</td><td class="num">${r.calc ? `${fmt1(r.calc.overall_index)} <span class="muted small">#${r.calc.rank}</span>` : "—"}</td><td class="num">${fmt1(r.domestic_core_index)}</td><td class="num">${pct(r.coverage)}</td></tr>`).join("") + "</tbody>";
   scoreKey($("#scoreKey"));
   $("#railHeat").innerHTML = `<thead><tr><th>Bank</th>${SCORED.map(p => `<th><button type="button" class="textbtn" data-cmp="${esc(p)}">${esc(pn(p))}</button></th>`).join("")}</tr></thead><tbody>` +
-    RANK.map(r => `<tr class="${r.bank === FOCUS ? "us" : ""}"><td><button type="button" class="textbtn" data-stbank="${esc(r.bank)}">${esc(bn(r.bank))}</button></td>${SCORED.map(p => { const v = r.rail_means?.[p];
+    RANK.map(r => `<tr class="${r.bank === FOCUS ? "us" : ""}"><td><button type="button" class="textbtn" data-stbank="${esc(r.bank)}">${esc(bn(r.bank))}</button></td>${SCORED.map(p => { const v = RM(r)[p];
       return `<td><button type="button" class="sc ${scCls(v)}" data-stbank="${esc(r.bank)}" title="${esc(bn(r.bank))} · ${esc(pn(p))}: ${v == null ? "not scored" : fmt1(v) + " of 4"}">${v == null ? "U" : fmt1(v)}</button></td>`; }).join("")}</tr>`).join("") + "</tbody>";
 }
 $("#allGaps").onclick = () => { Object.assign(fState, {bank: FOCUS, kind: "gap", type: "", sev: "", p: "", s: "", n: 60}); };
@@ -737,7 +754,7 @@ function renderStages() {
         if (v == null) return `<td><button type="button" class="sc scU" data-p="${esc(p)}" data-s="${esc(s.id)}" title="Not scored">U</button></td>`;
         const behind = m - v, label = gap ? (behind === 0 ? "best" : "−" + behind) : v;
         return `<td><button type="button" class="sc ${gap ? scCls(4 - behind) : scCls(v)}" data-p="${esc(p)}" data-s="${esc(s.id)}" title="${esc(pn(p))} · ${esc(s.name)}: ${v} of 4; best ${m} (${esc(whoB.map(bn).join(", "))}); evidence ${esc(EVN[c[1]] || c[1])}">${label}</button></td>`; }).join("")}
-        <td class="num">${fmt1(r?.rail_means?.[p])}</td></tr>`; }).join("") + "</tbody>";
+        <td class="num">${fmt1(r ? RM(r)[p] : null)}</td></tr>`; }).join("") + "</tbody>";
 }
 $("#stBanks").onclick = e => { const b = e.target.closest("[data-b]"); if (b) { stBank = b.dataset.b; renderStages(); } };
 $("#stMode").onchange = renderStages;
@@ -755,7 +772,7 @@ function showScore(bank, p, s) {
 const CATP = {}, CATS = {};
 (V.catalog || []).forEach(p => { CATP[p.bank + "|" + p.id] = p; p.subs.forEach(x => CATS[p.bank + "|" + x.id] = {sub: x, prod: p}); });
 const SIX = (b, id) => CATS[b + "|" + id];
-const MATCHN = {"mi-reference": "linked by MI's own references", "rail-segment": "same rail and segment", "rail": "closest match: same rail, different segment"};
+const MATCHN = {"mi-reference": "linked by MI's own references", "rail-segment": "linked by rail and segment"};
 const CJS = V.composites.map(c => ({...c, members: V.journeys.filter(j => j.cj === c.id)}));
 V.products.forEach(p => { const m = V.journeys.filter(j => !j.cj && j.p === p.id); if (m.length) CJS.push({id: "rail:" + p.id, t: `${p.name}: other journeys`, p: p.id, seg: null, dir: null, steps: [], members: m, open: true}); });
 const CJBY = by(CJS);
@@ -802,7 +819,7 @@ function renderCJ() {
     : `<div class="callout">MI did not build a best-practice journey for these. They are grouped by rail so each bank's version is still easy to find.</div>`;
   const rows = banks.map(b => { const ms = c.members.filter(j => j.bank === b), g = fs.filter(f => f.bank === b && isGap(f)).length, sc = V.scores[b]?.[c.p];
     return `<tr class="${b === FOCUS ? "us" : ""}"><td><b>${esc(bn(b))}</b></td><td><div class="dl">${ms.map(j => `<div class="dj"><button type="button" class="textbtn" data-bjid="${esc(j.id)}"><span class="mono">${esc(j.sjid || "sample")}</span> · ${esc(j.t)}</button>
-        <span class="pp">${prodLine(j)}${j.cjm === "rail" ? ` <span class="match" title="${esc(MATCHN.rail)}">closest match</span>` : ""}${j.sample ? ` ${ev("sample")}` : ""}</span></div>`).join("") || `<span class="blank small">No journey mapped</span>`}</div></td>
+        <span class="pp">${prodLine(j)}${j.cjm === "rail-segment" ? ` <span class="match" title="${esc(MATCHN["rail-segment"])}">matched by rail</span>` : ""}${j.sample ? ` ${ev("sample")}` : ""}</span></div>`).join("") || `<span class="blank small">No journey mapped</span>`}</div></td>
       <td>${SCORED.includes(c.p) ? `<div class="minis">${STG.map(st => { const v = sc?.[st.id]?.[0]; return `<span class="sc ${scCls(v)}" title="${esc(st.name)}: ${v ?? "U"}">${v ?? "U"}</span>`; }).join("")}</div>` : `<span class="blank small">not scored</span>`}</td>
       <td class="num">${g || "—"}</td></tr>`; }).join("");
   const nb = new Set(c.members.map(j => j.bank)).size;
@@ -812,7 +829,7 @@ function renderCJ() {
     ${best}
     <div class="panel" id="banksPanel"><div class="sec-head" style="margin-bottom:8px"><h3>How each bank delivers it</h3><span class="muted small">Bank journey → product › sub-product · stage scores on ${esc(pn(c.p))} · gaps rolled up to this journey</span></div>
       <div class="tbl-scroll"><table><thead><tr><th>Bank</th><th>Bank journeys</th><th>Stage scores${SCORED.includes(c.p) ? " · " + STG.map(s => s.name[0]).join(" ") : ""}</th><th class="num">Gaps</th></tr></thead><tbody>${rows}</tbody></table></div>
-      <p class="muted small" style="margin-top:8px">The workbook does not link bank journeys to customer journeys directly. The link is derived: from MI's own references where they exist, otherwise by matching rail and segment. "Closest match" marks a journey whose segment differs.</p></div>`;
+      <p class="muted small" style="margin-top:8px">The workbook does not link bank journeys to customer journeys directly. The link is derived: from MI's own references where they exist (most-cited composite wins), otherwise by matching rail and segment, marked "matched by rail". Journeys that match neither are not forced onto a customer journey; they appear under their rail's "other journeys".</p></div>`;
 }
 
 /* Stacked graph: stage scores (bank, best bank, Wells Fargo) over gaps per stage by severity, strengths above the line. */
@@ -1041,6 +1058,18 @@ function renderBP() {
   }
   LAYERS.forEach(L => {
     if (L.sample && !m.sample) return; if (L.mi && m.sample) return;
+    if (L.band && m.wfs) {
+      const seen2 = new Set(), span = (key, zone, name, hint, fn) => {
+        h += `<div class="lab z-${zone}" data-layer="${key}"><span class="n">${name}</span><span class="h">${hint}</span></div>`;
+        const s3 = new Set(); runs.forEach(r => { const a = s3.has(r.stage) ? null : m.wfs[r.stage]; s3.add(r.stage);
+          h += `<div class="cell z-${zone}" data-layer="${key}" data-m="${r.codes.join(" ")}" style="grid-column:span ${r.codes.length}">${a ? fn(a) : `<span class="blank small">${m.wfs[r.stage] ? "See this stage earlier" : "No sample backstage for this stage"}</span>`}</div>`; }); };
+      h += `<div class="lineRow" data-line="internal"><span>Wells Fargo backstage<em>sample, from the hand-built Zelle blueprint, matched by stage</em></span></div>`;
+      span("process", "backstage", "Business process", "Sample · by stage", a => a.proc.map(pr => `<span class="pid">${esc(pr.code)}</span><span class="pname">${esc(pr.name)}</span>`).join("") || '<span class="blank small">—</span>');
+      span("controls", "backstage", "Controls &amp; risk", "Sample · by stage", a => `<div class="ctlist">${a.ctl.map(c => `<div class="tag"><span class="ty ty-${c.type}">${esc(c.type)}</span><span>${esc(c.text)}</span></div>`).join("")}</div>`);
+      span("apps", "systems", "Applications", "Sample · click to trace", a => `<div class="chips">${a.apps.map(chip).join("")}</div>`);
+      span("interfaces", "systems", "Interfaces", "Sample · by stage", a => `<div class="ifc">${a.ifc.map(i => `<span>${esc(i)}</span>`).join("")}</div>`);
+      return;
+    }
     if (L.band) { h += `<div class="lab z-systems" data-layer="apps"><span class="n">Controls &amp; systems</span><span class="h">Not observable</span></div><div class="bandcell" data-layer="apps"><span>Controls, application IDs, interfaces and capabilities sit behind the line of visibility. MI cannot see them for any bank; for Wells Fargo they come from KOS application bundles.</span></div>`; return; }
     if (L.line) { h += `<div class="lineRow" data-line="${L.line}"><span>${esc(L.label)}${L.note ? `<em>${esc(L.note)}</em>` : ""}</span></div>`; return; }
     h += `<div class="lab z-${L.zone}" data-layer="${L.key}"><span class="n">${esc(L.name)}</span><span class="h">${esc(L.hint)}</span></div>`;
@@ -1066,15 +1095,16 @@ function setupBP(id) {
   $("#bpLegend").innerHTML = `<span class="k"><i></i>Lines of interaction, visibility${m.sample ? ", internal interaction" : ""}</span><span class="k"><span class="dot" style="background:var(--sev3)"></span>Fail point / gap</span>` +
     (m.sample ? `<span class="k">⇄ Channel handoff</span><span class="k"><span class="chip ext" style="cursor:default;min-height:0">ext-zelle</span>Third party</span><span class="k"><span class="chip" style="cursor:default;min-height:0">p2phb</span>App ID — click to trace</span>`
       : `<span class="k"><span class="who" style="margin:0">bank-system</span>Who acts at the step</span><span class="k">${ev("CONFIRMED_BANK")} Evidence level per step</span>`);
-  $("#appsPanel").hidden = !m.sample; $("#actorsPanel").hidden = m.sample;
-  if (m.sample) {
+  $("#appsPanel").hidden = !(m.sample || m.wfs); $("#actorsPanel").hidden = m.sample;
+  if (m.sample || m.wfs) {
     const counts = Object.fromEntries((SM.applications || []).map(a => [a.app_id, m.steps.filter(q => q.apps.includes(a.app_id)).length])), maxC = Math.max(1, ...Object.values(counts));
     $("#appRows").innerHTML = (SM.applications || []).slice().sort((a, b) => counts[b.app_id] - counts[a.app_id]).map(a => `
       <tr class="go" data-row="${esc(a.app_id)}" tabindex="0"><td>${chip(a.app_id)}</td><td>${esc(a.name)}</td><td>${esc(a.layer)}</td><td>${esc(a.owner_team)}</td>
       <td>${esc(a.capabilities.map(c => CAPB[c]?.name || c).join(", "))}</td><td class="mono" style="font-size:12px">${esc(a.depends_on.join(", ") || "—")}</td>
       <td class="mono" style="font-size:12px">${a.bundle ? esc(a.bundle) : '<span class="muted">n/a — third party</span>'}</td>
       <td class="num">${counts[a.app_id]}<span style="display:inline-block;height:6px;border-radius:3px;background:var(--ink2);margin-left:8px;width:${Math.round(counts[a.app_id] / maxC * 48)}px"></span></td></tr>`).join("");
-  } else {
+  }
+  if (!m.sample) {
     const A = {}; m.steps.forEach(q => { (A[q.who] ||= {n: 0, ev: {}}).n++; A[q.who].ev[q.e] = (A[q.who].ev[q.e] || 0) + 1; });
     $("#actorRows").innerHTML = Object.entries(A).sort((a, b) => b[1].n - a[1].n).map(([w, a]) => `<tr class="go" data-actor="${esc(w)}" tabindex="0"><td class="mono">${esc(w)}</td><td>${esc({customer: "Customer", frontstage: "Frontstage", backstage: "Backstage"}[LANEOF(w)])}</td><td class="num">${a.n}</td><td>${Object.entries(a.ev).map(([e, n]) => `${ev(e)} ${n}`).join(" ")}</td></tr>`).join("");
   }
@@ -1238,13 +1268,14 @@ function srcList(ids) {
   if (!ids?.length) return `<p class="blank">No sources cited.</p>`;
   return `<span class="lbl">Sources (${ids.length})</span><ol>${ids.map(id => { const s = V.sources[id];
     if (!s) return `<li class="mono">${esc(id)}</li>`;
-    const t = esc(s[0] || id); return `<li>${s[1] ? `<a href="${esc(s[1])}" target="_blank" rel="noopener">${t}</a>` : t} <span class="muted small">${esc([s[4], s[2], s[5]].filter(Boolean).join(" · "))}</span></li>`; }).join("")}</ol>`;
+    const t = esc(s[0] || id), u = s[2] === "observed-session" ? null : safeUrl(s[1]);
+    return `<li>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${t}</a>` : t} <span class="muted small">${esc([s[4], s[2], s[5]].filter(Boolean).join(" · "))}</span></li>`; }).join("")}</ol>`;
 }
 function fcard(f) {
   const j = JBYID[f.j];
   return `<div class="fcard ${f.bank === FOCUS ? "us" : ""}"><div class="top">${sevChip(f)}
     <span class="id">${esc(f.id)}</span><span>${esc(bn(f.bank))}</span><span>${esc(pn(f.p))}</span><span>${esc(STGN[f.s] || f.s || "")}</span>${isGap(f) ? `<span>${esc(TYPEN[f.type] || f.type)}</span>` : ""}${ev(f.e)}</div>
-    <p>${esc(f.d)}</p>${f.ref ? `<p class="muted small">Reference banks: ${esc(f.ref)}</p>` : ""}
+    <p>${esc(f.d)}</p>${f.ref ? `<p class="muted small">Reference banks: ${esc(f.ref)}</p>` : ""}${f.ss ? `<p class="muted small">Filed under ${esc(STGN[f.s] || f.s)} on the best-practice journey; it sits on a ${esc(STGN[f.ss] || f.ss)} step of the bank journey.</p>` : ""}
     <div class="acts">${j ? `<button type="button" class="linkbtn" data-openj="${esc(j.id)}">Journey ${esc(j.sjid || "")}</button><button type="button" class="linkbtn" data-openbp="${esc(j.id)}" data-col="${f.n ? "M" + String(f.n).padStart(2, "0") : ""}">Blueprint${f.n ? ", step " + f.n : ""}</button>` : ""}<button type="button" class="linkbtn" data-fsrc="${esc(f.id)}">${plural(f.src.length, "source")}</button></div></div>`;
 }
 function renderFindings() {
@@ -1307,6 +1338,13 @@ document.addEventListener("click", e => {
   }
 });
 document.addEventListener("keydown", e => {
+  if (e.key === "Tab" && !$("#drawer").hidden) {                 // keep focus inside the open drawer
+    const f = [...$("#drawer").querySelectorAll('button, a[href], select, input, [tabindex]:not([tabindex="-1"])')].filter(x => x.offsetParent !== null);
+    if (f.length) { const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      else if (!$("#drawer").contains(document.activeElement)) { e.preventDefault(); first.focus(); } }
+  }
   if (e.key === "Escape") { if (!$("#drawer").hidden) closeDrawer(); else if (!$("#story").hidden) endStory(); return; }
   if (e.key === "Enter" && e.target.matches?.("tr[data-row],tr[data-actor]")) { e.target.click(); return; }
   if (!$("#story").hidden && $("#drawer").hidden) { if (e.key === "ArrowRight") { e.preventDefault(); storyGo(1); } if (e.key === "ArrowLeft") { e.preventDefault(); storyGo(-1); } }
@@ -1337,7 +1375,7 @@ function weakest(bank) {                       // the focus bank's largest short
 function storySteps() {
   const W = weakest(FOCUS), wfJ = V.journeys.find(j => j.bank === FOCUS && j.p === (W?.p || "zelle") && !j.sample) || V.journeys.find(j => j.bank === FOCUS && !j.sample);
   const wfG = WFF.filter(isGap), hi = wfG.filter(f => f.sev === "critical" || f.sev === "high");
-  const leadRails = SCORED.filter(p => { const v = WFR?.rail_means?.[p]; return v != null && v >= 3 && RANK.every(r => (r.rail_means?.[p] ?? -1) <= v); });
+  const leadRails = SCORED.filter(p => { const v = WFR ? RM(WFR)[p] : null; return v != null && v >= 3 && RANK.every(r => (RM(r)[p] ?? -1) <= v); });
   const jG = (FBYJ[wfJ?.id] || []).filter(isGap).length, sample = V.journeys.find(j => j.sample);
   return [
     {view: "overview", spot: "#insight", title: `Wells Fargo is #${WFR?.rank} of ${RANK.length} on money movement`, text: `Its index is ${fmt1(WFR?.overall_index)} against ${fmt1(LEAD.overall_index)} for ${bn(LEAD.bank)}. MI recorded ${wfG.length} gaps for Wells Fargo, ${hi.length} of them high or critical. Competitor facts are still pending CI legal review.`},

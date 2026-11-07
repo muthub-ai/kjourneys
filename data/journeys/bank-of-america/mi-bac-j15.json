@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Owner signs in to Business Advantage 360 > Business Services tab > 'Add…",
    "customer_action": null,
+   "action": "Owner signs in to Business Advantage 360 > Business Services tab > 'Add new users' > complete fields > Continue > Continue > new user profile > 'Accounts & Services' tab > select services/accounts > for each account 'Allow this user access to this account' and choose View / Inquiry Settings (statements, check images) and/or Transactional Settings ('Transfer funds between eligible accounts or to other financial institutions'); Bill Pay = Full Access or Limited Access > Continue > Save > 'account changes were successfully saved'. New user needs only an email to be set up.",
    "touchpoints": [
     {
      "channel": "web",
@@ -69,6 +70,20 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s021",
+      "src-bank-of-america-s064",
+      "src-bank-of-america-s906",
+      "src-bank-of-america-s909"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -110,6 +125,7 @@
    "stage": "set-up",
    "title": "Pay & Transfer > Wire/ACH > Manage recipients > Add Recipient (vendor…",
    "customer_action": "Pay & Transfer > Wire/ACH > Manage recipients > Add Recipient (vendor name, bank, routing, account); confirm ACH routing with vendor",
+   "action": "Pay & Transfer > Wire/ACH > Manage recipients > Add Recipient (vendor name, bank, routing, account); confirm ACH routing with vendor",
    "touchpoints": [
     {
      "channel": "web",
@@ -152,13 +168,14 @@
    "stage": "set-up",
    "title": "Secured Transfer / USB security key enrollment",
    "customer_action": null,
+   "action": "Secured Transfer / USB security key enrollment",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Secured Transfer"
     }
    ],
-   "frontstage": "Secured Transfer / USB security key enrollment",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -176,7 +193,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -196,6 +213,7 @@
    "stage": "initiate",
    "title": "Wire/ACH > Pay > Recipient > amount, date, frequency; choose Three…",
    "customer_action": "Wire/ACH > Pay > Recipient > amount, date, frequency; choose Three Business Day ($1) or Next Business Day ($5)",
+   "action": "Wire/ACH > Pay > Recipient > amount, date, frequency; choose Three Business Day ($1) or Next Business Day ($5)",
    "touchpoints": [
     {
      "channel": "web",
@@ -258,6 +276,7 @@
    "stage": "review-authorize",
    "title": "Review > Pay > OTP to mobile",
    "customer_action": "Review > Pay > OTP to mobile",
+   "action": "Review > Pay > OTP to mobile",
    "touchpoints": [
     {
      "channel": "web",
@@ -300,13 +319,14 @@
    "stage": "execute-track",
    "title": "Activity shows Scheduled/In Process/Processed; 8 p.m. ET cutoff",
    "customer_action": null,
+   "action": "Activity shows Scheduled/In Process/Processed; 8 p.m. ET cutoff",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Activity shows Scheduled/In Process/Processed; 8 p.m. ET cutoff",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -323,7 +343,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -342,13 +362,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation + email",
    "customer_action": null,
+   "action": "Confirmation + email",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation + email",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -365,7 +386,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -384,6 +405,7 @@
    "stage": "manage",
    "title": "Cancel before midnight ET on processing date; Cash Flow Monitor…",
    "customer_action": "Cancel before midnight ET on processing date; Cash Flow Monitor projects scheduled payments",
+   "action": "Cancel before midnight ET on processing date; Cash Flow Monitor projects scheduled payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -428,6 +450,7 @@
    "stage": "exception",
    "title": "Returned ACH; errors: small business not covered by Reg E – liability…",
    "customer_action": null,
+   "action": "Returned ACH; errors: small business not covered by Reg E – liability per §9 (commercially reasonable security procedures); interest-only liability cap",
    "touchpoints": [
     {
      "channel": "phone",
@@ -470,6 +493,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -548,6 +572,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

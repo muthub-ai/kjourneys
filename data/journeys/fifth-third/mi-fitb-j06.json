@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Move Money (mobile) / Bill Payment interface (web)",
    "customer_action": "Move Money (mobile) / Bill Payment interface (web)",
+   "action": "Move Money (mobile) / Bill Payment interface (web)",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Choose from pre-populated payee list or add a person or business (U.S.…",
    "customer_action": "Choose from pre-populated payee list or add a person or business (U.S. payees only); maintain Payee List; personal notes on payees",
+   "action": "Choose from pre-populated payee list or add a person or business (U.S. payees only); maintain Payee List; personal notes on payees",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Enter amount and 'Deliver By' date; schedule before the cutoff shown in…",
    "customer_action": "Enter amount and 'Deliver By' date; schedule before the cutoff shown in the interface; may need up to 5 business days lead; non-business-day delivery moves to preceding business day",
+   "action": "Enter amount and 'Deliver By' date; schedule before the cutoff shown in the interface; may need up to 5 business days lead; non-business-day delivery moves to preceding business day",
    "touchpoints": [
     {
      "channel": "web",
@@ -220,6 +223,7 @@
    "stage": "review-authorize",
    "title": "Confirm; authorizes debit on processing date; fraud review may delay…",
    "customer_action": "Confirm; authorizes debit on processing date; fraud review may delay payment",
+   "action": "Confirm; authorizes debit on processing date; fraud review may delay payment",
    "touchpoints": [
     {
      "channel": "web",
@@ -273,13 +277,14 @@
    "stage": "execute-track",
    "title": "Payment shows Pending, then In Process, then Paid; Quicken shows 'sent'…",
    "customer_action": null,
+   "action": "Payment shows Pending, then In Process, then Paid; Quicken shows 'sent' while bank shows 'pending'",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment history (24 months)"
     }
    ],
-   "frontstage": "Payment shows Pending, then In Process, then Paid; Quicken shows 'sent' while bank shows 'pending'",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -298,7 +303,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -319,13 +324,14 @@
    "stage": "confirm-complete",
    "title": "Automatic bill-payment alerts (payee updates, cancellations,…",
    "customer_action": null,
+   "action": "Automatic bill-payment alerts (payee updates, cancellations, undeliverable eBills); payment reminders",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Automatic bill-payment alerts (payee updates, cancellations, undeliverable eBills); payment reminders",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/push/SMS",
@@ -342,7 +348,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -361,6 +367,7 @@
    "stage": "manage",
    "title": "Modify or cancel before cutoff on processing day; 'In Process' ->…",
    "customer_action": "Modify or cancel before cutoff on processing day; 'In Process' -> request stop payment via Customer Service (fee may apply); 'Paid' cannot be canceled",
+   "action": "Modify or cancel before cutoff on processing day; 'In Process' -> request stop payment via Customer Service (fee may apply); 'Paid' cannot be canceled",
    "touchpoints": [
     {
      "channel": "web",
@@ -407,13 +414,14 @@
    "stage": "exception",
    "title": "Late posting due to bank error: Fifth Third covers late charges up to…",
    "customer_action": null,
+   "action": "Late posting due to bank error: Fifth Third covers late charges up to $250; not for customer-supplied errors or fraudulent payments; insufficient funds may block Bill Pay",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Customer Service"
     }
    ],
-   "frontstage": "Late posting due to bank error: Fifth Third covers late charges up to $250; not for customer-supplied errors or fraudulent payments; insufficient funds may block Bill Pay",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -430,7 +438,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -449,6 +457,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -527,6 +536,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -586,6 +596,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

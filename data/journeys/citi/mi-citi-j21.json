@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "ACH entitlement granted by System Administrator; ACH Processing Menu in…",
    "customer_action": "ACH entitlement granted by System Administrator; ACH Processing Menu in CBOL",
+   "action": "ACH entitlement granted by System Administrator; ACH Processing Menu in CBOL",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Set up ACH ID (10-char) and receivers; consumer and business receivers…",
    "customer_action": "Set up ACH ID (10-char) and receivers; consumer and business receivers in separate batches; effective entry date must be a future date",
+   "action": "Set up ACH ID (10-char) and receivers; consumer and business receivers in separate batches; effective entry date must be a future date",
    "touchpoints": [
     {
      "channel": "web",
@@ -145,6 +147,7 @@
    "stage": "initiate",
    "title": "Create batch (max $99,999,999.99) or upload NACHA file; Same Day ACH…",
    "customer_action": "Create batch (max $99,999,999.99) or upload NACHA file; Same Day ACH available",
+   "action": "Create batch (max $99,999,999.99) or upload NACHA file; Same Day ACH available",
    "touchpoints": [
     {
      "channel": "web",
@@ -189,6 +192,7 @@
    "stage": "review-authorize",
    "title": "Items awaiting approval must be approved before the 8:15 PM ET release",
    "customer_action": "Items awaiting approval must be approved before the 8:15 PM ET release",
+   "action": "Items awaiting approval must be approved before the 8:15 PM ET release",
    "touchpoints": [
     {
      "channel": "web",
@@ -242,13 +246,14 @@
    "stage": "execute-track",
    "title": "Batches transmitted 8:15 PM ET; ACH Batch Reports",
    "customer_action": null,
+   "action": "Batches transmitted 8:15 PM ET; ACH Batch Reports",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "ACH Batch Reports"
     }
    ],
-   "frontstage": "Batches transmitted 8:15 PM ET; ACH Batch Reports",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -266,7 +271,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -286,13 +291,14 @@
    "stage": "confirm-complete",
    "title": "Return Item Reporting and NOCs; ACH Addenda report for incoming…",
    "customer_action": null,
+   "action": "Return Item Reporting and NOCs; ACH Addenda report for incoming remittance",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Return Item Reporting"
     }
    ],
-   "frontstage": "Return Item Reporting and NOCs; ACH Addenda report for incoming remittance",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -309,7 +315,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -328,6 +334,7 @@
    "stage": "manage",
    "title": "Modify batches until 8:15 PM ET; ACH Filter and Block reports",
    "customer_action": "Modify batches until 8:15 PM ET; ACH Filter and Block reports",
+   "action": "Modify batches until 8:15 PM ET; ACH Filter and Block reports",
    "touchpoints": [
     {
      "channel": "web",
@@ -370,13 +377,14 @@
    "stage": "exception",
    "title": "Returns posted back to originating account; NOCs must be applied;…",
    "customer_action": null,
+   "action": "Returns posted back to originating account; NOCs must be applied; reversals not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Return Item Reporting"
     }
    ],
-   "frontstage": "Returns posted back to originating account; NOCs must be applied; reversals not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -393,7 +401,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -412,6 +420,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

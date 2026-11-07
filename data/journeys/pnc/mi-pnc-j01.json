@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens the PNC Mobile app and taps 'Pay & Transfer' in the…",
    "customer_action": "Customer opens the PNC Mobile app and taps 'Pay & Transfer' in the bottom navigation bar",
+   "action": "Customer opens the PNC Mobile app and taps 'Pay & Transfer' in the bottom navigation bar",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -101,6 +102,7 @@
    "stage": "discover",
    "title": "Customer selects 'Send Money with Zelle'",
    "customer_action": "Customer selects 'Send Money with Zelle'",
+   "action": "Customer selects 'Send Money with Zelle'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -154,6 +156,7 @@
    "stage": "set-up",
    "title": "Customer reads enrollment screens, taps 'Get Started', reads Terms of…",
    "customer_action": "Customer reads enrollment screens, taps 'Get Started', reads Terms of Use and taps 'Agree'",
+   "action": "Customer reads enrollment screens, taps 'Get Started', reads Terms of Use and taps 'Agree'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -210,6 +213,7 @@
    "stage": "set-up",
    "title": "Customer chooses an enrollment token (U.S. mobile number and/or email)…",
    "customer_action": "Customer chooses an enrollment token (U.S. mobile number and/or email) and verifies it",
+   "action": "Customer chooses an enrollment token (U.S. mobile number and/or email) and verifies it",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -266,6 +270,7 @@
    "stage": "set-up",
    "title": "Customer selects the PNC account to link, reviews, and taps 'Submit'",
    "customer_action": "Customer selects the PNC account to link, reviews, and taps 'Submit'",
+   "action": "Customer selects the PNC account to link, reviews, and taps 'Submit'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -319,6 +324,7 @@
    "stage": "initiate",
    "title": "Customer taps 'Send' and enters or selects the recipient's name (Zelle…",
    "customer_action": "Customer taps 'Send' and enters or selects the recipient's name (Zelle Ready Contacts shows enrolled contacts; QR icon available top-right)",
+   "action": "Customer taps 'Send' and enters or selects the recipient's name (Zelle Ready Contacts shows enrolled contacts; QR icon available top-right)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -378,6 +384,7 @@
    "stage": "initiate",
    "title": "Customer enters amount and optional note and taps 'Review'",
    "customer_action": "Customer enters amount and optional note and taps 'Review'",
+   "action": "Customer enters amount and optional note and taps 'Review'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -434,6 +441,7 @@
    "stage": "review-authorize",
    "title": "Customer checks details on the review screen and taps 'Send'",
    "customer_action": "Customer checks details on the review screen and taps 'Send'",
+   "action": "Customer checks details on the review screen and taps 'Send'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -508,6 +516,7 @@
    "stage": "review-authorize",
    "title": "First payment to a new recipient: customer verifies identity with a…",
    "customer_action": null,
+   "action": "First payment to a new recipient: customer verifies identity with a One-time Passcode",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -545,6 +554,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s901",
+      "src-pnc-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -554,6 +576,7 @@
    "stage": "review-authorize",
    "title": "High-risk/large payments may trigger an out-of-band PNC fraud-alert…",
    "customer_action": null,
+   "action": "High-risk/large payments may trigger an out-of-band PNC fraud-alert text ('Did You Attempt A Zelle Payment For The Amount of $5000.00?' reply YES/NO)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -591,6 +614,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s020",
+      "src-pnc-s901",
+      "src-pnc-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -600,6 +636,7 @@
    "stage": "execute-track",
    "title": "Payment processes; enrolled recipients typically receive funds within…",
    "customer_action": null,
+   "action": "Payment processes; enrolled recipients typically receive funds within minutes; unenrolled recipients get a text/email with enrollment instructions",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -637,6 +674,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017",
+      "src-pnc-s054"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -646,6 +696,7 @@
    "stage": "confirm-complete",
    "title": "Customer taps 'Done' on the completion screen; payment appears in…",
    "customer_action": "Customer taps 'Done' on the completion screen; payment appears in 'Zelle Activity' and 'PNC Account Activity'",
+   "action": "Customer taps 'Done' on the completion screen; payment appears in 'Zelle Activity' and 'PNC Account Activity'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -699,6 +750,7 @@
    "stage": "manage",
    "title": "Customer manages token/account in 'Zelle Settings'; views history in…",
    "customer_action": "Customer manages token/account in 'Zelle Settings'; views history in 'Zelle Activity'; cancels an unenrolled-recipient payment via 'Cancel This Payment'",
+   "action": "Customer manages token/account in 'Zelle Settings'; views history in 'Zelle Activity'; cancels an unenrolled-recipient payment via 'Cancel This Payment'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -764,6 +816,7 @@
    "stage": "exception",
    "title": "Recipient does not enroll within 14 calendar days -> payment expires…",
    "customer_action": null,
+   "action": "Recipient does not enroll within 14 calendar days -> payment expires and must be resent",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -799,6 +852,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s003",
+      "src-pnc-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -808,6 +873,7 @@
    "stage": "exception",
    "title": "Customer reports an unauthorized Zelle payment or a qualifying imposter…",
    "customer_action": "Customer reports an unauthorized Zelle payment or a qualifying imposter scam by calling 1-800-762-2035",
+   "action": "Customer reports an unauthorized Zelle payment or a qualifying imposter scam by calling 1-800-762-2035",
    "touchpoints": [
     {
      "channel": "phone",
@@ -864,6 +930,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -920,6 +987,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -979,6 +1047,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

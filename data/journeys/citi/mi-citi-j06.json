@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens transfers in the Citi Mobile App ('Payments and…",
    "customer_action": "Customer opens transfers in the Citi Mobile App ('Payments and transfers' per app listing)",
+   "action": "Customer opens transfers in the Citi Mobile App ('Payments and transfers' per app listing)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Select from/to linked checking, savings or credit account, enter…",
    "customer_action": "Select from/to linked checking, savings or credit account, enter amount; optionally schedule automatic weekly/every-other-week/monthly transfers",
+   "action": "Select from/to linked checking, savings or credit account, enter amount; optionally schedule automatic weekly/every-other-week/monthly transfers",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "review-authorize",
    "title": "Review and submit (no additional authentication evidenced)",
    "customer_action": "Review and submit (no additional authentication evidenced)",
+   "action": "Review and submit (no additional authentication evidenced)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,6 +173,7 @@
    "stage": "execute-track",
    "title": "Transfer posts immediately; transactions after 10:30 PM ET are recorded…",
    "customer_action": null,
+   "action": "Transfer posts immediately; transactions after 10:30 PM ET are recorded the next Business Day",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -205,6 +209,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s028",
+      "src-citi-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -214,13 +230,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation in app; optional account alerts",
    "customer_action": null,
+   "action": "Confirmation in app; optional account alerts",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account Alerts"
     }
    ],
-   "frontstage": "Confirmation in app; optional account alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Configurable",
@@ -237,7 +254,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -256,6 +273,7 @@
    "stage": "manage",
    "title": "Automatic transfers can be cancelled; business manual requires 3…",
    "customer_action": "Automatic transfers can be cancelled; business manual requires 3 Business Days' notice for automatic transfers",
+   "action": "Automatic transfers can be cancelled; business manual requires 3 Business Days' notice for automatic transfers",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -300,13 +318,14 @@
    "stage": "exception",
    "title": "Insufficient funds: transfer declined; credit-account transfer limits…",
    "customer_action": null,
+   "action": "Insufficient funds: transfer declined; credit-account transfer limits per card agreement",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Insufficient funds: transfer declined; credit-account transfer limits per card agreement",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -323,7 +342,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -342,6 +361,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

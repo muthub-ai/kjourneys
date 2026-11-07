@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer taps bottom-nav 'Move Money' and sees 'Send Money with Zelle®'…",
    "customer_action": "Customer taps bottom-nav 'Move Money' and sees 'Send Money with Zelle®' (web: left-nav 'Send money with Zelle®')",
+   "action": "Customer taps bottom-nav 'Move Money' and sees 'Send Money with Zelle®' (web: left-nav 'Send money with Zelle®')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "First use: tap 'Get Started', accept terms, enroll an email or U.S.…",
    "customer_action": "First use: tap 'Get Started', accept terms, enroll an email or U.S. mobile number, enter one-time verification code",
+   "action": "First use: tap 'Get Started', accept terms, enroll an email or U.S. mobile number, enter one-time verification code",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,6 +174,7 @@
    "stage": "set-up",
    "title": "Add recipient: pick from device contacts or enter trusted recipient's…",
    "customer_action": "Add recipient: pick from device contacts or enter trusted recipient's email, U.S. mobile number or Zelle® tag",
+   "action": "Add recipient: pick from device contacts or enter trusted recipient's email, U.S. mobile number or Zelle® tag",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -258,6 +261,7 @@
    "stage": "set-up",
    "title": "If the app warns that the token is registered to a different name,…",
    "customer_action": "If the app warns that the token is registered to a different name, customer re-checks the email/phone before continuing (payment will go to the network-registered name)",
+   "action": "If the app warns that the token is registered to a different name, customer re-checks the email/phone before continuing (payment will go to the network-registered name)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -328,6 +332,7 @@
    "stage": "initiate",
    "title": "Enter amount and optional note",
    "customer_action": "Enter amount and optional note",
+   "action": "Enter amount and optional note",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -402,6 +407,7 @@
    "stage": "review-authorize",
    "title": "Review payment details. The app warns when the name enrolled to the…",
    "customer_action": "Review payment details. The app warns when the name enrolled to the token does not match (bank-documented). Bank FAQ guidance says to send only to people you know and trust, with no purchase protection and not for marketplace purchases. The wording of any scam-specific on-screen interstitial is not published.",
+   "action": "Review payment details. The app warns when the name enrolled to the token does not match (bank-documented). Bank FAQ guidance says to send only to people you know and trust, with no purchase protection and not for marketplace purchases. The wording of any scam-specific on-screen interstitial is not published.",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -492,6 +498,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Send'",
    "customer_action": "Tap 'Send'",
+   "action": "Tap 'Send'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -545,6 +552,7 @@
    "stage": "execute-track",
    "title": "Payment to enrolled recipient posts within minutes; to unenrolled…",
    "customer_action": null,
+   "action": "Payment to enrolled recipient posts within minutes; to unenrolled recipient shows pending until they enroll (1–3 business days after enrollment)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -582,6 +590,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001",
+      "src-fifth-third-s007",
+      "src-fifth-third-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -591,6 +612,7 @@
    "stage": "confirm-complete",
    "title": "Recipient receives email/text at enrolled token; sender's Zelle alerts…",
    "customer_action": null,
+   "action": "Recipient receives email/text at enrolled token; sender's Zelle alerts go to the security-alert destinations",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -619,6 +641,21 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s001",
+      "src-fifth-third-s011",
+      "src-fifth-third-s901",
+      "src-fifth-third-s902",
+      "src-fifth-third-s933"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -662,6 +699,7 @@
    "stage": "manage",
    "title": "View activity page; select the payment and look for 'Cancel This…",
    "customer_action": "View activity page; select the payment and look for 'Cancel This Payment' (business UI: 'Cancel Payment') — shown only while the recipient is unenrolled; if the option is missing call 800-972-3030 (business 877-534-2264) to cancel while still pending; enrolled-recipient payments cannot be reversed — call immediately if sent to the wrong person and otherwise work with the recipient to get funds back.",
+   "action": "View activity page; select the payment and look for 'Cancel This Payment' (business UI: 'Cancel Payment') — shown only while the recipient is unenrolled; if the option is missing call 800-972-3030 (business 877-534-2264) to cancel while still pending; enrolled-recipient payments cannot be reversed — call immediately if sent to the wrong person and otherwise work with the recipient to get funds back.",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -712,13 +750,14 @@
    "stage": "exception",
    "title": "Unenrolled recipient does not register within 14 days -> payment…",
    "customer_action": null,
+   "action": "Unenrolled recipient does not register within 14 days -> payment canceled and funds returned; wrong recipient -> work with recipient / call to cancel pending",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity page"
     }
    ],
-   "frontstage": "Unenrolled recipient does not register within 14 days -> payment canceled and funds returned; wrong recipient -> work with recipient / call to cancel pending",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "status change",
@@ -735,7 +774,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -754,6 +793,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -832,6 +872,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -891,6 +932,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

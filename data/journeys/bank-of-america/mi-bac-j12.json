@@ -42,13 +42,14 @@
    "stage": "discover",
    "title": "RFP from a participating biller arrives in Online Banking (UI location…",
    "customer_action": null,
+   "action": "RFP from a participating biller arrives in Online Banking (UI location not documented)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "UNKNOWN"
     }
    ],
-   "frontstage": "RFP from a participating biller arrives in Online Banking (UI location not documented)",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -65,7 +66,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Choose one-time immediate payment or future-scheduled date; no recurring",
    "customer_action": "Choose one-time immediate payment or future-scheduled date; no recurring",
+   "action": "Choose one-time immediate payment or future-scheduled date; no recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -143,6 +145,7 @@
    "stage": "review-authorize",
    "title": "Review; payment is irrevocable once sent",
    "customer_action": "Review; payment is irrevocable once sent",
+   "action": "Review; payment is irrevocable once sent",
    "touchpoints": [
     {
      "channel": "web",
@@ -185,13 +188,14 @@
    "stage": "execute-track",
    "title": "Sent in real time to payee's bank 24/7 via RTP",
    "customer_action": null,
+   "action": "Sent in real time to payee's bank 24/7 via RTP",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Sent in real time to payee's bank 24/7 via RTP",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -208,7 +212,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -227,13 +231,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation (details UNKNOWN)",
    "customer_action": null,
+   "action": "Confirmation (details UNKNOWN)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation (details UNKNOWN)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -249,7 +254,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -267,6 +272,7 @@
    "stage": "manage",
    "title": "Cancel future-scheduled RTP payment by 11:59 p.m. ET prior business…",
    "customer_action": "Cancel future-scheduled RTP payment by 11:59 p.m. ET prior business day; turn off duplicate eBills/recurring for same payee",
+   "action": "Cancel future-scheduled RTP payment by 11:59 p.m. ET prior business day; turn off duplicate eBills/recurring for same payee",
    "touchpoints": [
     {
      "channel": "web",
@@ -309,6 +315,7 @@
    "stage": "exception",
    "title": "Immediate RTP payments cannot be reversed or stopped; disputes with…",
    "customer_action": "Immediate RTP payments cannot be reversed or stopped; disputes with payee handled directly; Reg E for unauthorized",
+   "action": "Immediate RTP payments cannot be reversed or stopped; disputes with payee handled directly; Reg E for unauthorized",
    "touchpoints": [
     {
      "channel": "phone",
@@ -351,6 +358,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -429,6 +437,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

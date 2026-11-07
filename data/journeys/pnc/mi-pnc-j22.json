@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Enroll in Pay Receive Sync within Online Banking (Cash Flow Insight);…",
    "customer_action": "Enroll in Pay Receive Sync within Online Banking (Cash Flow Insight); 60-day fee waiver",
+   "action": "Enroll in Pay Receive Sync within Online Banking (Cash Flow Insight); 60-day fee waiver",
    "touchpoints": [
     {
      "channel": "web",
@@ -95,6 +96,7 @@
    "stage": "set-up",
    "title": "Add vendors (connect online; vendors can join payment network so bank…",
    "customer_action": "Add vendors (connect online; vendors can join payment network so bank details need not be shared); set up users and approval policies",
+   "action": "Add vendors (connect online; vendors can join payment network so bank details need not be shared); set up users and approval policies",
    "touchpoints": [
     {
      "channel": "web",
@@ -137,6 +139,7 @@
    "stage": "set-up",
    "title": "Email/upload/drag-drop bills into document management",
    "customer_action": "Email/upload/drag-drop bills into document management",
+   "action": "Email/upload/drag-drop bills into document management",
    "touchpoints": [
     {
      "channel": "web",
@@ -179,6 +182,7 @@
    "stage": "initiate",
    "title": "Create payment from bill; choose ACH or PNC-printed and mailed check…",
    "customer_action": "Create payment from bill; choose ACH or PNC-printed and mailed check (account info masked, positive pay review built in); cash-flow impact displayed",
+   "action": "Create payment from bill; choose ACH or PNC-printed and mailed check (account info masked, positive pay review built in); cash-flow impact displayed",
    "touchpoints": [
     {
      "channel": "web",
@@ -221,6 +225,7 @@
    "stage": "review-authorize",
    "title": "Bill routed to approver per policy; approver gets email 'ready for…",
    "customer_action": "Bill routed to approver per policy; approver gets email 'ready for approval' and approves online",
+   "action": "Bill routed to approver per policy; approver gets email 'ready for approval' and approves online",
    "touchpoints": [
     {
      "channel": "web",
@@ -263,13 +268,14 @@
    "stage": "execute-track",
    "title": "Payment released; ACH timing per standard ACH (not specified); check…",
    "customer_action": null,
+   "action": "Payment released; ACH timing per standard ACH (not specified); check mailed by PNC",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Payment released; ACH timing per standard ACH (not specified); check mailed by PNC",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -286,7 +292,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -305,13 +311,14 @@
    "stage": "confirm-complete",
    "title": "Payment status in Payables; data syncs to…",
    "customer_action": null,
+   "action": "Payment status in Payables; data syncs to QuickBooks/Intacct/NetSuite/Xero if Sync enabled",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Payment status in Payables; data syncs to QuickBooks/Intacct/NetSuite/Xero if Sync enabled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -328,7 +335,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -347,6 +354,7 @@
    "stage": "manage",
    "title": "Export/import for Sage 50, Dynamics GP; manage vendors/documents",
    "customer_action": "Export/import for Sage 50, Dynamics GP; manage vendors/documents",
+   "action": "Export/import for Sage 50, Dynamics GP; manage vendors/documents",
    "touchpoints": [
     {
      "channel": "web",
@@ -389,13 +397,14 @@
    "stage": "exception",
    "title": "Returned ACH / lost check handling not documented",
    "customer_action": null,
+   "action": "Returned ACH / lost check handling not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Returned ACH / lost check handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -411,7 +420,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -429,6 +438,7 @@
    "stage": "support",
    "title": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business…",
    "customer_action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
+   "action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
    "touchpoints": [
     {
      "channel": "phone",
@@ -477,6 +487,7 @@
    "stage": "support",
    "title": "Business Banker locator / branch appointment",
    "customer_action": "Business Banker locator / branch appointment",
+   "action": "Business Banker locator / branch appointment",
    "touchpoints": [
     {
      "channel": "branch",

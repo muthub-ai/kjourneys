@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Find account and routing numbers under 'View Details' / 'Account Info'…",
    "customer_action": "Find account and routing numbers under 'View Details' / 'Account Info' > 'Show more'; for international give SWIFT HIBKUS44 and Capital One, 1680 Capital One Drive, McLean VA 22102-3491",
+   "action": "Find account and routing numbers under 'View Details' / 'Account Info' > 'Show more'; for international give SWIFT HIBKUS44 and Capital One, 1680 Capital One Drive, McLean VA 22102-3491",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -107,6 +108,7 @@
    "stage": "execute-track",
    "title": "Domestic wires received by 5 PM ET are available the same business day;…",
    "customer_action": null,
+   "action": "Domestic wires received by 5 PM ET are available the same business day; international 3-5 business days (up to 10)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -144,6 +146,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s012",
+      "src-capital-one-s003",
+      "src-capital-one-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -153,13 +168,14 @@
    "stage": "exception",
    "title": "Sending bank is the point of contact for issues; wire to old Discover…",
    "customer_action": null,
+   "action": "Sending bank is the point of contact for issues; wire to old Discover routing number returned",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Sender's bank"
     }
    ],
-   "frontstage": "Sending bank is the point of contact for issues; wire to old Discover routing number returned",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -177,7 +193,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -197,6 +213,7 @@
    "stage": "support",
    "title": "Call Capital One for routing number if no digital access",
    "customer_action": null,
+   "action": "Call Capital One for routing number if no digital access",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Submit payment file (unchanged formats post-merger)",
    "customer_action": "Submit payment file (unchanged formats post-merger)",
+   "action": "Submit payment file (unchanged formats post-merger)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Token login to One View; approve control totals/payments",
    "customer_action": "Token login to One View; approve control totals/payments",
+   "action": "Token login to One View; approve control totals/payments",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,13 +128,14 @@
    "stage": "execute-track",
    "title": "Truist routes to virtual card/ACH/wire/check; extended next-day check…",
    "customer_action": null,
+   "action": "Truist routes to virtual card/ACH/wire/check; extended next-day check deadline; reconciliation",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Reporting"
     }
    ],
-   "frontstage": "Truist routes to virtual card/ACH/wire/check; extended next-day check deadline; reconciliation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -150,7 +153,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "exception",
    "title": "Supplier enablement campaigns; returned items",
    "customer_action": null,
+   "action": "Supplier enablement campaigns; returned items",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Supplier enablement campaigns; returned items",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "support",
    "title": "877-882-1195",
    "customer_action": "877-882-1195",
+   "action": "877-882-1195",
    "touchpoints": [
     {
      "channel": "phone",
@@ -271,7 +276,5 @@
  "notifications": [],
  "assessment": null,
  "x-mi_evidence": "CONFIRMED_BANK",
- "bank_product": "TFC-P10",
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ "bank_product": "TFC-P10"
 }

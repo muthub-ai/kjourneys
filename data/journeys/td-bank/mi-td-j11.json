@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Owner sees 'send domestic wires' in the TD Bank app (since v26.1.1, Nov…",
    "customer_action": "Owner sees 'send domestic wires' in the TD Bank app (since v26.1.1, Nov 5 2025; wire activity since 26.6.1, Apr 22 2026) or in Small Business Online Banking after one-time wire enrollment",
+   "action": "Owner sees 'send domestic wires' in the TD Bank app (since v26.1.1, Nov 5 2025; wire activity since 26.6.1, Apr 22 2026) or in Small Business Online Banking after one-time wire enrollment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Add and save a recipient (beneficiary name, bank, account number,…",
    "customer_action": "Add and save a recipient (beneficiary name, bank, account number, account type); beneficiary saved for reuse",
+   "action": "Add and save a recipient (beneficiary name, bank, account number, account type); beneficiary saved for reuse",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -148,6 +150,7 @@
    "stage": "initiate",
    "title": "Enter amount, funding account, memo",
    "customer_action": "Enter amount, funding account, memo",
+   "action": "Enter amount, funding account, memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -190,6 +193,7 @@
    "stage": "review-authorize",
    "title": "Submit; if the user's role requires approval, an 'approval needed'…",
    "customer_action": "Submit; if the user's role requires approval, an 'approval needed' alert goes to an approver who releases the wire; role transaction limits enforced",
+   "action": "Submit; if the user's role requires approval, an 'approval needed' alert goes to an approver who releases the wire; role transaction limits enforced",
    "touchpoints": [
     {
      "channel": "web",
@@ -246,6 +250,7 @@
    "stage": "execute-track",
    "title": "Wire released; Federal ID (IMAD) number assigned and tracked on Federal…",
    "customer_action": null,
+   "action": "Wire released; Federal ID (IMAD) number assigned and tracked on Federal Reserve network; same day, often within the hour",
    "touchpoints": [
     {
      "channel": "web",
@@ -279,6 +284,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -288,13 +304,14 @@
    "stage": "confirm-complete",
    "title": "Proof of payment once funds received; wire activity view in app",
    "customer_action": null,
+   "action": "Proof of payment once funds received; wire activity view in app",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Wire activity"
     }
    ],
-   "frontstage": "Proof of payment once funds received; wire activity view in app",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -312,7 +329,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -332,6 +349,7 @@
    "stage": "manage",
    "title": "Manage saved recipients; view history",
    "customer_action": "Manage saved recipients; view history",
+   "action": "Manage saved recipients; view history",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -374,13 +392,14 @@
    "stage": "exception",
    "title": "Business bears liability for transfers under its credentials;…",
    "customer_action": null,
+   "action": "Business bears liability for transfers under its credentials; failed/returned wire handling undocumented",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Phone"
     }
    ],
-   "frontstage": "Business bears liability for transfers under its credentials; failed/returned wire handling undocumented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -397,7 +416,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -416,6 +435,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -486,6 +506,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

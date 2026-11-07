@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap 'Move Money' (bottom nav) — 'transfer funds, pay bills and send…",
    "customer_action": "Tap 'Move Money' (bottom nav) — 'transfer funds, pay bills and send money'; or type 'transfer funds' into the AI interface which routes to the transfer screen",
+   "action": "Tap 'Move Money' (bottom nav) — 'transfer funds, pay bills and send money'; or type 'transfer funds' into the AI interface which routes to the transfer screen",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,13 +87,14 @@
    "stage": "set-up",
    "title": "Own Fifth Third deposit accounts are pre-linked; 529 and minor-owned…",
    "customer_action": null,
+   "action": "Own Fifth Third deposit accounts are pre-linked; 529 and minor-owned accounts excluded",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "From/To account pickers"
     }
    ],
-   "frontstage": "Own Fifth Third deposit accounts are pre-linked; 529 and minor-owned accounts excluded",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -109,7 +111,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Select from/to accounts, amount, date; optionally set recurring…",
    "customer_action": "Select from/to accounts, amount, date; optionally set recurring schedule (e.g., monthly checking->savings 'Automatic Transfers')",
+   "action": "Select from/to accounts, amount, date; optionally set recurring schedule (e.g., monthly checking->savings 'Automatic Transfers')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,6 +175,7 @@
    "stage": "review-authorize",
    "title": "Confirm; credit-card-funded transfers treated as cash advances",
    "customer_action": "Confirm; credit-card-funded transfers treated as cash advances",
+   "action": "Confirm; credit-card-funded transfers treated as cash advances",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -214,13 +218,14 @@
    "stage": "execute-track",
    "title": "Transfer posts (same-bank, near-immediate; subject to DSUA cutoffs)",
    "customer_action": null,
+   "action": "Transfer posts (same-bank, near-immediate; subject to DSUA cutoffs)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Transfer posts (same-bank, near-immediate; subject to DSUA cutoffs)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -238,7 +243,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -258,13 +263,14 @@
    "stage": "confirm-complete",
    "title": "On-screen confirmation; optional real-time transaction/balance alerts",
    "customer_action": null,
+   "action": "On-screen confirmation; optional real-time transaction/balance alerts",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "On-screen confirmation; optional real-time transaction/balance alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email/SMS if configured",
@@ -281,7 +287,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -300,6 +306,7 @@
    "stage": "manage",
    "title": "Edit/cancel scheduled or recurring transfers — mechanics not public…",
    "customer_action": "Edit/cancel scheduled or recurring transfers — mechanics not public (UNKNOWN); Smart Savings can be turned off in mobile",
+   "action": "Edit/cancel scheduled or recurring transfers — mechanics not public (UNKNOWN); Smart Savings can be turned off in mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -342,13 +349,14 @@
    "stage": "exception",
    "title": "Insufficient funds / pending Smart Savings transfers cannot be reversed…",
    "customer_action": null,
+   "action": "Insufficient funds / pending Smart Savings transfers cannot be reversed until settled",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Insufficient funds / pending Smart Savings transfers cannot be reversed until settled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -365,7 +373,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -384,6 +392,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -462,6 +471,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -521,6 +531,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Biller sends an RTP Request for Payment; it appears in the PNC Mobile…",
    "customer_action": null,
+   "action": "Biller sends an RTP Request for Payment; it appears in the PNC Mobile app and an email alert is sent",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -77,6 +78,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s018",
+      "src-pnc-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -86,6 +99,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews RFP, may change the amount (more or less), then…",
    "customer_action": "Customer reviews RFP, may change the amount (more or less), then authorizes or declines",
+   "action": "Customer reviews RFP, may change the amount (more or less), then authorizes or declines",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -139,6 +153,7 @@
    "stage": "execute-track",
    "title": "Funds debited immediately from eligible PNC checking and sent over the…",
    "customer_action": null,
+   "action": "Funds debited immediately from eligible PNC checking and sent over the RTP network; biller credit timing outside PNC control",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,6 +187,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -181,13 +207,14 @@
    "stage": "confirm-complete",
    "title": "Payment appears in account activity; PNC notifies electronically if…",
    "customer_action": null,
+   "action": "Payment appears in account activity; PNC notifies electronically if delayed or not sent",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Payment appears in account activity; PNC notifies electronically if delayed or not sent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Electronic notice on delay/failure",
@@ -204,7 +231,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -223,6 +250,7 @@
    "stage": "manage",
    "title": "No cancel/amend after authorization; may ask biller to return funds…",
    "customer_action": "No cancel/amend after authorization; may ask biller to return funds (not obligated)",
+   "action": "No cancel/amend after authorization; may ask biller to return funds (not obligated)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -265,13 +293,14 @@
    "stage": "exception",
    "title": "Delayed/not sent due to NSF, legal restriction, service unavailability…",
    "customer_action": null,
+   "action": "Delayed/not sent due to NSF, legal restriction, service unavailability -> electronic notification",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Delayed/not sent due to NSF, legal restriction, service unavailability -> electronic notification",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -288,7 +317,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -307,6 +336,7 @@
    "stage": "exception",
    "title": "RFP expires unpaid -> cannot pay that RFP; pay via regular Bill Pay…",
    "customer_action": "RFP expires unpaid -> cannot pay that RFP; pay via regular Bill Pay instead",
+   "action": "RFP expires unpaid -> cannot pay that RFP; pay via regular Bill Pay instead",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -349,6 +379,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -405,6 +436,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -464,6 +496,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

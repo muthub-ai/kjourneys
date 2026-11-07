@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "In Send flow, choose a future date or recurring frequency (option…",
    "customer_action": "In Send flow, choose a future date or recurring frequency (option documented in Terms of Use; screen label not captured)",
+   "action": "In Send flow, choose a future date or recurring frequency (option documented in Terms of Use; screen label not captured)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -112,6 +113,7 @@
    "stage": "review-authorize",
    "title": "Review and confirm; OTP if new recipient",
    "customer_action": "Review and confirm; OTP if new recipient",
+   "action": "Review and confirm; OTP if new recipient",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -156,13 +158,14 @@
    "stage": "execute-track",
    "title": "Payment executes on the scheduled date; if the date is a non-business…",
    "customer_action": null,
+   "action": "Payment executes on the scheduled date; if the date is a non-business day the terms do not specify adjustment (UNKNOWN)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Payment executes on the scheduled date; if the date is a non-business day the terms do not specify adjustment (UNKNOWN)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -179,7 +182,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -198,6 +201,7 @@
    "stage": "manage",
    "title": "Edit or cancel future-dated/recurring payments in the Zelle section of…",
    "customer_action": "Edit or cancel future-dated/recurring payments in the Zelle section of the app until 11:59 PM ET the day before the scheduled date",
+   "action": "Edit or cancel future-dated/recurring payments in the Zelle section of the app until 11:59 PM ET the day before the scheduled date",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -251,13 +255,14 @@
    "stage": "exception",
    "title": "Insufficient funds on scheduled date -> payment may fail or overdraft…",
    "customer_action": null,
+   "action": "Insufficient funds on scheduled date -> payment may fail or overdraft fees may apply per account fee schedule",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Insufficient funds on scheduled date -> payment may fail or overdraft fees may apply per account fee schedule",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -275,7 +280,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -295,6 +300,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -351,6 +357,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -410,6 +417,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

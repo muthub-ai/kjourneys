@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Create ACH batch from template in PINACLE (or PINACLE Mobile) or via…",
    "customer_action": "Create ACH batch from template in PINACLE (or PINACLE Mobile) or via PINACLE Connect/API/file transfer; same-day ACH option",
+   "action": "Create ACH batch from template in PINACLE (or PINACLE Mobile) or via PINACLE Connect/API/file transfer; same-day ACH option",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -88,6 +89,7 @@
    "stage": "review-authorize",
    "title": "Dual approval with token passcode; approvals available in PINACLE Mobile",
    "customer_action": "Dual approval with token passcode; approvals available in PINACLE Mobile",
+   "action": "Dual approval with token passcode; approvals available in PINACLE Mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -132,13 +134,14 @@
    "stage": "execute-track",
    "title": "Batch released; daily activity in 'Manage Payments'; EDI/BAI reporting",
    "customer_action": null,
+   "action": "Batch released; daily activity in 'Manage Payments'; EDI/BAI reporting",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Batch released; daily activity in 'Manage Payments'; EDI/BAI reporting",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -156,7 +159,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -176,6 +179,7 @@
    "stage": "manage",
    "title": "ACH Positive Pay rules; suspects reviewed in PINACLE/PINACLE Mobile",
    "customer_action": "ACH Positive Pay rules; suspects reviewed in PINACLE/PINACLE Mobile",
+   "action": "ACH Positive Pay rules; suspects reviewed in PINACLE/PINACLE Mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -220,13 +224,14 @@
    "stage": "exception",
    "title": "Returns/NOCs handling not documented online",
    "customer_action": null,
+   "action": "Returns/NOCs handling not documented online",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Returns/NOCs handling not documented online",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -242,7 +247,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -260,6 +265,7 @@
    "stage": "support",
    "title": "TMCC",
    "customer_action": "TMCC",
+   "action": "TMCC",
    "touchpoints": [
     {
      "channel": "phone",
@@ -320,7 +326,5 @@
  "notifications": [],
  "assessment": null,
  "x-mi_evidence": "CONFIRMED_BANK",
- "bank_product": "PNC-P13",
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ "bank_product": "PNC-P13"
 }

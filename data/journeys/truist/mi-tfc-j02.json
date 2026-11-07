@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & Pay > Send Money with Zelle® > Request",
    "customer_action": "Transfer & Pay > Send Money with Zelle® > Request",
+   "action": "Transfer & Pay > Send Money with Zelle® > Request",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Select a person (enrolled Zelle user required; non-enrolled must be…",
    "customer_action": "Select a person (enrolled Zelle user required; non-enrolled must be requested by email)",
+   "action": "Select a person (enrolled Zelle user required; non-enrolled must be requested by email)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -154,6 +156,7 @@
    "stage": "initiate",
    "title": "Enter amount and optional note",
    "customer_action": "Enter amount and optional note",
+   "action": "Enter amount and optional note",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -196,6 +199,7 @@
    "stage": "review-authorize",
    "title": "Review and tap Request",
    "customer_action": "Review and tap Request",
+   "action": "Review and tap Request",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -238,6 +242,7 @@
    "stage": "execute-track",
    "title": "Zelle notifies requestee; request visible in Activity",
    "customer_action": null,
+   "action": "Zelle notifies requestee; request visible in Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -273,6 +278,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001",
+      "src-truist-s014"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -282,13 +299,14 @@
    "stage": "confirm-complete",
    "title": "Customer receives notification when the request is paid",
    "customer_action": null,
+   "action": "Customer receives notification when the request is paid",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Customer receives notification when the request is paid",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Paid notification",
@@ -305,7 +323,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -324,6 +342,7 @@
    "stage": "manage",
    "title": "View/cancel outstanding requests in Activity (cancel of an unpaid…",
    "customer_action": "View/cancel outstanding requests in Activity (cancel of an unpaid request INFERRED from standard Zelle behavior)",
+   "action": "View/cancel outstanding requests in Activity (cancel of an unpaid request INFERRED from standard Zelle behavior)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -366,6 +385,7 @@
    "stage": "exception",
    "title": "Request ignored/declined → no funds; Truist is not a debt collector",
    "customer_action": "Request ignored/declined → no funds; Truist is not a debt collector",
+   "action": "Request ignored/declined → no funds; Truist is not a debt collector",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -408,6 +428,7 @@
    "stage": "support",
    "title": "Customer opens Truist Assist (icon at bottom of screen) or taps…",
    "customer_action": "Customer opens Truist Assist (icon at bottom of screen) or taps Help/FAQs; Assist can hand off to a live agent",
+   "action": "Customer opens Truist Assist (icon at bottom of screen) or taps Help/FAQs; Assist can hand off to a live agent",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -482,6 +503,7 @@
    "stage": "support",
    "title": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the…",
    "customer_action": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the payment reference number from Zelle activity; cancel/claim/scam: Truist Care Center 844-4TRUIST (option 1 fraud 24/7; option 9 Spanish)",
+   "action": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the payment reference number from Zelle activity; cancel/claim/scam: Truist Care Center 844-4TRUIST (option 1 fraud 24/7; option 9 Spanish)",
    "touchpoints": [
     {
      "channel": "phone",

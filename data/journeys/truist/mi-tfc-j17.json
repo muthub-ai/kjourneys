@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Sign in to Truist One View (user ID + password + soft/hard token or…",
    "customer_action": "Sign in to Truist One View (user ID + password + soft/hard token or push notification) > nine-dots app switcher > Digital Treasury > 'Payments and transfers' (Payment Center, Payment Activity) > hover 'Create payments & transfers' > ACH > payment type (or 'Add a New Payment' > Payment Type > Continue) > select Originator ID",
+   "action": "Sign in to Truist One View (user ID + password + soft/hard token or push notification) > nine-dots app switcher > Digital Treasury > 'Payments and transfers' (Payment Center, Payment Activity) > hover 'Create payments & transfers' > ACH > payment type (or 'Add a New Payment' > Payment Type > Continue) > select Originator ID",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -90,6 +91,7 @@
    "stage": "initiate",
    "title": "Value Date (earliest auto-selected; cutoff displayed, e.g. 'Payment…",
    "customer_action": "Value Date (earliest auto-selected; cutoff displayed, e.g. 'Payment must be approved by 8pm ET'); optional 'Make this a Same Day Payment' checkbox if entitled; Batch Description; Company Discretionary Data; Descriptive Date; beneficiaries from address book or 'Include multiple beneficiary on ACH payment' / 'Add Another Beneficiary'; Amount; optional Create Prenote, Hold, Addenda, Beneficiary Exclusion Dates; optionally 'Save this payment as a template' (Template Code, Restrict); Submit (for approval) or Save for Later (Incomplete). Alternatively import a NACHA file (Import In Process / Needs Repair statuses) or use 'Payment templates' > 'Copy as Payment'.",
+   "action": "Value Date (earliest auto-selected; cutoff displayed, e.g. 'Payment must be approved by 8pm ET'); optional 'Make this a Same Day Payment' checkbox if entitled; Batch Description; Company Discretionary Data; Descriptive Date; beneficiaries from address book or 'Include multiple beneficiary on ACH payment' / 'Add Another Beneficiary'; Amount; optional Create Prenote, Hold, Addenda, Beneficiary Exclusion Dates; optionally 'Save this payment as a template' (Template Code, Restrict); Submit (for approval) or Save for Later (Incomplete). Alternatively import a NACHA file (Import In Process / Needs Repair statuses) or use 'Payment templates' > 'Copy as Payment'.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -152,6 +154,7 @@
    "stage": "review-authorize",
    "title": "'All payments must be approved before they will be released to the bank…",
    "customer_action": "'All payments must be approved before they will be released to the bank for processing. Approval requirements are based on your configuration and each [user's] permissions.' Approver opens the 'Payments Requiring Approval' pre-defined view (statuses Entered, Modified, Incomplete Approval, High Value) and clicks Approve in the Actions column (bulk approve via checkboxes; Unapprove available before extraction); alert 'Payments Awaiting My Approval' fires only for eligible approvers who are not the creator (dual-approval workflow); approvals also possible in the Truist One View mobile app.",
+   "action": "'All payments must be approved before they will be released to the bank for processing. Approval requirements are based on your configuration and each [user's] permissions.' Approver opens the 'Payments Requiring Approval' pre-defined view (statuses Entered, Modified, Incomplete Approval, High Value) and clicks Approve in the Actions column (bulk approve via checkboxes; Unapprove available before extraction); alert 'Payments Awaiting My Approval' fires only for eligible approvers who are not the creator (dual-approval workflow); approvals also possible in the Truist One View mobile app.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -200,13 +203,14 @@
    "stage": "execute-track",
    "title": "Submitted = Entered; fully approved = Approved; extracted at the next…",
    "customer_action": null,
+   "action": "Submitted = Entered; fully approved = Approved; extracted at the next window (Origination 7/9/11 am, 2/4/6/8/9 pm ET; Same-Day 7/9/11 am, 2 pm ET; future-dated extracted 2 days before value date) → Released; other statuses: Approval Window Passed, Rejected (by approver), Balance Check Failure (retries until cutoff). Alerts: ACH Payment Released, Transactions Processing Status Changed, Approval Window Passed, Balance Check, Payment Cutoff Time Warning; returns/NOCs via reporting.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment Activity statuses; Tools > Contact Center > Notifications > Alerts"
     }
    ],
-   "frontstage": "Submitted = Entered; fully approved = Approved; extracted at the next window (Origination 7/9/11 am, 2/4/6/8/9 pm ET; Same-Day 7/9/11 am, 2 pm ET; future-dated extracted 2 days before value date) → Released; other statuses: Approval Window Passed, Rejected (by approver), Balance Check Failure (retries until cutoff). Alerts: ACH Payment Released, Transactions Processing Status Changed, Approval Window Passed, Balance Check, Payment Cutoff Time Warning; returns/NOCs via reporting.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -226,7 +230,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -248,6 +252,7 @@
    "stage": "exception",
    "title": "Reversal (txn $20/batch $75); ACH Fraud Control for debits",
    "customer_action": "Reversal (txn $20/batch $75); ACH Fraud Control for debits",
+   "action": "Reversal (txn $20/batch $75); ACH Fraud Control for debits",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -292,6 +297,7 @@
    "stage": "support",
    "title": "In Digital Treasury: Help icon (top right) > Help Center > 'Start chat'…",
    "customer_action": "In Digital Treasury: Help icon (top right) > Help Center > 'Start chat' (live agent); Tour Guide icon; Treasury Solutions Client Support treasuryclientservices@truist.com / 800-774-8179, Mon–Fri 8 am–8 pm ET; Treasury Resource Center QRGs (ACH Reversal Request Form, Same Day ACH QRG, Control Totals QRG, ACH Search QRG).",
+   "action": "In Digital Treasury: Help icon (top right) > Help Center > 'Start chat' (live agent); Tour Guide icon; Treasury Solutions Client Support treasuryclientservices@truist.com / 800-774-8179, Mon–Fri 8 am–8 pm ET; Treasury Resource Center QRGs (ACH Reversal Request Form, Same Day ACH QRG, Control Totals QRG, ACH Search QRG).",
    "touchpoints": [
     {
      "channel": "phone",
@@ -369,7 +375,5 @@
  "bank_product": "TFC-P10",
  "terms": {
   "cutoffs": "10 ACH windows"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

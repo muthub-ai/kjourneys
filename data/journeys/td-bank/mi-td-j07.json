@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Bill Pay in Online Banking or the app (site nav: 'Pay…",
    "customer_action": "Customer opens Bill Pay in Online Banking or the app (site nav: 'Pay bills and schedule payments')",
+   "action": "Customer opens Bill Pay in Online Banking or the app (site nav: 'Pay bills and schedule payments')",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Customer adds a company or person (payee) with account number and…",
    "customer_action": "Customer adds a company or person (payee) with account number and address; TD matches to electronic biller network or defaults to paper check",
+   "action": "Customer adds a company or person (payee) with account number and address; TD matches to electronic biller network or defaults to paper check",
    "touchpoints": [
     {
      "channel": "web",
@@ -168,6 +170,7 @@
    "stage": "initiate",
    "title": "Customer selects payee, amount, and 'deliver by' date; options:…",
    "customer_action": "Customer selects payee, amount, and 'deliver by' date; options: scheduled/next-day (free) or Rush same-day ($2) for electronic payees",
+   "action": "Customer selects payee, amount, and 'deliver by' date; options: scheduled/next-day (free) or Rush same-day ($2) for electronic payees",
    "touchpoints": [
     {
      "channel": "web",
@@ -224,6 +227,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews and submits",
    "customer_action": "Customer reviews and submits",
+   "action": "Customer reviews and submits",
    "touchpoints": [
     {
      "channel": "web",
@@ -266,13 +270,14 @@
    "stage": "execute-track",
    "title": "Electronic: ACH withdrawal up to 2 business days after payment date;…",
    "customer_action": null,
+   "action": "Electronic: ACH withdrawal up to 2 business days after payment date; check: funds leave when cashed. Status shown on account activity page (app v25.09)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Bill Pay > Payment history / upcoming; account activity"
     }
    ],
-   "frontstage": "Electronic: ACH withdrawal up to 2 business days after payment date; check: funds leave when cashed. Status shown on account activity page (app v25.09)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -290,7 +295,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -328,13 +333,14 @@
    "stage": "confirm-complete",
    "title": "Payment appears in payment history; eBill alerts by email where enrolled",
    "customer_action": null,
+   "action": "Payment appears in payment history; eBill alerts by email where enrolled",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "'Payment scheduled' with confirmation number -> 'Ok'; pending payments list until processed, then Bill History status 'Paid'"
     }
    ],
-   "frontstage": "Payment appears in payment history; eBill alerts by email where enrolled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email alerts for eBills; general TD Alerts",
@@ -351,7 +357,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -370,6 +376,7 @@
    "stage": "manage",
    "title": "Change or cancel a pending payment (tutorial 'Change or cancel…",
    "customer_action": "Change or cancel a pending payment (tutorial 'Change or cancel payments'); recurring: cancel series and recreate",
+   "action": "Change or cancel a pending payment (tutorial 'Change or cancel payments'); recurring: cancel series and recreate",
    "touchpoints": [
     {
      "channel": "web",
@@ -429,6 +436,7 @@
    "stage": "exception",
    "title": "Late or misapplied payment: Bill Payment Service Guarantee covers late…",
    "customer_action": null,
+   "action": "Late or misapplied payment: Bill Payment Service Guarantee covers late charges up to $50 (notify within 60 days of the Scheduled Payment Date); stop payment on a Bill Pay check $30",
    "touchpoints": [
     {
      "channel": "phone",
@@ -491,6 +499,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -565,6 +574,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

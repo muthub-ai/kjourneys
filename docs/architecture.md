@@ -100,8 +100,9 @@ flowchart LR
 |---|---|---|
 | Assemble | `tools/assemble.py` | A file's bank or product disagrees with its folder |
 | Validate | `tools/validate_journey.py` | Schema, integrity, typing, temporal, provenance or publish-gate rule broken |
-| Import | `tools/import_mi_workbook.py` | Workbook sha mismatch, unknown bank, rail, stage or evidence level, unresolved source |
-| Negative tests | `tests/run_tests.sh` | Any of 46 known-bad fixtures passes |
+| Import | `tools/import_mi_workbook.py` | A pinned report file changed, unknown bank, rail, stage, evidence level or severity, bad step numbering, score outside 0–4, unresolved source or journey, or the result does not validate (staged in a scratch copy; nothing is written) |
+| Import check (CI) | `import_mi_workbook.py --check` | `data/` differs from what the workbook produces (a hand edit to imported data) |
+| Negative tests | `tests/run_tests.sh` | Any of 55 known-bad fixtures passes |
 | Ingest test | `tests/test_ingest.py` | Versioned ingest, history, refusal or immutability behaves wrongly |
 | Build | `tools/build_site.py` | Template or data missing |
 | Export | `tools/export.py` | — (produces facts, coverage, summary; summary is posted to the CI run) |
@@ -139,5 +140,7 @@ This product is deliberately shaped like a KOS knowledge bundle so it can fold i
 |---|---|
 | Workbook layout is fixed to the 2026-11-06 MI delivery (20 sheets) | The importer refuses unknown sheets, banks, rails and levels; a new layout means an importer change, reviewed like code |
 | GRC, CMDB, LEI and BIAN IDs are empty | Filled by system owners. The publish gate blocks release until they are. |
-| The page inlines a compact view model (~2.8 MB from 8 MB of data) | `tools/build_site.py` refuses to build past 15 MB; beyond that, load `kjourneys.json` as a sibling file. |
+| The page inlines a compact view model (~3.6 MB from ~9 MB of data) | `tools/build_site.py` refuses to build past 15 MB; beyond that, load `kjourneys.json` as a sibling file. |
+| MI IDs (journeys, sources, findings) are not version-scoped | The importer refuses a second report version unless `--replace`; version-scoped IDs come with the second delivery |
+| MI's ScoreTotals disagree with its Scores sheet | The site shows MI's index beside one recomputed from the scores, and uses the scores everywhere else, until MI confirms |
 | Sample data for Wells Fargo | Replace from KOS bundles and journey owners. Sample is never allowed past draft. |

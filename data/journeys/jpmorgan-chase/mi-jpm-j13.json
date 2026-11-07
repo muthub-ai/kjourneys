@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Credit card account > 'Manage account' > 'Digital Wallets' > 'Paze℠'",
    "customer_action": "Credit card account > 'Manage account' > 'Digital Wallets' > 'Paze℠'",
+   "action": "Credit card account > 'Manage account' > 'Digital Wallets' > 'Paze℠'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Select card; 'Activate Paze℠' (leaves Chase; third-party overlay);…",
    "customer_action": "Select card; 'Activate Paze℠' (leaves Chase; third-party overlay); accept Paze terms; 'Take me back to Chase'",
+   "action": "Select card; 'Activate Paze℠' (leaves Chase; third-party overlay); accept Paze terms; 'Take me back to Chase'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -143,6 +145,7 @@
    "stage": "initiate",
    "title": "At merchant checkout select Paze; sign in with Chase email; enter SMS…",
    "customer_action": "At merchant checkout select Paze; sign in with Chase email; enter SMS code",
+   "action": "At merchant checkout select Paze; sign in with Chase email; enter SMS code",
    "touchpoints": [
     {
      "channel": "web",
@@ -196,6 +199,7 @@
    "stage": "review-authorize",
    "title": "Choose card; enter CVV first time; review cart; 'Pay now'",
    "customer_action": "Choose card; enter CVV first time; review cart; 'Pay now'",
+   "action": "Choose card; enter CVV first time; review cart; 'Pay now'",
    "touchpoints": [
     {
      "channel": "web",
@@ -238,13 +242,14 @@
    "stage": "execute-track",
    "title": "Card authorization",
    "customer_action": null,
+   "action": "Card authorization",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Card network"
     }
    ],
-   "frontstage": "Card authorization",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -261,7 +266,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -280,13 +285,14 @@
    "stage": "confirm-complete",
    "title": "Merchant confirmation; card alerts",
    "customer_action": null,
+   "action": "Merchant confirmation; card alerts",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Merchant confirmation; card alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -303,7 +309,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -322,6 +328,7 @@
    "stage": "manage",
    "title": "Manage cards in Paze / Digital Wallets",
    "customer_action": "Manage cards in Paze / Digital Wallets",
+   "action": "Manage cards in Paze / Digital Wallets",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -364,6 +371,7 @@
    "stage": "exception",
    "title": "Disputed purchase -> card 'Report a problem' flow",
    "customer_action": "Disputed purchase -> card 'Report a problem' flow",
+   "action": "Disputed purchase -> card 'Report a problem' flow",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -406,6 +414,7 @@
    "stage": "support",
    "title": "Card servicing 1-800-955-9060",
    "customer_action": "Card servicing 1-800-955-9060",
+   "action": "Card servicing 1-800-955-9060",
    "touchpoints": [
     {
      "channel": "phone",

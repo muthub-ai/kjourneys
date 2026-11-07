@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opts in to receive e-bills via RfP from a participating biller",
    "customer_action": "Customer opts in to receive e-bills via RfP from a participating biller",
+   "action": "Customer opts in to receive e-bills via RfP from a participating biller",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,13 +85,14 @@
    "stage": "initiate",
    "title": "Biller sends an RfP through Citi TTS over the RTP network; Citi…",
    "customer_action": null,
+   "action": "Biller sends an RfP through Citi TTS over the RTP network; Citi displays the e-bill to the customer",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "e-bill display"
     }
    ],
-   "frontstage": "Biller sends an RfP through Citi TTS over the RTP network; Citi displays the e-bill to the customer",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -108,7 +110,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -128,6 +130,7 @@
    "stage": "review-authorize",
    "title": "Customer decides whether and when to authorize/schedule payment",
    "customer_action": "Customer decides whether and when to authorize/schedule payment",
+   "action": "Customer decides whether and when to authorize/schedule payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,13 +173,14 @@
    "stage": "execute-track",
    "title": "Payment settles in real time over RTP, 24/7/365, irrevocably",
    "customer_action": null,
+   "action": "Payment settles in real time over RTP, 24/7/365, irrevocably",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Payment settles in real time over RTP, 24/7/365, irrevocably",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -194,7 +198,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -214,13 +218,14 @@
    "stage": "confirm-complete",
    "title": "Biller receives funds and remittance data immediately; customer sees…",
    "customer_action": null,
+   "action": "Biller receives funds and remittance data immediately; customer sees payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Biller receives funds and remittance data immediately; customer sees payment",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -237,7 +242,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -256,6 +261,7 @@
    "stage": "manage",
    "title": "Scheduled RfP payments can presumably be cancelled before execution…",
    "customer_action": "Scheduled RfP payments can presumably be cancelled before execution (not documented)",
+   "action": "Scheduled RfP payments can presumably be cancelled before execution (not documented)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -296,6 +302,7 @@
    "stage": "exception",
    "title": "Irrevocable once sent; disputes go to the biller or Reg E for…",
    "customer_action": "Irrevocable once sent; disputes go to the biller or Reg E for unauthorized",
+   "action": "Irrevocable once sent; disputes go to the biller or Reg E for unauthorized",
    "touchpoints": [
     {
      "channel": "phone",
@@ -340,6 +347,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

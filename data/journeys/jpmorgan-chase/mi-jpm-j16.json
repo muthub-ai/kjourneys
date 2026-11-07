@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay & transfer' > 'Payment Center' > 'More…' > 'Pay with ACH file…",
    "customer_action": "'Pay & transfer' > 'Payment Center' > 'More…' > 'Pay with ACH file upload'",
+   "action": "'Pay & transfer' > 'Payment Center' > 'More…' > 'Pay with ACH file upload'",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Select 'ACH File Upload', confirm identity, enter activation code;…",
    "customer_action": "Select 'ACH File Upload', confirm identity, enter activation code; format file per Chase Nacha/CSV spec",
+   "action": "Select 'ACH File Upload', confirm identity, enter activation code; format file per Chase Nacha/CSV spec",
    "touchpoints": [
     {
      "channel": "web",
@@ -140,6 +142,7 @@
    "stage": "initiate",
    "title": "'Choose a file' > 'Next'; file validated; errors shown for correction…",
    "customer_action": "'Choose a file' > 'Next'; file validated; errors shown for correction and re-upload (up to 2,000 instructions per batch in Chase Connect)",
+   "action": "'Choose a file' > 'Next'; file validated; errors shown for correction and re-upload (up to 2,000 instructions per batch in Chase Connect)",
    "touchpoints": [
     {
      "channel": "web",
@@ -184,6 +187,7 @@
    "stage": "review-authorize",
    "title": "'Submit' to schedule; with Dual Control the file is approved as a whole",
    "customer_action": "'Submit' to schedule; with Dual Control the file is approved as a whole",
+   "action": "'Submit' to schedule; with Dual Control the file is approved as a whole",
    "touchpoints": [
     {
      "channel": "web",
@@ -228,13 +232,14 @@
    "stage": "execute-track",
    "title": "Confirmation that file uploaded and scheduled; 'See upload activity'",
    "customer_action": null,
+   "action": "Confirmation that file uploaded and scheduled; 'See upload activity'",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Upload activity"
     }
    ],
-   "frontstage": "Confirmation that file uploaded and scheduled; 'See upload activity'",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -252,7 +257,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -272,13 +277,14 @@
    "stage": "confirm-complete",
    "title": "Alerts",
    "customer_action": null,
+   "action": "Alerts",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -295,7 +301,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -314,6 +320,7 @@
    "stage": "manage",
    "title": "File-uploaded payments can be cancelled but not edited before 8 PM ET",
    "customer_action": "File-uploaded payments can be cancelled but not edited before 8 PM ET",
+   "action": "File-uploaded payments can be cancelled but not edited before 8 PM ET",
    "touchpoints": [
     {
      "channel": "web",
@@ -358,13 +365,14 @@
    "stage": "exception",
    "title": "Nacha file error -> troubleshoot article; validation failure requires…",
    "customer_action": null,
+   "action": "Nacha file error -> troubleshoot article; validation failure requires re-upload",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Validation"
     }
    ],
-   "frontstage": "Nacha file error -> troubleshoot article; validation failure requires re-upload",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -382,7 +390,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -402,6 +410,7 @@
    "stage": "support",
    "title": "Business support",
    "customer_action": "Business support",
+   "action": "Business support",
    "touchpoints": [
     {
      "channel": "phone",

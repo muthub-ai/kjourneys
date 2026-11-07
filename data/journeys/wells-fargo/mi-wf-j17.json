@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business Online 'Transfer and Pay' > 'Pay bills' (Business Bill Pay)",
    "customer_action": "Business Online 'Transfer and Pay' > 'Pay bills' (Business Bill Pay)",
+   "action": "Business Online 'Transfer and Pay' > 'Pay bills' (Business Bill Pay)",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Add payee (same as consumer)",
    "customer_action": "Add payee (same as consumer)",
+   "action": "Add payee (same as consumer)",
    "touchpoints": [
     {
      "channel": "web",
@@ -130,6 +132,7 @@
    "stage": "initiate",
    "title": "Choose funding: business/personal checking, business credit card, or…",
    "customer_action": "Choose funding: business/personal checking, business credit card, or line of credit; amount; Send On",
+   "action": "Choose funding: business/personal checking, business credit card, or line of credit; amount; Send On",
    "touchpoints": [
     {
      "channel": "web",
@@ -186,6 +189,7 @@
    "stage": "review-authorize",
    "title": "Review and submit (Delegate with 'View and Transact' can pay; no dual…",
    "customer_action": "Review and submit (Delegate with 'View and Transact' can pay; no dual approval)",
+   "action": "Review and submit (Delegate with 'View and Transact' can pay; no dual approval)",
    "touchpoints": [
     {
      "channel": "web",
@@ -245,13 +249,14 @@
    "stage": "execute-track",
    "title": "1–5 business days; Payment History",
    "customer_action": null,
+   "action": "1–5 business days; Payment History",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment History"
     }
    ],
-   "frontstage": "1–5 business days; Payment History",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -268,7 +273,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -287,13 +292,14 @@
    "stage": "confirm-complete",
    "title": "Optional email confirmation",
    "customer_action": null,
+   "action": "Optional email confirmation",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email"
     }
    ],
-   "frontstage": "Optional email confirmation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -310,7 +316,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -329,6 +335,7 @@
    "stage": "manage",
    "title": "Edit/stop; eBills; auto pay",
    "customer_action": "Edit/stop; eBills; auto pay",
+   "action": "Edit/stop; eBills; auto pay",
    "touchpoints": [
     {
      "channel": "web",
@@ -371,13 +378,14 @@
    "stage": "exception",
    "title": "Insufficient available credit on business card → payment canceled",
    "customer_action": null,
+   "action": "Insufficient available credit on business card → payment canceled",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "Insufficient available credit on business card → payment canceled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -394,7 +402,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -413,6 +421,7 @@
    "stage": "support",
    "title": "Direct Pay FAQs; Quick Help panel",
    "customer_action": "Direct Pay FAQs; Quick Help panel",
+   "action": "Direct Pay FAQs; Quick Help panel",
    "touchpoints": [
     {
      "channel": "web",
@@ -457,6 +466,7 @@
    "stage": "support",
    "title": "Business Online Customer Service 1-800-956-4442; business fraud…",
    "customer_action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
+   "action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -547,6 +557,6 @@
   "fees": "None",
   "cutoffs": "7 pm PT"
  },
- "composite": "CJ-BILLPAY-SEND",
- "composite_match": "rail"
+ "composite": "CJ-ACH-ORIG-SMB-SEND",
+ "composite_match": "mi-reference"
 }

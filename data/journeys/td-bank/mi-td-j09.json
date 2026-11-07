@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Deposit in the TD Bank app (enrollment FAQ 'How do I…",
    "customer_action": "Customer opens Deposit in the TD Bank app (enrollment FAQ 'How do I sign up for TD Bank Mobile Deposit?' exists)",
+   "action": "Customer opens Deposit in the TD Bank app (enrollment FAQ 'How do I sign up for TD Bank Mobile Deposit?' exists)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Customer endorses the check 'For mobile deposit only, TD account…",
    "customer_action": "Customer endorses the check 'For mobile deposit only, TD account #______'",
+   "action": "Customer endorses the check 'For mobile deposit only, TD account #______'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -140,6 +142,7 @@
    "stage": "initiate",
    "title": "Select deposit account, enter amount, capture front and back images…",
    "customer_action": "Select deposit account, enter amount, capture front and back images with camera",
+   "action": "Select deposit account, enter amount, capture front and back images with camera",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -196,6 +199,7 @@
    "stage": "review-authorize",
    "title": "Review and submit; app shows fund-availability estimate (added Jan 2026)",
    "customer_action": "Review and submit; app shows fund-availability estimate (added Jan 2026)",
+   "action": "Review and submit; app shows fund-availability estimate (added Jan 2026)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -238,6 +242,7 @@
    "stage": "execute-track",
    "title": "Acknowledgment of receipt = provisional credit only; 8 p.m. ET…",
    "customer_action": null,
+   "action": "Acknowledgment of receipt = provisional credit only; 8 p.m. ET business-day cutoff",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -271,6 +276,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s035"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -280,13 +296,14 @@
    "stage": "confirm-complete",
    "title": "Funds generally available next business day; check images and deposit…",
    "customer_action": null,
+   "action": "Funds generally available next business day; check images and deposit slips viewable in transaction details (Jun 2025)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity > transaction details"
     }
    ],
-   "frontstage": "Funds generally available next business day; check images and deposit slips viewable in transaction details (Jun 2025)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Deposit confirmation method not documented",
@@ -305,7 +322,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -326,6 +343,7 @@
    "stage": "manage",
    "title": "Mark check 'Deposited' with date; retain safely and destroy after 14…",
    "customer_action": "Mark check 'Deposited' with date; retain safely and destroy after 14 days",
+   "action": "Mark check 'Deposited' with date; retain safely and destroy after 14 days",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -368,13 +386,14 @@
    "stage": "exception",
    "title": "Rejected image, ineligible item, duplicate, or hold (new account <30…",
    "customer_action": null,
+   "action": "Rejected image, ineligible item, duplicate, or hold (new account <30 days, >$6,725/day, suspected uncollectible up to 7 business days); dishonored item returned as image/substitute check",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Notification per Deposit Account Agreement"
     }
    ],
-   "frontstage": "Rejected image, ineligible item, duplicate, or hold (new account <30 days, >$6,725/day, suspected uncollectible up to 7 business days); dishonored item returned as image/substitute check",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Letter for holds",
@@ -392,7 +411,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -412,6 +431,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -482,6 +502,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

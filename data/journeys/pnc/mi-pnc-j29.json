@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Submit a consolidated payment file (Integrated Payables) or an…",
    "customer_action": "Submit a consolidated payment file (Integrated Payables) or an ePayments Instruction with the payee's email/mobile (Alias Information), amount, memo, Days to Expiration and optional Payee Approver, through PINACLE, API ('ePayments: initiate, check status, or cancel') or Direct File Transmission; optionally set Intelligent Routing Payment Preferences (Instant Payments > Same Day ACH > ACH > Wire).",
+   "action": "Submit a consolidated payment file (Integrated Payables) or an ePayments Instruction with the payee's email/mobile (Alias Information), amount, memo, Days to Expiration and optional Payee Approver, through PINACLE, API ('ePayments: initiate, check status, or cancel') or Direct File Transmission; optionally set Intelligent Routing Payment Preferences (Instant Payments > Same Day ACH > ACH > Wire).",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -94,6 +95,7 @@
    "stage": "review-authorize",
    "title": "Client controls release timing; Intelligent Routing selects…",
    "customer_action": null,
+   "action": "Client controls release timing; Intelligent Routing selects fastest/cheapest rail (RTP, wire, Same Day ACH, next-day ACH; FedNow since Oct 2025)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -135,6 +137,21 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s031",
+      "src-pnc-s055",
+      "src-pnc-s057",
+      "src-pnc-s908",
+      "src-pnc-s910"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -144,6 +161,7 @@
    "stage": "execute-track",
    "title": "Recipient gets an email/text (ePayments short code 26489;…",
    "customer_action": "Recipient gets an email/text (ePayments short code 26489; client-enabled Text Platform may also send OTPs) that a Pending Payment is available, registers if the network requires it, and on the white-labeled portal selects a Permissible Payment Method - ACH, Instant Payment, check, debit card, Zelle, Direct to Debit (Visa), PayPal/Venmo - supplying routing/account or debit card details as needed; Registered Recipients may auto-accept recurring payments; settlement account charged on acceptance.",
+   "action": "Recipient gets an email/text (ePayments short code 26489; client-enabled Text Platform may also send OTPs) that a Pending Payment is available, registers if the network requires it, and on the white-labeled portal selects a Permissible Payment Method - ACH, Instant Payment, check, debit card, Zelle, Direct to Debit (Visa), PayPal/Venmo - supplying routing/account or debit card details as needed; Registered Recipients may auto-accept recurring payments; settlement account charged on acceptance.",
    "touchpoints": [
     {
      "channel": "web",
@@ -209,13 +227,14 @@
    "stage": "confirm-complete",
    "title": "Remittance/EDI reporting; reconciliation feeds via PINACLE Connect",
    "customer_action": null,
+   "action": "Remittance/EDI reporting; reconciliation feeds via PINACLE Connect",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Remittance/EDI reporting; reconciliation feeds via PINACLE Connect",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -233,7 +252,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -253,13 +272,14 @@
    "stage": "exception",
    "title": "Unaccepted payment becomes an 'Expired Payment' handled per client…",
    "customer_action": null,
+   "action": "Unaccepted payment becomes an 'Expired Payment' handled per client preference (check number assigned and sent to the check print vendor); ACH returns on Direct Deposit-ACH and Zelle payments present as 'Failed' and PNC will NOT print a check - client must contact the payee; returned Instant Payments are rerouted only if reroute-eligible and subscribed, otherwise rejected for resubmission; cancel only while Pending/Future-Dated.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Unaccepted payment becomes an 'Expired Payment' handled per client preference (check number assigned and sent to the check print vendor); ACH returns on Direct Deposit-ACH and Zelle payments present as 'Failed' and PNC will NOT print a check - client must contact the payee; returned Instant Payments are rerouted only if reroute-eligible and subscribed, otherwise rejected for resubmission; cancel only while Pending/Future-Dated.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -278,7 +298,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -299,6 +319,7 @@
    "stage": "support",
    "title": "Treasury Management Officer / TMCC",
    "customer_action": "Treasury Management Officer / TMCC",
+   "action": "Treasury Management Officer / TMCC",
    "touchpoints": [
     {
      "channel": "phone",

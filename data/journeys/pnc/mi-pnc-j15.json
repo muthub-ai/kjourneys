@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "In app: 'More' > 'Card Free ATM Access' > 'Generate Access Code'…",
    "customer_action": "In app: 'More' > 'Card Free ATM Access' > 'Generate Access Code' (choose card if several)",
+   "action": "In app: 'More' > 'Card Free ATM Access' > 'Generate Access Code' (choose card if several)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -95,6 +96,7 @@
    "stage": "initiate",
    "title": "At PNC ATM enter 8-digit code + 4-digit PIN, or tap wallet (Mobile Tap)…",
    "customer_action": "At PNC ATM enter 8-digit code + 4-digit PIN, or tap wallet (Mobile Tap) / contactless card (Tap-n-Go)",
+   "action": "At PNC ATM enter 8-digit code + 4-digit PIN, or tap wallet (Mobile Tap) / contactless card (Tap-n-Go)",
    "touchpoints": [
     {
      "channel": "atm",
@@ -148,6 +150,7 @@
    "stage": "review-authorize",
    "title": "Insert check; choose Express Funds or standard (opt-out via 'ATM…",
    "customer_action": "Insert check; choose Express Funds or standard (opt-out via 'ATM Preferences')",
+   "action": "Insert check; choose Express Funds or standard (opt-out via 'ATM Preferences')",
    "touchpoints": [
     {
      "channel": "atm",
@@ -190,13 +193,14 @@
    "stage": "execute-track",
    "title": "Deposits by 10 p.m. ET processed nightly",
    "customer_action": null,
+   "action": "Deposits by 10 p.m. ET processed nightly",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": null
     }
    ],
-   "frontstage": "Deposits by 10 p.m. ET processed nightly",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -213,7 +217,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -232,13 +236,14 @@
    "stage": "confirm-complete",
    "title": "Receipt; Express Funds available immediately for ATM…",
    "customer_action": null,
+   "action": "Receipt; Express Funds available immediately for ATM withdrawals/purchases",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": null
     }
    ],
-   "frontstage": "Receipt; Express Funds available immediately for ATM withdrawals/purchases",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -255,7 +260,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -274,6 +279,7 @@
    "stage": "manage",
    "title": "Transfers and balance inquiries also at ATM",
    "customer_action": "Transfers and balance inquiries also at ATM",
+   "action": "Transfers and balance inquiries also at ATM",
    "touchpoints": [
     {
      "channel": "atm",
@@ -316,6 +322,7 @@
    "stage": "exception",
    "title": "Partner ATMs may be withdrawal-only; cash deposit availability at PNC…",
    "customer_action": "Partner ATMs may be withdrawal-only; cash deposit availability at PNC ATMs UNKNOWN",
+   "action": "Partner ATMs may be withdrawal-only; cash deposit availability at PNC ATMs UNKNOWN",
    "touchpoints": [
     {
      "channel": "atm",
@@ -358,6 +365,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -414,6 +422,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -473,6 +482,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

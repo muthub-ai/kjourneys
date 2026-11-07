@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business Online 'Transfer & Pay' > 'Wire Money'",
    "customer_action": "Business Online 'Transfer & Pay' > 'Wire Money'",
+   "action": "Business Online 'Transfer & Pay' > 'Wire Money'",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Add recipient with SWIFT/BIC/IBAN/country code; saved for reuse",
    "customer_action": "Add recipient with SWIFT/BIC/IBAN/country code; saved for reuse",
+   "action": "Add recipient with SWIFT/BIC/IBAN/country code; saved for reuse",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "initiate",
    "title": "Choose foreign currency (rate locked, exact beneficiary amount shown)…",
    "customer_action": "Choose foreign currency (rate locked, exact beneficiary amount shown) or USD; amount; funding account",
+   "action": "Choose foreign currency (rate locked, exact beneficiary amount shown) or USD; amount; funding account",
    "touchpoints": [
     {
      "channel": "web",
@@ -182,6 +185,7 @@
    "stage": "review-authorize",
    "title": "Review; U.S. mobile access code or RSA SecurID",
    "customer_action": "Review; U.S. mobile access code or RSA SecurID",
+   "action": "Review; U.S. mobile access code or RSA SecurID",
    "touchpoints": [
     {
      "channel": "web",
@@ -256,13 +260,14 @@
    "stage": "execute-track",
    "title": "Scheduled/Pending/Completed/Under review",
    "customer_action": null,
+   "action": "Scheduled/Pending/Completed/Under review",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Scheduled/Pending/Completed/Under review",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -279,7 +284,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -298,13 +303,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation",
    "customer_action": null,
+   "action": "Confirmation",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "confirmation; secure inbox on return",
@@ -321,7 +327,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -340,6 +346,7 @@
    "stage": "manage",
    "title": "Cancel while Scheduled",
    "customer_action": "Cancel while Scheduled",
+   "action": "Cancel while Scheduled",
    "touchpoints": [
     {
      "channel": "web",
@@ -382,13 +389,14 @@
    "stage": "exception",
    "title": "Return converts back to USD; 14-day error notice (business, UCC 4A)",
    "customer_action": null,
+   "action": "Return converts back to USD; 14-day error notice (business, UCC 4A)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "Return converts back to USD; 14-day error notice (business, UCC 4A)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -406,7 +414,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -426,6 +434,7 @@
    "stage": "support",
    "title": "877-499-6920 (review); 1-800-956-4442; 1-800-225-5935 incoming FX rate…",
    "customer_action": "877-499-6920 (review); 1-800-956-4442; 1-800-225-5935 incoming FX rate estimate",
+   "action": "877-499-6920 (review); 1-800-956-4442; 1-800-225-5935 incoming FX rate estimate",
    "touchpoints": [
     {
      "channel": "phone",
@@ -522,6 +531,6 @@
   "fees": "$30 USD; $0 FX (non-analyzed); $25 analyzed",
   "cutoffs": "2:20 pm PT"
  },
- "composite": "CJ-WIRE-INTL-CONSUMER-SEND",
- "composite_match": "rail"
+ "composite": "CJ-ACH-ORIG-SMB-SEND",
+ "composite_match": "mi-reference"
 }

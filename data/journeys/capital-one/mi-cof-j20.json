@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Discover.com banner: 'Discover is part of Capital One'; customers told…",
    "customer_action": null,
+   "action": "Discover.com banner: 'Discover is part of Capital One'; customers told to keep using Discover.com/app until an email/letter announces their account's conversion date; Discover feature pages (Zelle, features, mobile app, Early Pay) now 302-redirect to Capital One pages",
    "touchpoints": [
     {
      "channel": "web",
@@ -71,6 +72,22 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s055",
+      "src-capital-one-s053",
+      "src-capital-one-s058",
+      "src-capital-one-s059",
+      "src-capital-one-s060",
+      "src-capital-one-s061"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -116,6 +133,7 @@
    "stage": "initiate",
    "title": "Pre-conversion Discover journeys (still governed by live Discover…",
    "customer_action": "Pre-conversion Discover journeys (still governed by live Discover agreements): Zelle on Cashback Debit/Personal Checking — $600/day send, cancel until recipient enrolls, personal use only, Zelle tags; Bill Pay ('Deliver by Date', eBills, Repeating Payments; cancel electronic until 'In-Process'); ACH transfers to external accounts; outgoing wires requested in Account Center ('Transfer' > Wire Transfer), the Discover App ('Transfer' icon > Wire Transfers) or by paper Wire Transfer Form, with multi-level verification (authentication code / ID + selfie / notarized form / card security code), 3 p.m. ET cutoff and a $30 Outgoing Wire Transfer charge (DAA effective 2026-10-08); incoming wires via 1-800-347-7000 instructions, 4 p.m. ET posting cutoff; Add Cash at retailers ($20 min, $1,000 per transaction and per 24 h; $999.99 in AZ/NM).",
+   "action": "Pre-conversion Discover journeys (still governed by live Discover agreements): Zelle on Cashback Debit/Personal Checking — $600/day send, cancel until recipient enrolls, personal use only, Zelle tags; Bill Pay ('Deliver by Date', eBills, Repeating Payments; cancel electronic until 'In-Process'); ACH transfers to external accounts; outgoing wires requested in Account Center ('Transfer' > Wire Transfer), the Discover App ('Transfer' icon > Wire Transfers) or by paper Wire Transfer Form, with multi-level verification (authentication code / ID + selfie / notarized form / card security code), 3 p.m. ET cutoff and a $30 Outgoing Wire Transfer charge (DAA effective 2026-10-08); incoming wires via 1-800-347-7000 instructions, 4 p.m. ET posting cutoff; Add Cash at retailers ($20 min, $1,000 per transaction and per 24 h; $999.99 in AZ/NM).",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -181,6 +199,7 @@
    "stage": "execute-track",
    "title": "On conversion: account number unchanged, routing number changes;…",
    "customer_action": null,
+   "action": "On conversion: account number unchanged, routing number changes; scheduled transfers/checks/direct deposits set up at Discover keep working on the old routing number; wires to old routing number are returned; eligible external accounts stay linked; third-party apps must be reconnected",
    "touchpoints": [
     {
      "channel": "web",
@@ -207,6 +226,19 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s051",
+      "src-capital-one-s053",
+      "src-capital-one-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -246,13 +278,14 @@
    "stage": "confirm-complete",
    "title": "Zelle available on converted 360 Checking after accepting terms…",
    "customer_action": null,
+   "action": "Zelle available on converted 360 Checking after accepting terms ($3,000/day, $12,500/month); Bill Pay available on checking (not savings); early paycheck replaces Early Pay on checking; Cashback Debit rewards end with a 12-month rewards true-up deposit",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "360 Checking"
     }
    ],
-   "frontstage": "Zelle available on converted 360 Checking after accepting terms ($3,000/day, $12,500/month); Bill Pay available on checking (not savings); early paycheck replaces Early Pay on checking; Cashback Debit rewards end with a 12-month rewards true-up deposit",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -270,7 +303,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -308,6 +341,7 @@
    "stage": "manage",
    "title": "Money can still move between Capital One and Discover bank accounts…",
    "customer_action": "Money can still move between Capital One and Discover bank accounts during the transition (internal/ACH); AutoSave notes Discover-to-Capital One transfers may take longer",
+   "action": "Money can still move between Capital One and Discover bank accounts during the transition (internal/ACH); AutoSave notes Discover-to-Capital One transfers may take longer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -352,13 +386,14 @@
    "stage": "exception",
    "title": "Discover platform maintenance (e.g., Nov 8 2026 1-8 am ET) suspends…",
    "customer_action": null,
+   "action": "Discover platform maintenance (e.g., Nov 8 2026 1-8 am ET) suspends online/app/phone and may decline debit; Discover fraud line 1-877-737-1931; Capital One general 1-877-383-4802",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Discover contact"
     }
    ],
-   "frontstage": "Discover platform maintenance (e.g., Nov 8 2026 1-8 am ET) suspends online/app/phone and may decline debit; Discover fraud line 1-877-737-1931; Capital One general 1-877-383-4802",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Site banner",
@@ -377,7 +412,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -398,6 +433,7 @@
    "stage": "support",
    "title": "Discover accounts: Discover.com/app/1-800-347-7000; converted accounts:…",
    "customer_action": null,
+   "action": "Discover accounts: Discover.com/app/1-800-347-7000; converted accounts: Capital One channels",
    "touchpoints": [
     {
      "channel": "phone",

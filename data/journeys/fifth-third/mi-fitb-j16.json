@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "New Payment > Freeform Entry / From Template / Express Templates > Wire…",
    "customer_action": "New Payment > Freeform Entry / From Template / Express Templates > Wire Type; Originating Party Details (Debit Account, Currency USD, Business Unit, Security Level, Sender's Reference); amount and Payment Date; Select Receiver or Create New Receiver (beneficiary address line 1, town/city, country required); Originator Information, Bank-to-Bank and Originator-to-Beneficiary info; optional 'Payment By Order Of'",
+   "action": "New Payment > Freeform Entry / From Template / Express Templates > Wire Type; Originating Party Details (Debit Account, Currency USD, Business Unit, Security Level, Sender's Reference); amount and Payment Date; Select Receiver or Create New Receiver (beneficiary address line 1, town/city, country required); Originator Information, Bank-to-Bank and Originator-to-Beneficiary info; optional 'Payment By Order Of'",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "review-authorize",
    "title": "Submit -> Pending Approval; OTP/token step-up; approvals per profile",
    "customer_action": "Submit -> Pending Approval; OTP/token step-up; approvals per profile",
+   "action": "Submit -> Pending Approval; OTP/token step-up; approvals per profile",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -145,13 +147,14 @@
    "stage": "execute-track",
    "title": "Processed; released via Fedwire/CHIPS; alternative channels: PIN-based…",
    "customer_action": null,
+   "action": "Processed; released via Fedwire/CHIPS; alternative channels: PIN-based phone wires (8 a.m.–6 p.m.), batch wire CPU-to-CPU, Automatic Standing Orders (from 8 a.m., slots to 5 p.m.)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payments"
     }
    ],
-   "frontstage": "Processed; released via Fedwire/CHIPS; alternative channels: PIN-based phone wires (8 a.m.–6 p.m.), batch wire CPU-to-CPU, Automatic Standing Orders (from 8 a.m., slots to 5 p.m.)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -168,7 +171,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -187,13 +190,14 @@
    "stage": "confirm-complete",
    "title": "Email wire advices (and mailed advices unless discontinued)",
    "customer_action": null,
+   "action": "Email wire advices (and mailed advices unless discontinued)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Advices"
     }
    ],
-   "frontstage": "Email wire advices (and mailed advices unless discontinued)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -210,7 +214,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -229,13 +233,14 @@
    "stage": "exception",
    "title": "Bank may delay/reject payment orders flagged for fraud (MTMA 8.6);…",
    "customer_action": null,
+   "action": "Bank may delay/reject payment orders flagged for fraud (MTMA 8.6); same-business-day error reporting requirement; recall mechanics not public",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Bank may delay/reject payment orders flagged for fraud (MTMA 8.6); same-business-day error reporting requirement; recall mechanics not public",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -252,7 +257,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -271,6 +276,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",
@@ -383,7 +389,5 @@
  "bank_product": "FITB-P08",
  "terms": {
   "cutoffs": "FTD 6:00/7:00 a.m.–6:15 p.m. ET; incoming before 6:45 p.m. posts same day"
- },
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

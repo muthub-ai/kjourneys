@@ -16,7 +16,7 @@ ownership:
   domain_owners:
     journeys: role:journey-owners                     # one per product journey
     competitor_data: role:ci-study-lead               # the market-intelligence study
-  required_approvers:
+  required_approvers:                                  # intended review; not enforced (no CODEOWNERS or branch protection in the prototype)
     data/comparisons/**: [role:ci-legal]
 
 classification:
@@ -77,7 +77,7 @@ quality_gates:                       # every scripts/refresh.sh run, and re-vali
   - provenance: every non-awaiting fact has sources, asserter, timestamp; competitors never sample/internal
   - publish_gate: in-review/published needs real data, steward, retention, GRC + CMDB links, approved legal review
   - mi_integrity: findings, composites, observations, verifications, participation and rankings resolve to banks, journeys, products, stages and their report
-  - negative_tests: tests/fixtures (46 cases) must all fail
+  - negative_tests: tests/fixtures (55 cases) must all fail
   - ingest_flow: tests/test_ingest.py (27 end-to-end checks of ingest, rerun, refusals and multi-product)
   - report_integrity: every mi-report source's file exists and matches its sha256
 

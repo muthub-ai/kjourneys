@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Create wire or FX payment in Vantage (web) with beneficiary template",
    "customer_action": "Create wire or FX payment in Vantage (web) with beneficiary template",
+   "action": "Create wire or FX payment in Vantage (web) with beneficiary template",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Approver reviews/approves or rejects pending wires (domestic Mar 2026;…",
    "customer_action": "Approver reviews/approves or rejects pending wires (domestic Mar 2026; all wires Jul 2026), federal tax payments, book transfers and drawdowns (Oct 2026) in the Vantage mobile app with token",
+   "action": "Approver reviews/approves or rejects pending wires (domestic Mar 2026; all wires Jul 2026), federal tax payments, book transfers and drawdowns (Oct 2026) in the Vantage mobile app with token",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -140,6 +142,7 @@
    "stage": "execute-track",
    "title": "Track lifecycle via 'Wires Status Search' (Vantage app, Sep 2026)",
    "customer_action": "Track lifecycle via 'Wires Status Search' (Vantage app, Sep 2026)",
+   "action": "Track lifecycle via 'Wires Status Search' (Vantage app, Sep 2026)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -184,6 +187,7 @@
    "stage": "manage",
    "title": "Manage templates/limits in Administration",
    "customer_action": "Manage templates/limits in Administration",
+   "action": "Manage templates/limits in Administration",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -226,6 +230,7 @@
    "stage": "exception",
    "title": "Recall/return handled with WF representative; fraud 800-289-3557",
    "customer_action": "Recall/return handled with WF representative; fraud 800-289-3557",
+   "action": "Recall/return handled with WF representative; fraud 800-289-3557",
    "touchpoints": [
     {
      "channel": "phone",
@@ -268,6 +273,7 @@
    "stage": "support",
    "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
    "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
    "touchpoints": [
     {
      "channel": "phone",
@@ -359,7 +365,5 @@
  "bank_product": "WF-P13",
  "terms": {
   "limits": "Wire limits at company/account/user level"
- },
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

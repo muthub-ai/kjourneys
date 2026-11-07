@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Mobile app: 'Pay & Transfer' > 'Transfer Internationally'…",
    "customer_action": "Mobile app: 'Pay & Transfer' > 'Transfer Internationally' (ExpressSend); accept 'ExpressSend® on Mobile Disclosures'",
+   "action": "Mobile app: 'Pay & Transfer' > 'Transfer Internationally' (ExpressSend); accept 'ExpressSend® on Mobile Disclosures'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "discover",
    "title": "Web (observed): 'Send with ExpressSend®' in the logged-in 'Move Money &…",
    "customer_action": "Web (observed): 'Send with ExpressSend®' in the logged-in 'Move Money & Pay Bills' panel opens a public product page ('Send it in the app'); no web-initiated ExpressSend flow",
+   "action": "Web (observed): 'Send with ExpressSend®' in the logged-in 'Move Money & Pay Bills' panel opens a public product page ('Send it in the app'); no web-initiated ExpressSend flow",
    "touchpoints": [
     {
      "channel": "web",
@@ -163,6 +165,7 @@
    "stage": "set-up",
    "title": "'Who are you sending to?' > 'Add recipient': name, phone, destination…",
    "customer_action": "'Who are you sending to?' > 'Add recipient': name, phone, destination address (no PO Box), bank account (CLABE/IFSC) or cash pickup location; up to 10 recipients",
+   "action": "'Who are you sending to?' > 'Add recipient': name, phone, destination address (no PO Box), bank account (CLABE/IFSC) or cash pickup location; up to 10 recipients",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -219,6 +222,7 @@
    "stage": "initiate",
    "title": "Select funding account; 'How much are you sending?' shows limits,…",
    "customer_action": "Select funding account; 'How much are you sending?' shows limits, per-transfer fee (e.g., Mexico $6) and FX rate; min $25",
+   "action": "Select funding account; 'How much are you sending?' shows limits, per-transfer fee (e.g., Mexico $6) and FX rate; min $25",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -278,6 +282,7 @@
    "stage": "review-authorize",
    "title": "Review pre-payment disclosure; send",
    "customer_action": "Review pre-payment disclosure; send",
+   "action": "Review pre-payment disclosure; send",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -334,6 +339,7 @@
    "stage": "execute-track",
    "title": "Track in 'Activity'; many locations same business day; recipient has 15…",
    "customer_action": null,
+   "action": "Track in 'Activity'; many locations same business day; recipient has 15 days to pick up cash (ID must match exactly; fingerprint/photo may be required)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -369,6 +375,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s009",
+      "src-wells-fargo-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -378,13 +396,14 @@
    "stage": "confirm-complete",
    "title": "Receipt/confirmation",
    "customer_action": null,
+   "action": "Receipt/confirmation",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Receipt/confirmation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "receipt",
@@ -401,7 +420,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -420,6 +439,7 @@
    "stage": "manage",
    "title": "Cancel within 30 minutes: Transfer Internationally > 'Activity' >…",
    "customer_action": "Cancel within 30 minutes: Transfer Internationally > 'Activity' > select transfer, or call; refund incl. fees in 3 business days",
+   "action": "Cancel within 30 minutes: Transfer Internationally > 'Activity' > select transfer, or call; refund incl. fees in 3 business days",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -476,6 +496,7 @@
    "stage": "manage",
    "title": "Legacy (branch/online) ExpressSend customers cancel via Wells Fargo…",
    "customer_action": "Legacy (branch/online) ExpressSend customers cancel via Wells Fargo Online or phone",
+   "action": "Legacy (branch/online) ExpressSend customers cancel via Wells Fargo Online or phone",
    "touchpoints": [
     {
      "channel": "web",
@@ -550,13 +571,14 @@
    "stage": "exception",
    "title": "Uncollected after 15 days → auto-cancel and refund (check mailed if…",
    "customer_action": null,
+   "action": "Uncollected after 15 days → auto-cancel and refund (check mailed if account closed); errors within 180 days",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "—"
     }
    ],
-   "frontstage": "Uncollected after 15 days → auto-cancel and refund (check mailed if account closed); errors within 180 days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -575,7 +597,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -596,6 +618,7 @@
    "stage": "support",
    "title": "ExpressSend FAQs; 'Estimate fees and exchange rates' tool",
    "customer_action": "ExpressSend FAQs; 'Estimate fees and exchange rates' tool",
+   "action": "ExpressSend FAQs; 'Estimate fees and exchange rates' tool",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -640,6 +663,7 @@
    "stage": "support",
    "title": "ExpressSend Customer Service 1-800-556-0605 (cancellations, cash pickup…",
    "customer_action": "ExpressSend Customer Service 1-800-556-0605 (cancellations, cash pickup issues); fraud 1-866-867-5568",
+   "action": "ExpressSend Customer Service 1-800-556-0605 (cancellations, cash pickup issues); fraud 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",

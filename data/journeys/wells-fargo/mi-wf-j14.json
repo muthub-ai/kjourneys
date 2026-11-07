@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Locate ATM (locator shows cutoff); access with card, contactless card…",
    "customer_action": "Locate ATM (locator shows cutoff); access with card, contactless card tap, or digital-wallet tap at Contactless Symbol + PIN",
+   "action": "Locate ATM (locator shows cutoff); access with card, contactless card tap, or digital-wallet tap at Contactless Symbol + PIN",
    "touchpoints": [
     {
      "channel": "atm",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "None (own accounts)",
    "customer_action": "None (own accounts)",
+   "action": "None (own accounts)",
    "touchpoints": [
     {
      "channel": "atm",
@@ -140,6 +142,7 @@
    "stage": "initiate",
    "title": "Insert cash/checks — ATM scans checks, counts bills, totals on screen;…",
    "customer_action": "Insert cash/checks — ATM scans checks, counts bills, totals on screen; or choose transfer between personal/business accounts or WF credit card payment",
+   "action": "Insert cash/checks — ATM scans checks, counts bills, totals on screen; or choose transfer between personal/business accounts or WF credit card payment",
    "touchpoints": [
     {
      "channel": "atm",
@@ -182,6 +185,7 @@
    "stage": "review-authorize",
    "title": "Confirm totals on screen",
    "customer_action": "Confirm totals on screen",
+   "action": "Confirm totals on screen",
    "touchpoints": [
     {
      "channel": "atm",
@@ -224,13 +228,14 @@
    "stage": "execute-track",
    "title": "Credited same business day if before 9 pm local; else next business…",
    "customer_action": null,
+   "action": "Credited same business day if before 9 pm local; else next business day; holds possible",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Receipt / Account Activity"
     }
    ],
-   "frontstage": "Credited same business day if before 9 pm local; else next business day; holds possible",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -247,7 +252,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -266,13 +271,14 @@
    "stage": "confirm-complete",
    "title": "Receipt by paper, text, email or secure inbox",
    "customer_action": null,
+   "action": "Receipt by paper, text, email or secure inbox",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "E-receipt"
     }
    ],
-   "frontstage": "Receipt by paper, text, email or secure inbox",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "text/email/secure inbox receipt",
@@ -289,7 +295,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -308,6 +314,7 @@
    "stage": "manage",
    "title": "Deposit details and check images in Account Activity",
    "customer_action": "Deposit details and check images in Account Activity",
+   "action": "Deposit details and check images in Account Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -352,13 +359,14 @@
    "stage": "exception",
    "title": "Holds up to 7 business days; call 1-800-869-3557",
    "customer_action": null,
+   "action": "Holds up to 7 business days; call 1-800-869-3557",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Phone"
     }
    ],
-   "frontstage": "Holds up to 7 business days; call 1-800-869-3557",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -375,7 +383,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -394,6 +402,7 @@
    "stage": "support",
    "title": "Talking ATMs; branch staff; 1-800-869-3557",
    "customer_action": "Talking ATMs; branch staff; 1-800-869-3557",
+   "action": "Talking ATMs; branch staff; 1-800-869-3557",
    "touchpoints": [
     {
      "channel": "branch",

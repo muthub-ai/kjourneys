@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer learns online/phone international wires are not offered; must…",
    "customer_action": "Customer learns online/phone international wires are not offered; must visit a branch (locator filtered to branches); new senders call 1-800-655-BANK to confirm account eligibility",
+   "action": "Customer learns online/phone international wires are not offered; must visit a branch (locator filtered to branches); new senders call 1-800-655-BANK to confirm account eligibility",
    "touchpoints": [
     {
      "channel": "web",
@@ -104,6 +105,7 @@
    "stage": "initiate",
    "title": "At branch, provide beneficiary details; $40 fee; 3 PM ET cutoff",
    "customer_action": "At branch, provide beneficiary details; $40 fee; 3 PM ET cutoff",
+   "action": "At branch, provide beneficiary details; $40 fee; 3 PM ET cutoff",
    "touchpoints": [
     {
      "channel": "branch",
@@ -163,6 +165,7 @@
    "stage": "review-authorize",
    "title": "In-person verification",
    "customer_action": null,
+   "action": "In-person verification",
    "touchpoints": [
     {
      "channel": "branch",
@@ -205,13 +208,14 @@
    "stage": "execute-track",
    "title": "30-minute hold before release; delivery generally 2-5 business days (up…",
    "customer_action": null,
+   "action": "30-minute hold before release; delivery generally 2-5 business days (up to 10)",
    "touchpoints": [
     {
      "channel": "branch",
      "screen": "n/a"
     }
    ],
-   "frontstage": "30-minute hold before release; delivery generally 2-5 business days (up to 10)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "unknown",
@@ -229,7 +233,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -249,6 +253,7 @@
    "stage": "manage",
    "title": "Cancel within 30 minutes by calling the sending branch",
    "customer_action": "Cancel within 30 minutes by calling the sending branch",
+   "action": "Cancel within 30 minutes by calling the sending branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -291,6 +296,7 @@
    "stage": "exception",
    "title": "Unrecognized wire: 877-383-4802",
    "customer_action": "Unrecognized wire: 877-383-4802",
+   "action": "Unrecognized wire: 877-383-4802",
    "touchpoints": [
     {
      "channel": "phone",
@@ -333,6 +339,7 @@
    "stage": "support",
    "title": "Branch staff; 1-800-655-BANK",
    "customer_action": null,
+   "action": "Branch staff; 1-800-655-BANK",
    "touchpoints": [
     {
      "channel": "branch",

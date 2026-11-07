@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Main Menu > Transfers and Payments > Set up a Wire Transfer (Domestic,…",
    "customer_action": "Main Menu > Transfers and Payments > Set up a Wire Transfer (Domestic, Foreign or Models) or Domestic Wire (USA Destination) / Express Domestic Wires",
+   "action": "Main Menu > Transfers and Payments > Set up a Wire Transfer (Domestic, Foreign or Models) or Domestic Wire (USA Destination) / Express Domestic Wires",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Select a saved Wire Model (Wire Model Maintenance) or enter…",
    "customer_action": "Select a saved Wire Model (Wire Model Maintenance) or enter beneficiary, bank routing and account; users with 'Secured Wires' can only use models and cannot change beneficiary/routing",
+   "action": "Select a saved Wire Model (Wire Model Maintenance) or enter beneficiary, bank routing and account; users with 'Secured Wires' can only use models and cannot change beneficiary/routing",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Enter amount (up to $999,999,999.99), immediate/future/recurring date,…",
    "customer_action": "Enter amount (up to $999,999,999.99), immediate/future/recurring date, Additional Reference (15 chars) and Customer Reference Number (10 chars, internal only)",
+   "action": "Enter amount (up to $999,999,999.99), immediate/future/recurring date, Additional Reference (15 chars) and Customer Reference Number (10 chars, internal only)",
    "touchpoints": [
     {
      "channel": "web",
@@ -195,6 +198,7 @@
    "stage": "review-authorize",
    "title": "Authorize with token code; wire routes to the Approvals Queue if above…",
    "customer_action": "Authorize with token code; wire routes to the Approvals Queue if above the user's limit; approver verifies on an independent device (CitiBusiness Mobile with Mobile Token) and releases",
+   "action": "Authorize with token code; wire routes to the Approvals Queue if above the user's limit; approver verifies on an independent device (CitiBusiness Mobile with Mobile Token) and releases",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -254,6 +258,7 @@
    "stage": "execute-track",
    "title": "Wire executes via Fedwire; Federal Reserve reference number and Global…",
    "customer_action": null,
+   "action": "Wire executes via Fedwire; Federal Reserve reference number and Global ID on Outgoing Wire Reports (Today's/Recent Account Activity) and Completed Wires",
    "touchpoints": [
     {
      "channel": "web",
@@ -289,6 +294,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010",
+      "src-citi-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -298,13 +315,14 @@
    "stage": "confirm-complete",
    "title": "Completed Wires report; push notification",
    "customer_action": null,
+   "action": "Completed Wires report; push notification",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Completed Wires"
     }
    ],
-   "frontstage": "Completed Wires report; push notification",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -322,7 +340,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -342,6 +360,7 @@
    "stage": "manage",
    "title": "Cancel scheduled wires until 5:45 AM ET on the scheduled day (Planned…",
    "customer_action": "Cancel scheduled wires until 5:45 AM ET on the scheduled day (Planned and Pending Wires); Repair/Edit Wire Requests queue for rejected items",
+   "action": "Cancel scheduled wires until 5:45 AM ET on the scheduled day (Planned and Pending Wires); Repair/Edit Wire Requests queue for rejected items",
    "touchpoints": [
     {
      "channel": "web",
@@ -386,6 +405,7 @@
    "stage": "exception",
    "title": "Recall of an executed wire: call 800-285-1709; Citi notifies the…",
    "customer_action": "Recall of an executed wire: call 800-285-1709; Citi notifies the beneficiary bank but cannot guarantee return",
+   "action": "Recall of an executed wire: call 800-285-1709; Citi notifies the beneficiary bank but cannot guarantee return",
    "touchpoints": [
     {
      "channel": "phone",
@@ -428,6 +448,7 @@
    "stage": "exception",
    "title": "Claims within 30 days of execution notice; one-year bar",
    "customer_action": "Claims within 30 days of execution notice; one-year bar",
+   "action": "Claims within 30 days of execution notice; one-year bar",
    "touchpoints": [
     {
      "channel": "phone",
@@ -470,6 +491,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",
@@ -581,7 +603,5 @@
  "terms": {
   "limits": "$999,999,999.99",
   "cutoffs": "Cancel until 5:45 AM ET"
- },
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

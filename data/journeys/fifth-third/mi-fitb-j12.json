@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Locator > Advanced Filters > 'ATM Accepts Deposits'; app 'Cardless ATM…",
    "customer_action": "Locator > Advanced Filters > 'ATM Accepts Deposits'; app 'Cardless ATM feature'",
+   "action": "Locator > Advanced Filters > 'ATM Accepts Deposits'; app 'Cardless ATM feature'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Insert checks/cash at Easy Deposit ATM; receipt can include check images",
    "customer_action": "Insert checks/cash at Easy Deposit ATM; receipt can include check images",
+   "action": "Insert checks/cash at Easy Deposit ATM; receipt can include check images",
    "touchpoints": [
     {
      "channel": "atm",
@@ -134,6 +136,7 @@
    "stage": "review-authorize",
    "title": "Card + PIN (ATM) or app authentication (Cardless)",
    "customer_action": "Card + PIN (ATM) or app authentication (Cardless)",
+   "action": "Card + PIN (ATM) or app authentication (Cardless)",
    "touchpoints": [
     {
      "channel": "atm",
@@ -176,13 +179,14 @@
    "stage": "execute-track",
    "title": "Deposit posts per Deposit Account Rules; ATM transaction instant alerts",
    "customer_action": null,
+   "action": "Deposit posts per Deposit Account Rules; ATM transaction instant alerts",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Deposit posts per Deposit Account Rules; ATM transaction instant alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/SMS 'Instant Alerts'",
@@ -200,7 +204,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -220,13 +224,14 @@
    "stage": "confirm-complete",
    "title": "Receipt with images",
    "customer_action": null,
+   "action": "Receipt with images",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Receipt"
     }
    ],
-   "frontstage": "Receipt with images",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -243,7 +248,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -262,6 +267,7 @@
    "stage": "manage",
    "title": "n/a",
    "customer_action": "n/a",
+   "action": "n/a",
    "touchpoints": [
     {
      "channel": "atm",
@@ -302,6 +308,7 @@
    "stage": "exception",
    "title": "ATM dispute -> 877-833-6197",
    "customer_action": "ATM dispute -> 877-833-6197",
+   "action": "ATM dispute -> 877-833-6197",
    "touchpoints": [
     {
      "channel": "phone",
@@ -344,6 +351,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -422,6 +430,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -481,6 +490,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

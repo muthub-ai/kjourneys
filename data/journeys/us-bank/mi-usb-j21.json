@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Build ACH batch (payroll, vendor, collections) or wire in SinglePoint,…",
    "customer_action": "Build ACH batch (payroll, vendor, collections) or wire in SinglePoint, ERP connector or file (NACHA/custom); international ACH to Canada/Mexico/Europe",
+   "action": "Build ACH batch (payroll, vendor, collections) or wire in SinglePoint, ERP connector or file (NACHA/custom); international ACH to Canada/Mexico/Europe",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Rules-based entitlements/approvals",
    "customer_action": "Rules-based entitlements/approvals",
+   "action": "Rules-based entitlements/approvals",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -148,13 +150,14 @@
    "stage": "initiate",
    "title": "Same-day or future-dated release; wires same-day/future-dated incl.…",
    "customer_action": null,
+   "action": "Same-day or future-dated release; wires same-day/future-dated incl. international in USD or 60+ currencies with real-time FX in SinglePoint; international ACH in 19 currencies to 40+ countries (Canada credit USD/CAD, debit origination)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Same-day or future-dated release; wires same-day/future-dated incl. international in USD or 60+ currencies with real-time FX in SinglePoint; international ACH in 19 currencies to 40+ countries (Canada credit USD/CAD, debit origination)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -173,7 +176,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -194,6 +197,7 @@
    "stage": "initiate",
    "title": "Reporting/Positive Pay/stop payments in SinglePoint; Mobile SinglePoint…",
    "customer_action": "Reporting/Positive Pay/stop payments in SinglePoint; Mobile SinglePoint approvals on the go",
+   "action": "Reporting/Positive Pay/stop payments in SinglePoint; Mobile SinglePoint approvals on the go",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -238,13 +242,14 @@
    "stage": "exception",
    "title": "Returns/NOCs via reporting – not documented",
    "customer_action": null,
+   "action": "Returns/NOCs via reporting – not documented",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Returns/NOCs via reporting – not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -260,7 +265,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -278,6 +283,7 @@
    "stage": "support",
    "title": "Treasury management support",
    "customer_action": null,
+   "action": "Treasury management support",
    "touchpoints": [
     {
      "channel": "phone",
@@ -333,7 +339,5 @@
  "notifications": [],
  "assessment": "SinglePoint portal page itself was not retrievable, so module-level detail is thin.",
  "x-mi_evidence": "CONFIRMED_BANK",
- "bank_product": "USB-P13",
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ "bank_product": "USB-P13"
 }

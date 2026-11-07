@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Pay & Transfer > Wire > (select account if banking+investing) > Start a…",
    "customer_action": "Pay & Transfer > Wire > (select account if banking+investing) > Start a wire; 'More' next to lightbulb lists what you need",
+   "action": "Pay & Transfer > Wire > (select account if banking+investing) > Start a wire; 'More' next to lightbulb lists what you need",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Add new recipient > United States > account type > recipient…",
    "customer_action": "Add new recipient > United States > account type > recipient name/address/state > account number + wire routing number > review > Add",
+   "action": "Add new recipient > United States > account type > recipient name/address/state > account number + wire routing number > review > Add",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -146,13 +148,14 @@
    "stage": "set-up",
    "title": "'Important scam reminder' interstitial > OK",
    "customer_action": null,
+   "action": "'Important scam reminder' interstitial > OK",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Scam reminder"
     }
    ],
-   "frontstage": "'Important scam reminder' interstitial > OK",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -169,7 +172,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -188,6 +191,7 @@
    "stage": "initiate",
    "title": "Choose account > enter amount > review total cost incl. wire fee >…",
    "customer_action": "Choose account > enter amount > review total cost incl. wire fee > optional notes for recipient's bank",
+   "action": "Choose account > enter amount > review total cost incl. wire fee > optional notes for recipient's bank",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -230,13 +234,14 @@
    "stage": "review-authorize",
    "title": "Secured Transfer enrollment if needed: add U.S. mobile, enter texted…",
    "customer_action": null,
+   "action": "Secured Transfer enrollment if needed: add U.S. mobile, enter texted Authorization Code, add ATM/debit card details, Add Number, Continue; existing enrollees get an Authorization Code above thresholds",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Secured Transfer"
     }
    ],
-   "frontstage": "Secured Transfer enrollment if needed: add U.S. mobile, enter texted Authorization Code, add ATM/debit card details, Add Number, Continue; existing enrollees get an Authorization Code above thresholds",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": "Enrolled vs not; amount above threshold",
    "notification": null,
@@ -254,7 +259,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -292,6 +297,7 @@
    "stage": "review-authorize",
    "title": "Review wire details (expand fields), Edit if needed, tap circle to…",
    "customer_action": "Review wire details (expand fields), Edit if needed, tap circle to authorize, Send",
+   "action": "Review wire details (expand fields), Edit if needed, tap circle to authorize, Send",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -334,13 +340,14 @@
    "stage": "execute-track",
    "title": "Submitted; appears on Activity with status; 5 p.m. ET cutoff for…",
    "customer_action": null,
+   "action": "Submitted; appears on Activity with status; 5 p.m. ET cutoff for same-day receipt; executed via Fedwire or CHIPS",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Submitted; appears on Activity with status; 5 p.m. ET cutoff for same-day receipt; executed via Fedwire or CHIPS",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -358,7 +365,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -378,13 +385,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen with Share (receipt) and Done; email confirmation",
    "customer_action": null,
+   "action": "Confirmation screen with Share (receipt) and Done; email confirmation",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation screen with Share (receipt) and Done; email confirmation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -401,7 +409,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -420,6 +428,7 @@
    "stage": "manage",
    "title": "Manage recipients; 'Check the status of your wire by viewing Activity…",
    "customer_action": "Manage recipients; 'Check the status of your wire by viewing Activity in Pay & Transfer' – 'select Pay & Transfer, then select the transaction' for detailed status; or ask Erica 'Check wire status'. No self-service cancel of a submitted domestic wire is documented (Help Center 'cancel wire transfer' returns only the 30-minute Remittance Transfer rule).",
+   "action": "Manage recipients; 'Check the status of your wire by viewing Activity in Pay & Transfer' – 'select Pay & Transfer, then select the transaction' for detailed status; or ask Erica 'Check wire status'. No self-service cancel of a submitted domestic wire is documented (Help Center 'cancel wire transfer' returns only the 30-minute Remittance Transfer rule).",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -464,13 +473,14 @@
    "stage": "exception",
    "title": "Once In Process/Processed, no right to cancel; bank may attempt…",
    "customer_action": null,
+   "action": "Once In Process/Processed, no right to cancel; bank may attempt amendment/cancel at its option if all banks agree",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "877-337-8357"
     }
    ],
-   "frontstage": "Once In Process/Processed, no right to cancel; bank may attempt amendment/cancel at its option if all banks agree",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -487,7 +497,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -506,6 +516,7 @@
    "stage": "exception",
    "title": "Returned wire credited at current rate; wire fraud/scam: report to wire…",
    "customer_action": "Returned wire credited at current rate; wire fraud/scam: report to wire line 877-337-8357; liability limited to negligent performance",
+   "action": "Returned wire credited at current rate; wire fraud/scam: report to wire line 877-337-8357; liability limited to negligent performance",
    "touchpoints": [
     {
      "channel": "phone",
@@ -550,6 +561,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -628,6 +640,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -672,6 +685,7 @@
    "stage": "support",
    "title": "Book an appointment to send at a financial center",
    "customer_action": "Book an appointment to send at a financial center",
+   "action": "Book an appointment to send at a financial center",
    "touchpoints": [
     {
      "channel": "branch",

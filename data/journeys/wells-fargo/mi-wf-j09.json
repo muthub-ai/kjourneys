@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "A participating payee sends a Request for Payment; it surfaces in Bill…",
    "customer_action": null,
+   "action": "A participating payee sends a Request for Payment; it surfaces in Bill Pay in the Wells Fargo Mobile app (mobile only)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -66,6 +67,17 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -101,6 +113,7 @@
    "stage": "set-up",
    "title": "Payee relationship already established in Bill Pay",
    "customer_action": "Payee relationship already established in Bill Pay",
+   "action": "Payee relationship already established in Bill Pay",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -143,6 +156,7 @@
    "stage": "initiate",
    "title": "Customer chooses to pay the request instantly; amount cannot exceed…",
    "customer_action": "Customer chooses to pay the request instantly; amount cannot exceed requested amount",
+   "action": "Customer chooses to pay the request instantly; amount cannot exceed requested amount",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -196,6 +210,7 @@
    "stage": "review-authorize",
    "title": "Review; warning that instant payments cannot be canceled or amended…",
    "customer_action": "Review; warning that instant payments cannot be canceled or amended after sending",
+   "action": "Review; warning that instant payments cannot be canceled or amended after sending",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -240,6 +255,7 @@
    "stage": "execute-track",
    "title": "Payment sent over an instant network (the RTP® network operated by The…",
    "customer_action": null,
+   "action": "Payment sent over an instant network (the RTP® network operated by The Clearing House 'or another third party network'); funds typically available to payee within seconds, 24/7 incl. weekends/holidays",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -273,6 +289,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -282,13 +309,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation in Bill Pay/Payment History",
    "customer_action": null,
+   "action": "Confirmation in Bill Pay/Payment History",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Payment History"
     }
    ],
-   "frontstage": "Confirmation in Bill Pay/Payment History",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -306,7 +334,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -326,6 +354,7 @@
    "stage": "manage",
    "title": "No cancel/amend; customer may ask payee to return funds (not obligated)",
    "customer_action": "No cancel/amend; customer may ask payee to return funds (not obligated)",
+   "action": "No cancel/amend; customer may ask payee to return funds (not obligated)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -368,6 +397,7 @@
    "stage": "exception",
    "title": "Fail/delay for insufficient funds, rule non-compliance, limits,…",
    "customer_action": null,
+   "action": "Fail/delay for insufficient funds, rule non-compliance, limits, suspected fraud, payee rejection, network unavailability",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -403,6 +433,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s011",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -412,6 +454,7 @@
    "stage": "support",
    "title": "In-app Help/FAQs; Fargo assistant",
    "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "action": "In-app Help/FAQs; Fargo assistant",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -456,6 +499,7 @@
    "stage": "support",
    "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
    "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -500,6 +544,7 @@
    "stage": "support",
    "title": "Branch appointment via appointments.wellsfargo.com",
    "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "action": "Branch appointment via appointments.wellsfargo.com",
    "touchpoints": [
     {
      "channel": "branch",

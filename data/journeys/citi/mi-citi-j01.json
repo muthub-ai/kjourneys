@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer finds Zelle inside the Citi Mobile App (App Store/Google Play…",
    "customer_action": "Customer finds Zelle inside the Citi Mobile App (App Store/Google Play list 'Zelle: pay and split payments'); Citi's guide says Zelle is 'built into the Citi Mobile App'",
+   "action": "Customer finds Zelle inside the Citi Mobile App (App Store/Google Play list 'Zelle: pay and split payments'); Citi's guide says Zelle is 'built into the Citi Mobile App'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -120,6 +121,7 @@
    "stage": "set-up",
    "title": "Customer enrolls with an email address, U.S. mobile number or Zelle tag…",
    "customer_action": "Customer enrolls with an email address, U.S. mobile number or Zelle tag (landline/VoIP/Google Voice not eligible) and accepts the Citibank with Zelle Terms via 'I Agree'",
+   "action": "Customer enrolls with an email address, U.S. mobile number or Zelle tag (landline/VoIP/Google Voice not eligible) and accepts the Citibank with Zelle Terms via 'I Agree'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -173,6 +175,7 @@
    "stage": "set-up",
    "title": "Customer optionally allows the Citi Mobile App to access phone contacts…",
    "customer_action": "Customer optionally allows the Citi Mobile App to access phone contacts (device privacy settings) and adds a recipient by email, U.S. mobile number, Zelle tag or by scanning the recipient's Zelle QR code",
+   "action": "Customer optionally allows the Citi Mobile App to access phone contacts (device privacy settings) and adds a recipient by email, U.S. mobile number, Zelle tag or by scanning the recipient's Zelle QR code",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -226,6 +229,7 @@
    "stage": "initiate",
    "title": "Customer selects the funding checking account, enters the amount (up to…",
    "customer_action": "Customer selects the funding checking account, enters the amount (up to available balance and send limits) and optional memo; consumer accounts may pick a future send date (one-time only; recurring not allowed)",
+   "action": "Customer selects the funding checking account, enters the amount (up to available balance and send limits) and optional memo; consumer accounts may pick a future send date (one-time only; recurring not allowed)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -296,6 +300,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews recipient and amount; Citi warns that money goes only…",
    "customer_action": "Customer reviews recipient and amount; Citi warns that money goes only to the token entered 'even if it belongs to someone other than your intended recipient' and that Zelle is for people you know and trust with no purchase protection",
+   "action": "Customer reviews recipient and amount; Citi warns that money goes only to the token entered 'even if it belongs to someone other than your intended recipient' and that Zelle is for people you know and trust with no purchase protection",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -370,6 +375,7 @@
    "stage": "review-authorize",
    "title": "Customer is signed on via biometrics (Touch ID/Face ID) or a 6 Digit…",
    "customer_action": "Customer is signed on via biometrics (Touch ID/Face ID) or a 6 Digit PIN (documented for funds-transfer sign-on in the Online Funds Transfer terms) and taps 'Send'; no Zelle-specific step-up authentication is published",
+   "action": "Customer is signed on via biometrics (Touch ID/Face ID) or a 6 Digit PIN (documented for funds-transfer sign-on in the Online Funds Transfer terms) and taps 'Send'; no Zelle-specific step-up authentication is published",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -426,6 +432,7 @@
    "stage": "execute-track",
    "title": "Citi submits the payment to the Zelle network; funds typically arrive…",
    "customer_action": null,
+   "action": "Citi submits the payment to the Zelle network; funds typically arrive in minutes for enrolled recipients, but may take longer for identity verification, fraud prevention or regulatory reasons",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -459,6 +466,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -468,6 +486,7 @@
    "stage": "confirm-complete",
    "title": "Customer and recipient receive confirmation; recipient gets email/SMS…",
    "customer_action": null,
+   "action": "Customer and recipient receive confirmation; recipient gets email/SMS from Citi, Zelle or their bank; sender can view the activity entry",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -503,6 +522,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001",
+      "src-citi-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -512,6 +543,7 @@
    "stage": "manage",
    "title": "Customer views Zelle activity and statements; a scheduled one-time…",
    "customer_action": "Customer views Zelle activity and statements; a scheduled one-time payment can be cancelled up to one calendar day before its send date in the Citi Mobile App; a sent payment can be cancelled only while the recipient is not yet enrolled",
+   "action": "Customer views Zelle activity and statements; a scheduled one-time payment can be cancelled up to one calendar day before its send date in the Citi Mobile App; a sent payment can be cancelled only while the recipient is not yet enrolled",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -565,6 +597,7 @@
    "stage": "exception",
    "title": "Recipient does not enroll within 14 calendar days (or does not accept…",
    "customer_action": null,
+   "action": "Recipient does not enroll within 14 calendar days (or does not accept where their bank requires acceptance): transfer is cancelled and funds return",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -598,6 +631,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -607,6 +651,7 @@
    "stage": "exception",
    "title": "Customer sent to the wrong token: Citi states the customer remains…",
    "customer_action": "Customer sent to the wrong token: Citi states the customer remains responsible if funds cannot be recovered; customer contacts Citi to attempt recovery",
+   "action": "Customer sent to the wrong token: Citi states the customer remains responsible if funds cannot be recovered; customer contacts Citi to attempt recovery",
    "touchpoints": [
     {
      "channel": "phone",
@@ -677,6 +722,7 @@
    "stage": "exception",
    "title": "Unauthorized Zelle transfer or qualifying imposter scam: customer…",
    "customer_action": "Unauthorized Zelle transfer or qualifying imposter scam: customer reports to Citi; Citi investigates under the Electronic Banking section of the Client Manual (Reg E procedures: provisional credit within 10 Business Days, up to 45/90 days)",
+   "action": "Unauthorized Zelle transfer or qualifying imposter scam: customer reports to Citi; Citi investigates under the Electronic Banking section of the Client Manual (Reg E procedures: provisional credit within 10 Business Days, up to 45/90 days)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -739,6 +785,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

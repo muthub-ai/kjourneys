@@ -42,13 +42,14 @@
    "stage": "discover",
    "title": "Intelligent Alert fires when balance crosses threshold / Low Cash Mode…",
    "customer_action": null,
+   "action": "Intelligent Alert fires when balance crosses threshold / Low Cash Mode turns on",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Intelligent Alerts"
     }
    ],
-   "frontstage": "Intelligent Alert fires when balance crosses threshold / Low Cash Mode turns on",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Push/email/text",
@@ -65,7 +66,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "'Profile and Settings' > 'Low Cash Mode': set balance threshold, Extra…",
    "customer_action": "'Profile and Settings' > 'Low Cash Mode': set balance threshold, Extra Time alerts, and alert channels (email/text/push)",
+   "action": "'Profile and Settings' > 'Low Cash Mode': set balance threshold, Extra Time alerts, and alert channels (email/text/push)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -140,6 +142,7 @@
    "stage": "initiate",
    "title": "From 'Account Summary' open the Low Cash Mode dashboard; Extra Time…",
    "customer_action": "From 'Account Summary' open the Low Cash Mode dashboard; Extra Time clock shows at least 24 hours to bring balance to $0",
+   "action": "From 'Account Summary' open the Low Cash Mode dashboard; Extra Time clock shows at least 24 hours to bring balance to $0",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -184,6 +187,7 @@
    "stage": "review-authorize",
    "title": "Select 'Payment Control'; eligible checks/ACH listed with projected…",
    "customer_action": "Select 'Payment Control'; eligible checks/ACH listed with projected Pay/Return; toggle decisions; review and confirm",
+   "action": "Select 'Payment Control'; eligible checks/ACH listed with projected Pay/Return; toggle decisions; review and confirm",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -243,13 +247,14 @@
    "stage": "execute-track",
    "title": "Items paid or returned to payee's bank as NSF; 'Review Funding Options'…",
    "customer_action": null,
+   "action": "Items paid or returned to payee's bank as NSF; 'Review Funding Options' step lists ways to add money",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Items paid or returned to payee's bank as NSF; 'Review Funding Options' step lists ways to add money",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -267,7 +272,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -287,13 +292,14 @@
    "stage": "confirm-complete",
    "title": "If balance >= $0 before Extra Time ends no overdraft item fees;…",
    "customer_action": null,
+   "action": "If balance >= $0 before Extra Time ends no overdraft item fees; otherwise dashboard shows fees ($36 max one/day; $0 NSF fee)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "If balance >= $0 before Extra Time ends no overdraft item fees; otherwise dashboard shows fees ($36 max one/day; $0 NSF fee)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -311,7 +317,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -331,6 +337,7 @@
    "stage": "manage",
    "title": "Change thresholds/alerts anytime",
    "customer_action": "Change thresholds/alerts anytime",
+   "action": "Change thresholds/alerts anytime",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -373,13 +380,14 @@
    "stage": "exception",
    "title": "Returned item -> payee unpaid; payee's late fees may apply",
    "customer_action": null,
+   "action": "Returned item -> payee unpaid; payee's late fees may apply",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Returned item -> payee unpaid; payee's late fees may apply",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -396,7 +404,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -415,6 +423,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -471,6 +480,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -530,6 +540,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

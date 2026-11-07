@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay & transfer' > 'Wires and global transfers'",
    "customer_action": "'Pay & transfer' > 'Wires and global transfers'",
+   "action": "'Pay & transfer' > 'Wires and global transfers'",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enroll in wires (sign in, 'Enroll now', accept terms); daily limit…",
    "customer_action": "Enroll in wires (sign in, 'Enroll now', accept terms); daily limit shown before adding a recipient",
+   "action": "Enroll in wires (sign in, 'Enroll now', accept terms); daily limit shown before adding a recipient",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "set-up",
    "title": "'Add recipient': enter bank details (routing), then recipient name and…",
    "customer_action": "'Add recipient': enter bank details (routing), then recipient name and address; Chase may require an activation code; review > 'Add recipient'",
+   "action": "'Add recipient': enter bank details (routing), then recipient name and address; Chase may require an activation code; review > 'Add recipient'",
    "touchpoints": [
     {
      "channel": "web",
@@ -181,6 +184,7 @@
    "stage": "initiate",
    "title": "Select recipient, amount, from account, send date (today / future-dated…",
    "customer_action": "Select recipient, amount, from account, send date (today / future-dated / repeating)",
+   "action": "Select recipient, amount, from account, send date (today / future-dated / repeating)",
    "touchpoints": [
     {
      "channel": "web",
@@ -225,6 +229,7 @@
    "stage": "review-authorize",
    "title": "Review summary with scam guidance; authorize",
    "customer_action": "Review summary with scam guidance; authorize",
+   "action": "Review summary with scam guidance; authorize",
    "touchpoints": [
     {
      "channel": "web",
@@ -281,6 +286,7 @@
    "stage": "execute-track",
    "title": "Check status: web 'Wires and global transfers' > 'Payment activity';…",
    "customer_action": "Check status: web 'Wires and global transfers' > 'Payment activity'; mobile 'See activity' > 'Wires & global transfers'",
+   "action": "Check status: web 'Wires and global transfers' > 'Payment activity'; mobile 'See activity' > 'Wires & global transfers'",
    "touchpoints": [
     {
      "channel": "web",
@@ -323,6 +329,7 @@
    "stage": "confirm-complete",
    "title": "Confirmation; incoming side posts within 24 hours at receiving bank",
    "customer_action": null,
+   "action": "Confirmation; incoming side posts within 24 hours at receiving bank",
    "touchpoints": [
     {
      "channel": "web",
@@ -356,6 +363,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -365,6 +383,7 @@
    "stage": "manage",
    "title": "Future-dated or repeating wires: cancel before 11:59 PM ET (8:59 PM PT)…",
    "customer_action": "Future-dated or repeating wires: cancel before 11:59 PM ET (8:59 PM PT) the calendar day before processing, online, in the app or by contacting Chase ('Cancel' appears in the Action column only when possible). Same-day wires: 'once you have submitted a funds transfer for the current Business Day, you cannot cancel it after we've begun processing, but you may request us to attempt to return the funds to you. If the recipient's bank agrees, your funds may be returned to you, but likely not the full amount.' Modifications are not possible once processing has begun unless the recipient's bank agrees.",
+   "action": "Future-dated or repeating wires: cancel before 11:59 PM ET (8:59 PM PT) the calendar day before processing, online, in the app or by contacting Chase ('Cancel' appears in the Action column only when possible). Same-day wires: 'once you have submitted a funds transfer for the current Business Day, you cannot cancel it after we've begun processing, but you may request us to attempt to return the funds to you. If the recipient's bank agrees, your funds may be returned to you, but likely not the full amount.' Modifications are not possible once processing has begun unless the recipient's bank agrees.",
    "touchpoints": [
     {
      "channel": "web",
@@ -407,6 +426,7 @@
    "stage": "exception",
    "title": "Wrong account: check the Action column for 'Cancel', else call…",
    "customer_action": "Wrong account: check the Action column for 'Cancel', else call 1-800-935-9935 (recovery 'very unlikely'). Returned wires (reasons: wrong account number; missing bank/country-specific info such as statement of payment purpose; 'Message to recipient bank' conflicts with records; recipient name mismatch) may come back net of intermediary fees or at a different FX rate — call 1-800-935-9935. Errors/unauthorized wires must be reported within 60 days of the statement (non-consumer-international).",
+   "action": "Wrong account: check the Action column for 'Cancel', else call 1-800-935-9935 (recovery 'very unlikely'). Returned wires (reasons: wrong account number; missing bank/country-specific info such as statement of payment purpose; 'Message to recipient bank' conflicts with records; recipient name mismatch) may come back net of intermediary fees or at a different FX rate — call 1-800-935-9935. Errors/unauthorized wires must be reported within 60 days of the statement (non-consumer-international).",
    "touchpoints": [
     {
      "channel": "phone",
@@ -449,6 +469,7 @@
    "stage": "support",
    "title": "1-800-935-9935; schedule branch meeting (bring ID + mobile)",
    "customer_action": "1-800-935-9935; schedule branch meeting (bring ID + mobile)",
+   "action": "1-800-935-9935; schedule branch meeting (bring ID + mobile)",
    "touchpoints": [
     {
      "channel": "phone",

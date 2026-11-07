@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens the 'Transfer' tab in Online Banking (or Transfers in…",
    "customer_action": "Customer opens the 'Transfer' tab in Online Banking (or Transfers in the app)",
+   "action": "Customer opens the 'Transfer' tab in Online Banking (or Transfers in the app)",
    "touchpoints": [
     {
      "channel": "web",
@@ -116,6 +117,7 @@
    "stage": "set-up",
    "title": "Customer adds a non-TD account (routing/account number) and represents…",
    "customer_action": "Customer adds a non-TD account (routing/account number) and represents ownership; account must be verified before transfers can be scheduled",
+   "action": "Customer adds a non-TD account (routing/account number) and represents ownership; account must be verified before transfers can be scheduled",
    "touchpoints": [
     {
      "channel": "web",
@@ -190,6 +192,7 @@
    "stage": "initiate",
    "title": "Customer chooses from/to accounts, amount, and delivery option (3…",
    "customer_action": "Customer chooses from/to accounts, amount, and delivery option (3 Business Days or Next Business Day), one-time now, scheduled up to one year, or recurring",
+   "action": "Customer chooses from/to accounts, amount, and delivery option (3 Business Days or Next Business Day), one-time now, scheduled up to one year, or recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -260,6 +263,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews and submits; one-time security code / 2-step…",
    "customer_action": "Customer reviews and submits; one-time security code / 2-step verification applies at login",
+   "action": "Customer reviews and submits; one-time security code / 2-step verification applies at login",
    "touchpoints": [
     {
      "channel": "web",
@@ -319,13 +323,14 @@
    "stage": "execute-track",
    "title": "Transfer appears as pending in Transfer tab and dashboard widget until…",
    "customer_action": null,
+   "action": "Transfer appears as pending in Transfer tab and dashboard widget until it begins processing; ACH debit/credit per delivery option",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Transfer tab > pending; dashboard widgets"
     }
    ],
-   "frontstage": "Transfer appears as pending in Transfer tab and dashboard widget until it begins processing; ACH debit/credit per delivery option",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -343,7 +348,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -363,13 +368,14 @@
    "stage": "confirm-complete",
    "title": "Transfer shows in past transfers; 'ACH debit alerts' available for…",
    "customer_action": null,
+   "action": "Transfer shows in past transfers; 'ACH debit alerts' available for outbound debits",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Transfer Confirmed screen -> 'Activity' (all scheduled and completed external transfers) | 'New Transfer'; OLB 'See My Activity'"
     }
    ],
-   "frontstage": "Transfer shows in past transfers; 'ACH debit alerts' available for outbound debits",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "ACH debit alert (email/SMS/push) if enabled",
@@ -387,7 +393,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -407,6 +413,7 @@
    "stage": "manage",
    "title": "Cancel 'at any time until it begins processing'; recurring series…",
    "customer_action": "Cancel 'at any time until it begins processing'; recurring series editable; stop processed transfer only via customer care (written request within 14 days; fee may apply)",
+   "action": "Cancel 'at any time until it begins processing'; recurring series editable; stop processed transfer only via customer care (written request within 14 days; fee may apply)",
    "touchpoints": [
     {
      "channel": "web",
@@ -460,13 +467,14 @@
    "stage": "exception",
    "title": "Failed/returned transfer: bank corrects/voids/returns to debited…",
    "customer_action": null,
+   "action": "Failed/returned transfer: bank corrects/voids/returns to debited account; NSF returns incur repayment on demand + 1.5% late fee; wrong-recipient recovery best-effort",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Failed/returned transfer: bank corrects/voids/returns to debited account; NSF returns incur repayment on demand + 1.5% late fee; wrong-recipient recovery best-effort",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -483,7 +491,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -502,6 +510,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -576,6 +585,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

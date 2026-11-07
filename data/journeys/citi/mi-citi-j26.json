@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Enroll in RCD (exclusive with Mobile Check Deposit) or Lockbox",
    "customer_action": "Enroll in RCD (exclusive with Mobile Check Deposit) or Lockbox",
+   "action": "Enroll in RCD (exclusive with Mobile Check Deposit) or Lockbox",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Scan checks via web application or CitiBusiness Online Mobile App; or…",
    "customer_action": "Scan checks via web application or CitiBusiness Online Mobile App; or mail to lockbox",
+   "action": "Scan checks via web application or CitiBusiness Online Mobile App; or mail to lockbox",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Daily credit; images in CBOL; Citi Smart Match applies cash",
    "customer_action": null,
+   "action": "Daily credit; images in CBOL; Citi Smart Match applies cash",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Daily credit; images in CBOL; Citi Smart Match applies cash",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "exception",
    "title": "Returned items debited with service charge",
    "customer_action": null,
+   "action": "Returned items debited with service charge",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Returned items debited with service charge",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

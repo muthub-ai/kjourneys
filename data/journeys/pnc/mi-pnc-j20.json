@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "PNC Mobile app > 'Pay & Transfer' > 'Send Money with Zelle'",
    "customer_action": "PNC Mobile app > 'Pay & Transfer' > 'Send Money with Zelle'",
+   "action": "PNC Mobile app > 'Pay & Transfer' > 'Send Money with Zelle'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "'Get Started'; add business mobile number and/or email (must differ…",
    "customer_action": "'Get Started'; add business mobile number and/or email (must differ from personal Zelle token)",
+   "action": "'Get Started'; add business mobile number and/or email (must differ from personal Zelle token)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -126,6 +128,7 @@
    "stage": "set-up",
    "title": "Complete Controlling Party verification (or be enrolled in Bill Pay for…",
    "customer_action": "Complete Controlling Party verification (or be enrolled in Bill Pay for Business)",
+   "action": "Complete Controlling Party verification (or be enrolled in Bill Pay for Business)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,6 +173,7 @@
    "stage": "set-up",
    "title": "Optionally 'Zelle Settings' > 'Create a Zelle tag' (>=6 chars, >=2…",
    "customer_action": "Optionally 'Zelle Settings' > 'Create a Zelle tag' (>=6 chars, >=2 unique letters, hyphens only)",
+   "action": "Optionally 'Zelle Settings' > 'Create a Zelle tag' (>=6 chars, >=2 unique letters, hyphens only)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -223,6 +227,7 @@
    "stage": "initiate",
    "title": "'Send Money with Zelle' > 'Request' > enter customer's mobile/email and…",
    "customer_action": "'Send Money with Zelle' > 'Request' > enter customer's mobile/email and amount",
+   "action": "'Send Money with Zelle' > 'Request' > enter customer's mobile/email and amount",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -276,6 +281,7 @@
    "stage": "review-authorize",
    "title": "Review and send request; no purchase protection; not recommended for…",
    "customer_action": "Review and send request; no purchase protection; not recommended for goods",
+   "action": "Review and send request; no purchase protection; not recommended for goods",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -318,6 +324,7 @@
    "stage": "execute-track",
    "title": "Customer pays from their bank; funds land in business checking…",
    "customer_action": null,
+   "action": "Customer pays from their bank; funds land in business checking typically within minutes; Zelle-app-only consumers cannot pay",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -342,6 +349,17 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -377,13 +395,14 @@
    "stage": "confirm-complete",
    "title": "Payment appears in Zelle Activity and online banking activity (flows to…",
    "customer_action": null,
+   "action": "Payment appears in Zelle Activity and online banking activity (flows to accounting software only via bank feed)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle Activity"
     }
    ],
-   "frontstage": "Payment appears in Zelle Activity and online banking activity (flows to accounting software only via bank feed)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -400,7 +419,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -419,6 +438,7 @@
    "stage": "manage",
    "title": "Cancel unenrolled-recipient payments via Zelle Activity > 'Cancel This…",
    "customer_action": "Cancel unenrolled-recipient payments via Zelle Activity > 'Cancel This Payment'; share QR/tag on invoices (Zelle small-business toolkit)",
+   "action": "Cancel unenrolled-recipient payments via Zelle Activity > 'Cancel This Payment'; share QR/tag on invoices (Zelle small-business toolkit)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -461,6 +481,7 @@
    "stage": "exception",
    "title": "Wrong recipient -> ask for return, else call PNC; business disputes via…",
    "customer_action": "Wrong recipient -> ask for return, else call PNC; business disputes via 1-877-287-2654",
+   "action": "Wrong recipient -> ask for return, else call PNC; business disputes via 1-877-287-2654",
    "touchpoints": [
     {
      "channel": "phone",
@@ -517,6 +538,7 @@
    "stage": "support",
    "title": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business…",
    "customer_action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
+   "action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
    "touchpoints": [
     {
      "channel": "phone",
@@ -565,6 +587,7 @@
    "stage": "support",
    "title": "Business Banker locator / branch appointment",
    "customer_action": "Business Banker locator / branch appointment",
+   "action": "Business Banker locator / branch appointment",
    "touchpoints": [
     {
      "channel": "branch",

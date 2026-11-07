@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Biller enrolls customers for 'Instant payment/RfP' and obtains…",
    "customer_action": "Biller enrolls customers for 'Instant payment/RfP' and obtains consent/account info",
+   "action": "Biller enrolls customers for 'Instant payment/RfP' and obtains consent/account info",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Biller initiates RfP via Instant Payments API (RfP 'currently limited…",
    "customer_action": "Biller initiates RfP via Instant Payments API (RfP 'currently limited to TCH RTP® only'); can cancel an RfP; webhook notifications; example: utility notifies customer a payment is due and the customer can check whether the RfP is complete/received",
+   "action": "Biller initiates RfP via Instant Payments API (RfP 'currently limited to TCH RTP® only'); can cancel an RfP; webhook notifications; example: utility notifies customer a payment is due and the customer can check whether the RfP is complete/received",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Payer's bank (e.g., U.S. Bank Bill Pay) presents request; payer pays…",
    "customer_action": "Payer's bank (e.g., U.S. Bank Bill Pay) presents request; payer pays instantly, schedules or dismisses",
+   "action": "Payer's bank (e.g., U.S. Bank Bill Pay) presents request; payer pays instantly, schedules or dismisses",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,13 +173,14 @@
    "stage": "initiate",
    "title": "Instant credit with remittance data posts to biller; confirmation",
    "customer_action": null,
+   "action": "Instant credit with remittance data posts to biller; confirmation",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Instant credit with remittance data posts to biller; confirmation",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -194,7 +198,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -214,13 +218,14 @@
    "stage": "exception",
    "title": "Expired or dismissed requests – biller re-issues; FedNow RfP not yet…",
    "customer_action": null,
+   "action": "Expired or dismissed requests – biller re-issues; FedNow RfP not yet available",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Expired or dismissed requests – biller re-issues; FedNow RfP not yet available",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -238,7 +243,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -258,6 +263,7 @@
    "stage": "support",
    "title": "Treasury management support",
    "customer_action": null,
+   "action": "Treasury management support",
    "touchpoints": [
     {
      "channel": "phone",

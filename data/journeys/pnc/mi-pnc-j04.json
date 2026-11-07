@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Open Zelle and tap the 'QR Code icon' at top right; allow camera access",
    "customer_action": "Open Zelle and tap the 'QR Code icon' at top right; allow camera access",
+   "action": "Open Zelle and tap the 'QR Code icon' at top right; allow camera access",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Scan the recipient's Zelle QR code; enter amount",
    "customer_action": "Scan the recipient's Zelle QR code; enter amount",
+   "action": "Scan the recipient's Zelle QR code; enter amount",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -137,6 +139,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Review' then 'Send' (OTP applies for first-time recipients)",
    "customer_action": "Tap 'Review' then 'Send' (OTP applies for first-time recipients)",
+   "action": "Tap 'Review' then 'Send' (OTP applies for first-time recipients)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -179,13 +182,14 @@
    "stage": "execute-track",
    "title": "Payment delivered in minutes to enrolled recipient",
    "customer_action": null,
+   "action": "Payment delivered in minutes to enrolled recipient",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Payment delivered in minutes to enrolled recipient",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -202,7 +206,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -221,6 +225,7 @@
    "stage": "confirm-complete",
    "title": "To receive: 'Your QR Code' tab; show screen or 'Share QR Code' by…",
    "customer_action": "To receive: 'Your QR Code' tab; show screen or 'Share QR Code' by text/email/print; one QR per enrolled token (swipe for more)",
+   "action": "To receive: 'Your QR Code' tab; show screen or 'Share QR Code' by text/email/print; one QR per enrolled token (swipe for more)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -263,6 +268,7 @@
    "stage": "manage",
    "title": "Changing enrolled token changes QR; payments to old code expire in 14…",
    "customer_action": "Changing enrolled token changes QR; payments to old code expire in 14 days unless re-enrolled",
+   "action": "Changing enrolled token changes QR; payments to old code expire in 14 days unless re-enrolled",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -305,6 +311,7 @@
    "stage": "exception",
    "title": "Recipient's bank lacks QR scanning -> they can still send to your…",
    "customer_action": "Recipient's bank lacks QR scanning -> they can still send to your enrolled email/mobile",
+   "action": "Recipient's bank lacks QR scanning -> they can still send to your enrolled email/mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -347,6 +354,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -403,6 +411,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -462,6 +471,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

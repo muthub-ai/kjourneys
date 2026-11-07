@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'More' > 'Paze' to review active cards, add/remove eligible cards,…",
    "customer_action": "'More' > 'Paze' to review active cards, add/remove eligible cards, activate wallet",
+   "action": "'More' > 'Paze' to review active cards, add/remove eligible cards, activate wallet",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -95,6 +96,7 @@
    "stage": "set-up",
    "title": "'More' > 'Cards' > 'View Card Details' > 'Digital Wallets' > PayPal >…",
    "customer_action": "'More' > 'Cards' > 'View Card Details' > 'Digital Wallets' > PayPal > select cards > 'Add Cards' > finish on PayPal site",
+   "action": "'More' > 'Cards' > 'View Card Details' > 'Digital Wallets' > PayPal > select cards > 'Add Cards' > finish on PayPal site",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -148,6 +150,7 @@
    "stage": "review-authorize",
    "title": "At Paze checkout: OTP to mobile; optional passkey",
    "customer_action": "At Paze checkout: OTP to mobile; optional passkey",
+   "action": "At Paze checkout: OTP to mobile; optional passkey",
    "touchpoints": [
     {
      "channel": "web",
@@ -190,6 +193,7 @@
    "stage": "manage",
    "title": "Opt out at mywallet.paze.com (deletes all cards from all banks)",
    "customer_action": "Opt out at mywallet.paze.com (deletes all cards from all banks)",
+   "action": "Opt out at mywallet.paze.com (deletes all cards from all banks)",
    "touchpoints": [
     {
      "channel": "web",
@@ -232,6 +236,7 @@
    "stage": "exception",
    "title": "Enrollment problems with PayPal -> PayPal support",
    "customer_action": "Enrollment problems with PayPal -> PayPal support",
+   "action": "Enrollment problems with PayPal -> PayPal support",
    "touchpoints": [
     {
      "channel": "phone",
@@ -274,6 +279,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -330,6 +336,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -389,6 +396,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",
@@ -451,5 +459,7 @@
  "bank_product": "PNC-P10",
  "terms": {
   "fees": "None"
- }
+ },
+ "composite": "CJ-PUSH-TO-CARD-SEND",
+ "composite_match": "mi-reference"
 }

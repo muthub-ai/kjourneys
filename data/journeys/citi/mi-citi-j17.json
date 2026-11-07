@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "User signs on to CBOL (User ID + password + Security Token code) and…",
    "customer_action": "User signs on to CBOL (User ID + password + Security Token code) and opens Main Menu > Transfers and Payments > Transfer Between Accounts",
+   "action": "User signs on to CBOL (User ID + password + Security Token code) and opens Main Menu > Transfers and Payments > Transfer Between Accounts",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Select from/to accounts (incl. linked businesses under one business…",
    "customer_action": "Select from/to accounts (incl. linked businesses under one business code), amount (up to $999,999,999.99), immediate or future date, optional recurring or flexible recurring instruction, 37-char description",
+   "action": "Select from/to accounts (incl. linked businesses under one business code), amount (up to $999,999,999.99), immediate or future date, optional recurring or flexible recurring instruction, 37-char description",
    "touchpoints": [
     {
      "channel": "web",
@@ -154,6 +156,7 @@
    "stage": "review-authorize",
    "title": "User enters password to authorize; if above the user's 'No Additional…",
    "customer_action": "User enters password to authorize; if above the user's 'No Additional Approval Required' limit the transfer waits in Approvals for a designated co-signer ('Required Approval', specific users or 'Any'); approver may release in CitiBusiness Mobile with Mobile Token",
+   "action": "User enters password to authorize; if above the user's 'No Additional Approval Required' limit the transfer waits in Approvals for a designated co-signer ('Required Approval', specific users or 'Any'); approver may release in CitiBusiness Mobile with Mobile Token",
    "touchpoints": [
     {
      "channel": "web",
@@ -200,13 +203,14 @@
    "stage": "execute-track",
    "title": "Immediate transfers post; future-dated appear under Planned and Pending…",
    "customer_action": null,
+   "action": "Immediate transfers post; future-dated appear under Planned and Pending Transfers; must execute by 7:30 PM ET to cover same-day debits",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Planned and Pending Transfers / Completed Transfers"
     }
    ],
-   "frontstage": "Immediate transfers post; future-dated appear under Planned and Pending Transfers; must execute by 7:30 PM ET to cover same-day debits",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -224,7 +228,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -244,13 +248,14 @@
    "stage": "confirm-complete",
    "title": "Completed Transfers report; push notifications in CitiBusiness Mobile…",
    "customer_action": null,
+   "action": "Completed Transfers report; push notifications in CitiBusiness Mobile (added 2025)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Completed Transfers"
     }
    ],
-   "frontstage": "Completed Transfers report; push notifications in CitiBusiness Mobile (added 2025)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -268,7 +273,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -288,6 +293,7 @@
    "stage": "manage",
    "title": "Cancel future-dated transfers until 6:45 AM ET on the scheduled date…",
    "customer_action": "Cancel future-dated transfers until 6:45 AM ET on the scheduled date via See Planned Transfers; suspend recurring up to 2 years",
+   "action": "Cancel future-dated transfers until 6:45 AM ET on the scheduled date via See Planned Transfers; suspend recurring up to 2 years",
    "touchpoints": [
     {
      "channel": "web",
@@ -330,13 +336,14 @@
    "stage": "exception",
    "title": "Insufficient funds: retried daily for 5 calendar days with daily…",
    "customer_action": null,
+   "action": "Insufficient funds: retried daily for 5 calendar days with daily message, then cancelled with electronic notice",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Messages"
     }
    ],
-   "frontstage": "Insufficient funds: retried daily for 5 calendar days with daily message, then cancelled with electronic notice",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -353,7 +360,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -372,6 +379,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",
@@ -485,6 +493,6 @@
   "limits": "$999,999,999.99 per transfer",
   "cutoffs": "Cancel until 6:45 AM ET scheduled day; 7:30 PM ET execution"
  },
- "composite": "CJ-INTERNAL-TRANSFER",
- "composite_match": "rail"
+ "composite": "CJ-ACH-ORIG-SMB-SEND",
+ "composite_match": "mi-reference"
 }

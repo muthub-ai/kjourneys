@@ -5,11 +5,6 @@
   "received_at": "2026-11-06T21:03:00-06:00",
   "files": [
     {
-      "path": "money-movement-intelligence.html",
-      "sha256": "a6729b9c25a270feb79799867e87f1b158386d26fd3641abd1969ac50190177d",
-      "kind": "report"
-    },
-    {
       "path": "Money_Movement_CI_Data.xlsx",
       "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88",
       "kind": "data"
@@ -23,9 +18,14 @@
       "path": "Money_Movement_CI_Sources_and_Verification.docx",
       "sha256": "89e364ee409578500abb3559c4fe9e0204612f141da539be21146f4aae8b3aa6",
       "kind": "report"
+    },
+    {
+      "path": "money-movement-intelligence.html",
+      "sha256": "a6729b9c25a270feb79799867e87f1b158386d26fd3641abd1969ac50190177d",
+      "kind": "report"
     }
   ],
-  "notes": "Imported with tools/import_mi_workbook.py; 2026-11-06-v1: 1156 sources, 236 journeys (2176 steps), 143 products (462 sub-products), 209 journeys linked to a customer journey, 419 findings, 17 composites, 595 observations, 206 verifications, 70 participation rows, 10 rankings, 16 product comparisons, 3015 comparison facts",
+  "notes": "Imported with tools/import_mi_workbook.py; 2026-11-06-v1: 1156 sources, 236 journeys (2176 steps), 143 products (462 sub-products), 178 journeys linked to a customer journey, 419 findings, 17 composites, 595 observations, 206 verifications, 70 participation rows, 10 rankings, 16 product comparisons, 2941 comparison facts",
   "products": [
     "ach-external-transfer",
     "ach-origination",
@@ -46,6 +46,12 @@
   ],
   "workbook": "Money_Movement_CI_Data.xlsx",
   "import_warnings": [
-    "Journeys TD-J18: product_id TD-P10 does not own sub-product TD-P04-S05; using its parent TD-P04 (kept as x-mi_product_id)"
+    "Journeys BAC-J13: MI references tie between ['CJ-BILLPAY-SEND', 'CJ-ZELLE-REQUEST', 'CJ-ZELLE-SMB-RECEIVE']; chose CJ-ZELLE-SMB-RECEIVE",
+    "Journeys TD-J10: MI references tie between ['CJ-WIRE-DOM-CONSUMER-SEND', 'CJ-WIRE-INTL-CONSUMER-SEND']; chose CJ-WIRE-DOM-CONSUMER-SEND",
+    "Journeys TD-J13: MI references tie between ['CJ-INSTANT-RECEIVE-RFP', 'CJ-INSTANT-SEND']; chose CJ-INSTANT-RECEIVE-RFP",
+    "Journeys TD-J18: product_id TD-P10 does not own sub-product TD-P04-S05; using its parent TD-P04 (kept as x-mi_product_id)",
+    "ScoreTotals: 35 bank × rail means differ from the mean of their Scores cells (e.g. jpmorgan-chase ach-external-transfer)",
+    "ScoreTotals: overall index differs from the Scores sheet by more than 0.5 points for 10 of 10 banks; the site shows both",
+    "Gaps: 63 findings are filed under a best-practice stage that differs from the stage of the bank step they sit on; that step's stage is kept as step_stage"
   ]
 }

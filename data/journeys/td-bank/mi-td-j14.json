@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer locks card in app, calls 1-800-893-8554 (24/7) or reports in…",
    "customer_action": "Customer locks card in app, calls 1-800-893-8554 (24/7) or reports in person",
+   "action": "Customer locks card in app, calls 1-800-893-8554 (24/7) or reports in person",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Customer provides transaction details, timing, how discovered; for…",
    "customer_action": "Customer provides transaction details, timing, how discovered; for Zelle, calls 1-888-751-9000",
+   "action": "Customer provides transaction details, timing, how discovered; for Zelle, calls 1-888-751-9000",
    "touchpoints": [
     {
      "channel": "phone",
@@ -146,6 +148,7 @@
    "stage": "execute-track",
    "title": "Claim opened; provisional credit for card fraud; status tracked in app…",
    "customer_action": null,
+   "action": "Claim opened; provisional credit for card fraud; status tracked in app 'Disputes Center' (added May–Jun 2026)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -183,6 +186,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009",
+      "src-td-bank-s010",
+      "src-td-bank-s022"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -192,6 +208,7 @@
    "stage": "confirm-complete",
    "title": "Outcome communicated; qualifying imposter scams may be reimbursed",
    "customer_action": null,
+   "action": "Outcome communicated; qualifying imposter scams may be reimbursed",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -234,6 +251,7 @@
    "stage": "manage",
    "title": "Track disputes history in Disputes Center",
    "customer_action": "Track disputes history in Disputes Center",
+   "action": "Track disputes history in Disputes Center",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -287,6 +305,7 @@
    "stage": "exception",
    "title": "Claim denied (authorized payment, purchase scam); 2022 class action…",
    "customer_action": null,
+   "action": "Claim denied (authorized payment, purchase scam); 2022 class action alleged denials",
    "touchpoints": [
     {
      "channel": "phone",
@@ -329,6 +348,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -399,6 +419,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

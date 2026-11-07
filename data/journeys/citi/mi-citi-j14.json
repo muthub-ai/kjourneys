@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer selects their Citibank Debit Card inside a third-party…",
    "customer_action": "Customer selects their Citibank Debit Card inside a third-party app/merchant site for instant transfer",
+   "action": "Customer selects their Citibank Debit Card inside a third-party app/merchant site for instant transfer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Third party pushes (or pulls) funds via Mastercard Send",
    "customer_action": null,
+   "action": "Third party pushes (or pulls) funds via Mastercard Send",
    "touchpoints": [
     {
      "channel": "web",
@@ -121,6 +123,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s017",
+      "src-citi-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -130,13 +144,14 @@
    "stage": "execute-track",
    "title": "Credit posts as 'MoneySend Credit' (debit as 'MoneySend Debit')",
    "customer_action": null,
+   "action": "Credit posts as 'MoneySend Credit' (debit as 'MoneySend Debit')",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Statement"
     }
    ],
-   "frontstage": "Credit posts as 'MoneySend Credit' (debit as 'MoneySend Debit')",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -153,7 +168,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -172,13 +187,14 @@
    "stage": "confirm-complete",
    "title": "Transaction visible in activity; does not count toward Enhanced Direct…",
    "customer_action": null,
+   "action": "Transaction visible in activity; does not count toward Enhanced Direct Deposit",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Transaction visible in activity; does not count toward Enhanced Direct Deposit",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -196,7 +212,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -216,6 +232,7 @@
    "stage": "manage",
    "title": "Citi Quick Lock can block card use",
    "customer_action": "Citi Quick Lock can block card use",
+   "action": "Citi Quick Lock can block card use",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -258,6 +275,7 @@
    "stage": "exception",
    "title": "Unauthorized card transfer: Zero Liability Protection if reported…",
    "customer_action": "Unauthorized card transfer: Zero Liability Protection if reported promptly; Reg E tiers",
+   "action": "Unauthorized card transfer: Zero Liability Protection if reported promptly; Reg E tiers",
    "touchpoints": [
     {
      "channel": "phone",
@@ -300,6 +318,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

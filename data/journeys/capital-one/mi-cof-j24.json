@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Treasury team implements Lockbox, Remote Deposit scanners/mobile, or…",
    "customer_action": null,
+   "action": "Treasury team implements Lockbox, Remote Deposit scanners/mobile, or Vault Services",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Payments arrive at lockbox / checks scanned (Intellix Mobile photo…",
    "customer_action": "Payments arrive at lockbox / checks scanned (Intellix Mobile photo deposit) / cash delivered to vault",
+   "action": "Payments arrive at lockbox / checks scanned (Intellix Mobile photo deposit) / cash delivered to vault",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Deposits posted; reporting in Intellix",
    "customer_action": null,
+   "action": "Deposits posted; reporting in Intellix",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Intellix reporting"
     }
    ],
-   "frontstage": "Deposits posted; reporting in Intellix",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +173,7 @@
    "stage": "exception",
    "title": "Returned items",
    "customer_action": null,
+   "action": "Returned items",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -201,6 +205,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -210,6 +224,7 @@
    "stage": "support",
    "title": "TM Client Service",
    "customer_action": null,
+   "action": "TM Client Service",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer sees 'Zelle®' in the app's bottom navigation bar (web:…",
    "customer_action": "Customer sees 'Zelle®' in the app's bottom navigation bar (web: 'Transfer and Pay' > 'Send Money with Zelle®')",
+   "action": "Customer sees 'Zelle®' in the app's bottom navigation bar (web: 'Transfer and Pay' > 'Send Money with Zelle®')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -95,6 +96,7 @@
    "stage": "discover",
    "title": "Alternative entry: Fargo assistant ('Make a payment or transfer')",
    "customer_action": "Alternative entry: Fargo assistant ('Make a payment or transfer')",
+   "action": "Alternative entry: Fargo assistant ('Make a payment or transfer')",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -151,6 +153,7 @@
    "stage": "set-up",
    "title": "First use: accept 'Zelle® Transfer Service Addendum', choose email or…",
    "customer_action": "First use: accept 'Zelle® Transfer Service Addendum', choose email or U.S. mobile number (no VoIP/landline), select deposit account",
+   "action": "First use: accept 'Zelle® Transfer Service Addendum', choose email or U.S. mobile number (no VoIP/landline), select deposit account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -210,6 +213,7 @@
    "stage": "set-up",
    "title": "Add recipient under 'Send Money with Zelle® > Recipients': search…",
    "customer_action": "Add recipient under 'Send Money with Zelle® > Recipients': search contacts, enter email/mobile/Zelle tag, or 'Scan their Zelle® QR code'",
+   "action": "Add recipient under 'Send Money with Zelle® > Recipients': search contacts, enter email/mobile/Zelle tag, or 'Scan their Zelle® QR code'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -266,6 +270,7 @@
    "stage": "initiate",
    "title": "Tap 'Send', choose recipient, enter amount, choose funding account,…",
    "customer_action": "Tap 'Send', choose recipient, enter amount, choose funding account, optional memo, optionally toggle 'Repeat payment' or pick a future date (up to 1 year)",
+   "action": "Tap 'Send', choose recipient, enter amount, choose funding account, optional memo, optionally toggle 'Repeat payment' or pick a future date (up to 1 year)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -322,6 +327,7 @@
    "stage": "initiate",
    "title": "Select 'Continue'",
    "customer_action": "Select 'Continue'",
+   "action": "Select 'Continue'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -375,6 +381,7 @@
    "stage": "review-authorize",
    "title": "Review details; trust warning ('only send to people you know and…",
    "customer_action": "Review details; trust warning ('only send to people you know and trust'; no purchase protection)",
+   "action": "Review details; trust warning ('only send to people you know and trust'; no purchase protection)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -457,6 +464,7 @@
    "stage": "review-authorize",
    "title": "First-time recipient (and some other payments) requires an access code…",
    "customer_action": "First-time recipient (and some other payments) requires an access code sent by text to registered mobile, or an RSA SecurID code; Advanced Access may also push a notification",
+   "action": "First-time recipient (and some other payments) requires an access code sent by text to registered mobile, or an RSA SecurID code; Advanced Access may also push a notification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -516,6 +524,7 @@
    "stage": "review-authorize",
    "title": "Confirm 'Send'",
    "customer_action": "Confirm 'Send'",
+   "action": "Confirm 'Send'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -572,6 +581,7 @@
    "stage": "execute-track",
    "title": "Zelle network delivers to recipient's bank; typically minutes if…",
    "customer_action": null,
+   "action": "Zelle network delivers to recipient's bank; typically minutes if enrolled",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -607,6 +617,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -616,6 +638,7 @@
    "stage": "execute-track",
    "title": "Customer views status in 'Zelle® Activity' (Completed/Pending) or…",
    "customer_action": "Customer views status in 'Zelle® Activity' (Completed/Pending) or 'Scheduled'",
+   "action": "Customer views status in 'Zelle® Activity' (Completed/Pending) or 'Scheduled'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -669,6 +692,7 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen; email and secure-inbox notices when…",
    "customer_action": null,
+   "action": "Confirmation screen; email and secure-inbox notices when scheduled/changed; push/text/email per preferences",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -704,6 +728,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -713,6 +749,7 @@
    "stage": "confirm-complete",
    "title": "Recipient notified by email/text by their bank or Zelle",
    "customer_action": null,
+   "action": "Recipient notified by email/text by their bank or Zelle",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -746,6 +783,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -755,6 +803,7 @@
    "stage": "manage",
    "title": "Cancel a pending payment to an unenrolled recipient from 'Zelle®…",
    "customer_action": "Cancel a pending payment to an unenrolled recipient from 'Zelle® Activity' > 'Cancel payment'",
+   "action": "Cancel a pending payment to an unenrolled recipient from 'Zelle® Activity' > 'Cancel payment'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -808,6 +857,7 @@
    "stage": "manage",
    "title": "Edit/cancel scheduled or repeating payments in 'Scheduled' until 11:30…",
    "customer_action": "Edit/cancel scheduled or repeating payments in 'Scheduled' until 11:30 PM PT day before; block a contact",
+   "action": "Edit/cancel scheduled or repeating payments in 'Scheduled' until 11:30 PM PT day before; block a contact",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -861,6 +911,7 @@
    "stage": "exception",
    "title": "Payment fails / recipient unenrolled / scam suspected — see…",
    "customer_action": "Payment fails / recipient unenrolled / scam suspected — see exception_paths",
+   "action": "Payment fails / recipient unenrolled / scam suspected — see exception_paths",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -917,6 +968,7 @@
    "stage": "support",
    "title": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View…",
    "customer_action": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View Zelle transactions')",
+   "action": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View Zelle transactions')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -973,6 +1025,7 @@
    "stage": "support",
    "title": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442…",
    "customer_action": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442 (24/7) for missing payments or suspected scams; fraud line 1-866-867-5568 for unauthorized Zelle",
+   "action": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442 (24/7) for missing payments or suspected scams; fraud line 1-866-867-5568 for unauthorized Zelle",
    "touchpoints": [
     {
      "channel": "phone",
@@ -1029,6 +1082,7 @@
    "stage": "support",
    "title": "Customer can report via 'Report fraud' page or secure Message Center",
    "customer_action": "Customer can report via 'Report fraud' page or secure Message Center",
+   "action": "Customer can report via 'Report fraud' page or secure Message Center",
    "touchpoints": [
     {
      "channel": "web",

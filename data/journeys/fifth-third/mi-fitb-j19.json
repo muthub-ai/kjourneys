@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Onboard with Newline Specialist; exposure limits/transaction types set;…",
    "customer_action": "Onboard with Newline Specialist; exposure limits/transaction types set; create Synthetic Accounts and Virtual Reference Numbers (register VRN for RTP receive); configure Webhooks/Message Queue",
+   "action": "Onboard with Newline Specialist; exposure limits/transaction types set; create Synthetic Accounts and Virtual Reference Numbers (register VRN for RTP receive); configure Webhooks/Message Queue",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -88,6 +89,7 @@
    "stage": "initiate",
    "title": "POST transfer (ACH SEC code / sameday; Instant Payments; Wire domestic;…",
    "customer_action": "POST transfer (ACH SEC code / sameday; Instant Payments; Wire domestic; Book Transfer); counterparty eligibility checked for RTP",
+   "action": "POST transfer (ACH SEC code / sameday; Instant Payments; Wire domestic; Book Transfer); counterparty eligibility checked for RTP",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -134,13 +136,14 @@
    "stage": "execute-track",
    "title": "Events: Transfer Initiated, Transfer Status Changed, RTP Settlement,…",
    "customer_action": null,
+   "action": "Events: Transfer Initiated, Transfer Status Changed, RTP Settlement, Transaction Created/Status Updated; prefunded ACH holds; Same Day windows 8:50/1:20/2:50 ET",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Webhooks"
     }
    ],
-   "frontstage": "Events: Transfer Initiated, Transfer Status Changed, RTP Settlement, Transaction Created/Status Updated; prefunded ACH holds; Same Day windows 8:50/1:20/2:50 ET",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "webhook/message queue",
@@ -158,7 +161,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -178,13 +181,14 @@
    "stage": "exception",
    "title": "ACH returns (3 banking days), NOCs, delete/reversal/recall; RTP reject…",
    "customer_action": null,
+   "action": "ACH returns (3 banking days), NOCs, delete/reversal/recall; RTP reject codes; wire invalid ABA returned instantly, recall if already sent",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Returns / reject codes"
     }
    ],
-   "frontstage": "ACH returns (3 banking days), NOCs, delete/reversal/recall; RTP reject codes; wire invalid ABA returned instantly, recall if already sent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -203,7 +207,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -224,6 +228,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",

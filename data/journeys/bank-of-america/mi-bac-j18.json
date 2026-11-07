@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Beneficiary set-up; pre-validation of recipient account (cross-border…",
    "customer_action": "Beneficiary set-up; pre-validation of recipient account (cross-border real-time)",
+   "action": "Beneficiary set-up; pre-validation of recipient account (cross-border real-time)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Initiate wire (SWIFT) or real-time (SPEI/FPS/UPI) via CashPro or Swift…",
    "customer_action": "Initiate wire (SWIFT) or real-time (SPEI/FPS/UPI) via CashPro or Swift messaging; FX at live/guaranteed rate via API",
+   "action": "Initiate wire (SWIFT) or real-time (SPEI/FPS/UPI) via CashPro or Swift messaging; FX at live/guaranteed rate via API",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -146,6 +148,7 @@
    "stage": "review-authorize",
    "title": "Approvals in CashPro App (Mobile Token)",
    "customer_action": "Approvals in CashPro App (Mobile Token)",
+   "action": "Approvals in CashPro App (Mobile Token)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -188,13 +191,14 @@
    "stage": "execute-track",
    "title": "Tracking and status; real-time corridors deliver in seconds/minutes",
    "customer_action": null,
+   "action": "Tracking and status; real-time corridors deliver in seconds/minutes",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment tracking"
     }
    ],
-   "frontstage": "Tracking and status; real-time corridors deliver in seconds/minutes",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -211,7 +215,7 @@
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -230,6 +234,7 @@
    "stage": "exception",
    "title": "Recall/return handled by service; returned funds at retail buy rate…",
    "customer_action": null,
+   "action": "Recall/return handled by service; returned funds at retail buy rate (consumer analogue) – commercial terms not public",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -270,6 +275,7 @@
    "stage": "support",
    "title": "CashPro Chat with Erica → live advisor",
    "customer_action": "CashPro Chat with Erica → live advisor",
+   "action": "CashPro Chat with Erica → live advisor",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -338,7 +344,5 @@
  "notifications": [],
  "assessment": "Cross-border real-time launch (Mexico/UK/India) is a 2025–26 differentiator; SWIFT gpi tracking not confirmed on fetched pages.",
  "x-mi_evidence": "THIRD_PARTY",
- "bank_product": "BAC-P13",
- "composite": "CJ-WIRE-INTL-CONSUMER-SEND",
- "composite_match": "rail"
+ "bank_product": "BAC-P13"
 }

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Within Bill Pay, eligible payees offer eBill enrollment",
    "customer_action": "Within Bill Pay, eligible payees offer eBill enrollment",
+   "action": "Within Bill Pay, eligible payees offer eBill enrollment",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "set-up",
    "title": "Enroll in eBills for the payee and set up recurring eBill payments",
    "customer_action": "Enroll in eBills for the payee and set up recurring eBill payments",
+   "action": "Enroll in eBills for the payee and set up recurring eBill payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -179,6 +181,7 @@
    "stage": "execute-track",
    "title": "eBill arrives; recurring payment executes per rule",
    "customer_action": null,
+   "action": "eBill arrives; recurring payment executes per rule",
    "touchpoints": [
     {
      "channel": "web",
@@ -210,6 +213,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -219,6 +232,7 @@
    "stage": "manage",
    "title": "Cancel recurring payment via Scheduled payments > '…'",
    "customer_action": "Cancel recurring payment via Scheduled payments > '…'",
+   "action": "Cancel recurring payment via Scheduled payments > '…'",
    "touchpoints": [
     {
      "channel": "web",
@@ -261,6 +275,7 @@
    "stage": "exception",
    "title": "eBill not received / biller declines",
    "customer_action": null,
+   "action": "eBill not received / biller declines",
    "touchpoints": [
     {
      "channel": "web",
@@ -292,6 +307,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -301,6 +326,7 @@
    "stage": "support",
    "title": "800-655-2265",
    "customer_action": null,
+   "action": "800-655-2265",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Enroll in optional ACH Service ($15/mo); register two authorization…",
    "customer_action": "Enroll in optional ACH Service ($15/mo); register two authorization phone numbers",
+   "action": "Enroll in optional ACH Service ($15/mo); register two authorization phone numbers",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Create recipients and reusable templates (optional dollar limits); up…",
    "customer_action": "Create recipients and reusable templates (optional dollar limits); up to 10 funding accounts",
+   "action": "Create recipients and reusable templates (optional dollar limits); up to 10 funding accounts",
    "touchpoints": [
     {
      "channel": "web",
@@ -130,6 +132,7 @@
    "stage": "initiate",
    "title": "Choose template/recipients, amounts, effective date, one-time or…",
    "customer_action": "Choose template/recipients, amounts, effective date, one-time or recurring",
+   "action": "Choose template/recipients, amounts, effective date, one-time or recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -200,6 +203,7 @@
    "stage": "review-authorize",
    "title": "Submit; transaction validation via call/email/text code to registered…",
    "customer_action": "Submit; transaction validation via call/email/text code to registered number; 'Pending Authorization' hold no longer available",
+   "action": "Submit; transaction validation via call/email/text code to registered number; 'Pending Authorization' hold no longer available",
    "touchpoints": [
     {
      "channel": "web",
@@ -282,6 +286,7 @@
    "stage": "execute-track",
    "title": "Credits fail if funds unavailable at submission; recipients see 'ACH…",
    "customer_action": null,
+   "action": "Credits fail if funds unavailable at submission; recipients see 'ACH CREDIT'",
    "touchpoints": [
     {
      "channel": "web",
@@ -319,6 +324,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s008",
+      "src-truist-s047",
+      "src-truist-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -328,13 +346,14 @@
    "stage": "confirm-complete",
    "title": "ACH alerts (business)",
    "customer_action": null,
+   "action": "ACH alerts (business)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "ACH alerts (business)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -351,7 +370,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -370,6 +389,7 @@
    "stage": "manage",
    "title": "Edit templates; recurring management; NOC $3.75; return $5.75",
    "customer_action": "Edit templates; recurring management; NOC $3.75; return $5.75",
+   "action": "Edit templates; recurring management; NOC $3.75; return $5.75",
    "touchpoints": [
     {
      "channel": "web",
@@ -412,6 +432,7 @@
    "stage": "exception",
    "title": "Reversal: transaction $20 / batch $75; Fraud Inspector for unauthorized…",
    "customer_action": "Reversal: transaction $20 / batch $75; Fraud Inspector for unauthorized debits; ACH fraud line 800-774-8179",
+   "action": "Reversal: transaction $20 / batch $75; Fraud Inspector for unauthorized debits; ACH fraud line 800-774-8179",
    "touchpoints": [
     {
      "channel": "phone",
@@ -474,6 +495,7 @@
    "stage": "support",
    "title": "888-228-6654 / 844-4TRUIST",
    "customer_action": "888-228-6654 / 844-4TRUIST",
+   "action": "888-228-6654 / 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "phone",

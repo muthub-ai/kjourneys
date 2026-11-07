@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Citi Global Transfers in the Citi Mobile App or Citi…",
    "customer_action": "Customer opens Citi Global Transfers in the Citi Mobile App or Citi Online (available in the app since Dec 2016)",
+   "action": "Customer opens Citi Global Transfers in the Citi Mobile App or Citi Online (available in the app since Dec 2016)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Enter the recipient's Citibank account in a permitted destination…",
    "customer_action": "Enter the recipient's Citibank account in a permitted destination country (list may change; check Citi Online or service team)",
+   "action": "Enter the recipient's Citibank account in a permitted destination country (list may change; check Citi Online or service team)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Enter amount ($1 minimum); credit is in the recipient account's…",
    "customer_action": "Enter amount ($1 minimum); credit is in the recipient account's currency at Citi's rate with conversion commission; remittance disclosures apply",
+   "action": "Enter amount ($1 minimum); credit is in the recipient account's currency at Citi's rate with conversion commission; remittance disclosures apply",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -184,6 +187,7 @@
    "stage": "review-authorize",
    "title": "Review; authenticate",
    "customer_action": "Review; authenticate",
+   "action": "Review; authenticate",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -226,6 +230,7 @@
    "stage": "execute-track",
    "title": "Debit and credit occur immediately (U.S.) / in recipient currency…",
    "customer_action": null,
+   "action": "Debit and credit occur immediately (U.S.) / in recipient currency (international)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -259,6 +264,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s031"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -268,13 +284,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; no fee",
    "customer_action": null,
+   "action": "Confirmation; no fee",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Confirmation; no fee",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -291,7 +308,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -310,6 +327,7 @@
    "stage": "manage",
    "title": "Cancel within 30 minutes (international, Remittance Transfer rule)",
    "customer_action": "Cancel within 30 minutes (international, Remittance Transfer rule)",
+   "action": "Cancel within 30 minutes (international, Remittance Transfer rule)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -352,6 +370,7 @@
    "stage": "exception",
    "title": "Errors: 60-day window for Global/Intra Citi transfers; provisional…",
    "customer_action": "Errors: 60-day window for Global/Intra Citi transfers; provisional credit within 10 Business Days",
+   "action": "Errors: 60-day window for Global/Intra Citi transfers; provisional credit within 10 Business Days",
    "touchpoints": [
     {
      "channel": "phone",
@@ -394,6 +413,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

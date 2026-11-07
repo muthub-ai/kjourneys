@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "App: Move Money > 'Make a Payment'; Web: 'Make a Payment' in account…",
    "customer_action": "App: Move Money > 'Make a Payment'; Web: 'Make a Payment' in account summary bar",
+   "action": "App: Move Money > 'Make a Payment'; Web: 'Make a Payment' in account summary bar",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Choose amount (minimum / statement balance / other); one-time or autopay",
    "customer_action": "Choose amount (minimum / statement balance / other); one-time or autopay",
+   "action": "Choose amount (minimum / statement balance / other); one-time or autopay",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Confirm; online card payments before 7 p.m. ET processed same day",
    "customer_action": "Confirm; online card payments before 7 p.m. ET processed same day",
+   "action": "Confirm; online card payments before 7 p.m. ET processed same day",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -168,13 +171,14 @@
    "stage": "execute-track",
    "title": "Visible next day",
    "customer_action": null,
+   "action": "Visible next day",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Card activity"
     }
    ],
-   "frontstage": "Visible next day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -191,7 +195,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -210,13 +214,14 @@
    "stage": "confirm-complete",
    "title": "Payment reminders and 'Statement Available' alerts",
    "customer_action": null,
+   "action": "Payment reminders and 'Statement Available' alerts",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Payment reminders and 'Statement Available' alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email/SMS",
@@ -233,7 +238,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -252,6 +257,7 @@
    "stage": "manage",
    "title": "Autopay enrollment via messaging 'Automatic Payments' or 1-800-837-2000",
    "customer_action": "Autopay enrollment via messaging 'Automatic Payments' or 1-800-837-2000",
+   "action": "Autopay enrollment via messaging 'Automatic Payments' or 1-800-837-2000",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -311,6 +317,7 @@
    "stage": "exception",
    "title": "Payment not showing -> call 800-972-3030; community reports of…",
    "customer_action": "Payment not showing -> call 800-972-3030; community reports of failed/double card payments in app",
+   "action": "Payment not showing -> call 800-972-3030; community reports of failed/double card payments in app",
    "touchpoints": [
     {
      "channel": "phone",
@@ -373,6 +380,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -451,6 +459,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -510,6 +519,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",
@@ -600,5 +610,7 @@
  "bank_product": "FITB-P02",
  "terms": {
   "cutoffs": "7 p.m. ET same-day"
- }
+ },
+ "composite": "CJ-INTERNAL-TRANSFER",
+ "composite_match": "rail-segment"
 }

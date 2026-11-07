@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Client connects via API, file transmission or SinglePoint and is…",
    "customer_action": "Client connects via API, file transmission or SinglePoint and is enabled for instant payments",
+   "action": "Client connects via API, file transmission or SinglePoint and is enabled for instant payments",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Submit credit with payee account/routing, amount and remittance data;…",
    "customer_action": "Submit credit with payee account/routing, amount and remittance data; API lets client set preferred network (TCH RTP, FedNow, or 'Instant' = bank chooses by business rules) at onboarding or per request; $10M limit on both networks (API; FedNow network limit raised to $10M Nov 2025; U.S. Bank commercial marketing page still shows FedNow $1M)",
+   "action": "Submit credit with payee account/routing, amount and remittance data; API lets client set preferred network (TCH RTP, FedNow, or 'Instant' = bank chooses by business rules) at onboarding or per request; $10M limit on both networks (API; FedNow network limit raised to $10M Nov 2025; U.S. Bank commercial marketing page still shows FedNow $1M)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -145,6 +147,7 @@
    "stage": "initiate",
    "title": "Entitlement/approval per SinglePoint system administration ('Manage…",
    "customer_action": "Entitlement/approval per SinglePoint system administration ('Manage approvals, set payment limits and whitelist computer IP addresses'); dashboard shows transfers and approvals; Mobile SinglePoint for approvals on the go",
+   "action": "Entitlement/approval per SinglePoint system administration ('Manage approvals, set payment limits and whitelist computer IP addresses'); dashboard shows transfers and approvals; Mobile SinglePoint for approvals on the go",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -207,13 +210,14 @@
    "stage": "initiate",
    "title": "Payment settles and is confirmed within seconds; irrevocable",
    "customer_action": null,
+   "action": "Payment settles and is confirmed within seconds; irrevocable",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Payment settles and is confirmed within seconds; irrevocable",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "API/portal confirmation",
@@ -230,7 +234,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -249,13 +253,14 @@
    "stage": "exception",
    "title": "Receiving bank must be on RTP or FedNow; originated credit transfers…",
    "customer_action": null,
+   "action": "Receiving bank must be on RTP or FedNow; originated credit transfers are irrevocable; API returns transaction statuses/reject reasons and webhook notifications (status catalogue behind developer login); fallback via Pay Smart / Payee Choice",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Receiving bank must be on RTP or FedNow; originated credit transfers are irrevocable; API returns transaction statuses/reject reasons and webhook notifications (status catalogue behind developer login); fallback via Pay Smart / Payee Choice",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -274,7 +279,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -295,6 +300,7 @@
    "stage": "support",
    "title": "Treasury management support / relationship team ('Connect with us')",
    "customer_action": null,
+   "action": "Treasury management support / relationship team ('Connect with us')",
    "touchpoints": [
     {
      "channel": "phone",

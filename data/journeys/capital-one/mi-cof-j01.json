@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens the checking account in the Capital One Mobile app and…",
    "customer_action": "Customer opens the checking account in the Capital One Mobile app and sees 'Send Money with Zelle®' as an account action",
+   "action": "Customer opens the checking account in the Capital One Mobile app and sees 'Send Money with Zelle®' as an account action",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -120,6 +121,7 @@
    "stage": "set-up",
    "title": "First-time user accepts Zelle terms, chooses the email or U.S. mobile…",
    "customer_action": "First-time user accepts Zelle terms, chooses the email or U.S. mobile number to be found by, and completes verification",
+   "action": "First-time user accepts Zelle terms, chooses the email or U.S. mobile number to be found by, and completes verification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -194,6 +196,7 @@
    "stage": "set-up",
    "title": "Customer adds a recipient by full name + U.S. mobile number or email,…",
    "customer_action": "Customer adds a recipient by full name + U.S. mobile number or email, picks from phone contacts, or scans the recipient's Zelle QR code ('Use a QR Code' on Select Recipient screen)",
+   "action": "Customer adds a recipient by full name + U.S. mobile number or email, picks from phone contacts, or scans the recipient's Zelle QR code ('Use a QR Code' on Select Recipient screen)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -268,6 +271,7 @@
    "stage": "initiate",
    "title": "Customer enters amount and optional memo",
    "customer_action": "Customer enters amount and optional memo",
+   "action": "Customer enters amount and optional memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -342,6 +346,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews recipient details and taps/slides to authorize",
    "customer_action": "Customer reviews recipient details and taps/slides to authorize",
+   "action": "Customer reviews recipient details and taps/slides to authorize",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -420,6 +425,7 @@
    "stage": "execute-track",
    "title": "Payment is submitted to the Zelle network; enrolled recipients…",
    "customer_action": null,
+   "action": "Payment is submitted to the Zelle network; enrolled recipients typically receive funds within minutes",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -453,6 +459,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -462,6 +479,7 @@
    "stage": "confirm-complete",
    "title": "Customer sees confirmation; transaction posts to checking history",
    "customer_action": null,
+   "action": "Customer sees confirmation; transaction posts to checking history",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -497,6 +515,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001",
+      "src-capital-one-s038"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -506,6 +536,7 @@
    "stage": "manage",
    "title": "Customer can cancel a payment only while the recipient is unenrolled:…",
    "customer_action": "Customer can cancel a payment only while the recipient is unenrolled: activity page > select payment > 'Cancel This Payment'; scheduled Zelle payments must be canceled by 11:59 PM ET the day before",
+   "action": "Customer can cancel a payment only while the recipient is unenrolled: activity page > select payment > 'Cancel This Payment'; scheduled Zelle payments must be canceled by 11:59 PM ET the day before",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -562,6 +593,7 @@
    "stage": "manage",
    "title": "Customer manages Zelle settings and QR code ('Zelle settings' > 'Zelle…",
    "customer_action": "Customer manages Zelle settings and QR code ('Zelle settings' > 'Zelle QR code' > 'My Code' print/share)",
+   "action": "Customer manages Zelle settings and QR code ('Zelle settings' > 'Zelle QR code' > 'My Code' print/share)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -604,6 +636,7 @@
    "stage": "exception",
    "title": "Payment to an unenrolled recipient expires after 14 days and funds…",
    "customer_action": null,
+   "action": "Payment to an unenrolled recipient expires after 14 days and funds return to the sender's account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -637,6 +670,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -646,6 +690,7 @@
    "stage": "exception",
    "title": "Sent to wrong person / scam: customer calls customer support…",
    "customer_action": "Sent to wrong person / scam: customer calls customer support immediately (800-655-2265); bank states no purchase protection and authorized payments may not be recoverable; unauthorized (fraud) transfers handled under EFT error-resolution with $0 liability if reported within 2 business days",
+   "action": "Sent to wrong person / scam: customer calls customer support immediately (800-655-2265); bank states no purchase protection and authorized payments may not be recoverable; unauthorized (fraud) transfers handled under EFT error-resolution with $0 liability if reported within 2 business days",
    "touchpoints": [
     {
      "channel": "phone",
@@ -732,6 +777,7 @@
    "stage": "support",
    "title": "Support via Zelle FAQ on capitalone.com, phone banking 800-655-2265 (8…",
    "customer_action": null,
+   "action": "Support via Zelle FAQ on capitalone.com, phone banking 800-655-2265 (8 am-11 pm ET, 7 days), EFT error line 1-888-464-0727, or Eno for informational questions",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Chase Business Online 'Pay & transfer' > 'ACH Payment Services' /…",
    "customer_action": "Chase Business Online 'Pay & transfer' > 'ACH Payment Services' / Payment Center 'Compare your payment options'",
+   "action": "Chase Business Online 'Pay & transfer' > 'ACH Payment Services' / Payment Center 'Compare your payment options'",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Enroll: accept legal agreement, confirm billing account, wait for…",
    "customer_action": "Enroll: accept legal agreement, confirm billing account, wait for activation confirmation; 'Add Payee' or 'Close'",
+   "action": "Enroll: accept legal agreement, confirm billing account, wait for activation confirmation; 'Add Payee' or 'Close'",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "set-up",
    "title": "Manage payees > 'Add a vendor or employee' (activation code may be…",
    "customer_action": "Manage payees > 'Add a vendor or employee' (activation code may be requested); choose vendor (business) or employee (personal) type; routing lookup via Fed E-payments directory; optional group; or import up to 100 payees by CSV",
+   "action": "Manage payees > 'Add a vendor or employee' (activation code may be requested); choose vendor (business) or employee (personal) type; routing lookup via Fed E-payments directory; optional group; or import up to 100 payees by CSV",
    "touchpoints": [
     {
      "channel": "web",
@@ -184,6 +187,7 @@
    "stage": "initiate",
    "title": "'Schedule payments': select payees/group; pay-from account; deliver-by…",
    "customer_action": "'Schedule payments': select payees/group; pay-from account; deliver-by date (send date auto-calculated); amount; addenda note per payee; delivery method Standard/Same-day/Real-time with fee shown",
+   "action": "'Schedule payments': select payees/group; pay-from account; deliver-by date (send date auto-calculated); amount; addenda note per payee; delivery method Standard/Same-day/Real-time with fee shown",
    "touchpoints": [
     {
      "channel": "web",
@@ -228,6 +232,7 @@
    "stage": "initiate",
    "title": "Repeating: Manage Payees > 'Schedule a repeating payment' > amount,…",
    "customer_action": "Repeating: Manage Payees > 'Schedule a repeating payment' > amount, frequency, count > 'Make Payment'",
+   "action": "Repeating: Manage Payees > 'Schedule a repeating payment' > amount, frequency, count > 'Make Payment'",
    "touchpoints": [
     {
      "channel": "web",
@@ -270,6 +275,7 @@
    "stage": "review-authorize",
    "title": "'Next' > review > 'Schedule'; if Chase Dual Control active, payment…",
    "customer_action": "'Next' > review > 'Schedule'; if Chase Dual Control active, payment goes to 'Pending approvals' for an authorized user ('Pending approval' status)",
+   "action": "'Next' > review > 'Schedule'; if Chase Dual Control active, payment goes to 'Pending approvals' for an authorized user ('Pending approval' status)",
    "touchpoints": [
     {
      "channel": "web",
@@ -329,13 +335,14 @@
    "stage": "execute-track",
    "title": "Approve by 8 PM ET for next-business-day arrival; statuses Sent/In…",
    "customer_action": null,
+   "action": "Approve by 8 PM ET for next-business-day arrival; statuses Sent/In process/Paid/Completed",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment activity (13 months; filters)"
     }
    ],
-   "frontstage": "Approve by 8 PM ET for next-business-day arrival; statuses Sent/In process/Paid/Completed",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -353,7 +360,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -373,13 +380,14 @@
    "stage": "confirm-complete",
    "title": "Alerts per Profile & settings > Alerts; notified when processed",
    "customer_action": null,
+   "action": "Alerts per Profile & settings > Alerts; notified when processed",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Alerts per Profile & settings > Alerts; notified when processed",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -397,7 +405,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -417,6 +425,7 @@
    "stage": "manage",
    "title": "Cancel one-time via Payment activity 'Cancel'; cancel next or entire…",
    "customer_action": "Cancel one-time via Payment activity 'Cancel'; cancel next or entire repeating series; edit/delete payees (not with pending payments); raise/lower limits under Payment preferences",
+   "action": "Cancel one-time via Payment activity 'Cancel'; cancel next or entire repeating series; edit/delete payees (not with pending payments); raise/lower limits under Payment preferences",
    "touchpoints": [
     {
      "channel": "web",
@@ -461,13 +470,14 @@
    "stage": "exception",
    "title": "Returned/Rejected/Failed/Funding failed statuses; reversal request only…",
    "customer_action": null,
+   "action": "Returned/Rejected/Failed/Funding failed statuses; reversal request only for 'In process' or 'Paid'; Nacha file errors troubleshoot article",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment activity"
     }
    ],
-   "frontstage": "Returned/Rejected/Failed/Funding failed statuses; reversal request only for 'In process' or 'Paid'; Nacha file errors troubleshoot article",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -485,7 +495,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -505,6 +515,7 @@
    "stage": "support",
    "title": "Business banking 1-866-564-2262 (fraud) / Retail Business Servicing…",
    "customer_action": "Business banking 1-866-564-2262 (fraud) / Retail Business Servicing 1-800-242-7338; Secure Message Center",
+   "action": "Business banking 1-866-564-2262 (fraud) / Retail Business Servicing 1-800-242-7338; Secure Message Center",
    "touchpoints": [
     {
      "channel": "phone",

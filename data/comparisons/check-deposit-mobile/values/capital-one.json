@@ -326,29 +326,15 @@
     ],
     "attr-cap-step-up-auth": [
       {
-        "id": "urn:kos:assertion:capital-one:check-deposit-mobile:cap-step-up-auth:2",
-        "value": true,
-        "display": "Yes — device recognition",
-        "basis": "disclosed",
-        "source_ids": [
-          "src-mi-2026-11-06-v1",
-          "src-capital-one-s021",
-          "src-capital-one-s043",
-          "src-capital-one-s085",
-          "src-capital-one-s917"
-        ],
-        "asserted_by": "process:mi-session",
-        "asserted_at": "2026-11-06T21:03:00-06:00",
-        "observed_on": "2026-11-06",
-        "valid_from": "2026-11-06",
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "high",
-        "x-evidence": {
-          "report_ref": "Capabilities sheet: COF-P05-S01",
-          "mi_level": "CONFIRMED_BANK"
-        }
+        "id": "urn:kos:assertion:capital-one:check-deposit-mobile:cap-step-up-auth:1"
       }
     ],
     "attr-cap-dual-approval-smb": [
@@ -415,16 +401,9 @@
       {
         "id": "urn:kos:assertion:capital-one:check-deposit-mobile:cap-same-day:2",
         "value": true,
-        "display": "Yes — posting same day if before 9 PM ET",
         "basis": "disclosed",
         "source_ids": [
           "src-mi-2026-11-06-v1",
-          "src-capital-one-s021",
-          "src-capital-one-s043",
-          "src-capital-one-s085",
-          "src-capital-one-s917",
-          "src-capital-one-s037",
-          "src-capital-one-s036",
           "src-capital-one-s031",
           "src-capital-one-s063"
         ],
@@ -437,7 +416,7 @@
         "verified_at": null,
         "confidence": "high",
         "x-evidence": {
-          "report_ref": "Capabilities sheet: COF-P05-S01, COF-P05-S02, COF-P13-S02",
+          "report_ref": "Capabilities sheet: COF-P13-S02",
           "mi_level": "CONFIRMED_BANK"
         }
       }

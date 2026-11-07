@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer notices an unauthorized item or realises a scam; Citi Fraud…",
    "customer_action": "Customer notices an unauthorized item or realises a scam; Citi Fraud and Scam Prevention Central 'Take control after a scam': cease contact, call the number on the card/statement, file with local law enforcement, FTC (reportfraud.ftc.gov) and IC3; safety tips: Citi never asks for password/OTP, never texts from a 10-digit number, warns against 'transfer money to yourself' requests",
+   "action": "Customer notices an unauthorized item or realises a scam; Citi Fraud and Scam Prevention Central 'Take control after a scam': cease contact, call the number on the card/statement, file with local law enforcement, FTC (reportfraud.ftc.gov) and IC3; safety tips: Citi never asks for password/OTP, never texts from a 10-digit number, warns against 'transfer money to yourself' requests",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Call the number on the card (1-888-CITIBANK, 24/7) within 60 days of…",
    "customer_action": "Call the number on the card (1-888-CITIBANK, 24/7) within 60 days of the statement; written follow-up within 10 Business Days if requested",
+   "action": "Call the number on the card (1-888-CITIBANK, 24/7) within 60 days of the statement; written follow-up within 10 Business Days if requested",
    "touchpoints": [
     {
      "channel": "phone",
@@ -130,13 +132,14 @@
    "stage": "execute-track",
    "title": "Citi investigates within 10 Business Days (20 for new accounts) or…",
    "customer_action": null,
+   "action": "Citi investigates within 10 Business Days (20 for new accounts) or provisionally credits and extends to 45/90 days",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": null
     }
    ],
-   "frontstage": "Citi investigates within 10 Business Days (20 for new accounts) or provisionally credits and extends to 45/90 days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -154,7 +157,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -174,13 +177,14 @@
    "stage": "confirm-complete",
    "title": "Outcome communicated; liability $50 if reported within 2 Business Days,…",
    "customer_action": null,
+   "action": "Outcome communicated; liability $50 if reported within 2 Business Days, up to $500 otherwise (CA/NY exceptions); Zero Liability for debit card with reasonable care",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": null
     }
    ],
-   "frontstage": "Outcome communicated; liability $50 if reported within 2 Business Days, up to $500 otherwise (CA/NY exceptions); Zero Liability for debit card with reasonable care",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -197,7 +201,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -216,6 +220,7 @@
    "stage": "manage",
    "title": "Citi Quick Lock (Citi Mobile App or Citi Online) blocks new…",
    "customer_action": "Citi Quick Lock (Citi Mobile App or Citi Online) blocks new purchases/ATM withdrawals while allowing recurring transactions, bill payments, deposits, credits and online transfers; PIN reset; Bank Card Replacement page",
+   "action": "Citi Quick Lock (Citi Mobile App or Citi Online) blocks new purchases/ATM withdrawals while allowing recurring transactions, bill payments, deposits, credits and online transfers; PIN reset; Bank Card Replacement page",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -258,13 +263,14 @@
    "stage": "exception",
    "title": "Authorized scam payment: Zelle imposter scams may be reimbursed;…",
    "customer_action": null,
+   "action": "Authorized scam payment: Zelle imposter scams may be reimbursed; wires/other authorized transfers are not",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": null
     }
    ],
-   "frontstage": "Authorized scam payment: Zelle imposter scams may be reimbursed; wires/other authorized transfers are not",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -282,7 +288,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -302,6 +308,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Set up a Wire Transfer > Foreign",
    "customer_action": "Set up a Wire Transfer > Foreign",
+   "action": "Set up a Wire Transfer > Foreign",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enter beneficiary with IBAN and BIC (required for EU/EEA euro payments)…",
    "customer_action": "Enter beneficiary with IBAN and BIC (required for EU/EEA euro payments) or use a model; up to six beneficiaries per FX purchase",
+   "action": "Enter beneficiary with IBAN and BIC (required for EU/EEA euro payments) or use a model; up to six beneficiaries per FX purchase",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "initiate",
    "title": "Request FX rate (Exchange Rate Inquiry available beforehand); rate…",
    "customer_action": "Request FX rate (Exchange Rate Inquiry available beforehand); rate valid 4 minutes for amounts over $10,000; FX wires cannot be future-dated or recurring",
+   "action": "Request FX rate (Exchange Rate Inquiry available beforehand); rate valid 4 minutes for amounts over $10,000; FX wires cannot be future-dated or recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -185,6 +188,7 @@
    "stage": "review-authorize",
    "title": "Accept rate within 4 minutes or send to Approvals Queue where approver…",
    "customer_action": "Accept rate within 4 minutes or send to Approvals Queue where approver must obtain a current rate",
+   "action": "Accept rate within 4 minutes or send to Approvals Queue where approver must obtain a current rate",
    "touchpoints": [
     {
      "channel": "web",
@@ -227,6 +231,7 @@
    "stage": "execute-track",
    "title": "Foreign-currency wire executes only if funds available (no retry)",
    "customer_action": null,
+   "action": "Foreign-currency wire executes only if funds available (no retry)",
    "touchpoints": [
     {
      "channel": "web",
@@ -260,6 +265,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s010"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -269,13 +285,14 @@
    "stage": "confirm-complete",
    "title": "Completed Wires",
    "customer_action": null,
+   "action": "Completed Wires",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Completed Wires",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -292,7 +309,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -311,6 +328,7 @@
    "stage": "manage",
    "title": "Update account numbers to IBAN in models/future wires to avoid…",
    "customer_action": "Update account numbers to IBAN in models/future wires to avoid delays/returns",
+   "action": "Update account numbers to IBAN in models/future wires to avoid delays/returns",
    "touchpoints": [
     {
      "channel": "web",
@@ -353,13 +371,14 @@
    "stage": "exception",
    "title": "Missing IBAN: delay/return with extra fees",
    "customer_action": null,
+   "action": "Missing IBAN: delay/return with extra fees",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Missing IBAN: delay/return with extra fees",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -376,7 +395,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -395,6 +414,7 @@
    "stage": "exception",
    "title": "Recall via Customer Service; no guarantee",
    "customer_action": "Recall via Customer Service; no guarantee",
+   "action": "Recall via Customer Service; no guarantee",
    "touchpoints": [
     {
      "channel": "phone",
@@ -437,6 +457,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",
@@ -537,7 +558,5 @@
  "terms": {
   "limits": "USD equivalent of $999,999,999.99",
   "cutoffs": "4-minute FX rate"
- },
- "composite": "CJ-WIRE-INTL-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

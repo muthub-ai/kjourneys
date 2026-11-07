@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Welcome Center: 'transfer money from another bank or a Fifth Third…",
    "customer_action": "Welcome Center: 'transfer money from another bank or a Fifth Third account'; online banking help section 'External Transfers' (blocked to crawlers)",
+   "action": "Welcome Center: 'transfer money from another bank or a Fifth Third account'; online banking help section 'External Transfers' (blocked to crawlers)",
    "touchpoints": [
     {
      "channel": "web",
@@ -110,6 +111,7 @@
    "stage": "set-up",
    "title": "Add external account (routing/account number); verification method…",
    "customer_action": "Add external account (routing/account number); verification method (micro-deposits vs instant) UNKNOWN",
+   "action": "Add external account (routing/account number); verification method (micro-deposits vs instant) UNKNOWN",
    "touchpoints": [
     {
      "channel": "web",
@@ -169,6 +171,7 @@
    "stage": "initiate",
    "title": "Choose direction (to/from external), amount, date",
    "customer_action": "Choose direction (to/from external), amount, date",
+   "action": "Choose direction (to/from external), amount, date",
    "touchpoints": [
     {
      "channel": "web",
@@ -209,6 +212,7 @@
    "stage": "review-authorize",
    "title": "Confirm; security limits may be imposed at any time (DSUA)",
    "customer_action": "Confirm; security limits may be imposed at any time (DSUA)",
+   "action": "Confirm; security limits may be imposed at any time (DSUA)",
    "touchpoints": [
     {
      "channel": "web",
@@ -251,13 +255,14 @@
    "stage": "execute-track",
    "title": "ACH processing ~1 business day (ACH FAQ); errors may cause hold up to…",
    "customer_action": null,
+   "action": "ACH processing ~1 business day (ACH FAQ); errors may cause hold up to 30 days",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "ACH processing ~1 business day (ACH FAQ); errors may cause hold up to 30 days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -275,7 +280,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -295,13 +300,14 @@
    "stage": "confirm-complete",
    "title": "Posting visible in activity; deposit alerts next business day",
    "customer_action": null,
+   "action": "Posting visible in activity; deposit alerts next business day",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Posting visible in activity; deposit alerts next business day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email",
@@ -318,7 +324,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -337,6 +343,7 @@
    "stage": "manage",
    "title": "Cancel/edit scheduled external transfer — UNKNOWN",
    "customer_action": "Cancel/edit scheduled external transfer — UNKNOWN",
+   "action": "Cancel/edit scheduled external transfer — UNKNOWN",
    "touchpoints": [
     {
      "channel": "web",
@@ -377,13 +384,14 @@
    "stage": "exception",
    "title": "Return/failed external transfer -> extended hold up to 30 days for…",
    "customer_action": null,
+   "action": "Return/failed external transfer -> extended hold up to 30 days for resolution (DSUA)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Return/failed external transfer -> extended hold up to 30 days for resolution (DSUA)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -401,7 +409,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -421,6 +429,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -499,6 +508,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -558,6 +568,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

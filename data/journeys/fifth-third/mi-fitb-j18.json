@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Originate Instant Payments (RTP) by Data Exchange file upload in Fifth…",
    "customer_action": "Originate Instant Payments (RTP) by Data Exchange file upload in Fifth Third Direct or a single API call (Instant Payments API / Newline). No single-entry RTP type is documented in FTD New Payment, and RTP items appear in FTD Historical Payments. Account Validation is available before RTP. Migrated Comerica clients cannot originate RTP.",
+   "action": "Originate Instant Payments (RTP) by Data Exchange file upload in Fifth Third Direct or a single API call (Instant Payments API / Newline). No single-entry RTP type is documented in FTD New Payment, and RTP items appear in FTD Historical Payments. Account Validation is available before RTP. Migrated Comerica clients cannot originate RTP.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -90,6 +91,7 @@
    "stage": "review-authorize",
    "title": "Approval/Dual Transaction Approval per MTMA; funds must be available…",
    "customer_action": "Approval/Dual Transaction Approval per MTMA; funds must be available (no holds)",
+   "action": "Approval/Dual Transaction Approval per MTMA; funds must be available (no holds)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -152,13 +154,14 @@
    "stage": "execute-track",
    "title": "Settles in seconds on TCH RTP; immediate confirmation and real-time…",
    "customer_action": null,
+   "action": "Settles in seconds on TCH RTP; immediate confirmation and real-time status; irrevocable",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Status"
     }
    ],
-   "frontstage": "Settles in seconds on TCH RTP; immediate confirmation and real-time status; irrevocable",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "real-time status",
@@ -175,7 +178,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -194,6 +197,7 @@
    "stage": "confirm-complete",
    "title": "Request for Payment: biller sends RfP, payer reviews e-invoice in their…",
    "customer_action": "Request for Payment: biller sends RfP, payer reviews e-invoice in their bank channel and pays instantly",
+   "action": "Request for Payment: biller sends RfP, payer reviews e-invoice in their bank channel and pays instantly",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -238,13 +242,14 @@
    "stage": "exception",
    "title": "Rejection by network/bank; errors must be reported same business day;…",
    "customer_action": null,
+   "action": "Rejection by network/bank; errors must be reported same business day; FedNow fallback/rerouting marketed but FedNow not live (receive unavailable 9/2026; Newline 'coming soon')",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Rejection by network/bank; errors must be reported same business day; FedNow fallback/rerouting marketed but FedNow not live (receive unavailable 9/2026; Newline 'coming soon')",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -264,7 +269,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -306,6 +311,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",

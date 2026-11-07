@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay and Transfer' > 'Make an External Transfer'",
    "customer_action": "'Pay and Transfer' > 'Make an External Transfer'",
+   "action": "'Pay and Transfer' > 'Make an External Transfer'",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Add external account (routing/account); verify your email address",
    "customer_action": "Add external account (routing/account); verify your email address",
+   "action": "Add external account (routing/account); verify your email address",
    "touchpoints": [
     {
      "channel": "web",
@@ -140,6 +142,7 @@
    "stage": "set-up",
    "title": "Trial-deposit path: PNC sends low-value credit(s) then debit(s) (credit…",
    "customer_action": null,
+   "action": "Trial-deposit path: PNC sends low-value credit(s) then debit(s) (credit always first, never larger); customer reports amounts to confirm",
    "touchpoints": [
     {
      "channel": "web",
@@ -164,6 +167,17 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -199,6 +213,7 @@
    "stage": "initiate",
    "title": "Choose direction (to or from PNC), amount, and type: one-time same-day,…",
    "customer_action": "Choose direction (to or from PNC), amount, and type: one-time same-day, scheduled up to one year ahead, or recurring",
+   "action": "Choose direction (to or from PNC), amount, and type: one-time same-day, scheduled up to one year ahead, or recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -252,6 +267,7 @@
    "stage": "review-authorize",
    "title": "Review and submit; customer accepts the transfer may be irrevocable",
    "customer_action": "Review and submit; customer accepts the transfer may be irrevocable",
+   "action": "Review and submit; customer accepts the transfer may be irrevocable",
    "touchpoints": [
     {
      "channel": "web",
@@ -305,6 +321,7 @@
    "stage": "execute-track",
    "title": "ACH debit clears via Transfer Service Provider's clearing bank;…",
    "customer_action": null,
+   "action": "ACH debit clears via Transfer Service Provider's clearing bank; receiving account credited usually 3-4 banking days later ('as few as 3 business days')",
    "touchpoints": [
     {
      "channel": "web",
@@ -331,6 +348,19 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s006",
+      "src-pnc-s018",
+      "src-pnc-s906"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -370,13 +400,14 @@
    "stage": "confirm-complete",
    "title": "Transfer posts in both accounts; electronic notice if held",
    "customer_action": null,
+   "action": "Transfer posts in both accounts; electronic notice if held",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Transfer posts in both accounts; electronic notice if held",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Hold/delay notice per alert preferences",
@@ -393,7 +424,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -412,6 +443,7 @@
    "stage": "manage",
    "title": "Cancel a scheduled transfer before the debit's process date; cancelling…",
    "customer_action": "Cancel a scheduled transfer before the debit's process date; cancelling a recurring plan cancels all future transfers",
+   "action": "Cancel a scheduled transfer before the debit's process date; cancelling a recurring plan cancels all future transfers",
    "touchpoints": [
     {
      "channel": "web",
@@ -456,13 +488,14 @@
    "stage": "exception",
    "title": "Failed transfer: PNC makes a reasonable effort to complete; on second…",
    "customer_action": null,
+   "action": "Failed transfer: PNC makes a reasonable effort to complete; on second failure customer is notified to contact their financial institution",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Failed transfer: PNC makes a reasonable effort to complete; on second failure customer is notified to contact their financial institution",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -479,7 +512,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -498,6 +531,7 @@
    "stage": "exception",
    "title": "Stop after processing: contact PNC; written request may be required…",
    "customer_action": "Stop after processing: contact PNC; written request may be required within 14 days; fee applies",
+   "action": "Stop after processing: contact PNC; written request may be required within 14 days; fee applies",
    "touchpoints": [
     {
      "channel": "phone",
@@ -540,6 +574,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -596,6 +631,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -655,6 +691,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

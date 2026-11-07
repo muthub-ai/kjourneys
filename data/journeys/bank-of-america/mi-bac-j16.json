@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Account Validation API/service checks recipient account status/owner…",
    "customer_action": "Account Validation API/service checks recipient account status/owner before first payment",
+   "action": "Account Validation API/service checks recipient account status/owner before first payment",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Initiate RTP in CashPro Online, via CashPro API (Payments API) or…",
    "customer_action": "Initiate RTP in CashPro Online, via CashPro API (Payments API) or CashPro Connect file; ISO 20022 remittance data",
+   "action": "Initiate RTP in CashPro Online, via CashPro API (Payments API) or CashPro Connect file; ISO 20022 remittance data",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -130,6 +132,7 @@
    "stage": "review-authorize",
    "title": "Entitled approver(s) approve in CashPro App with Mobile Token push…",
    "customer_action": "Entitled approver(s) approve in CashPro App with Mobile Token push authentication / QR Sign-In",
+   "action": "Entitled approver(s) approve in CashPro App with Mobile Token push authentication / QR Sign-In",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,13 +175,14 @@
    "stage": "execute-track",
    "title": "Settles in seconds over TCH RTP; originator sees accepted/rejected in…",
    "customer_action": null,
+   "action": "Settles in seconds over TCH RTP; originator sees accepted/rejected in real time; near real-time status via API",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "CashPro status / API"
     }
    ],
-   "frontstage": "Settles in seconds over TCH RTP; originator sees accepted/rejected in real time; near real-time status via API",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -196,7 +200,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -216,13 +220,14 @@
    "stage": "confirm-complete",
    "title": "Sender and receiver notifications",
    "customer_action": null,
+   "action": "Sender and receiver notifications",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Notifications"
     }
    ],
-   "frontstage": "Sender and receiver notifications",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email",
@@ -239,7 +244,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -258,13 +263,14 @@
    "stage": "exception",
    "title": "Irrevocable; rejected payments returned instantly; FedNow not available…",
    "customer_action": null,
+   "action": "Irrevocable; rejected payments returned instantly; FedNow not available as alternative rail at BofA",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Status"
     }
    ],
-   "frontstage": "Irrevocable; rejected payments returned instantly; FedNow not available as alternative rail at BofA",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -282,7 +288,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -302,6 +308,7 @@
    "stage": "support",
    "title": "CashPro Chat with Erica → live service advisor; treasury officer",
    "customer_action": "CashPro Chat with Erica → live service advisor; treasury officer",
+   "action": "CashPro Chat with Erica → live service advisor; treasury officer",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",

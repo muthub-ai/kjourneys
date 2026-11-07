@@ -1278,7 +1278,6 @@
           "enum": [
             "mi-reference",
             "rail-segment",
-            "rail",
             null
           ]
         },
@@ -1585,6 +1584,12 @@
             "integer",
             "null"
           ]
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "patternProperties": {
@@ -1855,6 +1860,9 @@
           ]
         },
         "report_version": {
+          "type": "string"
+        },
+        "step_stage": {
           "type": "string"
         }
       }

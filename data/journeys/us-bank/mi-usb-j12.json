@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Deposit a check; limits visible under Transfer & pay >…",
    "customer_action": "Transfer & pay > Deposit a check; limits visible under Transfer & pay > Transaction limits (or when entering amount)",
+   "action": "Transfer & pay > Deposit a check; limits visible under Transfer & pay > Transaction limits (or when entering amount)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -120,6 +121,7 @@
    "stage": "initiate",
    "title": "Sign (endorse) the check; choose account; enter amount; photograph…",
    "customer_action": "Sign (endorse) the check; choose account; enter amount; photograph front and back",
+   "action": "Sign (endorse) the check; choose account; enter amount; photograph front and back",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -179,6 +181,7 @@
    "stage": "review-authorize",
    "title": "Review details; told before confirming if an extended hold applies;…",
    "customer_action": "Review details; told before confirming if an extended hold applies; submit",
+   "action": "Review details; told before confirming if an extended hold applies; submit",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -232,13 +235,14 @@
    "stage": "execute-track",
    "title": "Immediate email confirming receipt; second email when accepted; Pending…",
    "customer_action": null,
+   "action": "Immediate email confirming receipt; second email when accepted; Pending tab until processed; first $275 available immediately, remainder next business day if before 10 p.m. CT; large items up to 5 bd",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Transfer & pay > View mobile check deposits (Pending / Completed)"
     }
    ],
-   "frontstage": "Immediate email confirming receipt; second email when accepted; Pending tab until processed; first $275 available immediately, remainder next business day if before 10 p.m. CT; large items up to 5 bd",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email x2",
@@ -255,7 +259,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -274,13 +278,14 @@
    "stage": "confirm-complete",
    "title": "Completed tab (30 days of approved/declined with reason); images…",
    "customer_action": null,
+   "action": "Completed tab (30 days of approved/declined with reason); images viewable/printable in online banking history (18 months)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "'Check received' / 'Deposit is being processed' page with deposit-notification toggle, 'deposit another check' or 'Done'; later Completed tab and emails"
     }
    ],
-   "frontstage": "Completed tab (30 days of approved/declined with reason); images viewable/printable in online banking history (18 months)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -298,7 +303,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -318,6 +323,7 @@
    "stage": "manage",
    "title": "Keep paper check 2 business days (landing) / 7 business days (FAQ) then…",
    "customer_action": "Keep paper check 2 business days (landing) / 7 business days (FAQ) then destroy",
+   "action": "Keep paper check 2 business days (landing) / 7 business days (FAQ) then destroy",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -380,13 +386,14 @@
    "stage": "exception",
    "title": "Declined deposit: email with reason(s) and next steps; alternatives…",
    "customer_action": null,
+   "action": "Declined deposit: email with reason(s) and next steps; alternatives branch/ATM/Bank by Mail",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Email; Completed tab"
     }
    ],
-   "frontstage": "Declined deposit: email with reason(s) and next steps; alternatives branch/ATM/Bank by Mail",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -403,7 +410,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -422,13 +429,14 @@
    "stage": "exception",
    "title": "Mobile deposits excluded from Digital Security Coverage",
    "customer_action": null,
+   "action": "Mobile deposits excluded from Digital Security Coverage",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Mobile deposits excluded from Digital Security Coverage",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -445,7 +453,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -464,6 +472,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -534,6 +543,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

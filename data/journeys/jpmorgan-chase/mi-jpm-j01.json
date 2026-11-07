@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens 'Pay & Transfer' and sees 'Send money with Zelle®' (also…",
    "customer_action": "Customer opens 'Pay & Transfer' and sees 'Send money with Zelle®' (also in side menu)",
+   "action": "Customer opens 'Pay & Transfer' and sees 'Send money with Zelle®' (also in side menu)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "First use (app): side menu 'Send money with Zelle®' > 'Get started' >…",
    "customer_action": "First use (app): side menu 'Send money with Zelle®' > 'Get started' > tell us your primary email address > accept the service agreement > 'Next' > verify email with one-time activation code > 'Done'. Web: 'Pay & transfer' menu > 'Pay bills & send money with Zelle®' > 'Set up' > choose/enter primary email > accept > 'Next' > activation code > 'Next'. Business: 'Pay and Transfer' > 'Send Money with Zelle®' > 'Get started' > choose account, add email or U.S. mobile > 'Next' > mobile number > 'Next' (up to 5 emails) > code > 'Next' > 'Done' or 'Send or request money'.",
+   "action": "First use (app): side menu 'Send money with Zelle®' > 'Get started' > tell us your primary email address > accept the service agreement > 'Next' > verify email with one-time activation code > 'Done'. Web: 'Pay & transfer' menu > 'Pay bills & send money with Zelle®' > 'Set up' > choose/enter primary email > accept > 'Next' > activation code > 'Next'. Business: 'Pay and Transfer' > 'Send Money with Zelle®' > 'Get started' > choose account, add email or U.S. mobile > 'Next' > mobile number > 'Next' (up to 5 emails) > code > 'Next' > 'Done' or 'Send or request money'.",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -142,6 +144,7 @@
    "stage": "set-up",
    "title": "Enter one-time activation code sent to phone/email, tap 'Next' then…",
    "customer_action": "Enter one-time activation code sent to phone/email, tap 'Next' then 'Done' or 'Send or request money'",
+   "action": "Enter one-time activation code sent to phone/email, tap 'Next' then 'Done' or 'Send or request money'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -198,6 +201,7 @@
    "stage": "set-up",
    "title": "Add recipient: pick from synced phone contacts, type U.S.…",
    "customer_action": "Add recipient: pick from synced phone contacts, type U.S. mobile/email/Zelle tag, or scan recipient QR from 'Select Recipient' screen",
+   "action": "Add recipient: pick from synced phone contacts, type U.S. mobile/email/Zelle tag, or scan recipient QR from 'Select Recipient' screen",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -272,6 +276,7 @@
    "stage": "initiate",
    "title": "Enter amount and select the checking account to send from; optional…",
    "customer_action": "Enter amount and select the checking account to send from; optional memo; optional recurring/future-dated schedule",
+   "action": "Enter amount and select the checking account to send from; optional memo; optional recurring/future-dated schedule",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -331,6 +336,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Review & send'; review recipient, amount, account",
    "customer_action": "Tap 'Review & send'; review recipient, amount, account",
+   "action": "Tap 'Review & send'; review recipient, amount, account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -387,6 +393,7 @@
    "stage": "review-authorize",
    "title": "If payment appears to originate from social-media contact, answer…",
    "customer_action": "If payment appears to originate from social-media contact, answer payment-purpose and contact-origin questions; Chase may block",
+   "action": "If payment appears to originate from social-media contact, answer payment-purpose and contact-origin questions; Chase may block",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -465,6 +472,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Send it now'",
    "customer_action": "Tap 'Send it now'",
+   "action": "Tap 'Send it now'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -518,6 +526,7 @@
    "stage": "execute-track",
    "title": "Enrolled recipient usually receives funds within a few minutes; select…",
    "customer_action": null,
+   "action": "Enrolled recipient usually receives funds within a few minutes; select transactions next business day (Chase recipient) or 1-2 business days (other Zelle bank); 8 PM ET cutoff for same-day to network banks",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -553,6 +562,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-jpmorgan-chase-s001",
+      "src-jpmorgan-chase-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -562,13 +583,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen; alerts by push/email/SMS per preferences;…",
    "customer_action": null,
+   "action": "Confirmation screen; alerts by push/email/SMS per preferences; recipient notified by Zelle",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation screen; alerts by push/email/SMS per preferences; recipient notified by Zelle",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Payment sent alert",
@@ -586,7 +608,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -606,6 +628,7 @@
    "stage": "manage",
    "title": "View/cancel pending payments (only if recipient unenrolled), manage…",
    "customer_action": "View/cancel pending payments (only if recipient unenrolled), manage repeating payments, Zelle settings (tokens, QR 'My Code')",
+   "action": "View/cancel pending payments (only if recipient unenrolled), manage repeating payments, Zelle settings (tokens, QR 'My Code')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -650,6 +673,7 @@
    "stage": "exception",
    "title": "See exception paths (unenrolled, wrong recipient, scam, unauthorized,…",
    "customer_action": "See exception paths (unenrolled, wrong recipient, scam, unauthorized, social-media block)",
+   "action": "See exception paths (unenrolled, wrong recipient, scam, unauthorized, social-media block)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -692,6 +716,7 @@
    "stage": "support",
    "title": "Scam: 'Please contact our customer support team at 1-800-935-9935, opt.…",
    "customer_action": "Scam: 'Please contact our customer support team at 1-800-935-9935, opt. 8.' (business: 1-800-242-7338, 'Qualifying imposter scams may be eligible for reimbursement'); wrong recipient: 'see your deposit account agreement for information on your error resolution rights'; Secure Message Center; 24/7 in-app chat; branch.",
+   "action": "Scam: 'Please contact our customer support team at 1-800-935-9935, opt. 8.' (business: 1-800-242-7338, 'Qualifying imposter scams may be eligible for reimbursement'); wrong recipient: 'see your deposit account agreement for information on your error resolution rights'; Secure Message Center; 24/7 in-app chat; branch.",
    "touchpoints": [
     {
      "channel": "phone",

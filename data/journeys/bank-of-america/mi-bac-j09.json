@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Accounts > Pay & Transfer > Pay Bills tile > 'Go to Bill Pay' (first…",
    "customer_action": "Accounts > Pay & Transfer > Pay Bills tile > 'Go to Bill Pay' (first use: accept Bill Pay terms)",
+   "action": "Accounts > Pay & Transfer > Pay Bills tile > 'Go to Bill Pay' (first use: accept Bill Pay terms)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Scroll to 'Add a new payee' / tap + beside Add Payee > choose company…",
    "customer_action": "Scroll to 'Add a new payee' / tap + beside Add Payee > choose company or person > complete fields (copy/paste supported since v25.12.0) > Save; web 'Add a Company or Person' tab, 'mail a paper check' if not found",
+   "action": "Scroll to 'Add a new payee' / tap + beside Add Payee > choose company or person > complete fields (copy/paste supported since v25.12.0) > Save; web 'Add a Company or Person' tab, 'mail a paper check' if not found",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -145,6 +147,7 @@
    "stage": "initiate",
    "title": "Tap circle beside payee(s) > Pay > Pay From, Amount, Frequency (where…",
    "customer_action": "Tap circle beside payee(s) > Pay > Pay From, Amount, Frequency (where offered), Deliver By date, Reference note to self",
+   "action": "Tap circle beside payee(s) > Pay > Pay From, Amount, Frequency (where offered), Deliver By date, Reference note to self",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -207,6 +210,7 @@
    "stage": "review-authorize",
    "title": "Tap Pay (no separate review screen in demo)",
    "customer_action": "Tap Pay (no separate review screen in demo)",
+   "action": "Tap Pay (no separate review screen in demo)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -249,6 +253,7 @@
    "stage": "execute-track",
    "title": "Payment Type on confirmation shows delivery method (electronic ACH /…",
    "customer_action": null,
+   "action": "Payment Type on confirmation shows delivery method (electronic ACH / single-use virtual card / corporate or personal check); electronic and corporate-check debited on delivery date, personal check when presented; 5 p.m. ET processing cutoff",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -275,6 +280,19 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s043",
+      "src-bank-of-america-s013",
+      "src-bank-of-america-s003"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -314,13 +332,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen – save/print/email; Done; immediate confirmation…",
    "customer_action": null,
+   "action": "Confirmation screen – save/print/email; Done; immediate confirmation payment scheduled",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation screen – save/print/email; Done; immediate confirmation payment scheduled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email (optional)",
@@ -338,7 +357,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -358,6 +377,7 @@
    "stage": "manage",
    "title": "Activity tab > Edit (Save) or Cancel (confirm); web: scheduled payments…",
    "customer_action": "Activity tab > Edit (Save) or Cancel (confirm); web: scheduled payments panel > Change / Cancel Payment; cancel before 5 p.m. ET third bank business day before delivery; Erica can cancel a bill payment",
+   "action": "Activity tab > Edit (Save) or Cancel (confirm); web: scheduled payments panel > Change / Cancel Payment; cancel before 5 p.m. ET third bank business day before delivery; Erica can cancel a bill payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -406,6 +426,7 @@
    "stage": "manage",
    "title": "Edit/delete payee (Change account number; Delete)",
    "customer_action": "Edit/delete payee (Change account number; Delete)",
+   "action": "Edit/delete payee (Change account number; Delete)",
    "touchpoints": [
     {
      "channel": "web",
@@ -448,13 +469,14 @@
    "stage": "exception",
    "title": "Payee late fee due to late scheduling: customer responsible;…",
    "customer_action": null,
+   "action": "Payee late fee due to late scheduling: customer responsible; insufficient funds: skip/retry + overdraft/late fees",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Payee late fee due to late scheduling: customer responsible; insufficient funds: skip/retry + overdraft/late fees",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -471,7 +493,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -490,13 +512,14 @@
    "stage": "exception",
    "title": "Corporate check not cashed in 90 days → stop and re-credit; stop Bill…",
    "customer_action": null,
+   "action": "Corporate check not cashed in 90 days → stop and re-credit; stop Bill Pay transaction free",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "800-432-1000"
     }
    ],
-   "frontstage": "Corporate check not cashed in 90 days → stop and re-credit; stop Bill Pay transaction free",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -514,7 +537,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -534,6 +557,7 @@
    "stage": "exception",
    "title": "Unauthorized bill payment: Consumer Online and Mobile Banking…",
    "customer_action": "Unauthorized bill payment: Consumer Online and Mobile Banking Guarantee; 60 days (90 days if funded from external account)",
+   "action": "Unauthorized bill payment: Consumer Online and Mobile Banking Guarantee; 60 days (90 days if funded from external account)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -578,6 +602,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -656,6 +681,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

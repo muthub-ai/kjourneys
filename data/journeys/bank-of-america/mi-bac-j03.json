@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Accounts > Pay & Transfer > Zelle® > Settings (or 'Set up Zelle®' if…",
    "customer_action": "Accounts > Pay & Transfer > Zelle® > Settings (or 'Set up Zelle®' if not enrolled)",
+   "action": "Accounts > Pay & Transfer > Zelle® > Settings (or 'Set up Zelle®' if not enrolled)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Tap 'Add mobile number or email'; on Zelle® Setup enter Contact Info…",
    "customer_action": "Tap 'Add mobile number or email'; on Zelle® Setup enter Contact Info and choose Deposit Account; read disclosures; tap I AGREE",
+   "action": "Tap 'Add mobile number or email'; on Zelle® Setup enter Contact Info and choose Deposit Account; read disclosures; tap I AGREE",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -158,6 +160,7 @@
    "stage": "set-up",
    "title": "Enter one-time authorization code; Continue; 'Success' > Done",
    "customer_action": null,
+   "action": "Enter one-time authorization code; Continue; 'Success' > Done",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -193,6 +196,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s041",
+      "src-bank-of-america-s002"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -202,6 +217,7 @@
    "stage": "execute-track",
    "title": "Sender at any Zelle bank sends to the enrolled token; funds post in…",
    "customer_action": null,
+   "action": "Sender at any Zelle bank sends to the enrolled token; funds post in minutes, or 'Incoming pending review' if bank holds for verification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -237,6 +253,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s002",
+      "src-bank-of-america-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -246,13 +274,14 @@
    "stage": "confirm-complete",
    "title": "Email/text alert that money was received",
    "customer_action": null,
+   "action": "Email/text alert that money was received",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Email/text alert that money was received",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text/push",
@@ -269,7 +298,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -288,6 +317,7 @@
    "stage": "manage",
    "title": "Change deposit account, add/remove tokens, share My QR Code (QR icon >…",
    "customer_action": "Change deposit account, add/remove tokens, share My QR Code (QR icon > My QR Code)",
+   "action": "Change deposit account, add/remove tokens, share My QR Code (QR icon > My QR Code)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -330,13 +360,14 @@
    "stage": "exception",
    "title": "Incoming pending review: hold cannot be removed by customer; check…",
    "customer_action": null,
+   "action": "Incoming pending review: hold cannot be removed by customer; check Message Center; completes or fails after decision",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Message Center"
     }
    ],
-   "frontstage": "Incoming pending review: hold cannot be removed by customer; check Message Center; completes or fails after decision",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Message Center",
@@ -353,7 +384,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -389,13 +420,14 @@
    "stage": "exception",
    "title": "Sender used wrong/unenrolled token: Zelle sends enrollment prompt;…",
    "customer_action": null,
+   "action": "Sender used wrong/unenrolled token: Zelle sends enrollment prompt; unclaimed after 14 days returns to sender",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle email/text"
     }
    ],
-   "frontstage": "Sender used wrong/unenrolled token: Zelle sends enrollment prompt; unclaimed after 14 days returns to sender",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -413,7 +445,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -433,13 +465,14 @@
    "stage": "exception",
    "title": "18 months of inactivity: bank may verify contact info and cancel…",
    "customer_action": null,
+   "action": "18 months of inactivity: bank may verify contact info and cancel enrollment",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Zelle settings"
     }
    ],
-   "frontstage": "18 months of inactivity: bank may verify contact info and cancel enrollment",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -456,7 +489,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -475,6 +508,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -553,6 +587,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

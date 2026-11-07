@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business profile (Profile Switch recommended) > Transfer & pay > Send &…",
    "customer_action": "Business profile (Profile Switch recommended) > Transfer & pay > Send & request money with Zelle®; if absent call 800-USBANKS",
+   "action": "Business profile (Profile Switch recommended) > Transfer & pay > Send & request money with Zelle®; if absent call 800-USBANKS",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Enroll with business email/mobile or create a Zelle® tag under Zelle®…",
    "customer_action": "Enroll with business email/mobile or create a Zelle® tag under Zelle® Preferences > Create a Zelle® tag (6–40 chars, letters/numbers/hyphens); get Zelle® QR under Preferences > Zelle® QR and print/share",
+   "action": "Enroll with business email/mobile or create a Zelle® tag under Zelle® Preferences > Create a Zelle® tag (6–40 chars, letters/numbers/hyphens); get Zelle® QR under Preferences > Zelle® QR and print/share",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -145,6 +147,7 @@
    "stage": "initiate",
    "title": "Customer pays from their own bank app to the tag/QR/email/mobile;…",
    "customer_action": "Customer pays from their own bank app to the tag/QR/email/mobile; business can Request (email or mobile) or Send (recipient, amount, note)",
+   "action": "Customer pays from their own bank app to the tag/QR/email/mobile; business can Request (email or mobile) or Send (recipient, amount, note)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -187,6 +190,7 @@
    "stage": "review-authorize",
    "title": "Sender confirms displayed business name; business sends/requests with…",
    "customer_action": "Sender confirms displayed business name; business sends/requests with Review > Send/Request (OTP may apply)",
+   "action": "Sender confirms displayed business name; business sends/requests with Review > Send/Request (OTP may apply)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -231,13 +235,14 @@
    "stage": "execute-track",
    "title": "Funds in minutes; Activity shows history",
    "customer_action": null,
+   "action": "Funds in minutes; Activity shows history",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Funds in minutes; Activity shows history",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/push",
@@ -255,7 +260,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -275,13 +280,14 @@
    "stage": "confirm-complete",
    "title": "Email on receipt; optional push/text",
    "customer_action": null,
+   "action": "Email on receipt; optional push/text",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle alerts"
     }
    ],
-   "frontstage": "Email on receipt; optional push/text",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/push",
@@ -298,7 +304,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -317,6 +323,7 @@
    "stage": "manage",
    "title": "Cancel payment only if recipient un-enrolled (Activity > Cancel…",
    "customer_action": "Cancel payment only if recipient un-enrolled (Activity > Cancel payment); manage tag/QR in Preferences",
+   "action": "Cancel payment only if recipient un-enrolled (Activity > Cancel payment); manage tag/QR in Preferences",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -359,6 +366,7 @@
    "stage": "exception",
    "title": "No purchase protection; scam victims contact support – 'qualifying…",
    "customer_action": "No purchase protection; scam victims contact support – 'qualifying imposter scams may be eligible for reimbursement'",
+   "action": "No purchase protection; scam victims contact support – 'qualifying imposter scams may be eligible for reimbursement'",
    "touchpoints": [
     {
      "channel": "phone",
@@ -401,13 +409,14 @@
    "stage": "exception",
    "title": "Business-specific Zelle limits remain unpublished: KB0180664 now…",
    "customer_action": null,
+   "action": "Business-specific Zelle limits remain unpublished: KB0180664 now returns 404 (retired) and no business-Zelle KB appears in the Learn about Zelle index or KB search; limits are shown in-app under Transfer & pay > Transaction limits (Sending/Requesting money with Zelle)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Business-specific Zelle limits remain unpublished: KB0180664 now returns 404 (retired) and no business-Zelle KB appears in the Learn about Zelle index or KB search; limits are shown in-app under Transfer & pay > Transaction limits (Sending/Requesting money with Zelle)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -426,7 +435,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -447,6 +456,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -517,6 +527,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

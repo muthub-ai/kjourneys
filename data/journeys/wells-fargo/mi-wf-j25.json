@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Deposit multiple checks at once in Vantage app",
    "customer_action": "Deposit multiple checks at once in Vantage app",
+   "action": "Deposit multiple checks at once in Vantage app",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "review-authorize",
    "title": "Entitled user reviews and approves pending deposits",
    "customer_action": "Entitled user reviews and approves pending deposits",
+   "action": "Entitled user reviews and approves pending deposits",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -130,6 +132,7 @@
    "stage": "execute-track",
    "title": "Deposit history and confirmations downloadable as PDF",
    "customer_action": "Deposit history and confirmations downloadable as PDF",
+   "action": "Deposit history and confirmations downloadable as PDF",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,6 +175,7 @@
    "stage": "manage",
    "title": "Positive Pay / Fraud Manager exceptions for outgoing checks in Tasks hub",
    "customer_action": "Positive Pay / Fraud Manager exceptions for outgoing checks in Tasks hub",
+   "action": "Positive Pay / Fraud Manager exceptions for outgoing checks in Tasks hub",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -216,13 +220,14 @@
    "stage": "exception",
    "title": "Exceptions in Tasks hub / Message Center",
    "customer_action": null,
+   "action": "Exceptions in Tasks hub / Message Center",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Vantage"
     }
    ],
-   "frontstage": "Exceptions in Tasks hub / Message Center",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -240,7 +245,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -260,6 +265,7 @@
    "stage": "support",
    "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
    "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
    "touchpoints": [
     {
      "channel": "phone",
@@ -350,7 +356,5 @@
  "bank_product": "WF-P13",
  "terms": {
   "limits": "Wire limits at company/account/user level"
- },
- "composite": "CJ-MOBILE-DEPOSIT",
- "composite_match": "rail"
+ }
 }

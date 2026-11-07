@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Menu > Card Settings: 'view recurring payments', 'turn cards on or…",
    "customer_action": "Menu > Card Settings: 'view recurring payments', 'turn cards on or off', 'add cards to digital wallets', 'manage account access' (Control Tower experience, launched Oct 2018)",
+   "action": "Menu > Card Settings: 'view recurring payments', 'turn cards on or off', 'add cards to digital wallets', 'manage account access' (Control Tower experience, launched Oct 2018)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -88,6 +89,7 @@
    "stage": "discover",
    "title": "Or ask Fargo about subscriptions ('subscription tracking')",
    "customer_action": "Or ask Fargo about subscriptions ('subscription tracking')",
+   "action": "Or ask Fargo about subscriptions ('subscription tracking')",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -141,6 +143,7 @@
    "stage": "discover",
    "title": "Web (observed): Security & Support > 'Turn Card On or Off' (also listed…",
    "customer_action": "Web (observed): Security & Support > 'Turn Card On or Off' (also listed in the Accounts menu) opens 'Card Controls' with a tab per card",
+   "action": "Web (observed): Security & Support > 'Turn Card On or Off' (also listed in the Accounts menu) opens 'Card Controls' with a tab per card",
    "touchpoints": [
     {
      "channel": "web",
@@ -183,6 +186,7 @@
    "stage": "set-up",
    "title": "None",
    "customer_action": "None",
+   "action": "None",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -225,6 +229,7 @@
    "stage": "initiate",
    "title": "Web (observed): per card — 'Card details' · 'Card On or Off' toggle ·…",
    "customer_action": "Web (observed): per card — 'Card details' · 'Card On or Off' toggle · 'International usage' on/off toggle · 'Digital wallets' panel listing wallets the card is provisioned to · 'Recurring payments & subscriptions' panel listing merchants on file; disclosure 'Turning off your card is not a replacement for reporting your card lost or stolen'",
+   "action": "Web (observed): per card — 'Card details' · 'Card On or Off' toggle · 'International usage' on/off toggle · 'Digital wallets' panel listing wallets the card is provisioned to · 'Recurring payments & subscriptions' panel listing merchants on file; disclosure 'Turning off your card is not a replacement for reporting your card lost or stolen'",
    "touchpoints": [
     {
      "channel": "web",
@@ -267,6 +272,7 @@
    "stage": "initiate",
    "title": "Review list of recurring merchants, wallets and connected…",
    "customer_action": "Review list of recurring merchants, wallets and connected apps/aggregators for a card",
+   "action": "Review list of recurring merchants, wallets and connected apps/aggregators for a card",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -323,6 +329,7 @@
    "stage": "review-authorize",
    "title": "Toggle card off / manage data-sharing access",
    "customer_action": "Toggle card off / manage data-sharing access",
+   "action": "Toggle card off / manage data-sharing access",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -393,13 +400,14 @@
    "stage": "execute-track",
    "title": "Card transaction alerts for purchases",
    "customer_action": null,
+   "action": "Card transaction alerts for purchases",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Card transaction alerts for purchases",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -416,7 +424,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -435,13 +443,14 @@
    "stage": "confirm-complete",
    "title": "In-app confirmation of card status",
    "customer_action": null,
+   "action": "In-app confirmation of card status",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Card Settings"
     }
    ],
-   "frontstage": "In-app confirmation of card status",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -458,7 +467,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -477,6 +486,7 @@
    "stage": "manage",
    "title": "Re-enable card; manage wallets (Paze/Apple/Google/Samsung/PayPal)",
    "customer_action": "Re-enable card; manage wallets (Paze/Apple/Google/Samsung/PayPal)",
+   "action": "Re-enable card; manage wallets (Paze/Apple/Google/Samsung/PayPal)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -521,6 +531,7 @@
    "stage": "exception",
    "title": "Disputed recurring charge → card dispute (Zero Liability); call number…",
    "customer_action": "Disputed recurring charge → card dispute (Zero Liability); call number on card",
+   "action": "Disputed recurring charge → card dispute (Zero Liability); call number on card",
    "touchpoints": [
     {
      "channel": "phone",
@@ -565,6 +576,7 @@
    "stage": "support",
    "title": "1-800-869-3557; debit claim status 1-800-548-9554",
    "customer_action": "1-800-869-3557; debit claim status 1-800-548-9554",
+   "action": "1-800-869-3557; debit claim status 1-800-548-9554",
    "touchpoints": [
     {
      "channel": "phone",

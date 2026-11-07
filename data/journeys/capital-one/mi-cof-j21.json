@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Make payments' section: ACH payments (free on Basic Checking, Enhanced…",
    "customer_action": "'Make payments' section: ACH payments (free on Basic Checking, Enhanced Checking, Business Savings) and wires via online banking",
+   "action": "'Make payments' section: ACH payments (free on Basic Checking, Enhanced Checking, Business Savings) and wires via online banking",
    "touchpoints": [
     {
      "channel": "web",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Add account users: Account > 'Account Services & Settings' > 'Manage…",
    "customer_action": "Add account users: Account > 'Account Services & Settings' > 'Manage Account Users' > 'Add account user' (web only); user completes via email",
+   "action": "Add account users: Account > 'Account Services & Settings' > 'Manage Account Users' > 'Add account user' (web only); user completes via email",
    "touchpoints": [
     {
      "channel": "web",
@@ -174,6 +176,7 @@
    "stage": "initiate",
    "title": "Create ACH payment to vendor (steps undocumented)",
    "customer_action": "Create ACH payment to vendor (steps undocumented)",
+   "action": "Create ACH payment to vendor (steps undocumented)",
    "touchpoints": [
     {
      "channel": "web",
@@ -227,6 +230,7 @@
    "stage": "review-authorize",
    "title": "Single-user authorization: standard Capital One Business online banking…",
    "customer_action": "Single-user authorization: standard Capital One Business online banking offers user delegation ('Manage Account Users') and alerts but no maker/checker; 'Dual Control Authorization' (one user creates, another approves before transmission) exists only for payments made via Intellix, i.e., by adopting treasury management (included with Premier Checking)",
+   "action": "Single-user authorization: standard Capital One Business online banking offers user delegation ('Manage Account Users') and alerts but no maker/checker; 'Dual Control Authorization' (one user creates, another approves before transmission) exists only for payments made via Intellix, i.e., by adopting treasury management (included with Premier Checking)",
    "touchpoints": [
     {
      "channel": "web",
@@ -305,13 +309,14 @@
    "stage": "execute-track",
    "title": "Alerts configurable ('control which alerts you receive')",
    "customer_action": null,
+   "action": "Alerts configurable ('control which alerts you receive')",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Alerts configurable ('control which alerts you receive')",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Configurable alerts",
@@ -328,7 +333,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -347,6 +352,7 @@
    "stage": "exception",
    "title": "Returns / unauthorized ACH",
    "customer_action": null,
+   "action": "Returns / unauthorized ACH",
    "touchpoints": [
     {
      "channel": "phone",
@@ -378,6 +384,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -387,6 +403,7 @@
    "stage": "support",
    "title": "Business banker / branch; Contact Us",
    "customer_action": null,
+   "action": "Business banker / branch; Contact Us",
    "touchpoints": [
     {
      "channel": "phone",

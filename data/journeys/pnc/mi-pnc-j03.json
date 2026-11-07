@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Open Zelle, tap 'Request' > 'Request from multiple people (split)'",
    "customer_action": "Open Zelle, tap 'Request' > 'Request from multiple people (split)'",
+   "action": "Open Zelle, tap 'Request' > 'Request from multiple people (split)'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Select up to 10 enrolled contacts, tap 'Continue'",
    "customer_action": "Select up to 10 enrolled contacts, tap 'Continue'",
+   "action": "Select up to 10 enrolled contacts, tap 'Continue'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -137,6 +139,7 @@
    "stage": "initiate",
    "title": "Enter total amount and optional note, tap 'Review'; Zelle calculates…",
    "customer_action": "Enter total amount and optional note, tap 'Review'; Zelle calculates equal shares",
+   "action": "Enter total amount and optional note, tap 'Review'; Zelle calculates equal shares",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -207,6 +210,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Request to Split'",
    "customer_action": "Tap 'Request to Split'",
+   "action": "Tap 'Request to Split'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -249,13 +253,14 @@
    "stage": "execute-track",
    "title": "Each person is notified and has 14 days to respond",
    "customer_action": null,
+   "action": "Each person is notified and has 14 days to respond",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Payers' bank apps"
     }
    ],
-   "frontstage": "Each person is notified and has 14 days to respond",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -272,7 +277,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -291,6 +296,7 @@
    "stage": "confirm-complete",
    "title": "Tap 'Done'; individual requests tracked in Zelle Activity",
    "customer_action": "Tap 'Done'; individual requests tracked in Zelle Activity",
+   "action": "Tap 'Done'; individual requests tracked in Zelle Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -333,6 +339,7 @@
    "stage": "manage",
    "title": "Track each share in Zelle Activity",
    "customer_action": "Track each share in Zelle Activity",
+   "action": "Track each share in Zelle Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -375,13 +382,14 @@
    "stage": "exception",
    "title": "Individual requests expire after 14 days",
    "customer_action": null,
+   "action": "Individual requests expire after 14 days",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Individual requests expire after 14 days",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -398,7 +406,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -417,6 +425,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -473,6 +482,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -532,6 +542,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

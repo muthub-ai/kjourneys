@@ -47,7 +47,7 @@ def step(m):
     ev = m.get("evidence", {})
     a = ev.get("action") or next(iter(ev.values()), {})
     srcs = sorted({s for e in ev.values() for s in e.get("source_ids", [])})
-    out = {"c": m["code"], "s": m["stage"], "t": m["title"], "a": m.get("customer_action") or m["title"], "who": m.get("actor") or "customer",
+    out = {"c": m["code"], "s": m["stage"], "t": m["title"], "a": m.get("action") or m.get("customer_action") or m["title"], "who": m.get("actor") or "customer",
            "tp": tp, "fs": m.get("frontstage"), "dec": m.get("decision"), "ntf": m.get("notification"),
            "fp": [f["text"] for f in m.get("fail_points", [])], "e": lvl(a), "b": a.get("basis"), "src": srcs}
     if m.get("process") is not None:       # the hand-built sample carries the backstage too
@@ -66,7 +66,7 @@ for j in d["journeys"]:
 
 # ---- findings, observations, verifications, composites ----
 findings = [{"id": f["id"], "bank": f["bank"], "j": f.get("journey"), "p": f.get("product"), "s": f.get("stage"), "n": f.get("step"),
-             "type": f["type"], "sev": f.get("severity"), "d": f["description"], "cj": f.get("composite"), "ref": f.get("reference_banks"),
+             "type": f["type"], "sev": f.get("severity"), "d": f["description"], "ss": f.get("step_stage"), "cj": f.get("composite"), "ref": f.get("reference_banks"),
              "fw": f.get("frameworks"), "e": f.get("x-mi_evidence") or f.get("basis"), "src": f.get("source_ids", [])} for f in d.get("findings", [])]
 sources = {s["id"]: [s.get("title"), s.get("url"), s.get("kind"), s.get("bank"), s.get("local_id"), s.get("access_status")] for s in d["sources"]}
 used = {x for p in d.get("catalog", []) for x in p["source_ids"] + [y for sp in p["sub_products"] for y in sp["source_ids"]]} | {x for c in caps.values() for row in c.values() for v in row.values() if v for x in v[4]} | {x for j in journeys for st in j["steps"] for x in st["src"]} | {x for f in findings for x in f["src"]} \
@@ -79,7 +79,8 @@ V = {
     "banks": [{"id": p["id"], "name": p["name"], "role": p["role"], "sources": by_bank.get(p["id"], 0)} for p in d["parties"]],
     "products": [{"id": p["id"], "name": p["name"], "family": p.get("family"), "rail": p.get("rail")} for p in d["products"]],
     "stages": d["codelists"]["stages"], "cap_attrs": cap_attrs, "caps": caps, "scores": scores,
-    "rankings": d.get("rankings", []), "journeys": journeys, "findings": findings,
+    "rankings": [{**{k: v for k, v in r.items() if k != "x-computed"}, "calc": r.get("x-computed")} for r in d.get("rankings", [])],
+    "warnings": next((json.load(open(mp)).get("import_warnings", []) for mp in sorted(glob.glob(os.path.join(ROOT, "reports/*/manifest.json")), reverse=True)), []), "journeys": journeys, "findings": findings,
     "observations": d.get("observations", []), "verifications": d.get("verifications", []),
     "composites": [{"id": c["id"], "t": c["title"], "p": c.get("product"), "seg": c.get("segment"), "dir": c.get("direction"),
                     "steps": [{"s": s["stage"], "n": s["n"], "a": s["action"], "who": s.get("actor"), "ch": s.get("channel"),
@@ -104,9 +105,15 @@ V = {
                      "capabilities": d["capabilities"], "metrics": d["metrics"]} for j in d["journeys"] if j["basis"] == "sample"), None),
 }
 t = open(os.path.join(ROOT, "site/template.html")).read()
-payload = json.dumps(V, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-html = t.replace("__DATA__", payload).replace("__SCHEMA__", json.dumps(schema, ensure_ascii=False).replace("</", "<\\/"))
-open(os.path.join(ROOT, "dist/index.html"), "w").write(html)
-kb = len(html.encode()) // 1024
-print(f"built dist/index.html ({kb} KB)")
+js = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")   # nothing in the data can close or comment out the script
+frag = t.replace("__DATA__", js(V)).replace("__SCHEMA__", js(schema))
+# dist/index.html is a complete document for any static host; dist/artifact.html is the body-only fragment the artifact host wraps itself
+head = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n')
+cut_at = frag.index('<div class="wrap">')                       # title, metas, font links and styles go in the head
+doc = head + frag[:cut_at] + "</head>\n<body>\n" + frag[cut_at:] + "\n</body>\n</html>\n"
+open(os.path.join(ROOT, "dist/index.html"), "w").write(doc)
+open(os.path.join(ROOT, "dist/artifact.html"), "w").write(frag)
+kb = len(doc.encode()) // 1024
+print(f"built dist/index.html ({kb} KB) and dist/artifact.html")
 if kb > 15 * 1024: raise SystemExit("dist/index.html is over 15 MB; the published page limit is 16 MB")

@@ -44,7 +44,7 @@ reports/
 }
 ```
 
-Get each hash with `shasum -a 256 <file>` (macOS) or `sha256sum <file>` (Linux). List the main report first; it becomes the source every ingested fact cites. Every listed file is checksum-pinned, so all three formats are preserved exactly. A report about one product may use `"product": "zelle"` instead of `products`, and may put extracts directly in `extract/<bank>.json`.
+Get each hash with `shasum -a 256 <file>` (macOS) or `sha256sum <file>` (Linux). List the canonical file first; it becomes the source every ingested fact cites. With a workbook, the importer lists the workbook first for you. Every listed file is checksum-pinned, so all three formats are preserved exactly. A report about one product may use `"product": "zelle"` instead of `products`, and may put extracts directly in `extract/<bank>.json`.
 
 With a `workbook`, the importer writes each product's comparison questions (capability flags and stage scores) and every bank's slots. Without one, each product needs its questions before its first ingest: `python3 tools/new_comparison.py <product> <attributes.json>` creates them.
 

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Transfer and Pay' > Bill Pay (deep link serviceType=goToBillPay); WF…",
    "customer_action": "'Transfer and Pay' > Bill Pay (deep link serviceType=goToBillPay); WF loans pre-listed as payees",
+   "action": "'Transfer and Pay' > Bill Pay (deep link serviceType=goToBillPay); WF loans pre-listed as payees",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "discover",
    "title": "Web (observed, profile not enrolled): 'Pay Bills' opens 'Welcome to…",
    "customer_action": "Web (observed, profile not enrolled): 'Pay Bills' opens 'Welcome to Bill Pay' — 'Manage and track monthly bills in one convenient place': Pay anyone ('Send money across the U.S. to businesses or individuals'), Schedule payments, Set reminders ('Find out what you owe before your bill's due'); single CTA 'Get started' (enrollment)",
+   "action": "Web (observed, profile not enrolled): 'Pay Bills' opens 'Welcome to Bill Pay' — 'Manage and track monthly bills in one convenient place': Pay anyone ('Send money across the U.S. to businesses or individuals'), Schedule payments, Set reminders ('Find out what you owe before your bill's due'); single CTA 'Get started' (enrollment)",
    "touchpoints": [
     {
      "channel": "web",
@@ -145,6 +147,7 @@
    "stage": "set-up",
    "title": "Select 'Add Payee' → add manually, browse list, or search by name;…",
    "customer_action": "Select 'Add Payee' → add manually, browse list, or search by name; enter name, address, account number from a recent bill",
+   "action": "Select 'Add Payee' → add manually, browse list, or search by name; enter name, address, account number from a recent bill",
    "touchpoints": [
     {
      "channel": "web",
@@ -198,6 +201,7 @@
    "stage": "initiate",
    "title": "Enter amount, pick 'Send On' date via calendar (delivery estimate text…",
    "customer_action": "Enter amount, pick 'Send On' date via calendar (delivery estimate text shown under date); 'Deliver by' date computed; optional recurring",
+   "action": "Enter amount, pick 'Send On' date via calendar (delivery estimate text shown under date); 'Deliver by' date computed; optional recurring",
    "touchpoints": [
     {
      "channel": "web",
@@ -257,6 +261,7 @@
    "stage": "review-authorize",
    "title": "Review and submit",
    "customer_action": "Review and submit",
+   "action": "Review and submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -310,6 +315,7 @@
    "stage": "execute-track",
    "title": "Funds withdrawn the business day after Send On; electronic payment or…",
    "customer_action": null,
+   "action": "Funds withdrawn the business day after Send On; electronic payment or USPS check; Payment History shows status and check-cashed date",
    "touchpoints": [
     {
      "channel": "web",
@@ -345,6 +351,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -354,13 +372,14 @@
    "stage": "confirm-complete",
    "title": "Optional email confirmation of each payment",
    "customer_action": null,
+   "action": "Optional email confirmation of each payment",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email"
     }
    ],
-   "frontstage": "Optional email confirmation of each payment",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email (optional)",
@@ -377,7 +396,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -396,6 +415,7 @@
    "stage": "manage",
    "title": "Edit/stop a scheduled payment in Bill Pay or by phone before WF has a…",
    "customer_action": "Edit/stop a scheduled payment in Bill Pay or by phone before WF has a reasonable chance to act (by 7 pm PT on Send On date for guarantee coverage); edit/'Delete Payee'",
+   "action": "Edit/stop a scheduled payment in Bill Pay or by phone before WF has a reasonable chance to act (by 7 pm PT on Send On date for guarantee coverage); edit/'Delete Payee'",
    "touchpoints": [
     {
      "channel": "web",
@@ -458,6 +478,7 @@
    "stage": "exception",
    "title": "Late delivery due to WF error → Payment Guarantee reimburses late…",
    "customer_action": null,
+   "action": "Late delivery due to WF error → Payment Guarantee reimburses late fees/finance charges",
    "touchpoints": [
     {
      "channel": "web",
@@ -491,6 +512,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -500,6 +532,7 @@
    "stage": "support",
    "title": "In-app Help/FAQs; Fargo assistant",
    "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "action": "In-app Help/FAQs; Fargo assistant",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -544,6 +577,7 @@
    "stage": "support",
    "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
    "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -588,6 +622,7 @@
    "stage": "support",
    "title": "Branch appointment via appointments.wellsfargo.com",
    "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "action": "Branch appointment via appointments.wellsfargo.com",
    "touchpoints": [
     {
      "channel": "branch",

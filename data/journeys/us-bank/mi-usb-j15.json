@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Pay bills for your business (dashboard: Vendors /…",
    "customer_action": "Transfer & pay > Pay bills for your business (dashboard: Vendors / Bills tabs; blue Pay button; mobile blue +)",
+   "action": "Transfer & pay > Pay bills for your business (dashboard: Vendors / Bills tabs; blue Pay button; mobile blue +)",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Pro plan user setup: Settings > 'Users and roles' > select user >…",
    "customer_action": "Pro plan user setup: Settings > 'Users and roles' > select user > Account activation toggle > Roles and permissions (Level 1/2/3) > Funding method access (Full access or selected accounts) > Payment limit amount for Level 3 users > Save; then +Add vendor (existing)",
+   "action": "Pro plan user setup: Settings > 'Users and roles' > select user > Account activation toggle > Roles and permissions (Level 1/2/3) > Funding method access (Full access or selected accounts) > Payment limit amount for Level 3 users > Save; then +Add vendor (existing)",
    "touchpoints": [
     {
      "channel": "web",
@@ -160,6 +162,7 @@
    "stage": "initiate",
    "title": "Pay > vendor > funding account (checking/MMA or credit card 2.90%) >…",
    "customer_action": "Pay > vendor > funding account (checking/MMA or credit card 2.90%) > payment method (ACH or mailed check) > one-time or recurring (frequency, first date, duration) > arrival date (debit date shown) > memo/invoice number (prints on check)",
+   "action": "Pay > vendor > funding account (checking/MMA or credit card 2.90%) > payment method (ACH or mailed check) > one-time or recurring (frequency, first date, duration) > arrival date (debit date shown) > memo/invoice number (prints on check)",
    "touchpoints": [
     {
      "channel": "web",
@@ -216,6 +219,7 @@
    "stage": "review-authorize",
    "title": "Confirm and pay. Approval rule (corrected): Level 1 and Level 2 users…",
    "customer_action": "Confirm and pay. Approval rule (corrected): Level 1 and Level 2 users schedule any payment without limitation; a Level 3 user's payment above the Payment limit set by the Level 1 user is held for approval by a Level 1 or Level 2 user ('Review and approve payments submitted by Level 3 users')",
+   "action": "Confirm and pay. Approval rule (corrected): Level 1 and Level 2 users schedule any payment without limitation; a Level 3 user's payment above the Payment limit set by the Level 1 user is held for approval by a Level 1 or Level 2 user ('Review and approve payments submitted by Level 3 users')",
    "touchpoints": [
     {
      "channel": "web",
@@ -302,13 +306,14 @@
    "stage": "execute-track",
    "title": "Confirmation that payment is scheduled; appears on Bill pay dashboard",
    "customer_action": null,
+   "action": "Confirmation that payment is scheduled; appears on Bill pay dashboard",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Bill pay dashboard"
     }
    ],
-   "frontstage": "Confirmation that payment is scheduled; appears on Bill pay dashboard",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -326,7 +331,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -346,13 +351,14 @@
    "stage": "confirm-complete",
    "title": "Status/notifications not documented beyond dashboard",
    "customer_action": null,
+   "action": "Status/notifications not documented beyond dashboard",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Status/notifications not documented beyond dashboard",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -368,7 +374,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -386,6 +392,7 @@
    "stage": "manage",
    "title": "Plans: Settings > Plans and billing > Manage plan (Standard→Pro…",
    "customer_action": "Plans: Settings > Plans and billing > Manage plan (Standard→Pro 'Confirm upgrade' immediate; Pro→Standard 'Switch plan' effective next billing cycle after deactivating extra users). Level 1 can select a new Level 1 user (confirmation step; immediate; prior Level 1 access removed; scheduled payments intact). Recurring on weekend → prior business day",
+   "action": "Plans: Settings > Plans and billing > Manage plan (Standard→Pro 'Confirm upgrade' immediate; Pro→Standard 'Switch plan' effective next billing cycle after deactivating extra users). Level 1 can select a new Level 1 user (confirmation step; immediate; prior Level 1 access removed; scheduled payments intact). Recurring on weekend → prior business day",
    "touchpoints": [
     {
      "channel": "web",
@@ -436,13 +443,14 @@
    "stage": "exception",
    "title": "Declined approvals, returned ACH, lost checks – not documented",
    "customer_action": null,
+   "action": "Declined approvals, returned ACH, lost checks – not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Declined approvals, returned ACH, lost checks – not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -458,7 +466,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -476,6 +484,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -546,6 +555,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

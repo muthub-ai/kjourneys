@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Client system verifies the creditor's routing number for…",
    "customer_action": "Client system verifies the creditor's routing number for instant-payment reachability before sending",
+   "action": "Client system verifies the creditor's routing number for instant-payment reachability before sending",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -112,6 +113,7 @@
    "stage": "initiate",
    "title": "Client system calls instant payments API; bank routes to RTP or FedNow…",
    "customer_action": "Client system calls instant payments API; bank routes to RTP or FedNow based on receiver reachability",
+   "action": "Client system calls instant payments API; bank routes to RTP or FedNow based on receiver reachability",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -171,13 +173,14 @@
    "stage": "review-authorize",
    "title": "Entitlements/limits enforced; dual custody for API payments UNKNOWN",
    "customer_action": null,
+   "action": "Entitlements/limits enforced; dual custody for API payments UNKNOWN",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "—"
     }
    ],
-   "frontstage": "Entitlements/limits enforced; dual custody for API payments UNKNOWN",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +196,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -211,6 +214,7 @@
    "stage": "execute-track",
    "title": "Payment settles in seconds 24/7/365; status via API / payment status…",
    "customer_action": null,
+   "action": "Payment settles in seconds 24/7/365; status via API / payment status messaging",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -246,6 +250,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s049",
+      "src-wells-fargo-s916"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -255,13 +271,14 @@
    "stage": "manage",
    "title": "Receive instant credits; Perfect Receivables proxy numbers for…",
    "customer_action": null,
+   "action": "Receive instant credits; Perfect Receivables proxy numbers for routing/identification",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Perfect Receivables"
     }
    ],
-   "frontstage": "Receive instant credits; Perfect Receivables proxy numbers for routing/identification",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -278,7 +295,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -297,13 +314,14 @@
    "stage": "exception",
    "title": "REJECTED status with reason code; 'A response with a reason code NARR…",
    "customer_action": null,
+   "action": "REJECTED status with reason code; 'A response with a reason code NARR indicates the transaction was rejected and was not successfully processed... please contact Gateway Customer Support before proceeding' with a retry. Request for Payment send/receive for commercial clients remains UNKNOWN (not in public v1 reference).",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "—"
     }
    ],
-   "frontstage": "REJECTED status with reason code; 'A response with a reason code NARR indicates the transaction was rejected and was not successfully processed... please contact Gateway Customer Support before proceeding' with a retry. Request for Payment send/receive for commercial clients remains UNKNOWN (not in public v1 reference).",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -320,7 +338,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -339,6 +357,7 @@
    "stage": "support",
    "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
    "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
    "touchpoints": [
     {
      "channel": "phone",

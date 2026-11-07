@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Initiator creates ACH batch/template (payroll, vendor, collection) in…",
    "customer_action": "Initiator creates ACH batch/template (payroll, vendor, collection) in Vantage or via consolidated payables file from ERP",
+   "action": "Initiator creates ACH batch/template (payroll, vendor, collection) in Vantage or via consolidated payables file from ERP",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "review-authorize",
    "title": "Second user approves under Dual Custody using RSA SecurID or Vantage…",
    "customer_action": "Second user approves under Dual Custody using RSA SecurID or Vantage mobile token (approvals available in mobile 'Tasks')",
+   "action": "Second user approves under Dual Custody using RSA SecurID or Vantage mobile token (approvals available in mobile 'Tasks')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -145,13 +147,14 @@
    "stage": "execute-track",
    "title": "Bank processes via ACH (standard/Same Day not specified); status in…",
    "customer_action": null,
+   "action": "Bank processes via ACH (standard/Same Day not specified); status in Vantage; Message Center alerts",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Vantage"
     }
    ],
-   "frontstage": "Bank processes via ACH (standard/Same Day not specified); status in Vantage; Message Center alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -169,7 +172,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -189,6 +192,7 @@
    "stage": "manage",
    "title": "Incoming ACH debits reviewed with ACH Fraud Filter Stop/Review;…",
    "customer_action": "Incoming ACH debits reviewed with ACH Fraud Filter Stop/Review; multi-item pay/return on mobile",
+   "action": "Incoming ACH debits reviewed with ACH Fraud Filter Stop/Review; multi-item pay/return on mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -233,6 +237,7 @@
    "stage": "exception",
    "title": "Unauthorized ACH alert → return decision; report fraud 800-289-3557",
    "customer_action": "Unauthorized ACH alert → return decision; report fraud 800-289-3557",
+   "action": "Unauthorized ACH alert → return decision; report fraud 800-289-3557",
    "touchpoints": [
     {
      "channel": "phone",
@@ -277,6 +282,7 @@
    "stage": "support",
    "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
    "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
    "touchpoints": [
     {
      "channel": "phone",
@@ -368,7 +374,5 @@
  "bank_product": "WF-P13",
  "terms": {
   "limits": "Wire limits at company/account/user level"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

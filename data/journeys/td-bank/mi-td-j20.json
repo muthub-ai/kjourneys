@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Connect ERP (NetSuite, Sage Intacct, QuickBooks Online, Dynamics 365…",
    "customer_action": "Connect ERP (NetSuite, Sage Intacct, QuickBooks Online, Dynamics 365 BC) to TD",
+   "action": "Connect ERP (NetSuite, Sage Intacct, QuickBooks Online, Dynamics 365 BC) to TD",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Create bulk ACH, wire or check-print payments in ERP",
    "customer_action": "Create bulk ACH, wire or check-print payments in ERP",
+   "action": "Create bulk ACH, wire or check-print payments in ERP",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Approve in ERP; Positive Pay file auto-transmitted for checks",
    "customer_action": "Approve in ERP; Positive Pay file auto-transmitted for checks",
+   "action": "Approve in ERP; Positive Pay file auto-transmitted for checks",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -168,13 +171,14 @@
    "stage": "execute-track",
    "title": "Payment status and bank feeds returned up to 4x/day",
    "customer_action": null,
+   "action": "Payment status and bank feeds returned up to 4x/day",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "ERP"
     }
    ],
-   "frontstage": "Payment status and bank feeds returned up to 4x/day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -191,7 +195,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -210,13 +214,14 @@
    "stage": "exception",
    "title": "Not described",
    "customer_action": null,
+   "action": "Not described",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Not described",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -232,7 +237,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -250,6 +255,7 @@
    "stage": "support",
    "title": "Treasury Management Officer",
    "customer_action": null,
+   "action": "Treasury Management Officer",
    "touchpoints": [
     {
      "channel": "phone",
@@ -309,6 +315,6 @@
  "assessment": "RTP not offered through Embedded Banking.",
  "x-mi_evidence": "CONFIRMED_BANK",
  "bank_product": "TD-P11",
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ "composite": "CJ-COMMERCIAL-INSTANT",
+ "composite_match": "mi-reference"
 }

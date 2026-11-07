@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Select the Capital One account > 'Transfer' / 'Transfer Money' (under…",
    "customer_action": "Select the Capital One account > 'Transfer' / 'Transfer Money' (under 'I Want To' in app)",
+   "action": "Select the Capital One account > 'Transfer' / 'Transfer Money' (under 'I Want To' in app)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -95,6 +96,7 @@
    "stage": "initiate",
    "title": "Choose From/To (external account), frequency, date, amount, memo",
    "customer_action": "Choose From/To (external account), frequency, date, amount, memo",
+   "action": "Choose From/To (external account), frequency, date, amount, memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -169,6 +171,7 @@
    "stage": "review-authorize",
    "title": "Slide to confirm (app) / 'Review' then 'Transfer' (web)",
    "customer_action": "Slide to confirm (app) / 'Review' then 'Transfer' (web)",
+   "action": "Slide to confirm (app) / 'Review' then 'Transfer' (web)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -211,6 +214,7 @@
    "stage": "execute-track",
    "title": "Outbound: 1-3 business days. Inbound set up before 5 PM ET posts same…",
    "customer_action": null,
+   "action": "Outbound: 1-3 business days. Inbound set up before 5 PM ET posts same business day (after -> next); standard holds apply (bank-originated ACH generally available 2nd business day)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -236,6 +240,18 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s008",
+      "src-capital-one-s074"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -273,13 +289,14 @@
    "stage": "confirm-complete",
    "title": "Posts to Transaction History",
    "customer_action": null,
+   "action": "Posts to Transaction History",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Transaction History"
     }
    ],
-   "frontstage": "Posts to Transaction History",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Generic alerts",
@@ -296,7 +313,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -315,6 +332,7 @@
    "stage": "manage",
    "title": "Cancel or manage scheduled one-time and recurring external transfers…",
    "customer_action": "Cancel or manage scheduled one-time and recurring external transfers from 'Upcoming Transactions' (cancel cut-off UNKNOWN; the 11:59 PM ET rule applies to Zelle Scheduled Payments only)",
+   "action": "Cancel or manage scheduled one-time and recurring external transfers from 'Upcoming Transactions' (cancel cut-off UNKNOWN; the 11:59 PM ET rule applies to Zelle Scheduled Payments only)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -361,6 +379,7 @@
    "stage": "exception",
    "title": "ACH return (NSF/closed account) on inbound pull",
    "customer_action": null,
+   "action": "ACH return (NSF/closed account) on inbound pull",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -392,6 +411,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -401,6 +430,7 @@
    "stage": "exception",
    "title": "Unauthorized external transfer: report to 800-655-2265 / in writing;…",
    "customer_action": "Unauthorized external transfer: report to 800-655-2265 / in writing; Reg E investigation",
+   "action": "Unauthorized external transfer: report to 800-655-2265 / in writing; Reg E investigation",
    "touchpoints": [
     {
      "channel": "phone",
@@ -454,6 +484,7 @@
    "stage": "support",
    "title": "Phone 800-655-2265; Help Center 'Transfer times' article",
    "customer_action": null,
+   "action": "Phone 800-655-2265; Help Center 'Transfer times' article",
    "touchpoints": [
     {
      "channel": "phone",

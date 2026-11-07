@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Verify recipient's wire instructions and confirm funds are available",
    "customer_action": "Verify recipient's wire instructions and confirm funds are available",
+   "action": "Verify recipient's wire instructions and confirm funds are available",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "discover",
    "title": "Sign in > select account > 'Account Services & Settings' > 'Wire Money'",
    "customer_action": "Sign in > select account > 'Account Services & Settings' > 'Wire Money'",
+   "action": "Sign in > select account > 'Account Services & Settings' > 'Wire Money'",
    "touchpoints": [
     {
      "channel": "web",
@@ -158,6 +160,7 @@
    "stage": "set-up",
    "title": "Choose recipient type: Title company (company name/address, ABA,…",
    "customer_action": "Choose recipient type: Title company (company name/address, ABA, account number, bank address; optional loan/escrow/order number), Person or non-title business (name/address, ABA, account number, bank address), or External linked account (holder name, wire ABA; must be linked 30+ days). Optional intermediary bank ABA/address",
+   "action": "Choose recipient type: Title company (company name/address, ABA, account number, bank address; optional loan/escrow/order number), Person or non-title business (name/address, ABA, account number, bank address), or External linked account (holder name, wire ABA; must be linked 30+ days). Optional intermediary bank ABA/address",
    "touchpoints": [
     {
      "channel": "web",
@@ -232,6 +235,7 @@
    "stage": "initiate",
    "title": "Enter amount and submit request",
    "customer_action": "Enter amount and submit request",
+   "action": "Enter amount and submit request",
    "touchpoints": [
     {
      "channel": "web",
@@ -285,6 +289,7 @@
    "stage": "review-authorize",
    "title": "Review and authenticate with mobile phone (required)",
    "customer_action": "Review and authenticate with mobile phone (required)",
+   "action": "Review and authenticate with mobile phone (required)",
    "touchpoints": [
     {
      "channel": "web",
@@ -341,6 +346,7 @@
    "stage": "execute-track",
    "title": "Submitted by 2 PM ET M-F -> same-day delivery; otherwise next business…",
    "customer_action": null,
+   "action": "Submitted by 2 PM ET M-F -> same-day delivery; otherwise next business day; status via email/text alerts and app push",
    "touchpoints": [
     {
      "channel": "web",
@@ -376,6 +382,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s010",
+      "src-capital-one-s011"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -385,13 +403,14 @@
    "stage": "confirm-complete",
    "title": "Wire debit and $30 fee post",
    "customer_action": null,
+   "action": "Wire debit and $30 fee post",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Transactions"
     }
    ],
-   "frontstage": "Wire debit and $30 fee post",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -408,7 +427,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -427,13 +446,14 @@
    "stage": "manage",
    "title": "Domestic wires cannot be modified or canceled once submitted (bank may…",
    "customer_action": null,
+   "action": "Domestic wires cannot be modified or canceled once submitted (bank may attempt at its discretion)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Domestic wires cannot be modified or canceled once submitted (bank may attempt at its discretion)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -451,7 +471,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -489,6 +509,7 @@
    "stage": "exception",
    "title": "Unrecognized wire activity: call 877-383-4802",
    "customer_action": "Unrecognized wire activity: call 877-383-4802",
+   "action": "Unrecognized wire activity: call 877-383-4802",
    "touchpoints": [
     {
      "channel": "phone",
@@ -531,6 +552,7 @@
    "stage": "support",
    "title": "Associates assist by phone 8 am-5 pm ET M-F (can also take a phone…",
    "customer_action": null,
+   "action": "Associates assist by phone 8 am-5 pm ET M-F (can also take a phone wire, 3 PM ET cutoff)",
    "touchpoints": [
     {
      "channel": "phone",

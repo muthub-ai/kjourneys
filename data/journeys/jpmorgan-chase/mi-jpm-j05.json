@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap the 'Chase First Banking' tile on the account dashboard",
    "customer_action": "Tap the 'Chase First Banking' tile on the account dashboard",
+   "action": "Tap the 'Chase First Banking' tile on the account dashboard",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Tap 'Transfer money' for one-time; or Earn tab > 'Allowance' for…",
    "customer_action": "Tap 'Transfer money' for one-time; or Earn tab > 'Allowance' for recurring; assign chores with pay",
+   "action": "Tap 'Transfer money' for one-time; or Earn tab > 'Allowance' for recurring; assign chores with pay",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -140,6 +142,7 @@
    "stage": "review-authorize",
    "title": "Confirm transfer",
    "customer_action": "Confirm transfer",
+   "action": "Confirm transfer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -182,13 +185,14 @@
    "stage": "execute-track",
    "title": "Funds allocated to 'Spend anywhere', 'ATM' or savings-goal balances",
    "customer_action": null,
+   "action": "Funds allocated to 'Spend anywhere', 'ATM' or savings-goal balances",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Spend/Save tabs"
     }
    ],
-   "frontstage": "Funds allocated to 'Spend anywhere', 'ATM' or savings-goal balances",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -205,7 +209,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -224,13 +228,14 @@
    "stage": "confirm-complete",
    "title": "Account Alerts to parent (debit use, money requests, chore completed)",
    "customer_action": null,
+   "action": "Account Alerts to parent (debit use, money requests, chore completed)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Profile > Manage alerts"
     }
    ],
-   "frontstage": "Account Alerts to parent (debit use, money requests, chore completed)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Money request / chore completed",
@@ -247,7 +252,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -266,6 +271,7 @@
    "stage": "manage",
    "title": "Child requests money with amount, destination and note; parent…",
    "customer_action": "Child requests money with amount, destination and note; parent approves/rejects; set ATM ($100/day) and purchase ($400/day) limits",
+   "action": "Child requests money with amount, destination and note; parent approves/rejects; set ATM ($100/day) and purchase ($400/day) limits",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -310,13 +316,14 @@
    "stage": "exception",
    "title": "Child cannot use Zelle/Venmo/PayPal/Cash App; card cannot fund them",
    "customer_action": null,
+   "action": "Child cannot use Zelle/Venmo/PayPal/Cash App; card cannot fund them",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Restriction"
     }
    ],
-   "frontstage": "Child cannot use Zelle/Venmo/PayPal/Cash App; card cannot fund them",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -333,7 +340,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -352,6 +359,7 @@
    "stage": "support",
    "title": "Standard customer service",
    "customer_action": "Standard customer service",
+   "action": "Standard customer service",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Onboard to J.P. Morgan Access® (Online; Mobile; Direct via APIs, file…",
    "customer_action": "Onboard to J.P. Morgan Access® (Online; Mobile; Direct via APIs, file transmission or SWIFT; 50+ countries, 120+ currencies) with 'Payment Control and Manager' user entitlements, or to the Payments Developer Portal / Global Payments API ('one API to support multiple payment rails').",
+   "action": "Onboard to J.P. Morgan Access® (Online; Mobile; Direct via APIs, file transmission or SWIFT; 50+ countries, 120+ currencies) with 'Payment Control and Manager' user entitlements, or to the Payments Developer Portal / Global Payments API ('one API to support multiple payment rails').",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Submit USD wires (same-day), ACH/check, instant payments (FedNow or TCH…",
    "customer_action": "Submit USD wires (same-day), ACH/check, instant payments (FedNow or TCH RTP — 'With one API integration, you can access both… the solution optimizes across TCH and the FedNow Service rails for each transaction'), Push to Card / Push to Wallet / Zelle / Interac / Prepaid Card disbursements, or cross-currency payments (~130 send currencies, 200+ countries, 100+ corridors) via Access, H2H file or API.",
+   "action": "Submit USD wires (same-day), ACH/check, instant payments (FedNow or TCH RTP — 'With one API integration, you can access both… the solution optimizes across TCH and the FedNow Service rails for each transaction'), Push to Card / Push to Wallet / Zelle / Interac / Prepaid Card disbursements, or cross-currency payments (~130 send currencies, 200+ countries, 100+ corridors) via Access, H2H file or API.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,13 +128,14 @@
    "stage": "review-authorize",
    "title": "Multi-level approval and OFAC/fraud screening (Trust and Safety)",
    "customer_action": null,
+   "action": "Multi-level approval and OFAC/fraud screening (Trust and Safety)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Access approvals"
     }
    ],
-   "frontstage": "Multi-level approval and OFAC/fraud screening (Trust and Safety)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -150,7 +153,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "execute-track",
    "title": "Track via Access reporting and Payment Tracker ('Follow your payments…",
    "customer_action": null,
+   "action": "Track via Access reporting and Payment Tracker ('Follow your payments from initiation to completion with real-time status updates'; accessportal.jpmorgan.com/PaymentTracker); FX wires with real-time tracking; cross-currency settlement mostly same day, next day or two business days.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Reporting"
     }
    ],
-   "frontstage": "Track via Access reporting and Payment Tracker ('Follow your payments from initiation to completion with real-time status updates'; accessportal.jpmorgan.com/PaymentTracker); FX wires with real-time tracking; cross-currency settlement mostly same day, next day or two business days.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "exception",
    "title": "Recall/investigation via Global Client Service",
    "customer_action": null,
+   "action": "Recall/investigation via Global Client Service",
    "touchpoints": [
     {
      "channel": "phone",
@@ -254,6 +259,7 @@
    "stage": "support",
    "title": "Global Client Service",
    "customer_action": "Global Client Service",
+   "action": "Global Client Service",
    "touchpoints": [
     {
      "channel": "phone",

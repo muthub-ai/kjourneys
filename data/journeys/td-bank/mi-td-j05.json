@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "External account already verified (see TD-J04)",
    "customer_action": "External account already verified (see TD-J04)",
+   "action": "External account already verified (see TD-J04)",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Customer selects external account as 'from', TD account as 'to', amount…",
    "customer_action": "Customer selects external account as 'from', TD account as 'to', amount and delivery (3-day, next-day, or within minutes where supported)",
+   "action": "Customer selects external account as 'from', TD account as 'to', amount and delivery (3-day, next-day, or within minutes where supported)",
    "touchpoints": [
     {
      "channel": "web",
@@ -137,6 +139,7 @@
    "stage": "review-authorize",
    "title": "Review and submit; Instant Transfers cannot be cancelled once submitted",
    "customer_action": "Review and submit; Instant Transfers cannot be cancelled once submitted",
+   "action": "Review and submit; Instant Transfers cannot be cancelled once submitted",
    "touchpoints": [
     {
      "channel": "web",
@@ -179,6 +182,7 @@
    "stage": "execute-track",
    "title": "Inbound ACH credited per schedule; 'Instant Transfers are not…",
    "customer_action": null,
+   "action": "Inbound ACH credited per schedule; 'Instant Transfers are not instantaneous' — speed depends on external FI fraud/funds policies and network availability",
    "touchpoints": [
     {
      "channel": "web",
@@ -212,6 +216,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -221,13 +236,14 @@
    "stage": "confirm-complete",
    "title": "Funds available immediately on ACH receipt (11 p.m. ET cutoff)",
    "customer_action": null,
+   "action": "Funds available immediately on ACH receipt (11 p.m. ET cutoff)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Funds available immediately on ACH receipt (11 p.m. ET cutoff)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -244,7 +260,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -263,6 +279,7 @@
    "stage": "manage",
    "title": "Cancel until processing begins (not for Instant Transfers)",
    "customer_action": "Cancel until processing begins (not for Instant Transfers)",
+   "action": "Cancel until processing begins (not for Instant Transfers)",
    "touchpoints": [
     {
      "channel": "web",
@@ -305,13 +322,14 @@
    "stage": "exception",
    "title": "Return from external bank (NSF/closed) reverses credit; may need to…",
    "customer_action": null,
+   "action": "Return from external bank (NSF/closed) reverses credit; may need to contact external institution",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Return from external bank (NSF/closed) reverses credit; may need to contact external institution",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -328,7 +346,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -347,6 +365,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -417,6 +436,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

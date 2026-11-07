@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap Truist Assist icon (bottom of any screen) or search bar",
    "customer_action": "Tap Truist Assist icon (bottom of any screen) or search bar",
+   "action": "Tap Truist Assist icon (bottom of any screen) or search bar",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Type e.g. 'transfer $200 from checking to savings' / 'pay my credit…",
    "customer_action": "Type e.g. 'transfer $200 from checking to savings' / 'pay my credit card'",
+   "action": "Type e.g. 'transfer $200 from checking to savings' / 'pay my credit card'",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -137,6 +139,7 @@
    "stage": "review-authorize",
    "title": "Assist confirms details; customer confirms (INFERRED)",
    "customer_action": "Assist confirms details; customer confirms (INFERRED)",
+   "action": "Assist confirms details; customer confirms (INFERRED)",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -179,13 +182,14 @@
    "stage": "execute-track",
    "title": "Transfer executed as internal transfer",
    "customer_action": null,
+   "action": "Transfer executed as internal transfer",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
      "screen": "Chat"
     }
    ],
-   "frontstage": "Transfer executed as internal transfer",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -202,7 +206,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -221,13 +225,14 @@
    "stage": "confirm-complete",
    "title": "Chat confirmation; chat history retained",
    "customer_action": null,
+   "action": "Chat confirmation; chat history retained",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
      "screen": "Chat history"
     }
    ],
-   "frontstage": "Chat confirmation; chat history retained",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -244,7 +249,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -263,6 +268,7 @@
    "stage": "manage",
    "title": "Manage via Manage Transfers",
    "customer_action": "Manage via Manage Transfers",
+   "action": "Manage via Manage Transfers",
    "touchpoints": [
     {
      "channel": "web",
@@ -305,13 +311,14 @@
    "stage": "exception",
    "title": "Assist cannot do Zelle/bill pay to third parties/wires/external — hands…",
    "customer_action": null,
+   "action": "Assist cannot do Zelle/bill pay to third parties/wires/external — hands off",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
      "screen": "Handoff"
     }
    ],
-   "frontstage": "Assist cannot do Zelle/bill pay to third parties/wires/external — hands off",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -328,7 +335,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -347,6 +354,7 @@
    "stage": "support",
    "title": "Live agent transfer in certain situations",
    "customer_action": null,
+   "action": "Live agent transfer in certain situations",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",

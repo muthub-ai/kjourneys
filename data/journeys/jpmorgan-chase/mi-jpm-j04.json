@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay & Transfer' > 'Transfer' or swipe left on account tile > 'Transfer'",
    "customer_action": "'Pay & Transfer' > 'Transfer' or swipe left on account tile > 'Transfer'",
+   "action": "'Pay & Transfer' > 'Transfer' or swipe left on account tile > 'Transfer'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Choose 'Account or Brokerage Transfer'; enter amount; choose from/to…",
    "customer_action": "Choose 'Account or Brokerage Transfer'; enter amount; choose from/to accounts; set date; optional memo",
+   "action": "Choose 'Account or Brokerage Transfer'; enter amount; choose from/to accounts; set date; optional memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Optionally 'Set up repeating transfers' (frequency, dates, duration)…",
    "customer_action": "Optionally 'Set up repeating transfers' (frequency, dates, duration) via 'Schedule transfer'",
+   "action": "Optionally 'Set up repeating transfers' (frequency, dates, duration) via 'Schedule transfer'",
    "touchpoints": [
     {
      "channel": "web",
@@ -172,6 +175,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Transfer' and confirm (automatic transfer service consent for…",
    "customer_action": "Tap 'Transfer' and confirm (automatic transfer service consent for repeating)",
+   "action": "Tap 'Transfer' and confirm (automatic transfer service consent for repeating)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -228,13 +232,14 @@
    "stage": "execute-track",
    "title": "Immediate posting for same-day; future-dated shown as Pending",
    "customer_action": null,
+   "action": "Immediate posting for same-day; future-dated shown as Pending",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity (pending/memo items)"
     }
    ],
-   "frontstage": "Immediate posting for same-day; future-dated shown as Pending",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -252,7 +257,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -272,13 +277,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen; optional alerts",
    "customer_action": null,
+   "action": "Confirmation screen; optional alerts",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation screen; optional alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -295,7 +301,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -314,6 +320,7 @@
    "stage": "manage",
    "title": "Edit/cancel pending or repeating transfers in Payment Activity",
    "customer_action": "Edit/cancel pending or repeating transfers in Payment Activity",
+   "action": "Edit/cancel pending or repeating transfers in Payment Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -356,13 +363,14 @@
    "stage": "exception",
    "title": "Insufficient funds: repeating/future-dated transfer fails; 'Funding…",
    "customer_action": null,
+   "action": "Insufficient funds: repeating/future-dated transfer fails; 'Funding failed' state; no retry",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Insufficient funds: repeating/future-dated transfer fails; 'Funding failed' state; no retry",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -379,7 +387,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -398,6 +406,7 @@
    "stage": "support",
    "title": "In-app chat, 1-800-935-9935, branch",
    "customer_action": "In-app chat, 1-800-935-9935, branch",
+   "action": "In-app chat, 1-800-935-9935, branch",
    "touchpoints": [
     {
      "channel": "phone",

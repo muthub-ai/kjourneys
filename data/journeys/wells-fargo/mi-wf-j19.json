@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business mobile features: Mobile deposit; Zelle; Card Controls",
    "customer_action": "Business mobile features: Mobile deposit; Zelle; Card Controls",
+   "action": "Business mobile features: Mobile deposit; Zelle; Card Controls",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Owner uses 'Account Access Manager' to review who has access; delegates…",
    "customer_action": "Owner uses 'Account Access Manager' to review who has access; delegates get 'View Only' or 'View and Transact' and their own username/password",
+   "action": "Owner uses 'Account Access Manager' to review who has access; delegates get 'View Only' or 'View and Transact' and their own username/password",
    "touchpoints": [
     {
      "channel": "web",
@@ -140,6 +142,7 @@
    "stage": "initiate",
    "title": "Same as consumer mobile deposit; limits shown",
    "customer_action": "Same as consumer mobile deposit; limits shown",
+   "action": "Same as consumer mobile deposit; limits shown",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -196,6 +199,7 @@
    "stage": "review-authorize",
    "title": "Confirm > 'Deposit'",
    "customer_action": "Confirm > 'Deposit'",
+   "action": "Confirm > 'Deposit'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -238,13 +242,14 @@
    "stage": "execute-track",
    "title": "Account activity (18 months), check images, deposit details",
    "customer_action": null,
+   "action": "Account activity (18 months), check images, deposit details",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Account activity (18 months), check images, deposit details",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -261,7 +266,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -280,13 +285,14 @@
    "stage": "confirm-complete",
    "title": "Email + Message Center",
    "customer_action": null,
+   "action": "Email + Message Center",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Email + Message Center",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/Message Center",
@@ -303,7 +309,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -322,6 +328,7 @@
    "stage": "manage",
    "title": "View returned/deposited checks online (no fee)",
    "customer_action": "View returned/deposited checks online (no fee)",
+   "action": "View returned/deposited checks online (no fee)",
    "touchpoints": [
     {
      "channel": "web",
@@ -364,13 +371,14 @@
    "stage": "exception",
    "title": "Holds/returns as consumer",
    "customer_action": null,
+   "action": "Holds/returns as consumer",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "—"
     }
    ],
-   "frontstage": "Holds/returns as consumer",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -387,7 +395,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -406,6 +414,7 @@
    "stage": "support",
    "title": "Direct Pay FAQs; Quick Help panel",
    "customer_action": "Direct Pay FAQs; Quick Help panel",
+   "action": "Direct Pay FAQs; Quick Help panel",
    "touchpoints": [
     {
      "channel": "web",
@@ -450,6 +459,7 @@
    "stage": "support",
    "title": "Business Online Customer Service 1-800-956-4442; business fraud…",
    "customer_action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
+   "action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -540,7 +550,5 @@
  "terms": {
   "fees": "Possible for analyzed accounts",
   "cutoffs": "9 pm PT"
- },
- "composite": "CJ-MOBILE-DEPOSIT",
- "composite_match": "rail"
+ }
 }

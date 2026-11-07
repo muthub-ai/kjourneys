@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Menu > Card Settings > Digital Wallet > Paze ('Some Wells Fargo cards…",
    "customer_action": "Menu > Card Settings > Digital Wallet > Paze ('Some Wells Fargo cards have already been added to Paze')",
+   "action": "Menu > Card Settings > Digital Wallet > Paze ('Some Wells Fargo cards have already been added to Paze')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "One-time activation in app or at checkout using email/U.S. mobile tied…",
    "customer_action": "One-time activation in app or at checkout using email/U.S. mobile tied to WF account + OTP",
+   "action": "One-time activation in app or at checkout using email/U.S. mobile tied to WF account + OTP",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -154,6 +156,7 @@
    "stage": "initiate",
    "title": "At participating merchant select Paze, enter email/mobile, OTP, choose…",
    "customer_action": "At participating merchant select Paze, enter email/mobile, OTP, choose card",
+   "action": "At participating merchant select Paze, enter email/mobile, OTP, choose card",
    "touchpoints": [
     {
      "channel": "web",
@@ -207,6 +210,7 @@
    "stage": "review-authorize",
    "title": "Confirm purchase",
    "customer_action": "Confirm purchase",
+   "action": "Confirm purchase",
    "touchpoints": [
     {
      "channel": "web",
@@ -249,13 +253,14 @@
    "stage": "execute-track",
    "title": "Card transaction alert",
    "customer_action": null,
+   "action": "Card transaction alert",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Card transaction alert",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -272,7 +277,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -291,13 +296,14 @@
    "stage": "confirm-complete",
    "title": "Merchant confirmation",
    "customer_action": null,
+   "action": "Merchant confirmation",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "Merchant confirmation",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -314,7 +320,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -333,6 +339,7 @@
    "stage": "manage",
    "title": "Remove cards / opt out via Paze wallet management; add WF card to…",
    "customer_action": "Remove cards / opt out via Paze wallet management; add WF card to PayPal (up to 24 cards) or Apple/Google/Samsung Pay from app",
+   "action": "Remove cards / opt out via Paze wallet management; add WF card to PayPal (up to 24 cards) or Apple/Google/Samsung Pay from app",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -377,6 +384,7 @@
    "stage": "manage",
    "title": "Web (observed): Accounts > 'Add Cards to Digital Wallets' — 'Available…",
    "customer_action": "Web (observed): Accounts > 'Add Cards to Digital Wallets' — 'Available wallets': PayPal (push-provision from the web); 'Scan to add cards to digital wallets' QR code for Apple Pay / Google Pay from the phone; Paze® mark in the trademark block",
+   "action": "Web (observed): Accounts > 'Add Cards to Digital Wallets' — 'Available wallets': PayPal (push-provision from the web); 'Scan to add cards to digital wallets' QR code for Apple Pay / Google Pay from the phone; Paze® mark in the trademark block",
    "touchpoints": [
     {
      "channel": "web",
@@ -419,6 +427,7 @@
    "stage": "exception",
    "title": "Unauthorized card transaction → Zero Liability; lost card → update in…",
    "customer_action": "Unauthorized card transaction → Zero Liability; lost card → update in PayPal",
+   "action": "Unauthorized card transaction → Zero Liability; lost card → update in PayPal",
    "touchpoints": [
     {
      "channel": "phone",
@@ -463,6 +472,7 @@
    "stage": "support",
    "title": "Paze FAQs; number on back of card",
    "customer_action": "Paze FAQs; number on back of card",
+   "action": "Paze FAQs; number on back of card",
    "touchpoints": [
     {
      "channel": "phone",

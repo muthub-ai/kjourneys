@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer finds 'Send Money with Zelle®' in the TD Bank app menu or via…",
    "customer_action": "Customer finds 'Send Money with Zelle®' in the TD Bank app menu or via td.com Checking & Savings > Make the Most of My Account > Send Money with Zelle®",
+   "action": "Customer finds 'Send Money with Zelle®' in the TD Bank app menu or via td.com Checking & Savings > Make the Most of My Account > Send Money with Zelle®",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -116,6 +117,7 @@
    "stage": "set-up",
    "title": "Customer confirms email address and U.S. mobile number in profile and…",
    "customer_action": "Customer confirms email address and U.S. mobile number in profile and selects the Zelle section",
+   "action": "Customer confirms email address and U.S. mobile number in profile and selects the Zelle section",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -194,6 +196,7 @@
    "stage": "set-up",
    "title": "Customer enters a one-time verification code sent to the token and…",
    "customer_action": "Customer enters a one-time verification code sent to the token and accepts Zelle terms",
+   "action": "Customer enters a one-time verification code sent to the token and accepts Zelle terms",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -250,6 +253,7 @@
    "stage": "set-up",
    "title": "Customer adds a recipient: picks from device contacts or enters name +…",
    "customer_action": "Customer adds a recipient: picks from device contacts or enters name + email / U.S. mobile number / Zelle Tag",
+   "action": "Customer adds a recipient: picks from device contacts or enters name + email / U.S. mobile number / Zelle Tag",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -332,6 +336,7 @@
    "stage": "initiate",
    "title": "Customer enters amount and optional note (memo)",
    "customer_action": "Customer enters amount and optional note (memo)",
+   "action": "Customer enters amount and optional note (memo)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -391,6 +396,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews recipient, amount, note and selects 'Send'",
    "customer_action": "Customer reviews recipient, amount, note and selects 'Send'",
+   "action": "Customer reviews recipient, amount, note and selects 'Send'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -465,6 +471,7 @@
    "stage": "review-authorize",
    "title": "Bank performs fraud/identity screening; payment may be delayed",
    "customer_action": null,
+   "action": "Bank performs fraud/identity screening; payment may be delayed",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -498,6 +505,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -507,6 +525,7 @@
    "stage": "execute-track",
    "title": "Payment sent via Zelle network; within minutes when sender and…",
    "customer_action": null,
+   "action": "Payment sent via Zelle network; within minutes when sender and recipient are both enrolled and the sender's instant limits are not exceeded, otherwise 'Next Day' or 'Three Day ACH'; account-number recipients 1-3 business days",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -544,6 +563,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s003",
+      "src-td-bank-s009",
+      "src-td-bank-s012"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -553,13 +585,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation displayed; recipient notified by Zelle via email/SMS",
    "customer_action": null,
+   "action": "Confirmation displayed; recipient notified by Zelle via email/SMS",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "'Success! Payment has been sent' -> 'All done' (returns to Zelle® home); recipient listed under 'Recent Recipients'"
     }
    ],
-   "frontstage": "Confirmation displayed; recipient notified by Zelle via email/SMS",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Recipient email/SMS from Zelle network (standard); sender push/email alert not documented",
@@ -576,7 +609,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -612,6 +645,7 @@
    "stage": "manage",
    "title": "Customer views activity page; may 'Cancel This Payment' only while…",
    "customer_action": "Customer views activity page; may 'Cancel This Payment' only while recipient unenrolled; manages recipients",
+   "action": "Customer views activity page; may 'Cancel This Payment' only while recipient unenrolled; manages recipients",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -656,6 +690,7 @@
    "stage": "exception",
    "title": "Exceptions: 14-day auto-cancel, wrong recipient, scam, unauthorized —…",
    "customer_action": "Exceptions: 14-day auto-cancel, wrong recipient, scam, unauthorized — see exception_paths",
+   "action": "Exceptions: 14-day auto-cancel, wrong recipient, scam, unauthorized — see exception_paths",
    "touchpoints": [
     {
      "channel": "phone",
@@ -721,6 +756,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -795,6 +831,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Chase ATM main menu; cardless option via NFC symbol",
    "customer_action": "Chase ATM main menu; cardless option via NFC symbol",
+   "action": "Chase ATM main menu; cardless option via NFC symbol",
    "touchpoints": [
     {
      "channel": "atm",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Add Chase debit card to Apple Pay/Google Wallet/Samsung Wallet…",
    "customer_action": "Add Chase debit card to Apple Pay/Google Wallet/Samsung Wallet (optional)",
+   "action": "Add Chase debit card to Apple Pay/Google Wallet/Samsung Wallet (optional)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -126,6 +128,7 @@
    "stage": "initiate",
    "title": "Insert card + PIN, or tap device (biometric) + PIN; deposit cash and up…",
    "customer_action": "Insert card + PIN, or tap device (biometric) + PIN; deposit cash and up to 30 checks",
+   "action": "Insert card + PIN, or tap device (biometric) + PIN; deposit cash and up to 30 checks",
    "touchpoints": [
     {
      "channel": "atm",
@@ -182,6 +185,7 @@
    "stage": "initiate",
    "title": "Pay bill: Main menu > More... > Pay bills > choose Chase…",
    "customer_action": "Pay bill: Main menu > More... > Pay bills > choose Chase card/mortgage/HE and funding account > amount > 'Pay it'; or pay card with cash",
+   "action": "Pay bill: Main menu > More... > Pay bills > choose Chase card/mortgage/HE and funding account > amount > 'Pay it'; or pay card with cash",
    "touchpoints": [
     {
      "channel": "atm",
@@ -224,6 +228,7 @@
    "stage": "review-authorize",
    "title": "Confirm; choose receipt",
    "customer_action": "Confirm; choose receipt",
+   "action": "Confirm; choose receipt",
    "touchpoints": [
     {
      "channel": "atm",
@@ -266,13 +271,14 @@
    "stage": "execute-track",
    "title": "Cash and wires available same day; checks next business day (first…",
    "customer_action": null,
+   "action": "Cash and wires available same day; checks next business day (first $275); holds disclosed at ATM",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Receipt / hold notice"
     }
    ],
-   "frontstage": "Cash and wires available same day; checks next business day (first $275); holds disclosed at ATM",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -289,7 +295,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -308,13 +314,14 @@
    "stage": "confirm-complete",
    "title": "Receipt; activity shows deposit details printable from Account Activity",
    "customer_action": null,
+   "action": "Receipt; activity shows deposit details printable from Account Activity",
    "touchpoints": [
     {
      "channel": "atm",
      "screen": "Account Activity"
     }
    ],
-   "frontstage": "Receipt; activity shows deposit details printable from Account Activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -331,7 +338,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -350,6 +357,7 @@
    "stage": "manage",
    "title": "Set Quick cash and denomination preferences in app/web/ATM; schedule a…",
    "customer_action": "Set Quick cash and denomination preferences in app/web/ATM; schedule a withdrawal in app",
+   "action": "Set Quick cash and denomination preferences in app/web/ATM; schedule a withdrawal in app",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -394,6 +402,7 @@
    "stage": "exception",
    "title": "ATM deposit issue after hours -> call number printed on ATM",
    "customer_action": "ATM deposit issue after hours -> call number printed on ATM",
+   "action": "ATM deposit issue after hours -> call number printed on ATM",
    "touchpoints": [
     {
      "channel": "phone",
@@ -436,6 +445,7 @@
    "stage": "support",
    "title": "Phone/branch",
    "customer_action": "Phone/branch",
+   "action": "Phone/branch",
    "touchpoints": [
     {
      "channel": "phone",

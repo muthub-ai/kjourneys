@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Bottom nav 'Deposit' (guide: 'Check Deposit' under Deposit)",
    "customer_action": "Bottom nav 'Deposit' (guide: 'Check Deposit' under Deposit)",
+   "action": "Bottom nav 'Deposit' (guide: 'Check Deposit' under Deposit)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Endorse back: signature + 'For mobile deposit only'",
    "customer_action": "Endorse back: signature + 'For mobile deposit only'",
+   "action": "Endorse back: signature + 'For mobile deposit only'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -148,6 +150,7 @@
    "stage": "initiate",
    "title": "Tap 'New Deposit'; confirm receiving account",
    "customer_action": "Tap 'New Deposit'; confirm receiving account",
+   "action": "Tap 'New Deposit'; confirm receiving account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -192,6 +195,7 @@
    "stage": "initiate",
    "title": "Photograph front and back (auto-capture; four corners in guides)",
    "customer_action": "Photograph front and back (auto-capture; four corners in guides)",
+   "action": "Photograph front and back (auto-capture; four corners in guides)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -254,6 +258,7 @@
    "stage": "initiate",
    "title": "Enter amount; app displays your daily/monthly limits",
    "customer_action": "Enter amount; app displays your daily/monthly limits",
+   "action": "Enter amount; app displays your daily/monthly limits",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -307,6 +312,7 @@
    "stage": "initiate",
    "title": "Choose funds availability: Standard (free) or Immediate Funds (fee…",
    "customer_action": "Choose funds availability: Standard (free) or Immediate Funds (fee shown and accepted per transaction)",
+   "action": "Choose funds availability: Standard (free) or Immediate Funds (fee shown and accepted per transaction)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -378,6 +384,7 @@
    "stage": "review-authorize",
    "title": "Review details and select Deposit",
    "customer_action": "Review details and select Deposit",
+   "action": "Review details and select Deposit",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -420,13 +427,14 @@
    "stage": "execute-track",
    "title": "8 p.m. ET cutoff for same-business-day; 'Mobile Deposit' line with…",
    "customer_action": null,
+   "action": "8 p.m. ET cutoff for same-business-day; 'Mobile Deposit' line with amount appears in transaction history; most standard deposits available next business day",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Transaction history"
     }
    ],
-   "frontstage": "8 p.m. ET cutoff for same-business-day; 'Mobile Deposit' line with amount appears in transaction history; most standard deposits available next business day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -444,7 +452,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -464,13 +472,14 @@
    "stage": "confirm-complete",
    "title": "On-screen success message; deposit alert typically next business day;…",
    "customer_action": null,
+   "action": "On-screen success message; deposit alert typically next business day; keep check 14 days then destroy",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "On-screen success message; deposit alert typically next business day; keep check 14 days then destroy",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email deposit alert",
@@ -489,7 +498,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -510,6 +519,7 @@
    "stage": "manage",
    "title": "View deposit history; no cancel after submission (not documented)",
    "customer_action": "View deposit history; no cancel after submission (not documented)",
+   "action": "View deposit history; no cancel after submission (not documented)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -552,13 +562,14 @@
    "stage": "exception",
    "title": "Bank may reject any item; checks >60 days old, third-party, previously…",
    "customer_action": null,
+   "action": "Bank may reject any item; checks >60 days old, third-party, previously deposited prohibited; errors must be reported within 30 days of statement; duplicate presentment is customer liability",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Rejected item"
     }
    ],
-   "frontstage": "Bank may reject any item; checks >60 days old, third-party, previously deposited prohibited; errors must be reported within 30 days of statement; duplicate presentment is customer liability",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -575,7 +586,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -611,6 +622,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -689,6 +701,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -748,6 +761,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

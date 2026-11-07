@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Move Money > Send Money with Zelle® > 'Request Money'",
    "customer_action": "Move Money > Send Money with Zelle® > 'Request Money'",
+   "action": "Move Money > Send Money with Zelle® > 'Request Money'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Choose a contact or enter enrolled email, U.S. mobile number or Zelle…",
    "customer_action": "Choose a contact or enter enrolled email, U.S. mobile number or Zelle tag; unenrolled payers must be requested via email",
+   "action": "Choose a contact or enter enrolled email, U.S. mobile number or Zelle tag; unenrolled payers must be requested via email",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -130,6 +132,7 @@
    "stage": "initiate",
    "title": "Enter amount and optional note; review; tap 'Request'",
    "customer_action": "Enter amount and optional note; review; tap 'Request'",
+   "action": "Enter amount and optional note; review; tap 'Request'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -174,6 +177,7 @@
    "stage": "review-authorize",
    "title": "Review screen then 'Request' (no step-up evidenced)",
    "customer_action": "Review screen then 'Request' (no step-up evidenced)",
+   "action": "Review screen then 'Request' (no step-up evidenced)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -216,13 +220,14 @@
    "stage": "execute-track",
    "title": "Payer is notified and pays from their own bank app; funds arrive within…",
    "customer_action": null,
+   "action": "Payer is notified and pays from their own bank app; funds arrive within minutes once paid",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle network"
     }
    ],
-   "frontstage": "Payer is notified and pays from their own bank app; funds arrive within minutes once paid",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "request notification to payer",
@@ -239,7 +244,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -258,13 +263,14 @@
    "stage": "confirm-complete",
    "title": "Deposit lands in enrolled business/consumer account; appears in online…",
    "customer_action": null,
+   "action": "Deposit lands in enrolled business/consumer account; appears in online banking records (no accounting-software integration)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Deposit lands in enrolled business/consumer account; appears in online banking records (no accounting-software integration)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -281,7 +287,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -317,6 +323,7 @@
    "stage": "manage",
    "title": "Cancel an outstanding request — not documented (UNKNOWN); add 'Pay me…",
    "customer_action": "Cancel an outstanding request — not documented (UNKNOWN); add 'Pay me with Zelle®' to invoices",
+   "action": "Cancel an outstanding request — not documented (UNKNOWN); add 'Pay me with Zelle®' to invoices",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -385,13 +392,14 @@
    "stage": "exception",
    "title": "Payer declines or ignores request — expiry/decline handling not…",
    "customer_action": null,
+   "action": "Payer declines or ignores request — expiry/decline handling not documented",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Payer declines or ignores request — expiry/decline handling not documented",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -407,7 +415,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -425,6 +433,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -503,6 +512,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -562,6 +572,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

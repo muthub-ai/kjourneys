@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens wire transfers in Citi Online/Citi Mobile App…",
    "customer_action": "Customer opens wire transfers in Citi Online/Citi Mobile App ('Immediate Funds Transfers' in the T&Cs); new accounts may have wires delayed until active",
+   "action": "Customer opens wire transfers in Citi Online/Citi Mobile App ('Immediate Funds Transfers' in the T&Cs); new accounts may have wires delayed until active",
    "touchpoints": [
     {
      "channel": "web",
@@ -88,6 +89,7 @@
    "stage": "set-up",
    "title": "Enter beneficiary name, account number and beneficiary bank (must be a…",
    "customer_action": "Enter beneficiary name, account number and beneficiary bank (must be a Fed member/correspondent or CHIPS member)",
+   "action": "Enter beneficiary name, account number and beneficiary bank (must be a Fed member/correspondent or CHIPS member)",
    "touchpoints": [
     {
      "channel": "web",
@@ -158,6 +160,7 @@
    "stage": "initiate",
    "title": "Enter amount (USD only to U.S. beneficiaries) and reference; choose…",
    "customer_action": "Enter amount (USD only to U.S. beneficiaries) and reference; choose immediate, one-time future-dated or recurring domestic transfer; saved wires can be reused; cutoff 6:45 PM ET for same-business-day processing; online fee $25 Standard/$17.50 Priority (rising to $30/$25 on Aug 1, 2026), waived Citigold/CPC",
+   "action": "Enter amount (USD only to U.S. beneficiaries) and reference; choose immediate, one-time future-dated or recurring domestic transfer; saved wires can be reused; cutoff 6:45 PM ET for same-business-day processing; online fee $25 Standard/$17.50 Priority (rising to $30/$25 on Aug 1, 2026), waived Citigold/CPC",
    "touchpoints": [
     {
      "channel": "web",
@@ -214,6 +217,7 @@
    "stage": "review-authorize",
    "title": "Review; authenticate with Online Credentials plus any additional…",
    "customer_action": "Review; authenticate with Online Credentials plus any additional authorization code/authentication; Citi Mobile biometrics or 6 Digit PIN enhance the procedure; safety tips state Citi will never ask you to wire funds to a 'safe' account",
+   "action": "Review; authenticate with Online Credentials plus any additional authorization code/authentication; Citi Mobile biometrics or 6 Digit PIN enhance the procedure; safety tips state Citi will never ask you to wire funds to a 'safe' account",
    "touchpoints": [
     {
      "channel": "web",
@@ -270,6 +274,7 @@
    "stage": "review-authorize",
    "title": "Customer is directed to the General Funds Transfers Safety Tips before…",
    "customer_action": null,
+   "action": "Customer is directed to the General Funds Transfers Safety Tips before wiring (scam checklist: 'Are you sending a transfer because someone claiming to be from Citibank... asked you to? Citi will never ask you to send funds to yourself or anyone else to stop fraud...'; IRS/law-enforcement/tech-support impostors; unsolicited pressure; instructions via messaging/social media/email; told to keep it secret or lie; crypto investment promises; loved-one-in-trouble) and acknowledges 'By proceeding and submitting your funds transfer request, you acknowledge you are solely responsible for confirming all aspects of your funds transfer'",
    "touchpoints": [
     {
      "channel": "web",
@@ -295,6 +300,18 @@
      "x-mi_evidence": "INFERRED"
     },
     "frontstage": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s911",
+      "src-citi-s917"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
+    },
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -332,13 +349,14 @@
    "stage": "execute-track",
    "title": "Citi executes via Fedwire/CHIPS; status not described in public sources",
    "customer_action": null,
+   "action": "Citi executes via Fedwire/CHIPS; status not described in public sources",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payments Dashboard > 'All Transfer Activity' (filter 'Wires & Transfers'; 'Scheduled' tab for future-dated/recurring)"
     }
    ],
-   "frontstage": "Citi executes via Fedwire/CHIPS; status not described in public sources",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -355,7 +373,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -374,13 +392,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; if rejected the customer receives an email the same day…",
    "customer_action": null,
+   "action": "Confirmation; if rejected the customer receives an email the same day and the request is cancelled after one attempt",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email"
     }
    ],
-   "frontstage": "Confirmation; if rejected the customer receives an email the same day and the request is cancelled after one attempt",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Rejection email",
@@ -397,7 +416,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -416,6 +435,7 @@
    "stage": "manage",
    "title": "Cancel/amend only before execution; after execution requires…",
    "customer_action": "Cancel/amend only before execution; after execution requires beneficiary bank consent and fees",
+   "action": "Cancel/amend only before execution; after execution requires beneficiary bank consent and fees",
    "touchpoints": [
     {
      "channel": "phone",
@@ -458,6 +478,7 @@
    "stage": "exception",
    "title": "Error claim within 30 days of execution notice; Citi errors remedied…",
    "customer_action": "Error claim within 30 days of execution notice; Citi errors remedied under UCC 4A with interest at the savings rate; legal action within one year",
+   "action": "Error claim within 30 days of execution notice; Citi errors remedied under UCC 4A with interest at the savings rate; legal action within one year",
    "touchpoints": [
     {
      "channel": "phone",
@@ -502,6 +523,7 @@
    "stage": "exception",
    "title": "Wire scam (authorized): recall attempted via beneficiary bank; no…",
    "customer_action": "Wire scam (authorized): recall attempted via beneficiary bank; no guarantee; no reimbursement right",
+   "action": "Wire scam (authorized): recall attempted via beneficiary bank; no guarantee; no reimbursement right",
    "touchpoints": [
     {
      "channel": "phone",
@@ -544,6 +566,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

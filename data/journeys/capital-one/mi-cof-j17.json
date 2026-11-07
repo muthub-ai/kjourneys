@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Early paycheck page / 360 Checking features explain automatic enrollment",
    "customer_action": "Early paycheck page / 360 Checking features explain automatic enrollment",
+   "action": "Early paycheck page / 360 Checking features explain automatic enrollment",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "App: checking account > 'I Want To' > 'View All' > Account Settings >…",
    "customer_action": "App: checking account > 'I Want To' > 'View All' > Account Settings > 'Set Up Direct Deposit' > 'Get Form' (pre-filled PDF) — or give employer account/routing from 'Account Info' > 'Show more' — or download blank form on web",
+   "action": "App: checking account > 'I Want To' > 'View All' > Account Settings > 'Set Up Direct Deposit' > 'Get Form' (pre-filled PDF) — or give employer account/routing from 'Account Info' > 'Show more' — or download blank form on web",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -160,6 +162,7 @@
    "stage": "execute-track",
    "title": "Capital One receives ACH notice up to 2 days early and posts eligible…",
    "customer_action": null,
+   "action": "Capital One receives ACH notice up to 2 days early and posts eligible payroll/pension/government deposits early; may take two pay cycles",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -195,6 +198,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s024",
+      "src-capital-one-s053"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -204,6 +219,7 @@
    "stage": "manage",
    "title": "Change early paycheck enrollment in app (affects No-Fee Overdraft…",
    "customer_action": "Change early paycheck enrollment in app (affects No-Fee Overdraft eligibility)",
+   "action": "Change early paycheck enrollment in app (affects No-Fee Overdraft eligibility)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -246,6 +262,7 @@
    "stage": "exception",
    "title": "Deposit not early (first deposit, payer issue, limits hit)",
    "customer_action": null,
+   "action": "Deposit not early (first deposit, payer issue, limits hit)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -279,6 +296,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s024"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -288,6 +316,7 @@
    "stage": "support",
    "title": "Help Center / phone",
    "customer_action": null,
+   "action": "Help Center / phone",
    "touchpoints": [
     {
      "channel": "phone",

@@ -50,7 +50,7 @@ def _(d):
 @case("m3c_integer_as_text")
 def _(d): cur(d, "integer")[-1]["value"] = "three"
 @case("m3d_valid_from_after_to")
-def _(d): cur(d, "boolean")[-1].update(valid_from="2027-01-01", valid_to="2026-01-01")
+def _(d): h = cur(d, "boolean"); h.insert(0, dict(h[-1], id=h[-1]["id"] + "0", valid_from="2027-01-01", valid_to="2026-01-01"))
 @case("m3e_bad_datetime")
 def _(d): cur(d, "boolean")[-1]["asserted_at"] = "last tuesday"
 @case("m3f_dangling_supersedes")
@@ -133,6 +133,30 @@ def _(d): next(j for j in d["journeys"] if j.get("composite"))["composite_match"
 def _(d): p = d["catalog"][0]; p["sub_products"].append(copy.deepcopy(p["sub_products"][0]))
 @case("m10f_catalog_unknown_capability_flag")
 def _(d): d["catalog"][0]["sub_products"][0]["capabilities"]["teleport"] = True
+@case("m11a_finding_step_outside_journey")
+def _(d): next(f for f in d["findings"] if f.get("journey") and f.get("step"))["step"] = 999
+@case("m11b_finding_stage_not_its_step")
+def _(d):
+    f = next(f for f in d["findings"] if f.get("journey") and f.get("step") and not f.get("step_stage"))
+    f["step_stage"] = next(s for s in ["discover", "support"] if s != f["stage"])
+@case("m11c_finding_bank_not_its_journey")
+def _(d): f = next(f for f in d["findings"] if f.get("journey")); f["bank"] = next(b for b in d["portfolio"]["banks"] if b != f["bank"])
+@case("m11d_score_outside_rubric")
+def _(d):
+    c = next(c for c in d["comparisons"] if any(a["id"].startswith("attr-score-") for a in c["attributes"]))
+    h = next(h for row in c["values"].values() for k, h in row.items() if k.startswith("attr-score-") and h[-1]["basis"] != "awaiting"); h[-1]["value"] = 9
+@case("m11e_ranking_index_out_of_range")
+def _(d): d["rankings"][0]["overall_index"] = -5
+@case("m11f_competitor_backstage_observed")
+def _(d):
+    m = next(m for j in d["journeys"] if j["bank"] != d["portfolio"]["focus_bank"] for m in j["moments"] if "process" in m.get("evidence", {}))
+    m["evidence"]["process"]["basis"] = "observed"
+@case("m11g_composite_step_unknown")
+def _(d): next(f for f in d["findings"] if f.get("composite") and f.get("composite_step"))["composite_step"] = 500
+@case("m11h_rail_segment_link_on_other_rail")
+def _(d):
+    j = next(j for j in d["journeys"] if j.get("composite_match") == "rail-segment")
+    j["composite"] = next(c["id"] for c in d["composites"] if c["product"] != j["product"])
 @case("m9i_mi_step_unknown_stage")
 def _(d): MI(d)["moments"][0]["stage"] = "teleport"
 
@@ -145,4 +169,29 @@ comp = next(b for b in C(d)["values"] if b != d["portfolio"]["focus_bank"])
 aid = next(a for a, h in C(d)["values"][comp].items())
 h = C(d)["values"][comp][aid]; h[-1] = dict(h[-1], basis="sample", value=True)
 json.dump(d, open(f"{OUT}/m7_competitor_sample_fact.json", "w"), indent=1)
+# each fixture must fail for its own reason: run_tests.sh checks the validator output contains this text
+EXPECT = {"m1a": "unique: app_id", "m1b": "unique: metric", "m1c": "unique: control", "m1d": "unique: fail point",
+  "m2a": "out of journey order", "m2b": "must be on its own path", "m3a": "is not a valid boolean", "m3b": "whenever-you-like",
+  "m3c": "score 'three'", "m3d": "valid_from after valid_to", "m3e": "last tuesday", "m3f": "supersedes unknown", "m3g": "'bob'",
+  "m3h": "awaiting", "m3i": "exactly one current", "m4a": "published but still holds sample", "m4b": "MNPI content must be",
+  "m4c": "rejected legal review", "m4d": "not certified real data", "m5a": "not in journey.stages", "m5b": "should be a moment URN",
+  "m5c": "moment code 'M07'", "m5d": "bundle path must be", "m5e": "unknown evidence layer", "m5f": "control ref",
+  "m5g": "focus_bank must be in banks", "m5h": "exactly one focus bank", "m6_": "without allowed_values", "m7_": "cannot be sample",
+  "m8a": "unique: comparison product", "m8b": "is not in portfolio.products", "m9a": "bank nowhere-bank", "m9b": "must use STR- ids",
+  "m9c": "journey urn:kos:journey:citi:does-not-exist", "m9d": "unique: finding", "m9e": "product carrier-pigeon",
+  "m9f": "unique: ranking bank", "m9g": "1999-01-01-v1", "m9h": "unique: MI journey id", "m9i": "stage teleport",
+  "m10a": "WF-P99-S99", "m10b": "does not belong to product", "m10c": "CJ-DOES-NOT-EXIST", "m10d": "without saying how",
+  "m10e": "unique: catalog sub-product", "m10f": "capability flag teleport", "m11a": "step 999 is outside", "m11b": "is not the stage of step",
+  "m11c": "differs from its journey's bank", "m11d": "score 9 is outside", "m11e": "overall_index -5", "m11f": "backstage cannot be observed",
+  "m11g": "composite step 500", "m11h": "a customer journey on another rail"}
+names = list(cases) + ["m7_competitor_sample_fact"]
+exp = {}
+for n in names:
+    k = next((k for k in sorted(EXPECT, key=len, reverse=True) if n.startswith(k)), None)
+    assert k, f"fixture {n} has no expected message"
+    exp[n] = EXPECT[k]
+json.dump(exp, open(f"{OUT}/expect.json", "w"), indent=1)
+import glob as _g
+for f in _g.glob(f"{OUT}/*.json"):
+    if os.path.basename(f)[:-5] not in names and not f.endswith("expect.json"): os.remove(f)
 print(len(cases) + 1, "fixtures written")

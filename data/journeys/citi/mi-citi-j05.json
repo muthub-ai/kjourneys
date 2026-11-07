@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer uses 'Bill management: view and manage bills and recurring…",
    "customer_action": "Customer uses 'Bill management: view and manage bills and recurring payments in one place' (Citi Mobile App, limited availability) or recurring payments in Citi Online",
+   "action": "Customer uses 'Bill management: view and manage bills and recurring payments in one place' (Citi Mobile App, limited availability) or recurring payments in Citi Online",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Select an existing payee; eBills exist in Citi Online bill pay (bills…",
    "customer_action": "Select an existing payee; eBills exist in Citi Online bill pay (bills carry a 'due' status and can be filed/unfiled online), but biller eBill enrollment steps are not published",
+   "action": "Select an existing payee; eBills exist in Citi Online bill pay (bills carry a 'due' status and can be filed/unfiled online), but biller eBill enrollment steps are not published",
    "touchpoints": [
     {
      "channel": "web",
@@ -145,6 +147,7 @@
    "stage": "initiate",
    "title": "Set amount, frequency and start date for the recurring series (up to…",
    "customer_action": "Set amount, frequency and start date for the recurring series (up to one year ahead); variable-amount payments require the payee to notify the customer of amount/date",
+   "action": "Set amount, frequency and start date for the recurring series (up to one year ahead); variable-amount payments require the payee to notify the customer of amount/date",
    "touchpoints": [
     {
      "channel": "web",
@@ -189,6 +192,7 @@
    "stage": "review-authorize",
    "title": "Confirm series",
    "customer_action": "Confirm series",
+   "action": "Confirm series",
    "touchpoints": [
     {
      "channel": "web",
@@ -231,13 +235,14 @@
    "stage": "execute-track",
    "title": "Each occurrence is sent on schedule; alerts for payments due",
    "customer_action": null,
+   "action": "Each occurrence is sent on schedule; alerts for payments due",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Future payments"
     }
    ],
-   "frontstage": "Each occurrence is sent on schedule; alerts for payments due",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -254,7 +259,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -273,13 +278,14 @@
    "stage": "confirm-complete",
    "title": "Payment history and alerts",
    "customer_action": null,
+   "action": "Payment history and alerts",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account Alerts"
     }
    ],
-   "frontstage": "Payment history and alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Configurable alerts",
@@ -296,7 +302,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -315,6 +321,7 @@
    "stage": "manage",
    "title": "Cancel/change the series by 11:59 PM ET the day before the next…",
    "customer_action": "Cancel/change the series by 11:59 PM ET the day before the next payment; cancelling applies to the same payee series",
+   "action": "Cancel/change the series by 11:59 PM ET the day before the next payment; cancelling applies to the same payee series",
    "touchpoints": [
     {
      "channel": "web",
@@ -357,13 +364,14 @@
    "stage": "exception",
    "title": "Biller changes amount: Citi does not notify; payee must",
    "customer_action": null,
+   "action": "Biller changes amount: Citi does not notify; payee must",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Biller changes amount: Citi does not notify; payee must",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -380,7 +388,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -399,6 +407,7 @@
    "stage": "exception",
    "title": "Missed or failed payment: report problem; Pay Bills promise",
    "customer_action": "Missed or failed payment: report problem; Pay Bills promise",
+   "action": "Missed or failed payment: report problem; Pay Bills promise",
    "touchpoints": [
     {
      "channel": "web",
@@ -441,6 +450,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

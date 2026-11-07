@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Recipient gets a text or email from the sender's FI with instructions…",
    "customer_action": "Recipient gets a text or email from the sender's FI with instructions to claim; if un-enrolled selects the link and chooses U.S. Bank",
+   "action": "Recipient gets a text or email from the sender's FI with instructions to claim; if un-enrolled selects the link and chooses U.S. Bank",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Enroll with the same email/mobile that received the notification:…",
    "customer_action": "Enroll with the same email/mobile that received the notification: Transfer & pay > Send & request money with Zelle® > Get started/Enroll > choose account > Done",
+   "action": "Enroll with the same email/mobile that received the notification: Transfer & pay > Send & request money with Zelle® > Get started/Enroll > choose account > Done",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -163,13 +165,14 @@
    "stage": "execute-track",
    "title": "Enrolled: funds deposit automatically within minutes, no action; first…",
    "customer_action": null,
+   "action": "Enrolled: funds deposit automatically within minutes, no action; first payment after enrollment can take 1–2 (or up to 3) business days",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity / Zelle Activity"
     }
    ],
-   "frontstage": "Enrolled: funds deposit automatically within minutes, no action; first payment after enrollment can take 1–2 (or up to 3) business days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email on receipt; optional push/text",
@@ -187,7 +190,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -225,13 +228,14 @@
    "stage": "confirm-complete",
    "title": "'Zelle payment received' notification (push shown on alerts page)",
    "customer_action": null,
+   "action": "'Zelle payment received' notification (push shown on alerts page)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Notifications"
     }
    ],
-   "frontstage": "'Zelle payment received' notification (push shown on alerts page)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email",
@@ -249,7 +253,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -269,6 +273,7 @@
    "stage": "manage",
    "title": "Zelle preferences: manage receiving account, tokens; profile…",
    "customer_action": "Zelle preferences: manage receiving account, tokens; profile deactivates after 18 months inactivity (re-enroll)",
+   "action": "Zelle preferences: manage receiving account, tokens; profile deactivates after 18 months inactivity (re-enroll)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -331,6 +336,7 @@
    "stage": "exception",
    "title": "Money not received: verify token spelling with sender, confirm…",
    "customer_action": "Money not received: verify token spelling with sender, confirm enrollment within 14 days, verify deposit account in Zelle profile; else call 800-USBANKS",
+   "action": "Money not received: verify token spelling with sender, confirm enrollment within 14 days, verify deposit account in Zelle profile; else call 800-USBANKS",
    "touchpoints": [
     {
      "channel": "phone",
@@ -375,6 +381,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -445,6 +452,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Bill Pay home, 'Manage Payee' screen, or during new payee setup shows…",
    "customer_action": "Bill Pay home, 'Manage Payee' screen, or during new payee setup shows 'Get eBills'",
+   "action": "Bill Pay home, 'Manage Payee' screen, or during new payee setup shows 'Get eBills'",
    "touchpoints": [
     {
      "channel": "web",
@@ -95,6 +96,7 @@
    "stage": "set-up",
    "title": "Provide biller account/billing details; accept biller terms (may stop…",
    "customer_action": "Provide biller account/billing details; accept biller terms (may stop paper bills); biller approval up to 10 business days",
+   "action": "Provide biller account/billing details; accept biller terms (may stop paper bills); biller approval up to 10 business days",
    "touchpoints": [
     {
      "channel": "web",
@@ -139,6 +141,7 @@
    "stage": "initiate",
    "title": "Set 'auto pay' rules: timing and amount (full statement / minimum /…",
    "customer_action": "Set 'auto pay' rules: timing and amount (full statement / minimum / fixed), continues even when amount changes",
+   "action": "Set 'auto pay' rules: timing and amount (full statement / minimum / fixed), continues even when amount changes",
    "touchpoints": [
     {
      "channel": "web",
@@ -183,6 +186,7 @@
    "stage": "review-authorize",
    "title": "Confirm rules",
    "customer_action": "Confirm rules",
+   "action": "Confirm rules",
    "touchpoints": [
     {
      "channel": "web",
@@ -225,6 +229,7 @@
    "stage": "execute-track",
    "title": "eBill arrives in Bill Pay; reminder email; auto pay schedules payment…",
    "customer_action": null,
+   "action": "eBill arrives in Bill Pay; reminder email; auto pay schedules payment per rules",
    "touchpoints": [
     {
      "channel": "web",
@@ -258,6 +263,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -267,13 +283,14 @@
    "stage": "confirm-complete",
    "title": "Email confirmation when sent",
    "customer_action": null,
+   "action": "Email confirmation when sent",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email"
     }
    ],
-   "frontstage": "Email confirmation when sent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -290,7 +307,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -309,6 +326,7 @@
    "stage": "manage",
    "title": "View/print eBills (available 4 weeks–6 months per biller); edit/cancel…",
    "customer_action": "View/print eBills (available 4 weeks–6 months per biller); edit/cancel auto pay",
+   "action": "View/print eBills (available 4 weeks–6 months per biller); edit/cancel auto pay",
    "touchpoints": [
     {
      "channel": "web",
@@ -351,13 +369,14 @@
    "stage": "exception",
    "title": "eBill setup fails → WF notifies; customer contacts biller",
    "customer_action": null,
+   "action": "eBill setup fails → WF notifies; customer contacts biller",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Notification"
     }
    ],
-   "frontstage": "eBill setup fails → WF notifies; customer contacts biller",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -374,7 +393,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -393,6 +412,7 @@
    "stage": "support",
    "title": "In-app Help/FAQs; Fargo assistant",
    "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "action": "In-app Help/FAQs; Fargo assistant",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -437,6 +457,7 @@
    "stage": "support",
    "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
    "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -481,6 +502,7 @@
    "stage": "support",
    "title": "Branch appointment via appointments.wellsfargo.com",
    "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "action": "Branch appointment via appointments.wellsfargo.com",
    "touchpoints": [
     {
      "channel": "branch",

@@ -42,13 +42,14 @@
    "stage": "discover",
    "title": "Passive: payer platform (e.g., Mazooma/Trustly/Stripe via Newline or…",
    "customer_action": null,
+   "action": "Passive: payer platform (e.g., Mazooma/Trustly/Stripe via Newline or any RTP participant) pushes credit to the customer's account number",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Passive: payer platform (e.g., Mazooma/Trustly/Stripe via Newline or any RTP participant) pushes credit to the customer's account number",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -67,7 +68,7 @@
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -88,13 +89,14 @@
    "stage": "execute-track",
    "title": "Fifth Third is an RTP participant (since 2017/18); credit posts in…",
    "customer_action": null,
+   "action": "Fifth Third is an RTP participant (since 2017/18); credit posts in seconds, 24/7/365; Early Pay excludes RTP credits",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Fifth Third is an RTP participant (since 2017/18); credit posts in seconds, 24/7/365; Early Pay excludes RTP credits",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -113,7 +115,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -134,13 +136,14 @@
    "stage": "confirm-complete",
    "title": "Real-time transaction/deposit alert if configured",
    "customer_action": null,
+   "action": "Real-time transaction/deposit alert if configured",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Real-time transaction/deposit alert if configured",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email/SMS",
@@ -157,7 +160,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -176,6 +179,7 @@
    "stage": "manage",
    "title": "No consumer-initiated RTP/FedNow send; no RfP consumer UI evidenced",
    "customer_action": "No consumer-initiated RTP/FedNow send; no RfP consumer UI evidenced",
+   "action": "No consumer-initiated RTP/FedNow send; no RfP consumer UI evidenced",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -216,13 +220,14 @@
    "stage": "exception",
    "title": "FedNow receive is not available: Fifth Third Bank (and legacy Comerica)…",
    "customer_action": null,
+   "action": "FedNow receive is not available: Fifth Third Bank (and legacy Comerica) is absent from the Federal Reserve's FedNow participant list as of 11/2/2026, and the FTD transition page says FedNow receipt is 'unavailable until further notice'. A payer choosing FedNow cannot route to a Fifth Third account; RTP receive works.",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "n/a"
     }
    ],
-   "frontstage": "FedNow receive is not available: Fifth Third Bank (and legacy Comerica) is absent from the Federal Reserve's FedNow participant list as of 11/2/2026, and the FTD transition page says FedNow receipt is 'unavailable until further notice'. A payer choosing FedNow cannot route to a Fifth Third account; RTP receive works.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -241,7 +246,7 @@
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -262,6 +267,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -340,6 +346,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -399,6 +406,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

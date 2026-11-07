@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Zelle in the Citi Mobile App and chooses Request or…",
    "customer_action": "Customer opens Zelle in the Citi Mobile App and chooses Request or Split ('pay and split payments')",
+   "action": "Customer opens Zelle in the Citi Mobile App and chooses Request or Split ('pay and split payments')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Customer picks one or more enrolled recipients from contacts/recent…",
    "customer_action": "Customer picks one or more enrolled recipients from contacts/recent activity",
+   "action": "Customer picks one or more enrolled recipients from contacts/recent activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -151,6 +153,7 @@
    "stage": "initiate",
    "title": "Customer enters the total (Split divides into separate requests per…",
    "customer_action": "Customer enters the total (Split divides into separate requests per person) and an optional note",
+   "action": "Customer enters the total (Split divides into separate requests per person) and an optional note",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -204,6 +207,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews and sends the request(s); requests may not be used for…",
    "customer_action": "Customer reviews and sends the request(s); requests may not be used for overdue debt or court-ordered amounts and Citi may restrict request ability",
+   "action": "Customer reviews and sends the request(s); requests may not be used for overdue debt or court-ordered amounts and Citi may restrict request ability",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -257,6 +261,7 @@
    "stage": "execute-track",
    "title": "Requestees receive the request at their bank and choose to pay or…",
    "customer_action": null,
+   "action": "Requestees receive the request at their bank and choose to pay or decline; Citi sends no reminders",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -281,6 +286,17 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -316,6 +332,7 @@
    "stage": "confirm-complete",
    "title": "Requester sees each request paid/unpaid in activity; payment receipt…",
    "customer_action": null,
+   "action": "Requester sees each request paid/unpaid in activity; payment receipt notification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -349,6 +366,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -358,6 +386,7 @@
    "stage": "manage",
    "title": "Requester reviews outstanding requests; cancellation of a pending…",
    "customer_action": "Requester reviews outstanding requests; cancellation of a pending request is not described in Citi sources",
+   "action": "Requester reviews outstanding requests; cancellation of a pending request is not described in Citi sources",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -398,6 +427,7 @@
    "stage": "exception",
    "title": "Requestee declines or ignores; request expires per network rules…",
    "customer_action": null,
+   "action": "Requestee declines or ignores; request expires per network rules (window not stated by Citi)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -431,6 +461,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -440,6 +481,7 @@
    "stage": "exception",
    "title": "Fraudulent incoming request (scam): customer should not pay unknown…",
    "customer_action": "Fraudulent incoming request (scam): customer should not pay unknown requesters; Citi warns Zelle is for trusted people",
+   "action": "Fraudulent incoming request (scam): customer should not pay unknown requesters; Citi warns Zelle is for trusted people",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -496,6 +538,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

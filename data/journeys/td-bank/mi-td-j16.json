@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Enroll in Small Business Online Banking > Invoicing & Account…",
    "customer_action": "Enroll in Small Business Online Banking > Invoicing & Account (Autobooks)",
+   "action": "Enroll in Small Business Online Banking > Invoicing & Account (Autobooks)",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Create invoice or payment link (QR); set recurring/reminders",
    "customer_action": "Create invoice or payment link (QR); set recurring/reminders",
+   "action": "Create invoice or payment link (QR); set recurring/reminders",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Payer pays by card, ACH or e-check; funds to TD checking in 1–2…",
    "customer_action": null,
+   "action": "Payer pays by card, ACH or e-check; funds to TD checking in 1–2 business days",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Autobooks"
     }
    ],
-   "frontstage": "Payer pays by card, ACH or e-check; funds to TD checking in 1–2 business days",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "confirm-complete",
    "title": "Invoice marked paid; reports",
    "customer_action": null,
+   "action": "Invoice marked paid; reports",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Invoicing"
     }
    ],
-   "frontstage": "Invoice marked paid; reports",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,13 +216,14 @@
    "stage": "exception",
    "title": "Fees and restrictions apply; disputes via Autobooks terms",
    "customer_action": null,
+   "action": "Fees and restrictions apply; disputes via Autobooks terms",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Autobooks"
     }
    ],
-   "frontstage": "Fees and restrictions apply; disputes via Autobooks terms",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -235,7 +240,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -254,6 +259,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -324,6 +330,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

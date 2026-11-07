@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Authorized signer sees 'Transfer Funds using Zelle' in the Electronic…",
    "customer_action": "Authorized signer sees 'Transfer Funds using Zelle' in the Electronic Banking feature table (Citibank Online for Small Business / Citi Mobile App)",
+   "action": "Authorized signer sees 'Transfer Funds using Zelle' in the Electronic Banking feature table (Citibank Online for Small Business / Citi Mobile App)",
    "touchpoints": [
     {
      "channel": "web",
@@ -120,6 +121,7 @@
    "stage": "set-up",
    "title": "Signer enrolls the business checking account with a business email/U.S.…",
    "customer_action": "Signer enrolls the business checking account with a business email/U.S. mobile number; limits apply per account not per signer",
+   "action": "Signer enrolls the business checking account with a business email/U.S. mobile number; limits apply per account not per signer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -173,6 +175,7 @@
    "stage": "initiate",
    "title": "Signer sends a one-time payment (no future-dating for business…",
    "customer_action": "Signer sends a one-time payment (no future-dating for business accounts) or sends a request to an enrolled customer",
+   "action": "Signer sends a one-time payment (no future-dating for business accounts) or sends a request to an enrolled customer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -226,6 +229,7 @@
    "stage": "review-authorize",
    "title": "Signer reviews; no dual approval exists for business Zelle (CBOL…",
    "customer_action": "Signer reviews; no dual approval exists for business Zelle (CBOL approvals do not cover Zelle)",
+   "action": "Signer reviews; no dual approval exists for business Zelle (CBOL approvals do not cover Zelle)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -300,13 +304,14 @@
    "stage": "execute-track",
    "title": "Payment/request processed through the Zelle network; inbound customer…",
    "customer_action": null,
+   "action": "Payment/request processed through the Zelle network; inbound customer payments post in minutes",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle activity"
     }
    ],
-   "frontstage": "Payment/request processed through the Zelle network; inbound customer payments post in minutes",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -323,7 +328,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -342,13 +347,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation and email/SMS notifications",
    "customer_action": null,
+   "action": "Confirmation and email/SMS notifications",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle activity"
     }
    ],
-   "frontstage": "Confirmation and email/SMS notifications",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email/SMS",
@@ -365,7 +371,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -384,6 +390,7 @@
    "stage": "manage",
    "title": "Signer reviews activity and statements; reports errors within Zelle…",
    "customer_action": "Signer reviews activity and statements; reports errors within Zelle review periods per Zelle T&Cs (business manual defers to them)",
+   "action": "Signer reviews activity and statements; reports errors within Zelle review periods per Zelle T&Cs (business manual defers to them)",
    "touchpoints": [
     {
      "channel": "web",
@@ -426,6 +433,7 @@
    "stage": "exception",
    "title": "Unauthorized business Zelle: notify Citi as soon as possible; business…",
    "customer_action": "Unauthorized business Zelle: notify Citi as soon as possible; business EFT claims follow section 7.2.1 (written complaint within 10 Business Days if phoned)",
+   "action": "Unauthorized business Zelle: notify Citi as soon as possible; business EFT claims follow section 7.2.1 (written complaint within 10 Business Days if phoned)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -482,6 +490,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

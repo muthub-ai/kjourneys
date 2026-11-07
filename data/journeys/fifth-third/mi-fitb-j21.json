@@ -42,6 +42,7 @@
    "stage": "review-authorize",
    "title": "Pay or Return decision: decisions before 12:00 p.m. ET post the same…",
    "customer_action": "Pay or Return decision: decisions before 12:00 p.m. ET post the same day; the final deadline is 8:00 p.m. ET; the default decision applies if no decision is made by the final deadline",
+   "action": "Pay or Return decision: decisions before 12:00 p.m. ET post the same day; the final deadline is 8:00 p.m. ET; the default decision applies if no decision is made by the final deadline",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,13 +85,14 @@
    "stage": "execute-track",
    "title": "ACH debits post, exceptions presented next banking day; only items…",
    "customer_action": null,
+   "action": "ACH debits post, exceptions presented next banking day; only items requiring action shown; rules auto-approve",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Positive Pay exceptions"
     }
    ],
-   "frontstage": "ACH debits post, exceptions presented next banking day; only items requiring action shown; rules auto-approve",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email exception alert + hourly reminders",
@@ -107,7 +109,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -126,6 +128,7 @@
    "stage": "manage",
    "title": "Maintain rules (Company ID, min/max amounts); ACH credits no longer…",
    "customer_action": "Maintain rules (Company ID, min/max amounts); ACH credits no longer reviewable; Transaction Control for blocks/filters",
+   "action": "Maintain rules (Company ID, min/max amounts); ACH credits no longer reviewable; Transaction Control for blocks/filters",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -170,13 +173,14 @@
    "stage": "exception",
    "title": "Missed final decision deadline (8:00 p.m. ET) → client's default…",
    "customer_action": null,
+   "action": "Missed final decision deadline (8:00 p.m. ET) → client's default Pay/Return decision applies",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Missed final decision deadline (8:00 p.m. ET) → client's default Pay/Return decision applies",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",

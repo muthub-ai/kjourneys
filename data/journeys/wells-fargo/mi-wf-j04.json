@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap purple Fargo icon in search bar; type or use microphone ('Make a…",
    "customer_action": "Tap purple Fargo icon in search bar; type or use microphone ('Make a payment or transfer')",
+   "action": "Tap purple Fargo icon in search bar; type or use microphone ('Make a payment or transfer')",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -95,6 +96,7 @@
    "stage": "set-up",
    "title": "Recipient must already be a stored Zelle contact",
    "customer_action": "Recipient must already be a stored Zelle contact",
+   "action": "Recipient must already be a stored Zelle contact",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -148,6 +150,7 @@
    "stage": "initiate",
    "title": "Say/type e.g. 'Send $20 to Alex with Zelle'",
    "customer_action": "Say/type e.g. 'Send $20 to Alex with Zelle'",
+   "action": "Say/type e.g. 'Send $20 to Alex with Zelle'",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -210,6 +213,7 @@
    "stage": "review-authorize",
    "title": "Customer confirms on the standard Zelle review screen; access code if…",
    "customer_action": "Customer confirms on the standard Zelle review screen; access code if first-time recipient",
+   "action": "Customer confirms on the standard Zelle review screen; access code if first-time recipient",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -263,6 +267,7 @@
    "stage": "execute-track",
    "title": "'View Zelle transactions' via Fargo",
    "customer_action": "'View Zelle transactions' via Fargo",
+   "action": "'View Zelle transactions' via Fargo",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -316,13 +321,14 @@
    "stage": "confirm-complete",
    "title": "Standard confirmations",
    "customer_action": null,
+   "action": "Standard confirmations",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "—"
     }
    ],
-   "frontstage": "Standard confirmations",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -339,7 +345,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -358,6 +364,7 @@
    "stage": "manage",
    "title": "Fargo can show 'Which bills are due?' and subscriptions",
    "customer_action": "Fargo can show 'Which bills are due?' and subscriptions",
+   "action": "Fargo can show 'Which bills are due?' and subscriptions",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -411,13 +418,14 @@
    "stage": "exception",
    "title": "If Fargo cannot help, it directs to Customer Service",
    "customer_action": null,
+   "action": "If Fargo cannot help, it directs to Customer Service",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
      "screen": "Fargo"
     }
    ],
-   "frontstage": "If Fargo cannot help, it directs to Customer Service",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -434,7 +442,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -453,6 +461,7 @@
    "stage": "support",
    "title": "Customer Service 1-800-869-3557",
    "customer_action": "Customer Service 1-800-869-3557",
+   "action": "Customer Service 1-800-869-3557",
    "touchpoints": [
     {
      "channel": "phone",

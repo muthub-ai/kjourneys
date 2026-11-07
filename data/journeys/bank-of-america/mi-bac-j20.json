@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Enroll from Business Online Banking (BA360 + Business Advantage…",
    "customer_action": "Enroll from Business Online Banking (BA360 + Business Advantage checking required); bank ships scanner; 30-day trial then $15/month",
+   "action": "Enroll from Business Online Banking (BA360 + Business Advantage checking required); bank ships scanner; 30-day trial then $15/month",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Business Services menu > Remote Deposit Online > Create New Deposit >…",
    "customer_action": "Business Services menu > Remote Deposit Online > Create New Deposit > scan checks (or 'Scan checks to deposit' on Account Details for personal-profile users)",
+   "action": "Business Services menu > Remote Deposit Online > Create New Deposit > scan checks (or 'Scan checks to deposit' on Account Details for personal-profile users)",
    "touchpoints": [
     {
      "channel": "web",
@@ -147,6 +149,7 @@
    "stage": "review-authorize",
    "title": "Review totals and submit",
    "customer_action": "Review totals and submit",
+   "action": "Review totals and submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -189,13 +192,14 @@
    "stage": "execute-track",
    "title": "Later cutoff than branch; deposit posts; funds availability per hold…",
    "customer_action": null,
+   "action": "Later cutoff than branch; deposit posts; funds availability per hold policy",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Deposit history"
     }
    ],
-   "frontstage": "Later cutoff than branch; deposit posts; funds availability per hold policy",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -212,7 +216,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -231,13 +235,14 @@
    "stage": "confirm-complete",
    "title": "Deposit confirmation (format UNKNOWN)",
    "customer_action": null,
+   "action": "Deposit confirmation (format UNKNOWN)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Deposit confirmation (format UNKNOWN)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -253,7 +258,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -271,6 +276,7 @@
    "stage": "manage",
    "title": "Unenroll (90-day re-enrollment wait); return scanner within 30 days",
    "customer_action": "Unenroll (90-day re-enrollment wait); return scanner within 30 days",
+   "action": "Unenroll (90-day re-enrollment wait); return scanner within 30 days",
    "touchpoints": [
     {
      "channel": "phone",
@@ -313,13 +319,14 @@
    "stage": "exception",
    "title": "Deposits are subject to holds and RDO 'does not provide the ability to…",
    "customer_action": null,
+   "action": "Deposits are subject to holds and RDO 'does not provide the ability to verify funds at time of deposit'; limits 99 items per deposit and $999,999.99 per day; only one User ID (owner may assign a sub-user to deposit under it); endorsed checks must be retained 14 days then destroyed. Rejected-item handling (return reasons, re-presentment) is still not documented publicly.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Deposit holds policy; RDO support 877-270-1242"
     }
    ],
-   "frontstage": "Deposits are subject to holds and RDO 'does not provide the ability to verify funds at time of deposit'; limits 99 items per deposit and $999,999.99 per day; only one User ID (owner may assign a sub-user to deposit under it); endorsed checks must be retained 14 days then destroyed. Rejected-item handling (return reasons, re-presentment) is still not documented publicly.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -336,7 +343,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -355,6 +362,7 @@
    "stage": "support",
    "title": "RDO support line 877-270-1242 Mon–Fri 8–8 ET",
    "customer_action": "RDO support line 877-270-1242 Mon–Fri 8–8 ET",
+   "action": "RDO support line 877-270-1242 Mon–Fri 8–8 ET",
    "touchpoints": [
     {
      "channel": "phone",

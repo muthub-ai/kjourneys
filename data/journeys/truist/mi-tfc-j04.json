@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Select Transfer & Pay from the main menu",
    "customer_action": "Select Transfer & Pay from the main menu",
+   "action": "Select Transfer & Pay from the main menu",
    "touchpoints": [
     {
      "channel": "web",
@@ -95,6 +96,7 @@
    "stage": "initiate",
    "title": "Select the 'Transfer money & pay Truist accounts' tile; Transfers page…",
    "customer_action": "Select the 'Transfer money & pay Truist accounts' tile; Transfers page opens on the 'Make a transfer' tab",
+   "action": "Select the 'Transfer money & pay Truist accounts' tile; Transfers page opens on the 'Make a transfer' tab",
    "touchpoints": [
     {
      "channel": "web",
@@ -148,6 +150,7 @@
    "stage": "initiate",
    "title": "Enter From account, To account (deposit, investment or Truist lending…",
    "customer_action": "Enter From account, To account (deposit, investment or Truist lending product), amount, one-time or recurring; Continue",
+   "action": "Enter From account, To account (deposit, investment or Truist lending product), amount, one-time or recurring; Continue",
    "touchpoints": [
     {
      "channel": "web",
@@ -204,6 +207,7 @@
    "stage": "review-authorize",
    "title": "Review and Submit page → Send Transfer",
    "customer_action": "Review and Submit page → Send Transfer",
+   "action": "Review and Submit page → Send Transfer",
    "touchpoints": [
     {
      "channel": "web",
@@ -257,6 +261,7 @@
    "stage": "execute-track",
    "title": "Immediate processing for deposit accounts; investment transfers after…",
    "customer_action": null,
+   "action": "Immediate processing for deposit accounts; investment transfers after 4pm ET next business day; card/loan payments by 11:59pm ET same day (may post in 2 days); mortgage 7pm ET",
    "touchpoints": [
     {
      "channel": "web",
@@ -294,6 +299,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s014",
+      "src-truist-s006",
+      "src-truist-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -303,13 +321,14 @@
    "stage": "confirm-complete",
    "title": "On-screen confirmation; optional 'Payment Notifications' alert when…",
    "customer_action": null,
+   "action": "On-screen confirmation; optional 'Payment Notifications' alert when transfers/payments occur",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation; Alerts"
     }
    ],
-   "frontstage": "On-screen confirmation; optional 'Payment Notifications' alert when transfers/payments occur",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text alert if enabled",
@@ -327,7 +346,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -347,6 +366,7 @@
    "stage": "manage",
    "title": "Manage Transfers: ellipsis (...) next to a transfer → edit / delete /…",
    "customer_action": "Manage Transfers: ellipsis (...) next to a transfer → edit / delete / print; Review & Submit → Update",
+   "action": "Manage Transfers: ellipsis (...) next to a transfer → edit / delete / print; Review & Submit → Update",
    "touchpoints": [
     {
      "channel": "web",
@@ -403,6 +423,7 @@
    "stage": "exception",
    "title": "Insufficient funds → transfer not processed; once processing begins…",
    "customer_action": "Insufficient funds → transfer not processed; once processing begins cannot cancel/modify; errors → 844-4TRUIST within 60 days",
+   "action": "Insufficient funds → transfer not processed; once processing begins cannot cancel/modify; errors → 844-4TRUIST within 60 days",
    "touchpoints": [
     {
      "channel": "phone",
@@ -445,6 +466,7 @@
    "stage": "support",
    "title": "Truist Assist can perform the transfer conversationally; Care Center…",
    "customer_action": "Truist Assist can perform the transfer conversationally; Care Center 844-4TRUIST (OLB reps 8–8 ET M–F, 8–5 Sat)",
+   "action": "Truist Assist can perform the transfer conversationally; Care Center 844-4TRUIST (OLB reps 8–8 ET M–F, 8–5 Sat)",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",

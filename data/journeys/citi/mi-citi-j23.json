@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Select Instant Payments (RTP) and enter beneficiary/amount",
    "customer_action": "Select Instant Payments (RTP) and enter beneficiary/amount",
+   "action": "Select Instant Payments (RTP) and enter beneficiary/amount",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Approval per entitlements",
    "customer_action": "Approval per entitlements",
+   "action": "Approval per entitlements",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,13 +128,14 @@
    "stage": "execute-track",
    "title": "Irrevocable real-time settlement via TCH",
    "customer_action": null,
+   "action": "Irrevocable real-time settlement via TCH",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Irrevocable real-time settlement via TCH",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -149,7 +152,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -168,13 +171,14 @@
    "stage": "exception",
    "title": "No recall; request-for-return bank-to-bank",
    "customer_action": null,
+   "action": "No recall; request-for-return bank-to-bank",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "No recall; request-for-return bank-to-bank",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -191,7 +195,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -210,6 +214,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

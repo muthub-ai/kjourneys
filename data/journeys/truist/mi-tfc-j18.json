@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Beneficiary address book entries (Contact Center / Beneficiary Address…",
    "customer_action": "Beneficiary address book entries (Contact Center / Beneficiary Address Book; changes alertable); optional 'Save this payment as a template for future use' (Template Code, Description, Restrict to entitled users) — 'The template will need to be approved before it can be used'; admin sets user permission levels and approval requirements (Administration & settings > Users).",
+   "action": "Beneficiary address book entries (Contact Center / Beneficiary Address Book; changes alertable); optional 'Save this payment as a template for future use' (Template Code, Description, Restrict to entitled users) — 'The template will need to be approved before it can be used'; admin sets user permission levels and approval requirements (Administration & settings > Users).",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -92,6 +93,7 @@
    "stage": "initiate",
    "title": "'Payments & transfers' > 'Create payments & transfers' > Wire >…",
    "customer_action": "'Payments & transfers' > 'Create payments & transfers' > Wire > Domestic (or 'Add a new Payment' > 'Wire - Domestic' > Continue) > debit Account Number > optional Customer Reference / internal comments > Beneficiary (lookup; optional Beneficiary Notification email to up to five addresses) > beneficiary Account Number and Bank Code > Date & Amount (value date; cutoff shown: 'Payment must be approved by xx/xx/20xx 17:00 EDT') > optional Intermediary Bank(s), Payment Details, Bank-to-Bank Details > Submit or Save for Later. Templates: 'Payment templates' > 'Copy as Payment'.",
+   "action": "'Payments & transfers' > 'Create payments & transfers' > Wire > Domestic (or 'Add a new Payment' > 'Wire - Domestic' > Continue) > debit Account Number > optional Customer Reference / internal comments > Beneficiary (lookup; optional Beneficiary Notification email to up to five addresses) > beneficiary Account Number and Bank Code > Date & Amount (value date; cutoff shown: 'Payment must be approved by xx/xx/20xx 17:00 EDT') > optional Intermediary Bank(s), Payment Details, Bank-to-Bank Details > Submit or Save for Later. Templates: 'Payment templates' > 'Copy as Payment'.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -138,6 +140,7 @@
    "stage": "review-authorize",
    "title": "'A payment must be approved before it is sent to the beneficiary' —…",
    "customer_action": "'A payment must be approved before it is sent to the beneficiary' — approver uses 'Payments Requiring Approval' view (statuses Entered, Modified, Incomplete Approval, High Value — 'Requires secondary approval for high-value payments'); Approve / Unapprove (before extraction); token-authenticated session (soft/hard token or push); legacy Treasury Manager used token at initiation with no bank callback.",
+   "action": "'A payment must be approved before it is sent to the beneficiary' — approver uses 'Payments Requiring Approval' view (statuses Entered, Modified, Incomplete Approval, High Value — 'Requires secondary approval for high-value payments'); Approve / Unapprove (before extraction); token-authenticated session (soft/hard token or push); legacy Treasury Manager used token at initiation with no bank callback.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -186,13 +189,14 @@
    "stage": "execute-track",
    "title": "Typical wire status flow: Entered → Approved → Released (extracted to…",
    "customer_action": null,
+   "action": "Typical wire status flow: Entered → Approved → Released (extracted to back office; cannot be modified/unapproved) → Bank Received → Bank Confirmed (final). Failure states: Approval Window Passed, Rejected, Balance Check Failure (retries until cutoff). Beneficiary Notification email sent 'when the payment has been confirmed by the bank'; wire advice by email/fax/phone/mail (legacy); 6 pm ET cutoff; ISO 20022 for Fedwire since July 2025.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment Activity statuses; Beneficiary Notification email"
     }
    ],
-   "frontstage": "Typical wire status flow: Entered → Approved → Released (extracted to back office; cannot be modified/unapproved) → Bank Received → Bank Confirmed (final). Failure states: Approval Window Passed, Rejected, Balance Check Failure (retries until cutoff). Beneficiary Notification email sent 'when the payment has been confirmed by the bank'; wire advice by email/fax/phone/mail (legacy); 6 pm ET cutoff; ISO 20022 for Fedwire since July 2025.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "wire advice",
@@ -213,7 +217,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -236,6 +240,7 @@
    "stage": "exception",
    "title": "Returned/repair $10; investigation free; recall via Client Services",
    "customer_action": "Returned/repair $10; investigation free; recall via Client Services",
+   "action": "Returned/repair $10; investigation free; recall via Client Services",
    "touchpoints": [
     {
      "channel": "phone",
@@ -278,6 +283,7 @@
    "stage": "support",
    "title": "Help icon > Help Center > Start chat; Treasury Solutions Client Support…",
    "customer_action": "Help icon > Help Center > Start chat; Treasury Solutions Client Support 800-774-8179 / treasuryclientservices@truist.com; Corporate Call Retail PIN Wire Service guide on the Treasury Resource Center.",
+   "action": "Help icon > Help Center > Start chat; Treasury Solutions Client Support 800-774-8179 / treasuryclientservices@truist.com; Corporate Call Retail PIN Wire Service guide on the Treasury Resource Center.",
    "touchpoints": [
     {
      "channel": "phone",
@@ -349,7 +355,5 @@
   "limits": "≥150% largest wire/18 months",
   "fees": "DT $13/$36; Corporate Call $45/$35/$50",
   "cutoffs": "6pm ET"
- },
- "composite": "CJ-WIRE-INTL-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

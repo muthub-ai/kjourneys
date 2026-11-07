@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap 'Deposit' in bottom bar or long-press app icon > 'Deposit Checks'",
    "customer_action": "Tap 'Deposit' in bottom bar or long-press app icon > 'Deposit Checks'",
+   "action": "Tap 'Deposit' in bottom bar or long-press app icon > 'Deposit Checks'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "discover",
    "title": "Web (observed): 'Deposit a Check' in the logged-in 'Move Money & Pay…",
    "customer_action": "Web (observed): 'Deposit a Check' in the logged-in 'Move Money & Pay Bills' panel opens the public Mobile Deposit page; no web check upload",
+   "action": "Web (observed): 'Deposit a Check' in the logged-in 'Move Money & Pay Bills' panel opens the public Mobile Deposit page; no web check upload",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "set-up",
    "title": "Choose account in 'Deposit to'/'To' dropdown; optional 'Make selected…",
    "customer_action": "Choose account in 'Deposit to'/'To' dropdown; optional 'Make selected account my default' > 'Save'",
+   "action": "Choose account in 'Deposit to'/'To' dropdown; optional 'Make selected account my default' > 'Save'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -184,6 +187,7 @@
    "stage": "initiate",
    "title": "'Enter Amount' > 'Done'; remaining limits shown",
    "customer_action": "'Enter Amount' > 'Done'; remaining limits shown",
+   "action": "'Enter Amount' > 'Done'; remaining limits shown",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -226,6 +230,7 @@
    "stage": "initiate",
    "title": "Endorse: sign + 'For Mobile Deposit at Wells Fargo Only' (or tick…",
    "customer_action": "Endorse: sign + 'For Mobile Deposit at Wells Fargo Only' (or tick mobile-deposit box); photograph front and back with guided capture",
+   "action": "Endorse: sign + 'For Mobile Deposit at Wells Fargo Only' (or tick mobile-deposit box); photograph front and back with guided capture",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -282,6 +287,7 @@
    "stage": "review-authorize",
    "title": "Confirm details and select 'Deposit'",
    "customer_action": "Confirm details and select 'Deposit'",
+   "action": "Confirm details and select 'Deposit'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -338,6 +344,7 @@
    "stage": "execute-track",
    "title": "Deposit shows as processing in Account Activity; before 9 pm PT…",
    "customer_action": null,
+   "action": "Deposit shows as processing in Account Activity; before 9 pm PT business day → generally available next day; first $400 generally same day",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -373,6 +380,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s017",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -382,13 +401,14 @@
    "stage": "confirm-complete",
    "title": "On-screen confirmation; email to primary address; Message Center secure…",
    "customer_action": null,
+   "action": "On-screen confirmation; email to primary address; Message Center secure mailbox confirmation with credit date",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "On-screen confirmation; email to primary address; Message Center secure mailbox confirmation with credit date",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "in-app + email + Message Center",
@@ -405,7 +425,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -424,6 +444,7 @@
    "stage": "manage",
    "title": "Write 'mobile deposit' + date on check; keep 5 days then destroy",
    "customer_action": "Write 'mobile deposit' + date on check; keep 5 days then destroy",
+   "action": "Write 'mobile deposit' + date on check; keep 5 days then destroy",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -466,6 +487,7 @@
    "stage": "exception",
    "title": "Hold → notification with amount and availability date; returned check →…",
    "customer_action": null,
+   "action": "Hold → notification with amount and availability date; returned check → written notice by U.S. mail",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -499,6 +521,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -508,6 +541,7 @@
    "stage": "support",
    "title": "Mobile Deposit FAQs; troubleshooting (update app, clear cache)",
    "customer_action": "Mobile Deposit FAQs; troubleshooting (update app, clear cache)",
+   "action": "Mobile Deposit FAQs; troubleshooting (update app, clear cache)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -550,6 +584,7 @@
    "stage": "support",
    "title": "Customer Service 1-800-869-3557 (holds); ADA line for accessibility",
    "customer_action": "Customer Service 1-800-869-3557 (holds); ADA line for accessibility",
+   "action": "Customer Service 1-800-869-3557 (holds); ADA line for accessibility",
    "touchpoints": [
     {
      "channel": "phone",

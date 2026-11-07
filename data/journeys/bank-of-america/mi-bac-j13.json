@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap Erica icon; talk, type or pick suggested topic",
    "customer_action": "Tap Erica icon; talk, type or pick suggested topic",
+   "action": "Tap Erica icon; talk, type or pick suggested topic",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Say/type e.g. 'send money to [contact] with Zelle'; Erica pre-fills the…",
    "customer_action": "Say/type e.g. 'send money to [contact] with Zelle'; Erica pre-fills the Zelle flow (recipient, amount)",
+   "action": "Say/type e.g. 'send money to [contact] with Zelle'; Erica pre-fills the Zelle flow (recipient, amount)",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -140,6 +142,7 @@
    "stage": "review-authorize",
    "title": "Customer reviews pre-filled payment in app and authorizes as in J01…",
    "customer_action": "Customer reviews pre-filled payment in app and authorizes as in J01 (warnings, agreement)",
+   "action": "Customer reviews pre-filled payment in app and authorizes as in J01 (warnings, agreement)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -184,13 +187,14 @@
    "stage": "execute-track",
    "title": "Same processing/statuses as J01; 'view activity' via Erica",
    "customer_action": null,
+   "action": "Same processing/statuses as J01; 'view activity' via Erica",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Same processing/statuses as J01; 'view activity' via Erica",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -207,7 +211,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -226,6 +230,7 @@
    "stage": "confirm-complete",
    "title": "Same confirmations as app flow",
    "customer_action": null,
+   "action": "Same confirmations as app flow",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -259,6 +264,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-bank-of-america-s017"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -268,6 +284,7 @@
    "stage": "manage",
    "title": "Erica can set up recurring transfers, manage alerts, manage Zelle tags…",
    "customer_action": "Erica can set up recurring transfers, manage alerts, manage Zelle tags (business)",
+   "action": "Erica can set up recurring transfers, manage alerts, manage Zelle tags (business)",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -314,13 +331,14 @@
    "stage": "exception",
    "title": "Voice from another person treated as authorized once Erica is activated…",
    "customer_action": null,
+   "action": "Voice from another person treated as authorized once Erica is activated – customer bears risk; otherwise J01 exceptions",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
      "screen": "Erica terms"
     }
    ],
-   "frontstage": "Voice from another person treated as authorized once Erica is activated – customer bears risk; otherwise J01 exceptions",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -337,7 +355,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -356,6 +374,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -434,6 +453,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -519,6 +539,6 @@
  "assessment": "Erica also sends wires, pays/cancels bills and adds payees – broadest assistant money-movement coverage among peers; Oct 2026 refresh.",
  "x-mi_evidence": "CONFIRMED_BANK",
  "bank_product": "BAC-P09",
- "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite": "CJ-ZELLE-SMB-RECEIVE",
  "composite_match": "mi-reference"
 }

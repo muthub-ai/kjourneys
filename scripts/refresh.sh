@@ -20,7 +20,7 @@ for a in "$@"; do
     --commit) COMMIT=1 ;;
     --push)   PUSH=1; COMMIT=1 ;;
     -h|--help) sed -n '2,15p' "$0"; exit 0 ;;
-    reports/*) REPORT="${a%/}" ;;
+    reports/*|./reports/*) REPORT="${a#./}"; REPORT="${REPORT%/}" ;;
     *) echo "unknown argument: $a (see --help)"; exit 2 ;;
   esac
 done
@@ -33,11 +33,12 @@ if [[ -n "$REPORT" ]]; then
   if python3 -c "import json,sys; sys.exit(0 if json.load(open('$REPORT/manifest.json')).get('workbook') else 1)"; then
     step "Import the MI workbook in $REPORT (journeys, findings, scores, extracts)"
     python3 -c "import openpyxl" 2>/dev/null || { echo "Missing openpyxl. Run: pip install -r requirements.txt"; exit 1; }
-    python3 -I tools/import_mi_workbook.py "$REPORT" || { echo; echo "Workbook import failed; nothing was ingested."; exit 1; }
+    python3 -I tools/import_mi_workbook.py "$REPORT" || { echo; echo "Workbook import failed and wrote nothing (it validates in a scratch copy first). Fix the reported problem and rerun."; exit 1; }
   fi
   step "Ingest $REPORT"
   if ! python3 tools/ingest_mi.py "$REPORT"; then
-    echo; echo "Nothing was written. Fix the report folder and rerun the same command."; exit 1
+    echo; echo "Ingest wrote nothing. The workbook import before it did update data/ (validated); rerun after fixing, or discard with the commands below."
+    echo "  git checkout -- data registries reports && git clean -fd data registries reports"; exit 1
   fi
 fi
 
@@ -46,7 +47,7 @@ if ! make -B -s check; then
   echo
   echo "Checks failed. Fix the extract (or data) and rerun the same command;"
   echo "re-ingesting a version replaces what it wrote. To discard instead:"
-  echo "  git checkout -- data registries reports/ingest-log.json"
+  echo "  git checkout -- data registries reports && git clean -fd data registries reports"
   exit 1
 fi
 

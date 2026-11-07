@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Instant is offered as a payment speed option inside Send ACH payment on…",
    "customer_action": "Instant is offered as a payment speed option inside Send ACH payment on the Wires & ACH dashboard ('From instant, standard, or same day options you choose when your payment is sent'); fee $3 or $0.75 with Enhanced Payments",
+   "action": "Instant is offered as a payment speed option inside Send ACH payment on the Wires & ACH dashboard ('From instant, standard, or same day options you choose when your payment is sent'); fee $3 or $0.75 with Enhanced Payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -107,6 +108,7 @@
    "stage": "set-up",
    "title": "Payee account and routing number (instant works when payee bank is on…",
    "customer_action": "Payee account and routing number (instant works when payee bank is on RTP/FedNow)",
+   "action": "Payee account and routing number (instant works when payee bank is on RTP/FedNow)",
    "touchpoints": [
     {
      "channel": "web",
@@ -155,6 +157,7 @@
    "stage": "initiate",
    "title": "Choose recipient (previously paid or new), sending account, delivery…",
    "customer_action": "Choose recipient (previously paid or new), sending account, delivery date and speed (instant), amount; confirm details; send",
+   "action": "Choose recipient (previously paid or new), sending account, delivery date and speed (instant), amount; confirm details; send",
    "touchpoints": [
     {
      "channel": "web",
@@ -201,6 +204,7 @@
    "stage": "review-authorize",
    "title": "Review fee and disclaimer; send (irrevocable)",
    "customer_action": "Review fee and disclaimer; send (irrevocable)",
+   "action": "Review fee and disclaimer; send (irrevocable)",
    "touchpoints": [
     {
      "channel": "web",
@@ -243,13 +247,14 @@
    "stage": "execute-track",
    "title": "Confirmation page shows send date, expected arrival, memo, transaction…",
    "customer_action": null,
+   "action": "Confirmation page shows send date, expected arrival, memo, transaction number",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation page shows send date, expected arrival, memo, transaction number",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -266,7 +271,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -285,13 +290,14 @@
    "stage": "confirm-complete",
    "title": "Email confirmation (inferred from ACH)",
    "customer_action": null,
+   "action": "Email confirmation (inferred from ACH)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Email confirmation (inferred from ACH)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -308,7 +314,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -327,6 +333,7 @@
    "stage": "manage",
    "title": "Activity & approvals",
    "customer_action": "Activity & approvals",
+   "action": "Activity & approvals",
    "touchpoints": [
     {
      "channel": "web",
@@ -369,13 +376,14 @@
    "stage": "exception",
    "title": "Instant payments are final; rejection by receiving bank handling not…",
    "customer_action": null,
+   "action": "Instant payments are final; rejection by receiving bank handling not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Instant payments are final; rejection by receiving bank handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -391,7 +399,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -409,6 +417,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -479,6 +488,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

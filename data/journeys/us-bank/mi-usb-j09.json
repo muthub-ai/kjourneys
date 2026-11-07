@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Pay bills (dashboard with Your bills, Activity,…",
    "customer_action": "Transfer & pay > Pay bills (dashboard with Your bills, Activity, Autopay tabs); Smart Assistant can answer 'Do I have any bills due next week?' and pay card statements",
+   "action": "Transfer & pay > Pay bills (dashboard with Your bills, Activity, Autopay tabs); Smart Assistant can answer 'Do I have any bills due next week?' and pay card statements",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -101,6 +102,7 @@
    "stage": "set-up",
    "title": "Add bill > search biller name (match to statement) and enter account…",
    "customer_action": "Add bill > search biller name (match to statement) and enter account info, or Add manually > company or person > statement details, address prefill (PO Box manual) > Continue to first payment",
+   "action": "Add bill > search biller name (match to statement) and enter account info, or Add manually > company or person > statement details, address prefill (PO Box manual) > Continue to first payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -163,6 +165,7 @@
    "stage": "set-up",
    "title": "Optionally add an external bank account as a funding source for U.S.…",
    "customer_action": "Optionally add an external bank account as a funding source for U.S. Bank bills: Pay from > 'Manage external accounts' > 'Add an external account' > personal/business > log in with other bank or enter routing/account manually (microdeposits)",
+   "action": "Optionally add an external bank account as a funding source for U.S. Bank bills: Pay from > 'Manage external accounts' > 'Add an external account' > personal/business > log in with other bank or enter routing/account manually (microdeposits)",
    "touchpoints": [
     {
      "channel": "web",
@@ -216,6 +219,7 @@
    "stage": "initiate",
    "title": "Select bill, enter amount, payment (deliver-by) date and from-account;…",
    "customer_action": "Select bill, enter amount, payment (deliver-by) date and from-account; web adds more bills with running total; expedited same-day/overnight offered where biller supports it ($14.95)",
+   "action": "Select bill, enter amount, payment (deliver-by) date and from-account; web adds more bills with running total; expedited same-day/overnight offered where biller supports it ($14.95)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -306,6 +310,7 @@
    "stage": "review-authorize",
    "title": "Review & pay (web) / Pay now (app)",
    "customer_action": "Review & pay (web) / Pay now (app)",
+   "action": "Review & pay (web) / Pay now (app)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -362,13 +367,14 @@
    "stage": "execute-track",
    "title": "Activity tab shows scheduled, pending and paid; electronic 1–2 bd,…",
    "customer_action": null,
+   "action": "Activity tab shows scheduled, pending and paid; electronic 1–2 bd, check 5–6 bd; most payments covered by Payment Guarantee (not taxes, court orders, securities)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "'Payment complete' payment-details page (amount, date, confirmation number) > 'Back to bills'; dashboard shows the bill as 'scheduled for <date>'; Activity tab"
     }
    ],
-   "frontstage": "Activity tab shows scheduled, pending and paid; electronic 1–2 bd, check 5–6 bd; most payments covered by Payment Guarantee (not taxes, court orders, securities)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Bill-pay reminders; optional alerts",
@@ -388,7 +394,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -430,13 +436,14 @@
    "stage": "confirm-complete",
    "title": "On-screen confirmation; reminder/alert options via Notifications",
    "customer_action": null,
+   "action": "On-screen confirmation; reminder/alert options via Notifications",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Notifications"
     }
    ],
-   "frontstage": "On-screen confirmation; reminder/alert options via Notifications",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/push/text (configurable)",
@@ -454,7 +461,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -492,6 +499,7 @@
    "stage": "manage",
    "title": "Edit/cancel pending payment (pencil icon; not within 3 business days of…",
    "customer_action": "Edit/cancel pending payment (pencil icon; not within 3 business days of scheduled date); stop payment on a bill-pay paper check: Pay bills > Activity > select payment > 'Stop this check' > Continue > 'Agree & submit' (≥3 business days before the scheduled date; in-process/completed cannot be stopped)",
+   "action": "Edit/cancel pending payment (pencil icon; not within 3 business days of scheduled date); stop payment on a bill-pay paper check: Pay bills > Activity > select payment > 'Stop this check' > Continue > 'Agree & submit' (≥3 business days before the scheduled date; in-process/completed cannot be stopped)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -560,6 +568,7 @@
    "stage": "manage",
    "title": "Update biller info (KB0069387); groups (min 5 billers)",
    "customer_action": "Update biller info (KB0069387); groups (min 5 billers)",
+   "action": "Update biller info (KB0069387); groups (min 5 billers)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -604,6 +613,7 @@
    "stage": "exception",
    "title": "Payment sent by check unexpectedly: delete and re-add biller with…",
    "customer_action": "Payment sent by check unexpectedly: delete and re-add biller with latest statement",
+   "action": "Payment sent by check unexpectedly: delete and re-add biller with latest statement",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -646,6 +656,7 @@
    "stage": "exception",
    "title": "Late fee under Payment Guarantee / early-clearing fee: call 800-987-7237",
    "customer_action": "Late fee under Payment Guarantee / early-clearing fee: call 800-987-7237",
+   "action": "Late fee under Payment Guarantee / early-clearing fee: call 800-987-7237",
    "touchpoints": [
     {
      "channel": "phone",
@@ -688,6 +699,7 @@
    "stage": "exception",
    "title": "Unauthorized bill payment covered by Digital Security Coverage",
    "customer_action": "Unauthorized bill payment covered by Digital Security Coverage",
+   "action": "Unauthorized bill payment covered by Digital Security Coverage",
    "touchpoints": [
     {
      "channel": "phone",
@@ -730,6 +742,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -800,6 +813,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

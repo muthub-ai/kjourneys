@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Transfers in app or Transfer tab online",
    "customer_action": "Customer opens Transfers in app or Transfer tab online",
+   "action": "Customer opens Transfers in app or Transfer tab online",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Select from/to TD accounts, amount, and immediate / future date /…",
    "customer_action": "Select from/to TD accounts, amount, and immediate / future date / recurring frequency",
+   "action": "Select from/to TD accounts, amount, and immediate / future date / recurring frequency",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Review and confirm",
    "customer_action": "Review and confirm",
+   "action": "Review and confirm",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -168,6 +171,7 @@
    "stage": "execute-track",
    "title": "Immediate availability; scheduled transfers listed as future transfers",
    "customer_action": null,
+   "action": "Immediate availability; scheduled transfers listed as future transfers",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -203,6 +207,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s013"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -212,13 +228,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; transaction in activity",
    "customer_action": null,
+   "action": "Confirmation; transaction in activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "'Your transfer was successful' -> home / another transfer / view scheduled transfers"
     }
    ],
-   "frontstage": "Confirmation; transaction in activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -235,7 +252,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -254,6 +271,7 @@
    "stage": "manage",
    "title": "Edit/cancel future and recurring transfers from Transfer tab",
    "customer_action": "Edit/cancel future and recurring transfers from Transfer tab",
+   "action": "Edit/cancel future and recurring transfers from Transfer tab",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -296,13 +314,14 @@
    "stage": "exception",
    "title": "Excess pre-authorized withdrawals from savings/MMA incur $3 per item",
    "customer_action": null,
+   "action": "Excess pre-authorized withdrawals from savings/MMA incur $3 per item",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Excess pre-authorized withdrawals from savings/MMA incur $3 per item",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -319,7 +338,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -338,6 +357,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -408,6 +428,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

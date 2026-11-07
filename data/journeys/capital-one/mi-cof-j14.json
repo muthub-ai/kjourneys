@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Select checking or savings account > tap 'Deposit' (next to camera icon)",
    "customer_action": "Select checking or savings account > tap 'Deposit' (next to camera icon)",
+   "action": "Select checking or savings account > tap 'Deposit' (next to camera icon)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Endorse back of check: sign and write 'for Capital One mobile deposit'",
    "customer_action": "Endorse back of check: sign and write 'for Capital One mobile deposit'",
+   "action": "Endorse back of check: sign and write 'for Capital One mobile deposit'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -151,6 +153,7 @@
    "stage": "initiate",
    "title": "Enter amount; photograph front; flip, confirm endorsement, photograph…",
    "customer_action": "Enter amount; photograph front; flip, confirm endorsement, photograph back; optional memo",
+   "action": "Enter amount; photograph front; flip, confirm endorsement, photograph back; optional memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -207,6 +210,7 @@
    "stage": "review-authorize",
    "title": "Swipe 'Slide to Deposit' (green button)",
    "customer_action": "Swipe 'Slide to Deposit' (green button)",
+   "action": "Swipe 'Slide to Deposit' (green button)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -263,6 +267,7 @@
    "stage": "execute-track",
    "title": "In-app message confirms image submitted; amount appears in…",
    "customer_action": null,
+   "action": "In-app message confirms image submitted; amount appears in upcoming/recent transactions; before 9 PM ET posts next business day, after -> two business days; amount mismatches auto-corrected to check amount",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -289,6 +294,19 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s021",
+      "src-capital-one-s043",
+      "src-capital-one-s085"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -328,6 +346,7 @@
    "stage": "confirm-complete",
    "title": "Keep check until full amount appears in past/recent transactions, then…",
    "customer_action": "Keep check until full amount appears in past/recent transactions, then destroy",
+   "action": "Keep check until full amount appears in past/recent transactions, then destroy",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -370,6 +389,7 @@
    "stage": "manage",
    "title": "Deposit to wrong account: transfer after funds available; view check…",
    "customer_action": "Deposit to wrong account: transfer after funds available; view check image via help article",
+   "action": "Deposit to wrong account: transfer after funds available; view check image via help article",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -412,13 +432,14 @@
    "stage": "exception",
    "title": "Rejection reasons: unreadable, corners cut, too light/dark, unclear…",
    "customer_action": null,
+   "action": "Rejection reasons: unreadable, corners cut, too light/dark, unclear info, missing endorsement; connection error message 'There's a problem connecting...' -> retry; over-limit -> branch/ATM",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Error messages"
     }
    ],
-   "frontstage": "Rejection reasons: unreadable, corners cut, too light/dark, unclear info, missing endorsement; connection error message 'There's a problem connecting...' -> retry; over-limit -> branch/ATM",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -435,7 +456,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -454,6 +475,7 @@
    "stage": "support",
    "title": "Phone 1-877-442-3764; Mobile Deposit demo at…",
    "customer_action": null,
+   "action": "Phone 1-877-442-3764; Mobile Deposit demo at capitalone.com/olb-sites/rdc-demo",
    "touchpoints": [
     {
      "channel": "phone",

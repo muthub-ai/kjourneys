@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Zelle and chooses 'Request' (or 'split')",
    "customer_action": "Customer opens Zelle and chooses 'Request' (or 'split')",
+   "action": "Customer opens Zelle and chooses 'Request' (or 'split')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -88,6 +89,7 @@
    "stage": "set-up",
    "title": "Customer selects one or multiple contacts; requests to a mobile number…",
    "customer_action": "Customer selects one or multiple contacts; requests to a mobile number require that number to be enrolled; unenrolled contacts must be requested by email",
+   "action": "Customer selects one or multiple contacts; requests to a mobile number require that number to be enrolled; unenrolled contacts must be requested by email",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -162,6 +164,7 @@
    "stage": "initiate",
    "title": "Customer enters amount (per person for split) and optional note",
    "customer_action": "Customer enters amount (per person for split) and optional note",
+   "action": "Customer enters amount (per person for split) and optional note",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -215,6 +218,7 @@
    "stage": "review-authorize",
    "title": "Customer confirms recipient details and taps 'Request'",
    "customer_action": "Customer confirms recipient details and taps 'Request'",
+   "action": "Customer confirms recipient details and taps 'Request'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -259,6 +263,7 @@
    "stage": "execute-track",
    "title": "Zelle notifies requestee with instructions on how to pay; requestee may…",
    "customer_action": null,
+   "action": "Zelle notifies requestee with instructions on how to pay; requestee may pay, decline or ignore",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -294,6 +299,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s001",
+      "src-td-bank-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -303,13 +320,14 @@
    "stage": "confirm-complete",
    "title": "Incoming funds credited within minutes and shown in activity",
    "customer_action": null,
+   "action": "Incoming funds credited within minutes and shown in activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Incoming funds credited within minutes and shown in activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -326,7 +344,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -345,6 +363,7 @@
    "stage": "manage",
    "title": "View outstanding requests in activity; cancellation of a request not…",
    "customer_action": "View outstanding requests in activity; cancellation of a request not documented",
+   "action": "View outstanding requests in activity; cancellation of a request not documented",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -385,6 +404,7 @@
    "stage": "exception",
    "title": "Request ignored/declined; request-money fee may be deducted per terms…",
    "customer_action": "Request ignored/declined; request-money fee may be deducted per terms if any applies (none listed in fee schedule)",
+   "action": "Request ignored/declined; request-money fee may be deducted per terms if any applies (none listed in fee schedule)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -441,6 +461,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -511,6 +532,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

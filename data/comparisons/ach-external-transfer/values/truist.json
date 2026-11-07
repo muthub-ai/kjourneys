@@ -305,32 +305,15 @@
     ],
     "attr-cap-step-up-auth": [
       {
-        "id": "urn:kos:assertion:truist:ach-external-transfer:cap-step-up-auth:2",
-        "value": true,
-        "display": "Yes — external-bank credential sign-in",
-        "basis": "disclosed",
-        "source_ids": [
-          "src-mi-2026-11-06-v1",
-          "src-truist-s006",
-          "src-truist-s009",
-          "src-truist-s010",
-          "src-truist-s014",
-          "src-truist-s062",
-          "src-truist-s907",
-          "src-truist-s919"
-        ],
-        "asserted_by": "process:mi-session",
-        "asserted_at": "2026-11-06T21:03:00-06:00",
-        "observed_on": "2026-11-06",
-        "valid_from": "2026-11-06",
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "high",
-        "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P02-S03",
-          "mi_level": "CONFIRMED_BANK"
-        }
+        "id": "urn:kos:assertion:truist:ach-external-transfer:cap-step-up-auth:1"
       }
     ],
     "attr-cap-dual-approval-smb": [
@@ -399,7 +382,6 @@
       {
         "id": "urn:kos:assertion:truist:ach-external-transfer:cap-same-day:2",
         "value": true,
-        "display": "Yes — discretionary (Next-Day/Instant)",
         "basis": "disclosed",
         "source_ids": [
           "src-mi-2026-11-06-v1",
@@ -409,9 +391,7 @@
           "src-truist-s014",
           "src-truist-s062",
           "src-truist-s907",
-          "src-truist-s919",
-          "src-truist-s057",
-          "src-truist-s952"
+          "src-truist-s919"
         ],
         "asserted_by": "process:mi-session",
         "asserted_at": "2026-11-06T21:03:00-06:00",
@@ -422,7 +402,7 @@
         "verified_at": null,
         "confidence": "high",
         "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P02-S03, TFC-P02-S04",
+          "report_ref": "Capabilities sheet: TFC-P02-S03",
           "mi_level": "CONFIRMED_BANK"
         }
       }
@@ -431,7 +411,6 @@
       {
         "id": "urn:kos:assertion:truist:ach-external-transfer:cap-instant:2",
         "value": true,
-        "display": "Yes — true (discretionary, per eligible account; RTP network or other instant network; real-time 24/7)",
         "basis": "disclosed",
         "source_ids": [
           "src-mi-2026-11-06-v1",
@@ -441,9 +420,7 @@
           "src-truist-s014",
           "src-truist-s062",
           "src-truist-s907",
-          "src-truist-s919",
-          "src-truist-s057",
-          "src-truist-s952"
+          "src-truist-s919"
         ],
         "asserted_by": "process:mi-session",
         "asserted_at": "2026-11-06T21:03:00-06:00",
@@ -454,7 +431,7 @@
         "verified_at": null,
         "confidence": "high",
         "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P02-S03, TFC-P02-S04",
+          "report_ref": "Capabilities sheet: TFC-P02-S03",
           "mi_level": "CONFIRMED_BANK"
         }
       }

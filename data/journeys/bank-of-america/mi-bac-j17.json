@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Enable CashPro ACH; configure ACH Positive Pay authorizations for…",
    "customer_action": "Enable CashPro ACH; configure ACH Positive Pay authorizations for trading partners",
+   "action": "Enable CashPro ACH; configure ACH Positive Pay authorizations for trading partners",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Submit NACHA file via CashPro Connect, API, or CashPro ACH entry; Same…",
    "customer_action": "Submit NACHA file via CashPro Connect, API, or CashPro ACH entry; Same Day ACH for eligible items",
+   "action": "Submit NACHA file via CashPro Connect, API, or CashPro ACH entry; Same Day ACH for eligible items",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Primary/secondary approvals, including on mobile",
    "customer_action": "Primary/secondary approvals, including on mobile",
+   "action": "Primary/secondary approvals, including on mobile",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,13 +173,14 @@
    "stage": "execute-track",
    "title": "Posts next day or same day; reporting via API/CashPro",
    "customer_action": null,
+   "action": "Posts next day or same day; reporting via API/CashPro",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Reporting"
     }
    ],
-   "frontstage": "Posts next day or same day; reporting via API/CashPro",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,6 +216,7 @@
    "stage": "exception",
    "title": "Positive Pay exceptions: pay or return in real time; returns (incl. new…",
    "customer_action": "Positive Pay exceptions: pay or return in real time; returns (incl. new R90 code from 2028)",
+   "action": "Positive Pay exceptions: pay or return in real time; returns (incl. new R90 code from 2028)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -254,6 +259,7 @@
    "stage": "support",
    "title": "CashPro Chat / treasury officer",
    "customer_action": "CashPro Chat / treasury officer",
+   "action": "CashPro Chat / treasury officer",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -340,7 +346,5 @@
  "bank_product": "BAC-P13",
  "terms": {
   "cutoffs": "Same Day ACH eligible"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

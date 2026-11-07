@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Initiate RTP credit in Digital Treasury, via API, or in-ERP (One View…",
    "customer_action": "Initiate RTP credit in Digital Treasury, via API, or in-ERP (One View Connect pilot)",
+   "action": "Initiate RTP credit in Digital Treasury, via API, or in-ERP (One View Connect pilot)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -88,6 +89,7 @@
    "stage": "review-authorize",
    "title": "Token approval / ERP approval workflow",
    "customer_action": "Token approval / ERP approval workflow",
+   "action": "Token approval / ERP approval workflow",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -132,13 +134,14 @@
    "stage": "execute-track",
    "title": "24/7 settlement via TCH RTP; 'RTP provides instant confirmations that…",
    "customer_action": null,
+   "action": "24/7 settlement via TCH RTP; 'RTP provides instant confirmations that payments have been sent, received, and fully settled'; Digital Treasury alerts 'Incoming Real Time Payment Transaction', 'Real Time Payments Message' and 'Payment Request Received' (email/contact methods); API flow returns an encrypted confirmation displayed in the client platform.",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Notifications"
     }
    ],
-   "frontstage": "24/7 settlement via TCH RTP; 'RTP provides instant confirmations that payments have been sent, received, and fully settled'; Digital Treasury alerts 'Incoming Real Time Payment Transaction', 'Real Time Payments Message' and 'Payment Request Received' (email/contact methods); API flow returns an encrypted confirmation displayed in the client platform.",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "RTP messages",
@@ -159,7 +162,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -182,13 +185,14 @@
    "stage": "confirm-complete",
    "title": "Immediate acknowledgement; alias-based RfP pilot adds applied…",
    "customer_action": null,
+   "action": "Immediate acknowledgement; alias-based RfP pilot adds applied confirmation",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Immediate acknowledgement; alias-based RfP pilot adds applied confirmation",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -205,7 +209,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -224,6 +228,7 @@
    "stage": "exception",
    "title": "Irrevocable; investigation via Client Services",
    "customer_action": "Irrevocable; investigation via Client Services",
+   "action": "Irrevocable; investigation via Client Services",
    "touchpoints": [
     {
      "channel": "phone",
@@ -266,6 +271,7 @@
    "stage": "support",
    "title": "Treasury Solutions Client Services",
    "customer_action": "Treasury Solutions Client Services",
+   "action": "Treasury Solutions Client Services",
    "touchpoints": [
     {
      "channel": "phone",

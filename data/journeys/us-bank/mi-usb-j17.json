@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Wires & ACH > Wire transfers (business deposit…",
    "customer_action": "Transfer & pay > Wires & ACH > Wire transfers (business deposit accounts)",
+   "action": "Transfer & pay > Wires & ACH > Wire transfers (business deposit accounts)",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Recipient type and country; name, address; recipient bank country;…",
    "customer_action": "Recipient type and country; name, address; recipient bank country; SWIFT BIC; Account number / IBAN",
+   "action": "Recipient type and country; name, address; recipient bank country; SWIFT BIC; Account number / IBAN",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Sending account; purpose; optional memo; amount → fee ($45; $35 EP);…",
    "customer_action": "Sending account; purpose; optional memo; amount → fee ($45; $35 EP); USD only",
+   "action": "Sending account; purpose; optional memo; amount → fee ($45; $35 EP); USD only",
    "touchpoints": [
     {
      "channel": "web",
@@ -190,6 +193,7 @@
    "stage": "review-authorize",
    "title": "Review/Edit; Read authorization; agree checkbox; send",
    "customer_action": "Review/Edit; Read authorization; agree checkbox; send",
+   "action": "Review/Edit; Read authorization; agree checkbox; send",
    "touchpoints": [
     {
      "channel": "web",
@@ -232,6 +236,7 @@
    "stage": "execute-track",
    "title": "Same-day only 7:30 a.m.–3 p.m. CT business days; cannot future-date",
    "customer_action": null,
+   "action": "Same-day only 7:30 a.m.–3 p.m. CT business days; cannot future-date",
    "touchpoints": [
     {
      "channel": "web",
@@ -265,6 +270,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -274,13 +290,14 @@
    "stage": "confirm-complete",
    "title": "Email updates (inferred from domestic)",
    "customer_action": null,
+   "action": "Email updates (inferred from domestic)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Email updates (inferred from domestic)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -297,7 +314,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -316,6 +333,7 @@
    "stage": "manage",
    "title": "No cancel once sent",
    "customer_action": "No cancel once sent",
+   "action": "No cancel once sent",
    "touchpoints": [
     {
      "channel": "web",
@@ -358,13 +376,14 @@
    "stage": "exception",
    "title": "Recall/trace undocumented",
    "customer_action": null,
+   "action": "Recall/trace undocumented",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": null
     }
    ],
-   "frontstage": "Recall/trace undocumented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -380,7 +399,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -398,6 +417,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -468,6 +488,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",
@@ -556,7 +577,5 @@
  "terms": {
   "fees": "$45 / $35 EP",
   "cutoffs": "7:30–3:00 CT"
- },
- "composite": "CJ-WIRE-INTL-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

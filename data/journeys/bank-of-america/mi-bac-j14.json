@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Pay & Transfer > Zelle® recipient list shows BofA customers with the…",
    "customer_action": "Pay & Transfer > Zelle® recipient list shows BofA customers with the Bank of America logo – such payments are sent as internal transfers, not Zelle",
+   "action": "Pay & Transfer > Zelle® recipient list shows BofA customers with the Bank of America logo – such payments are sent as internal transfers, not Zelle",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Enter recipient's BofA account number (and name) as recipient",
    "customer_action": "Enter recipient's BofA account number (and name) as recipient",
+   "action": "Enter recipient's BofA account number (and name) as recipient",
    "touchpoints": [
     {
      "channel": "web",
@@ -146,6 +148,7 @@
    "stage": "initiate",
    "title": "Amount, one-time or recurring, date",
    "customer_action": "Amount, one-time or recurring, date",
+   "action": "Amount, one-time or recurring, date",
    "touchpoints": [
     {
      "channel": "web",
@@ -188,6 +191,7 @@
    "stage": "review-authorize",
    "title": "Review; Secured Transfer OTP / USB key for higher limits",
    "customer_action": "Review; Secured Transfer OTP / USB key for higher limits",
+   "action": "Review; Secured Transfer OTP / USB key for higher limits",
    "touchpoints": [
     {
      "channel": "web",
@@ -230,13 +234,14 @@
    "stage": "execute-track",
    "title": "Immediate credit to recipient; 10:45 p.m. ET cutoff for same-day dating",
    "customer_action": null,
+   "action": "Immediate credit to recipient; 10:45 p.m. ET cutoff for same-day dating",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Immediate credit to recipient; 10:45 p.m. ET cutoff for same-day dating",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -254,7 +259,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -274,13 +279,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; email",
    "customer_action": null,
+   "action": "Confirmation; email",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation; email",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -297,7 +303,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -316,6 +322,7 @@
    "stage": "manage",
    "title": "Edit/cancel future-dated or recurring until 11:59 p.m. ET day before…",
    "customer_action": "Edit/cancel future-dated or recurring until 11:59 p.m. ET day before under Pay & Transfer",
+   "action": "Edit/cancel future-dated or recurring until 11:59 p.m. ET day before under Pay & Transfer",
    "touchpoints": [
     {
      "channel": "web",
@@ -358,13 +365,14 @@
    "stage": "exception",
    "title": "Bank cancels for closed account/ineligible/invalid account…",
    "customer_action": null,
+   "action": "Bank cancels for closed account/ineligible/invalid account number/deleted recipient/security/limits and emails customer; immediate transfers irreversible",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email"
     }
    ],
-   "frontstage": "Bank cancels for closed account/ineligible/invalid account number/deleted recipient/security/limits and emails customer; immediate transfers irreversible",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -381,7 +389,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -400,6 +408,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -478,6 +487,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

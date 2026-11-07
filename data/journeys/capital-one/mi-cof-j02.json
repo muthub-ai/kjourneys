@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens 'Send Money with Zelle®' from the checking account and…",
    "customer_action": "Customer opens 'Send Money with Zelle®' from the checking account and selects 'Request'",
+   "action": "Customer opens 'Send Money with Zelle®' from the checking account and selects 'Request'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Customer chooses the person (must already be enrolled with Zelle;…",
    "customer_action": "Customer chooses the person (must already be enrolled with Zelle; unenrolled people must be requested by email)",
+   "action": "Customer chooses the person (must already be enrolled with Zelle; unenrolled people must be requested by email)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -160,6 +162,7 @@
    "stage": "initiate",
    "title": "Enter amount and optional note",
    "customer_action": "Enter amount and optional note",
+   "action": "Enter amount and optional note",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -213,6 +216,7 @@
    "stage": "review-authorize",
    "title": "Select 'Review', then tap/slide to send the request",
    "customer_action": "Select 'Review', then tap/slide to send the request",
+   "action": "Select 'Review', then tap/slide to send the request",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -269,6 +273,7 @@
    "stage": "execute-track",
    "title": "Recipient is notified and can pay, deny or ignore; request expires…",
    "customer_action": "Recipient is notified and can pay, deny or ignore; request expires after 14 days",
+   "action": "Recipient is notified and can pay, deny or ignore; request expires after 14 days",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -311,13 +316,14 @@
    "stage": "confirm-complete",
    "title": "When paid, funds land in the linked checking account within minutes",
    "customer_action": null,
+   "action": "When paid, funds land in the linked checking account within minutes",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Recent Transactions"
     }
    ],
-   "frontstage": "When paid, funds land in the linked checking account within minutes",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "unknown",
@@ -334,7 +340,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -353,6 +359,7 @@
    "stage": "manage",
    "title": "Cancel an outstanding request",
    "customer_action": "Cancel an outstanding request",
+   "action": "Cancel an outstanding request",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -419,13 +426,14 @@
    "stage": "exception",
    "title": "Request used for debt collection or business purpose violates terms;…",
    "customer_action": null,
+   "action": "Request used for debt collection or business purpose violates terms; bank may suspend",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Terms enforcement"
     }
    ],
-   "frontstage": "Request used for debt collection or business purpose violates terms; bank may suspend",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -442,7 +450,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -461,6 +469,7 @@
    "stage": "support",
    "title": "Phone support 800-655-2265; Zelle FAQ",
    "customer_action": null,
+   "action": "Phone support 800-655-2265; Zelle FAQ",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & Pay > 'Pay bills' tile (deep link BILLPAYLANDING)",
    "customer_action": "Transfer & Pay > 'Pay bills' tile (deep link BILLPAYLANDING)",
+   "action": "Transfer & Pay > 'Pay bills' tile (deep link BILLPAYLANDING)",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Manage Payees > Add a Payee > 'Let's add a payee': select company from…",
    "customer_action": "Manage Payees > Add a Payee > 'Let's add a payee': select company from directory and match address, or manually enter company/individual details > Add Payee; group payees (4.0.0)",
+   "action": "Manage Payees > Add a Payee > 'Let's add a payee': select company from directory and match address, or manually enter company/individual details > Add Payee; group payees (4.0.0)",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Click pay for one payee or select multiple payees (multi-payee flow,…",
    "customer_action": "Click pay for one payee or select multiple payees (multi-payee flow, 2026); 'Make a bill payment': from account, amount, one-time/recurring, Deliver By date",
+   "action": "Click pay for one payee or select multiple payees (multi-payee flow, 2026); 'Make a bill payment': from account, amount, one-time/recurring, Deliver By date",
    "touchpoints": [
     {
      "channel": "web",
@@ -228,6 +231,7 @@
    "stage": "review-authorize",
    "title": "Review & submit > Submit payment",
    "customer_action": "Review & submit > Submit payment",
+   "action": "Review & submit > Submit payment",
    "touchpoints": [
     {
      "channel": "web",
@@ -284,13 +288,14 @@
    "stage": "execute-track",
    "title": "Payment scheduled; Manage Bills shows history; upcoming transactions on…",
    "customer_action": null,
+   "action": "Payment scheduled; Manage Bills shows history; upcoming transactions on dashboard; improved 'bill payment activity and confirmations' (4.4.0, Aug 2025)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Manage Bills"
     }
    ],
-   "frontstage": "Payment scheduled; Manage Bills shows history; upcoming transactions on dashboard; improved 'bill payment activity and confirmations' (4.4.0, Aug 2025)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -308,7 +313,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -328,13 +333,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; payment alerts (digital banking page: 'set payment…",
    "customer_action": null,
+   "action": "Confirmation; payment alerts (digital banking page: 'set payment alerts')",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Confirmation; payment alerts (digital banking page: 'set payment alerts')",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -352,7 +358,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -372,6 +378,7 @@
    "stage": "manage",
    "title": "Manage Bills: ellipsis (...) → edit or delete; Manage payees:…",
    "customer_action": "Manage Bills: ellipsis (...) → edit or delete; Manage payees: edit/delete",
+   "action": "Manage Bills: ellipsis (...) → edit or delete; Manage payees: edit/delete",
    "touchpoints": [
     {
      "channel": "web",
@@ -434,6 +441,7 @@
    "stage": "exception",
    "title": "Late posting → Truist covers late fees up to $50/payment if scheduled…",
    "customer_action": "Late posting → Truist covers late fees up to $50/payment if scheduled per guidelines; returned payment (NSF) → reimburse on demand, 1.5% late fee, possible credit-bureau reporting; stop payment: call 844-4TRUIST or write Truist Bill Payment Research (Whiteville NC), 5 business days before Deliver By",
+   "action": "Late posting → Truist covers late fees up to $50/payment if scheduled per guidelines; returned payment (NSF) → reimburse on demand, 1.5% late fee, possible credit-bureau reporting; stop payment: call 844-4TRUIST or write Truist Bill Payment Research (Whiteville NC), 5 business days before Deliver By",
    "touchpoints": [
     {
      "channel": "phone",
@@ -512,6 +520,7 @@
    "stage": "support",
    "title": "Truist Assist pays Truist bills only; third-party bill pay help via…",
    "customer_action": "Truist Assist pays Truist bills only; third-party bill pay help via 844-4TRUIST",
+   "action": "Truist Assist pays Truist bills only; third-party bill pay help via 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",

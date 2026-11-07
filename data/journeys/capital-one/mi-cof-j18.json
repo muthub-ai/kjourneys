@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Capital One's Discover-conversion checking page tells customers that…",
    "customer_action": null,
+   "action": "Capital One's Discover-conversion checking page tells customers that using the Capital One routing number 'may also qualify you to receive instant transfers from external accounts or third-party apps' (defined as 'a real-time payment method offered by some merchants that's available 24/7 and routes funds within minutes'); otherwise the customer discovers instant receipt only via the payer's app (e.g., 'instant deposit')",
    "touchpoints": [
     {
      "channel": "web",
@@ -70,6 +71,21 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s022",
+      "src-capital-one-s027",
+      "src-capital-one-s901",
+      "src-capital-one-s902",
+      "src-capital-one-s924"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -113,6 +129,7 @@
    "stage": "execute-track",
    "title": "Credit posts to account",
    "customer_action": null,
+   "action": "Credit posts to account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -146,6 +163,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s027"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -155,6 +183,7 @@
    "stage": "exception",
    "title": "Unrecognized credit / return",
    "customer_action": null,
+   "action": "Unrecognized credit / return",
    "touchpoints": [
     {
      "channel": "phone",
@@ -186,6 +215,16 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -195,6 +234,7 @@
    "stage": "support",
    "title": "General phone support",
    "customer_action": null,
+   "action": "General phone support",
    "touchpoints": [
     {
      "channel": "phone",

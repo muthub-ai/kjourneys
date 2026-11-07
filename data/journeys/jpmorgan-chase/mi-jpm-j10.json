@@ -42,13 +42,14 @@
    "stage": "discover",
    "title": "Eligible payees show an eBill option on the Schedule Payment screen",
    "customer_action": null,
+   "action": "Eligible payees show an eBill option on the Schedule Payment screen",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Schedule Payment screen"
     }
    ],
-   "frontstage": "Eligible payees show an eBill option on the Schedule Payment screen",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -65,7 +66,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "On the Schedule Payment screen choose the e-Bill option for an eligible…",
    "customer_action": "On the Schedule Payment screen choose the e-Bill option for an eligible payee and 'follow the enrollment process'; each payee is enrolled individually; the customer accepts the payee's terms (paper statements stop); e-Bills for a payee can be active at only one financial institution; the payee generally takes up to five Business Days to approve.",
+   "action": "On the Schedule Payment screen choose the e-Bill option for an eligible payee and 'follow the enrollment process'; each payee is enrolled individually; the customer accepts the payee's terms (paper statements stop); e-Bills for a payee can be active at only one financial institution; the payee generally takes up to five Business Days to approve.",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "initiate",
    "title": "'Pay & Transfers' > 'Payment Activity' > 'Automatic payments' (Bill Pay…",
    "customer_action": "'Pay & Transfers' > 'Payment Activity' > 'Automatic payments' (Bill Pay side menu) > 'Set up an automatic payment'",
+   "action": "'Pay & Transfers' > 'Payment Activity' > 'Automatic payments' (Bill Pay side menu) > 'Set up an automatic payment'",
    "touchpoints": [
     {
      "channel": "web",
@@ -168,6 +171,7 @@
    "stage": "review-authorize",
    "title": "Choose Repeating (fixed amount, same calendar day each month) or, for…",
    "customer_action": "Choose Repeating (fixed amount, same calendar day each month) or, for e-Bill payees, a 'variable automatic Bill Payment… triggered based on the associated billing date and/or the bill due date, as set up by you, and the payment amount may vary each month'; additional terms for variable automatic payments are presented at setup; customer must be able to print the authorization.",
+   "action": "Choose Repeating (fixed amount, same calendar day each month) or, for e-Bill payees, a 'variable automatic Bill Payment… triggered based on the associated billing date and/or the bill due date, as set up by you, and the payment amount may vary each month'; additional terms for variable automatic payments are presented at setup; customer must be able to print the authorization.",
    "touchpoints": [
     {
      "channel": "web",
@@ -210,13 +214,14 @@
    "stage": "execute-track",
    "title": "eBill arrives with due-date reminder; autopay funds on schedule",
    "customer_action": null,
+   "action": "eBill arrives with due-date reminder; autopay funds on schedule",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment Activity"
     }
    ],
-   "frontstage": "eBill arrives with due-date reminder; autopay funds on schedule",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -233,7 +238,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -252,13 +257,14 @@
    "stage": "confirm-complete",
    "title": "Reminder and payment alerts",
    "customer_action": null,
+   "action": "Reminder and payment alerts",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Reminder and payment alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -275,7 +281,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -294,6 +300,7 @@
    "stage": "manage",
    "title": "Change/cancel automatic payments in Payment Activity > Automatic…",
    "customer_action": "Change/cancel automatic payments in Payment Activity > Automatic payments; an automatic or future-dated payment to a non-Chase payee must be cancelled before 10:00 AM ET on its processing day; stop a recurring series ≥3 Business Days before the Send On date; cancelling e-Bills for a payee generally takes seven Business Days.",
+   "action": "Change/cancel automatic payments in Payment Activity > Automatic payments; an automatic or future-dated payment to a non-Chase payee must be cancelled before 10:00 AM ET on its processing day; stop a recurring series ≥3 Business Days before the Send On date; cancelling e-Bills for a payee generally takes seven Business Days.",
    "touchpoints": [
     {
      "channel": "web",
@@ -336,13 +343,14 @@
    "stage": "exception",
    "title": "Biller changes details slowing delivery -> guarantee does not apply",
    "customer_action": null,
+   "action": "Biller changes details slowing delivery -> guarantee does not apply",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Guarantee terms"
     }
    ],
-   "frontstage": "Biller changes details slowing delivery -> guarantee does not apply",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -359,7 +367,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -378,6 +386,7 @@
    "stage": "support",
    "title": "Customer service",
    "customer_action": "Customer service",
+   "action": "Customer service",
    "touchpoints": [
     {
      "channel": "phone",

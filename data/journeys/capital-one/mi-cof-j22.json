@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay business bills': pay by ACH, debit or credit card; track invoices…",
    "customer_action": "'Pay business bills': pay by ACH, debit or credit card; track invoices and payments; connect QuickBooks Online; schedule multiple payments at once",
+   "action": "'Pay business bills': pay by ACH, debit or credit card; track invoices and payments; connect QuickBooks Online; schedule multiple payments at once",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Enter invoice and vendor info (manually, by uploading an invoice, or by…",
    "customer_action": "Enter invoice and vendor info (manually, by uploading an invoice, or by syncing accounting software) > 'Pay your way': select the funding source (Capital One Business card, any bank account or debit card) and the vendor's delivery method (single-use virtual card emailed to the vendor, ACH 'bank transfer delivery', or paper check); schedule multiple bill payments at once",
+   "action": "Enter invoice and vendor info (manually, by uploading an invoice, or by syncing accounting software) > 'Pay your way': select the funding source (Capital One Business card, any bank account or debit card) and the vendor's delivery method (single-use virtual card emailed to the vendor, ACH 'bank transfer delivery', or paper check); schedule multiple bill payments at once",
    "touchpoints": [
     {
      "channel": "web",
@@ -157,6 +159,7 @@
    "stage": "exception",
    "title": "Late fee claim",
    "customer_action": "Late fee claim",
+   "action": "Late fee claim",
    "touchpoints": [
     {
      "channel": "phone",
@@ -207,6 +210,7 @@
    "stage": "support",
    "title": "Business banker / Contact Us",
    "customer_action": null,
+   "action": "Business banker / Contact Us",
    "touchpoints": [
     {
      "channel": "phone",
@@ -272,7 +276,5 @@
  "terms": {
   "limits": "Businesses with annual sales <= $10M",
   "fees": "Free for ACH; card-funded payments carry a fee (amount undisclosed)"
- },
- "composite": "CJ-BILLPAY-SEND",
- "composite_match": "rail"
+ }
 }

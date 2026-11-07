@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "ERP/AP system transmits one consolidated payables file with multiple…",
    "customer_action": "ERP/AP system transmits one consolidated payables file with multiple payment types and remittance detail (file transmission services)",
+   "action": "ERP/AP system transmits one consolidated payables file with multiple payment types and remittance detail (file transmission services)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Approve in online banking (Vantage) under dual custody",
    "customer_action": "Approve in online banking (Vantage) under dual custody",
+   "action": "Approve in online banking (Vantage) under dual custody",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Bank executes by rail: ACH, wire, commercial/virtual card, check;…",
    "customer_action": null,
+   "action": "Bank executes by rail: ACH, wire, commercial/virtual card, check; remittance delivered",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "—"
     }
    ],
-   "frontstage": "Bank executes by rail: ACH, wire, commercial/virtual card, check; remittance delivered",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +173,7 @@
    "stage": "manage",
    "title": "Reporting/reconciliation via data APIs and treasury information…",
    "customer_action": "Reporting/reconciliation via data APIs and treasury information reporting",
+   "action": "Reporting/reconciliation via data APIs and treasury information reporting",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -212,13 +216,14 @@
    "stage": "exception",
    "title": "Exceptions in Tasks hub / Message Center",
    "customer_action": null,
+   "action": "Exceptions in Tasks hub / Message Center",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Vantage"
     }
    ],
-   "frontstage": "Exceptions in Tasks hub / Message Center",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -236,7 +241,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -256,6 +261,7 @@
    "stage": "support",
    "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
    "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
    "touchpoints": [
     {
      "channel": "phone",
@@ -345,7 +351,5 @@
  "bank_product": "WF-P13",
  "terms": {
   "limits": "Wire limits at company/account/user level"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

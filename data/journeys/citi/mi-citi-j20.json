@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Main Menu > Transfers and Payments > Add a New Payee to Your List",
    "customer_action": "Main Menu > Transfers and Payments > Add a New Payee to Your List",
+   "action": "Main Menu > Transfers and Payments > Add a New Payee to Your List",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Add payee (common payees active immediately; new individuals in two…",
    "customer_action": "Add payee (common payees active immediately; new individuals in two business days); mark as frequent; maintain via Payee Information Maintenance (up to 855 payees)",
+   "action": "Add payee (common payees active immediately; new individuals in two business days); mark as frequent; maintain via Payee Information Maintenance (up to 855 payees)",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Make One-Time Payments From Your List (up to 12 per request) or Set Up…",
    "customer_action": "Make One-Time Payments From Your List (up to 12 per request) or Set Up a Recurring Payment (14 standing orders per payee); schedule next day to one year out; recipients in U.S., PR, Guam",
+   "action": "Make One-Time Payments From Your List (up to 12 per request) or Set Up a Recurring Payment (14 standing orders per payee); schedule next day to one year out; recipients in U.S., PR, Guam",
    "touchpoints": [
     {
      "channel": "web",
@@ -198,6 +201,7 @@
    "stage": "review-authorize",
    "title": "Authorize; co-signer approval if above limit",
    "customer_action": "Authorize; co-signer approval if above limit",
+   "action": "Authorize; co-signer approval if above limit",
    "touchpoints": [
     {
      "channel": "web",
@@ -240,13 +244,14 @@
    "stage": "execute-track",
    "title": "Review All Future Payments; Review Payments by Account / by Payee /…",
    "customer_action": null,
+   "action": "Review All Future Payments; Review Payments by Account / by Payee / Past 90 Days",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Review All Future Payments"
     }
    ],
-   "frontstage": "Review All Future Payments; Review Payments by Account / by Payee / Past 90 Days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -263,7 +268,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -282,13 +287,14 @@
    "stage": "confirm-complete",
    "title": "Payment history",
    "customer_action": null,
+   "action": "Payment history",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Review All Payments in the Past 90 Days"
     }
    ],
-   "frontstage": "Payment history",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -305,7 +311,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -324,6 +330,7 @@
    "stage": "manage",
    "title": "Cancel until 11:45 PM ET the day before via Review All Future Bill…",
    "customer_action": "Cancel until 11:45 PM ET the day before via Review All Future Bill Payments; Cancel or Change Recurring Payment Instructions",
+   "action": "Cancel until 11:45 PM ET the day before via Review All Future Bill Payments; Cancel or Change Recurring Payment Instructions",
    "touchpoints": [
     {
      "channel": "web",
@@ -368,6 +375,7 @@
    "stage": "exception",
    "title": "Customer Service > Report a Bill Payment Problem: select payee and…",
    "customer_action": "Customer Service > Report a Bill Payment Problem: select payee and payment reference, enter details, Submit Problem Report; proof of payment, re-credit, re-issue or check stop; investigation within four business days",
+   "action": "Customer Service > Report a Bill Payment Problem: select payee and payment reference, enter details, Submit Problem Report; proof of payment, re-credit, re-issue or check stop; investigation within four business days",
    "touchpoints": [
     {
      "channel": "web",
@@ -424,6 +432,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",
@@ -523,7 +532,5 @@
  "terms": {
   "limits": "$9,999,999.99 per payment; 855 payees",
   "cutoffs": "11:45 PM ET day before"
- },
- "composite": "CJ-BILLPAY-SEND",
- "composite_match": "rail"
+ }
 }

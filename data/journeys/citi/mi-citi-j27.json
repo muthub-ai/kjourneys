@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Submit payment via CitiDirect or API",
    "customer_action": "Submit payment via CitiDirect or API",
+   "action": "Submit payment via CitiDirect or API",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,13 +85,14 @@
    "stage": "execute-track",
    "title": "Cleared 24/7; instant local payout in 22 markets",
    "customer_action": null,
+   "action": "Cleared 24/7; instant local payout in 22 markets",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Cleared 24/7; instant local payout in 22 markets",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -107,7 +109,7 @@
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -126,13 +128,14 @@
    "stage": "exception",
    "title": "Unknown",
    "customer_action": null,
+   "action": "Unknown",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Unknown",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -148,7 +151,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -166,6 +169,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

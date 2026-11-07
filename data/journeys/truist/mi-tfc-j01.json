@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Transfer & Pay from main menu or taps the Zelle widget…",
    "customer_action": "Customer opens Transfer & Pay from main menu or taps the Zelle widget on the home screen",
+   "action": "Customer opens Transfer & Pay from main menu or taps the Zelle widget on the home screen",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "First use: accept Zelle terms, enter email or U.S. mobile number, enter…",
    "customer_action": "First use: accept Zelle terms, enter email or U.S. mobile number, enter one-time verification code, choose account to link",
+   "action": "First use: accept Zelle terms, enter email or U.S. mobile number, enter one-time verification code, choose account to link",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -168,6 +170,7 @@
    "stage": "set-up",
    "title": "Add recipient: Send Money with Zelle® > Recipients (bottom) > search by…",
    "customer_action": "Add recipient: Send Money with Zelle® > Recipients (bottom) > search by name, U.S. mobile or email; or import device contacts",
+   "action": "Add recipient: Send Money with Zelle® > Recipients (bottom) > search by name, U.S. mobile or email; or import device contacts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -221,6 +224,7 @@
    "stage": "initiate",
    "title": "Tap Send, pick recipient from Recent recipients, Added recipients,…",
    "customer_action": "Tap Send, pick recipient from Recent recipients, Added recipients, device contacts or search; or tap QR icon on Select Recipient screen and scan recipient's Zelle QR",
+   "action": "Tap Send, pick recipient from Recent recipients, Added recipients, device contacts or search; or tap QR icon on Select Recipient screen and scan recipient's Zelle QR",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -277,6 +281,7 @@
    "stage": "initiate",
    "title": "Enter amount and optional note; optionally set a future date or…",
    "customer_action": "Enter amount and optional note; optionally set a future date or recurring schedule",
+   "action": "Enter amount and optional note; optionally set a future date or recurring schedule",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -355,6 +360,7 @@
    "stage": "review-authorize",
    "title": "Review recipient, amount, memo; tap Send",
    "customer_action": "Review recipient, amount, memo; tap Send",
+   "action": "Review recipient, amount, memo; tap Send",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -437,6 +443,7 @@
    "stage": "execute-track",
    "title": "Truist submits to Zelle network; enrolled recipients receive funds…",
    "customer_action": null,
+   "action": "Truist submits to Zelle network; enrolled recipients receive funds within minutes; unenrolled recipients get notification to enroll",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -470,6 +477,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s001"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -479,13 +497,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation in app; scheduled/recurring sends generate a reminder 7…",
    "customer_action": null,
+   "action": "Confirmation in app; scheduled/recurring sends generate a reminder 7 days before, a sent notice, and a failure alert",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation / Activity"
     }
    ],
-   "frontstage": "Confirmation in app; scheduled/recurring sends generate a reminder 7 days before, a sent notice, and a failure alert",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Push/email notice when scheduled payment is sent; 7-day reminder; failure alert",
@@ -502,7 +521,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -521,6 +540,7 @@
    "stage": "manage",
    "title": "View upcoming scheduled/recurring payments in Pending section of…",
    "customer_action": "View upcoming scheduled/recurring payments in Pending section of Activity; edit or delete next payment or entire series; change receiving account via Zelle Preferences > Manage Payment Profiles; view/print QR under Preferences",
+   "action": "View upcoming scheduled/recurring payments in Pending section of Activity; edit or delete next payment or entire series; change receiving account via Zelle Preferences > Manage Payment Profiles; view/print QR under Preferences",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -563,6 +583,7 @@
    "stage": "exception",
    "title": "Cancel: open payment in Activity > 'Cancel This Payment' (only if…",
    "customer_action": "Cancel: open payment in Activity > 'Cancel This Payment' (only if recipient not yet enrolled); otherwise call Care Center",
+   "action": "Cancel: open payment in Activity > 'Cancel This Payment' (only if recipient not yet enrolled); otherwise call Care Center",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -619,6 +640,7 @@
    "stage": "exception",
    "title": "Wrong recipient / scam: call 844-4TRUIST immediately to file a claim;…",
    "customer_action": "Wrong recipient / scam: call 844-4TRUIST immediately to file a claim; reimbursement available for unauthorized transactions and 'certain qualifying imposter scams' (agreement)",
+   "action": "Wrong recipient / scam: call 844-4TRUIST immediately to file a claim; reimbursement available for unauthorized transactions and 'certain qualifying imposter scams' (agreement)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -713,6 +735,7 @@
    "stage": "support",
    "title": "Customer opens Truist Assist (icon at bottom of screen) or taps…",
    "customer_action": "Customer opens Truist Assist (icon at bottom of screen) or taps Help/FAQs; Assist can hand off to a live agent",
+   "action": "Customer opens Truist Assist (icon at bottom of screen) or taps Help/FAQs; Assist can hand off to a live agent",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -787,6 +810,7 @@
    "stage": "support",
    "title": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the…",
    "customer_action": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the payment reference number from Zelle activity; cancel/claim/scam: Truist Care Center 844-4TRUIST (option 1 fraud 24/7; option 9 Spanish)",
+   "action": "Payment issue: call 888-228-6654 (online/mobile banking) quoting the payment reference number from Zelle activity; cancel/claim/scam: Truist Care Center 844-4TRUIST (option 1 fraud 24/7; option 9 Spanish)",
    "touchpoints": [
     {
      "channel": "phone",

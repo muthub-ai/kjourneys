@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Sign in to Mobile Banking app with business profile; Pay & Transfer >…",
    "customer_action": "Sign in to Mobile Banking app with business profile; Pay & Transfer > Zelle® > Request",
+   "action": "Sign in to Mobile Banking app with business profile; Pay & Transfer > Zelle® > Request",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "When starting a payment, message offers 'Create a Zelle® tag' vs…",
    "customer_action": "When starting a payment, message offers 'Create a Zelle® tag' vs mobile/email; tap 'Create a Zelle® tag' to begin guided enrollment; choose a business-fitting name; tag must be tied to a U.S. mobile number",
+   "action": "When starting a payment, message offers 'Create a Zelle® tag' vs mobile/email; tap 'Create a Zelle® tag' to begin guided enrollment; choose a business-fitting name; tag must be tied to a U.S. mobile number",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -143,6 +145,7 @@
    "stage": "set-up",
    "title": "Get QR: Request > 'Scan to Pay' > 'My QR code' next to search bar;…",
    "customer_action": "Get QR: Request > 'Scan to Pay' > 'My QR code' next to search bar; print or share PDF; display on invoices/POS",
+   "action": "Get QR: Request > 'Scan to Pay' > 'My QR code' next to search bar; print or share PDF; display on invoices/POS",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -185,6 +188,7 @@
    "stage": "initiate",
    "title": "Customer scans QR in their own bank app or enters the tag; or business…",
    "customer_action": "Customer scans QR in their own bank app or enters the tag; or business sends a Request to the client",
+   "action": "Customer scans QR in their own bank app or enters the tag; or business sends a Request to the client",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -229,13 +233,14 @@
    "stage": "execute-track",
    "title": "Payment arrives in minutes to the business deposit account; shown in…",
    "customer_action": null,
+   "action": "Payment arrives in minutes to the business deposit account; shown in Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Payment arrives in minutes to the business deposit account; shown in Activity",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "email/text alert",
@@ -253,7 +258,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -273,13 +278,14 @@
    "stage": "confirm-complete",
    "title": "'After your customer sends you payments with Zelle®, you'll receive…",
    "customer_action": null,
+   "action": "'After your customer sends you payments with Zelle®, you'll receive them directly into your enrolled bank account and receive a notification'; request-based payments trigger a payment notification",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts/Statement"
     }
    ],
-   "frontstage": "'After your customer sends you payments with Zelle®, you'll receive them directly into your enrolled bank account and receive a notification'; request-based payments trigger a payment notification",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -297,7 +303,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -317,6 +323,7 @@
    "stage": "manage",
    "title": "Ask Erica to inquire about, add, or manage a tag; manage alerts",
    "customer_action": "Ask Erica to inquire about, add, or manage a tag; manage alerts",
+   "action": "Ask Erica to inquire about, add, or manage a tag; manage alerts",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -359,13 +366,14 @@
    "stage": "exception",
    "title": "Incoming pending review hold; customer dispute with payer (no purchase…",
    "customer_action": null,
+   "action": "Incoming pending review hold; customer dispute with payer (no purchase protection); small business accounts not covered by Reg E or the consumer guarantee",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Message Center"
     }
    ],
-   "frontstage": "Incoming pending review hold; customer dispute with payer (no purchase protection); small business accounts not covered by Reg E or the consumer guarantee",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -384,7 +392,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -424,6 +432,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -502,6 +511,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

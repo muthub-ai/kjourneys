@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Wires & ACH > Wire transfers (visible only to…",
    "customer_action": "Transfer & pay > Wires & ACH > Wire transfers (visible only to customers with ≥6 months history, an eligible checking, savings or money market account and a registered cellular device on profile ≥3 business days)",
+   "action": "Transfer & pay > Wires & ACH > Wire transfers (visible only to customers with ≥6 months history, an eligible checking, savings or money market account and a registered cellular device on profile ≥3 business days)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -132,6 +133,7 @@
    "stage": "set-up",
    "title": "Choose a saved recipient or 'Send to one-time recipient'",
    "customer_action": "Choose a saved recipient or 'Send to one-time recipient'",
+   "action": "Choose a saved recipient or 'Send to one-time recipient'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -191,6 +193,7 @@
    "stage": "set-up",
    "title": "One-time: individual or business; country = United States; name and…",
    "customer_action": "One-time: individual or business; country = United States; name and address; Continue; bank account number and routing number; Continue",
+   "action": "One-time: individual or business; country = United States; name and address; Continue; bank account number and routing number; Continue",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -247,6 +250,7 @@
    "stage": "initiate",
    "title": "Choose from-account; 'Send on' date (defaults to earliest; calendar for…",
    "customer_action": "Choose from-account; 'Send on' date (defaults to earliest; calendar for future); purpose of transfer; optional memo; Continue; enter amount — fee calculated and shown with total; Continue to accept",
+   "action": "Choose from-account; 'Send on' date (defaults to earliest; calendar for future); purpose of transfer; optional memo; Continue; enter amount — fee calculated and shown with total; Continue to accept",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -312,6 +316,7 @@
    "stage": "review-authorize",
    "title": "Review all sections (Edit available); select 'Read authorization', tick…",
    "customer_action": "Review all sections (Edit available); select 'Read authorization', tick 'I agree to the wire transfer authorization'; Send transfer",
+   "action": "Review all sections (Edit available); select 'Read authorization', tick 'I agree to the wire transfer authorization'; Send transfer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -394,6 +399,7 @@
    "stage": "review-authorize",
    "title": "Enter the one-time passcode sent to the registered cellular device to…",
    "customer_action": "Enter the one-time passcode sent to the registered cellular device to complete the wire",
+   "action": "Enter the one-time passcode sent to the registered cellular device to complete the wire",
    "touchpoints": [
     {
      "channel": "web",
@@ -468,13 +474,14 @@
    "stage": "execute-track",
    "title": "Same-day wires submitted 7:30 a.m.–4:30 p.m. CT business days (federal…",
    "customer_action": null,
+   "action": "Same-day wires submitted 7:30 a.m.–4:30 p.m. CT business days (federal tax 2:30 p.m. CT) are transmitted same day, delivered typically within 24 hours; later submissions next business day",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Wire activity"
     }
    ],
-   "frontstage": "Same-day wires submitted 7:30 a.m.–4:30 p.m. CT business days (federal tax 2:30 p.m. CT) are transmitted same day, delivered typically within 24 hours; later submissions next business day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email status updates",
@@ -493,7 +500,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -514,13 +521,14 @@
    "stage": "confirm-complete",
    "title": "Email updates on wire status (only channel documented)",
    "customer_action": null,
+   "action": "Email updates on wire status (only channel documented)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "'You're all set!' success screen ('Success! The wire transfer has been submitted.'); 'We'll email you an update once your wire transfer is completed.'"
     }
    ],
-   "frontstage": "Email updates on wire status (only channel documented)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -539,7 +547,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -560,6 +568,7 @@
    "stage": "manage",
    "title": "Future-dated wire can be changed or cancelled in app/online until 11:59…",
    "customer_action": "Future-dated wire can be changed or cancelled in app/online until 11:59 p.m. CT the day before send date; same-day wires cannot be cancelled after submission",
+   "action": "Future-dated wire can be changed or cancelled in app/online until 11:59 p.m. CT the day before send date; same-day wires cannot be cancelled after submission",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -622,6 +631,7 @@
    "stage": "exception",
    "title": "Wire sent with incorrect instructions or to wrong recipient: if the…",
    "customer_action": "Wire sent with incorrect instructions or to wrong recipient: if the same-day wire is still pending, call 800-USBANKS to edit/cancel; once no longer pending 'you'll need to work with the recipient'; wires are irrevocable and excluded from Digital Security Coverage",
+   "action": "Wire sent with incorrect instructions or to wrong recipient: if the same-day wire is still pending, call 800-USBANKS to edit/cancel; once no longer pending 'you'll need to work with the recipient'; wires are irrevocable and excluded from Digital Security Coverage",
    "touchpoints": [
     {
      "channel": "phone",
@@ -684,6 +694,7 @@
    "stage": "exception",
    "title": "Unauthorized digital wire: bank 'may' reimburse at its discretion",
    "customer_action": "Unauthorized digital wire: bank 'may' reimburse at its discretion",
+   "action": "Unauthorized digital wire: bank 'may' reimburse at its discretion",
    "touchpoints": [
     {
      "channel": "phone",
@@ -743,13 +754,14 @@
    "stage": "exception",
    "title": "Rejected/returned wire handling not documented",
    "customer_action": null,
+   "action": "Rejected/returned wire handling not documented",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Rejected/returned wire handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -765,7 +777,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -783,6 +795,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -853,6 +866,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

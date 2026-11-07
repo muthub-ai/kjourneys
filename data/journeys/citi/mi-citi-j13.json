@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Payer selects instant payment to the customer's Citibank routing/account",
    "customer_action": null,
+   "action": "Payer selects instant payment to the customer's Citibank routing/account",
    "touchpoints": [
     {
      "channel": "web",
@@ -75,6 +76,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "INFERRED"
     }
    }
   },
@@ -84,13 +96,14 @@
    "stage": "execute-track",
    "title": "Credit posts in seconds; recognized as 'Instant Payments, Real Time…",
    "customer_action": null,
+   "action": "Credit posts in seconds; recognized as 'Instant Payments, Real Time Payments' New-to-Citibank Funds",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Credit posts in seconds; recognized as 'Instant Payments, Real Time Payments' New-to-Citibank Funds",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -108,7 +121,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -128,13 +141,14 @@
    "stage": "confirm-complete",
    "title": "Account alert if configured",
    "customer_action": null,
+   "action": "Account alert if configured",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account Alerts"
     }
    ],
-   "frontstage": "Account alert if configured",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +165,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +184,7 @@
    "stage": "manage",
    "title": "View in activity/statement",
    "customer_action": "View in activity/statement",
+   "action": "View in activity/statement",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -212,13 +227,14 @@
    "stage": "exception",
    "title": "Misdirected instant credit: return handled bank-to-bank; customer…",
    "customer_action": null,
+   "action": "Misdirected instant credit: return handled bank-to-bank; customer cannot reject",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Misdirected instant credit: return handled bank-to-bank; customer cannot reject",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -235,7 +251,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -254,6 +270,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",
@@ -375,6 +392,6 @@
  "terms": {
   "cutoffs": "Instant"
  },
- "composite": "CJ-INSTANT-SEND",
+ "composite": "CJ-INSTANT-RECEIVE-RFP",
  "composite_match": "rail-segment"
 }

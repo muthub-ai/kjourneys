@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Pay & Transfer > Wire/ACH (web dropdown 'Send a wire/ACH') or Wire tile…",
    "customer_action": "Pay & Transfer > Wire/ACH (web dropdown 'Send a wire/ACH') or Wire tile (mobile)",
+   "action": "Pay & Transfer > Wire/ACH (web dropdown 'Send a wire/ACH') or Wire tile (mobile)",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Manage recipients > Add New Recipient: country, name, address, bank…",
    "customer_action": "Manage recipients > Add New Recipient: country, name, address, bank (SWIFT/BIC), account/IBAN/IFSC/CLABE/Transit per Foreign Currency Payments Guide",
+   "action": "Manage recipients > Add New Recipient: country, name, address, bank (SWIFT/BIC), account/IBAN/IFSC/CLABE/Transit per Foreign Currency Payments Guide",
    "touchpoints": [
     {
      "channel": "web",
@@ -146,13 +148,14 @@
    "stage": "set-up",
    "title": "Secured Transfer / USB security key enrollment if not enrolled (debit…",
    "customer_action": null,
+   "action": "Secured Transfer / USB security key enrollment if not enrolled (debit card + PIN)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Secured Transfer"
     }
    ],
-   "frontstage": "Secured Transfer / USB security key enrollment if not enrolled (debit card + PIN)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -169,7 +172,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -188,6 +191,7 @@
    "stage": "initiate",
    "title": "Wire/ACH > Pay > select Recipient > choose currency (USD or foreign) >…",
    "customer_action": "Wire/ACH > Pay > select Recipient > choose currency (USD or foreign) > amount; estimated exchange rate shown and valid for 10 minutes",
+   "action": "Wire/ACH > Pay > select Recipient > choose currency (USD or foreign) > amount; estimated exchange rate shown and valid for 10 minutes",
    "touchpoints": [
     {
      "channel": "web",
@@ -262,6 +266,7 @@
    "stage": "review-authorize",
    "title": "Review transfer details incl. Remittance Transfer disclosure (fees,…",
    "customer_action": "Review transfer details incl. Remittance Transfer disclosure (fees, rate, amount received, availability date); confirm; Pay; select mobile number > authorization code > Next",
+   "action": "Review transfer details incl. Remittance Transfer disclosure (fees, rate, amount received, availability date); confirm; Pay; select mobile number > authorization code > Next",
    "touchpoints": [
     {
      "channel": "web",
@@ -318,13 +323,14 @@
    "stage": "execute-track",
    "title": "Debited same business day; 1–5 business days to arrive; status under…",
    "customer_action": null,
+   "action": "Debited same business day; 1–5 business days to arrive; status under Activity; Erica can check wire status",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Debited same business day; 1–5 business days to arrive; status under Activity; Erica can check wire status",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -341,7 +347,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -360,13 +366,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation with availability date; email",
    "customer_action": null,
+   "action": "Confirmation with availability date; email",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation with availability date; email",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -383,7 +390,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -402,6 +409,7 @@
    "stage": "manage",
    "title": "Cancel within 30 minutes for full refund: Pay & Transfer > Activity >…",
    "customer_action": "Cancel within 30 minutes for full refund: Pay & Transfer > Activity > select > cancel > review notice > cancel again (also by phone 877-337-8357 or at financial center)",
+   "action": "Cancel within 30 minutes for full refund: Pay & Transfer > Activity > select > cancel > review notice > cancel again (also by phone 877-337-8357 or at financial center)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -446,6 +454,7 @@
    "stage": "exception",
    "title": "Error (wrong amount, not received): report within 180 days; bank…",
    "customer_action": "Error (wrong amount, not received): report within 180 days; bank investigates within 90 days, reports within 3 business days; incorrect identifier provided by customer may be unrecoverable",
+   "action": "Error (wrong amount, not received): report within 180 days; bank investigates within 90 days, reports within 3 business days; incorrect identifier provided by customer may be unrecoverable",
    "touchpoints": [
     {
      "channel": "phone",
@@ -490,6 +499,7 @@
    "stage": "exception",
    "title": "Recall of sent international wire: bank forwards request; refund at…",
    "customer_action": null,
+   "action": "Recall of sent international wire: bank forwards request; refund at retail buy rate less beneficiary bank charges",
    "touchpoints": [
     {
      "channel": "phone",
@@ -532,6 +542,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -610,6 +621,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Open Profile Menu (lower right in app) or name/icon (top right on web)…",
    "customer_action": "Open Profile Menu (lower right in app) or name/icon (top right on web) > 'Account & Feature Settings'",
+   "action": "Open Profile Menu (lower right in app) or name/icon (top right on web) > 'Account & Feature Settings'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Select 'Manage My External Accounts' (app) / 'external accounts' (web)…",
    "customer_action": "Select 'Manage My External Accounts' (app) / 'external accounts' (web) > 'Add an External Account'",
+   "action": "Select 'Manage My External Accounts' (app) / 'external accounts' (web) > 'Add an External Account'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -174,6 +176,7 @@
    "stage": "set-up",
    "title": "Choose use: 'Payments and Transfers' or 'Payments' (card/loan payments…",
    "customer_action": "Choose use: 'Payments and Transfers' or 'Payments' (card/loan payments only); enter 'Choose Account Type', 'Bank Routing or ABA Number', 'Account Number', 'Verify Account Number'; optional 'Make Primary Payment Account'; tap 'Add Account'",
+   "action": "Choose use: 'Payments and Transfers' or 'Payments' (card/loan payments only); enter 'Choose Account Type', 'Bank Routing or ABA Number', 'Account Number', 'Verify Account Number'; optional 'Make Primary Payment Account'; tap 'Add Account'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -244,6 +247,7 @@
    "stage": "review-authorize",
    "title": "Confirmation message states whether instant verification succeeded or…",
    "customer_action": null,
+   "action": "Confirmation message states whether instant verification succeeded or test deposits are required",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -270,6 +274,19 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s005",
+      "src-capital-one-s009",
+      "src-capital-one-s081"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -309,6 +326,7 @@
    "stage": "execute-track",
    "title": "Customer finds the two amounts at the other bank, returns to 'Manage My…",
    "customer_action": "Customer finds the two amounts at the other bank, returns to 'Manage My External Accounts', selects the account (shows 'verify this account to enable transfers'), enters both amounts (any order), taps 'Verify'",
+   "action": "Customer finds the two amounts at the other bank, returns to 'Manage My External Accounts', selects the account (shows 'verify this account to enable transfers'), enters both amounts (any order), taps 'Verify'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -379,13 +397,14 @@
    "stage": "confirm-complete",
    "title": "Success message: account can now be used for transfers",
    "customer_action": null,
+   "action": "Success message: account can now be used for transfers",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Success message"
     }
    ],
-   "frontstage": "Success message: account can now be used for transfers",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -402,7 +421,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -421,6 +440,7 @@
    "stage": "manage",
    "title": "Delete an unconfirmed link; joint owners link separately; linked…",
    "customer_action": "Delete an unconfirmed link; joint owners link separately; linked account must be on file 30+ days before it can be a wire destination",
+   "action": "Delete an unconfirmed link; joint owners link separately; linked account must be on file 30+ days before it can be a wire destination",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -483,6 +503,7 @@
    "stage": "exception",
    "title": "Three failed verification attempts",
    "customer_action": null,
+   "action": "Three failed verification attempts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -516,6 +537,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
+    },
+    "process": {
+     "basis": "inferred",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s009"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "low",
+     "x-mi_evidence": "UNKNOWN"
     }
    }
   },
@@ -525,6 +557,7 @@
    "stage": "support",
    "title": "Phone 800-655-2265",
    "customer_action": null,
+   "action": "Phone 800-655-2265",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer receives Zelle email/text payment notification",
    "customer_action": "Customer receives Zelle email/text payment notification",
+   "action": "Customer receives Zelle email/text payment notification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Open notification, select 'Fifth Third Bank', follow prompts; enroll…",
    "customer_action": "Open notification, select 'Fifth Third Bank', follow prompts; enroll with the SAME email/phone that received the notification",
+   "action": "Open notification, select 'Fifth Third Bank', follow prompts; enroll with the SAME email/phone that received the notification",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -143,13 +145,14 @@
    "stage": "execute-track",
    "title": "Funds deposit directly into Fifth Third account within minutes of…",
    "customer_action": null,
+   "action": "Funds deposit directly into Fifth Third account within minutes of enrollment (1–3 business days for cross-institution/unenrolled cases)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Funds deposit directly into Fifth Third account within minutes of enrollment (1–3 business days for cross-institution/unenrolled cases)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -167,7 +170,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -187,6 +190,7 @@
    "stage": "confirm-complete",
    "title": "No further action; share token/QR with trusted people for future…",
    "customer_action": "No further action; share token/QR with trusted people for future receipts",
+   "action": "No further action; share token/QR with trusted people for future receipts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -231,6 +235,7 @@
    "stage": "manage",
    "title": "Change contact method only by calling 800-972-3030 (one method per…",
    "customer_action": "Change contact method only by calling 800-972-3030 (one method per customer)",
+   "action": "Change contact method only by calling 800-972-3030 (one method per customer)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -290,6 +295,7 @@
    "stage": "exception",
    "title": "Enrollment error because token registered at another bank -> call…",
    "customer_action": "Enrollment error because token registered at another bank -> call support to move it",
+   "action": "Enrollment error because token registered at another bank -> call support to move it",
    "touchpoints": [
     {
      "channel": "phone",
@@ -332,6 +338,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -410,6 +417,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -469,6 +477,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay & transfer' > 'Wires and global transfers'",
    "customer_action": "'Pay & transfer' > 'Wires and global transfers'",
+   "action": "'Pay & transfer' > 'Wires and global transfers'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Add recipient with SWIFT/BIC (no IBAN used by Chase), bank…",
    "customer_action": "Add recipient with SWIFT/BIC (no IBAN used by Chase), bank name/address, recipient name/address; activation code",
+   "action": "Add recipient with SWIFT/BIC (no IBAN used by Chase), bank name/address, recipient name/address; activation code",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Choose country and currency (40+ currencies, 90+ countries); enter…",
    "customer_action": "Choose country and currency (40+ currencies, 90+ countries); enter amount",
+   "action": "Choose country and currency (40+ currencies, 90+ countries); enter amount",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,6 +173,7 @@
    "stage": "review-authorize",
    "title": "Guaranteed exchange rate displayed with 30-minute countdown in wire…",
    "customer_action": "Guaranteed exchange rate displayed with 30-minute countdown in wire summary; new rate locked when it expires; authorize",
+   "action": "Guaranteed exchange rate displayed with 30-minute countdown in wire summary; new rate locked when it expires; authorize",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -212,6 +216,7 @@
    "stage": "execute-track",
    "title": "30-minute cancel window after authorization ('Cancel' in Action…",
    "customer_action": "30-minute cancel window after authorization ('Cancel' in Action column); then processing",
+   "action": "30-minute cancel window after authorization ('Cancel' in Action column); then processing",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -254,13 +259,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation; delivery 1-5 business days",
    "customer_action": null,
+   "action": "Confirmation; delivery 1-5 business days",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation; delivery 1-5 business days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -277,7 +283,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -296,6 +302,7 @@
    "stage": "manage",
    "title": "Consumer International Funds Transfers cannot be set up as future-dated…",
    "customer_action": "Consumer International Funds Transfers cannot be set up as future-dated or repeating (DSA: repeating/future-dated allowed 'except for Consumer International Funds Transfers'); cancel at no cost within 30 minutes of authorization per the on-screen disclosure; 13 months history (business).",
+   "action": "Consumer International Funds Transfers cannot be set up as future-dated or repeating (DSA: repeating/future-dated allowed 'except for Consumer International Funds Transfers'); cancel at no cost within 30 minutes of authorization per the on-screen disclosure; 13 months history (business).",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -338,6 +345,7 @@
    "stage": "exception",
    "title": "Error or problem with a Consumer International Funds Transfer: call…",
    "customer_action": "Error or problem with a Consumer International Funds Transfer: call 1-855-536-1269, visit a branch/J.P. Morgan Financial Center, or send a secure message within 180 days of the disclosed availability date, giving name/address, the problem, recipient, amount, confirmation number; Chase decides within 90 days and reports results within three business days (refund if no response). After the 30-minute window recovery is 'very unlikely'; intermediary fees may be deducted.",
+   "action": "Error or problem with a Consumer International Funds Transfer: call 1-855-536-1269, visit a branch/J.P. Morgan Financial Center, or send a secure message within 180 days of the disclosed availability date, giving name/address, the problem, recipient, amount, confirmation number; Chase decides within 90 days and reports results within three business days (refund if no response). After the 30-minute window recovery is 'very unlikely'; intermediary fees may be deducted.",
    "touchpoints": [
     {
      "channel": "phone",
@@ -382,6 +390,7 @@
    "stage": "support",
    "title": "Phone, branch banker ($50 fee)",
    "customer_action": "Phone, branch banker ($50 fee)",
+   "action": "Phone, branch banker ($50 fee)",
    "touchpoints": [
     {
      "channel": "branch",

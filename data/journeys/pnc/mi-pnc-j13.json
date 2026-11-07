@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay & Transfer' > 'International Transfers' > 'Make a Transfer' (app…",
    "customer_action": "'Pay & Transfer' > 'International Transfers' > 'Make a Transfer' (app available in Spanish)",
+   "action": "'Pay & Transfer' > 'International Transfers' > 'Make a Transfer' (app available in Spanish)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -101,6 +102,7 @@
    "stage": "set-up",
    "title": "Enter recipient full name (as on account), home address, institution…",
    "customer_action": "Enter recipient full name (as on account), home address, institution and account number; app saves recipient for future transfers",
+   "action": "Enter recipient full name (as on account), home address, institution and account number; app saves recipient for future transfers",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -154,6 +156,7 @@
    "stage": "initiate",
    "title": "Choose PNC checking/savings source, amount (same currency as recipient…",
    "customer_action": "Choose PNC checking/savings source, amount (same currency as recipient account)",
+   "action": "Choose PNC checking/savings source, amount (same currency as recipient account)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -207,6 +210,7 @@
    "stage": "review-authorize",
    "title": "Verify via U.S. phone text/voice; submit",
    "customer_action": "Verify via U.S. phone text/voice; submit",
+   "action": "Verify via U.S. phone text/voice; submit",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -249,13 +253,14 @@
    "stage": "execute-track",
    "title": "Delivery expected within one business day; delays possible for PNC…",
    "customer_action": null,
+   "action": "Delivery expected within one business day; delays possible for PNC review, incorrect info, provider processing",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Delivery expected within one business day; delays possible for PNC review, incorrect info, provider processing",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -272,7 +277,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -291,13 +296,14 @@
    "stage": "confirm-complete",
    "title": "PNC provides a receipt with availability date",
    "customer_action": null,
+   "action": "PNC provides a receipt with availability date",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Receipt"
     }
    ],
-   "frontstage": "PNC provides a receipt with availability date",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -314,7 +320,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -333,6 +339,7 @@
    "stage": "manage",
    "title": "Cancel within 30 minutes at no fee",
    "customer_action": "Cancel within 30 minutes at no fee",
+   "action": "Cancel within 30 minutes at no fee",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -377,13 +384,14 @@
    "stage": "exception",
    "title": "Name mismatch or wrong info -> delay/return; recipient should confirm…",
    "customer_action": null,
+   "action": "Name mismatch or wrong info -> delay/return; recipient should confirm with their bank",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Name mismatch or wrong info -> delay/return; recipient should confirm with their bank",
+   "frontstage": "",
    "actor": "third-party",
    "decision": null,
    "notification": null,
@@ -400,7 +408,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -419,6 +427,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -475,6 +484,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -534,6 +544,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

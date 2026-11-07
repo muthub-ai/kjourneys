@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Open checking or credit-card activity, swipe left on a charge until…",
    "customer_action": "Open checking or credit-card activity, swipe left on a charge until 'Split' appears; or 'Pay & Transfer' > 'Request/Split with Zelle®'",
+   "action": "Open checking or credit-card activity, swipe left on a charge until 'Split' appears; or 'Pay & Transfer' > 'Request/Split with Zelle®'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Choose one or more existing contacts or add new, tap 'Next'",
    "customer_action": "Choose one or more existing contacts or add new, tap 'Next'",
+   "action": "Choose one or more existing contacts or add new, tap 'Next'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Tap 'Include my portion'; app calculates each share; or enter a…",
    "customer_action": "Tap 'Include my portion'; app calculates each share; or enter a specific amount for a request",
+   "action": "Tap 'Include my portion'; app calculates each share; or enter a specific amount for a request",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -170,6 +173,7 @@
    "stage": "review-authorize",
    "title": "Tap 'Request money' then 'Yes, send it now'",
    "customer_action": "Tap 'Request money' then 'Yes, send it now'",
+   "action": "Tap 'Request money' then 'Yes, send it now'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -226,13 +230,14 @@
    "stage": "execute-track",
    "title": "Request delivered via Zelle; recipient pays or declines; request…",
    "customer_action": null,
+   "action": "Request delivered via Zelle; recipient pays or declines; request expires 14 days after Send On date",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Zelle activity"
     }
    ],
-   "frontstage": "Request delivered via Zelle; recipient pays or declines; request expires 14 days after Send On date",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -249,7 +254,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -268,13 +273,14 @@
    "stage": "confirm-complete",
    "title": "Funds post to checking when paid; alert per preferences",
    "customer_action": null,
+   "action": "Funds post to checking when paid; alert per preferences",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Funds post to checking when paid; alert per preferences",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Payment received",
@@ -291,7 +297,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -310,6 +316,7 @@
    "stage": "manage",
    "title": "Cancel an open request (not guaranteed if recipient already paid)",
    "customer_action": "Cancel an open request (not guaranteed if recipient already paid)",
+   "action": "Cancel an open request (not guaranteed if recipient already paid)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -352,6 +359,7 @@
    "stage": "exception",
    "title": "Requests may not be used for overdue debts, amounts owed to another…",
    "customer_action": "Requests may not be used for overdue debts, amounts owed to another person or court-ordered amounts",
+   "action": "Requests may not be used for overdue debts, amounts owed to another person or court-ordered amounts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -394,6 +402,7 @@
    "stage": "support",
    "title": "1-800-935-9935; in-app chat",
    "customer_action": "1-800-935-9935; in-app chat",
+   "action": "1-800-935-9935; in-app chat",
    "touchpoints": [
     {
      "channel": "phone",

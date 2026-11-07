@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer Service: 'How do I send a wire transfer? Visit a Fifth Third…",
    "customer_action": "Customer Service: 'How do I send a wire transfer? Visit a Fifth Third Branch'; no online option",
+   "action": "Customer Service: 'How do I send a wire transfer? Visit a Fifth Third Branch'; no online option",
    "touchpoints": [
     {
      "channel": "branch",
@@ -110,6 +111,7 @@
    "stage": "set-up",
    "title": "Bring beneficiary bank/account details and ID to branch (third-party)",
    "customer_action": "Bring beneficiary bank/account details and ID to branch (third-party)",
+   "action": "Bring beneficiary bank/account details and ID to branch (third-party)",
    "touchpoints": [
     {
      "channel": "branch",
@@ -154,6 +156,7 @@
    "stage": "initiate",
    "title": "Banker keys wire (domestic Fedwire; international SWIFT in USD or FX)",
    "customer_action": null,
+   "action": "Banker keys wire (domestic Fedwire; international SWIFT in USD or FX)",
    "touchpoints": [
     {
      "channel": "branch",
@@ -202,6 +205,7 @@
    "stage": "review-authorize",
    "title": "Customer signs the payment order; bank applies its wire security…",
    "customer_action": "Customer signs the payment order; bank applies its wire security procedures 'including a call back or verification of the payment order' (elements vary by initiation method); bank may require evidence of authority and may reject for insufficient/uncollected funds or failed verification.",
+   "action": "Customer signs the payment order; bank applies its wire security procedures 'including a call back or verification of the payment order' (elements vary by initiation method); bank may require evidence of authority and may reject for insufficient/uncollected funds or failed verification.",
    "touchpoints": [
     {
      "channel": "branch",
@@ -246,13 +250,14 @@
    "stage": "execute-track",
    "title": "Wire released via Fedwire/SWIFT/CHIPS; no customer-facing status…",
    "customer_action": null,
+   "action": "Wire released via Fedwire/SWIFT/CHIPS; no customer-facing status tracking — 'all funds transfers will be reflected on your periodic statement and we are not required to provide you with a separate notice of incoming or outgoing funds transfers'; cut-off times vary by location/method (not published for consumers).",
    "touchpoints": [
     {
      "channel": "branch",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Wire released via Fedwire/SWIFT/CHIPS; no customer-facing status tracking — 'all funds transfers will be reflected on your periodic statement and we are not required to provide you with a separate notice of incoming or outgoing funds transfers'; cut-off times vary by location/method (not published for consumers).",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -269,7 +274,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -288,6 +293,7 @@
    "stage": "confirm-complete",
    "title": "Branch receipt (inferred)",
    "customer_action": null,
+   "action": "Branch receipt (inferred)",
    "touchpoints": [
     {
      "channel": "branch",
@@ -328,6 +334,7 @@
    "stage": "confirm-complete",
    "title": "For international consumer wires (Remittance Transfers) the bank…",
    "customer_action": null,
+   "action": "For international consumer wires (Remittance Transfers) the bank provides Reg E disclosures/receipt at initiation; for all wires the periodic statement is the only guaranteed record",
    "touchpoints": [
     {
      "channel": "branch",
@@ -352,6 +359,17 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-fifth-third-s930"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -387,6 +405,7 @@
    "stage": "manage",
    "title": "Cancel/amend: for consumer international Remittance Transfers the…",
    "customer_action": "Cancel/amend: for consumer international Remittance Transfers the customer has 30 minutes to request cancellation; for all other wires the bank 'has no obligation to amend or cancel a payment order after it has been submitted' but may make a reasonable effort if not yet executed; errors must be reported in writing within 14 days of the statement.",
+   "action": "Cancel/amend: for consumer international Remittance Transfers the customer has 30 minutes to request cancellation; for all other wires the bank 'has no obligation to amend or cancel a payment order after it has been submitted' but may make a reasonable effort if not yet executed; errors must be reported in writing within 14 days of the statement.",
    "touchpoints": [
     {
      "channel": "phone",
@@ -431,6 +450,7 @@
    "stage": "exception",
    "title": "Wire fraud/imposter scam -> report 800-972-3030; irrevocable",
    "customer_action": "Wire fraud/imposter scam -> report 800-972-3030; irrevocable",
+   "action": "Wire fraud/imposter scam -> report 800-972-3030; irrevocable",
    "touchpoints": [
     {
      "channel": "phone",
@@ -475,6 +495,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -553,6 +574,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -612,6 +634,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

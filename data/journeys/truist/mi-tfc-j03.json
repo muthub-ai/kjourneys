@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Small Business > Banking > Banking services > Zelle® page; in app…",
    "customer_action": "Small Business > Banking > Banking services > Zelle® page; in app Transfer & Pay > Send Money with Zelle®",
+   "action": "Small Business > Banking > Banking services > Zelle® page; in app Transfer & Pay > Send Money with Zelle®",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enroll business email/U.S. mobile: accept T&Cs, enter token, enter…",
    "customer_action": "Enroll business email/U.S. mobile: accept T&Cs, enter token, enter one-time code, pick eligible business account",
+   "action": "Enroll business email/U.S. mobile: accept T&Cs, enter token, enter one-time code, pick eligible business account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -137,6 +139,7 @@
    "stage": "set-up",
    "title": "Create a Zelle Tag: Zelle Preferences > Create a Zelle Tag (6–40 chars,…",
    "customer_action": "Create a Zelle Tag: Zelle Preferences > Create a Zelle Tag (6–40 chars, letters/numbers/hyphens); view/print QR: Send Money with Zelle® > Request > View my QR code",
+   "action": "Create a Zelle Tag: Zelle Preferences > Create a Zelle Tag (6–40 chars, letters/numbers/hyphens); view/print QR: Send Money with Zelle® > Request > View my QR code",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -190,6 +193,7 @@
    "stage": "initiate",
    "title": "Share tag/QR/email/mobile with customer; or send a Request (Request >…",
    "customer_action": "Share tag/QR/email/mobile with customer; or send a Request (Request > enter email/mobile > confirm)",
+   "action": "Share tag/QR/email/mobile with customer; or send a Request (Request > enter email/mobile > confirm)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -232,6 +236,7 @@
    "stage": "initiate",
    "title": "Refund/pay vendor: Send > enter tag on Select Recipient screen or Scan…",
    "customer_action": "Refund/pay vendor: Send > enter tag on Select Recipient screen or Scan QR code > amount + note",
+   "action": "Refund/pay vendor: Send > enter tag on Select Recipient screen or Scan QR code > amount + note",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -276,6 +281,7 @@
    "stage": "review-authorize",
    "title": "Review and Send/Request; no purchase protection disclosure",
    "customer_action": "Review and Send/Request; no purchase protection disclosure",
+   "action": "Review and Send/Request; no purchase protection disclosure",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -335,6 +341,7 @@
    "stage": "execute-track",
    "title": "Funds deposited to enrolled business account within minutes; 1% fee…",
    "customer_action": null,
+   "action": "Funds deposited to enrolled business account within minutes; 1% fee (max $15) assessed on receipt",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -360,6 +367,18 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s011",
+      "src-truist-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -397,13 +416,14 @@
    "stage": "confirm-complete",
    "title": "Notification when customer pays; activity shows reference number",
    "customer_action": null,
+   "action": "Notification when customer pays; activity shows reference number",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Notification when customer pays; activity shows reference number",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push/email",
@@ -421,7 +441,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -441,6 +461,7 @@
    "stage": "manage",
    "title": "Manage Payment Profiles, tag, QR, recipients; multi-user access rules…",
    "customer_action": "Manage Payment Profiles, tag, QR, recipients; multi-user access rules per business agreement",
+   "action": "Manage Payment Profiles, tag, QR, recipients; multi-user access rules per business agreement",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -485,6 +506,7 @@
    "stage": "exception",
    "title": "Cancel only if recipient unenrolled ('Cancel This Payment'); wrong…",
    "customer_action": "Cancel only if recipient unenrolled ('Cancel This Payment'); wrong recipient → Care Center; business liability regime (30-day written statement review, duty of care)",
+   "action": "Cancel only if recipient unenrolled ('Cancel This Payment'); wrong recipient → Care Center; business liability regime (30-day written statement review, duty of care)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -547,6 +569,7 @@
    "stage": "support",
    "title": "Care Center Mon–Fri 8–8 ET, Sat 8–5 ET; Sunday automated only; Spanish…",
    "customer_action": "Care Center Mon–Fri 8–8 ET, Sat 8–5 ET; Sunday automated only; Spanish option 9",
+   "action": "Care Center Mon–Fri 8–8 ET, Sat 8–5 ET; Sunday automated only; Spanish option 9",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer learns international wires are an in-store service (book an…",
    "customer_action": "Customer learns international wires are an in-store service (book an appointment at any TD location); TD's KB is contradictory on whether domestic wires can be sent in Online Banking (KB 2624 'only offers domestic wire transfers in Online Banking' vs KB 1398 'visit your local TD Bank store')",
+   "action": "Customer learns international wires are an in-store service (book an appointment at any TD location); TD's KB is contradictory on whether domestic wires can be sent in Online Banking (KB 2624 'only offers domestic wire transfers in Online Banking' vs KB 1398 'visit your local TD Bank store')",
    "touchpoints": [
     {
      "channel": "branch",
@@ -110,6 +111,7 @@
    "stage": "set-up",
    "title": "Customer brings beneficiary details: bank name/address, routing…",
    "customer_action": "Customer brings beneficiary details: bank name/address, routing (domestic) or SWIFT/BIC + IBAN (international), beneficiary name/address/account",
+   "action": "Customer brings beneficiary details: bank name/address, routing (domestic) or SWIFT/BIC + IBAN (international), beneficiary name/address/account",
    "touchpoints": [
     {
      "channel": "branch",
@@ -166,6 +168,7 @@
    "stage": "initiate",
    "title": "Teller keys the wire; customer selects USD or foreign currency for…",
    "customer_action": null,
+   "action": "Teller keys the wire; customer selects USD or foreign currency for international (FX via correspondent network)",
    "touchpoints": [
     {
      "channel": "branch",
@@ -210,6 +213,7 @@
    "stage": "review-authorize",
    "title": "Customer signs wire agreement; identity verified in person; fee $30…",
    "customer_action": "Customer signs wire agreement; identity verified in person; fee $30 domestic / $50 intl USD / $25 intl FX",
+   "action": "Customer signs wire agreement; identity verified in person; fee $30 domestic / $50 intl USD / $25 intl FX",
    "touchpoints": [
     {
      "channel": "branch",
@@ -269,6 +273,7 @@
    "stage": "execute-track",
    "title": "Wire released via Fedwire/SWIFT; domestic ~same day, international…",
    "customer_action": null,
+   "action": "Wire released via Fedwire/SWIFT; domestic ~same day, international several days",
    "touchpoints": [
     {
      "channel": "branch",
@@ -302,6 +307,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s030"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -311,6 +327,7 @@
    "stage": "confirm-complete",
    "title": "Customer receives receipt in store; no digital tracking evidenced",
    "customer_action": null,
+   "action": "Customer receives receipt in store; no digital tracking evidenced",
    "touchpoints": [
     {
      "channel": "branch",
@@ -353,6 +370,7 @@
    "stage": "manage",
    "title": "Recall/cancel by contacting the store/phone; terms not public",
    "customer_action": "Recall/cancel by contacting the store/phone; terms not public",
+   "action": "Recall/cancel by contacting the store/phone; terms not public",
    "touchpoints": [
     {
      "channel": "phone",
@@ -393,13 +411,14 @@
    "stage": "exception",
    "title": "Correspondent fees may reduce amount; returned wires; fraud reports via…",
    "customer_action": null,
+   "action": "Correspondent fees may reduce amount; returned wires; fraud reports via 1-800-893-8554",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Phone"
     }
    ],
-   "frontstage": "Correspondent fees may reduce amount; returned wires; fraud reports via 1-800-893-8554",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -417,7 +436,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -437,6 +456,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -507,6 +527,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

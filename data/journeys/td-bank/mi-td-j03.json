@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Owner finds 'Send Money with Zelle®' > 'Business' tab in Online…",
    "customer_action": "Owner finds 'Send Money with Zelle®' > 'Business' tab in Online Banking/app",
+   "action": "Owner finds 'Send Money with Zelle®' > 'Business' tab in Online Banking/app",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enroll with an email/mobile different from any personal Zelle profile;…",
    "customer_action": "Enroll with an email/mobile different from any personal Zelle profile; enter one-time verification code; accept terms",
+   "action": "Enroll with an email/mobile different from any personal Zelle profile; enter one-time verification code; accept terms",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -162,6 +164,7 @@
    "stage": "set-up",
    "title": "Share enrolled email, U.S. mobile number or Zelle Tag; optionally…",
    "customer_action": "Share enrolled email, U.S. mobile number or Zelle Tag; optionally display QR code (TD Bank app > Zelle > QR icon > 'My Code') - live in app; TD's business FAQ still carries a stale 'not available' line",
+   "action": "Share enrolled email, U.S. mobile number or Zelle Tag; optionally display QR code (TD Bank app > Zelle > QR icon > 'My Code') - live in app; TD's business FAQ still carries a stale 'not available' line",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -224,6 +227,7 @@
    "stage": "initiate",
    "title": "Customer of the business pays via Zelle in their own bank or credit…",
    "customer_action": "Customer of the business pays via Zelle in their own bank or credit union app/online banking (the standalone Zelle app was discontinued April 1 2025)",
+   "action": "Customer of the business pays via Zelle in their own bank or credit union app/online banking (the standalone Zelle app was discontinued April 1 2025)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -286,13 +290,14 @@
    "stage": "execute-track",
    "title": "Funds arrive typically within minutes; business can also send and…",
    "customer_action": null,
+   "action": "Funds arrive typically within minutes; business can also send and request (Jun 2026 terms: within minutes up to $2,500/day and $10,000/month; 3-business-day up to $3,000/day and $15,000/month; TD SMB FAQ PDF lists $2,500/$10,000 for both; inbound requests up to $100,000)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Funds arrive typically within minutes; business can also send and request (Jun 2026 terms: within minutes up to $2,500/day and $10,000/month; 3-business-day up to $3,000/day and $15,000/month; TD SMB FAQ PDF lists $2,500/$10,000 for both; inbound requests up to $100,000)",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -309,7 +314,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -328,13 +333,14 @@
    "stage": "confirm-complete",
    "title": "Payment visible in activity/account; no purchase protection for either…",
    "customer_action": null,
+   "action": "Payment visible in activity/account; no purchase protection for either party",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Payment visible in activity/account; no purchase protection for either party",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -351,7 +357,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -370,6 +376,7 @@
    "stage": "manage",
    "title": "Activity page; cancel only while payee unenrolled",
    "customer_action": "Activity page; cancel only while payee unenrolled",
+   "action": "Activity page; cancel only while payee unenrolled",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -412,13 +419,14 @@
    "stage": "exception",
    "title": "Business accounts: 'YOU ARE RESPONSIBLE FOR ALL TRANSFERS INITIATED…",
    "customer_action": null,
+   "action": "Business accounts: 'YOU ARE RESPONSIBLE FOR ALL TRANSFERS INITIATED USING YOUR USER IDENTIFICATION'; Reg E does not apply",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Terms"
     }
    ],
-   "frontstage": "Business accounts: 'YOU ARE RESPONSIBLE FOR ALL TRANSFERS INITIATED USING YOUR USER IDENTIFICATION'; Reg E does not apply",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -435,7 +443,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -471,6 +479,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -545,6 +554,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

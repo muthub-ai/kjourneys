@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Choose preset or custom invoice template; add logo for branded payment…",
    "customer_action": "Choose preset or custom invoice template; add logo for branded payment website",
+   "action": "Choose preset or custom invoice template; add logo for branded payment website",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Create one-time or recurring invoice; enable auto-reminders",
    "customer_action": "Create one-time or recurring invoice; enable auto-reminders",
+   "action": "Create one-time or recurring invoice; enable auto-reminders",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "execute-track",
    "title": "Customer views invoice history and pays from any device; can authorize…",
    "customer_action": "Customer views invoice history and pays from any device; can authorize ACH auto-charge / auto-pay for recurring invoices; messaging in portal",
+   "action": "Customer views invoice history and pays from any device; can authorize ACH auto-charge / auto-pay for recurring invoices; messaging in portal",
    "touchpoints": [
     {
      "channel": "web",
@@ -179,13 +182,14 @@
    "stage": "confirm-complete",
    "title": "Cash position visibility per invoice; funds to PNC business checking",
    "customer_action": null,
+   "action": "Cash position visibility per invoice; funds to PNC business checking",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Cash position visibility per invoice; funds to PNC business checking",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -202,7 +206,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -221,6 +225,7 @@
    "stage": "manage",
    "title": "Sync to accounting; track scheduled payments",
    "customer_action": "Sync to accounting; track scheduled payments",
+   "action": "Sync to accounting; track scheduled payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -263,13 +268,14 @@
    "stage": "exception",
    "title": "Returned customer ACH handling not documented",
    "customer_action": null,
+   "action": "Returned customer ACH handling not documented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Returned customer ACH handling not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -285,7 +291,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -303,6 +309,7 @@
    "stage": "support",
    "title": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business…",
    "customer_action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
+   "action": "Business Banking phone support 1-877-BUS-BNKG; Zelle for Business 1-877-287-2654; Cash Flow Insight consultants Mon-Fri 8am-9pm ET (1-855-762-2361); PINACLE/Treasury Management Client Care 1-800-669-1518 or tmcc@pnc.com",
    "touchpoints": [
     {
      "channel": "phone",
@@ -351,6 +358,7 @@
    "stage": "support",
    "title": "Business Banker locator / branch appointment",
    "customer_action": "Business Banker locator / branch appointment",
+   "action": "Business Banker locator / branch appointment",
    "touchpoints": [
     {
      "channel": "branch",
@@ -422,7 +430,5 @@
  "bank_product": "PNC-P12",
  "terms": {
   "fees": "Subscription"
- },
- "composite": "CJ-ZELLE-REQUEST",
- "composite_match": "rail"
+ }
 }

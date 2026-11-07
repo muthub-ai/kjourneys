@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Accounts > Pay & Transfer > 'Transfer between my accounts' (or ask…",
    "customer_action": "Accounts > Pay & Transfer > 'Transfer between my accounts' (or ask Erica 'move money from checking to savings')",
+   "action": "Accounts > Pay & Transfer > 'Transfer between my accounts' (or ask Erica 'move money from checking to savings')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -88,6 +89,7 @@
    "stage": "initiate",
    "title": "Choose From account, To account (BofA banking, Private Bank, Merrill…",
    "customer_action": "Choose From account, To account (BofA banking, Private Bank, Merrill investment), Enter amount, Choose date (up to a year ahead); recurring set in Online Banking or via Erica",
+   "action": "Choose From account, To account (BofA banking, Private Bank, Merrill investment), Enter amount, Choose date (up to a year ahead); recurring set in Online Banking or via Erica",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -153,6 +155,7 @@
    "stage": "review-authorize",
    "title": "Next > 'Review Your Transfer' > Edit or Transfer",
    "customer_action": "Next > 'Review Your Transfer' > Edit or Transfer",
+   "action": "Next > 'Review Your Transfer' > Edit or Transfer",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -195,13 +198,14 @@
    "stage": "execute-track",
    "title": "Deposit-to-deposit credits immediately; credit accounts same-day if…",
    "customer_action": null,
+   "action": "Deposit-to-deposit credits immediately; credit accounts same-day if before 11:59 p.m. ET; Merrill 4:45 p.m. ET; future transfers listed under Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Deposit-to-deposit credits immediately; credit accounts same-day if before 11:59 p.m. ET; Merrill 4:45 p.m. ET; future transfers listed under Activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -219,7 +223,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -239,13 +243,14 @@
    "stage": "confirm-complete",
    "title": "'Your transfer is scheduled' / Transfer Details; confirmation (and…",
    "customer_action": null,
+   "action": "'Your transfer is scheduled' / Transfer Details; confirmation (and Automatic alert email for transfer info)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Transfer Details"
     }
    ],
-   "frontstage": "'Your transfer is scheduled' / Transfer Details; confirmation (and Automatic alert email for transfer info)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email (Automatic alerts)",
@@ -263,7 +268,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -283,6 +288,7 @@
    "stage": "manage",
    "title": "Pay & Transfer > Activity > More Activity > Scheduled > Cancel > Cancel…",
    "customer_action": "Pay & Transfer > Activity > More Activity > Scheduled > Cancel > Cancel Transfer (mobile); Edit/Save or Cancel on web",
+   "action": "Pay & Transfer > Activity > More Activity > Scheduled > Cancel > Cancel Transfer (mobile); Edit/Save or Cancel on web",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -325,13 +331,14 @@
    "stage": "exception",
    "title": "Immediate transfers cannot be cancelled; insufficient funds: bank may…",
    "customer_action": null,
+   "action": "Immediate transfers cannot be cancelled; insufficient funds: bank may skip or retry on later days",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Immediate transfers cannot be cancelled; insufficient funds: bank may skip or retry on later days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -348,7 +355,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -367,6 +374,7 @@
    "stage": "exception",
    "title": "Unauthorized transfer: Reg E / Consumer Online and Mobile Banking…",
    "customer_action": "Unauthorized transfer: Reg E / Consumer Online and Mobile Banking Guarantee",
+   "action": "Unauthorized transfer: Reg E / Consumer Online and Mobile Banking Guarantee",
    "touchpoints": [
     {
      "channel": "phone",
@@ -411,6 +419,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -489,6 +498,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -533,6 +543,7 @@
    "stage": "support",
    "title": "Phone IVR: say 'transfer funds', choose accounts, amount; confirmation…",
    "customer_action": "Phone IVR: say 'transfer funds', choose accounts, amount; confirmation number/email",
+   "action": "Phone IVR: say 'transfer funds', choose accounts, amount; confirmation number/email",
    "touchpoints": [
     {
      "channel": "phone",

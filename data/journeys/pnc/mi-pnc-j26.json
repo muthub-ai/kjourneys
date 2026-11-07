@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Admin configures roles (Admin 1 & 2, Super User, Initiator, Approver,…",
    "customer_action": "Admin configures roles (Admin 1 & 2, Super User, Initiator, Approver, Viewer), company/user initiation and approval limits; operators with external money movement receive token passcodes via PINACLE Pass",
+   "action": "Admin configures roles (Admin 1 & 2, Super User, Initiator, Approver, Viewer), company/user initiation and approval limits; operators with external money movement receive token passcodes via PINACLE Pass",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Initiator creates wire freeform or from template (Domestic,…",
    "customer_action": "Initiator creates wire freeform or from template (Domestic, International USD, International FX)",
+   "action": "Initiator creates wire freeform or from template (Domestic, International USD, International FX)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,6 +130,7 @@
    "stage": "review-authorize",
    "title": "Standard dual approval: Approver approves in PINACLE or PINACLE Mobile…",
    "customer_action": "Standard dual approval: Approver approves in PINACLE or PINACLE Mobile (Face ID/Touch ID + token passcode); optional self-approval with step-up authentication",
+   "action": "Standard dual approval: Approver approves in PINACLE or PINACLE Mobile (Face ID/Touch ID + token passcode); optional self-approval with step-up authentication",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -193,13 +196,14 @@
    "stage": "execute-track",
    "title": "Wire released; wire reporting, audit reports, pending approvals and…",
    "customer_action": null,
+   "action": "Wire released; wire reporting, audit reports, pending approvals and future-dated items viewable; 'Manage Payments' daily activity",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Manage Payments / Wire reporting"
     }
    ],
-   "frontstage": "Wire released; wire reporting, audit reports, pending approvals and future-dated items viewable; 'Manage Payments' daily activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -217,7 +221,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -237,13 +241,14 @@
    "stage": "confirm-complete",
    "title": "Notifications in PINACLE, email or text",
    "customer_action": null,
+   "action": "Notifications in PINACLE, email or text",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Notifications in PINACLE, email or text",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -260,7 +265,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -279,6 +284,7 @@
    "stage": "exception",
    "title": "Recall/return handling via Treasury Management Client Care (not…",
    "customer_action": null,
+   "action": "Recall/return handling via Treasury Management Client Care (not documented online)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -325,6 +331,7 @@
    "stage": "support",
    "title": "TMCC 1-800-669-1518 / tmcc@pnc.com; live messaging and self-guided…",
    "customer_action": "TMCC 1-800-669-1518 / tmcc@pnc.com; live messaging and self-guided tours in PINACLE",
+   "action": "TMCC 1-800-669-1518 / tmcc@pnc.com; live messaging and self-guided tours in PINACLE",
    "touchpoints": [
     {
      "channel": "phone",
@@ -404,7 +411,5 @@
  "terms": {
   "limits": "Company/user limits",
   "fees": "Service fees apply"
- },
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

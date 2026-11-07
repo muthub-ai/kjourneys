@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Report fraud page: Bill Pay, Zelle, Direct Pay, online transfers,…",
    "customer_action": "Report fraud page: Bill Pay, Zelle, Direct Pay, online transfers, ExpressSend, digital wires → 1-866-867-5568; bank-imposter page: 'we will never ask you to send money to anyone, including yourself'",
+   "action": "Report fraud page: Bill Pay, Zelle, Direct Pay, online transfers, ExpressSend, digital wires → 1-866-867-5568; bank-imposter page: 'we will never ask you to send money to anyone, including yourself'",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "discover",
    "title": "Web (observed): Security & Support menu groups 'Report Fraud & File…",
    "customer_action": "Web (observed): Security & Support menu groups 'Report Fraud & File Claims' (Report Fraud & ID Theft · Report Phish & Email Scams · Track Claims); 'Report Phish & Email Scams' leaves the secure session for the public scam-education page — no in-session intake form",
+   "action": "Web (observed): Security & Support menu groups 'Report Fraud & File Claims' (Report Fraud & ID Theft · Report Phish & Email Scams · Track Claims); 'Report Phish & Email Scams' leaves the secure session for the public scam-education page — no in-session intake form",
    "touchpoints": [
     {
      "channel": "web",
@@ -140,6 +142,7 @@
    "stage": "set-up",
    "title": "Gather details: name, account, transfer, amount, date, why erroneous",
    "customer_action": "Gather details: name, account, transfer, amount, date, why erroneous",
+   "action": "Gather details: name, account, transfer, amount, date, why erroneous",
    "touchpoints": [
     {
      "channel": "phone",
@@ -196,6 +199,7 @@
    "stage": "initiate",
    "title": "Web (observed): 'Track Claims' → 'My claims' (tabs Open (n) / Closed…",
    "customer_action": "Web (observed): 'Track Claims' → 'My claims' (tabs Open (n) / Closed (n)) → 'Dispute a charge' → 'Which charge are you disputing?': account selector and a paginated list of posted transactions (date, description, amount, 'Show details') with radio-select → Continue; on the observed profile the list held only debit-card purchases — whether Zelle, ACH, transfer or bill-pay items are excluded is unconfirmed",
+   "action": "Web (observed): 'Track Claims' → 'My claims' (tabs Open (n) / Closed (n)) → 'Dispute a charge' → 'Which charge are you disputing?': account selector and a paginated list of posted transactions (date, description, amount, 'Show details') with radio-select → Continue; on the observed profile the list held only debit-card purchases — whether Zelle, ACH, transfer or bill-pay items are excluded is unconfirmed",
    "touchpoints": [
     {
      "channel": "web",
@@ -255,6 +259,7 @@
    "stage": "initiate",
    "title": "Call 1-800-956-4442 (Zelle scams, 24/7) / 1-866-867-5568; or write P.O.…",
    "customer_action": "Call 1-800-956-4442 (Zelle scams, 24/7) / 1-866-867-5568; or write P.O. Box 6995 Portland OR; or online form",
+   "action": "Call 1-800-956-4442 (Zelle scams, 24/7) / 1-866-867-5568; or write P.O. Box 6995 Portland OR; or online form",
    "touchpoints": [
     {
      "channel": "phone",
@@ -299,6 +304,7 @@
    "stage": "review-authorize",
    "title": "Bank classifies: unauthorized (Reg E) vs authorized scam…",
    "customer_action": null,
+   "action": "Bank classifies: unauthorized (Reg E) vs authorized scam (purchase/marketplace: no protection; imposter: 'qualifying imposter scams may be eligible for reimbursement')",
    "touchpoints": [
     {
      "channel": "phone",
@@ -343,13 +349,14 @@
    "stage": "execute-track",
    "title": "Web (observed): 'My claims' shows Open (n) / Closed (n) tabs for claims…",
    "customer_action": null,
+   "action": "Web (observed): 'My claims' shows Open (n) / Closed (n) tabs for claims on file",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Security & Support > Track Claims"
     }
    ],
-   "frontstage": "Web (observed): 'My claims' shows Open (n) / Closed (n) tabs for claims on file",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -366,7 +373,7 @@
      "confidence": "high",
      "x-mi_evidence": "OBSERVED_SESSION"
     },
-    "frontstage": {
+    "process": {
      "basis": "observed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -385,13 +392,14 @@
    "stage": "execute-track",
    "title": "Reg E: determination within 10 business days; up to 45 days with…",
    "customer_action": null,
+   "action": "Reg E: determination within 10 business days; up to 45 days with provisional credit within 10 business days (90/20 new accounts); results within 3 business days of completion",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": "Investigation"
     }
    ],
-   "frontstage": "Reg E: determination within 10 business days; up to 45 days with provisional credit within 10 business days (90/20 new accounts); results within 3 business days of completion",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -409,7 +417,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -429,13 +437,14 @@
    "stage": "confirm-complete",
    "title": "Written results; credit if liable",
    "customer_action": null,
+   "action": "Written results; credit if liable",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Message Center / mail"
     }
    ],
-   "frontstage": "Written results; credit if liable",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "written results",
@@ -452,7 +461,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -471,6 +480,7 @@
    "stage": "manage",
    "title": "Reset credentials; enable 2-step verification; review alerts; block…",
    "customer_action": "Reset credentials; enable 2-step verification; review alerts; block contact in Zelle; web Security & Support also offers 'Sign On with a Passkey' and 'Order RSA SecurID Device' (observed)",
+   "action": "Reset credentials; enable 2-step verification; review alerts; block contact in Zelle; web Security & Support also offers 'Sign On with a Passkey' and 'Order RSA SecurID Device' (observed)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -517,13 +527,14 @@
    "stage": "exception",
    "title": "Denied authorized-scam claims; CFPB sued WF (Dec 2024) alleging…",
    "customer_action": null,
+   "action": "Denied authorized-scam claims; CFPB sued WF (Dec 2024) alleging failures on Zelle fraud handling (~$870M losses across three banks); dismissed with prejudice Mar 2025",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "Denied authorized-scam claims; CFPB sued WF (Dec 2024) alleging failures on Zelle fraud handling (~$870M losses across three banks); dismissed with prejudice Mar 2025",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -541,7 +552,7 @@
      "confidence": "medium",
      "x-mi_evidence": "THIRD_PARTY"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -561,6 +572,7 @@
    "stage": "support",
    "title": "Branch escalation; debit claim status 1-800-548-9554; elder fraud…",
    "customer_action": "Branch escalation; debit claim status 1-800-548-9554; elder fraud 1-800-869-3557",
+   "action": "Branch escalation; debit claim status 1-800-548-9554; elder fraud 1-800-869-3557",
    "touchpoints": [
     {
      "channel": "branch",

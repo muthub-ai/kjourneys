@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Online Banking: open 'Pay and Transfer' menu > 'Transfers'; Mobile:…",
    "customer_action": "Online Banking: open 'Pay and Transfer' menu > 'Transfers'; Mobile: 'Pay & Transfer'",
+   "action": "Online Banking: open 'Pay and Transfer' menu > 'Transfers'; Mobile: 'Pay & Transfer'",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Select 'Make a PNC Transfer'; choose From/To among checking, savings,…",
    "customer_action": "Select 'Make a PNC Transfer'; choose From/To among checking, savings, money market, loan, credit card, select investment accounts; enter amount",
+   "action": "Select 'Make a PNC Transfer'; choose From/To among checking, savings, money market, loan, credit card, select investment accounts; enter amount",
    "touchpoints": [
     {
      "channel": "web",
@@ -147,6 +149,7 @@
    "stage": "initiate",
    "title": "Choose 'Frequency' and 'Transfer Date' (one-time same-day,…",
    "customer_action": "Choose 'Frequency' and 'Transfer Date' (one-time same-day, future-dated, or recurring e.g., Auto Savings)",
+   "action": "Choose 'Frequency' and 'Transfer Date' (one-time same-day, future-dated, or recurring e.g., Auto Savings)",
    "touchpoints": [
     {
      "channel": "web",
@@ -203,6 +206,7 @@
    "stage": "review-authorize",
    "title": "Review and submit (no additional step-up documented for internal…",
    "customer_action": "Review and submit (no additional step-up documented for internal transfers)",
+   "action": "Review and submit (no additional step-up documented for internal transfers)",
    "touchpoints": [
     {
      "channel": "web",
@@ -245,6 +249,7 @@
    "stage": "execute-track",
    "title": "Same-day transfers post immediately; scheduled ones appear as…",
    "customer_action": null,
+   "action": "Same-day transfers post immediately; scheduled ones appear as pending/scheduled",
    "touchpoints": [
     {
      "channel": "web",
@@ -278,6 +283,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s018"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -287,13 +303,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation displayed; transfer visible in account activity; Money Bar…",
    "customer_action": null,
+   "action": "Confirmation displayed; transfer visible in account activity; Money Bar 'Scheduled Out' reflects upcoming items (Virtual Wallet)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation / Calendar / Money Bar"
     }
    ],
-   "frontstage": "Confirmation displayed; transfer visible in account activity; Money Bar 'Scheduled Out' reflects upcoming items (Virtual Wallet)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -311,7 +328,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -331,6 +348,7 @@
    "stage": "manage",
    "title": "Modify/delete a scheduled transfer until 3 a.m. ET on the Scheduled…",
    "customer_action": "Modify/delete a scheduled transfer until 3 a.m. ET on the Scheduled Transfer Date; cancel next occurrence or entire recurring series",
+   "action": "Modify/delete a scheduled transfer until 3 a.m. ET on the Scheduled Transfer Date; cancel next occurrence or entire recurring series",
    "touchpoints": [
     {
      "channel": "web",
@@ -373,6 +391,7 @@
    "stage": "exception",
    "title": "Insufficient funds in source account on scheduled date -> transfer not…",
    "customer_action": null,
+   "action": "Insufficient funds in source account on scheduled date -> transfer not processed (even with overdraft protection)",
    "touchpoints": [
     {
      "channel": "web",
@@ -408,6 +427,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s018",
+      "src-pnc-s059"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -417,13 +448,14 @@
    "stage": "exception",
    "title": "Savings/MMA excess-transfer fees (Restricted Transfers >6/month on…",
    "customer_action": null,
+   "action": "Savings/MMA excess-transfer fees (Restricted Transfers >6/month on Growth)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Savings/MMA excess-transfer fees (Restricted Transfers >6/month on Growth)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -441,7 +473,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -461,6 +493,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -517,6 +550,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -576,6 +610,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

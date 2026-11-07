@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Online: 'Pay and Transfer' > 'Wires and International Transfers';…",
    "customer_action": "Online: 'Pay and Transfer' > 'Wires and International Transfers'; Mobile: 'Pay & Transfer' > 'Domestic Wires'",
+   "action": "Online: 'Pay and Transfer' > 'Wires and International Transfers'; Mobile: 'Pay & Transfer' > 'Domestic Wires'",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Gather recipient name, address, U.S. routing number and account number;…",
    "customer_action": "Gather recipient name, address, U.S. routing number and account number; 'always verify this information directly with the recipient'",
+   "action": "Gather recipient name, address, U.S. routing number and account number; 'always verify this information directly with the recipient'",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Select 'Send a Domestic Wire' (mobile: 'Send a Wire'); first-time users…",
    "customer_action": "Select 'Send a Domestic Wire' (mobile: 'Send a Wire'); first-time users accept terms and conditions; enter recipient and transfer details",
+   "action": "Select 'Send a Domestic Wire' (mobile: 'Send a Wire'); first-time users accept terms and conditions; enter recipient and transfer details",
    "touchpoints": [
     {
      "channel": "web",
@@ -198,6 +201,7 @@
    "stage": "review-authorize",
    "title": "Select 'Submit' then verify your identity to complete the transfer…",
    "customer_action": "Select 'Submit' then verify your identity to complete the transfer (mobile: verify and Submit)",
+   "action": "Select 'Submit' then verify your identity to complete the transfer (mobile: verify and Submit)",
    "touchpoints": [
     {
      "channel": "web",
@@ -276,6 +280,7 @@
    "stage": "execute-track",
    "title": "Wire released via Fedwire; typically received within two business days,…",
    "customer_action": null,
+   "action": "Wire released via Fedwire; typically received within two business days, same-day not guaranteed",
    "touchpoints": [
     {
      "channel": "web",
@@ -301,6 +306,18 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s004",
+      "src-pnc-s905"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -338,13 +355,14 @@
    "stage": "confirm-complete",
    "title": "On-screen submission acknowledgement only: the agreement states PNC…",
    "customer_action": null,
+   "action": "On-screen submission acknowledgement only: the agreement states PNC 'will not, unless otherwise agreed, send written advice of this payment order processed by us or issue any receipt or confirmation thereof other than as required by law'; the debit posts to account activity.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "On-screen submission acknowledgement only: the agreement states PNC 'will not, unless otherwise agreed, send written advice of this payment order processed by us or issue any receipt or confirmation thereof other than as required by law'; the debit posts to account activity.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -362,7 +380,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -382,6 +400,7 @@
    "stage": "manage",
    "title": "No self-service cancel/recall: 'You shall have no absolute right to…",
    "customer_action": "No self-service cancel/recall: 'You shall have no absolute right to cancel or amend a payment order after we have received it.' PNC makes a reasonable, no-liability effort to act on a cancel/amend request before processing; requests go by phone (number on the post-payment receipt / 1-888-PNC-BANK) or at a branch.",
+   "action": "No self-service cancel/recall: 'You shall have no absolute right to cancel or amend a payment order after we have received it.' PNC makes a reasonable, no-liability effort to act on a cancel/amend request before processing; requests go by phone (number on the post-payment receipt / 1-888-PNC-BANK) or at a branch.",
    "touchpoints": [
     {
      "channel": "phone",
@@ -426,6 +445,7 @@
    "stage": "exception",
    "title": "Wire fraud: report via Reporting Fraud page / 1-800-762-2035; no…",
    "customer_action": "Wire fraud: report via Reporting Fraud page / 1-800-762-2035; no reimbursement stance published",
+   "action": "Wire fraud: report via Reporting Fraud page / 1-800-762-2035; no reimbursement stance published",
    "touchpoints": [
     {
      "channel": "phone",
@@ -468,13 +488,14 @@
    "stage": "exception",
    "title": "Rejected payment order (insufficient funds, failed authentication,…",
    "customer_action": null,
+   "action": "Rejected payment order (insufficient funds, failed authentication, incomplete/ambiguous instructions, failed fraud/AML review, legal process): PNC 'shall endeavor to notify you by phone, electronic transmission or other means on or before the business day' it would have processed; non-executed orders are refunded in USD (or FX at current NY market value) 'less all our wire and other expenses'; misdirected wires rely on account number over name and the customer bears the loss.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Rejected payment order (insufficient funds, failed authentication, incomplete/ambiguous instructions, failed fraud/AML review, legal process): PNC 'shall endeavor to notify you by phone, electronic transmission or other means on or before the business day' it would have processed; non-executed orders are refunded in USD (or FX at current NY market value) 'less all our wire and other expenses'; misdirected wires rely on account number over name and the customer bears the loss.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -491,7 +512,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -510,6 +531,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -566,6 +588,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -625,6 +648,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

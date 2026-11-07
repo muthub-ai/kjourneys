@@ -42,6 +42,7 @@
    "stage": "execute-track",
    "title": "Sender's institution pushes Zelle / RTP credit (PNC is a founding RTP…",
    "customer_action": null,
+   "action": "Sender's institution pushes Zelle / RTP credit (PNC is a founding RTP member; Zelle-over-RTP since 2021) or FedNow credit (joined Oct 2025; receive status per press)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -81,6 +82,20 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-pnc-s059",
+      "src-pnc-s054",
+      "src-pnc-s031",
+      "src-pnc-s042"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -90,13 +105,14 @@
    "stage": "confirm-complete",
    "title": "Credit visible in account activity; 'direct deposit arrival' alert…",
    "customer_action": null,
+   "action": "Credit visible in account activity; 'direct deposit arrival' alert available; Zelle credit appears in Zelle Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account Activity / Zelle Activity"
     }
    ],
-   "frontstage": "Credit visible in account activity; 'direct deposit arrival' alert available; Zelle credit appears in Zelle Activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Push/email/text deposit alert",
@@ -114,7 +130,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -134,6 +150,7 @@
    "stage": "manage",
    "title": "No action needed; recipient cannot stop a started Zelle payment",
    "customer_action": "No action needed; recipient cannot stop a started Zelle payment",
+   "action": "No action needed; recipient cannot stop a started Zelle payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -176,13 +193,14 @@
    "stage": "exception",
    "title": "PNC may hold a received Zelle transfer that is disputed or potentially…",
    "customer_action": null,
+   "action": "PNC may hold a received Zelle transfer that is disputed or potentially fraudulent",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "PNC may hold a received Zelle transfer that is disputed or potentially fraudulent",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -199,7 +217,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -218,6 +236,7 @@
    "stage": "support",
    "title": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right…",
    "customer_action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
+   "action": "Customer uses in-app/online 'Help' (Online Banking: 'Help' on the right of the Accounts tab; 'Help > Manage Accounts > Dispute a Transaction' for checking/savings disputes)",
    "touchpoints": [
     {
      "channel": "web",
@@ -274,6 +293,7 @@
    "stage": "support",
    "title": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer…",
    "customer_action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
+   "action": "Customer calls PNC (1-888-PNC-BANK (1-888-762-2265); Zelle consumer line 1-800-762-2035); fraud line 1-800-762-2035; weekday 8am-9pm ET, weekends 8am-5pm ET; or books a branch appointment",
    "touchpoints": [
     {
      "channel": "phone",
@@ -333,6 +353,7 @@
    "stage": "support",
    "title": "Social support via @PNCBank_Help on X; suspicious messages forwarded to…",
    "customer_action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
+   "action": "Social support via @PNCBank_Help on X; suspicious messages forwarded to abuse@pnc.com",
    "touchpoints": [
     {
      "channel": "web",

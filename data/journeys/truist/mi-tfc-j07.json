@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Within Pay bills, payee shows eBill option for participating billers…",
    "customer_action": "Within Pay bills, payee shows eBill option for participating billers ('Bill pay and eBills')",
+   "action": "Within Pay bills, payee shows eBill option for participating billers ('Bill pay and eBills')",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Designate the biller and elect eBills (or accept a biller's temporary…",
    "customer_action": "Designate the biller and elect eBills (or accept a biller's temporary trial); may be asked for biller credentials to retrieve bill data; first eBill up to 60 days",
+   "action": "Designate the biller and elect eBills (or accept a biller's temporary trial); may be asked for biller credentials to retrieve bill data; first eBill up to 60 days",
    "touchpoints": [
     {
      "channel": "web",
@@ -160,6 +162,7 @@
    "stage": "initiate",
    "title": "Set recurring payment (frequency) or pay each eBill on receipt; 'choose…",
    "customer_action": "Set recurring payment (frequency) or pay each eBill on receipt; 'choose payment frequency' and 'track due dates'",
+   "action": "Set recurring payment (frequency) or pay each eBill on receipt; 'choose payment frequency' and 'track due dates'",
    "touchpoints": [
     {
      "channel": "web",
@@ -234,6 +237,7 @@
    "stage": "review-authorize",
    "title": "Review & submit",
    "customer_action": "Review & submit",
+   "action": "Review & submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -276,13 +280,14 @@
    "stage": "execute-track",
    "title": "eBills arrive in Bill Pay; due-date tracking; payment alerts",
    "customer_action": null,
+   "action": "eBills arrive in Bill Pay; due-date tracking; payment alerts",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Pay bills"
     }
    ],
-   "frontstage": "eBills arrive in Bill Pay; due-date tracking; payment alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "payment alerts / eBill arrival alert (inferred)",
@@ -299,7 +304,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -318,13 +323,14 @@
    "stage": "confirm-complete",
    "title": "Payment confirmation per occurrence",
    "customer_action": null,
+   "action": "Payment confirmation per occurrence",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Manage Bills"
     }
    ],
-   "frontstage": "Payment confirmation per occurrence",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -341,7 +347,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -360,6 +366,7 @@
    "stage": "manage",
    "title": "Edit/cancel recurring series; stop eBills (cancellation up to 60 days)",
    "customer_action": "Edit/cancel recurring series; stop eBills (cancellation up to 60 days)",
+   "action": "Edit/cancel recurring series; stop eBills (cancellation up to 60 days)",
    "touchpoints": [
     {
      "channel": "web",
@@ -402,6 +409,7 @@
    "stage": "exception",
    "title": "eBill accuracy disputes handled with the biller; Truist not liable for…",
    "customer_action": "eBill accuracy disputes handled with the biller; Truist not liable for biller non-delivery",
+   "action": "eBill accuracy disputes handled with the biller; Truist not liable for biller non-delivery",
    "touchpoints": [
     {
      "channel": "phone",
@@ -444,6 +452,7 @@
    "stage": "support",
    "title": "844-4TRUIST",
    "customer_action": "844-4TRUIST",
+   "action": "844-4TRUIST",
    "touchpoints": [
     {
      "channel": "phone",

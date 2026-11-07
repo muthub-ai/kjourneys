@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Payments > Create ACH Payments > select type; enter Company Entry…",
    "customer_action": "Payments > Create ACH Payments > select type; enter Company Entry Description, Originating Account, ACH Company ID, Effective Date, Frequency",
+   "action": "Payments > Create ACH Payments > select type; enter Company Entry Description, Originating Account, ACH Company ID, Effective Date, Frequency",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Add recipients via Select Recipients / Create New / Import From File;…",
    "customer_action": "Add recipients via Select Recipients / Create New / Import From File; amounts; Continue > Submit Payment",
+   "action": "Add recipients via Select Recipients / Create New / Import From File; amounts; Continue > Submit Payment",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Approver opens Payment Center > Pending > 'Pending Approval'/'Partially…",
    "customer_action": "Approver opens Payment Center > Pending > 'Pending Approval'/'Partially Approved' > Approve or Reject (entitlements and limits per admin)",
+   "action": "Approver opens Payment Center > Pending > 'Pending Approval'/'Partially Approved' > Approve or Reject (entitlements and limits per admin)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -168,13 +171,14 @@
    "stage": "execute-track",
    "title": "Released to ACH; same-day items supported",
    "customer_action": null,
+   "action": "Released to ACH; same-day items supported",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment Center"
     }
    ],
-   "frontstage": "Released to ACH; same-day items supported",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -191,7 +195,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -210,6 +214,7 @@
    "stage": "exception",
    "title": "Reverse Payment / Reverse Transaction within 5 days of effective date;…",
    "customer_action": "Reverse Payment / Reverse Transaction within 5 days of effective date; NOC and return reports under Reports > Special Reports",
+   "action": "Reverse Payment / Reverse Transaction within 5 days of effective date; NOC and return reports under Reports > Special Reports",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -252,6 +257,7 @@
    "stage": "support",
    "title": "Treasury Management Services Support 866-475-7262 / 1-888-388-0408;…",
    "customer_action": null,
+   "action": "Treasury Management Services Support 866-475-7262 / 1-888-388-0408; in-app eLearning",
    "touchpoints": [
     {
      "channel": "phone",
@@ -319,7 +325,5 @@
  "terms": {
   "limits": "Per-user transaction/approval/daily cumulative",
   "cutoffs": "ACH authorization rules 6 PM"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

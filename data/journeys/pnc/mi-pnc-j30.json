@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Enroll in Lockbox / Deposit On-Site (scanner or Deposit On-Site Mobile)…",
    "customer_action": "Enroll in Lockbox / Deposit On-Site (scanner or Deposit On-Site Mobile) / online bill presentment / ACH debit program",
+   "action": "Enroll in Lockbox / Deposit On-Site (scanner or Deposit On-Site Mobile) / online bill presentment / ACH debit program",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,13 +87,14 @@
    "stage": "execute-track",
    "title": "Payments received by check (lockbox/RDC), ACH, wire, card, RTP (incl.…",
    "customer_action": null,
+   "action": "Payments received by check (lockbox/RDC), ACH, wire, card, RTP (incl. RFP responses)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Payments received by check (lockbox/RDC), ACH, wire, card, RTP (incl. RFP responses)",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -110,7 +112,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -130,13 +132,14 @@
    "stage": "confirm-complete",
    "title": "EDI remittance and Automated Cash Application match payments to…",
    "customer_action": null,
+   "action": "EDI remittance and Automated Cash Application match payments to invoices; exception management for deductions",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "EDI remittance and Automated Cash Application match payments to invoices; exception management for deductions",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -154,7 +157,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -174,6 +177,7 @@
    "stage": "manage",
    "title": "Reporting in PINACLE; Cash Logistics (CLIP) for cash deposits",
    "customer_action": "Reporting in PINACLE; Cash Logistics (CLIP) for cash deposits",
+   "action": "Reporting in PINACLE; Cash Logistics (CLIP) for cash deposits",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -216,13 +220,14 @@
    "stage": "exception",
    "title": "Returned items / unapplied cash via exception management",
    "customer_action": null,
+   "action": "Returned items / unapplied cash via exception management",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Returned items / unapplied cash via exception management",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -239,7 +244,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -258,6 +263,7 @@
    "stage": "support",
    "title": "TMCC",
    "customer_action": "TMCC",
+   "action": "TMCC",
    "touchpoints": [
     {
      "channel": "phone",

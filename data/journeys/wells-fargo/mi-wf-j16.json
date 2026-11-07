@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business Online: 'Transfer & Pay' > 'Direct Pay for Business' (desktop…",
    "customer_action": "Business Online: 'Transfer & Pay' > 'Direct Pay for Business' (desktop browser; mobile not supported for Direct Pay)",
+   "action": "Business Online: 'Transfer & Pay' > 'Direct Pay for Business' (desktop browser; mobile not supported for Direct Pay)",
    "touchpoints": [
     {
      "channel": "web",
@@ -88,6 +89,7 @@
    "stage": "set-up",
    "title": "Enroll: identity via Advanced Access 6-digit text code or RSA SecurID;…",
    "customer_action": "Enroll: identity via Advanced Access 6-digit text code or RSA SecurID; 'Enroll Now'; choose billing account and business funding checking account; choose 'Higher' or 'Lower' payment limits; email for notices; accept Direct Pay Agreement",
+   "action": "Enroll: identity via Advanced Access 6-digit text code or RSA SecurID; 'Enroll Now'; choose billing account and business funding checking account; choose 'Higher' or 'Lower' payment limits; email for notices; accept Direct Pay Agreement",
    "touchpoints": [
     {
      "channel": "web",
@@ -144,6 +146,7 @@
    "stage": "set-up",
    "title": "Set user access levels: Input/Release/Control, Input/Release, Input…",
    "customer_action": "Set user access levels: Input/Release/Control, Input/Release, Input Only, No Access (bookkeeper = Input Only)",
+   "action": "Set user access levels: Input/Release/Control, Input/Release, Input Only, No Access (bookkeeper = Input Only)",
    "touchpoints": [
     {
      "channel": "web",
@@ -197,6 +200,7 @@
    "stage": "set-up",
    "title": "'Payees' tab > 'Add Payee' > Payee Type (Individual/Business) > name,…",
    "customer_action": "'Payees' tab > 'Add Payee' > Payee Type (Individual/Business) > name, routing, account, type, up to 2 notification emails > 'Continue' > verify > 'Save'",
+   "action": "'Payees' tab > 'Add Payee' > Payee Type (Individual/Business) > name, routing, account, type, up to 2 notification emails > 'Continue' > verify > 'Save'",
    "touchpoints": [
     {
      "channel": "web",
@@ -253,6 +257,7 @@
    "stage": "initiate",
    "title": "'Payments' > 'Create Payment' > pay group 'Individual Master List' (or…",
    "customer_action": "'Payments' > 'Create Payment' > pay group 'Individual Master List' (or 'Business Master List' with remittance info) > one-time or recurring > 'Continue' > select payees and amounts > 'Pay By Date' and 'Send On Date'",
+   "action": "'Payments' > 'Create Payment' > pay group 'Individual Master List' (or 'Business Master List' with remittance info) > one-time or recurring > 'Continue' > select payees and amounts > 'Pay By Date' and 'Send On Date'",
    "touchpoints": [
     {
      "channel": "web",
@@ -309,6 +314,7 @@
    "stage": "review-authorize",
    "title": "Verify and 'Submit' (Input Only user) → payment awaits approval",
    "customer_action": "Verify and 'Submit' (Input Only user) → payment awaits approval",
+   "action": "Verify and 'Submit' (Input Only user) → payment awaits approval",
    "touchpoints": [
     {
      "channel": "web",
@@ -353,6 +359,7 @@
    "stage": "review-authorize",
    "title": "Input/Release user reviews and approves/releases funds from Funding…",
    "customer_action": "Input/Release user reviews and approves/releases funds from Funding Account (token/Advanced Access may be required)",
+   "action": "Input/Release user reviews and approves/releases funds from Funding Account (token/Advanced Access may be required)",
    "touchpoints": [
     {
      "channel": "web",
@@ -409,13 +416,14 @@
    "stage": "execute-track",
    "title": "Funds leave at 3:00 pm PT on Send On Date (by 3 pm PT cutoff → received…",
    "customer_action": null,
+   "action": "Funds leave at 3:00 pm PT on Send On Date (by 3 pm PT cutoff → received as soon as next business day)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payments list"
     }
    ],
-   "frontstage": "Funds leave at 3:00 pm PT on Send On Date (by 3 pm PT cutoff → received as soon as next business day)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -433,7 +441,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -453,13 +461,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation page; payee notification emails (optional, up to 2 per…",
    "customer_action": null,
+   "action": "Confirmation page; payee notification emails (optional, up to 2 per payee); enrollment notice email",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation page; payee notification emails (optional, up to 2 per payee); enrollment notice email",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email to business and payee",
@@ -477,7 +486,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -497,6 +506,7 @@
    "stage": "manage",
    "title": "Edit payees (re-validation if bank details change); manage recurring;…",
    "customer_action": "Edit payees (re-validation if bank details change); manage recurring; 'Enroll Another TIN'",
+   "action": "Edit payees (re-validation if bank details change); manage recurring; 'Enroll Another TIN'",
    "touchpoints": [
     {
      "channel": "web",
@@ -567,13 +577,14 @@
    "stage": "exception",
    "title": "Returned ACH / failed validation / insufficient funds — handling not…",
    "customer_action": null,
+   "action": "Returned ACH / failed validation / insufficient funds — handling not published (UNKNOWN); Reg E does not apply to business",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "Returned ACH / failed validation / insufficient funds — handling not published (UNKNOWN); Reg E does not apply to business",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -591,7 +602,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -611,6 +622,7 @@
    "stage": "support",
    "title": "Direct Pay FAQs; Quick Help panel",
    "customer_action": "Direct Pay FAQs; Quick Help panel",
+   "action": "Direct Pay FAQs; Quick Help panel",
    "touchpoints": [
     {
      "channel": "web",
@@ -655,6 +667,7 @@
    "stage": "support",
    "title": "Business Online Customer Service 1-800-956-4442; business fraud…",
    "customer_action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
+   "action": "Business Online Customer Service 1-800-956-4442; business fraud 1-800-225-5935 / 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",

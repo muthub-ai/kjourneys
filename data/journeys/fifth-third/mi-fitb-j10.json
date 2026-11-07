@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Move Money > 'Set Up Direct Deposit' (also Welcome Center step and…",
    "customer_action": "Move Money > 'Set Up Direct Deposit' (also Welcome Center step and Direct Deposit Switch promo)",
+   "action": "Move Money > 'Set Up Direct Deposit' (also Welcome Center step and Direct Deposit Switch promo)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -88,6 +89,7 @@
    "stage": "set-up",
    "title": "Step 1 choose employer/payroll provider; Step 2 log in with…",
    "customer_action": "Step 1 choose employer/payroll provider; Step 2 log in with employer/payroll credentials; Step 3 setup complete (1,000+ employers)",
+   "action": "Step 1 choose employer/payroll provider; Step 2 log in with employer/payroll credentials; Step 3 setup complete (1,000+ employers)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -174,13 +176,14 @@
    "stage": "execute-track",
    "title": "Eligible ACH credits post up to 2 days early (tax refunds 5 days);…",
    "customer_action": null,
+   "action": "Eligible ACH credits post up to 2 days early (tax refunds 5 days); >$10,000 posts on payday; excludes Zelle, RTP and bank transfers",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Eligible ACH credits post up to 2 days early (tax refunds 5 days); >$10,000 posts on payday; excludes Zelle, RTP and bank transfers",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -198,7 +201,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -218,13 +221,14 @@
    "stage": "confirm-complete",
    "title": "Mobile push notification when Early Pay funds are available (enable at…",
    "customer_action": null,
+   "action": "Mobile push notification when Early Pay funds are available (enable at Profile > Alerts > Manage Alerts > Manage by Account)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Mobile push notification when Early Pay funds are available (enable at Profile > Alerts > Manage Alerts > Manage by Account)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "push",
@@ -241,7 +245,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -260,6 +264,7 @@
    "stage": "manage",
    "title": "Split paycheck across multiple Fifth Third accounts",
    "customer_action": "Split paycheck across multiple Fifth Third accounts",
+   "action": "Split paycheck across multiple Fifth Third accounts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -302,13 +307,14 @@
    "stage": "exception",
    "title": "Early availability not guaranteed; depends on payor file timing and…",
    "customer_action": null,
+   "action": "Early availability not guaranteed; depends on payor file timing and fraud restrictions",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Early availability not guaranteed; depends on payor file timing and fraud restrictions",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -325,7 +331,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -344,6 +350,7 @@
    "stage": "support",
    "title": "Customer opens in-app messaging / Jeanie via the floating chat icon…",
    "customer_action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
+   "action": "Customer opens in-app messaging / Jeanie via the floating chat icon (24/7) or 'Ask Us'; Jeanie answers or routes to a representative",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -422,6 +429,7 @@
    "stage": "support",
    "title": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET…",
    "customer_action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
+   "action": "Customer calls Customer Service 800-972-3030 (Mon–Fri 8–6 / Sat 10–4 ET per FAQ; hours stated inconsistently) or Fraud line; disputes 877-833-6197; business 877-534-2264",
    "touchpoints": [
     {
      "channel": "phone",
@@ -481,6 +489,7 @@
    "stage": "support",
    "title": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "customer_action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
+   "action": "Branch escalation available (Find a Branch / Schedule an Appointment)",
    "touchpoints": [
     {
      "channel": "branch",

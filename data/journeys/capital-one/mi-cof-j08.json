@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Select checking account > 'Pay Bills' (web) or 'Bill Pay' (app)",
    "customer_action": "Select checking account > 'Pay Bills' (web) or 'Bill Pay' (app)",
+   "action": "Select checking account > 'Pay Bills' (web) or 'Bill Pay' (app)",
    "touchpoints": [
     {
      "channel": "web",
@@ -112,6 +113,7 @@
    "stage": "set-up",
    "title": "From 'Overview' > 'Payees' > 'Add payee' (a.k.a. 'Add New Payee'):…",
    "customer_action": "From 'Overview' > 'Payees' > 'Add payee' (a.k.a. 'Add New Payee'): search the payee directory; if absent try alternate spelling/acronym, else enter manually (paid by paper check). First time: enter account number (optional) and payee address",
+   "action": "From 'Overview' > 'Payees' > 'Add payee' (a.k.a. 'Add New Payee'): search the payee directory; if absent try alternate spelling/acronym, else enter manually (paid by paper check). First time: enter account number (optional) and payee address",
    "touchpoints": [
     {
      "channel": "web",
@@ -194,6 +196,7 @@
    "stage": "initiate",
    "title": "Overview > Payees > find payee > '…' > choose payment type (one-time or…",
    "customer_action": "Overview > Payees > find payee > '…' > choose payment type (one-time or recurring) > complete form (amount, send-on date up to 365 days out, optional memo for check payees)",
+   "action": "Overview > Payees > find payee > '…' > choose payment type (one-time or recurring) > complete form (amount, send-on date up to 365 days out, optional memo for check payees)",
    "touchpoints": [
     {
      "channel": "web",
@@ -259,6 +262,7 @@
    "stage": "review-authorize",
    "title": "Review and submit",
    "customer_action": "Review and submit",
+   "action": "Review and submit",
    "touchpoints": [
     {
      "channel": "web",
@@ -312,6 +316,7 @@
    "stage": "execute-track",
    "title": "Electronic payments typically post in 1-2 business days; paper checks…",
    "customer_action": null,
+   "action": "Electronic payments typically post in 1-2 business days; paper checks 7-10 days; payment appears under 'Scheduled payments' then 'Payment history' and in checking transactions",
    "touchpoints": [
     {
      "channel": "web",
@@ -337,6 +342,18 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-capital-one-s016",
+      "src-capital-one-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -374,13 +391,14 @@
    "stage": "confirm-complete",
    "title": "Payment posts; Bill Pay guarantee covers late fees up to $100 if…",
    "customer_action": null,
+   "action": "Payment posts; Bill Pay guarantee covers late fees up to $100 if scheduled per terms",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment history"
     }
    ],
-   "frontstage": "Payment posts; Bill Pay guarantee covers late fees up to $100 if scheduled per terms",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -397,7 +415,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -416,6 +434,7 @@
    "stage": "manage",
    "title": "Cancel: Overview > Scheduled payments > '…' > 'Cancel payment' >…",
    "customer_action": "Cancel: Overview > Scheduled payments > '…' > 'Cancel payment' > confirm — allowed until 1 business day before the 'Send on' date; sent payments cannot be canceled or edited; stop paper checks via Customer Service 800-655-2265 (written request may be required within 14 days)",
+   "action": "Cancel: Overview > Scheduled payments > '…' > 'Cancel payment' > confirm — allowed until 1 business day before the 'Send on' date; sent payments cannot be canceled or edited; stop paper checks via Customer Service 800-655-2265 (written request may be required within 14 days)",
    "touchpoints": [
     {
      "channel": "web",
@@ -484,6 +503,7 @@
    "stage": "manage",
    "title": "Edit or delete a payee: Overview > Payees > find payee > '…' > 'Edit…",
    "customer_action": "Edit or delete a payee: Overview > Payees > find payee > '…' > 'Edit payee info' (make and save changes) or 'Delete payee' > confirm; deleting a payee cancels all of its scheduled payments",
+   "action": "Edit or delete a payee: Overview > Payees > find payee > '…' > 'Edit payee info' (make and save changes) or 'Delete payee' > confirm; deleting a payee cancels all of its scheduled payments",
    "touchpoints": [
     {
      "channel": "web",
@@ -558,13 +578,14 @@
    "stage": "exception",
    "title": "Returned payment: on the new platform, returned payments show as sent…",
    "customer_action": null,
+   "action": "Returned payment: on the new platform, returned payments show as sent with a credit in checking transactions (migration note); Bill Pay ACH payments cannot be canceled once processing has begun",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Transactions"
     }
    ],
-   "frontstage": "Returned payment: on the new platform, returned payments show as sent with a credit in checking transactions (migration note); Bill Pay ACH payments cannot be canceled once processing has begun",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "unknown",
@@ -582,7 +603,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -602,6 +623,7 @@
    "stage": "support",
    "title": "Customer Service 800-655-2265, 8 am-11 pm ET, 7 days; EFT/bill pay…",
    "customer_action": null,
+   "action": "Customer Service 800-655-2265, 8 am-11 pm ET, 7 days; EFT/bill pay errors 1-888-464-0727",
    "touchpoints": [
     {
      "channel": "phone",

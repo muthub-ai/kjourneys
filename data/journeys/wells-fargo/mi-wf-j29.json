@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Open 'Transfer & Pay' in the top navigation; panel headed 'Move Money &…",
    "customer_action": "Open 'Transfer & Pay' in the top navigation; panel headed 'Move Money & Pay Bills' lists Transfer Money · Pay WF Accounts · Pay Bills · Send Money with Zelle® · Wire Money · Send with ExpressSend® · Deposit a Check; choose 'Send Money with Zelle®'",
+   "action": "Open 'Transfer & Pay' in the top navigation; panel headed 'Move Money & Pay Bills' lists Transfer Money · Pay WF Accounts · Pay Bills · Send Money with Zelle® · Wire Money · Send with ExpressSend® · Deposit a Check; choose 'Send Money with Zelle®'",
    "touchpoints": [
     {
      "channel": "web",
@@ -116,6 +117,7 @@
    "stage": "set-up",
    "title": "'Manage payment profiles' (Receive money with Zelle®): each enrolled…",
    "customer_action": "'Manage payment profiles' (Receive money with Zelle®): each enrolled token (mobile, email) is mapped to a deposit account with 'Edit account' and 'Unenroll' per token; 'Update contact information' links to the WF profile",
+   "action": "'Manage payment profiles' (Receive money with Zelle®): each enrolled token (mobile, email) is mapped to a deposit account with 'Edit account' and 'Unenroll' per token; 'Update contact information' links to the WF profile",
    "touchpoints": [
     {
      "channel": "web",
@@ -158,6 +160,7 @@
    "stage": "set-up",
    "title": "'Recipients' lists saved recipients; an 'action required' badge marks a…",
    "customer_action": "'Recipients' lists saved recipients; an 'action required' badge marks a recipient who has unenrolled; Send > 'Select recipient' offers Back / Search / Add with 'Recent' tiles showing initials, name, a 'zelle ready' badge and the masked token",
+   "action": "'Recipients' lists saved recipients; an 'action required' badge marks a recipient who has unenrolled; Send > 'Select recipient' offers Back / Search / Add with 'Recent' tiles showing initials, name, a 'zelle ready' badge and the masked token",
    "touchpoints": [
     {
      "channel": "web",
@@ -211,6 +214,7 @@
    "stage": "initiate",
    "title": "Select a recipient → 'Enter amount' screen headed 'Send to <name> /…",
    "customer_action": "Select a recipient → 'Enter amount' screen headed 'Send to <name> / Enrolled as <registered name>'; enter Amount; inline 'Daily limit $… / 30-day limit $…' with a 'What are my send limits?' dialog; choose 'Pay from' (required — Next stays disabled until chosen); optional memo (140 characters); 'Repeat payment' toggle; Cancel / Next",
+   "action": "Select a recipient → 'Enter amount' screen headed 'Send to <name> / Enrolled as <registered name>'; enter Amount; inline 'Daily limit $… / 30-day limit $…' with a 'What are my send limits?' dialog; choose 'Pay from' (required — Next stays disabled until chosen); optional memo (140 characters); 'Repeat payment' toggle; Cancel / Next",
    "touchpoints": [
     {
      "channel": "web",
@@ -264,6 +268,7 @@
    "stage": "initiate",
    "title": "Request: same recipient picker (Recent / All recipients) → 'Request to…",
    "customer_action": "Request: same recipient picker (Recent / All recipients) → 'Request to <name> / Enrolled as <name>', amount, 'Respond to' selector (which enrolled token/account receives), memo → 'Review'",
+   "action": "Request: same recipient picker (Recent / All recipients) → 'Request to <name> / Enrolled as <name>', amount, 'Respond to' selector (which enrolled token/account receives), memo → 'Review'",
    "touchpoints": [
     {
      "channel": "web",
@@ -306,6 +311,7 @@
    "stage": "review-authorize",
    "title": "'Next' leads to the review screen, which was not reached (the…",
    "customer_action": null,
+   "action": "'Next' leads to the review screen, which was not reached (the observation stopped before review by design, so no payment was staged). In-session Help states that identity verification by text code (or RSA SecurID) precedes some payments, including the first payment to a new recipient, and that texts about new or first-time recipients come from short codes 93557 and 93729 (the public FAQ lists 93557 and 93733)",
    "touchpoints": [
     {
      "channel": "web",
@@ -330,6 +336,17 @@
      "x-mi_evidence": "OBSERVED_SESSION"
     },
     "frontstage": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "process": {
      "basis": "observed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -365,6 +382,7 @@
    "stage": "execute-track",
    "title": "'Activity' view: tabs Sent | Received | Requests; 'History' rows show…",
    "customer_action": null,
+   "action": "'Activity' view: tabs Sent | Received | Requests; 'History' rows show initials, name, 'Sent <date>', amount and status (Completed), with 'View more details'",
    "touchpoints": [
     {
      "channel": "web",
@@ -398,6 +416,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "OBSERVED_SESSION"
+    },
+    "process": {
+     "basis": "observed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s990"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "OBSERVED_SESSION"
     }
    }
   },
@@ -407,6 +436,7 @@
    "stage": "execute-track",
    "title": "Payment details (completed payment): amount; Sent to (name + token);…",
    "customer_action": "Payment details (completed payment): amount; Sent to (name + token); status; Sent on; Pay from; Confirmation number; single action 'Block <name>'",
+   "action": "Payment details (completed payment): amount; Sent to (name + token); status; Sent on; Pay from; Confirmation number; single action 'Block <name>'",
    "touchpoints": [
     {
      "channel": "web",
@@ -466,13 +496,14 @@
    "stage": "confirm-complete",
    "title": "Email plus secure-inbox message when a payment is scheduled or changed;…",
    "customer_action": null,
+   "action": "Email plus secure-inbox message when a payment is scheduled or changed; email when a payment fails or is cancelled (per in-session Help)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Email; Message Center"
     }
    ],
-   "frontstage": "Email plus secure-inbox message when a payment is scheduled or changed; email when a payment fails or is cancelled (per in-session Help)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email + secure inbox (schedule/change); email (fail/cancel)",
@@ -489,7 +520,7 @@
      "confidence": "high",
      "x-mi_evidence": "OBSERVED_SESSION"
     },
-    "frontstage": {
+    "process": {
      "basis": "observed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -508,6 +539,7 @@
    "stage": "manage",
    "title": "'Scheduled' view: 'View canceled' · sections One time / Repeating ·…",
    "customer_action": "'Scheduled' view: 'View canceled' · sections One time / Repeating · 'Set up a payment'; Help: scheduled payments can be cancelled until 11:30 pm PT the day before the send date",
+   "action": "'Scheduled' view: 'View canceled' · sections One time / Repeating · 'Set up a payment'; Help: scheduled payments can be cancelled until 11:30 pm PT the day before the send date",
    "touchpoints": [
     {
      "channel": "web",
@@ -550,6 +582,7 @@
    "stage": "manage",
    "title": "'Family controls' = 'Update Zelle® access for teens': lists any teen…",
    "customer_action": "'Family controls' = 'Update Zelle® access for teens': lists any teen account holder with an Enabled/Disabled state and 'Zelle® access enabled by <parent> on <date>'; the parent can Disable/Enable",
+   "action": "'Family controls' = 'Update Zelle® access for teens': lists any teen account holder with an Enabled/Disabled state and 'Zelle® access enabled by <parent> on <date>'; the parent can Disable/Enable",
    "touchpoints": [
     {
      "channel": "web",
@@ -603,6 +636,7 @@
    "stage": "manage",
    "title": "'Blocked contacts' lists blocked people (blocking is done from a past…",
    "customer_action": "'Blocked contacts' lists blocked people (blocking is done from a past payment or request in Activity)",
+   "action": "'Blocked contacts' lists blocked people (blocking is done from a past payment or request in Activity)",
    "touchpoints": [
     {
      "channel": "web",
@@ -645,6 +679,7 @@
    "stage": "exception",
    "title": "Scam or problem with a payment: Help directs the customer to call Wells…",
    "customer_action": "Scam or problem with a payment: Help directs the customer to call Wells Fargo Online Customer Service 1-800-956-4442 (24/7); 'Qualifying imposter scams may be eligible for reimbursement'; protections cover unauthorized access only ('you do not have the same protections associated with a credit card or a debit card transaction')",
+   "action": "Scam or problem with a payment: Help directs the customer to call Wells Fargo Online Customer Service 1-800-956-4442 (24/7); 'Qualifying imposter scams may be eligible for reimbursement'; protections cover unauthorized access only ('you do not have the same protections associated with a credit card or a debit card transaction')",
    "touchpoints": [
     {
      "channel": "phone",
@@ -704,6 +739,7 @@
    "stage": "exception",
    "title": "Payment to an unenrolled recipient stays pending; cancel from Activity…",
    "customer_action": "Payment to an unenrolled recipient stays pending; cancel from Activity ('Cancel payment'); payments to enrolled recipients cannot be cancelled",
+   "action": "Payment to an unenrolled recipient stays pending; cancel from Activity ('Cancel payment'); payments to enrolled recipients cannot be cancelled",
    "touchpoints": [
     {
      "channel": "web",
@@ -746,6 +782,7 @@
    "stage": "support",
    "title": "In-flow 'Help' opens an 'About Zelle®' dialog with 32 questions…",
    "customer_action": "In-flow 'Help' opens an 'About Zelle®' dialog with 32 questions (enrollment, limits, cancelling, scams, protections, messages/short codes, Zelle tag, QR, small-business receive, blocked contacts, Red Cross donations)",
+   "action": "In-flow 'Help' opens an 'About Zelle®' dialog with 32 questions (enrollment, limits, cancelling, scams, protections, messages/short codes, Zelle tag, QR, small-business receive, blocked contacts, Red Cross donations)",
    "touchpoints": [
     {
      "channel": "web",

@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.1 — 2026-11-07 · v0.1 release review
+
+An independent review (a different model, given the code, not the conclusions) found these. Each was checked against the workbook before it was fixed.
+
+- **Capability flags:** free text was read as Yes. They now follow MI's own counting (literal Yes only; "not evidenced" is No; other text is unknown, kept as detail). This changes flags such as step-up authentication, where MI counts 1 bank, not 9.
+- **ScoreTotals:** MI's index and rail means do not match its own stage scores (all 10 banks; 35 rail means). The ranking now shows MI's index beside one recomputed from the scores (Wells Fargo 69.3 vs 61.8, #3 vs #4); the heat map and stage views use the scores. Raised with MI.
+- **Customer-journey links:** MI's references now decide; otherwise rail and segment must match. The rail-only "closest match" is gone, so commercial and receive journeys are no longer forced onto consumer send journeys (178 of 236 linked).
+- **Gap stages:** 63 gaps are filed under a best-practice stage that differs from the step they sit on; that step's stage is now kept as `step_stage`, and the validator checks it.
+- **Report immutability is enforced:** the importer refuses a changed pinned file, every validation re-checks every file in every manifest, and CI runs `import_mi_workbook.py --check` so imported data cannot be hand-edited. The workbook is now the report source every MI record cites (the HTML is an earlier cut).
+- **Safe imports:** the importer stages every write, validates in a scratch copy, then writes; unknown stages, observation types, severities, step numbering and out-of-range scores now stop it; a second report version needs `--replace`.
+- **Validator:** finding ↔ journey bank, product, step and stage; composite steps; score 0–4; ranking ranges; rail-segment links on the same rail; competitor backstage only disclosed or inferred (ADR-0004, amended). `run_tests.sh` now requires each fixture to fail with its own message, and treats a crash as a failure (55 fixtures).
+- **Ingest:** a fact counts as unchanged only if confidence, sources and evidence also match.
+- **Site:** `dist/index.html` is a complete document (doctype, charset, viewport, lang); `dist/artifact.html` is the fragment for the artifact host. Links accept only http(s), observed-session sources are never linked, the drawer keeps keyboard focus, inline data cannot close its script. Wells Fargo's Zelle journeys show the sample backstage by stage, labeled sample.
+- **Not changed, by decision:** the public repo and the observed-session detail (owner's call, deferred); a pull-request CI trigger (owner chose push-only); CODEOWNERS (owner's call), now documented as not enforced; MI sub-products whose rail is not in their product's rail list (33, mostly "Other"), which is how MI recorded them.
+
 ## 0.7.0 — 2026-11-06
 
 - **First MI delivery landed** (`reports/2026-11-06-v1/`: HTML report, dossier, sources and verification, workbook), preserved byte for byte and sha256-pinned.
@@ -19,7 +34,7 @@
   - The Journey tab opens on a customer journey: best-practice steps with the bank steps they come from, then every bank's journeys with product › sub-product and stage scores. A new Products tab shows each catalog. The blueprint gains a best-practice row and a picker grouped by customer journey. Compare cells list the sub-products behind each Yes or No.
   - Workbook check: TD-J18 names product TD-P10, but its sub-product TD-P04-S05 belongs to TD-P04. The import uses TD-P04, keeps the original as x-mi_product_id, and records a warning in the manifest.
 - **Exports:** facts.jsonl adds findings and rankings; summary adds the ranking.
-- **Tests:** 46 negative fixtures (15 new for MI collections, catalog and journey links), now picking attributes by datatype; the ingest test uses its own TEST questions. `openpyxl` added to requirements.
+- **Tests:** 55 negative fixtures (15 new for MI collections, catalog and journey links), now picking attributes by datatype; the ingest test uses its own TEST questions. `openpyxl` added to requirements.
 
 ## 0.6.0 — 2026-11-06
 

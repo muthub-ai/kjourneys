@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Log in to the Mobile Banking app and tap Deposit Checks (help: Menu >…",
    "customer_action": "Log in to the Mobile Banking app and tap Deposit Checks (help: Menu > Help > Browse More Topics > Mobile Check Deposit)",
+   "action": "Log in to the Mobile Banking app and tap Deposit Checks (help: Menu > Help > Browse More Topics > Mobile Check Deposit)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Endorse back: 'For deposit only at Bank of America'",
    "customer_action": "Endorse back: 'For deposit only at Bank of America'",
+   "action": "Endorse back: 'For deposit only at Bank of America'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Photograph front and back (auto-capture or tap camera icon; dark…",
    "customer_action": "Photograph front and back (auto-capture or tap camera icon; dark background, four corners visible); choose receiving account (monthly limit displayed); enter amount; Next",
+   "action": "Photograph front and back (auto-capture or tap camera icon; dark background, four corners visible); choose receiving account (monthly limit displayed); enter amount; Next",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -190,6 +193,7 @@
    "stage": "review-authorize",
    "title": "Confirm details > Submit",
    "customer_action": "Confirm details > Submit",
+   "action": "Confirm details > Submit",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -232,13 +236,14 @@
    "stage": "execute-track",
    "title": "Immediate 'processing' confirmation; duplicate detection; subject to…",
    "customer_action": null,
+   "action": "Immediate 'processing' confirmation; duplicate detection; subject to verification; deposits before 9 p.m. ET (8 p.m. PT) processed that night, generally available next business day unless held",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation / Deposit holds"
     }
    ],
-   "frontstage": "Immediate 'processing' confirmation; duplicate detection; subject to verification; deposits before 9 p.m. ET (8 p.m. PT) processed that night, generally available next business day unless held",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "'The deposit confirmation screen on your device will tell you of any hold'; if a hold is added later, an email alert is sent; holds typically 2–7 business days; changes to hold length notified by mail and/or email",
@@ -258,7 +263,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -280,13 +285,14 @@
    "stage": "confirm-complete",
    "title": "Email confirmation; deposit appears in account activity",
    "customer_action": null,
+   "action": "Email confirmation; deposit appears in account activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Email confirmation; deposit appears in account activity",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -303,7 +309,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -322,6 +328,7 @@
    "stage": "manage",
    "title": "Save/print copy; cannot cancel once submitted",
    "customer_action": "Save/print copy; cannot cancel once submitted",
+   "action": "Save/print copy; cannot cancel once submitted",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -366,13 +373,14 @@
    "stage": "exception",
    "title": "Hold placed: disclosed on the mobile deposit confirmation screen (ATM:…",
    "customer_action": null,
+   "action": "Hold placed: disclosed on the mobile deposit confirmation screen (ATM: screen + receipt; branch: receipt); if determined later, email alert; mail/paperless-inbox notice when no notice was possible at deposit. Holds typically 2–7 business days (weekend deposits count as Monday; hold starts Tuesday); 'Bank of America service representatives are not able to release deposited funds that are on hold' and third-party verification that the check cleared is not accepted. Problem deposit (NSF/fraud suspicion): mailed letter asks customer to bring the check to a financial center.",
    "touchpoints": [
     {
      "channel": "branch",
      "screen": "Letter / financial center"
     }
    ],
-   "frontstage": "Hold placed: disclosed on the mobile deposit confirmation screen (ATM: screen + receipt; branch: receipt); if determined later, email alert; mail/paperless-inbox notice when no notice was possible at deposit. Holds typically 2–7 business days (weekend deposits count as Monday; hold starts Tuesday); 'Bank of America service representatives are not able to release deposited funds that are on hold' and third-party verification that the check cleared is not accepted. Problem deposit (NSF/fraud suspicion): mailed letter asks customer to bring the check to a financial center.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "confirmation screen (at deposit); email alert (later hold); letter / paperless inbox",
@@ -390,7 +398,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -428,13 +436,14 @@
    "stage": "exception",
    "title": "Mobile Check Deposit excluded from the Online and Mobile Banking…",
    "customer_action": null,
+   "action": "Mobile Check Deposit excluded from the Online and Mobile Banking Security Guarantee",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Guarantee terms"
     }
    ],
-   "frontstage": "Mobile Check Deposit excluded from the Online and Mobile Banking Security Guarantee",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -451,7 +460,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -470,6 +479,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -548,6 +558,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

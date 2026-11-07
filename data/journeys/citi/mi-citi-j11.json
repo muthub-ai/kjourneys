@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer selects 'Mobile Check Deposit' in the Citi Mobile App",
    "customer_action": "Customer selects 'Mobile Check Deposit' in the Citi Mobile App",
+   "action": "Customer selects 'Mobile Check Deposit' in the Citi Mobile App",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "First use: review and accept the Mobile Check Deposit terms &…",
    "customer_action": "First use: review and accept the Mobile Check Deposit terms & conditions in-app; endorse the check by signing the back (CDAA: within 1.5 inches of the top edge; MCD-specific endorsement wording lives in the separate MCD agreement)",
+   "action": "First use: review and accept the Mobile Check Deposit terms & conditions in-app; endorse the check by signing the back (CDAA: within 1.5 inches of the top edge; MCD-specific endorsement wording lives in the separate MCD agreement)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -157,6 +159,7 @@
    "stage": "initiate",
    "title": "Select the account to deposit to and enter the check amount; take…",
    "customer_action": "Select the account to deposit to and enter the check amount; take pictures of both sides of the check (close other apps if memory is low)",
+   "action": "Select the account to deposit to and enter the check amount; take pictures of both sides of the check (close other apps if memory is low)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -210,6 +213,7 @@
    "stage": "review-authorize",
    "title": "Submit the images for mobile deposit",
    "customer_action": "Submit the images for mobile deposit",
+   "action": "Submit the images for mobile deposit",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -252,6 +256,7 @@
    "stage": "execute-track",
    "title": "Deposits after 10:30 PM ET post the next Business Day; funds…",
    "customer_action": null,
+   "action": "Deposits after 10:30 PM ET post the next Business Day; funds availability per Appendix 2 (holds)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -287,6 +292,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-citi-s015",
+      "src-citi-s028"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -296,13 +313,14 @@
    "stage": "confirm-complete",
    "title": "Two confirmation emails: when Citi receives the deposit and when it…",
    "customer_action": null,
+   "action": "Two confirmation emails: when Citi receives the deposit and when it accepts the deposit for processing; 'cleared deposits' account alert available",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Account Alerts"
     }
    ],
-   "frontstage": "Two confirmation emails: when Citi receives the deposit and when it accepts the deposit for processing; 'cleared deposits' account alert available",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email on receipt; email on acceptance for processing",
@@ -320,7 +338,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -340,6 +358,7 @@
    "stage": "manage",
    "title": "View deposit history; retain the check until cleared",
    "customer_action": "View deposit history; retain the check until cleared",
+   "action": "View deposit history; retain the check until cleared",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -382,13 +401,14 @@
    "stage": "exception",
    "title": "Rejected image or returned item: deposit reversed with service charge;…",
    "customer_action": null,
+   "action": "Rejected image or returned item: deposit reversed with service charge; customer must cooperate to reconstruct lost items",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Rejected image or returned item: deposit reversed with service charge; customer must cooperate to reconstruct lost items",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -406,7 +426,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -426,6 +446,7 @@
    "stage": "support",
    "title": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK /…",
    "customer_action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
+   "action": "Customer gets help in-app or calls CitiPhone Banking (1-888-CITIBANK / 1-800-374-9700, 24/7, TTY 711); fraud is reported via the number on the back of the Citibank Banking Card",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Client submits payee list and amounts through the disbursement platform…",
    "customer_action": "Client submits payee list and amounts through the disbursement platform (API/file)",
+   "action": "Client submits payee list and amounts through the disbursement platform (API/file)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Payee chooses rail; push-to-card leg funds any eligible Visa/Mastercard…",
    "customer_action": "Payee chooses rail; push-to-card leg funds any eligible Visa/Mastercard U.S. debit card within 30 minutes, 24/7 ($125k cap, irrevocable); Zelle leg verifies enrollment by email/U.S. mobile before paying",
+   "action": "Payee chooses rail; push-to-card leg funds any eligible Visa/Mastercard U.S. debit card within 30 minutes, 24/7 ($125k cap, irrevocable); Zelle leg verifies enrollment by email/U.S. mobile before paying",
    "touchpoints": [
     {
      "channel": "web",
@@ -130,13 +132,14 @@
    "stage": "initiate",
    "title": "Payment sent via chosen rail (Zelle via mobile/email token;…",
    "customer_action": null,
+   "action": "Payment sent via chosen rail (Zelle via mobile/email token; push-to-card via Visa Direct to Visa/Mastercard debit or prepaid)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Payment sent via chosen rail (Zelle via mobile/email token; push-to-card via Visa Direct to Visa/Mastercard debit or prepaid)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -154,7 +157,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -174,13 +177,14 @@
    "stage": "initiate",
    "title": "Payee preference stored for future payments; reporting to client",
    "customer_action": null,
+   "action": "Payee preference stored for future payments; reporting to client",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Payee preference stored for future payments; reporting to client",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -197,7 +201,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -216,13 +220,14 @@
    "stage": "exception",
    "title": "Payee does not respond → fallback (check) or re-notification – not…",
    "customer_action": null,
+   "action": "Payee does not respond → fallback (check) or re-notification – not documented",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Payee does not respond → fallback (check) or re-notification – not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -238,7 +243,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -256,6 +261,7 @@
    "stage": "support",
    "title": "Treasury management support",
    "customer_action": null,
+   "action": "Treasury management support",
    "touchpoints": [
     {
      "channel": "phone",

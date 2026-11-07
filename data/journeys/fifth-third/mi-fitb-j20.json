@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Install scanner driver (admin rights); first deposit within 24 hours of…",
    "customer_action": "Install scanner driver (admin rights); first deposit within 24 hours of install",
+   "action": "Install scanner driver (admin rights); first deposit within 24 hours of install",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Capture > Deposit screen; scanner creates virtual deposit slip and…",
    "customer_action": "Capture > Deposit screen; scanner creates virtual deposit slip and transmits",
+   "action": "Capture > Deposit screen; scanner creates virtual deposit slip and transmits",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -143,13 +145,14 @@
    "stage": "execute-track",
    "title": "Daily cutoff (time not stated); 24/7 data and image access; location…",
    "customer_action": null,
+   "action": "Daily cutoff (time not stated); 24/7 data and image access; location tracking",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Analytics"
     }
    ],
-   "frontstage": "Daily cutoff (time not stated); 24/7 data and image access; location tracking",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -166,7 +169,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -185,13 +188,14 @@
    "stage": "exception",
    "title": "Returned deposit details viewable in Fifth Third Direct receivables",
    "customer_action": null,
+   "action": "Returned deposit details viewable in Fifth Third Direct receivables",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "FTD Receivables"
     }
    ],
-   "frontstage": "Returned deposit details viewable in Fifth Third Direct receivables",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -208,7 +212,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -227,6 +231,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",
@@ -305,7 +310,5 @@
  "bank_product": "FITB-P08",
  "terms": {
   "cutoffs": "See product notes"
- },
- "composite": "CJ-MOBILE-DEPOSIT",
- "composite_match": "rail"
+ }
 }

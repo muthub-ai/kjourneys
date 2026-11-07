@@ -260,33 +260,15 @@
     ],
     "attr-cap-cancel-before-send": [
       {
-        "id": "urn:kos:assertion:truist:ach-origination:cap-cancel-before-send:2",
-        "value": true,
-        "display": "Yes — Reversal request (erroneous/duplicate) within 5 banking days of effective date via Care Center 844-4TRUIST; 'Return of funds are not guaranteed'. In-app delete-before-release not documented.",
-        "basis": "disclosed",
-        "source_ids": [
-          "src-mi-2026-11-06-v1",
-          "src-truist-s007",
-          "src-truist-s008",
-          "src-truist-s013",
-          "src-truist-s015",
-          "src-truist-s047",
-          "src-truist-s906",
-          "src-truist-s922",
-          "src-truist-s953"
-        ],
-        "asserted_by": "process:mi-session",
-        "asserted_at": "2026-11-06T21:03:00-06:00",
-        "observed_on": "2026-11-06",
-        "valid_from": "2026-11-06",
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "high",
-        "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P09-S01",
-          "mi_level": "CONFIRMED_BANK"
-        }
+        "id": "urn:kos:assertion:truist:ach-origination:cap-cancel-before-send:1"
       }
     ],
     "attr-cap-status-tracking": [
@@ -398,62 +380,24 @@
     ],
     "attr-cap-step-up-auth": [
       {
-        "id": "urn:kos:assertion:truist:ach-origination:cap-step-up-auth:2",
-        "value": true,
-        "display": "Yes — one-time passcode required to release each ACH entry + transaction validation (call/email/text/validation code to registered phone numbers); failure to respond may terminate the transaction; token",
-        "basis": "disclosed",
-        "source_ids": [
-          "src-mi-2026-11-06-v1",
-          "src-truist-s007",
-          "src-truist-s008",
-          "src-truist-s013",
-          "src-truist-s015",
-          "src-truist-s047",
-          "src-truist-s906",
-          "src-truist-s922",
-          "src-truist-s953",
-          "src-truist-s023",
-          "src-truist-s026",
-          "src-truist-s043",
-          "src-truist-s044",
-          "src-truist-s045",
-          "src-truist-s911",
-          "src-truist-s912",
-          "src-truist-s914",
-          "src-truist-s917",
-          "src-truist-s046",
-          "src-truist-s017"
-        ],
-        "asserted_by": "process:mi-session",
-        "asserted_at": "2026-11-06T21:03:00-06:00",
-        "observed_on": "2026-11-06",
-        "valid_from": "2026-11-06",
+        "basis": "awaiting",
+        "source_ids": [],
+        "asserted_by": null,
+        "asserted_at": null,
+        "observed_on": null,
         "valid_to": null,
         "verified_by": null,
         "verified_at": null,
-        "confidence": "high",
-        "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P09-S01, TFC-P10-S01, TFC-P10-S05",
-          "mi_level": "CONFIRMED_BANK"
-        }
+        "id": "urn:kos:assertion:truist:ach-origination:cap-step-up-auth:1"
       }
     ],
     "attr-cap-dual-approval-smb": [
       {
         "id": "urn:kos:assertion:truist:ach-origination:cap-dual-approval-smb:2",
         "value": true,
-        "display": "Yes — true — optional 'Dual Approval Feature' in Online Banking for Business ACH Transfer Service: Business Profile Owner designates an Approver; entries initiated by a non-owner User require 'Secondary Approval' and remain in 'pending status' until approved; bank may cancel pending requests. Plus per-ent",
         "basis": "disclosed",
         "source_ids": [
           "src-mi-2026-11-06-v1",
-          "src-truist-s007",
-          "src-truist-s008",
-          "src-truist-s013",
-          "src-truist-s015",
-          "src-truist-s047",
-          "src-truist-s906",
-          "src-truist-s922",
-          "src-truist-s953",
           "src-truist-s023",
           "src-truist-s026",
           "src-truist-s043",
@@ -475,7 +419,7 @@
         "verified_at": null,
         "confidence": "high",
         "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P09-S01, TFC-P10-S01, TFC-P10-S05",
+          "report_ref": "Capabilities sheet: TFC-P10-S01, TFC-P10-S05",
           "mi_level": "CONFIRMED_BANK"
         }
       }
@@ -497,19 +441,12 @@
       {
         "id": "urn:kos:assertion:truist:ach-origination:cap-same-day:2",
         "value": true,
-        "display": "Yes — ACH entries received before the 8 pm ET final deadline are transmitted to the ACH operator the same day (business days only); Same Day ACH origination otherwise documented for commercial Digital Treasury ('Make this a Same Day Payment' checkbox)",
         "basis": "disclosed",
         "source_ids": [
           "src-mi-2026-11-06-v1",
           "src-truist-s007",
-          "src-truist-s008",
-          "src-truist-s013",
-          "src-truist-s015",
-          "src-truist-s047",
-          "src-truist-s906",
-          "src-truist-s922",
-          "src-truist-s953",
           "src-truist-s041",
+          "src-truist-s008",
           "src-truist-s023",
           "src-truist-s026",
           "src-truist-s043",
@@ -529,7 +466,7 @@
         "verified_at": null,
         "confidence": "high",
         "x-evidence": {
-          "report_ref": "Capabilities sheet: TFC-P09-S01, TFC-P09-S03, TFC-P10-S01",
+          "report_ref": "Capabilities sheet: TFC-P09-S03, TFC-P10-S01",
           "mi_level": "CONFIRMED_BANK"
         }
       }

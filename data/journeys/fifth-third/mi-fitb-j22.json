@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Download Fifth Third Direct mobile app; same credentials; token required",
    "customer_action": "Download Fifth Third Direct mobile app; same credentials; token required",
+   "action": "Download Fifth Third Direct mobile app; same credentials; token required",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -90,6 +91,7 @@
    "stage": "review-authorize",
    "title": "In the Fifth Third Direct mobile app, 'Quickly approve, decline, or…",
    "customer_action": "In the Fifth Third Direct mobile app, 'Quickly approve, decline, or manage payments from your phone'; role-based permissions restrict which accounts/actions the approver sees; token required for mobile access.",
+   "action": "In the Fifth Third Direct mobile app, 'Quickly approve, decline, or manage payments from your phone'; role-based permissions restrict which accounts/actions the approver sees; token required for mobile access.",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -138,13 +140,14 @@
    "stage": "exception",
    "title": "Global Treasury accounts not available in app; sweep detail limited",
    "customer_action": null,
+   "action": "Global Treasury accounts not available in app; sweep detail limited",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Global Treasury accounts not available in app; sweep detail limited",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -161,7 +164,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -180,6 +183,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",
@@ -258,7 +262,5 @@
  "bank_product": "FITB-P08",
  "terms": {
   "cutoffs": "See product notes"
- },
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

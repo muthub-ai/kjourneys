@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Fraud Control > Create > ACH Authorization Rule (originator, amount,…",
    "customer_action": "Fraud Control > Create > ACH Authorization Rule (originator, amount, expiry; 6 PM cutoff)",
+   "action": "Fraud Control > Create > ACH Authorization Rule (originator, amount, expiry; 6 PM cutoff)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "execute-track",
    "title": "Suspect items appear as 'Open' under Fraud Control > Manage > Positive…",
    "customer_action": "Suspect items appear as 'Open' under Fraud Control > Manage > Positive Pay > ACH tab; Pay or Return decision; approval may be required",
+   "action": "Suspect items appear as 'Open' under Fraud Control > Manage > Positive Pay > ACH tab; Pay or Return decision; approval may be required",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,13 +130,14 @@
    "stage": "exception",
    "title": "No decision by cutoff -> item returned",
    "customer_action": null,
+   "action": "No decision by cutoff -> item returned",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Positive Pay"
     }
    ],
-   "frontstage": "No decision by cutoff -> item returned",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +173,7 @@
    "stage": "support",
    "title": "TMS support",
    "customer_action": null,
+   "action": "TMS support",
    "touchpoints": [
     {
      "channel": "phone",

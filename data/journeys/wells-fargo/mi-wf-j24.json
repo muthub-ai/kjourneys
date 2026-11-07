@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Send electronic invoice and reminders via Bill Manager (syncs with…",
    "customer_action": "Send electronic invoice and reminders via Bill Manager (syncs with accounting software)",
+   "action": "Send electronic invoice and reminders via Bill Manager (syncs with accounting software)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Customer authorizes; ACH debit collected",
    "customer_action": "Customer authorizes; ACH debit collected",
+   "action": "Customer authorizes; ACH debit collected",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,13 +128,14 @@
    "stage": "execute-track",
    "title": "Incoming ACH/wire routed by Perfect Receivables proxy numbers;…",
    "customer_action": null,
+   "action": "Incoming ACH/wire routed by Perfect Receivables proxy numbers; Integrated Receivables matches remittance and posts cash application file to ERP",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Integrated Receivables"
     }
    ],
-   "frontstage": "Incoming ACH/wire routed by Perfect Receivables proxy numbers; Integrated Receivables matches remittance and posts cash application file to ERP",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -150,7 +153,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,13 +173,14 @@
    "stage": "manage",
    "title": "Lockbox for paper; Electronic Receivables; Merchant Services for cards",
    "customer_action": null,
+   "action": "Lockbox for paper; Electronic Receivables; Merchant Services for cards",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Lockbox"
     }
    ],
-   "frontstage": "Lockbox for paper; Electronic Receivables; Merchant Services for cards",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -193,7 +197,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -212,13 +216,14 @@
    "stage": "exception",
    "title": "Exceptions in Tasks hub / Message Center",
    "customer_action": null,
+   "action": "Exceptions in Tasks hub / Message Center",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Vantage"
     }
    ],
-   "frontstage": "Exceptions in Tasks hub / Message Center",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -236,7 +241,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -256,6 +261,7 @@
    "stage": "support",
    "title": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for…",
    "customer_action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
+   "action": "Wells Fargo representative; 800-AT-WELLS (800-289-3557) for fraud/sign-on",
    "touchpoints": [
     {
      "channel": "phone",
@@ -346,7 +352,5 @@
  "bank_product": "WF-P15",
  "terms": {
   "limits": "Wire limits at company/account/user level"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

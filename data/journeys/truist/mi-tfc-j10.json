@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Online banking > self-enroll in Wire Services; register two…",
    "customer_action": "Online banking > self-enroll in Wire Services; register two authorization phone numbers",
+   "action": "Online banking > self-enroll in Wire Services; register two authorization phone numbers",
    "touchpoints": [
     {
      "channel": "web",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Add beneficiary: name, address, bank, SWIFT/BIC, IBAN/account;…",
    "customer_action": "Add beneficiary: name, address, bank, SWIFT/BIC, IBAN/account; intermediary bank if needed",
+   "action": "Add beneficiary: name, address, bank, SWIFT/BIC, IBAN/account; intermediary bank if needed",
    "touchpoints": [
     {
      "channel": "web",
@@ -142,6 +144,7 @@
    "stage": "initiate",
    "title": "Choose international (USD only per 2022 transition doc; current…",
    "customer_action": "Choose international (USD only per 2022 transition doc; current currency options unverified), amount, purpose, date (future-dated supported)",
+   "action": "Choose international (USD only per 2022 transition doc; current currency options unverified), amount, purpose, date (future-dated supported)",
    "touchpoints": [
     {
      "channel": "web",
@@ -204,6 +207,7 @@
    "stage": "review-authorize",
    "title": "Transaction validation: OTP / call / email / text to registered…",
    "customer_action": "Transaction validation: OTP / call / email / text to registered contact; optional dual validation procedures",
+   "action": "Transaction validation: OTP / call / email / text to registered contact; optional dual validation procedures",
    "touchpoints": [
     {
      "channel": "web",
@@ -282,6 +286,7 @@
    "stage": "execute-track",
    "title": "Processed until 6pm ET business days; quick confirmation report",
    "customer_action": null,
+   "action": "Processed until 6pm ET business days; quick confirmation report",
    "touchpoints": [
     {
      "channel": "web",
@@ -323,6 +328,21 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s007",
+      "src-truist-s008",
+      "src-truist-s013",
+      "src-truist-s906",
+      "src-truist-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -332,13 +352,14 @@
    "stage": "confirm-complete",
    "title": "Alerts for ACH/wire available to business users",
    "customer_action": null,
+   "action": "Alerts for ACH/wire available to business users",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Alerts for ACH/wire available to business users",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -355,7 +376,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -374,6 +395,7 @@
    "stage": "manage",
    "title": "Wire history; repetitive templates (Treasury platforms); OLB templates…",
    "customer_action": "Wire history; repetitive templates (Treasury platforms); OLB templates UNKNOWN",
+   "action": "Wire history; repetitive templates (Treasury platforms); OLB templates UNKNOWN",
    "touchpoints": [
     {
      "channel": "web",
@@ -416,6 +438,7 @@
    "stage": "exception",
    "title": "Returned wire $10, repair $10; recall not guaranteed; wire/ACH fraud…",
    "customer_action": "Returned wire $10, repair $10; recall not guaranteed; wire/ACH fraud line 800-774-8179; 30-day written error reporting for business",
+   "action": "Returned wire $10, repair $10; recall not guaranteed; wire/ACH fraud line 800-774-8179; 30-day written error reporting for business",
    "touchpoints": [
     {
      "channel": "phone",
@@ -484,6 +507,7 @@
    "stage": "support",
    "title": "888-228-6654 (OLB) / 844-4TRUIST",
    "customer_action": "888-228-6654 (OLB) / 844-4TRUIST",
+   "action": "888-228-6654 (OLB) / 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "phone",

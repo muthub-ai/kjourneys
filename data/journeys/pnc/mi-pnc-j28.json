@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Initiate RTP Credit Transfer (140-char remittance) or Request for…",
    "customer_action": "Initiate RTP Credit Transfer (140-char remittance) or Request for Payment via PINACLE Payments, API, or direct transmission; Intelligent Routing can select RTP automatically",
+   "action": "Initiate RTP Credit Transfer (140-char remittance) or Request for Payment via PINACLE Payments, API, or direct transmission; Intelligent Routing can select RTP automatically",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -104,13 +105,14 @@
    "stage": "review-authorize",
    "title": "Dual approval; real-time fraud screening on all outbound transactions",
    "customer_action": null,
+   "action": "Dual approval; real-time fraud screening on all outbound transactions",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Dual approval; real-time fraud screening on all outbound transactions",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -128,7 +130,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -148,13 +150,14 @@
    "stage": "execute-track",
    "title": "Irrevocable settlement via TCH RTP; Payment Acknowledgement within…",
    "customer_action": null,
+   "action": "Irrevocable settlement via TCH RTP; Payment Acknowledgement within seconds; Message Confirmation to both parties; RFP recipient may pay (credit transfer) or decline; RFI for reconciliation",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Irrevocable settlement via TCH RTP; Payment Acknowledgement within seconds; Message Confirmation to both parties; RFP recipient may pay (credit transfer) or decline; RFI for reconciliation",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -171,7 +174,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -190,13 +193,14 @@
    "stage": "confirm-complete",
    "title": "Sender notified when funds delivered; Remittance Advice supports auto…",
    "customer_action": null,
+   "action": "Sender notified when funds delivered; Remittance Advice supports auto cash application",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Sender notified when funds delivered; Remittance Advice supports auto cash application",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -213,7 +217,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -232,6 +236,7 @@
    "stage": "exception",
    "title": "Irrevocable; return request via RFI/RFP messaging or TMCC",
    "customer_action": "Irrevocable; return request via RFI/RFP messaging or TMCC",
+   "action": "Irrevocable; return request via RFI/RFP messaging or TMCC",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -274,6 +279,7 @@
    "stage": "support",
    "title": "TMCC 1-800-669-1518",
    "customer_action": "TMCC 1-800-669-1518",
+   "action": "TMCC 1-800-669-1518",
    "touchpoints": [
     {
      "channel": "phone",

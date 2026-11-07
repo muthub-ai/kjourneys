@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "New Payment > Wire Type (USD international / same-currency / USD-to-FX…",
    "customer_action": "New Payment > Wire Type (USD international / same-currency / USD-to-FX conversion / Canadian branch-Canlink); FX up to $1M USD-equivalent priced in portal, larger via Fifth Third Market Trade (eFX)",
+   "action": "New Payment > Wire Type (USD international / same-currency / USD-to-FX conversion / Canadian branch-Canlink); FX up to $1M USD-equivalent priced in portal, larger via Fifth Third Market Trade (eFX)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "review-authorize",
    "title": "Approval + token/OTP; international wires have additional requirements…",
    "customer_action": "Approval + token/OTP; international wires have additional requirements not in the basic guide",
+   "action": "Approval + token/OTP; international wires have additional requirements not in the basic guide",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "SWIFT via correspondent network (BIC FTBCUS3C); same-currency/FX settle…",
    "customer_action": null,
+   "action": "SWIFT via correspondent network (BIC FTBCUS3C); same-currency/FX settle next or two business days; IAT in USD to Canada/Mexico available",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payments"
     }
    ],
-   "frontstage": "SWIFT via correspondent network (BIC FTBCUS3C); same-currency/FX settle next or two business days; IAT in USD to Canada/Mexico available",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -153,7 +156,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -174,13 +177,14 @@
    "stage": "confirm-complete",
    "title": "Wire advices; SWIFT reporting MT940/MT942 for SWIFT clients",
    "customer_action": null,
+   "action": "Wire advices; SWIFT reporting MT940/MT942 for SWIFT clients",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Advices"
     }
    ],
-   "frontstage": "Wire advices; SWIFT reporting MT940/MT942 for SWIFT clients",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/SWIFT",
@@ -197,7 +201,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -216,13 +220,14 @@
    "stage": "exception",
    "title": "Discontinued currencies (CNY, CZK, ZAR, SGB, THB, ILS, PLN) only via…",
    "customer_action": null,
+   "action": "Discontinued currencies (CNY, CZK, ZAR, SGB, THB, ILS, PLN) only via Market Trade; recall/trace not public (no SWIFT gpi evidence)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Discontinued currencies (CNY, CZK, ZAR, SGB, THB, ILS, PLN) only via Market Trade; recall/trace not public (no SWIFT gpi evidence)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -239,7 +244,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -258,6 +263,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",
@@ -337,7 +343,5 @@
  "terms": {
   "limits": "FX in portal up to $1M",
   "cutoffs": "FX 4:30 p.m.; same-currency 3:00 p.m. ET"
- },
- "composite": "CJ-WIRE-INTL-CONSUMER-SEND",
- "composite_match": "rail"
+ }
 }

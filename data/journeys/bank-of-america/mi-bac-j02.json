@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Pay & Transfer > Zelle® > Request (mobile only; web does not support…",
    "customer_action": "Pay & Transfer > Zelle® > Request (mobile only; web does not support request/split)",
+   "action": "Pay & Transfer > Zelle® > Request (mobile only; web does not support request/split)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -101,6 +102,7 @@
    "stage": "set-up",
    "title": "Choose enrolled recipient(s) from list/search or scan their QR; for a…",
    "customer_action": "Choose enrolled recipient(s) from list/search or scan their QR; for a split tap 'Add Recipient' up to 10",
+   "action": "Choose enrolled recipient(s) from list/search or scan their QR; for a split tap 'Add Recipient' up to 10",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -154,6 +156,7 @@
    "stage": "initiate",
    "title": "Enter total; app splits automatically and allows per-person adjustment;…",
    "customer_action": "Enter total; app splits automatically and allows per-person adjustment; add memo",
+   "action": "Enter total; app splits automatically and allows per-person adjustment; add memo",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -196,6 +199,7 @@
    "stage": "review-authorize",
    "title": "Confirm the recipient is correct (name shown) and tap Request;…",
    "customer_action": "Confirm the recipient is correct (name shown) and tap Request; recipient receives a Zelle notification that payment was requested",
+   "action": "Confirm the recipient is correct (name shown) and tap Request; recipient receives a Zelle notification that payment was requested",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -240,13 +244,14 @@
    "stage": "execute-track",
    "title": "Outstanding requests appear under Payment Activity > Action Needed;…",
    "customer_action": null,
+   "action": "Outstanding requests appear under Payment Activity > Action Needed; recipient may pay, ignore or reject",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Payment Activity > Action Needed"
     }
    ],
-   "frontstage": "Outstanding requests appear under Payment Activity > Action Needed; recipient may pay, ignore or reject",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "Recipient notified by Zelle",
@@ -264,7 +269,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -284,13 +289,14 @@
    "stage": "confirm-complete",
    "title": "When paid, funds arrive in minutes; completed/expired/cancelled…",
    "customer_action": null,
+   "action": "When paid, funds arrive in minutes; completed/expired/cancelled requests move to History; email/text alert on receipt",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "History"
     }
    ],
-   "frontstage": "When paid, funds arrive in minutes; completed/expired/cancelled requests move to History; email/text alert on receipt",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/text",
@@ -307,7 +313,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -326,6 +332,7 @@
    "stage": "manage",
    "title": "Cancel an outstanding request; requests expire automatically after 14…",
    "customer_action": "Cancel an outstanding request; requests expire automatically after 14 days",
+   "action": "Cancel an outstanding request; requests expire automatically after 14 days",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -368,6 +375,7 @@
    "stage": "exception",
    "title": "Request ignored/rejected or expired: no funds; prohibited for debt…",
    "customer_action": "Request ignored/rejected or expired: no funds; prohibited for debt collection/court-ordered amounts",
+   "action": "Request ignored/rejected or expired: no funds; prohibited for debt collection/court-ordered amounts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -412,6 +420,7 @@
    "stage": "exception",
    "title": "Fraudulent incoming request (scam): customer should decline; report via…",
    "customer_action": "Fraudulent incoming request (scam): customer should decline; report via fraud line",
+   "action": "Fraudulent incoming request (scam): customer should decline; report via fraud line",
    "touchpoints": [
     {
      "channel": "phone",
@@ -456,6 +465,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -534,6 +544,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

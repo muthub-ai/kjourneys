@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Import a market-intelligence (MI) data workbook into kjourneys.
 
-  python3 tools/import_mi_workbook.py reports/<version> [--dry-run]
+  python3 tools/import_mi_workbook.py reports/<version> [--dry-run | --check] [--repin] [--replace]
+
+  --dry-run   read and check the workbook, print what would be written, write nothing
+  --check     regenerate everything in memory and fail if the repo differs (CI uses this: data/ must equal f(workbook))
+  --repin     accept report files whose sha256 no longer matches the manifest (only before first ingest)
+  --replace   allow replacing MI data imported from a different report version (v1 IDs are not version-scoped)
 
 Reads the workbook named in reports/<version>/manifest.json ("workbook"), verifies its sha256, and writes:
 
@@ -19,8 +24,18 @@ Reads the workbook named in reports/<version>/manifest.json ("workbook"), verifi
   reports/<version>/extract/<product>/<bank>.json   comparison facts, applied by tools/ingest_mi.py
 
 Each bank journey is linked to the composite (customer journey) it delivers. The workbook has no column for this, so the
-link is derived and labeled: "mi-reference" when MI's own composite steps or gaps cite the journey, "rail-segment" when rail
-and segment match, "rail" when only the rail matches (the closest best-practice journey). Journeys with no match stay unlinked.
+link is derived and labeled: "mi-reference" when MI's own composite steps or gaps cite the journey (the most-cited composite
+wins), otherwise "rail-segment" when rail and segment match (direction words in the title break ties). Journeys with no
+match stay unlinked rather than being forced onto a composite for another segment.
+
+Capability flags follow MI's own counting (CapabilityClasses sheet): only a literal "Yes" is true; "No", "None observed"
+and text starting "not evidenced" are false; any other text is unknown (kept as detail). Stage scores must be integers
+0-4 or U. ScoreTotals are kept as MI published them, alongside means and an index recomputed from the Scores sheet,
+with a warning where they differ. A finding keeps MI's stage (relative to the best-practice journey); when the bank step it
+sits on is in another stage, that stage is kept as step_stage.
+
+Writes are staged: every output is built in memory, applied to a scratch copy of the repo, assembled and validated
+there, and only then written to the repo. A failed import leaves the repo untouched.
 
 Everything is regenerated from the workbook on every run, so rerunning is safe; git keeps history.
 Comparison facts go through ingest, which keeps assertion history across report versions.
@@ -37,6 +52,7 @@ def jl(p): return json.load(open(os.path.join(ROOT, p)))
 def die(msg): sys.exit(f"IMPORT FAIL — {msg}")
 
 ap = argparse.ArgumentParser(); ap.add_argument("report_dir"); ap.add_argument("--dry-run", action="store_true")
+ap.add_argument("--check", action="store_true"); ap.add_argument("--repin", action="store_true"); ap.add_argument("--replace", action="store_true")
 args = ap.parse_args()
 rdir = os.path.abspath(args.report_dir); version = os.path.basename(rdir.rstrip("/"))
 mpath = os.path.join(rdir, "manifest.json")
@@ -49,6 +65,10 @@ if not os.path.isfile(wbpath): die(f"workbook {wbname} not found in {args.report
 listed = {f["path"]: f["sha256"] for f in man.get("files", [])}
 sha = hashlib.sha256(open(wbpath, "rb").read()).hexdigest()
 if wbname in listed and listed[wbname] != sha: die(f"{wbname} sha256 does not match the manifest — reports are immutable")
+changed = [f for f, h in listed.items() if os.path.isfile(os.path.join(rdir, f)) and hashlib.sha256(open(os.path.join(rdir, f), "rb").read()).hexdigest() != h]
+missing_files = [f for f in listed if not os.path.isfile(os.path.join(rdir, f))]
+if missing_files: die(f"report file(s) listed in the manifest are missing: {missing_files}")
+if changed and not args.repin: die(f"report file(s) changed since they were pinned: {changed}. Reports are immutable; deliver a new version (or --repin before first ingest)")
 
 try:
     import openpyxl
@@ -147,6 +167,10 @@ for r in X["Journeys"]:
     local = jid.lower(); urn = f"urn:kos:journey:{b}:{local}"; jurn[(b, jid)] = urn
     basis, conf = ev(r.get("Overall evidence") or "UNKNOWN")
     moments = []
+    nums = [st.get("Step #") for st in steps_by[(b, jid)]]
+    if any(not isinstance(x, (int, float)) or int(x) != x for x in nums): problems.append(f"{where}: a step has no integer Step #"); continue
+    if len(set(nums)) != len(nums): problems.append(f"{where}: duplicate Step # values"); continue
+    if sorted(int(x) for x in nums) != list(range(1, len(nums) + 1)): problems.append(f"{where}: Step # must run 1..{len(nums)} without gaps")
     for st in sorted(steps_by[(b, jid)], key=lambda x: x["Step #"]):
         n = int(st["Step #"]); code = f"M{n:02d}"; w = f"Steps {jid}#{n}"
         if st["Stage"] not in STAGE: problems.append(f"{w}: unknown stage {st['Stage']}"); continue
@@ -154,7 +178,8 @@ for r in X["Journeys"]:
         actor = str(st.get("Actor") or "CUSTOMER").lower().replace("_", "-")
         action = s(st.get("Action")) or ""
         is_customer = actor in ("customer", "recipient")
-        frontstage = s(st.get("System behavior")) or ("" if is_customer else action)
+        backstage = actor in ("bank-system", "network", "third-party")
+        frontstage = s(st.get("System behavior")) or ("" if is_customer or backstage else action)
         tps = [{"channel": CHANNEL.get(st.get("Channel"), "web"), "screen": s(st.get("Touchpoint"))}] if st.get("Channel") else []
         title = re.sub(r"\s+", " ", action)
         if len(title) > 72: title = title[:72].rsplit(" ", 1)[0] + "…"
@@ -164,8 +189,9 @@ for r in X["Journeys"]:
         if is_customer and action: evidence["action"] = a()
         if tps: evidence["touchpoint"] = a()
         if frontstage: evidence["frontstage"] = a()
+        if backstage and action: evidence["process"] = a()          # below the line of visibility: what the bank, network or third party does
         m = {"id": f"urn:kos:moment:{b}:{local}:{code.lower()}", "code": code, "stage": STAGE[st["Stage"]], "title": title or code,
-             "customer_action": action if is_customer else None, "touchpoints": tps, "frontstage": frontstage, "actor": actor,
+             "customer_action": action if is_customer else None, "action": action or None, "touchpoints": tps, "frontstage": frontstage, "actor": actor,
              "decision": s(st.get("Decision point")), "notification": s(st.get("Notification")), "source_step": n, "evidence": evidence}
         if s(st.get("Friction / pain point")):
             m["fail_points"] = [{"id": f"fp-{b}-{local}-{n}", "text": s(st["Friction / pain point"])}]; evidence["fail_points"] = a()
@@ -195,13 +221,24 @@ for r in X["Journeys"]:
 # ---------- findings, composites, observations, verifications, participation, rankings ----------
 jrail = {(r["bank_slug"], str(r["journey_id"])): r["Rail"] for r in X["Journeys"]}
 findings = defaultdict(list)
+moment_stage = {(j["bank"], j["source_journey_id"]): [m["stage"] for m in j["moments"]] for j in journeys.values()}
+restaged = 0
 for g in X["Gaps"]:
     b = g["bank_slug"]; w = f"Gaps {g['gap_id']}"
     if not bank_ok(b, w): continue
     jid = s(g.get("journey_id")); rail = s(g.get("Rail")) or jrail.get((b, jid))
     basis, _ = ev(g.get("Evidence") or "UNKNOWN")
+    if jid and (b, jid) not in jurn: problems.append(f"{w}: journey {jid} is not in the Journeys sheet")
+    step = int(g["Step #"]) if g.get("Step #") not in (None, "") else None
+    mi_stage = STAGE.get(g.get("Stage"))
+    if g.get("Stage") and not mi_stage: problems.append(f"{w}: unknown stage {g.get('Stage')}")
+    ms = moment_stage.get((b, jid), [])
+    if step is not None and jid and not 1 <= step <= len(ms): problems.append(f"{w}: step {step} is outside journey {jid} (1..{len(ms)})")
+    stage = ms[step - 1] if step and jid and 1 <= step <= len(ms) else mi_stage
+    if stage != mi_stage: restaged += 1
+    if g.get("Severity") and str(g["Severity"]).lower() not in ("critical", "high", "medium", "low"): problems.append(f"{w}: unknown severity {g['Severity']}")
     findings[b].append({"id": g["gap_id"], "bank": b, "journey": jurn.get((b, jid)) if jid else None, "product": RAIL.get(rail) if rail else None,
-        "stage": STAGE.get(g.get("Stage")), "step": int(g["Step #"]) if g.get("Step #") not in (None, "") else None,
+        "stage": mi_stage, "step": step, **({"step_stage": stage} if stage and stage != mi_stage else {}),
         "type": str(g["Gap type"]).lower().replace("_", "-"), "severity": str(g["Severity"]).lower(), "description": s(g["Description"]),
         "composite": s(g.get("Composite")), "composite_step": int(g["Composite step"]) if g.get("Composite step") not in (None, "") else None,
         "reference_banks": s(g.get("Reference bank(s)")), "basis": basis, "source_ids": [REPORT_SRC] + srcs(b, g.get("Sources"), w),
@@ -211,6 +248,7 @@ for c in X["Composites"]:
     if not rail_ok(c["Rail"], f"Composites {c['composite_id']}"): continue
     k = c["composite_id"]; comps[k].update({"id": k, "title": s(c["Title"]), "product": RAIL[c["Rail"]], "segment": s(c.get("Segment")),
                                             "direction": s(c.get("Direction")), "report_version": version})
+    if c["Stage"] not in STAGE: problems.append(f"Composites {k}#{c['Step #']}: unknown stage {c['Stage']}")
     comps[k]["steps"].append({"stage": STAGE.get(c["Stage"], "support"), "n": int(c["Step #"]), "action": s(c["Action"]) or "",
         "actor": s(c.get("Actor")), "channel": s(c.get("Channel")), "job_step": s(c.get("JTBD job step")), "moment_of_truth": s(c.get("Moment of truth")),
         "derived_from": s(c.get("Derived from (bank:journey#step)")), "rationale": s(c.get("Rationale"))})
@@ -228,23 +266,30 @@ crail = {k: next(r["Rail"] for r in X["Composites"] if r["composite_id"] == k) f
 for r in X["Journeys"]:
     b, jid = r["bank_slug"], str(r["journey_id"]); j = journeys.get((b, jid.lower()))
     if not j: continue
-    t = (s(r["Title"]) or "").lower(); seg = str(r.get("Segment") or ""); best = None
-    for k, c in comps.items():
-        ref = cref[(b, jid)].get(k, 0); rail = crail[k] == r["Rail"]; sg = (c.get("segment") or "") == seg
-        sc = ref + 2 * rail + sg + bool(re.search(DIRKW.get(c.get("direction") or "", "^$"), t)) + 2 * ("ebill" in k.lower() and bool(re.search("ebill|autopay", t)))
-        if best is None or sc > best[0]: best = (sc, k, rail, sg, ref)
-    if best and (best[2] or best[4] >= 2):
-        j["composite"] = best[1]
-        j["composite_match"] = "mi-reference" if best[4] else ("rail-segment" if best[3] else "rail")
+    t = (s(r["Title"]) or "").lower(); seg = str(r.get("Segment") or "")
+    refs = cref[(b, jid)]
+    if refs:                                                   # MI's own references decide; most-cited wins, ties → same rail, then id
+        k = sorted(refs, key=lambda c: (-refs[c], crail.get(c) != r["Rail"], (comps.get(c, {}).get("segment") or "") != seg, c))[0]
+        if len([c for c in refs if refs[c] == refs[k]]) > 1: warnings.append(f"Journeys {jid}: MI references tie between {sorted(c for c in refs if refs[c] == refs[k])}; chose {k}")
+        j["composite"], j["composite_match"] = k, "mi-reference"; continue
+    cands = [k for k, c in comps.items() if crail[k] == r["Rail"] and (c.get("segment") or "") == seg]
+    if not cands: continue                                     # no best-practice journey for this rail and segment: stays unlinked
+    def score(k):
+        c = comps[k]; return (bool(re.search(DIRKW.get(c.get("direction") or "", "^$"), t)) + 2 * ("ebill" in k.lower() and bool(re.search("ebill|autopay", t))), k)
+    k = sorted(cands, key=lambda k: (-score(k)[0], k))[0]
+    j["composite"], j["composite_match"] = k, "rail-segment"
 
 # ---------- catalog: products as marketed and their sub-products ----------
 caprow = {(c["bank_slug"], c["sub_product_id"]): c for c in X["Capabilities"]}
 FLAGLIST = list(FLAG_STAGE)
 def flag(v):
+    """MI's own counting (CapabilityClasses): only a literal Yes is true; other text is unknown, kept as detail"""
     v = s(v)
     if v is None: return None
     lv = v.lower()
-    return True if lv == "yes" else False if lv in ("no", "none observed", "none") else None if lv in ("unknown", "n/a", "na", "u") else True
+    if lv == "yes": return True
+    if lv in ("no", "none observed", "none") or lv.startswith("not evidenced"): return False
+    return None
 jby_sub = defaultdict(list)
 for j in journeys.values():
     if j.get("sub_product"): jby_sub[(j["bank"], j["sub_product"])].append(j["id"])
@@ -262,7 +307,7 @@ for pr in X["Products"]:
         if not rail_ok(sp["Rail"], w2): continue
         cr = caprow.get((b, sp["sub_product_id"]), {}); sb, sc = ev(sp.get("Evidence") or "UNKNOWN")
         caps = {f.replace("_", "-"): flag(cr.get(f)) for f in FLAGLIST}
-        detail = {f.replace("_", "-"): s(cr.get(f)) for f in FLAGLIST if s(cr.get(f)) and s(cr.get(f)).lower() not in ("yes", "no", "unknown", "n/a", "none observed")}
+        detail = {f.replace("_", "-"): s(cr.get(f)) for f in FLAGLIST if s(cr.get(f)) and s(cr.get(f)).lower() not in ("yes", "no", "unknown", "n/a", "none observed", "none")}
         subs.append({"id": s(sp["sub_product_id"]), "name": s(sp.get("Sub-product")) or s(sp["sub_product_id"]), "product": RAIL[sp["Rail"]],
                      "segments": [x.replace("_", "-") for x in split(sp.get("Segments"))], "channels": [CHANNEL.get(c, c.lower()) for c in split(sp.get("Channels"))],
                      "description": s(sp.get("Description")), "other_flags": s(sp.get("Other flags")), "notes": s(sp.get("Notes")),
@@ -288,6 +333,7 @@ for j in journeys.values():
 observations = defaultdict(list)
 for o in X["Observations"]:
     if bank_ok(o["bank_slug"], "Observations"):
+        if o["Type"] not in OBS: problems.append(f"Observations: unknown type {o['Type']}")
         observations[o["bank_slug"]].append({"bank": o["bank_slug"], "type": OBS.get(o["Type"], "open-question"), "text": s(o["Observation"]), "report_version": version})
 verifs = defaultdict(list)
 for v in X["Verification"]:
@@ -300,12 +346,26 @@ participation = [{"bank": p["bank_slug"], "network": str(p["Rail / network"]).re
                   "note": s(p.get("Scope note")), "basis": ev(p.get("Evidence") or "UNKNOWN")[0],
                   "source_ids": [REPORT_SRC] + srcs(p["bank_slug"], p.get("Sources"), "RailParticipation"), "report_version": version}
                  for p in X["RailParticipation"] if bank_ok(p["bank_slug"], "RailParticipation")]
+cell = defaultdict(list)                              # (bank, rail) -> stage scores, recomputed from the Scores sheet
+for r in X["Scores"]:
+    v = r["Score (0-4, U=unknown)"]
+    if isinstance(v, (int, float)) and float(v).is_integer() and 0 <= v <= 4 and r["Rail"] in RAIL: cell[(r["bank_slug"], RAIL[r["Rail"]])].append(int(v))
 rankings = []
 for r in X["ScoreTotals"]:
     if not bank_ok(r["bank_slug"], "ScoreTotals"): continue
     means = {RAIL[k.split(" mean")[0]]: v for k, v in r.items() if k.endswith("mean (0-4)") and k.split(" mean")[0] in RAIL}
-    rankings.append({"bank": r["bank_slug"], "rank": int(r["Rank"]), "overall_index": float(r["Overall index (0-100)"]),
-        "domestic_core_index": r.get("Domestic-core index"), "coverage": r.get("Scored cell coverage"), "rail_means": means, "report_version": version})
+    b = r["bank_slug"]; mine = {p: round(sum(v) / len(v), 2) for (bb, p), v in cell.items() if bb == b and v}
+    allv = [x for (bb, _), v in cell.items() if bb == b for x in v]
+    rankings.append({"bank": b, "rank": int(r["Rank"]), "overall_index": float(r["Overall index (0-100)"]),
+        "domestic_core_index": r.get("Domestic-core index"), "coverage": r.get("Scored cell coverage"), "rail_means": means, "report_version": version,
+        "x-computed": {"overall_index": round(sum(allv) / len(allv) * 25, 1) if allv else None, "rail_means": mine,
+                       "method": "mean of the bank's numeric stage scores on the Scores sheet × 25; rail means are the mean of that rail's stage scores; U excluded"}})
+order = sorted(rankings, key=lambda x: -(x["x-computed"]["overall_index"] or 0))
+for i, x in enumerate(order, 1): x["x-computed"]["rank"] = i
+diff_means = [(x["bank"], p) for x in rankings for p, v in x["rail_means"].items() if v is not None and p in x["x-computed"]["rail_means"] and abs(v - x["x-computed"]["rail_means"][p]) > 0.05]
+if diff_means: warnings.append(f"ScoreTotals: {len(diff_means)} bank × rail means differ from the mean of their Scores cells (e.g. {diff_means[0][0]} {diff_means[0][1]})")
+diff_idx = [x["bank"] for x in rankings if x["x-computed"]["overall_index"] is not None and abs(x["overall_index"] - x["x-computed"]["overall_index"]) > 0.5]
+if diff_idx: warnings.append(f"ScoreTotals: overall index differs from the Scores sheet by more than 0.5 points for {len(diff_idx)} of {len(rankings)} banks; the site shows both")
 
 # ---------- comparisons: questions + facts ----------
 caps_by = defaultdict(list)       # (bank, product) -> capability rows
@@ -334,9 +394,8 @@ def flag_value(v):
     if v is None: return None
     lv = v.lower()
     if lv == "yes": return (True, None)
-    if lv in ("no", "none observed", "none"): return (False, None)
-    if lv in ("unknown", "n/a", "na", "u"): return None
-    return (True, v)                                  # free-text detail means present, with detail
+    if lv in ("no", "none observed", "none") or lv.startswith("not evidenced"): return (False, None)
+    return None                                       # MI counts free text as unknown (CapabilityClasses); the text stays on the sub-product
 extracts = defaultdict(lambda: defaultdict(list))   # product -> bank -> facts
 for (b, p), rows in caps_by.items():
     for f in FLAGS:
@@ -357,8 +416,10 @@ for (b, p), rows in caps_by.items():
         extracts[p][b].append(fact)
 for (b, p), byst in scores_by.items():
     for st, r in byst.items():
-        sc = str(r["Score (0-4, U=unknown)"]).strip()
-        if sc.upper() == "U" or not sc.isdigit(): continue
+        raw = r["Score (0-4, U=unknown)"]; sc = str(raw).strip()
+        if sc.upper() == "U": continue
+        if isinstance(raw, float) and raw.is_integer(): sc = str(int(raw))
+        if not sc.isdigit() or not 0 <= int(sc) <= 4: problems.append(f"Scores {b}/{p}/{st}: score {raw!r} is not 0-4 or U"); continue
         basis, conf = ev(r.get("Evidence") or "UNKNOWN")
         extracts[p][b].append({"attribute": f"attr-score-{st}", "value": int(sc), "display": f"{sc} of 4", "basis": basis, "confidence": conf,
                                "observed_on": AS_OF, "source_ids": [], "evidence": {"quote": (s(r.get("Rationale")) or "")[:600], "report_ref": "Scores sheet",
@@ -374,64 +435,108 @@ summary = (f"{version}: {len(src_rows)} sources, {len(journeys)} journeys ({sum(
            f"{sum(map(len, verifs.values()))} verifications, {len(participation)} participation rows, {len(rankings)} rankings, "
            f"{len(cmp_products)} product comparisons, {sum(len(f) for bb in extracts.values() for f in bb.values())} comparison facts")
 print(summary)
+if restaged: warnings.append(f"Gaps: {restaged} findings are filed under a best-practice stage that differs from the stage of the bank step they sit on; that step's stage is kept as step_stage")
 for w in warnings: print(" warning:", w)
 if args.dry_run: print("dry run — nothing written"); sys.exit(0)
 
-# ---------- write ----------
-def jd(rel, o):
-    p = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(p), exist_ok=True); tmp = p + ".tmp"
-    with open(tmp, "w") as f: json.dump(o, f, ensure_ascii=False, indent=1); f.write("\n")
-    os.replace(tmp, p)
-sources = [x for x in jl("registries/sources.json") if not (x.get("report_version") == version and x.get("kind") != "mi-report")]
-primary_file = next((f for f in sorted(os.listdir(rdir)) if f.endswith(".html")), wbname)
+# ---------- plan every write (nothing touches the repo until the plan validates) ----------
+plan = {}                                  # repo-relative path -> object to write as JSON, or None to delete
+def put(rel, o): plan[rel] = o
+def drop(pattern):
+    for old in glob.glob(os.path.join(ROOT, pattern), recursive=True):
+        rel = os.path.relpath(old, ROOT)
+        if rel not in plan: plan[rel] = None
+others = sorted({json.load(open(f)).get("report_version") for f in glob.glob(os.path.join(ROOT, "data/journeys/*/mi-*.json"))} - {version, None})
+if others and not args.replace:
+    die(f"MI data from {others} is already imported. MI IDs (journeys, sources, findings) are not version-scoped yet, so a second "
+        f"version replaces the first: rerun with --replace once that is intended")
+rel_report = os.path.relpath(rdir, ROOT)
+sources = [x for x in jl("registries/sources.json") if not (x.get("report_version") == version and x.get("kind") != "mi-report") and x["id"] != REPORT_SRC]
 report_source = {"id": REPORT_SRC, "kind": "mi-report", "title": man.get("title") or f"Market-intelligence report {version}",
-                 "origin": man.get("produced_by", MI), "url": None, "retrieved_at": received, "path": f"reports/{version}/{primary_file}",
-                 "sha256": hashlib.sha256(open(os.path.join(rdir, primary_file), "rb").read()).hexdigest(), "report_version": version}
-sources = [x for x in sources if x["id"] != REPORT_SRC]
-jd("registries/sources.json", sources + [report_source] + list(src_rows.values()))
-for old in glob.glob(os.path.join(ROOT, "data/journeys/*/mi-*.json")): os.remove(old)
-for (b, local), j in journeys.items(): jd(f"data/journeys/{b}/mi-{local}.json", j)
+                 "origin": man.get("produced_by", MI), "url": None, "retrieved_at": received, "path": f"{rel_report}/{wbname}",
+                 "sha256": sha, "report_version": version}       # the workbook is the canonical deliverable every MI record cites
+put("registries/sources.json", sources + [report_source] + list(src_rows.values()))
+drop("data/journeys/*/mi-*.json")
+for (b, local), j in journeys.items(): put(f"data/journeys/{b}/mi-{local}.json", j)
 mi_urns = {j["id"] for j in journeys.values()}
-for p in products:
-    p["journeys"] = [u for u in p.get("journeys", []) if u not in mi_urns and not re.search(r":[a-z0-9]+-j\d+$", u)]
-    p["journeys"] += sorted(j["id"] for j in journeys.values() if j["product"] == p["id"])
-jd("registries/products.json", products)
+for pr in products:
+    pr["journeys"] = [u for u in pr.get("journeys", []) if u not in mi_urns and not re.search(r":[a-z0-9]+-j\d+$", u)]
+    pr["journeys"] += sorted(j["id"] for j in journeys.values() if j["product"] == pr["id"])
+put("registries/products.json", products)
 for folder, data in [("catalog", catalog), ("findings", findings), ("observations", observations), ("verifications", verifs), ("composites", by_product_comp)]:
-    for old in glob.glob(os.path.join(ROOT, f"data/{folder}/*.json")): os.remove(old)
-    for k, v in data.items(): jd(f"data/{folder}/{k}.json", v)
-jd("data/participation.json", participation)
-jd("data/rankings.json", sorted(rankings, key=lambda r: r["rank"]))
+    drop(f"data/{folder}/*.json")
+    for k, v in data.items(): put(f"data/{folder}/{k}.json", v)
+put("data/participation.json", participation)
+put("data/rankings.json", sorted(rankings, key=lambda r: r["rank"]))
 pf = jl("data/portfolio.json")
-for p in cmp_products:
-    cpath = f"data/comparisons/{p}/comparison.json"
-    attrs = attributes_for(p)
-    comp = jl(cpath) if os.path.exists(os.path.join(ROOT, cpath)) else {"product": p, "governance": gov, "attributes": []}
-    have = {a["id"] for a in comp["attributes"]}; comp["attributes"] += [a for a in attrs if a["id"] not in have]
-    jd(cpath, comp)
+for pid in cmp_products:
+    cpath = f"data/comparisons/{pid}/comparison.json"
+    comp = jl(cpath) if os.path.exists(os.path.join(ROOT, cpath)) else {"product": pid, "governance": gov, "attributes": []}
+    have = {a["id"] for a in comp["attributes"]}; comp["attributes"] += [a for a in attributes_for(pid) if a["id"] not in have]
+    put(cpath, comp)
     for b in pf["banks"]:
-        vp = f"data/comparisons/{p}/values/{b}.json"
-        vf = jl(vp) if os.path.exists(os.path.join(ROOT, vp)) else {"bank": b, "product": p, "values": {}}
+        vp = f"data/comparisons/{pid}/values/{b}.json"
+        vf = jl(vp) if os.path.exists(os.path.join(ROOT, vp)) else {"bank": b, "product": pid, "values": {}}
         for a in comp["attributes"]:
             vf["values"].setdefault(a["id"], [{"basis": "awaiting", "source_ids": [], "asserted_by": None, "asserted_at": None, "observed_on": None,
-                "valid_to": None, "verified_by": None, "verified_at": None, "id": f"urn:kos:assertion:{b}:{p}:{a['id'][5:]}:1"}])
-        jd(vp, vf)
-xdir = os.path.join(rdir, "extract"); shutil.rmtree(xdir, ignore_errors=True)
-for p, banks in extracts.items():
-    for b, facts in banks.items():
-        os.makedirs(os.path.join(xdir, p), exist_ok=True)
-        json.dump({"bank": b, "product": p, "facts": facts}, open(os.path.join(xdir, p, f"{b}.json"), "w"), ensure_ascii=False, indent=1)
-# finalize the manifest: every deliverable checksum-pinned, products listed
+                "valid_to": None, "verified_by": None, "verified_at": None, "id": f"urn:kos:assertion:{b}:{pid}:{a['id'][5:]}:1"}])
+        put(vp, vf)
+drop(f"{rel_report}/extract/**/*.json")
+for pid, banks in extracts.items():
+    for b, facts in banks.items(): put(f"{rel_report}/extract/{pid}/{b}.json", {"bank": b, "product": pid, "facts": facts})
 files = []
 for f in sorted(os.listdir(rdir)):
     fp = os.path.join(rdir, f)
     if os.path.isfile(fp) and f != "manifest.json":
-        kind = "data" if f.endswith(".xlsx") else "report"
-        files.append({"path": f, "sha256": hashlib.sha256(open(fp, "rb").read()).hexdigest(), "kind": kind})
-primary = [f for f in files if f["path"].endswith(".html")] + [f for f in files if not f["path"].endswith(".html")]
-man.update({"products": sorted(extracts), "workbook": wbname, "files": primary})
+        files.append({"path": f, "sha256": listed.get(f) if f in listed and not args.repin else hashlib.sha256(open(fp, "rb").read()).hexdigest(),
+                      "kind": "data" if f.endswith(".xlsx") else "report"})
+files = [f for f in files if f["path"] == wbname] + [f for f in files if f["path"] != wbname]   # canonical file first: ingest cites it
+man.update({"products": sorted(extracts), "workbook": wbname, "files": files})
 man.pop("product", None)
 man["notes"] = "Imported with tools/import_mi_workbook.py; " + summary
 if warnings: man["import_warnings"] = warnings
 else: man.pop("import_warnings", None)
-json.dump(man, open(mpath, "w"), ensure_ascii=False, indent=2); open(mpath, "a").write("\n")
-print("written — now run: scripts/refresh.sh " + os.path.relpath(rdir, ROOT))
+put(f"{rel_report}/manifest.json", man)
+
+def dump(rel, o):
+    return json.dumps(o, ensure_ascii=False, indent=2 if rel.endswith("manifest.json") else 1) + "\n"
+def differs(rel, o):
+    p = os.path.join(ROOT, rel)
+    if o is None: return os.path.exists(p)
+    if not os.path.exists(p): return True
+    norm = (lambda x: sorted(x, key=lambda y: y["id"])) if rel == "registries/sources.json" else (lambda x: x)   # ingest re-appends the report source
+    try: return norm(json.load(open(p))) != norm(json.loads(dump(rel, o)))
+    except ValueError: return True
+if args.check:
+    bad = sorted(rel for rel, o in plan.items() if differs(rel, o))
+    if bad: print(f"CHECK FAIL — {len(bad)} file(s) differ from what the workbook produces:"); [print(" -", x) for x in bad[:30]]; sys.exit(1)
+    print("check ok — data matches the workbook"); sys.exit(0)
+
+# stage in a scratch copy, assemble and validate there, then write for real
+import subprocess, tempfile
+tmp = tempfile.mkdtemp(prefix="kjourneys-import-")
+try:
+    shutil.copytree(ROOT, tmp, dirs_exist_ok=True, ignore=shutil.ignore_patterns(".git", "dist", "fixtures", "__pycache__"))
+    for rel, o in plan.items():
+        p = os.path.join(tmp, rel)
+        if o is None:
+            if os.path.exists(p): os.remove(p)
+        else:
+            os.makedirs(os.path.dirname(p), exist_ok=True); open(p, "w").write(dump(rel, o))
+    for cmd in (["python3", "tools/assemble.py"], ["python3", "tools/validate_journey.py", "dist/kjourneys.json", "schema/journey-ontology.schema.json"]):
+        r = subprocess.run(cmd, cwd=tmp, capture_output=True, text=True)
+        if r.returncode:
+            print("IMPORT FAIL — the imported data does not validate; nothing was written to the repo"); print((r.stdout + r.stderr)[-4000:]); sys.exit(1)
+finally:
+    shutil.rmtree(tmp, ignore_errors=True)
+for rel, o in plan.items():
+    p = os.path.join(ROOT, rel)
+    if o is None:
+        if os.path.exists(p): os.remove(p)
+        continue
+    os.makedirs(os.path.dirname(p), exist_ok=True); t = p + ".tmp"
+    with open(t, "w") as f: f.write(dump(rel, o))
+    os.replace(t, p)
+for d0 in glob.glob(os.path.join(rdir, "extract", "*")):
+    if os.path.isdir(d0) and not os.listdir(d0): os.rmdir(d0)
+print("written — validated before writing. Now run: scripts/refresh.sh " + rel_report)

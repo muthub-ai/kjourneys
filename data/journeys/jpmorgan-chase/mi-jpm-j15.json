@@ -42,13 +42,14 @@
    "stage": "discover",
    "title": "Payment Center comparison shows 'Real-time payment' (moments, 1% max…",
    "customer_action": null,
+   "action": "Payment Center comparison shows 'Real-time payment' (moments, 1% max $25, not reversible)",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment Center"
     }
    ],
-   "frontstage": "Payment Center comparison shows 'Real-time payment' (moments, 1% max $25, not reversible)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -65,7 +66,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Enrollment in ACH Payment Services covers all three delivery methods;…",
    "customer_action": "Enrollment in ACH Payment Services covers all three delivery methods; Company Activation tab shows Approved / Denied / Activate per company; payee must bank at an institution reachable on the RTP network ('60% of accounts can receive Real-Time Payments' per Chase's Feb 2026 guide).",
+   "action": "Enrollment in ACH Payment Services covers all three delivery methods; Company Activation tab shows Approved / Denied / Activate per company; payee must bank at an institution reachable on the RTP network ('60% of accounts can receive Real-Time Payments' per Chase's Feb 2026 guide).",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Select payees (mixed Standard/Same-Day/Real-Time allowed) > 'Schedule…",
    "customer_action": "Select payees (mixed Standard/Same-Day/Real-Time allowed) > 'Schedule payments' > choose 'Pay from account', 'Delivery method' = Real-Time, 'Deliver by date', 'Amount', optional 'Addendum line' > 'Schedule payments' > confirmation.",
+   "action": "Select payees (mixed Standard/Same-Day/Real-Time allowed) > 'Schedule payments' > choose 'Pay from account', 'Delivery method' = Real-Time, 'Deliver by date', 'Amount', optional 'Addendum line' > 'Schedule payments' > confirmation.",
    "touchpoints": [
     {
      "channel": "web",
@@ -181,6 +184,7 @@
    "stage": "review-authorize",
    "title": "Review; Chase Dual Control approval if enabled; processing begins after…",
    "customer_action": "Review; Chase Dual Control approval if enabled; processing begins after approval and cannot be cancelled",
+   "action": "Review; Chase Dual Control approval if enabled; processing begins after approval and cannot be cancelled",
    "touchpoints": [
     {
      "channel": "web",
@@ -234,13 +238,14 @@
    "stage": "execute-track",
    "title": "Settles 'within moments' over 'the RTP network managed by The Clearing…",
    "customer_action": null,
+   "action": "Settles 'within moments' over 'the RTP network managed by The Clearing House' (Chase's Feb 2026 Connect ACH guide); cutoff Midnight ET; $25,000 per transaction; typically completes within 15 seconds (DSA); sender is notified if the transfer fails, receiver is not. FedNow is not named in the Connect/Chase Business Online product guide.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment activity"
     }
    ],
-   "frontstage": "Settles 'within moments' over 'the RTP network managed by The Clearing House' (Chase's Feb 2026 Connect ACH guide); cutoff Midnight ET; $25,000 per transaction; typically completes within 15 seconds (DSA); sender is notified if the transfer fails, receiver is not. FedNow is not named in the Connect/Chase Business Online product guide.",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -258,7 +263,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -278,13 +283,14 @@
    "stage": "confirm-complete",
    "title": "Status 'Paid'/'Completed'; alert",
    "customer_action": null,
+   "action": "Status 'Paid'/'Completed'; alert",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Alerts"
     }
    ],
-   "frontstage": "Status 'Paid'/'Completed'; alert",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -301,7 +307,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -320,6 +326,7 @@
    "stage": "manage",
    "title": "No cancel/reversal; history 13 months",
    "customer_action": "No cancel/reversal; history 13 months",
+   "action": "No cancel/reversal; history 13 months",
    "touchpoints": [
     {
      "channel": "web",
@@ -364,13 +371,14 @@
    "stage": "exception",
    "title": "Failure reasons (DSA): insufficient funds, risk/compliance review,…",
    "customer_action": null,
+   "action": "Failure reasons (DSA): insufficient funds, risk/compliance review, receiver rejects or declines real-time transfers, limit exceeded, receiver account closed/invalid/ineligible or monitored, sender account monitored, service unavailable; 'If you are the Sender, we will notify you if a Service Transfer fails.' Return request (not guaranteed): call 877-CHASEPC (877-242-7372). Statuses 'Rejected'/'Failed' in Payment activity.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment activity"
     }
    ],
-   "frontstage": "Failure reasons (DSA): insufficient funds, risk/compliance review, receiver rejects or declines real-time transfers, limit exceeded, receiver account closed/invalid/ineligible or monitored, sender account monitored, service unavailable; 'If you are the Sender, we will notify you if a Service Transfer fails.' Return request (not guaranteed): call 877-CHASEPC (877-242-7372). Statuses 'Rejected'/'Failed' in Payment activity.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -387,7 +395,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -406,6 +414,7 @@
    "stage": "support",
    "title": "Business support line",
    "customer_action": "Business support line",
+   "action": "Business support line",
    "touchpoints": [
     {
      "channel": "phone",

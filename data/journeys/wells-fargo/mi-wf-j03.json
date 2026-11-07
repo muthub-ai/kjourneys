@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Business Online / app: 'Zelle® for your business' — 'Share your unique…",
    "customer_action": "Business Online / app: 'Zelle® for your business' — 'Share your unique Zelle® tag', 'Show your QR code'",
+   "action": "Business Online / app: 'Zelle® for your business' — 'Share your unique Zelle® tag', 'Show your QR code'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -98,6 +99,7 @@
    "stage": "set-up",
    "title": "Enroll business account (must link to eligible small business account,…",
    "customer_action": "Enroll business account (must link to eligible small business account, not personal); choose email/U.S. mobile; create Zelle tag (small-business-only feature)",
+   "action": "Enroll business account (must link to eligible small business account, not personal); choose email/U.S. mobile; create Zelle tag (small-business-only feature)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -157,6 +159,7 @@
    "stage": "set-up",
    "title": "Display QR code (shows business name + identifier) for customers to scan",
    "customer_action": "Display QR code (shows business name + identifier) for customers to scan",
+   "action": "Display QR code (shows business name + identifier) for customers to scan",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -213,6 +216,7 @@
    "stage": "initiate",
    "title": "To pay a vendor: Send > choose recipient > amount > funding account",
    "customer_action": "To pay a vendor: Send > choose recipient > amount > funding account",
+   "action": "To pay a vendor: Send > choose recipient > amount > funding account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -269,6 +273,7 @@
    "stage": "review-authorize",
    "title": "Review; access code for first-time recipient (text or SecurID)",
    "customer_action": "Review; access code for first-time recipient (text or SecurID)",
+   "action": "Review; access code for first-time recipient (text or SecurID)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -343,6 +348,7 @@
    "stage": "execute-track",
    "title": "Payments in minutes; inbound customer payments land directly in…",
    "customer_action": null,
+   "action": "Payments in minutes; inbound customer payments land directly in business account; Zelle® Activity",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -378,6 +384,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s034"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -387,6 +405,7 @@
    "stage": "confirm-complete",
    "title": "Email/text notification of receipt",
    "customer_action": null,
+   "action": "Email/text notification of receipt",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -422,6 +441,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s005",
+      "src-wells-fargo-s034"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -431,6 +462,7 @@
    "stage": "manage",
    "title": "Manage tags/identifiers; block contacts",
    "customer_action": "Manage tags/identifiers; block contacts",
+   "action": "Manage tags/identifiers; block contacts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -484,6 +516,7 @@
    "stage": "exception",
    "title": "Commercial (non-small-business) accounts cannot receive Zelle; Reg E…",
    "customer_action": null,
+   "action": "Commercial (non-small-business) accounts cannot receive Zelle; Reg E does not apply to business accounts",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -517,6 +550,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s019"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -526,6 +570,7 @@
    "stage": "support",
    "title": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View…",
    "customer_action": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View Zelle transactions')",
+   "action": "Customer checks Zelle FAQs / 'Zelle® Activity' or asks Fargo ('View Zelle transactions')",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -582,6 +627,7 @@
    "stage": "support",
    "title": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442…",
    "customer_action": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442 (24/7) for missing payments or suspected scams; fraud line 1-866-867-5568 for unauthorized Zelle",
+   "action": "Customer calls Wells Fargo Online Customer Service 1-800-956-4442 (24/7) for missing payments or suspected scams; fraud line 1-866-867-5568 for unauthorized Zelle",
    "touchpoints": [
     {
      "channel": "phone",
@@ -638,6 +684,7 @@
    "stage": "support",
    "title": "Customer can report via 'Report fraud' page or secure Message Center",
    "customer_action": "Customer can report via 'Report fraud' page or secure Message Center",
+   "action": "Customer can report via 'Report fraud' page or secure Message Center",
    "touchpoints": [
     {
      "channel": "web",

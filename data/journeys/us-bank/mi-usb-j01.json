@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer opens Transfer & pay from the app dashboard and sees 'Send &…",
    "customer_action": "Customer opens Transfer & pay from the app dashboard and sees 'Send & request money with Zelle®'",
+   "action": "Customer opens Transfer & pay from the app dashboard and sees 'Send & request money with Zelle®'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -104,6 +105,7 @@
    "stage": "discover",
    "title": "Customer may instead say/type 'Send 200 bucks to Tony' to Smart…",
    "customer_action": "Customer may instead say/type 'Send 200 bucks to Tony' to Smart Assistant",
+   "action": "Customer may instead say/type 'Send 200 bucks to Tony' to Smart Assistant",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -157,6 +159,7 @@
    "stage": "set-up",
    "title": "First-time: choose U.S. mobile number or email tied to the account,…",
    "customer_action": "First-time: choose U.S. mobile number or email tied to the account, Continue; choose checking/savings to link; review confirmation; Done",
+   "action": "First-time: choose U.S. mobile number or email tied to the account, Continue; choose checking/savings to link; review confirmation; Done",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -235,6 +238,7 @@
    "stage": "set-up",
    "title": "Add recipient: Manage recipients > Add new recipient (toggle for…",
    "customer_action": "Add recipient: Manage recipients > Add new recipient (toggle for business), first/last name, email or mobile; Add recipient — or add inline at Send",
+   "action": "Add recipient: Manage recipients > Add new recipient (toggle for business), first/last name, email or mobile; Add recipient — or add inline at Send",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -297,6 +301,7 @@
    "stage": "initiate",
    "title": "Select Send money, pick recipient (email / mobile / Zelle tag for…",
    "customer_action": "Select Send money, pick recipient (email / mobile / Zelle tag for business)",
+   "action": "Select Send money, pick recipient (email / mobile / Zelle tag for business)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -353,6 +358,7 @@
    "stage": "initiate",
    "title": "Enter amount; optional memo; choose from-account; optional future date…",
    "customer_action": "Enter amount; optional memo; choose from-account; optional future date via calendar icon; optional 'Repeat this payment'; select Review",
+   "action": "Enter amount; optional memo; choose from-account; optional future date via calendar icon; optional 'Repeat this payment'; select Review",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -431,6 +437,7 @@
    "stage": "review-authorize",
    "title": "Review details on the 'Review before sending.' screen and select 'Send…",
    "customer_action": "Review details on the 'Review before sending.' screen and select 'Send $X'; a 'Keep your money safe.' scam warning follows, where the customer ticks 'I understand that once my payment is sent, it can't be canceled.'",
+   "action": "Review details on the 'Review before sending.' screen and select 'Send $X'; a 'Keep your money safe.' scam warning follows, where the customer ticks 'I understand that once my payment is sent, it can't be canceled.'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -487,6 +494,7 @@
    "stage": "review-authorize",
    "title": "Second warning screen ('Warning screen displays with a message to be…",
    "customer_action": "Second warning screen ('Warning screen displays with a message to be aware of fraud') – customer selects 'Continue' to release the payment",
+   "action": "Second warning screen ('Warning screen displays with a message to be aware of fraud') – customer selects 'Continue' to release the payment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -557,6 +565,7 @@
    "stage": "review-authorize",
    "title": "If prompted, enter one-time passcode sent to registered cellular device",
    "customer_action": "If prompted, enter one-time passcode sent to registered cellular device",
+   "action": "If prompted, enter one-time passcode sent to registered cellular device",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -613,6 +622,7 @@
    "stage": "execute-track",
    "title": "Payment sent to Zelle network; enrolled recipients typically receive…",
    "customer_action": null,
+   "action": "Payment sent to Zelle network; enrolled recipients typically receive within minutes",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -650,6 +660,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s030",
+      "src-us-bank-s029",
+      "src-us-bank-s032"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -659,6 +682,7 @@
    "stage": "confirm-complete",
    "title": "Sender receives email (and optional push/text) that payment was sent…",
    "customer_action": null,
+   "action": "Sender receives email (and optional push/text) that payment was sent and later delivered; recipient notified by their own FI by text or email",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -686,6 +710,20 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s026",
+      "src-us-bank-s027",
+      "src-us-bank-s028",
+      "src-us-bank-s901"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -727,6 +765,7 @@
    "stage": "manage",
    "title": "View Activity (90 days default, 18 months searchable); cancel pending…",
    "customer_action": "View Activity (90 days default, 18 months searchable); cancel pending payment to un-enrolled recipient via Activity > Pending payments > Cancel payment > Yes, cancel; edit = cancel and re-create",
+   "action": "View Activity (90 days default, 18 months searchable); cancel pending payment to un-enrolled recipient via Activity > Pending payments > Cancel payment > Yes, cancel; edit = cancel and re-create",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -801,6 +840,7 @@
    "stage": "manage",
    "title": "Edit/cancel recurring: Activity > Scheduled tab > Edit payment / Cancel…",
    "customer_action": "Edit/cancel recurring: Activity > Scheduled tab > Edit payment / Cancel payment > next payment or series",
+   "action": "Edit/cancel recurring: Activity > Scheduled tab > Edit payment / Cancel payment > next payment or series",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -843,6 +883,7 @@
    "stage": "exception",
    "title": "Recipient never enrolls: payment expires after 14 days, refunded within…",
    "customer_action": null,
+   "action": "Recipient never enrolls: payment expires after 14 days, refunded within up to 3 business days; both parties notified",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -876,6 +917,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s015"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -885,6 +937,7 @@
    "stage": "exception",
    "title": "Wrong recipient/amount: cancel if un-enrolled; otherwise ask recipient…",
    "customer_action": "Wrong recipient/amount: cancel if un-enrolled; otherwise ask recipient to return or call 800-USBANKS to file a dispute (recipient's bank decides)",
+   "action": "Wrong recipient/amount: cancel if un-enrolled; otherwise ask recipient to return or call 800-USBANKS to file a dispute (recipient's bank decides)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -959,6 +1012,7 @@
    "stage": "exception",
    "title": "Scam (authorized push payment): call 800-USBANKS (Zelle support / Zelle…",
    "customer_action": "Scam (authorized push payment): call 800-USBANKS (Zelle support / Zelle for business pages) or the Fraud Liaison Center 877-595-6256 (scam guidance page); 'qualifying imposter scams may be eligible for reimbursement' but 'neither Zelle nor U.S. Bank offers a protection program for any authorized payments'",
+   "action": "Scam (authorized push payment): call 800-USBANKS (Zelle support / Zelle for business pages) or the Fraud Liaison Center 877-595-6256 (scam guidance page); 'qualifying imposter scams may be eligible for reimbursement' but 'neither Zelle nor U.S. Bank offers a protection program for any authorized payments'",
    "touchpoints": [
     {
      "channel": "phone",
@@ -1041,6 +1095,7 @@
    "stage": "exception",
    "title": "Unauthorized Zelle transaction: covered by Digital Security Coverage if…",
    "customer_action": "Unauthorized Zelle transaction: covered by Digital Security Coverage if reported promptly (within 60 days of statement)",
+   "action": "Unauthorized Zelle transaction: covered by Digital Security Coverage if reported promptly (within 60 days of statement)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -1094,6 +1149,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -1168,6 +1224,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Customer enrolls a participating biller in eBills from Bill Pay…",
    "customer_action": "Customer enrolls a participating biller in eBills from Bill Pay ('Enroll in eBills' tutorial)",
+   "action": "Customer enrolls a participating biller in eBills from Bill Pay ('Enroll in eBills' tutorial)",
    "touchpoints": [
     {
      "channel": "web",
@@ -95,6 +96,7 @@
    "stage": "initiate",
    "title": "Customer sets up AutoPay for the biller ('Set up one-time payments and…",
    "customer_action": "Customer sets up AutoPay for the biller ('Set up one-time payments and AutoPay' tutorial) — amount rule and timing",
+   "action": "Customer sets up AutoPay for the biller ('Set up one-time payments and AutoPay' tutorial) — amount rule and timing",
    "touchpoints": [
     {
      "channel": "web",
@@ -157,6 +159,7 @@
    "stage": "review-authorize",
    "title": "Confirm AutoPay rule",
    "customer_action": "Confirm AutoPay rule",
+   "action": "Confirm AutoPay rule",
    "touchpoints": [
     {
      "channel": "web",
@@ -199,13 +202,14 @@
    "stage": "execute-track",
    "title": "Payments generated automatically on schedule; upcoming bills visible",
    "customer_action": null,
+   "action": "Payments generated automatically on schedule; upcoming bills visible",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Bill Pay > Upcoming"
     }
    ],
-   "frontstage": "Payments generated automatically on schedule; upcoming bills visible",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email alert on new eBill",
@@ -222,7 +226,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -241,13 +245,14 @@
    "stage": "confirm-complete",
    "title": "Paid bills in history",
    "customer_action": null,
+   "action": "Paid bills in history",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "History"
     }
    ],
-   "frontstage": "Paid bills in history",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -264,7 +269,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -283,6 +288,7 @@
    "stage": "manage",
    "title": "To change a recurring payment TD suggests cancelling the entire series…",
    "customer_action": "To change a recurring payment TD suggests cancelling the entire series and creating a new one",
+   "action": "To change a recurring payment TD suggests cancelling the entire series and creating a new one",
    "touchpoints": [
     {
      "channel": "web",
@@ -342,6 +348,7 @@
    "stage": "exception",
    "title": "Disputed eBill amount: customer must act before AutoPay date; process…",
    "customer_action": "Disputed eBill amount: customer must act before AutoPay date; process undocumented",
+   "action": "Disputed eBill amount: customer must act before AutoPay date; process undocumented",
    "touchpoints": [
     {
      "channel": "web",
@@ -382,6 +389,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -452,6 +460,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

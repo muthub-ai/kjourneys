@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap Deposit / check-deposit widget on home screen",
    "customer_action": "Tap Deposit / check-deposit widget on home screen",
+   "action": "Tap Deposit / check-deposit widget on home screen",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "From the main menu tap Deposits; endorse the check (sign, then write…",
    "customer_action": "From the main menu tap Deposits; endorse the check (sign, then write 'For deposit only at Truist' under the signature — troubleshooting FAQ also says to add the deposit date); select the account receiving the deposit; enter the check amount; when prompted take photos of the front and back (dark background, all four corners in frame); select Continue. One check per deposit; current daily/monthly limits shown on the Deposits tab.",
+   "action": "From the main menu tap Deposits; endorse the check (sign, then write 'For deposit only at Truist' under the signature — troubleshooting FAQ also says to add the deposit date); select the account receiving the deposit; enter the check amount; when prompted take photos of the front and back (dark background, all four corners in frame); select Continue. One check per deposit; current daily/monthly limits shown on the Deposits tab.",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -166,6 +168,7 @@
    "stage": "review-authorize",
    "title": "If offered, choose Immediate Availability and accept disclosed fee (2%…",
    "customer_action": "If offered, choose Immediate Availability and accept disclosed fee (2% ≥$100 / $1 <$100; one check per transaction; ≥$5)",
+   "action": "If offered, choose Immediate Availability and accept disclosed fee (2% ≥$100 / $1 <$100; one check per transaction; ≥$5)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -256,6 +259,7 @@
    "stage": "execute-track",
    "title": "Deposits by 9pm ET Mon–Fri count same banking day; standard funds next…",
    "customer_action": null,
+   "action": "Deposits by 9pm ET Mon–Fri count same banking day; standard funds next business day unless hold; deposit history (24 months)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -285,6 +289,22 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s009",
+      "src-truist-s037",
+      "src-truist-s054",
+      "src-truist-s058",
+      "src-truist-s902",
+      "src-truist-s907"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -330,6 +350,7 @@
    "stage": "confirm-complete",
    "title": "On-screen confirmation; deposit alerts channel UNKNOWN",
    "customer_action": null,
+   "action": "On-screen confirmation; deposit alerts channel UNKNOWN",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -367,6 +388,19 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-truist-s002",
+      "src-truist-s907",
+      "src-truist-s922"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -376,6 +410,7 @@
    "stage": "manage",
    "title": "View deposit history (24 months); retain the paper check — FAQ: 'Secure…",
    "customer_action": "View deposit history (24 months); retain the paper check — FAQ: 'Secure and properly destroy your check ten business days after your deposit is confirmed'; agreement minimum: retain at least 7 calendar days from image transmission, then destroy or mark 'VOID', and provide it to Truist on request during retention.",
+   "action": "View deposit history (24 months); retain the paper check — FAQ: 'Secure and properly destroy your check ten business days after your deposit is confirmed'; agreement minimum: retain at least 7 calendar days from image transmission, then destroy or mark 'VOID', and provide it to Truist on request during retention.",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -422,6 +457,7 @@
    "stage": "exception",
    "title": "Rejected image / ineligible item / hold → notification and re-deposit…",
    "customer_action": "Rejected image / ineligible item / hold → notification and re-deposit or branch; hold disputes via Care Center",
+   "action": "Rejected image / ineligible item / hold → notification and re-deposit or branch; hold disputes via Care Center",
    "touchpoints": [
     {
      "channel": "phone",
@@ -481,6 +517,7 @@
    "stage": "support",
    "title": "Truist Assist / 844-4TRUIST",
    "customer_action": "Truist Assist / 844-4TRUIST",
+   "action": "Truist Assist / 844-4TRUIST",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",

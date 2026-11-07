@@ -42,13 +42,14 @@
    "stage": "discover",
    "title": "Approver receives push notification (CitiBusiness Mobile, added Aug…",
    "customer_action": null,
+   "action": "Approver receives push notification (CitiBusiness Mobile, added Aug 2025) that a transaction awaits approval",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Push notification"
     }
    ],
-   "frontstage": "Approver receives push notification (CitiBusiness Mobile, added Aug 2025) that a transaction awaits approval",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -65,7 +66,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Mobile Token registered via two emails (download instructions and…",
    "customer_action": "Mobile Token registered via two emails (download instructions and registration code); entitlement from System Administrator",
+   "action": "Mobile Token registered via two emails (download instructions and registration code); entitlement from System Administrator",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "review-authorize",
    "title": "Approver opens approvals, verifies details on independent device and…",
    "customer_action": "Approver opens approvals, verifies details on independent device and releases with Mobile Token code",
+   "action": "Approver opens approvals, verifies details on independent device and releases with Mobile Token code",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -172,13 +175,14 @@
    "stage": "execute-track",
    "title": "Wire released for processing",
    "customer_action": null,
+   "action": "Wire released for processing",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": null
     }
    ],
-   "frontstage": "Wire released for processing",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -195,7 +199,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -214,13 +218,14 @@
    "stage": "confirm-complete",
    "title": "Completed Wires",
    "customer_action": null,
+   "action": "Completed Wires",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Completed Wires",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -237,7 +242,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -256,6 +261,7 @@
    "stage": "manage",
    "title": "Positive Pay decisions also available in app",
    "customer_action": "Positive Pay decisions also available in app",
+   "action": "Positive Pay decisions also available in app",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -298,6 +304,7 @@
    "stage": "exception",
    "title": "Reject sends item back to initiator (Repair/Edit)",
    "customer_action": "Reject sends item back to initiator (Repair/Edit)",
+   "action": "Reject sends item back to initiator (Repair/Edit)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -340,6 +347,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

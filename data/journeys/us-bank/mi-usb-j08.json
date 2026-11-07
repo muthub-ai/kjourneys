@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Wire FAQ states app/online wires are USD to U.S. accounts;…",
    "customer_action": "Wire FAQ states app/online wires are USD to U.S. accounts; international wires at a branch (appointment available) or 24-Hour Banking 800-USBANKS — for business deposit accounts the digital flow is available",
+   "action": "Wire FAQ states app/online wires are USD to U.S. accounts; international wires at a branch (appointment available) or 24-Hour Banking 800-USBANKS — for business deposit accounts the digital flow is available",
    "touchpoints": [
     {
      "channel": "branch",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "Provide recipient type (individual/business) and country, name,…",
    "customer_action": "Provide recipient type (individual/business) and country, name, address; recipient bank country and SWIFT BIC; Account number / IBAN",
+   "action": "Provide recipient type (individual/business) and country, name, address; recipient bank country and SWIFT BIC; Account number / IBAN",
    "touchpoints": [
     {
      "channel": "branch",
@@ -146,6 +148,7 @@
    "stage": "initiate",
    "title": "Choose sending account, purpose description, optional memo, amount; fee…",
    "customer_action": "Choose sending account, purpose description, optional memo, amount; fee calculated (business digital: $45, $35 with Enhanced Payments); USD only",
+   "action": "Choose sending account, purpose description, optional memo, amount; fee calculated (business digital: $45, $35 with Enhanced Payments); USD only",
    "touchpoints": [
     {
      "channel": "branch",
@@ -208,6 +211,7 @@
    "stage": "review-authorize",
    "title": "Review/edit; read wire transfer authorization; check agreement; send…",
    "customer_action": "Review/edit; read wire transfer authorization; check agreement; send (digital) / sign (branch)",
+   "action": "Review/edit; read wire transfer authorization; check agreement; send (digital) / sign (branch)",
    "touchpoints": [
     {
      "channel": "branch",
@@ -250,6 +254,7 @@
    "stage": "execute-track",
    "title": "Same-day only, 7:30 a.m.–3 p.m. CT business days; cannot be future-dated",
    "customer_action": null,
+   "action": "Same-day only, 7:30 a.m.–3 p.m. CT business days; cannot be future-dated",
    "touchpoints": [
     {
      "channel": "branch",
@@ -283,6 +288,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s050"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -292,13 +308,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation/receipt (branch) or email updates (digital) – not…",
    "customer_action": null,
+   "action": "Confirmation/receipt (branch) or email updates (digital) – not documented for international",
    "touchpoints": [
     {
      "channel": "branch",
      "screen": null
     }
    ],
-   "frontstage": "Confirmation/receipt (branch) or email updates (digital) – not documented for international",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -315,7 +332,7 @@
      "confidence": "low",
      "x-mi_evidence": "INFERRED"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -334,6 +351,7 @@
    "stage": "manage",
    "title": "No cancellation once sent; no future-dated option to cancel",
    "customer_action": "No cancellation once sent; no future-dated option to cancel",
+   "action": "No cancellation once sent; no future-dated option to cancel",
    "touchpoints": [
     {
      "channel": "phone",
@@ -378,13 +396,14 @@
    "stage": "exception",
    "title": "Recall/return handling and intermediary-bank fees not documented",
    "customer_action": null,
+   "action": "Recall/return handling and intermediary-bank fees not documented",
    "touchpoints": [
     {
      "channel": "phone",
      "screen": null
     }
    ],
-   "frontstage": "Recall/return handling and intermediary-bank fees not documented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -400,7 +419,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -418,6 +437,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -488,6 +508,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",

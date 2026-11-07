@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Template Center > Create a Template > Submit Template (users may be…",
    "customer_action": "Template Center > Create a Template > Submit Template (users may be restricted to template-only wires)",
+   "action": "Template Center > Create a Template > Submit Template (users may be restricted to template-only wires)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Payment Center > Create a Payment > US Wire / Drawdown / US Federal Tax…",
    "customer_action": "Payment Center > Create a Payment > US Wire / Drawdown / US Federal Tax / International Wire (USD or FX with real-time rates); full beneficiary address required (ISO 20022), most special characters rejected",
+   "action": "Payment Center > Create a Payment > US Wire / Drawdown / US Federal Tax / International Wire (USD or FX with real-time rates); full beneficiary address required (ISO 20022), most special characters rejected",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -149,6 +151,7 @@
    "stage": "review-authorize",
    "title": "'All wire transfers require dual control'; approver: Payment Center >…",
    "customer_action": "'All wire transfers require dual control'; approver: Payment Center > Pending > Status link > Approve (also in TD eTreasury mobile app)",
+   "action": "'All wire transfers require dual control'; approver: Payment Center > Pending > Status link > Approve (also in TD eTreasury mobile app)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -193,13 +196,14 @@
    "stage": "execute-track",
    "title": "Statuses: Sent > Received by Bank > Confirmed with Fed Reference Number…",
    "customer_action": null,
+   "action": "Statuses: Sent > Received by Bank > Confirmed with Fed Reference Number (intl confirmation numbers may not be provided)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment Center"
     }
    ],
-   "frontstage": "Statuses: Sent > Received by Bank > Confirmed with Fed Reference Number (intl confirmation numbers may not be provided)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -216,7 +220,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -235,13 +239,14 @@
    "stage": "exception",
    "title": "Failed status on ISO 20022 validation; recall not described",
    "customer_action": null,
+   "action": "Failed status on ISO 20022 validation; recall not described",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment Center"
     }
    ],
-   "frontstage": "Failed status on ISO 20022 validation; recall not described",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -258,7 +263,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -277,6 +282,7 @@
    "stage": "support",
    "title": "TMS support line",
    "customer_action": null,
+   "action": "TMS support line",
    "touchpoints": [
     {
      "channel": "phone",
@@ -341,7 +347,5 @@
  "assessment": "Mandatory dual control is stricter than many peers.",
  "x-mi_evidence": "CONFIRMED_BANK",
  "bank_product": "TD-P04",
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail",
  "x-mi_product_id": "TD-P10"
 }

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Pay & Transfer > Wire/ACH ('Send a wire/ACH (includes external…",
    "customer_action": "Pay & Transfer > Wire/ACH ('Send a wire/ACH (includes external transfers)') – or via Pay Bills > From > 'Add account from another bank'",
+   "action": "Pay & Transfer > Wire/ACH ('Send a wire/ACH (includes external transfers)') – or via Pay Bills > From > 'Add account from another bank'",
    "touchpoints": [
     {
      "channel": "web",
@@ -104,6 +105,7 @@
    "stage": "set-up",
    "title": "'Add account from another bank' > Get Started > find financial…",
    "customer_action": "'Add account from another bank' > Get Started > find financial institution > log in to external account > review > Add Account",
+   "action": "'Add account from another bank' > Get Started > find financial institution > log in to external account > review > Add Account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -157,6 +159,7 @@
    "stage": "set-up",
    "title": "Fallback: 'Or, enter routing and account number' > Next > confirm > Add…",
    "customer_action": "Fallback: 'Or, enter routing and account number' > Next > confirm > Add Account; bank denies if ownership cannot be verified",
+   "action": "Fallback: 'Or, enter routing and account number' > Next > confirm > Add Account; bank denies if ownership cannot be verified",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -216,13 +219,14 @@
    "stage": "set-up",
    "title": "Enroll in Secured Transfer (debit card + PIN + U.S. mobile OTP) or USB…",
    "customer_action": null,
+   "action": "Enroll in Secured Transfer (debit card + PIN + U.S. mobile OTP) or USB security key when prompted",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Secured Transfer enrollment"
     }
    ],
-   "frontstage": "Enroll in Secured Transfer (debit card + PIN + U.S. mobile OTP) or USB security key when prompted",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -241,7 +245,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -281,6 +285,7 @@
    "stage": "initiate",
    "title": "Wire/ACH > Pay > select Recipient (external account) > amount, date,…",
    "customer_action": "Wire/ACH > Pay > select Recipient (external account) > amount, date, frequency, delivery (Three Business Day or Next Business Day)",
+   "action": "Wire/ACH > Pay > select Recipient (external account) > amount, date, frequency, delivery (Three Business Day or Next Business Day)",
    "touchpoints": [
     {
      "channel": "web",
@@ -343,6 +348,7 @@
    "stage": "review-authorize",
    "title": "Review details; Pay; select mobile number > Next > enter authorization…",
    "customer_action": "Review details; Pay; select mobile number > Next > enter authorization code > Next",
+   "action": "Review details; Pay; select mobile number > Next > enter authorization code > Next",
    "touchpoints": [
     {
      "channel": "web",
@@ -385,13 +391,14 @@
    "stage": "execute-track",
    "title": "Status shown in Activity (Scheduled > In Process > Processed); 8 p.m.…",
    "customer_action": null,
+   "action": "Status shown in Activity (Scheduled > In Process > Processed); 8 p.m. ET cutoff; funds debited on processing day; inbound availability may be delayed",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Status shown in Activity (Scheduled > In Process > Processed); 8 p.m. ET cutoff; funds debited on processing day; inbound availability may be delayed",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Automatic alert email (transfer info)",
@@ -409,7 +416,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -429,13 +436,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen and email",
    "customer_action": null,
+   "action": "Confirmation screen and email",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation screen and email",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -453,7 +461,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -473,6 +481,7 @@
    "stage": "manage",
    "title": "Cancel future-scheduled/recurring before midnight ET on the processing…",
    "customer_action": "Cancel future-scheduled/recurring before midnight ET on the processing date in Activity or by phone; Manage recipients to delete external accounts",
+   "action": "Cancel future-scheduled/recurring before midnight ET on the processing date in Activity or by phone; Manage recipients to delete external accounts",
    "touchpoints": [
     {
      "channel": "web",
@@ -517,13 +526,14 @@
    "stage": "exception",
    "title": "Returned/rejected by other bank (closed account, NSF): bank not liable…",
    "customer_action": null,
+   "action": "Returned/rejected by other bank (closed account, NSF): bank not liable for timely return; status Canceled/Returned",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Returned/rejected by other bank (closed account, NSF): bank not liable for timely return; status Canceled/Returned",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email",
@@ -540,7 +550,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -559,6 +569,7 @@
    "stage": "exception",
    "title": "Error/unauthorized ACH: Reg E error resolution (60 days)",
    "customer_action": "Error/unauthorized ACH: Reg E error resolution (60 days)",
+   "action": "Error/unauthorized ACH: Reg E error resolution (60 days)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -601,6 +612,7 @@
    "stage": "support",
    "title": "Customer taps Erica icon or Menu > Help; Erica answers servicing…",
    "customer_action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
+   "action": "Customer taps Erica icon or Menu > Help; Erica answers servicing questions or hands off to a specialist",
    "touchpoints": [
     {
      "channel": "voice-chat-assistant",
@@ -679,6 +691,7 @@
    "stage": "support",
    "title": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business)…",
    "customer_action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
+   "action": "Customer calls 800-432-1000 (consumer) / 866-758-5972 (small business) or the product-specific fraud line; or books a financial-center appointment",
    "touchpoints": [
     {
      "channel": "phone",

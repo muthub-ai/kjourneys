@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Primary Administrator sets entitlements in Access & Security Manager;…",
    "customer_action": "Primary Administrator sets entitlements in Access & Security Manager; add payees (fraud screen 'pending review' up to 48h)",
+   "action": "Primary Administrator sets entitlements in Access & Security Manager; add payees (fraud screen 'pending review' up to 48h)",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "'Pay & transfer' > 'ACH Payment Services' > select payees/group >…",
    "customer_action": "'Pay & transfer' > 'ACH Payment Services' > select payees/group > 'Schedule payments' > 'Pay from account', 'Delivery method (Standard ACH, Same-Day ACH, or Real-Time)', 'Deliver by date', 'Amount', 'Addendum line' > 'Schedule payments'; or 'ACH file upload' (NACHA/CSV up to 2,000 instructions; validated; approved as a whole; 8:00 PM ET batch cutoff; uploaded items can only be cancelled, not edited).",
+   "action": "'Pay & transfer' > 'ACH Payment Services' > select payees/group > 'Schedule payments' > 'Pay from account', 'Delivery method (Standard ACH, Same-Day ACH, or Real-Time)', 'Deliver by date', 'Amount', 'Addendum line' > 'Schedule payments'; or 'ACH file upload' (NACHA/CSV up to 2,000 instructions; validated; approved as a whole; 8:00 PM ET batch cutoff; uploaded items can only be cancelled, not edited).",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "review-authorize",
    "title": "Chase Dual Control–Transactions routes to pending approvals (files…",
    "customer_action": "Chase Dual Control–Transactions routes to pending approvals (files approved whole)",
+   "action": "Chase Dual Control–Transactions routes to pending approvals (files approved whole)",
    "touchpoints": [
     {
      "channel": "web",
@@ -168,13 +171,14 @@
    "stage": "execute-track",
    "title": "Payment activity tab: view/sort/change/cancel pending Standard,…",
    "customer_action": null,
+   "action": "Payment activity tab: view/sort/change/cancel pending Standard, Same-Day and Real-Time payments; views Vendor & employee payments / Repeating payments / ACH file upload activity; download PDF/print; 'Request reversal' and 'Cancel reversal request' links under each payment's status tracker (reversal within 5 Business Days of the Deliver By Date; 7-Business-Day hold on the credited amount). Payment comparison: Standard ACH 8 p.m. ET cutoff, up to remaining profile limit; Same-Day ACH 2 p.m. ET, $100,000/txn; Real-Time (TCH RTP) Midnight ET, $25,000/txn, not reversible.",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payments Activity"
     }
    ],
-   "frontstage": "Payment activity tab: view/sort/change/cancel pending Standard, Same-Day and Real-Time payments; views Vendor & employee payments / Repeating payments / ACH file upload activity; download PDF/print; 'Request reversal' and 'Cancel reversal request' links under each payment's status tracker (reversal within 5 Business Days of the Deliver By Date; 7-Business-Day hold on the credited amount). Payment comparison: Standard ACH 8 p.m. ET cutoff, up to remaining profile limit; Same-Day ACH 2 p.m. ET, $100,000/txn; Real-Time (TCH RTP) Midnight ET, $25,000/txn, not reversible.",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -191,7 +195,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -210,6 +214,7 @@
    "stage": "exception",
    "title": "Edit/Cancel upcoming (file payments cancel only); RTP irreversible",
    "customer_action": "Edit/Cancel upcoming (file payments cancel only); RTP irreversible",
+   "action": "Edit/Cancel upcoming (file payments cancel only); RTP irreversible",
    "touchpoints": [
     {
      "channel": "web",
@@ -252,6 +257,7 @@
    "stage": "support",
    "title": "Client Service Professional / Customer Service Professional",
    "customer_action": "Client Service Professional / Customer Service Professional",
+   "action": "Client Service Professional / Customer Service Professional",
    "touchpoints": [
     {
      "channel": "phone",
@@ -339,7 +345,5 @@
  "terms": {
   "limits": "$100k same-day ACH; $25k RTP per txn (2022)",
   "cutoffs": "8 PM/2 PM/midnight ET"
- },
- "composite": "CJ-ACH-ORIG-SMB-SEND",
- "composite_match": "rail"
+ }
 }

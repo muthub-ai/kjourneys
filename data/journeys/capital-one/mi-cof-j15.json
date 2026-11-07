@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Open account in app, scroll to 'Add Cash in Store'; find participating…",
    "customer_action": "Open account in app, scroll to 'Add Cash in Store'; find participating store via locator (Walgreens, Duane Reade, CVS, Kroger family, Dollar General, 7-Eleven)",
+   "action": "Open account in app, scroll to 'Add Cash in Store'; find participating store via locator (Walgreens, Duane Reade, CVS, Kroger family, Dollar General, 7-Eleven)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Enter cash amount ($1 min; $999/txn) to generate a single-use barcode…",
    "customer_action": "Enter cash amount ($1 min; $999/txn) to generate a single-use barcode valid 30 minutes; requires internet",
+   "action": "Enter cash amount ($1 min; $999/txn) to generate a single-use barcode valid 30 minutes; requires internet",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -171,6 +173,7 @@
    "stage": "review-authorize",
    "title": "Show barcode to cashier; cashier may request photo ID; hand over cash",
    "customer_action": "Show barcode to cashier; cashier may request photo ID; hand over cash",
+   "action": "Show barcode to cashier; cashier may request photo ID; hand over cash",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -213,13 +216,14 @@
    "stage": "execute-track",
    "title": "Instant confirmation; funds typically available within minutes; email…",
    "customer_action": null,
+   "action": "Instant confirmation; funds typically available within minutes; email confirmation; appears in Recent Transactions within 1 business day",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation / email"
     }
    ],
-   "frontstage": "Instant confirmation; funds typically available within minutes; email confirmation; appears in Recent Transactions within 1 business day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Email; optional SMS",
@@ -236,7 +240,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -255,6 +259,7 @@
    "stage": "confirm-complete",
    "title": "Keep cashier receipt until money shows in account",
    "customer_action": "Keep cashier receipt until money shows in account",
+   "action": "Keep cashier receipt until money shows in account",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -297,6 +302,7 @@
    "stage": "manage",
    "title": "No cancel/withdraw at store after completion; withdraw at ATM if needed",
    "customer_action": "No cancel/withdraw at store after completion; withdraw at ATM if needed",
+   "action": "No cancel/withdraw at store after completion; withdraw at ATM if needed",
    "touchpoints": [
     {
      "channel": "atm",
@@ -339,6 +345,7 @@
    "stage": "exception",
    "title": "Problem/dispute: 'Report a Problem' in app menu for technical issues;…",
    "customer_action": "Problem/dispute: 'Report a Problem' in app menu for technical issues; monetary disputes by phone 800-655-2265; Capital One reviews store video footage",
+   "action": "Problem/dispute: 'Report a Problem' in app menu for technical issues; monetary disputes by phone 800-655-2265; Capital One reviews store video footage",
    "touchpoints": [
     {
      "channel": "phone",
@@ -381,6 +388,7 @@
    "stage": "support",
    "title": "800-655-2265",
    "customer_action": null,
+   "action": "800-655-2265",
    "touchpoints": [
     {
      "channel": "phone",

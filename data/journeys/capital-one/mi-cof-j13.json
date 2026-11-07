@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Help article: visit a branch or email…",
    "customer_action": "Help article: visit a branch or email BusinessWireRequests@capitalone.com",
+   "action": "Help article: visit a branch or email BusinessWireRequests@capitalone.com",
    "touchpoints": [
     {
      "channel": "web",
@@ -101,6 +102,7 @@
    "stage": "initiate",
    "title": "Submit request between 8 am and 2 pm ET; later requests reviewed next…",
    "customer_action": "Submit request between 8 am and 2 pm ET; later requests reviewed next business day",
+   "action": "Submit request between 8 am and 2 pm ET; later requests reviewed next business day",
    "touchpoints": [
     {
      "channel": "branch",
@@ -160,6 +162,7 @@
    "stage": "review-authorize",
    "title": "Bank reviews request (call-back verification presumed)",
    "customer_action": null,
+   "action": "Bank reviews request (call-back verification presumed)",
    "touchpoints": [
     {
      "channel": "phone",
@@ -200,13 +203,14 @@
    "stage": "execute-track",
    "title": "Wire released; incoming international wires to business accounts arrive…",
    "customer_action": null,
+   "action": "Wire released; incoming international wires to business accounts arrive by 6:45 PM ET",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Transactions"
     }
    ],
-   "frontstage": "Wire released; incoming international wires to business accounts arrive by 6:45 PM ET",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "unknown",
@@ -223,7 +227,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -242,6 +246,7 @@
    "stage": "exception",
    "title": "Cancellation/recall",
    "customer_action": "Cancellation/recall",
+   "action": "Cancellation/recall",
    "touchpoints": [
     {
      "channel": "phone",
@@ -292,6 +297,7 @@
    "stage": "support",
    "title": "Branch / business banker",
    "customer_action": null,
+   "action": "Branch / business banker",
    "touchpoints": [
     {
      "channel": "branch",

@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "On 'Transfer Money' screen, select 'Add Non-Wells Fargo Accounts'",
    "customer_action": "On 'Transfer Money' screen, select 'Add Non-Wells Fargo Accounts'",
+   "action": "On 'Transfer Money' screen, select 'Add Non-Wells Fargo Accounts'",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "discover",
    "title": "Web (observed): 'Transfer Money' page header carries 'Non-Wells Fargo…",
    "customer_action": "Web (observed): 'Transfer Money' page header carries 'Non-Wells Fargo accounts: Add account | Manage'; the 'To' picker also lists 'Add non-Wells Fargo account (will open new page)' inline",
+   "action": "Web (observed): 'Transfer Money' page header carries 'Non-Wells Fargo accounts: Add account | Manage'; the 'To' picker also lists 'Add non-Wells Fargo account (will open new page)' inline",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "set-up",
    "title": "Web (observed): 'Add Non-Wells Fargo Account' form — ownership…",
    "customer_action": "Web (observed): 'Add Non-Wells Fargo Account' form — ownership attestation checkbox ('I am the owner…'); Account type (Personal/Business checking or savings); Account use: 'Payments only' vs 'Transfers and payments'; Account number and Routing number typed manually ('Enter account number not debit card number'); optional nickname",
+   "action": "Web (observed): 'Add Non-Wells Fargo Account' form — ownership attestation checkbox ('I am the owner…'); Account type (Personal/Business checking or savings); Account use: 'Payments only' vs 'Transfers and payments'; Account number and Routing number typed manually ('Enter account number not debit card number'); optional nickname",
    "touchpoints": [
     {
      "channel": "web",
@@ -198,6 +201,7 @@
    "stage": "set-up",
    "title": "Enter external routing/account details; 'additional security measures'…",
    "customer_action": "Enter external routing/account details; 'additional security measures' apply",
+   "action": "Enter external routing/account details; 'additional security measures' apply",
    "touchpoints": [
     {
      "channel": "web",
@@ -254,6 +258,7 @@
    "stage": "set-up",
    "title": "WF verifies via test transfer of low-value credits/debits…",
    "customer_action": null,
+   "action": "WF verifies via test transfer of low-value credits/debits (micro-deposits) or request for proof of ownership; 1–3 business days",
    "touchpoints": [
     {
      "channel": "web",
@@ -279,6 +284,18 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -316,6 +333,7 @@
    "stage": "set-up",
    "title": "Web (observed): 'Manage Non-Wells Fargo Accounts' shows each linked…",
    "customer_action": "Web (observed): 'Manage Non-Wells Fargo Accounts' shows each linked account with 'Account use: Payments only' and a 'Set up for transfers' action; on a previously verified payments-only account one click returned 'Confirmation — Your account … has been verified. You can now make transfers and payments with this account.' with no review step; the account then appears in the 'To' list",
+   "action": "Web (observed): 'Manage Non-Wells Fargo Accounts' shows each linked account with 'Account use: Payments only' and a 'Set up for transfers' action; on a previously verified payments-only account one click returned 'Confirmation — Your account … has been verified. You can now make transfers and payments with this account.' with no review step; the account then appears in the 'To' list",
    "touchpoints": [
     {
      "channel": "web",
@@ -386,6 +404,7 @@
    "stage": "initiate",
    "title": "Web (observed): same From / To / Frequency / Amount form as internal…",
    "customer_action": "Web (observed): same From / To / Frequency / Amount form as internal transfers with the linked external account selectable in From or To once 'Transfers and payments' is enabled",
+   "action": "Web (observed): same From / To / Frequency / Amount form as internal transfers with the linked external account selectable in From or To once 'Transfers and payments' is enabled",
    "touchpoints": [
     {
      "channel": "web",
@@ -428,6 +447,7 @@
    "stage": "initiate",
    "title": "Select From/To (WF ↔ external), amount, 'Send On' date, 'Delivery…",
    "customer_action": "Select From/To (WF ↔ external), amount, 'Send On' date, 'Delivery Speed' (standard; next-day and higher-limit at WF discretion based on history), frequency, memo",
+   "action": "Select From/To (WF ↔ external), amount, 'Send On' date, 'Delivery Speed' (standard; next-day and higher-limit at WF discretion based on history), frequency, memo",
    "touchpoints": [
     {
      "channel": "web",
@@ -484,6 +504,7 @@
    "stage": "review-authorize",
    "title": "'Review and Transfer' > 'Submit'",
    "customer_action": "'Review and Transfer' > 'Submit'",
+   "action": "'Review and Transfer' > 'Submit'",
    "touchpoints": [
     {
      "channel": "web",
@@ -526,6 +547,7 @@
    "stage": "execute-track",
    "title": "ACH initiated on Send On date; completes after selected delivery days",
    "customer_action": null,
+   "action": "ACH initiated on Send On date; completes after selected delivery days",
    "touchpoints": [
     {
      "channel": "web",
@@ -561,6 +583,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s006",
+      "src-wells-fargo-s040"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -570,13 +604,14 @@
    "stage": "confirm-complete",
    "title": "Servicing notification; 'deposit posted alert' if enabled",
    "customer_action": null,
+   "action": "Servicing notification; 'deposit posted alert' if enabled",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Message Center"
     }
    ],
-   "frontstage": "Servicing notification; 'deposit posted alert' if enabled",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/secure inbox; optional push/text",
@@ -593,7 +628,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -612,6 +647,7 @@
    "stage": "manage",
    "title": "View/Edit or View/Delete scheduled transfers before process date;…",
    "customer_action": "View/Edit or View/Delete scheduled transfers before process date; cancel by phone 1-800-956-4442",
+   "action": "View/Edit or View/Delete scheduled transfers before process date; cancel by phone 1-800-956-4442",
    "touchpoints": [
     {
      "channel": "web",
@@ -668,6 +704,7 @@
    "stage": "exception",
    "title": "Web (observed): 'Stop Future Payments' (Accounts menu) stops a…",
    "customer_action": "Web (observed): 'Stop Future Payments' (Accounts menu) stops a merchant's future ACH debits online; help scopes it to ACH — single check via 'Stop a Check', check ranges and recurring debit-card payments by phone (1-800-869-3557), Bill Pay items on the Bill Pay page",
+   "action": "Web (observed): 'Stop Future Payments' (Accounts menu) stops a merchant's future ACH debits online; help scopes it to ACH — single check via 'Stop a Check', check ranges and recurring debit-card payments by phone (1-800-869-3557), Bill Pay items on the Bill Pay page",
    "touchpoints": [
     {
      "channel": "web",
@@ -710,13 +747,14 @@
    "stage": "exception",
    "title": "Returned/failed ACH; suspension and reinstatement at lower limits",
    "customer_action": null,
+   "action": "Returned/failed ACH; suspension and reinstatement at lower limits",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "—"
     }
    ],
-   "frontstage": "Returned/failed ACH; suspension and reinstatement at lower limits",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -733,7 +771,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -752,6 +790,7 @@
    "stage": "support",
    "title": "In-app Help/FAQs; Fargo assistant",
    "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "action": "In-app Help/FAQs; Fargo assistant",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -796,6 +835,7 @@
    "stage": "support",
    "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
    "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -840,6 +880,7 @@
    "stage": "support",
    "title": "Branch appointment via appointments.wellsfargo.com",
    "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "action": "Branch appointment via appointments.wellsfargo.com",
    "touchpoints": [
     {
      "channel": "branch",

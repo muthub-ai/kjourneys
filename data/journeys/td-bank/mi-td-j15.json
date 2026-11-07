@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Customer sees 'Direct deposit setup right in the app' (v26.11, Sep 2026)",
    "customer_action": "Customer sees 'Direct deposit setup right in the app' (v26.11, Sep 2026)",
+   "action": "Customer sees 'Direct deposit setup right in the app' (v26.11, Sep 2026)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "Guided digital enrollment switches payroll deposit with no forms; or…",
    "customer_action": "Guided digital enrollment switches payroll deposit with no forms; or download PDF form",
+   "action": "Guided digital enrollment switches payroll deposit with no forms; or download PDF form",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -139,13 +141,14 @@
    "stage": "execute-track",
    "title": "Employer sends ACH early; TD posts up to 2 business days early…",
    "customer_action": null,
+   "action": "Employer sends ACH early; TD posts up to 2 business days early automatically",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Activity"
     }
    ],
-   "frontstage": "Employer sends ACH early; TD posts up to 2 business days early automatically",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "Direct deposit alert",
@@ -162,7 +165,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -181,13 +184,14 @@
    "stage": "confirm-complete",
    "title": "Early funds in available balance",
    "customer_action": null,
+   "action": "Early funds in available balance",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Balance"
     }
    ],
-   "frontstage": "Early funds in available balance",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -204,7 +208,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -223,13 +227,14 @@
    "stage": "exception",
    "title": "Payer reversal may debit account even if overdraft results",
    "customer_action": null,
+   "action": "Payer reversal may debit account even if overdraft results",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "n/a"
     }
    ],
-   "frontstage": "Payer reversal may debit account even if overdraft results",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -246,7 +251,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -265,6 +270,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -335,6 +341,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

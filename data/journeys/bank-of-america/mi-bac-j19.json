@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Client configures white-labeled Recipient Select portal; recipients…",
    "customer_action": "Client configures white-labeled Recipient Select portal; recipients enroll and pick method/speed",
+   "action": "Client configures white-labeled Recipient Select portal; recipients enroll and pick method/speed",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -84,6 +85,7 @@
    "stage": "initiate",
    "title": "Submit payment instructions with email/mobile (Digital Disbursements)…",
    "customer_action": "Submit payment instructions with email/mobile (Digital Disbursements) or recipient ID",
+   "action": "Submit payment instructions with email/mobile (Digital Disbursements) or recipient ID",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -126,13 +128,14 @@
    "stage": "execute-track",
    "title": "Routed over Zelle (same-day), Venmo, Interac, PayPal, RTP, Pay to Card,…",
    "customer_action": null,
+   "action": "Routed over Zelle (same-day), Venmo, Interac, PayPal, RTP, Pay to Card, ACH or check per recipient choice",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payment execution"
     }
    ],
-   "frontstage": "Routed over Zelle (same-day), Venmo, Interac, PayPal, RTP, Pay to Card, ACH or check per recipient choice",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": "recipient payment notification",
@@ -150,7 +153,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +173,7 @@
    "stage": "confirm-complete",
    "title": "Recipient notified; unenrolled U.S. Zelle recipients are prompted to…",
    "customer_action": "Recipient notified; unenrolled U.S. Zelle recipients are prompted to enroll a mobile number or email; once enrolled, funds credit as soon as the same day (generally minutes, up to three business days)",
+   "action": "Recipient notified; unenrolled U.S. Zelle recipients are prompted to enroll a mobile number or email; once enrolled, funds credit as soon as the same day (generally minutes, up to three business days)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -212,13 +216,14 @@
    "stage": "exception",
    "title": "Unenrolled/unclaimed payments; method fallback – terms not public",
    "customer_action": null,
+   "action": "Unenrolled/unclaimed payments; method fallback – terms not public",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Reporting"
     }
    ],
-   "frontstage": "Unenrolled/unclaimed payments; method fallback – terms not public",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -234,7 +239,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -252,6 +257,7 @@
    "stage": "support",
    "title": "Treasury representative",
    "customer_action": "Treasury representative",
+   "action": "Treasury representative",
    "touchpoints": [
     {
      "channel": "phone",
@@ -332,6 +338,6 @@
  "terms": {
   "cutoffs": "Zelle same day; up to 3 business days if enrollment needed"
  },
- "composite": "CJ-ZELLE-CONSUMER-SEND",
- "composite_match": "rail"
+ "composite": "CJ-PUSH-TO-CARD-SEND",
+ "composite_match": "mi-reference"
 }

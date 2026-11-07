@@ -42,6 +42,7 @@
    "stage": "initiate",
    "title": "Main Menu > Specialized Transfer Services > Wire Batch Uploads",
    "customer_action": "Main Menu > Specialized Transfer Services > Wire Batch Uploads",
+   "action": "Main Menu > Specialized Transfer Services > Wire Batch Uploads",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "review-authorize",
    "title": "Two separate authorized users approve ('Initial approval status' ->…",
    "customer_action": "Two separate authorized users approve ('Initial approval status' -> 'Second approval indicated'); 'Select All' to approve multiple batches",
+   "action": "Two separate authorized users approve ('Initial approval status' -> 'Second approval indicated'); 'Select All' to approve multiple batches",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Batch released; individual wires cannot be partially approved",
    "customer_action": null,
+   "action": "Batch released; individual wires cannot be partially approved",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Batch released; individual wires cannot be partially approved",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +173,7 @@
    "stage": "exception",
    "title": "Delete batch from Upload page and Approvals; remove wire and re-upload",
    "customer_action": "Delete batch from Upload page and Approvals; remove wire and re-upload",
+   "action": "Delete batch from Upload page and Approvals; remove wire and re-upload",
    "touchpoints": [
     {
      "channel": "web",
@@ -212,6 +216,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",
@@ -284,7 +289,5 @@
  "notifications": [],
  "assessment": "Sketch only.",
  "x-mi_evidence": "CONFIRMED_BANK",
- "bank_product": "CITI-P12",
- "composite": "CJ-WIRE-DOM-CONSUMER-SEND",
- "composite_match": "rail"
+ "bank_product": "CITI-P12"
 }

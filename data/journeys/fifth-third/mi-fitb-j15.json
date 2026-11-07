@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Log in at direct.53.com with User ID/password + Security Device code…",
    "customer_action": "Log in at direct.53.com with User ID/password + Security Device code (hard or soft token)",
+   "action": "Log in at direct.53.com with User ID/password + Security Device code (hard or soft token)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Payments & Transfers > New Payment > Freeform Entry / From Template /…",
    "customer_action": "Payments & Transfers > New Payment > Freeform Entry / From Template / Express Templates > select ACH Type; enter ACH Company ID, Payment Date, Business Unit, Security Level, Payment Name; Create New Receiver or Import; review Transaction Totals",
+   "action": "Payments & Transfers > New Payment > Freeform Entry / From Template / Express Templates > select ACH Type; enter ACH Company ID, Payment Date, Business Unit, Security Level, Payment Name; Create New Receiver or Import; review Transaction Totals",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -130,6 +132,7 @@
    "stage": "review-authorize",
    "title": "Submit -> 'Pending Approval'; approver(s) per approval profile approve;…",
    "customer_action": "Submit -> 'Pending Approval'; approver(s) per approval profile approve; OTP (text/email) or token step-up may be required at create/approve; Dual Transaction Approval recommended",
+   "action": "Submit -> 'Pending Approval'; approver(s) per approval profile approve; OTP (text/email) or token step-up may be required at create/approve; Dual Transaction Approval recommended",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -174,13 +177,14 @@
    "stage": "execute-track",
    "title": "Status becomes 'Processed'; file transmission alternative via ACH…",
    "customer_action": null,
+   "action": "Status becomes 'Processed'; file transmission alternative via ACH Direct Send with control totals (text file or manual entry; confirmations to up to 3 contacts)",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Payments > status"
     }
    ],
-   "frontstage": "Status becomes 'Processed'; file transmission alternative via ACH Direct Send with control totals (text file or manual entry; confirmations to up to 3 contacts)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email / Notifications Center",
@@ -198,7 +202,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -236,13 +240,14 @@
    "stage": "exception",
    "title": "Returns delivered in daily return file (consolidated after 9/30/2026);…",
    "customer_action": null,
+   "action": "Returns delivered in daily return file (consolidated after 9/30/2026); NOC handling; stop payment items post then return; ACH Positive Pay exceptions for incoming debits",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": "Return/Customer Activity Report"
     }
    ],
-   "frontstage": "Returns delivered in daily return file (consolidated after 9/30/2026); NOC handling; stop payment items post then return; ACH Positive Pay exceptions for incoming debits",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -259,7 +264,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -278,6 +283,7 @@
    "stage": "support",
    "title": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET),…",
    "customer_action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
+   "action": "Commercial Support Center 866-475-0729 (Mon–Fri 7 a.m.–10 p.m. ET), relationship team, 'Contact Us' form in Fifth Third Direct top navigation; Newline clients: Newline Specialist",
    "touchpoints": [
     {
      "channel": "phone",

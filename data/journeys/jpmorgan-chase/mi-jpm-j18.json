@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "'Pay & Transfer' > Bill Pay",
    "customer_action": "'Pay & Transfer' > Bill Pay",
+   "action": "'Pay & Transfer' > Bill Pay",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "'Enroll now' > review agreement > 'Accept' > select account > 'Next'…",
    "customer_action": "'Enroll now' > review agreement > 'Accept' > select account > 'Next' (business checking must be primary)",
+   "action": "'Enroll now' > review agreement > 'Accept' > select account > 'Next' (business checking must be primary)",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "set-up",
    "title": "'Add recipient' > payee info (account number, pay-to address) > 'Next'…",
    "customer_action": "'Add recipient' > payee info (account number, pay-to address) > 'Next' > review > 'Add payee'",
+   "action": "'Add recipient' > payee info (account number, pay-to address) > 'Next' > review > 'Add payee'",
    "touchpoints": [
     {
      "channel": "web",
@@ -170,6 +173,7 @@
    "stage": "initiate",
    "title": "'Pay now' > payment info > 'Next'",
    "customer_action": "'Pay now' > payment info > 'Next'",
+   "action": "'Pay now' > payment info > 'Next'",
    "touchpoints": [
     {
      "channel": "web",
@@ -212,6 +216,7 @@
    "stage": "review-authorize",
    "title": "'Schedule payment'; approvals if Dual Control configured",
    "customer_action": "'Schedule payment'; approvals if Dual Control configured",
+   "action": "'Schedule payment'; approvals if Dual Control configured",
    "touchpoints": [
     {
      "channel": "web",
@@ -256,13 +261,14 @@
    "stage": "execute-track",
    "title": "1-5 business days; 8 PM ET cutoff; not reversible",
    "customer_action": null,
+   "action": "1-5 business days; 8 PM ET cutoff; not reversible",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Payment activity"
     }
    ],
-   "frontstage": "1-5 business days; 8 PM ET cutoff; not reversible",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -280,7 +286,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -300,13 +306,14 @@
    "stage": "confirm-complete",
    "title": "13 months bill pay history; alerts",
    "customer_action": null,
+   "action": "13 months bill pay history; alerts",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Activity"
     }
    ],
-   "frontstage": "13 months bill pay history; alerts",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -323,7 +330,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -342,6 +349,7 @@
    "stage": "manage",
    "title": "Edit/cancel before cutoff (inferred); stop payment on checks via…",
    "customer_action": "Edit/cancel before cutoff (inferred); stop payment on checks via Accounts > Account services",
+   "action": "Edit/cancel before cutoff (inferred); stop payment on checks via Accounts > Account services",
    "touchpoints": [
     {
      "channel": "web",
@@ -384,6 +392,7 @@
    "stage": "exception",
    "title": "Check-based payee issue -> stop payment ($25-$30)",
    "customer_action": "Check-based payee issue -> stop payment ($25-$30)",
+   "action": "Check-based payee issue -> stop payment ($25-$30)",
    "touchpoints": [
     {
      "channel": "web",
@@ -428,6 +437,7 @@
    "stage": "support",
    "title": "Business support",
    "customer_action": "Business support",
+   "action": "Business support",
    "touchpoints": [
     {
      "channel": "phone",
@@ -514,7 +524,5 @@
  "terms": {
   "fees": "None",
   "cutoffs": "8 PM ET; 1-5 days"
- },
- "composite": "CJ-BILLPAY-SEND",
- "composite_match": "rail"
+ }
 }

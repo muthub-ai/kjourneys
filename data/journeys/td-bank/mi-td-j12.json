@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Owner enrolls once in ACH Services",
    "customer_action": "Owner enrolls once in ACH Services",
+   "action": "Owner enrolls once in ACH Services",
    "touchpoints": [
     {
      "channel": "web",
@@ -84,6 +85,7 @@
    "stage": "set-up",
    "title": "Add receivers (routing + account) or import a file from accounting…",
    "customer_action": "Add receivers (routing + account) or import a file from accounting software; save templates",
+   "action": "Add receivers (routing + account) or import a file from accounting software; save templates",
    "touchpoints": [
     {
      "channel": "web",
@@ -126,6 +128,7 @@
    "stage": "initiate",
    "title": "Create batch (payroll, vendor, tax), amounts, effective date",
    "customer_action": "Create batch (payroll, vendor, tax), amounts, effective date",
+   "action": "Create batch (payroll, vendor, tax), amounts, effective date",
    "touchpoints": [
     {
      "channel": "web",
@@ -168,6 +171,7 @@
    "stage": "review-authorize",
    "title": "Submit; approval by a second user if role requires; 'approval needed'…",
    "customer_action": "Submit; approval by a second user if role requires; 'approval needed' alert",
+   "action": "Submit; approval by a second user if role requires; 'approval needed' alert",
    "touchpoints": [
     {
      "channel": "web",
@@ -221,6 +225,7 @@
    "stage": "execute-track",
    "title": "Batch released; funds arrive in 1–2 business days; status and history…",
    "customer_action": null,
+   "action": "Batch released; funds arrive in 1–2 business days; status and history viewable",
    "touchpoints": [
     {
      "channel": "web",
@@ -254,6 +259,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s047"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -263,13 +279,14 @@
    "stage": "confirm-complete",
    "title": "$10 per batch fee",
    "customer_action": null,
+   "action": "$10 per batch fee",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "n/a"
     }
    ],
-   "frontstage": "$10 per batch fee",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -286,7 +303,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -305,6 +322,7 @@
    "stage": "manage",
    "title": "Edit templates; recurring batches",
    "customer_action": "Edit templates; recurring batches",
+   "action": "Edit templates; recurring batches",
    "touchpoints": [
     {
      "channel": "web",
@@ -347,6 +365,7 @@
    "stage": "exception",
    "title": "'ACH return' alert when an item is returned; NOC handling undocumented",
    "customer_action": null,
+   "action": "'ACH return' alert when an item is returned; NOC handling undocumented",
    "touchpoints": [
     {
      "channel": "web",
@@ -380,6 +399,17 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-td-bank-s023"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -389,6 +419,7 @@
    "stage": "support",
    "title": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call…",
    "customer_action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
+   "action": "Customer seeks help: in-app 'Ask our virtual assistant' / TD ASAP, call through the app for priority routing, Help Center FAQs, or book a store appointment",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -459,6 +490,7 @@
    "stage": "support",
    "title": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle…",
    "customer_action": null,
+   "action": "Phone handoff for payment issues: 1-888-751-9000 (24/7 general / Zelle issues per business page); 1-800-493-7562 (Zelle per SMB FAQ); 1-800-893-8554 (fraud, 24/7)",
    "touchpoints": [
     {
      "channel": "phone",

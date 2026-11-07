@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Tap 'Transfer' in bottom bar (web: 'Transfer and Pay' > Transfer…",
    "customer_action": "Tap 'Transfer' in bottom bar (web: 'Transfer and Pay' > Transfer Money); or ask Fargo 'Make a payment or transfer'",
+   "action": "Tap 'Transfer' in bottom bar (web: 'Transfer and Pay' > Transfer Money); or ask Fargo 'Make a payment or transfer'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "No setup — all WF deposit, credit, loan, brokerage accounts pre-listed",
    "customer_action": "No setup — all WF deposit, credit, loan, brokerage accounts pre-listed",
+   "action": "No setup — all WF deposit, credit, loan, brokerage accounts pre-listed",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Choose From account, To account, 'Frequency' (ONCE or recurring options…",
    "customer_action": "Choose From account, To account, 'Frequency' (ONCE or recurring options depending on account types), date via calendar icon, amount, optional 'Memo' (appears on statement)",
+   "action": "Choose From account, To account, 'Frequency' (ONCE or recurring options depending on account types), date via calendar icon, amount, optional 'Memo' (appears on statement)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -181,6 +184,7 @@
    "stage": "initiate",
    "title": "Tap 'Continue'",
    "customer_action": "Tap 'Continue'",
+   "action": "Tap 'Continue'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -225,6 +229,7 @@
    "stage": "initiate",
    "title": "Web (observed): 'Transfer Money' is a single form From / To / Frequency…",
    "customer_action": "Web (observed): 'Transfer Money' is a single form From / To / Frequency / Amount → Cancel | Continue; From/To pickers list WF deposit accounts, the WF credit card (as a 'To' = pay card) and linked non-WF accounts; Frequency: Once, Daily, Weekly, Every two weeks, Twice a month, Last Friday of month, Monthly",
+   "action": "Web (observed): 'Transfer Money' is a single form From / To / Frequency / Amount → Cancel | Continue; From/To pickers list WF deposit accounts, the WF credit card (as a 'To' = pay card) and linked non-WF accounts; Frequency: Once, Daily, Weekly, Every two weeks, Twice a month, Last Friday of month, Monthly",
    "touchpoints": [
     {
      "channel": "web",
@@ -278,6 +283,7 @@
    "stage": "review-authorize",
    "title": "Web (observed): 'Review and Transfer' shows From / To / Frequency /…",
    "customer_action": "Web (observed): 'Review and Transfer' shows From / To / Frequency / Send on / Amount with the warning 'Review carefully. Transfer cannot be canceled.' and actions Cancel | Edit | Submit; FAQ links 'When will this transfer be credited to my account?' and 'What happens if there isn't enough money…' (observation stopped here; nothing submitted)",
+   "action": "Web (observed): 'Review and Transfer' shows From / To / Frequency / Send on / Amount with the warning 'Review carefully. Transfer cannot be canceled.' and actions Cancel | Edit | Submit; FAQ links 'When will this transfer be credited to my account?' and 'What happens if there isn't enough money…' (observation stopped here; nothing submitted)",
    "touchpoints": [
     {
      "channel": "web",
@@ -320,6 +326,7 @@
    "stage": "review-authorize",
    "title": "'Review and Transfer' page; tap 'Submit'",
    "customer_action": "'Review and Transfer' page; tap 'Submit'",
+   "action": "'Review and Transfer' page; tap 'Submit'",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -373,6 +380,7 @@
    "stage": "execute-track",
    "title": "Same-day transfers post immediately; funds available for…",
    "customer_action": null,
+   "action": "Same-day transfers post immediately; funds available for purchases/withdrawals and included in nightly processing (8 pm PT cutoff shows 'pending' thereafter but still covers that night's items)",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -408,6 +416,18 @@
      "asserted_at": "2026-11-06T21:03:00-06:00",
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-wells-fargo-s001",
+      "src-wells-fargo-s006"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
     }
    }
   },
@@ -417,13 +437,14 @@
    "stage": "execute-track",
    "title": "Future/recurring appear in 'Scheduled Transfers & Payments'",
    "customer_action": null,
+   "action": "Future/recurring appear in 'Scheduled Transfers & Payments'",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Scheduled Transfers & Payments"
     }
    ],
-   "frontstage": "Future/recurring appear in 'Scheduled Transfers & Payments'",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -440,7 +461,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -459,13 +480,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation screen; servicing notification confirming transfer…",
    "customer_action": null,
+   "action": "Confirmation screen; servicing notification confirming transfer (email/secure inbox)",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation screen; servicing notification confirming transfer (email/secure inbox)",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": "email/secure inbox",
@@ -482,7 +504,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -501,6 +523,7 @@
    "stage": "manage",
    "title": "Web (observed): 'Transfer & Payment Activity' table — Send on | From |…",
    "customer_action": "Web (observed): 'Transfer & Payment Activity' table — Send on | From | To | Amount | Status | Action (View / Edit); View / Edit on a scheduled card autopay opens 'Autopay Details' (From / To / Frequency / Next payment / Ending / Amount option / Status) with Delete Autopay | Edit Autopay | One-time payment",
+   "action": "Web (observed): 'Transfer & Payment Activity' table — Send on | From | To | Amount | Status | Action (View / Edit); View / Edit on a scheduled card autopay opens 'Autopay Details' (From / To / Frequency / Next payment / Ending / Amount option / Status) with Delete Autopay | Edit Autopay | One-time payment",
    "touchpoints": [
     {
      "channel": "web",
@@ -543,6 +566,7 @@
    "stage": "manage",
    "title": "Edit/delete future or recurring transfers via 'Edit Transfer'/'Delete…",
    "customer_action": "Edit/delete future or recurring transfers via 'Edit Transfer'/'Delete Transfer' (mobile) or View/Edit, View/Delete (web) until 11:59 pm PT the day before",
+   "action": "Edit/delete future or recurring transfers via 'Edit Transfer'/'Delete Transfer' (mobile) or View/Edit, View/Delete (web) until 11:59 pm PT the day before",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -587,13 +611,14 @@
    "stage": "exception",
    "title": "Same-day transfer cannot be canceled after submission; weekend/holiday…",
    "customer_action": null,
+   "action": "Same-day transfer cannot be canceled after submission; weekend/holiday dated transfers post next business day",
    "touchpoints": [
     {
      "channel": "mobile-app",
      "screen": "—"
     }
    ],
-   "frontstage": "Same-day transfer cannot be canceled after submission; weekend/holiday dated transfers post next business day",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -610,7 +635,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -629,6 +654,7 @@
    "stage": "support",
    "title": "In-app Help/FAQs; Fargo assistant",
    "customer_action": "In-app Help/FAQs; Fargo assistant",
+   "action": "In-app Help/FAQs; Fargo assistant",
    "touchpoints": [
     {
      "channel": "mobile-app",
@@ -673,6 +699,7 @@
    "stage": "support",
    "title": "Online Customer Service 1-800-956-4442 (24/7); personal banking…",
    "customer_action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
+   "action": "Online Customer Service 1-800-956-4442 (24/7); personal banking 1-800-869-3557; fraud on online transfers 1-866-867-5568",
    "touchpoints": [
     {
      "channel": "phone",
@@ -717,6 +744,7 @@
    "stage": "support",
    "title": "Branch appointment via appointments.wellsfargo.com",
    "customer_action": "Branch appointment via appointments.wellsfargo.com",
+   "action": "Branch appointment via appointments.wellsfargo.com",
    "touchpoints": [
     {
      "channel": "branch",

@@ -42,6 +42,7 @@
    "stage": "set-up",
    "title": "Onboard with Citi TTS Present and Pay / RfP service",
    "customer_action": "Onboard with Citi TTS Present and Pay / RfP service",
+   "action": "Onboard with Citi TTS Present and Pay / RfP service",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -86,6 +87,7 @@
    "stage": "initiate",
    "title": "Send RfP messages to consumers at Citi and other RTP banks",
    "customer_action": "Send RfP messages to consumers at Citi and other RTP banks",
+   "action": "Send RfP messages to consumers at Citi and other RTP banks",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -128,13 +130,14 @@
    "stage": "execute-track",
    "title": "Consumer pays; funds settle instantly with remittance data",
    "customer_action": null,
+   "action": "Consumer pays; funds settle instantly with remittance data",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
      "screen": null
     }
    ],
-   "frontstage": "Consumer pays; funds settle instantly with remittance data",
+   "frontstage": "",
    "actor": "network",
    "decision": null,
    "notification": null,
@@ -151,7 +154,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -170,6 +173,7 @@
    "stage": "exception",
    "title": "Consumer declines or ignores RfP",
    "customer_action": "Consumer declines or ignores RfP",
+   "action": "Consumer declines or ignores RfP",
    "touchpoints": [
     {
      "channel": "api-treasury-portal",
@@ -212,6 +216,7 @@
    "stage": "support",
    "title": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709…",
    "customer_action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
+   "action": "Business user calls CitiBusiness Online Customer Service 1-800-285-1709 option 1 (Technical Support) or option 2 (Cash Management: ACH, Positive Pay, Lockbox), or sends a secure message via Customer Service > Send Message to Customer Service",
    "touchpoints": [
     {
      "channel": "phone",

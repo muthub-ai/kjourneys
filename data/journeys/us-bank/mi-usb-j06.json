@@ -42,6 +42,7 @@
    "stage": "discover",
    "title": "Transfer & pay > Transfers; choose linked external account as 'from'…",
    "customer_action": "Transfer & pay > Transfers; choose linked external account as 'from' and U.S. Bank account as 'to'",
+   "action": "Transfer & pay > Transfers; choose linked external account as 'from' and U.S. Bank account as 'to'",
    "touchpoints": [
     {
      "channel": "web",
@@ -86,6 +87,7 @@
    "stage": "set-up",
    "title": "External account must already be linked and verified (see USB-J05)",
    "customer_action": "External account must already be linked and verified (see USB-J05)",
+   "action": "External account must already be linked and verified (see USB-J05)",
    "touchpoints": [
     {
      "channel": "web",
@@ -128,6 +130,7 @@
    "stage": "initiate",
    "title": "Enter amount, choose speed: free standard (2–3 bd), free next-day, or…",
    "customer_action": "Enter amount, choose speed: free standard (2–3 bd), free next-day, or instant (if the external FI supports RfP on the instant network); transfer date; Review",
+   "action": "Enter amount, choose speed: free standard (2–3 bd), free next-day, or instant (if the external FI supports RfP on the instant network); transfer date; Review",
    "touchpoints": [
     {
      "channel": "web",
@@ -193,6 +196,7 @@
    "stage": "review-authorize",
    "title": "Confirm; Transfer money / Send transfer",
    "customer_action": "Confirm; Transfer money / Send transfer",
+   "action": "Confirm; Transfer money / Send transfer",
    "touchpoints": [
     {
      "channel": "web",
@@ -237,6 +241,7 @@
    "stage": "review-authorize",
    "title": "Instant path: U.S. Bank sends a Request for Payment to the external…",
    "customer_action": null,
+   "action": "Instant path: U.S. Bank sends a Request for Payment to the external bank; customer must approve the alert at the external bank within 5 days",
    "touchpoints": [
     {
      "channel": "web",
@@ -262,6 +267,18 @@
      "x-mi_evidence": "CONFIRMED_BANK"
     },
     "frontstage": {
+     "basis": "disclosed",
+     "source_ids": [
+      "src-mi-2026-11-06-v1",
+      "src-us-bank-s045",
+      "src-us-bank-s007"
+     ],
+     "asserted_by": "process:mi-session",
+     "asserted_at": "2026-11-06T21:03:00-06:00",
+     "confidence": "high",
+     "x-mi_evidence": "CONFIRMED_BANK"
+    },
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -299,13 +316,14 @@
    "stage": "execute-track",
    "title": "Funds post instantly on approval, or 1–2 (next-day) / 2–3 (standard)…",
    "customer_action": null,
+   "action": "Funds post instantly on approval, or 1–2 (next-day) / 2–3 (standard) business days",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Account activity"
     }
    ],
-   "frontstage": "Funds post instantly on approval, or 1–2 (next-day) / 2–3 (standard) business days",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -323,7 +341,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -343,13 +361,14 @@
    "stage": "confirm-complete",
    "title": "Confirmation with reference number",
    "customer_action": null,
+   "action": "Confirmation with reference number",
    "touchpoints": [
     {
      "channel": "web",
      "screen": "Confirmation"
     }
    ],
-   "frontstage": "Confirmation with reference number",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -366,7 +385,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -385,6 +404,7 @@
    "stage": "manage",
    "title": "Account activity edit/cancel for scheduled",
    "customer_action": "Account activity edit/cancel for scheduled",
+   "action": "Account activity edit/cancel for scheduled",
    "touchpoints": [
     {
      "channel": "web",
@@ -427,13 +447,14 @@
    "stage": "exception",
    "title": "RfP not approved in 5 days → expires; start a new transfer",
    "customer_action": null,
+   "action": "RfP not approved in 5 days → expires; start a new transfer",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "RfP not approved in 5 days → expires; start a new transfer",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -450,7 +471,7 @@
      "confidence": "high",
      "x-mi_evidence": "CONFIRMED_BANK"
     },
-    "frontstage": {
+    "process": {
      "basis": "disclosed",
      "source_ids": [
       "src-mi-2026-11-06-v1",
@@ -469,13 +490,14 @@
    "stage": "exception",
    "title": "Inbound ACH return (NSF at other bank) – handling undocumented",
    "customer_action": null,
+   "action": "Inbound ACH return (NSF at other bank) – handling undocumented",
    "touchpoints": [
     {
      "channel": "web",
      "screen": null
     }
    ],
-   "frontstage": "Inbound ACH return (NSF at other bank) – handling undocumented",
+   "frontstage": "",
    "actor": "bank-system",
    "decision": null,
    "notification": null,
@@ -491,7 +513,7 @@
      "confidence": "low",
      "x-mi_evidence": "UNKNOWN"
     },
-    "frontstage": {
+    "process": {
      "basis": "inferred",
      "source_ids": [
       "src-mi-2026-11-06-v1"
@@ -509,6 +531,7 @@
    "stage": "support",
    "title": "Customer uses in-app help (Help & services), Smart Assistant, or calls…",
    "customer_action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
+   "action": "Customer uses in-app help (Help & services), Smart Assistant, or calls 24-Hour Banking 800-USBANKS (872-2657); relay calls accepted; can also schedule a branch appointment or find a branch",
    "touchpoints": [
     {
      "channel": "phone",
@@ -579,6 +602,7 @@
    "stage": "support",
    "title": "For fraud/scam/unauthorized activity the customer calls the Fraud…",
    "customer_action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
+   "action": "For fraud/scam/unauthorized activity the customer calls the Fraud Liaison Center 877-595-6256",
    "touchpoints": [
     {
      "channel": "phone",
