@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.2 — 2026-11-07 · Map full screen
+
+- The Wells Fargo map has a full-screen mode (button, or F; Esc leaves). It uses the browser's full screen where the page is allowed to, and otherwise fills the window. Map and side panel both stretch; works in Network and Flow.
+
 ## 0.9.1 — 2026-11-07 · Site stored per report
 
 - The last step of `scripts/refresh.sh` (`tools/store_site.py`) copies the site and outputs (index.html, summary.md, coverage.json, kjourneys.json, facts.jsonl) to `docs/site/<MI report version>/` and refreshes `docs/site/README.md`. Same report: the folder is replaced. New report: a new folder; earlier ones stay. Not part of CI.

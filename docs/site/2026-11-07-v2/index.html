@@ -343,6 +343,17 @@ ul.steps{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:3px}
 dl.mi{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0;font-size:13px}dl.mi dt{color:var(--muted)}dl.mi dd{margin:0}dl.mi code{font-size:12px;word-break:break-all}
 .mn:focus{outline:none}.mn:focus-visible circle{stroke:#2745D6;stroke-width:3}
 .mapbox svg{display:block;width:100%;height:auto;touch-action:pan-y;cursor:grab}
+.fsbtn{border:1px solid var(--rule);border-radius:8px;background:var(--bg);padding:6px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.fsbtn:hover{border-color:var(--ink)}
+/* full screen: the map stage fills the window (browser full screen where allowed, otherwise a fixed overlay) */
+#mapStage.full{position:fixed;inset:0;z-index:1000;background:#FFFFFF;padding:12px 16px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+#mapStage:fullscreen{background:#FFFFFF;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+#mapStage.full .mapwrap{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 340px}
+#mapStage.full .mapbox{height:100%}
+#mapStage.full .mapbox svg#mapSvg{height:100%}
+#mapStage.full .mapbox .tbl-scroll{height:100%;overflow:auto}
+#mapStage.full .mapside{max-height:100%;overflow:auto}
+@media (max-width:980px){#mapStage.full .mapwrap{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) 34%}}
 .mapbox svg.dragging{cursor:grabbing}
 .mapbox .zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
 .mapbox .zoom button{width:32px;height:32px;border:1px solid var(--rule);border-radius:7px;background:var(--bg);cursor:pointer;font-weight:700}
@@ -498,11 +509,13 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
   <section class="view" id="v-map" data-view="map" hidden>
     <div class="sec-head"><div><div class="eyebrow">Wells Fargo knowledge map · Wells Fargo only</div><h2>How Wells Fargo's money movement fits together</h2></div>
       <p>Lines of business own products; products contain sub-products; sub-products are used by journeys; journeys deliver customer journeys and carry gaps and strengths. Built only from the Wells Fargo export, so no other bank appears.</p></div>
+    <div id="mapStage">
     <div class="dataline" id="mapLine"></div>
-    <div class="ctl"><div class="seg" id="mapMode" role="group" aria-label="View"><button type="button" data-mm="net" aria-pressed="true">Network</button><button type="button" data-mm="flow" aria-pressed="false">Flow</button></div>
+    <div class="ctl"><button type="button" class="fsbtn" id="mapFull" aria-pressed="false" title="Full screen (F); Esc to leave">⤢ Full screen</button><div class="seg" id="mapMode" role="group" aria-label="View"><button type="button" data-mm="net" aria-pressed="true">Network</button><button type="button" data-mm="flow" aria-pressed="false">Flow</button></div>
       <label for="mapQ" style="flex:1 1 220px">Find<input type="search" id="mapQ" placeholder="Product, sub-product, journey or gap"></label></div>
     <div class="mapkey" id="mapKey"></div>
     <div class="mapwrap"><div class="mapbox" id="mapBox"></div><aside class="mapside" id="mapSide" aria-live="polite"></aside></div>
+    </div>
   </section>
 
   <!-- L1 STAGES -->
@@ -1273,6 +1286,20 @@ const SEVR = {critical: 6, high: 5, medium: 3.8, low: 3};
 let mapMode = "net", mapSel = null, mapShow = {bank: 1, lob: 1, product: 1, sub: 1, journey: 1, cj: 1, gap: 1, strength: 0, app: 1}, mapT = {k: 1, x: 0, y: 0};
 const MN = MAP ? Object.fromEntries(MAP.nodes.map(n => [n.id, n])) : {};
 const MADJ = {}; (MAP?.edges || []).forEach(e => { (MADJ[e.a] ||= []).push([e.b, e.r]); (MADJ[e.b] ||= []).push([e.a, e.r]); });
+function setMapFull(on) {
+  const st = $("#mapStage"); if (!st) return;
+  st.classList.toggle("full", on); document.body.style.overflow = on ? "hidden" : "";
+  const b = $("#mapFull"); b.setAttribute("aria-pressed", String(on)); b.textContent = on ? "⤡ Exit full screen" : "⤢ Full screen";
+  if (on && st.requestFullscreen && !document.fullscreenElement) st.requestFullscreen().catch(() => {});   // blocked in some frames: the overlay still fills the window
+  if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+}
+document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && $("#mapStage")?.classList.contains("full")) setMapFull(false); });
+document.addEventListener("keydown", e => {
+  if (!$("#mapStage") || $("#mapStage").closest("[hidden]")) return;
+  if (e.key === "Escape" && $("#mapStage").classList.contains("full")) setMapFull(false);
+  else if ((e.key === "f" || e.key === "F") && !e.ctrlKey && !e.metaKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) setMapFull(!$("#mapStage").classList.contains("full"));
+});
+document.addEventListener("click", e => { if (e.target.closest?.("#mapFull")) setMapFull(!$("#mapStage").classList.contains("full")); });
 function renderMap() {
   if (!MAP) { $("#mapBox").innerHTML = `<p class="blank" style="padding:16px">No Wells Fargo export yet.</p>`; return; }
   const c = MAP.counts;
