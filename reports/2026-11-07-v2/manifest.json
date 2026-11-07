@@ -1,0 +1,49 @@
+{
+  "report_version": "2026-11-07-v2",
+  "title": "Money Movement Intelligence — top-10 US banks, November 2026 (v2: second research wave, independent review, scoring correction)",
+  "produced_by": "process:mi-session",
+  "received_at": "2026-11-07T01:09:00-06:00",
+  "workbook": "Money_Movement_CI_Data.xlsx",
+  "files": [
+    {
+      "path": "Money_Movement_CI_Data.xlsx",
+      "sha256": "cf986dd85a0b1c9d6476009cd08a98a3a1d2a3057d66999907c8b8b93ed9e6aa",
+      "kind": "data"
+    },
+    {
+      "path": "Money_Movement_CI_Dossier.docx",
+      "sha256": "3e7e1fb726dfd80e90a05af6bff3c33175202890c3beb3384ab7826c739593fa",
+      "kind": "report"
+    },
+    {
+      "path": "Money_Movement_CI_Sources_and_Verification.docx",
+      "sha256": "6444da0096bf18bec82648cc2b9974352527527ef5472084369934726eb5495d",
+      "kind": "report"
+    },
+    {
+      "path": "money-movement-intelligence.html",
+      "sha256": "1a632277de7622c3e5e0ff84d414d571476d50cad56ff402fe9d07e7237298ac",
+      "kind": "report"
+    }
+  ],
+  "products": [
+    "ach-external-transfer",
+    "ach-origination",
+    "bill-pay",
+    "cash-atm-branch",
+    "check-deposit-mobile",
+    "fednow",
+    "internal-transfer",
+    "other",
+    "push-to-card",
+    "remittance",
+    "request-to-pay",
+    "rtp",
+    "wallet-intersect",
+    "wire-domestic",
+    "wire-international",
+    "zelle"
+  ],
+  "supersedes": "2026-11-06-v1",
+  "notes": "NOT YET INGESTED (run scripts/refresh.sh reports/2026-11-07-v2). Supersedes 2026-11-06-v1. Changes: (1) scoring correction — every Scores cell is now the exact mean of the composite-journey scores for that bank × rail × stage, each ScoreTotals rail mean is the mean of its Scores cells and the overall index is 25 × the mean of the eleven unrounded rail means, so the index reproduces from the Scores sheet (v1's ScoreTotals disagreed with its Scores cells; the v1 importer flagged 35 differing rail means); (2) second research wave — a CFPB complaint layer (24 months to 2026-11-06, per $100B of assets; Complaints and ComplaintDetail sheets) and an enforcement/litigation layer (Senate PSI 2024, CFPB v. EWS, NY v. EWS, Warren 2022, July 2025 letters, Nacha 2026) for all ten banks, developer-portal and community sweeps aimed at UNKNOWN/INFERRED steps, and a Wayback check of blocked pages; (3) Wells Fargo logged-in web observation merged as the OBSERVED_SESSION evidence tier (WF-J29; observation only); (4) all three layers reviewed bank by bank by an independent reviewer model — all ten 'accept with corrections', every accepted correction applied (per-update source citations re-attached after an applier defect; complaint-layer source IDs de-collided — U.S. Bank's CFPB record is S991, Chase's and PNC's narrative-withdrawal note S991; Capital One and Fifth Third complaint rates recomputed to include Discover Bank and Comerica; third-party enforcement text separated from bank-confirmed exception paths into an Exceptions 'Third-party record' column); (5) personal names removed from source titles and notes. Ranking (overall / domestic-core): Chase 74.4/74.5, Citi 72.7/72.5, Wells Fargo 69.6/68.4, Bank of America 68.6/67.2, PNC 68.1/66.8, Truist 63.5/67.7, U.S. Bank 63.4/74.7, Fifth Third 54.3/63.6, TD Bank 53.8/63.0, Capital One 52.0/60.8. HTML checked in from the published artifact https://claude.ai/artifact/4UjcaoQDDfGsX4HuCsvvND (version 5, id 1794035311-4449)."
+}
