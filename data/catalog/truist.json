@@ -1,0 +1,2015 @@
+[
+ {
+  "id": "TFC-P01",
+  "bank": "truist",
+  "name": "Send Money with Zelle®",
+  "former_names": "SunTrust Zelle; BB&T Zelle (U by BB&T)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle network)",
+  "ui_position": "Transfer & Pay > Send Money with Zelle® (tabs: Send | Request | Activity; bottom: Recipients; Preferences/QR; Pending section in Activity). Sign-in deep link bank.truist.com/redirect?tkn1=ZELLELANDING",
+  "description": "Zelle P2P/P2B send, request and receive, embedded in Truist Mobile and online banking under Transfer & Pay. Business accounts pay 1% (max $15) on received payments.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s001",
+   "src-truist-s011",
+   "src-truist-s009",
+   "src-truist-s031"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P01-S01",
+    "name": "Send money with Zelle",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "One-time, scheduled or recurring send to an enrolled or not-yet-enrolled email/U.S. mobile recipient; QR code send; recipients from Recent, Added, device contacts or search.",
+    "other_flags": "payment_expires_if_unenrolled_days: 14; reminder_before_scheduled_days: 7; zelle_tag_supported: Yes; business_receive_fee: 1% capped $15; reference_number_per_payment: Yes; scam_reimbursement_policy: Agreement §(j): 'REIMBURSEMENT IS AVAILABLE FOR UNAUTHORIZED TRANSACTIONS OR TRANSACTIONS RESULTING FROM CERTAIN QUALIFYING IMPOSTER SCAMS. CONTACT US TO DISPUTE A TRANSACTION.'; zelle_app_only_recipient: sending to a consumer enrolled only in the Zelle app: 'the payment won't go through and a message will pop up to let you know the payment cannot be completed'; delay_block_notice: 'If we or Zelle delay or block a payment that you have initiated, we will notify you in accordance with your User preferences'; send_steps_faq: Transfer & Pay > Send money with Zelle® > Send > pick from Recent recipients / Added recipients / Device contacts / search > Enter your amount > Review and send",
+    "notes": "Split not a named feature; page only says Zelle can be used to 'split the cost of the dinner bill' via normal send/request. Zelle Tag documented on small-business page (Zelle Preferences > Create a Zelle Tag).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "scam-warning-interstitial": "not evidenced — only static warnings: FAQ ('Payments made with Zelle® are like sending cash and may not be able to be recovered'; 'confirm the recipient is correct by reviewing the displayed name before sending') and agreement §(j) capitalized warning; no dynamic in-flow interstitial found on public pages or in the agreement",
+     "step-up-auth": "OTP at enrollment (one-time verification code); in-flow step-up unknown"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s001",
+     "src-truist-s009",
+     "src-truist-s011",
+     "src-truist-s014",
+     "src-truist-s901",
+     "src-truist-s907",
+     "src-truist-s919"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j01",
+     "urn:kos:journey:truist:tfc-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P01-S02",
+    "name": "Request money with Zelle",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Request from an enrolled Zelle user (requests to non-enrolled must use email); optional note; 'View my QR code' lets payers scan to pay (business page).",
+    "other_flags": "request_not_guaranteed: Truist/Zelle do not guarantee a request will be paid; Truist is not a debt collector (agreement)",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s001",
+     "src-truist-s011",
+     "src-truist-s014"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P01-S03",
+    "name": "Receive money with Zelle / Manage Payment Profiles",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Receive to the enrolled account; change receiving account per token via Zelle Preferences > Manage Payment Profiles; each token linked to one account at a time.",
+    "other_flags": "multi_account_receive: one account per email/mobile token",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s001"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P01-S04",
+    "name": "Zelle for Small Business (Zelle Tag, QR, refunds)",
+    "product": "zelle",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Business receive/request/send with Zelle Tag alias (6–40 chars), printable/shareable QR, customer refunds; 1% receive fee capped at $15.",
+    "other_flags": "zelle_tag: Zelle Preferences > Create a Zelle Tag; eligible_accounts: Simple/Community/Dynamic Business Checking, Commercial Suite, Analyzed Checking, Simple Business Savings, Business MMA",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s011",
+     "src-truist-s015",
+     "src-truist-s007"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P02",
+  "bank": "truist",
+  "name": "Transfer money & pay Truist accounts (Transfers)",
+  "former_names": "SunTrust Online Transfers; U by BB&T transfers",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant",
+   "phone",
+   "branch",
+   "atm"
+  ],
+  "network": "Unknown (external-account credential verification vendor not disclosed; Mastercard open banking integration announced Feb 2026)",
+  "ui_position": "Transfer & Pay > tile 'Transfer money & pay Truist accounts' > Transfers page with tabs 'Make a transfer' | 'Manage Transfers' | 'Manage external accounts' (post-login path /web/tap/transfer); alternate entry Accounts > 'Link external account'; app home-screen Transfers device widget (3.2.0, Jul 2024) and external-account linking from home (3.4.0, Nov 2024). Agreement: 'The application will display the transfer option(s) available for each account' (3-Business-Day / Next-Day / Instant) and 'Cut-off times applicable to your transfer(s) will be displayed within the application'.",
+  "description": "Internal transfers between Truist deposit/investment accounts and payments to Truist lending accounts; external (non-Truist) account linking with instant (credential-based) verification and 3-business-day, next-day or Instant transfer speeds at Truist's discretion.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s004",
+   "src-truist-s006",
+   "src-truist-s009",
+   "src-truist-s010",
+   "src-truist-s014",
+   "src-truist-s057",
+   "src-truist-s062",
+   "src-truist-s063",
+   "src-truist-s905",
+   "src-truist-s907",
+   "src-truist-s919"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P02-S01",
+    "name": "Internal transfer between Truist accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant",
+     "phone",
+     "branch"
+    ],
+    "description": "One-time or recurring transfer between checking, savings, investment accounts; immediate processing (investment after 4pm ET next business day).",
+    "other_flags": "editable_scheduled: Yes; print_transfer: Yes; truist_assist_can_initiate: Yes; branch_or_phone_transfer_fee: no charge (biz fee schedule)",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": false,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s006",
+     "src-truist-s014",
+     "src-truist-s004",
+     "src-truist-s015"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P02-S02",
+    "name": "Pay a Truist loan, credit card, line of credit or mortgage (from Truist or non-Truist account)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Same 'Make a transfer' flow; To = Truist lending account; 11:59pm ET same-day effectiveness (mortgage 7pm ET).",
+    "other_flags": "from_non_truist_account_allowed: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s006",
+     "src-truist-s014"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P02-S03",
+    "name": "Add & verify a non-Truist (external) account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Manage external accounts > Add non-Truist account: account type, routing, account number → Review → 'Sign in to your external account' credential verification ('real-time verification' since app 4.6.0, Oct 2025); app store says verification may take 1–3 business days (micro-deposit fallback implied).",
+    "other_flags": "verification_methods: instant credential sign-in ('Verify your non-Truist transfer accounts in real-time', app 4.6.0 Oct 2025; 'Improved verification for external accounts' 4.4.0 Aug 2025); App Store disclosure: 'Setup is also required and verification may take 1 – 3 business days'; agreement: 'You will be notified if we are unable to verify your ownership of an account' and Truist 'may require additional verification ... before or after enrollment'; business_accounts_eligible: No; eligible_truist_accounts: personal checking, savings, money market in good standing and eligible for ACH or instant-network transactions",
+    "notes": "Personal agreement: 'Business accounts are not eligible' for External Transfers; SMB links non-Truist accounts for viewing and uses ACH service to move money.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "external-bank credential sign-in"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s006",
+     "src-truist-s009",
+     "src-truist-s010",
+     "src-truist-s014",
+     "src-truist-s062",
+     "src-truist-s907",
+     "src-truist-s919"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P02-S04",
+    "name": "External transfer to/from a non-Truist account (ACH)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Transfer between a Truist account and a verified external account; speeds: Standard 3-Business-Day ($3 outbound), Next-Day ($6 outbound) and Instant ($3 outbound, 'Beginning October 2026' per personal fee schedule); inbound pulls free; schedule up to 1 year ahead or recurring.",
+    "other_flags": "instant_rail: Instant Transfers are 'transfers sent over an instant payment network (such as the RTP® network operated by The Clearing House Payments Company L.L.C. or another third-party instant payment network)'; no card/push-to-card rail mentioned anywhere in the agreement; fees: In: free; Standard out $3; Next day out $6; Instant out $3 (beginning Oct 2026); instant_launch: October 2026 (fee schedule); agreement eff. 4/8/2026 already defines Instant Transfers as discretionary, per-account, 'typically ... within seconds, twenty-four (24) hours a day, including weekends and holidays'; option_display: 'The application will display the transfer option(s) available for each account'; cut-off times and limits 'displayed within the application and/or applied at the time of scheduling'; status_states_contract: pending (until released for processing) → in process → complete; instant 'typically processed in seconds once we begin processing'; scheduling: one-time immediate; one-time future-dated up to 1 year; recurring; non-existent day-of-month → last (business) day rule; cancel: cancel/edit any scheduled external transfer in-app at no charge; irrevocable once processing begins",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "same-day": "discretionary (Next-Day/Instant)",
+     "instant": "true (discretionary, per eligible account; RTP network or other instant network; real-time 24/7)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s006",
+     "src-truist-s009",
+     "src-truist-s010",
+     "src-truist-s014",
+     "src-truist-s057",
+     "src-truist-s907",
+     "src-truist-s919",
+     "src-truist-s952"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P03",
+  "bank": "truist",
+  "name": "Bill Pay and eBills (Pay bills)",
+  "former_names": "SunTrust Bill Pay; BB&T Bill Pay",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay",
+   "rtp"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Not disclosed (third-party bill-pay processor referenced in business agreement; RTP via The Clearing House)",
+  "ui_position": "Transfer & Pay > tile 'Pay bills' > Make a bill payment; sections 'Manage Bills', 'Manage Payees' / 'Add a Payee' ('Let's add a payee'); sign-in deep link BILLPAYLANDING and enrollment path /web/taplp/billpay/enrollment. In-flow labels from the agreement: 'Deliver By Date' (earliest date designated per biller), 'Rush Delivery' options (Same Day Bill Pay / Overnight Check) for participating billers; contract name for RTP option is 'Instant Payment Bill Pay Service' (no public UI label).",
+  "description": "Pay companies or individuals from checking/money market; eBills from participating billers; one-time/recurring/autopay; Same Day Bill Pay (electronic) and Overnight Check expedited options; Instant Payments over the RTP network incl. responses to biller Request for Payment; $50 late-fee guarantee.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s002",
+   "src-truist-s006",
+   "src-truist-s009",
+   "src-truist-s013",
+   "src-truist-s014",
+   "src-truist-s049",
+   "src-truist-s905",
+   "src-truist-s906",
+   "src-truist-s907",
+   "src-truist-s919",
+   "src-truist-s921"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P03-S01",
+    "name": "Add a payee (company directory or manual person/business)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "'Let's add a payee': pick company from directory and match address, or manually enter company/individual details → Add Payee; payee groupings (app 4.0.0); payee list cleanup (4.5.0).",
+    "other_flags": "payee_groups: Yes; pay_individuals_by_check: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s006",
+     "src-truist-s009"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P03-S02",
+    "name": "Pay a bill (one-time or recurring, multi-payee)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Choose one or multiple payees → Make a bill payment: from account, amount, one-time/recurring, Deliver By date → Review & submit → Submit payment. Electronic payments debit 2 business days before or on Deliver By; checks debit when presented.",
+    "other_flags": "deliver_by_date: earliest possible Deliver By Date per biller (typically ≤5 business days) designated in the Bill Pay Site; electronic payments debited 2 business days before or on the Deliver By Date ('The date that applies to each payment will be displayed'); weekend/holiday deliver-by dates processed at least one business day earlier; cancel_edit: cancel or edit any Scheduled Payment (incl. recurring) in-app at no charge until processing begins; afterwards a stop payment request is required; stop_payment: phone 844-4TRUIST or mail to Truist Bill Payment Research, 301 S J.K Powell Blvd., Whiteville, NC 28472; written requests ≥5 business days before Deliver By Date; phone requests may need written confirmation within 14 days; stop-payment fee applies; limits: 'you may have the ability to log in to the Bill Pay Site to view your individual transaction limits'; late_fee_guarantee: Bill Pay Service bears late charges up to $50 per payment when scheduled per guidelines",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": false,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s004",
+     "src-truist-s006",
+     "src-truist-s009",
+     "src-truist-s014",
+     "src-truist-s905",
+     "src-truist-s907",
+     "src-truist-s919"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P03-S03",
+    "name": "eBills (electronic bill presentment) and autopay",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Participating billers deliver eBills into Bill Pay (first eBill up to 60 days); track due dates, payment alerts, choose payment frequency; recurring/auto pay listed for SMB.",
+    "other_flags": "ebill_activation_up_to_days: 60; bill_discovery_clause: Yes",
+    "notes": "Agreement (l): eBills presented only if the biller participates and either the customer 'affirmatively elect[s] online within the Bill Pay Service' or the biller sends trial eBills; electing/declining is per biller; 'does not include an option to prevent ever participating in the automatic trial electronic bill feature'. No 'AutoPay'/'automatic payment' clause exists in the agreement — an eBill auto-pay toggle remains unevidenced; public copy says only 'track due dates, set up payment alerts, and choose your payment frequency'.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s002",
+     "src-truist-s007",
+     "src-truist-s013",
+     "src-truist-s014",
+     "src-truist-s907",
+     "src-truist-s921"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P03-S04",
+    "name": "Expedited payments: Same Day Bill Pay / Overnight Check",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Fee-based expedited delivery ('available for select clients' per personal fee schedule); begins processing immediately, cannot be changed or cancelled.",
+    "other_flags": "fees: Same Day Bill Pay $4.95; Overnight Check $14.95 (personal and business); availability: select clients; 'The Bill Pay Service will automatically determine which Expedited Payment option is available to you to make payments to a specific Biller'; ui_label: 'options for Rush Delivery will be presented for participating Billers if Expedited Payments are available for your account'; irrevocable: begins processing immediately; cannot be changed or cancelled",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s013",
+     "src-truist-s014",
+     "src-truist-s015",
+     "src-truist-s057",
+     "src-truist-s907"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P03-S05",
+    "name": "Instant Payments (RTP) in Bill Pay incl. Request for Payment response",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Payments over an instant network (RTP) whether or not responding to a biller's RFP; funds to biller in seconds 24/7; no recurring; editable/cancellable until processing begins then irrevocable; response cannot exceed RFP amount.",
+    "other_flags": "rfp_inbound_supported: Yes; fee_biz: no charge (fee schedule 'Instant Payment'); alias_rfp_pilot_2025: Yes",
+    "notes": "Contract name: 'Instant Payment Bill Pay Service' (agreement §4(dd), identical in personal and business agreements; RTP® named explicitly). Public site search for 'instant' returns no results and no FAQ/screenshot shows the in-UI label — label still unevidenced. Agreement: eligible Payment Accounts may be added/removed at Truist's discretion; 'Where supported by a participating Biller'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s013",
+     "src-truist-s014",
+     "src-truist-s015",
+     "src-truist-s049",
+     "src-truist-s057",
+     "src-truist-s906",
+     "src-truist-s907"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P04",
+  "bank": "truist",
+  "name": "Wire Transfer Service (Online Banking wires)",
+  "former_names": "SunTrust Retail PIN wire; Corporate Call (phone wires)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "branch",
+   "phone"
+  ],
+  "network": "Fedwire / SWIFT",
+  "ui_position": "Transfer & Pay > 'wire origination' option (enrollment in 'Wire Services' required; limits shown at enrollment and in app)",
+  "description": "Online wire origination (Wire Services enrollment) for Truist Wealth/Premier personal relationships and small-business profiles. Business agreement: entitled user enters a one-time passcode 'for the wire to be released and processed'; optional 'Dual Approval Feature' (Approver gives Secondary Approval; bank may cancel pending wires awaiting approval); from a business profile, personal accounts may send domestic wires only and only by the Business Profile Owner; same-day cut-off 6 pm ET for both domestic and international; 'Wire transfers are executed real-time throughout the business day'; cancellation/return-wire requests by phone to Online Banking Support 844-4TRUIST; bank 'will use reasonable efforts to send a confirmation of each transfer order'.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s005",
+   "src-truist-s007",
+   "src-truist-s013",
+   "src-truist-s014",
+   "src-truist-s015",
+   "src-truist-s017",
+   "src-truist-s056",
+   "src-truist-s057",
+   "src-truist-s903",
+   "src-truist-s906",
+   "src-truist-s922"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P04-S01",
+    "name": "Domestic wire — online/mobile (personal; Truist Wealth and Premier relationships only)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Enrolled personal accounts initiate domestic wires online ($20) and book transfers ($12); fee schedule states the online service 'is available for Truist Wealth and Truist Premier Relationships'; sign-in + registered phone; OTP must be entered for each wire to be released; cancel/amend only if Truist can act in time; recall via 844-4TRUIST not guaranteed. Mass-market consumers wire via branch/phone ($30 domestic / $65 intl assisted).",
+    "other_flags": "callbacks: Truist no longer performs callbacks (2022 transition doc); daily_limit: set by Truist, shown in OLB/app; eligibility: Wealth / Premier relationships (fee schedule); online_international_personal: not listed on personal fee schedule (only domestic + book)",
+    "notes": "Personal agreement text extracted says 'domestic wire transfers from your eligible personal Accounts'; personal fee schedule lists online outgoing domestic wire and book transfer only, restricted to Wealth/Premier; international online for personal NOT evidenced (Xe third-party claim contradicted). Personal online/mobile Wire Service is domestic-only: 'a payment order may be sent to initiate domestic wire transfers from eligible personal Accounts' (agreement eff. 9/17/2026); fee schedule lists online domestic $20 and book $12 only. Consumer international wires are teammate-assisted ($65). Xe (S018) claim of online international is contradicted.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "cancel-before-send": "only before processing",
+     "step-up-auth": "OTP per wire"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s014",
+     "src-truist-s017",
+     "src-truist-s057",
+     "src-truist-s056"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P04-S02",
+    "name": "Domestic & international wire — online (small business)",
+    "product": "wire-international",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Small Business Online clients self-enroll for wires; domestic and international USD wires from business accounts until 6pm ET; fees $20 domestic / $35 international / $12 book wire; two registered phone numbers for transaction validation.",
+    "other_flags": "cutoff: 6 pm ET domestic and 6 pm ET international (same-day); 'executed real-time throughout the business day'; iolta_excluded: Yes; fx_currency_online: USD only per 2022 transition doc; FX wires via branch/Treasury; personal_accounts_in_business_profile: international wires not permitted; only the Business Profile Owner may initiate domestic wires from personal accounts; cancellation_channel: phone — Truist Online Banking Support 844-4TRUIST; recovery not guaranteed, customer may have to deposit funds to cover recall costs; required_wire_info: sender name, street address, Truist account number; recipient bank name, street address, routing number; recipient name, street address, account number (FAQ)",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "cancel-before-send": "only before processing",
+     "status-tracking": "confirmation reports",
+     "step-up-auth": "OTP + phone/email/text transaction validation",
+     "dual-approval-smb": "true — optional 'Dual Approval Feature' for wires in Online Banking for Business (Approver designated by Business Profile Owner gives Secondary Approval; request 'will not be processed, executed, or acted upon by the Bank until Secondary Approval is provided'); plus per-wire one-time passcode and bank-discretion verification call to the user/administrator"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s007",
+     "src-truist-s008",
+     "src-truist-s013",
+     "src-truist-s015",
+     "src-truist-s017",
+     "src-truist-s903",
+     "src-truist-s906",
+     "src-truist-s922"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P04-S03",
+    "name": "Wire at a branch or by phone",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "phone"
+    ],
+    "description": "Branch-initiated domestic ($65 biz) and international ($75 biz) wires; phone wires via Corporate Call (business, PIN) and Retail PIN wire service (consumer, legacy).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "cancel-before-send": "only before processing",
+     "step-up-auth": "ID / PIN"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s015",
+     "src-truist-s017",
+     "src-truist-s007",
+     "src-truist-s005"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P04-S04",
+    "name": "Receive an incoming wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "branch"
+    ],
+    "description": "Domestic $15 / international $20 incoming (business schedule); Truist One Checking includes one no-fee incoming wire per month (third-party); routing numbers help page.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s015",
+     "src-truist-s005",
+     "src-truist-s018"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P05",
+  "bank": "truist",
+  "name": "Mobile check deposit",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Not disclosed",
+  "ui_position": "Truist Mobile > main menu > 'Deposits' (FAQ: 'From the main menu, tap Deposits'); Check deposit device widget since 3.2.0 (Jul 2024); current limits shown on the 'Deposits tab'; 'clearer, helpful guidance' added 5.5.0 (Jun 25 2026) and 'a cleaner, more streamlined experience' 5.9.0 (Oct 28 2026).",
+  "description": "Deposit checks in Truist Mobile; 9pm ET same-banking-day cutoff; standard next-business-day availability or optional fee-based Immediate Availability (2% ≥$100; $1 <$100); deposit history; check-deposit widget.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s002",
+   "src-truist-s009",
+   "src-truist-s010",
+   "src-truist-s015",
+   "src-truist-s037",
+   "src-truist-s058",
+   "src-truist-s902",
+   "src-truist-s907",
+   "src-truist-s919"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P05-S01",
+    "name": "Deposit a check (standard availability)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Capture front/back, select account, enter amount, submit; deposits by 9pm ET Mon–Fri treated as same banking day; funds generally next business day unless hold.",
+    "other_flags": "endorsement_wording: Sign your name on the back; under the signature write 'For deposit only at Truist' (troubleshooting FAQ also says to write the deposit date); 'Checks endorsed incorrectly may not be deposited'; limits: daily and monthly limits vary by account age, account type and standing; 'You can view current limits on the Deposits tab within the mobile application'; one check per deposit, unlimited count up to the total limit; retention: FAQ: 'Secure and properly destroy your check ten business days after your deposit is confirmed'; agreement: retain at least 7 calendar days after image transmission, then destroy/mark VOID; eligibility: at least one eligible deposit account; no more than three deposited items returned in the last 90 days; ineligible_items: Canadian/foreign checks, US savings bonds, Treasury Tax & Loan payments, traveler's checks, money orders (FAQ); agreement adds third-party checks, altered/suspected fraudulent, joint-payee not matching account, substitute checks, remotely created checks, non-USD, checks dated >6 months before deposit, sight drafts, previously deposited items, non-conforming endorsements; deposit_history_months: 24 months of deposit transaction history (4.6.0); status_visibility: 'pending deposits will appear in your account transaction activity, and your available balance will be updated once the check successfully posts'",
+    "notes": "In-app step labels CONFIRMED by FAQ 'How do mobile deposits work?': 'From the main menu, tap Deposits: Properly endorse your check and write \"For deposit only at Truist\". Select the account receiving the deposit. Enter the check amount. Take clear photos of the front and back of the check. Select Continue.' Camera guidance: dark background, all four corners in frame, hold still, 'When prompted, snap a photo of the front and back'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": false,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "none"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s002",
+     "src-truist-s009",
+     "src-truist-s037",
+     "src-truist-s058",
+     "src-truist-s902",
+     "src-truist-s906",
+     "src-truist-s907",
+     "src-truist-s919"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P05-S02",
+    "name": "Immediate Availability (fee-based instant funds)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm"
+    ],
+    "description": "If offered, accept fee (2% of check ≥$100; $1 <$100; min $5 check; one check per transaction) to add funds to available balance at deposit; also offered at ATM.",
+    "other_flags": "offer_logic: 'Immediate availability may not be offered each time you submit a mobile deposit check. Several factors are considered ... such as the check itself, the issuing account, and the depositing account. You will be required to accept the immediate availability service disclosure, if offered, during each transaction.'; fees: 2% of each check ≥ $100; $1 per check < $100; single check < $5 not eligible; Truist-drawn checks charged the same; balance_effect: available balance increased by check amount minus fee at the time of deposit; checks deposited by 11:59 pm ET included in nightly overdraft processing; disclosure_pdf: https://www.truist.com/content/dam/truist-bank/us/en/documents/disclosures/banking/truist-immediate-funds-availability-disclosure.pdf (not read)",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s002",
+     "src-truist-s015",
+     "src-truist-s037",
+     "src-truist-s057",
+     "src-truist-s058",
+     "src-truist-s902",
+     "src-truist-s907"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P06",
+  "bank": "truist",
+  "name": "Branch, ATM and night-depository deposits & transfers",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "branch",
+   "atm",
+   "phone"
+  ],
+  "network": "n/a",
+  "ui_position": "Branch / Truist ATM / 844-4TRUIST",
+  "description": "Cash/check deposits at branch (same day; coins after count), ATM (cash immediate by 9pm ET), night depository (7am ET), branch/phone transfers between Truist accounts (no charge), cash vault for commercial.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s037",
+   "src-truist-s015",
+   "src-truist-s027"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P06-S01",
+    "name": "ATM & branch deposits (cash and check)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm",
+     "branch"
+    ],
+    "description": "ATM cash available immediately if by 9pm ET; branch cash same day; checks next business day unless hold; ATM check deposits eligible for Immediate Availability fee option.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s037",
+     "src-truist-s015"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P06-S02",
+    "name": "Branch / telephone transfer between Truist accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "phone"
+    ],
+    "description": "No charge; teller or Care Center initiated.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s015"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P07",
+  "bank": "truist",
+  "name": "Paze® online checkout",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Paze)",
+  "ui_position": "Card Controls > select card > Digital Wallets > Paze > Get started/Activate (redirects to the Paze site to accept the Paze Service Agreement)",
+  "description": "EWS-owned online checkout wallet for eligible consumer Visa/Mastercard debit and credit cards; activated from Card Controls > Digital Wallets > Paze; not available to SMB/commercial.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s003",
+   "src-truist-s048",
+   "src-truist-s009"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P07-S01",
+    "name": "Activate Paze and manage cards",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Accept Paze Service Agreement on Paze site; toggle cards on/off; set default; opt-out removes all cards.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "one-time code per merchant at checkout"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s003"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P08",
+  "bank": "truist",
+  "name": "Truist Assist (virtual assistant)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "other"
+  ],
+  "channels": [
+   "voice-chat-assistant"
+  ],
+  "network": "Not disclosed",
+  "ui_position": "Truist Assist icon at bottom of every screen; search bar; deep link HELPCHAT; accessible anywhere in app since 4.0.0 (Feb 2025)",
+  "description": "24/7 conversational assistant in app and web that can transfer money between own Truist accounts, pay Truist bills (loans/cards), lock cards, change PIN, search transactions, show rewards; hands off to live agent.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s004",
+   "src-truist-s002",
+   "src-truist-s009"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P08-S01",
+    "name": "Transfer between Truist accounts / pay Truist bills via chat",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "voice-chat-assistant"
+    ],
+    "description": "Natural-language transfer and Truist-bill payment; no Zelle, bill pay to third parties, wires or external transfers described.",
+    "other_flags": "live_agent_handoff: Yes; chat_history: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s004",
+     "src-truist-s002"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P09",
+  "bank": "truist",
+  "name": "ACH (Online Banking ACH Service, small business)",
+  "former_names": "SunTrust ACH (Business Online); BB&T U ACH",
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Nacha (Truist as ODFI)",
+  "ui_position": "Online banking > ACH (separate enrollment 'ACH Service'); Transfer & Pay > ACH (third-party says limit shown in flow)",
+  "description": "Optional 'ACH Transfer Service' inside Truist Online Banking for Business: entitled users sign on, must enter a one-time passcode to release each ACH entry, and may be subject to transaction validation (call/email/text to one of two registered phone numbers). An optional 'Dual Approval Feature' (bank 'strongly recommends') requires a second User designated as an Approver by the Business Profile Owner to give 'Secondary Approval' before an entry initiated by a non-owner User is processed; such requests sit in 'pending status'. Same-day transmission to the ACH operator for entries received before the 8 pm ET final deadline; reversals within 5 banking days via Care Center; daily caps displayed in online banking/app.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s007",
+   "src-truist-s008",
+   "src-truist-s013",
+   "src-truist-s015",
+   "src-truist-s041",
+   "src-truist-s047",
+   "src-truist-s906",
+   "src-truist-s922"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P09-S01",
+    "name": "ACH credit payment (payroll / vendor) — one-time or recurring",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Set up recipient/template → amount, effective date → submit; funds debited at initiation if effective date 1–2 days out, else 2 days before; credits fail if funds unavailable at submission; recipients see 'ACH CREDIT'.",
+    "other_flags": "prefunding: debit 2 business days before effective date; nsf_risk: payment may fail + NSF fee; payroll_bundle: Online Payroll (3rd-party) separate",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "cancel-before-send": "Reversal request (erroneous/duplicate) within 5 banking days of effective date via Care Center 844-4TRUIST; 'Return of funds are not guaranteed'. In-app delete-before-release not documented.",
+     "step-up-auth": "one-time passcode required to release each ACH entry + transaction validation (call/email/text/validation code to registered phone numbers); failure to respond may terminate the transaction",
+     "dual-approval-smb": "true — optional 'Dual Approval Feature' in Online Banking for Business ACH Transfer Service: Business Profile Owner designates an Approver; entries initiated by a non-owner User require 'Secondary Approval' and remain in 'pending status' until approved; bank may cancel pending requests. Plus per-entry one-time passcode and transaction validation.",
+     "same-day": "ACH entries received before the 8 pm ET final deadline are transmitted to the ACH operator the same day (business days only); Same Day ACH origination otherwise documented for commercial Digital Treasury ('Make this a Same Day Payment' checkbox)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s007",
+     "src-truist-s008",
+     "src-truist-s013",
+     "src-truist-s015",
+     "src-truist-s047",
+     "src-truist-s906",
+     "src-truist-s922",
+     "src-truist-s953"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P09-S02",
+    "name": "ACH debit (collect from customers)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Direct-debit collection from customers' accounts; 'have your customers pay you'.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s007"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P09-S03",
+    "name": "Fraud Inspector (ACH/check return)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Review prior-day cleared items and initiate return of suspected fraudulent checks/ACH debits; enrollment required (FIENROLL).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s007",
+     "src-truist-s041",
+     "src-truist-s008"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P09-S04",
+    "name": "Truist Online Payroll",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Payroll service inside Truist Small Business Online Banking ('Online Payroll' tab): pay employees by direct deposit (no extra cost) or printed checks; automatic calculation of earnings, deductions and taxes, and filing of federal/state/local taxes; employee password-protected access to pay records, W-2s and 1099s; integrations with QuickBooks, AccountEdge, Zoho Books and Xero; support by phone, email or chat. For businesses with 1-100 employees; low monthly fee (additional fees above 50 employees per Business Deposit Accounts Fee Schedule). Requires a Truist small-business checking account; enroll after registering for business online banking. Underlying vendor not disclosed.",
+    "other_flags": "tax_filing: Yes; check_printing: Yes; employee_self_service: Yes",
+    "notes": "Added in verification pass (TFC-C001). Recurring/scheduled flags INFERRED from payroll nature.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s951"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TFC-P10",
+  "bank": "truist",
+  "name": "Truist One View (commercial digital platform) — Digital Treasury / Treasury Manager payments",
+  "former_names": "BB&T View / Truist Commercial Online; SunTrust SunView Treasury Manager; Enterprise Payments Processing (EPP); Commerce Gateway Payables",
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "zelle"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "web",
+   "mobile-app",
+   "phone",
+   "branch"
+  ],
+  "network": "Fedwire/SWIFT, Nacha, The Clearing House RTP, Early Warning (Zelle), Koxa (ERP connectors)",
+  "ui_position": "Truist One View (sign in: truist.com > 'Commercial, Corporate & Institutional' > Sign in > Truist One View; user ID + password + soft/hard token or push) > nine-dots app switcher > Digital Treasury (default app for many clients). Digital Treasury nav: 'Payments & transfers' > Payment Center / Payment Activity > 'Create payments & transfers' > ACH | Wire (Domestic/International) | templates ('Payment templates' > 'Copy as Payment'); 'Payments Requiring Approval' view; Tools > Contact Center > Notifications > Alerts; Support icon > Help Center > 'Start chat'; bell icon > Digital Treasury Notifications. Treasury Resource Center (treasuryresources.truist.com) Platforms menu: Truist One View | Digital Treasury | Truist One View Connect — no Treasury Manager page (TM content appears folded into Digital Treasury; import guide file is 'digital-tm-import-user-guide-may25.pdf'). Mobile: Truist One View app (approve payments/transfers, decision Positive Pay exceptions, RDC).",
+  "description": "Single-sign-on wholesale portal (hard token or Truist Authenticator app + MFA) to payment applications: Digital Treasury (ACH, wire, RTP, Positive Pay, reporting), Treasury Manager (ACH, wire, Positive Pay, reporting), Integrated Payables (virtual card/ACH/wire/check outsourcing), Disbursements with Zelle, Corporate Call phone wires, One View Connect embedded ERP (pilot, Oct 2025).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-truist-s015",
+   "src-truist-s017",
+   "src-truist-s023",
+   "src-truist-s024",
+   "src-truist-s026",
+   "src-truist-s033",
+   "src-truist-s043",
+   "src-truist-s044",
+   "src-truist-s045",
+   "src-truist-s046",
+   "src-truist-s908",
+   "src-truist-s909",
+   "src-truist-s910",
+   "src-truist-s911",
+   "src-truist-s912",
+   "src-truist-s913",
+   "src-truist-s914",
+   "src-truist-s915",
+   "src-truist-s916",
+   "src-truist-s917",
+   "src-truist-s918"
+  ],
+  "sub_products": [
+   {
+    "id": "TFC-P10-S01",
+    "name": "ACH Origination (Digital Treasury / Treasury Manager)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Same Day, next-day and two-day ACH; payroll, vendor, reimbursements, distributions, pre-authorized collections; ACH file upload requires dual approval (uploader ≠ approver); 10 processing windows.",
+    "other_flags": "digital_treasury_flow: Payments & transfers > Create payments & transfers > ACH (type) or Add a New Payment > Originator ID > Value Date (cutoff shown, e.g. 'Payment must be approved by 8pm ET') > optional 'Make this a Same Day Payment' > Batch Description / Company Discretionary Data / Descriptive Date > beneficiaries (address book; 'Include multiple beneficiary'; Create Prenote; Hold; Addenda) > Save as template (Restrict) > Submit or Save for Later; approval: 'All payments must be approved before they will be released'; statuses needing approval: Entered, Modified, Incomplete Approval, High Value; 'Payments Requiring Approval' view; Approve/Unapprove, bulk approve; statuses: Entered → Approved → Released (at extraction window) → back office; Incomplete; Needs Repair; Approval Window Passed; Rejected; Balance Check Failure; extraction_windows: Origination 7, 9, 11 am, 2, 4, 6, 8, 9 pm ET; Same-Day 7, 9, 11 am, 2 pm ET; future-dated extracted 2 days before value date; alerts: Payments Awaiting My Approval, Payment Cutoff Time Warning, ACH Payment Released, ACH Reversal Created, Approver Rejected, Approval Window Passed, Balance Check, Automatically Created (recurring); mobile_approval: Truist One View app: 'Approve payments and transfers quickly from your mobile device'",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s023",
+     "src-truist-s026",
+     "src-truist-s043",
+     "src-truist-s044",
+     "src-truist-s045",
+     "src-truist-s911",
+     "src-truist-s912",
+     "src-truist-s914",
+     "src-truist-s917"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P10-S02",
+    "name": "Wire Transfer (domestic, international, FX; one-time/recurring/standing order)",
+    "product": "wire-international",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "phone",
+     "branch"
+    ],
+    "description": "Initiated in Treasury Manager/Digital Treasury with token approval at initiation, by Corporate Call phone (PIN) or branch; repetitive templates user-created; optional template dual approval; 6pm ET cutoff (tax wires 4:30pm); no callbacks; limit ≥150% of largest wire in 18 months; future-dated supported.",
+    "other_flags": "digital_treasury_flow: Payments & transfers > Create payments & transfers > Wire > Domestic (or Add a new Payment > 'Wire - Domestic') > debit Account Number > Customer Reference > Beneficiary (address book lookup; optional Beneficiary Notification email, up to 5 addresses, sent 'when the payment has been confirmed by the bank') > Account Number / Bank Code > Date & Amount (cutoff shown: 'Payment must be approved by xx/xx/20xx 17:00 EDT') > Intermediary Bank(s), Payment Details, Bank-to-Bank Details > Save as template (template itself needs approval) > Submit / Save for Later; statuses: Entered → Approved (can be unapproved before extraction) → Released → Bank Received → Bank Confirmed (final); Incomplete Approval (multiple approvals), High Value ('Requires secondary approval for high-value payments'), Approval Window Passed, Rejected, Balance Check Failure (retries until cutoff); iso20022: Fedwire ISO 20022 implemented July 2025; SWIFT outgoing ISO Nov 2025; structured addresses Nov 2026; CHIPS Apr 2024; corporate_call: Corporate Call Retail PIN Wire Service (phone) still offered",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "cancel-before-send": "only before release",
+     "status-tracking": "confirmation reports / wire advice (phone/fax/mail/email)",
+     "step-up-auth": "hard/soft token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s015",
+     "src-truist-s017",
+     "src-truist-s026",
+     "src-truist-s044",
+     "src-truist-s045",
+     "src-truist-s911",
+     "src-truist-s913",
+     "src-truist-s918"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P10-S03",
+    "name": "Real-Time Payments (RTP) send & receive",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "24/7 send/receive with payer & payee notifications incl. non-payment messages; fast validation/confirmation; available in Digital Treasury and via API (Dropp case study); in-ERP RTP initiation in One View Connect pilot.",
+    "other_flags": "rfp_send: alias-based RfP pilot (Apr 2025) for billers; api_access: Yes; api_demo: RTP API Payment Demo: from the client's finance platform select an invoice > 'select real time payment and initiate a transaction' > encrypted request to Truist > encrypted confirmation displayed; RTP API Balance Demo: 'Update Balances'; positioning: 'RTP provides instant confirmations that payments have been sent, received, and fully settled'",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "email-sms-notifications": "true — Digital Treasury alert types 'Incoming Real Time Payment Transaction', 'Real Time Payments Message', 'Payment Request Received' (email/other contact methods, Tools > Contact Center > Notifications > Alerts)",
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s026",
+     "src-truist-s029",
+     "src-truist-s033",
+     "src-truist-s042",
+     "src-truist-s044",
+     "src-truist-s049",
+     "src-truist-s909",
+     "src-truist-s911",
+     "src-truist-s914"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P10-S04",
+    "name": "Disbursements with Zelle (commercial)",
+    "product": "zelle",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Pay individuals/small businesses by email or mobile number; funds within minutes.",
+    "other_flags": "channel: file-based via MFT mailbox (CSV or pipe-delimited; Excel templates with/without control totals) — not an interactive One View screen; token_validation: pre-payment Token Validation file → Zelle returns Active Token file (with registered owner name) and Inactive Token file within 1–2 minutes; control_totals: payment file first, control-total file within 3 hours (or payment file within 5 minutes if control file first); memo: payment memo up to 200 characters; Customer Reference optional; default or alternate debit account; duplicate_controls: duplicate file (same name/amount within 10 days) rejected; duplicate payment (same token, amount, memo) in a file rejected; required_inputs: recipient's enrolled token (mobile/email), name, sending account, amount",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "status-tracking": "true — 'File Transmission Summary Report' by secure email once all payments reach a final status; final statuses 'Delivered, Sent, Failed or Denied'"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s026",
+     "src-truist-s915"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P10-S05",
+    "name": "Integrated Payables (outsourced multi-rail disbursement)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "File-based AP outsourcing: virtual card, ACH, wire, check printing (extended next-day check deadline), supplier enablement, reconciliation; token login to One View to approve control totals/payments.",
+    "other_flags": "control_totals_approval: Yes; virtual_card: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": null,
+     "same-day": null,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s026",
+     "src-truist-s046",
+     "src-truist-s017"
+    ],
+    "journeys": [
+     "urn:kos:journey:truist:tfc-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P10-S06",
+    "name": "One View Connect (embedded ERP banking, pilot)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "ERP-embedded banking built with Koxa for NetSuite, Sage Intacct, Workday and Microsoft Dynamics 365 Business Central. The public user guide (Rev. 04/26) documents information reporting: real-time balances, posted transactions, on-demand refresh and reconciliation in each ERP's native module. In-ERP Real-Time Payments and approvals were announced for the Oct 2025 pilot (IR release) but are not described in the public guide.",
+    "other_flags": "status: Oct 2025 pilot press release; by Nov 2026 listed as a standard 'Platform' on the Treasury Resource Center with a public 'Truist One View Connect User Guide' — indicates availability beyond pilot (INFERRED from listing; user guide not read); positioning_copy: 'connectivity bridge between Truist and leading ERP and treasury platforms, enabling secure, real-time exchange of banking data and payment activity ... foundation for automation and next-generation, agentic treasury workflows'",
+    "notes": "Rail RTP reflects the Oct 2025 pilot announcement ('Real-Time Payments and approvals, directly within ERP platforms'); current public documentation covers information reporting only.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": null,
+     "international": null,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Truist Security central admin"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s028",
+     "src-truist-s033",
+     "src-truist-s051",
+     "src-truist-s916"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TFC-P10-S07",
+    "name": "Receivables: Integrated Receivables, Lockbox, Remote Deposit Capture, EBPP, Image Cash Letter, Cash Vault, Cash Concentration",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "AI-powered matching of check/electronic receipts (Integrated Receivables, AI-enabled launch Feb 2026 per PYMNTS); 4 lockbox types; RDC to 9pm ET; EBPP multichannel bill presentment/payment.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-truist-s027",
+     "src-truist-s052",
+     "src-truist-s023"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

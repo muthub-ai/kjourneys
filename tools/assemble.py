@@ -8,7 +8,7 @@ Sources (each owned and reviewed separately, so changes stay small and never col
   data/journeys/<bank>/<journey>.json         one journey per file
   data/comparisons/<product>/comparison.json  attributes + governance
   data/comparisons/<product>/values/<bank>.json   one bank's facts (market intelligence)
-  data/findings|observations|verifications/<bank>.json, data/composites/<product>.json,
+  data/catalog|findings|observations|verifications/<bank>.json, data/composites/<product>.json,
   data/participation.json, data/rankings.json      MI analytical collections (tools/import_mi_workbook.py)
 """
 import glob, json, os, sys
@@ -32,7 +32,7 @@ for p in sorted(glob.glob(os.path.join(ROOT, "data/journeys/*/*.json"))):
 out["portfolio"] = load("data/portfolio.json")
 
 # MI analytical collections, one file per bank (or per product for composites), each record stamped with its report version
-for coll, folder in [("findings", "findings"), ("observations", "observations"), ("verifications", "verifications"), ("composites", "composites")]:
+for coll, folder in [("catalog", "catalog"), ("findings", "findings"), ("observations", "observations"), ("verifications", "verifications"), ("composites", "composites")]:
     out[coll] = []
     for p in sorted(glob.glob(os.path.join(ROOT, f"data/{folder}/*.json"))):
         out[coll] += json.load(open(p))

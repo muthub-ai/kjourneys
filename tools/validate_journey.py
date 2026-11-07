@@ -179,10 +179,36 @@ for j in d["journeys"]:
 # ---------- 4c. MI analytical collections ----------
 STAGE_IDS = STAGES
 COMPS = {c["id"] for c in d.get("composites", [])}
+CAPFLAGS = {a["id"][9:] for c in d.get("comparisons", []) for a in c["attributes"] if a["id"].startswith("attr-cap-")}
 unique([c["id"] for c in d.get("composites", [])], "composite")
 for c in d.get("composites", []):
     need(c["product"] in PRODUCTS, f"ref: composite {c['id']} product {c['product']}")
     for st in c["steps"]: need(st["stage"] in STAGE_IDS, f"ref: composite {c['id']} step {st['n']} stage {st['stage']}")
+# catalog: each bank's products as marketed, and their sub-products
+CAT = d.get("catalog", [])
+unique([(p["bank"], p["id"]) for p in CAT], "catalog product")
+unique([(p["bank"], sp["id"]) for p in CAT for sp in p["sub_products"]], "catalog sub-product")
+SUBOF = {(p["bank"], sp["id"]): p["id"] for p in CAT for sp in p["sub_products"]}
+for p in CAT:
+    w = f"catalog product {p['bank']}/{p['id']}"
+    need(p["bank"] in PARTIES, f"ref: {w} bank {p['bank']}")
+    for r in p["rails"]: need(r in PRODUCTS, f"ref: {w} rail {r}")
+    for x in p["source_ids"]: need(x in SOURCES, f"ref: {w} source {x}")
+    for sp in p["sub_products"]:
+        w2 = f"catalog sub-product {p['bank']}/{sp['id']}"
+        need(sp["id"].startswith(p["id"] + "-"), f"ref: {w2} is not numbered under its product {p['id']}")
+        need(sp["product"] in PRODUCTS, f"ref: {w2} rail product {sp['product']}")
+        for x in sp["source_ids"]: need(x in SOURCES, f"ref: {w2} source {x}")
+        for ju in sp.get("journeys", []): need(ju in JIDS, f"ref: {w2} journey {ju}")
+        for k in sp["capabilities"]: need(k in CAPFLAGS, f"ref: {w2} capability flag {k} is not a comparison question")
+for j in d["journeys"]:
+    w = f"journey {j['id']}"
+    if CAT and j.get("sub_product"):
+        need((j["bank"], j["sub_product"]) in SUBOF, f"ref: {w} sub-product {j['sub_product']} is not in the {j['bank']} catalog")
+        need(SUBOF.get((j["bank"], j["sub_product"])) == j.get("bank_product"), f"ref: {w} sub-product {j['sub_product']} does not belong to product {j.get('bank_product')}")
+    if j.get("composite"):
+        need(j["composite"] in COMPS, f"ref: {w} customer journey {j['composite']}")
+        need(bool(j.get("composite_match")), f"ref: {w} links a customer journey without saying how (composite_match)")
 unique([f["id"] for f in d.get("findings", [])], "finding")
 for f in d.get("findings", []):
     w = f"finding {f['id']}"

@@ -1,0 +1,2205 @@
+[
+ {
+  "id": "TD-P01",
+  "bank": "td-bank",
+  "name": "Send Money with Zelle®",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle)",
+  "ui_position": "TD Bank app: home-screen quick link 'Zelle®' (KB also calls it 'Send Money') -> Zelle® home with 'Send' | 'Request' | 'Split', 'QR Code' icon (top right), 'Activity' (Pending | Past tabs), 'Manage Recipients', 'Settings' (Profile tab; 'My Code'). Online Banking: 'Transfers' top menu -> 'Transfer your money' dashboard -> 'Send Money with Zelle®' tab. Site nav: Checking & Savings > Make the most of my account > 'Send Money with Zelle®' (/personal-banking/online-banking#tab2).",
+  "description": "P2P and small-business payments by email or U.S. mobile number via the Zelle network, embedded in TD Online Banking and the TD Bank app (send, request, split with up to 5 people, QR scan/My Code, one-time, future-dated and recurring sends). The same 'Send Money' flow also lets customers pay a recipient by bank account + routing number, which TD states 'is a separate service from Zelle®' delivered in 1-3 business days (ACH 'Next Day' / 'Three Day' options). Instant sends limited to $2,500 daily / $10,000 monthly; over-limit sends fall back to Next Day or Three Day ACH.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s001",
+   "src-td-bank-s002",
+   "src-td-bank-s003",
+   "src-td-bank-s007",
+   "src-td-bank-s009",
+   "src-td-bank-s036"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P01-S01",
+    "name": "Send money with Zelle",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send to an enrolled or unenrolled recipient by name + email/U.S. mobile; funds in minutes when enrolled; 1-3 business days (standard ACH delivery) when not. Zelle Tag supported.",
+    "other_flags": "zelle_tag: Yes; debit_card_required_for_fast_delivery: Yes; english_only: Yes; instant_limit_2500_daily_10000_monthly: Yes",
+    "notes": "Send flow: Zelle® > Send > (Access Contacts / New Contact / Add from device) > amount, date (one-time or recurring), account > 'Review' > Review and send payment > Security Reminder (checkbox) > 'Send' > 'Your payment is processing' > 'Success! Payment has been sent' > 'All done' [S910]. Over-limit instant sends fall back to 'Next Day' or 'Three Day ACH'; limits cannot be changed; minimum $1 [S901]. Account-number recipients use a separate non-Zelle service (1-3 business days) [S921]. Device contacts sync with Zelle Network once per 24 h [S910]. Risk block copy: 'For your protection, we cannot send money to this recipient.' [S913]. Zelle Tags in 2026 terms [S009].",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": true,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "login one-time passcode only ('You may have to complete a one-time password'); no transaction-level step-up evidenced"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s001",
+     "src-td-bank-s003",
+     "src-td-bank-s006",
+     "src-td-bank-s007",
+     "src-td-bank-s009",
+     "src-td-bank-s010",
+     "src-td-bank-s012"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j01",
+     "urn:kos:journey:td-bank:td-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P01-S02",
+    "name": "Request money with Zelle",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Request payment from one or multiple contacts (split a bill); requests to unenrolled users must go to an email address.",
+    "other_flags": "request_to_mobile_requires_enrolled_number: Yes",
+    "notes": "Request: Send Money > 'Request' > contact > amount > 'Review' > reason > 'Request' > 'your request has been sent' > 'All Done'. Split: 'Split' > up to 5 people > 'Enter Amount' (total incl. own share; portions editable) > 'Review' > 'Split'. Requestee can 'Decline'. Request limits (up to 3-day arrival): $1,500 single / $2,500 daily / $10,000 monthly.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": true,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s001",
+     "src-td-bank-s003",
+     "src-td-bank-s006",
+     "src-td-bank-s007",
+     "src-td-bank-s044"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P01-S03",
+    "name": "Receive money with Zelle (incl. incoming-payment acceptance)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Receive by sharing enrolled email/mobile/Zelle Tag; help-center title 'How do I accept an incoming payment with Send Money with Zelle®?' implies an accept step for first-time/unenrolled recipients.",
+    "other_flags": null,
+    "notes": "Enrolled recipients are auto-deposited 'typically within minutes' with no action; payment shows on the Activity screen. Unenrolled: link in notification > select TD Bank > enroll; 14-day expiry with daily reminders after day 5. Transfers cannot be refused. Each token maps to its own deposit account (Settings > Profile > 'Choose the Deposit Account').",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s005",
+     "src-td-bank-s007",
+     "src-td-bank-s009",
+     "src-td-bank-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P01-S04",
+    "name": "Zelle QR code (scan to pay; My Code)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Pay or get paid by scanning a Zelle QR code in the TD Bank app (Zelle > Send > QR icon; 'My Code' tab to share or print); live per TD KB 3056-3060 and Academy demos. TD's Zelle-for-business FAQ still carries a stale 'currently not available' line.",
+    "other_flags": null,
+    "notes": "TD app: Zelle® > 'QR Code' icon (top right of Zelle home / top of 'Select Recipient') > 'Scan QR Code' or 'Select from my photos' > recipient's enrolled name from Zelle Network Shared Directory displayed > amount > Review > Security Reminder > Send; offer to save as permanent contact. 'My Code' tab: share/print. One code per token; scanning does not enroll.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s007",
+     "src-td-bank-s044"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P01-S05",
+    "name": "Send Money to a bank account number (TD service separate from Zelle)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Within the Send Money with Zelle® flow, a contact can be added by bank account + routing number instead of email/mobile. TD: 'made available by TD Bank but is a separate service from Zelle®. These transactions may not be delivered instantly within minutes and may take up to 1 to 3 business days.' Corresponds to the 'Next Day' / 'Three Day ACH' delivery options.",
+    "other_flags": "ach_based_p2p: Yes; free: Yes; mutually_exclusive_with_external_transfer_link: Yes",
+    "notes": "Rail is ACH to a third party's account (not own-account external transfer), hence OTHER. Same Security Reminder applies. An account set up here cannot also be set up under External Transfers [S901].",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": true,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s921",
+     "src-td-bank-s901",
+     "src-td-bank-s910"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P02",
+  "bank": "td-bank",
+  "name": "Transfers (internal and external)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "TD (ACH for standard 3-day / next-day external transfers). The June 2026 terms define 'Instant Transfers' over 'Payment Networks', giving the ACH Network and ACCEL/Exchange as examples in a definition; no RTP, FedNow or card-network reference; actual network and live availability unconfirmed (INFERRED). External-account verification by instant credential login or two trial deposits under $10.",
+  "ui_position": "TD Bank app: 'Pay & Transfer' quick link -> 'Internal Transfer' | 'External Transfer' (external activity under 'Activity'; linked accounts under Menu > 'Preferences' > 'My Other Accounts'). Online Banking: 'Transfers' top menu -> 'Transfer Your Money' dashboard with sections 'Between My TD Accounts', 'With My Accounts Outside TD' (button 'Transfer to Accounts Outside TD Bank'), 'Send Money with Zelle®'; plus 'Scheduled Transfers' and 'Transfer History'.",
+  "description": "Move money between TD accounts (immediate/future/recurring) and to/from verified non-TD accounts ('External Transfer' / 'Account to Account Transfer Service'). Terms define delivery options of 3 Business Days, Next Business Day, and 'Instant Transfers' (within minutes, where both institutions participate). Internal and external transfers are free.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s001",
+   "src-td-bank-s003",
+   "src-td-bank-s009",
+   "src-td-bank-s012"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P02-S01",
+    "name": "Transfer between your TD accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Immediate, future-dated and recurring transfers between own TD accounts; immediate availability (11 p.m. ET cutoff).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s001",
+     "src-td-bank-s003",
+     "src-td-bank-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P02-S02",
+    "name": "External transfer — link a non-TD account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Set up and verify an external account owned by the customer: instant verification with the external bank's online-banking credentials ('automatically verified') or two trial deposits under $10 confirmed in 1-3 business days; once verified, schedule one-time or recurring transfers.",
+    "other_flags": "verification_method: unknown",
+    "notes": "Enrollment (app): Pay & Transfer > 'External Transfer' > enrollment (email, 'Get Started') > Consent for Receiving Text Messages > Confirm Phone Number > Verify Email code > 'Add a New Account' (type, nickname, routing, account x2) > verification: instant via external online-banking username/password ('Verify Instantly') or 'Send me two deposits' (<$10, 1-3 business days; then Menu > Preferences > 'My Other Accounts' > 'Verify'). Requires Online Banking profile with U.S. address, unique phone, unique email, SSN. An account set up as a Zelle account-number contact cannot also be an external-transfer account. KB 2215 ('app customers are not able to make transfers outside TD Bank') is stale.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s001",
+     "src-td-bank-s009"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P02-S03",
+    "name": "External transfer — outbound (3-day / next-day)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Push funds from TD to a verified external account; one-time immediate, scheduled up to one year, or recurring; cancel until processing begins.",
+    "other_flags": "delivery_options: 3 Business Days; Next Business Day",
+    "notes": "OLB: 'Transfers' > 'With My Accounts Outside TD'; Create Transfer screen shows transfer limit, 'Fees and delivery info' (funds availability, cutoff times, fees table), 'Memo to self', 'Transfer Disclaimer'; Review Transfer offers 'Edit' / 'Cancel' / 'Confirm'. Delivery: immediate, future-dated up to 1 year, or recurring; cancel any time until processing begins. Only Personal Checking, Statement Savings and Money Market accounts eligible.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s009",
+     "src-td-bank-s012"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P02-S04",
+    "name": "External transfer — inbound (3-day / next-day / within minutes)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Pull funds from a verified external account into TD; inbound 'within minutes' delivery depends on the external institution; no TD daily/monthly limit on within-minutes inbound.",
+    "other_flags": null,
+    "notes": "App demos (content/171, 172) show the inbound pull: Create Transfer 'from' the external account 'to' a TD account, then Review Transfer > 'Confirm' > Transfer Confirmed > 'Activity'. 'Within minutes' delivery uses Instant Transfers (ACCEL/Exchange) where the external FI is enabled.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s009"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P02-S05",
+    "name": "Instant Transfers (terms-defined)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Same-day transfers over 'Payment Networks' available only where both institutions/accounts participate; not schedulable, not cancellable; 'not instantaneous'. Live availability in UI unverified.",
+    "other_flags": "fees_may_apply: Yes",
+    "notes": "Terms §1/§2.3(e): Instant Transfers use Payment Networks 'designed to deliver transfers on the same day and potentially within minutes'; 'Payment Network' = 'the ACH Network or ACCEL / Exchange payment network'; ACH Rules not applied unless sent via ACH; only immediate (no future-dated/recurring); 'Instant Transfers may not be cancelled'; 'not instantaneous'. No RTP/FedNow/Visa Direct mention in 27 pages. UI exposure only via 'Fees and delivery info' table (not captured).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s009"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P03",
+  "bank": "td-bank",
+  "name": "Bill Pay",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "unknown (bill-pay processor not disclosed)",
+  "ui_position": "TD Bank app: 'Bill Pay' / 'Pay a Bill' quick links -> Bill Pay home ('Add Bill', upcoming payments, AutoPay tab); Online Banking: 'Bill Pay' -> 'Payment Center' tab (Bill Payment Center; eBill 'bill due' icons). Bill Pay status also shown on account activity page (app 25.10.1, 2025-08-20); Payment Center redesign (25.12, 2025-10-22).",
+  "description": "Free bill payment in Online Banking and the TD Bank app to any U.S. business or person; electronic (ACH) or mailed paper check depending on payee; eBills; AutoPay; Rush same-day payment ($2) for electronic payees.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s003",
+   "src-td-bank-s004",
+   "src-td-bank-s010",
+   "src-td-bank-s012"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P03-S01",
+    "name": "Add a payee / company",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Set up companies or persons to pay before choosing payment dates.",
+    "other_flags": null,
+    "notes": "App: 'Bill Pay' quick link > verify e-mail > accept Terms of Use > 'Welcome to Bill Pay!' > 'Add Bill' > search TD directory > 'Add' > account number > review > 'Add bill'; optional eBills ('Verify it's you', service address, eBills Terms). Paper billers: 'If your biller isn't in our directory, tap to add the bill' (name, account number). Editing/removing a biller requires Online Banking on a laptop/computer (KB 2218).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s004"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P03-S02",
+    "name": "One-time, scheduled and next-day payment",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Choose payment date per bill; electronic payees next-day at no cost; check payees minimum 5 days, funds leave when check cashed.",
+    "other_flags": null,
+    "notes": "App: 'Pay a Bill' > choose bill > amount, pay-from account, calendar for date bill should be received > 'Confirm' > 'Send payment' > 'Payment scheduled' with confirmation number. Bill Pay shows the earliest date the biller will receive payment; next-day electronic payments until 9:59 PM ET; payments sent electronically or by laser draft (paper check); processed items show status 'Paid' in Bill History. Bill Payment Service Guarantee: TD bears late charges up to $50 if payment posts after Scheduled Payment Date (notify within 60 days). Edit/cancel from Bill Pay home ('Edit payment' / 'Cancel payment'); may be 'too close to the payment date to cancel'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s004",
+     "src-td-bank-s010"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P03-S03",
+    "name": "Rush Bill Payment (same-day)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Same-day electronic delivery for a $2.00 fee (reimbursed for TD Beyond Checking); not available for check payees.",
+    "other_flags": null,
+    "notes": "Confirm screen: 'If Rush Delivery is available, you can send a same-day payment for a fee'; fee disclosed before scheduling (OBSA).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s004",
+     "src-td-bank-s012"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P03-S04",
+    "name": "Recurring payments / AutoPay",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Automatic payments on a schedule; to change a recurring series TD suggests cancelling the series and recreating.",
+    "other_flags": null,
+    "notes": "AutoPay tab: amount, account, 'Choose the send and receive payment dates', 'How often should this bill be paid', 'Choose how long to continue payments' > 'Set AutoPay'. Cancel a single AutoPay payment ('Cancel only this scheduled payment') or 'Stop this AutoPay series' > 'Stop Autopay'.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s004"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P03-S05",
+    "name": "eBills",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Receive electronic bills from participating billers inside Bill Pay; email alerts for new bills after enrolling.",
+    "other_flags": null,
+    "notes": "OLB: 'Bill Pay' > Payment Center > eBill flag > 'Get eBills' > 'Get my bill here' > verification + eBills Terms of Use > Submit; 'It can take 1-2 billing cycles to get your first eBill'; e-mail notification; 'bill due' icon on Payment Center tab. App: eBill enrollment during Add Bill.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s003",
+     "src-td-bank-s004"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P04",
+  "bank": "td-bank",
+  "name": "Wire Transfers",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "branch",
+   "mobile-app",
+   "web",
+   "api-treasury-portal"
+  ],
+  "network": "Fedwire / SWIFT correspondent network",
+  "ui_position": "Consumer: no wire entry in U.S. personal navigation or the consumer app task list. TD's own KB is contradictory - KB 2624 'Currently TD Bank only offers domestic wire transfers in Online Banking' vs KB 1398 'Please visit your local TD Bank store to initiate outgoing wires'. International consumer wires: book an appointment at any TD location (Foreign Exchange > 'International Payments' tab; 60+ countries). Small business: Online Banking 'Transfers' -> 'Transfer Your Money' -> 'Wire Transfers' ('Enroll now'; bank completes set-up via Secure Message within 2 business days); TD Bank app send domestic wires + saved recipients (26.1.1, 2025-11-05), wire activity (26.6.1, 2026-04-22). Commercial: TD eTreasury Payments.",
+  "description": "Domestic and international (USD or foreign-currency) wires. Consumer domestic: TD KB says both that Online Banking offers domestic wires and that outgoing wires are initiated in store; same day if received before 5 p.m. ET. Consumer international: in person only (any TD location; ~65 currencies, 60+ countries). Small business: self-service enrollment in Small Business Online Banking and domestic send in the TD Bank app; role-based approval (none/single/dual/deny); 'same day or up to 2 business days'; $30 outgoing domestic, $50 outgoing international, $15 incoming; first 2 outgoing wires reimbursed on Business Premier Checking. Commercial: TD eTreasury with mandatory dual control.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s008",
+   "src-td-bank-s010",
+   "src-td-bank-s012",
+   "src-td-bank-s014",
+   "src-td-bank-s023",
+   "src-td-bank-s029",
+   "src-td-bank-s030",
+   "src-td-bank-s047"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P04-S01",
+    "name": "Outgoing domestic wire (consumer, in store)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Visit a TD store with beneficiary bank name/address/routing number, account name, number and recipient address; $30 fee.",
+    "other_flags": null,
+    "notes": "TD KB conflicts on channel: KB 2624 'Currently TD Bank only offers domestic wire transfers in Online Banking' vs KB 1398 'Please visit your local TD Bank store to initiate outgoing wires'. Info needed: receiving bank name, address, ABA; beneficiary name, address, account number. Same day if received before 5 p.m. ET, else next business day. No wire item in consumer nav or app task list; treat online consumer domestic wire as UNVERIFIED.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s012",
+     "src-td-bank-s029",
+     "src-td-bank-s030"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P04-S02",
+    "name": "Outgoing international wire (consumer, in store)",
+    "product": "wire-international",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "USD ($50) or foreign-currency ($25 + FX) wire via correspondent banks; SWIFT/BIC, IBAN, beneficiary address required.",
+    "other_flags": null,
+    "notes": "'Currently TD Bank only offers domestic wire transfers in Online Banking. To set up an international wire transfer, please visit a TD Bank near you.' FX page: 'Book an appointment to send or receive a personal wire transfer from any TD Bank location. Send wires to over 60+ countries'; ~65 currencies; TD recommends sending in recipient's currency.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s008",
+     "src-td-bank-s012",
+     "src-td-bank-s029"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P04-S03",
+    "name": "Incoming wire (domestic/international)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "$15 incoming fee; funds available immediately on receipt (11 p.m. ET cutoff); small business 'incoming wire' alert available.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s012",
+     "src-td-bank-s013",
+     "src-td-bank-s023"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P04-S04",
+    "name": "Small business domestic wire (TD Bank app / Small Business Online Banking)",
+    "product": "wire-domestic",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send domestic wires, save and manage recipients (app 26.1.1, Nov 2025) and view wire activity (26.6.1, Apr 2026) in the app; online: one-time enrollment, beneficiary saved as template, Federal ID number tracking, proof of payment.",
+    "other_flags": "saved_recipients: Yes; fed_reference_tracking: Yes",
+    "notes": "Enrollment: Online Banking 'Transfers' > 'Transfer Your Money' > 'Wire Transfers' > 'Enroll now' > Wire Services Enrollment (purpose, wires per month, typical amount) > Security Code Verification ('Call me'/'Text me') > T&Cs 'Accept' > Secure Message within 2 business days to complete set-up. App (26.1.1, 2025-11-05): send domestic wires, save/manage recipients; wire activity (26.6.1). Roles: Wire Transfer access per activity with approval type drop-down (no approval, single, dual, or deny); 'Approval needed alerts'. Delivery same day or up to 2 business days; proof of payment on receipt; $30 outgoing domestic / $50 international / $15 incoming.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s010",
+     "src-td-bank-s023",
+     "src-td-bank-s047"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P04-S05",
+    "name": "Commercial wires via TD eTreasury (US Wire, Drawdown, US Federal Tax, International Wire)",
+    "product": "wire-domestic",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Template or free-form wires with mandatory dual control; real-time FX rates for international; statuses Sent > Received by Bank > Confirmed with Fed Reference Number.",
+    "other_flags": "templates: Yes; iso20022_full_address_required: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token (login)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s014",
+     "src-td-bank-s015",
+     "src-td-bank-s043"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P05",
+  "bank": "td-bank",
+  "name": "TD Bank Mobile Deposit",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "unknown (RDC vendor not disclosed)",
+  "ui_position": "TD Bank app: 'Deposit' / Mobile Deposit.",
+  "description": "Deposit checks by photo in the TD Bank app; 8 p.m. ET cutoff; funds generally next business day; fund-availability estimates shown in app (Jan 2026); check images viewable in transaction details.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s003",
+   "src-td-bank-s010",
+   "src-td-bank-s013",
+   "src-td-bank-s035"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P05-S01",
+    "name": "Mobile check deposit",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Endorse 'For mobile deposit only, TD account #', capture images, select account, submit; limits posted in app; retain 14 days.",
+    "other_flags": "fund_availability_estimate: Yes; limits_shown_in_app: Yes",
+    "notes": "'Deposit' quick link (top of Accounts page) > 'Enroll' > Mobile Deposit Agreement > 'Deposit a Check' > Tips > account, amount (Mobile Deposit limits shown), camera auto-captures front and back > Confirm > 'Continue' > 'Your deposit is processing' > 'All set!'. Business-day deposits before 8 p.m. typically available next business day; fund availability estimates (26.4.4, 2026-02-10); destroy check after 14 days.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s003",
+     "src-td-bank-s010",
+     "src-td-bank-s035"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P06",
+  "bank": "td-bank",
+  "name": "Cash, ATM and store deposits/transfers",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "branch",
+   "atm"
+  ],
+  "network": "TD",
+  "ui_position": "TD stores and TD ATMs",
+  "description": "Deposits at TD stores (cash immediate; checks $100 same day, rest next business day) and TD ATMs (8 p.m. ET cutoff). Wires and foreign currency ordering handled in store.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s013",
+   "src-td-bank-s033"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P06-S01",
+    "name": "ATM / store cash and check deposit",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "atm"
+    ],
+    "description": "Cutoffs and availability per deposit policy; new-account holds.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P07",
+  "bank": "td-bank",
+  "name": "Real-Time Payments (RTP® network) — receive",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "rtp"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "api-treasury-portal"
+  ],
+  "network": "The Clearing House RTP",
+  "ui_position": "No customer-initiated UI; incoming RTPs visible in account activity ('RTP' row in deposit availability table).",
+  "description": "TD receives RTP credits from any participating FI, 24/7/365, up to $100,000 per payment, no fee; incoming RTPs appear in Online Banking/app and statements. TD states customers 'cannot send a Real-Time Payment but will have the ability to do so in the near future' (undated page). TD Auto Finance sends RTP dealer funding (2022).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s013",
+   "src-td-bank-s016",
+   "src-td-bank-s017",
+   "src-td-bank-s018",
+   "src-td-bank-s019"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P07-S01",
+    "name": "Receive an RTP credit",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Share routing/account number with trusted sender; immediate availability; sender message up to 60 characters; real-time fraud screening.",
+    "other_flags": "send: No; request_for_payment: unknown",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s013",
+     "src-td-bank-s016"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P08",
+  "bank": "td-bank",
+  "name": "FedNow®",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "fednow"
+  ],
+  "channels": [],
+  "network": "Federal Reserve FedNow",
+  "ui_position": "Not surfaced in any TD channel found.",
+  "description": "TD Bank, N.A. does not appear on the Federal Reserve's FedNow live-participant list (XLSX updated 11/02/26, 1,973 institutions), while JPMorgan Chase, Wells Fargo, U.S. Bank, Citibank, PNC and Capital One do. No TD page mentions FedNow; TD's KB describes only RTP receive. Third-party aggregator claim (S021) of FedNow enablement is not supported.",
+  "basis": "disclosed",
+  "confidence": "medium",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s020",
+   "src-td-bank-s021"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P08-S01",
+    "name": "FedNow receive (unverified)",
+    "product": "fednow",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [],
+    "description": "Status unknown.",
+    "other_flags": null,
+    "notes": "Not a FedNow participant as of 2026-11-02 (FRB XLSX).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s020",
+     "src-td-bank-s021"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "THIRD_PARTY"
+ },
+ {
+  "id": "TD-P09",
+  "bank": "td-bank",
+  "name": "Small Business ACH Services (Online Banking)",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination"
+  ],
+  "channels": [
+   "web"
+  ],
+  "network": "Nacha ACH (TD as ODFI)",
+  "ui_position": "Small Business Online Banking top menu 'Payroll & ACH' -> 'Enroll Now' (questionnaire, security code, T&Cs; set-up completed by Secure Message within 2 business days); permissions under 'Users & Access' -> 'Manage Access Roles' (Payroll & ACH and Business/Corporate Payments (CCD): Originate / Approve / Manage Templates / Release).",
+  "description": "Batch ACH for payroll (PPD) and vendor/corporate (CCD) payments in Small Business Online Banking: self-service enrollment, receivers management, templates; money arrives in 2 business days; $10.00 per batch; role-based origination/approval with 'Always Require Approval' (no, single or dual approval, or deny) plus Batch Limit and Daily Limit for releasers; ACH return alerts and approval-needed alerts; EFTPS for tax payments.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s023",
+   "src-td-bank-s047"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P09-S01",
+    "name": "ACH batch payment (payroll/vendor/tax)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Create batch from template or file; set release; approval if role requires; status/history view.",
+    "other_flags": null,
+    "notes": "Roles: 'Payroll & ACH' - Manage Receivers (PPD & CCD), Originate ('This will trigger an email to the administrator for approval'), Approve, Manage Templates; Release or 'Always Require Approval' (no, single or dual approval, or deny); Batch Limit and Daily Limit. ACH arrives in 2 business days; $10.00 per batch; ACH return alerts. Same-day ACH not mentioned for Small Business Online Banking.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s023",
+     "src-td-bank-s047"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P10",
+  "bank": "td-bank",
+  "name": "TD eTreasury (commercial treasury portal)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "internal-transfer",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app"
+  ],
+  "network": "TD (platform vendor undisclosed)",
+  "ui_position": "Top menu: Payments | Transfers | Fraud Control | Check Services | Reports | File Services | Accounts; login etreasury.td.com.",
+  "description": "Commercial online treasury platform: ACH (incl. same-day and tax), domestic/international wires with real-time FX, templates, future-dated/recurring, real-time book transfers (incl. loan payments/advances), ACH/check positive pay, ACH authorization rules, stop payments, 20+ alerts, granular entitlements and limits, token security; TD eTreasury mobile app (iOS/Android) for balances, transfers, positive pay decisions and ACH/wire approvals.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s014",
+   "src-td-bank-s015",
+   "src-td-bank-s043"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P10-S01",
+    "name": "ACH payments (batch, template, tax, same-day)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Payments > Create ACH Payments; recipients via Select/Create/Import; Continue > Submit Payment; approval in Payment Center; reversal within 5 days.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token (login)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s014",
+     "src-td-bank-s043"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P10-S02",
+    "name": "Book transfers (Single, Loan, One-to-Many, Many-to-One)",
+    "product": "internal-transfer",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Transfers > Manage > Transfer Center; real-time between TD accounts; approvals per setup.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s014",
+     "src-td-bank-s043"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P10-S03",
+    "name": "Fraud control (ACH Positive Pay, ACH Filter/Block, TD Positive Pay w/ payee name verification, teller positive pay)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Fraud Control > Manage > Positive Pay; decisions Pay/Return; default return if undecided; ACH authorization rules (6 PM cutoff).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s014",
+     "src-td-bank-s015",
+     "src-td-bank-s041"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P10-S04",
+    "name": "Stop payments (real-time)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Check Services > Create > Single or Multiple Stop; valid one year; cancel via Check Services.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s014",
+     "src-td-bank-s043"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P11",
+  "bank": "td-bank",
+  "name": "TD Integrated Payables / TD ePayables / TD Embedded Banking",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "ERP connectors (vendor undisclosed)",
+  "ui_position": "Commercial > Treasury Management > Payables; Embedded Banking page.",
+  "description": "Outsourced/automated payables: TD Integrated Payables (check, ACH, wire, card from one file), TD ePayables (buyer-initiated push and supplier-initiated pull card payments), and TD Embedded Banking (ACH, wire and check initiation plus bank feeds inside NetSuite, Sage Intacct, QuickBooks Online, Dynamics 365 BC). The payables page also lists Controlled Disbursement and full/partial account reconcilement alongside ACH and wire services (TD Commercial Plus Card is out of scope).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s025",
+   "src-td-bank-s042"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P11-S01",
+    "name": "TD Integrated Payables",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Single payment file -> check/ACH/wire/card disbursement.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s025"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P11-S02",
+    "name": "TD Embedded Banking (ERP-initiated ACH/wire/check)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Create and approve bulk ACH in ERP; wires from ERP (TD page footnote still says 'expected Summer 2024'; live status unconfirmed); check print with Positive Pay file auto-transmitted; balances up to 4x/day.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s042"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P12",
+  "bank": "td-bank",
+  "name": "Commercial receivables (Lockbox, TD Remote Deposit Capture, TD eBill, ACH collections)",
+  "former_names": null,
+  "segments": [
+   "commercial",
+   "small-business"
+  ],
+  "rails": [
+   "other",
+   "ach-origination"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "web"
+  ],
+  "network": "undisclosed",
+  "ui_position": "Commercial > Treasury Management > Receivables; RDC login under 'Other'.",
+  "description": "Retail/wholesale/remote lockbox; TD Remote Deposit Capture (digitalexpress.tdbank.com); TD eBill (customers pay one-time/recurring bills by ACH, debit or credit card); Healthcare Remittance Management; vault, smart safe, image cash letter.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s026"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P12-S01",
+    "name": "TD Remote Deposit Capture",
+    "product": "other",
+    "segments": [
+     "commercial",
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Scan and transmit check deposits from business locations.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s026",
+     "src-td-bank-s023"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "TD-P12-S02",
+    "name": "TD eBill (biller-direct collection)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Online bill presentment/payment for TD's business clients' customers via ACH or cards.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s026"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P13",
+  "bank": "td-bank",
+  "name": "TD Online Accounting (Autobooks) / Tap to Pay on iPhone",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "other",
+   "ach-origination"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Autobooks, Inc.",
+  "ui_position": "Small Business Online Banking > 'Invoicing & Account' / Accounting tab; TD Bank app for Tap to Pay.",
+  "description": "Invoicing and payment acceptance (card, ACH/e-check, payment links, QR) inside Small Business Online Banking, powered by Autobooks; funds to TD checking in 1-2 business days; Tap to Pay on iPhone in the TD Bank app requires Online Accounting enrollment.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s045",
+   "src-td-bank-s046",
+   "src-td-bank-s010"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P13-S01",
+    "name": "Accept payments via invoice/payment link (ACH or card)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Create invoice, customer pays online, funds deposited 1-2 business days.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s045",
+     "src-td-bank-s046"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P14",
+  "bank": "td-bank",
+  "name": "TD Early Pay / in-app direct deposit setup",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "undisclosed payroll-connectivity provider (flow requires accepting 'third-party data sharing terms' and signing in with employer/payroll credentials)",
+  "ui_position": "TD Bank app / Online Banking main menu -> 'Account Services' -> 'Set up direct deposit' ('Quick setup' payroll-login switch, or 'Set up manually' / 'Direct deposit form' PDF).",
+  "description": "Eligible direct deposits made available up to 2 business days early, automatically, no enrollment; guided in-app direct-deposit switching (app v26.11, Sep 2026). Zelle, transfers and mobile deposits are excluded.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s010",
+   "src-td-bank-s034"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P14-S01",
+    "name": "TD Early Pay",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Automatic early availability of ACH direct deposits; direct deposit alert available.",
+    "other_flags": null,
+    "notes": "Business accounts: TD Business Early Pay standard on all business checking/savings, automatic enrollment, eligible ACH up to 2 days early. Digital direct-deposit switch (app 26.11.0, 2026-09-16): 'Choose your deposit amount: Percentage / Dollar amount / Entire paycheck'; 'Real-time updates' during processing; summary 'Modify' / 'Connect another payroll account'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s034"
+    ],
+    "journeys": [
+     "urn:kos:journey:td-bank:td-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P15",
+  "bank": "td-bank",
+  "name": "Digital wallet intersections (Apple Pay / Google Pay / Samsung Pay / PayPal); Paze not offered",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Apple/Google/Samsung/PayPal",
+  "ui_position": "Personal > Digital Wallet.",
+  "description": "TD Digital Wallet page covers card provisioning only (out of scope) plus a PayPal link. Paze, Apple Cash, Venmo/Cash App funding are not mentioned on any TD page; Paze's participating-bank list does not name TD.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s049",
+   "src-td-bank-s037"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P15-S01",
+    "name": "PayPal linking (card-based)",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Link TD Visa to PayPal for online shopping; no bank-account funding flow documented.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s049"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P16",
+  "bank": "td-bank",
+  "name": "Cross-border consumer remittance (none in U.S.)",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "remittance"
+  ],
+  "channels": [
+   "branch"
+  ],
+  "network": "n/a",
+  "ui_position": "Not present in U.S. navigation; 'Cross-Border Banking' link points to td.com/ca.",
+  "description": "TD Global Transfer (international bank transfer, Visa Direct push-to-card, Western Union cash pickup) is a TD Canada product (td.com/ca). No equivalent is marketed on td.com/us; U.S. consumers use international wires in store. TD Cross-Border Banking links Canadian and U.S. profiles for Canadian clients.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s001",
+   "src-td-bank-s008",
+   "src-td-bank-s029"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P16-S01",
+    "name": "TD Global Transfer (Canada only — NOT a U.S. product)",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [],
+    "description": "Documented for TD Canada Trust; absence on td.com/us inferred from navigation and third-party guides.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "inferred",
+    "confidence": "low",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s001",
+     "src-td-bank-s029"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "INFERRED"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "TD-P17",
+  "bank": "td-bank",
+  "name": "Push-to-card instant transfers (none found)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "push-to-card"
+  ],
+  "channels": [],
+  "network": "unknown",
+  "ui_position": "Not surfaced.",
+  "description": "No Visa Direct / Mastercard Send 'instant transfer to debit card' product appears on td.com/us or in app-store notes. The terms' 'Instant Transfers' use unnamed 'Payment Networks' and could be RTP-based or card-based — unknown.",
+  "basis": "inferred",
+  "confidence": "low",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-td-bank-s009",
+   "src-td-bank-s010"
+  ],
+  "sub_products": [
+   {
+    "id": "TD-P17-S01",
+    "name": "Push to debit card (unverified)",
+    "product": "push-to-card",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [],
+    "description": "No evidence.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "inferred",
+    "confidence": "low",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-td-bank-s009"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "UNKNOWN"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "INFERRED"
+ }
+]

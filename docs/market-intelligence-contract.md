@@ -24,10 +24,10 @@ reports/<YYYY-MM-DD-vN>/
 | Sheet | Becomes |
 |---|---|
 | Banks | checked against `registries/parties.json` (ten banks, `bank_slug`) |
-| Products, SubProducts, Capabilities | capability flags per rail, in `data/comparisons/<product>/` |
+| Products, SubProducts, Capabilities | the bank's catalog in `data/catalog/<bank>.json` (flags per sub-product), rolled up to capability flags per rail in `data/comparisons/<product>/` |
 | Journeys, Steps, Exceptions, Notifications | `data/journeys/<bank>/mi-<journey id>.json`, one moment per step |
 | Gaps | `data/findings/<bank>.json` (GAP- and STR- IDs) |
-| Composites | `data/composites/<product>.json` |
+| Composites | `data/composites/<product>.json`: the customer journeys. Each bank journey is linked to one (derived; see the importer) |
 | Scores | stage scores 0–4 per bank, rail and stage, in `data/comparisons/<product>/` |
 | ScoreTotals | `data/rankings.json` |
 | RailParticipation | `data/participation.json` |

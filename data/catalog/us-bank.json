@@ -1,0 +1,2849 @@
+[
+ {
+  "id": "USB-P01",
+  "bank": "us-bank",
+  "name": "Zelle® (Send & request money with Zelle®)",
+  "former_names": "Popmoney (Fiserv P2P, 2014-2017 era – THIRD_PARTY search-result title only)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle Network)",
+  "ui_position": "Mobile app: Transfer & pay > PAYMENTS & BILLS > 'Send & request money with Zelle®' (also a 'Send | Zelle' shortcut at the top of the app home page). Zelle screen offers Manage recipients / Send money / Request money / Split a bill (plus QR icon next to 'Add a recipient' on the recipient screen). Web: Transfer & Pay dropdown > 'Send and request money'.",
+  "description": "Zelle P2P send, request, split-the-bill, QR code and (for small business) Zelle tag, embedded in the U.S. Bank Mobile App and online banking. Marketed to SMB as 'Zelle® for your business'. No separate Zelle login; enrollment is inside Transfer & pay. U.S. Bank charges no fee.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s002",
+   "src-us-bank-s008",
+   "src-us-bank-s011",
+   "src-us-bank-s054",
+   "src-us-bank-s071"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P01-S01",
+    "name": "Send money with Zelle®",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send to a recipient by email, U.S. mobile number or (business) Zelle tag; optional memo, future date and 'Repeat this payment' recurring; acknowledgment checkbox that payment cannot be cancelled once sent; OTP may be prompted.",
+    "other_flags": "save_transaction_details: Yes; home_screen_shortcut: Send | Zelle; ecard_with_payment: Yes",
+    "notes": "Demo flow (2026-09-09): Zelle screen > Send money > Choose a recipient (Add a recipient + QR icon / Zelle Ready Contacts / My Recipients) > Contact options quick-action (enrolled phone or add new email/phone) > Enter the amount (send limits viewable; Pay From; Send on; repeat) > Review before sending ('Your money will be sent typically within minutes.'; button 'Send $X') > scam interstitial 'Keep your money safe. Be sure this isn't fraud. U.S. Bank will never ask you to send money to anyone, including yourself. Scammers might ask you to: Send more money to finalize a payment. Share a login verification code. Upgrade an account to receive money.' with link 'Learn how to pay safely with Zelle®' and checkbox 'I understand that once my payment is sent, it can't be canceled.' > Continue > 'Payment sent.' ('Your money will be available in <name>'s account typically in minutes.'; confirmation code; 'Save transaction details'; 'Send a new payment'; Done).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP (one-time passcode to registered cellular device) may be prompted; unverified OTP cancels the transaction"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s001",
+     "src-us-bank-s002",
+     "src-us-bank-s007",
+     "src-us-bank-s008",
+     "src-us-bank-s012",
+     "src-us-bank-s029",
+     "src-us-bank-s901",
+     "src-us-bank-s903"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j01"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P01-S02",
+    "name": "Request money with Zelle®",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Request from a person by email or U.S. mobile number (un-enrolled people only via email); cancel while pending under Activity > Requests.",
+    "other_flags": null,
+    "notes": "Demo (2026-07-17): Zelle screen > Request money > Choose a recipient (QR icon next to Add a recipient; Zelle Ready Contacts) > Contact options > Enter the amount ('Deposit to' account, optional memo) > Review the request > 'Request $X' > 'Request sent' confirmation with confirmation code and 'Save transaction details'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s002",
+     "src-us-bank-s018",
+     "src-us-bank-s054"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P01-S03",
+    "name": "Split a bill with Zelle®",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Split a total bill among up to 10 people; even split by default, editable per person; sent as requests.",
+    "other_flags": "max_people: 10",
+    "notes": "Demo (2026-08-25, 'intended for both consumer and business customers'): Split a bill > choose up to 10 recipients (new, QR scan, contact list, recent) > Next > Contact method > Amount to split ('You can request up to $1,000; the amount will automatically be split between the number of recipients selected') > Review request > 'Request $X' > Request confirmed ('Once they accept it, the money will typically be in your account in minutes').",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": true,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s013",
+     "src-us-bank-s007",
+     "src-us-bank-s002"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P01-S04",
+    "name": "Zelle® QR code",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Personal/business QR code to receive money; share via text/email/print; cannot embed an amount. Pay someone by scanning QR from Send > Select a recipient (QR icon).",
+    "other_flags": "amount_in_qr: No",
+    "notes": "Web: Zelle QR code tile; App: QR icon next to Manage recipients.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s024",
+     "src-us-bank-s054"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P01-S05",
+    "name": "Zelle® tag (small business)",
+    "product": "zelle",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Username-style identifier (6–40 chars, letters/numbers/hyphens) so customers can pay a business without seeing its email/phone; created under Zelle® Preferences > Create a Zelle® tag.",
+    "other_flags": "tag_length: 6-40; case_sensitive: No",
+    "notes": "Creating a tag is limited to eligible small business account holders (S002).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s054",
+     "src-us-bank-s002"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P01-S06",
+    "name": "Receive money with Zelle® (enrollment & receive)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Enroll with email or U.S. mobile number tied to the account (Enroll / Get started), choose receiving account; enrolled recipients get funds in minutes with no action; profile deactivates after 18 months inactivity.",
+    "other_flags": "split_enrollment_across_FIs: Yes; inactivity_deactivation_months: 18",
+    "notes": "Enrollment demo (consumer and business): 'Get started' > 'Choose an email or mobile number from your bank profile' > Continue > 'Please enter the code' (6-digit code sent to phone) > 'Choose an account' for deposits > Enroll > Confirmation > Done.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s025",
+     "src-us-bank-s029",
+     "src-us-bank-s030",
+     "src-us-bank-s011"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P02",
+  "bank": "us-bank",
+  "name": "Transfers – between your U.S. Bank accounts (Transfer money)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant",
+   "phone",
+   "branch",
+   "atm"
+  ],
+  "network": "U.S. Bank core",
+  "ui_position": "Mobile app: Transfer & pay > TRANSFERS > 'Make a transfer' (one flow: choosing a U.S. Bank to-account = internal transfer, a linked other-bank account = external transfer); history under 'Transfers activity' (Scheduled / History tabs). Web: Transfer & Pay > Transfers.",
+  "description": "One-time, scheduled (up to one year ahead) and recurring transfers between the customer's own U.S. Bank deposit (and loan) accounts; post immediately; no fee.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s003",
+   "src-us-bank-s004",
+   "src-us-bank-s007",
+   "src-us-bank-s083"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P02-S01",
+    "name": "Internal transfer (one-time, scheduled, recurring)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Choose from/to U.S. Bank accounts, amount, optional date, memo (35 chars; not on same-day), 'Repeat this transfer' on web; posts immediately.",
+    "other_flags": "memo_max_chars: 35; voice_assistant_supported: Yes",
+    "notes": "Same-day cutoffs: checking/savings/reserve lines 12 a.m. local; first mortgage 4:30 p.m. CT; Deposit Point 9 p.m. CT; others 6 p.m. local (S007). PHONE/BRANCH/ATM channels inferred from general servicing, not from a fetched transfer page.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s003",
+     "src-us-bank-s004",
+     "src-us-bank-s007",
+     "src-us-bank-s083"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P03",
+  "bank": "us-bank",
+  "name": "External account transfers (Link an external account; Instant transfer)",
+  "former_names": "External Transfers tab (older online-banking label, S081)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "ach-external-transfer",
+   "rtp",
+   "fednow"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "ACH (Nacha); instant via RTP/FedNow (network not named on consumer pages); instant account verification vendor not named",
+  "ui_position": "Mobile app: Transfer & pay > TRANSFERS > 'Manage external accounts' > 'Link a new bank account'; transfers themselves start from 'Make a transfer'. Web: Transfer & Pay > 'External transfers & wires' > External transfers screen (cards: Make an external transfer / Send a wire transfer).",
+  "description": "Link-and-transfer between U.S. Bank accounts and the customer's accounts at other U.S. institutions. Outbound and inbound ACH (1–3 business days; free next-day option inbound) plus a no-fee 'Instant transfer' option over the 'U.S. instant payment network' when the other FI participates; the fastest available method is selected automatically. Inbound instant transfers are executed as a Request for Payment that the customer approves at the external bank (5-day window).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s003",
+   "src-us-bank-s004",
+   "src-us-bank-s007",
+   "src-us-bank-s073",
+   "src-us-bank-s082",
+   "src-us-bank-s045"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P03-S01",
+    "name": "Link an external account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Add an account at another FI by logging in to that bank (instant verification, often under a minute) or 'Share your account info' (routing/account + nickname) with two micro-deposits (<$1, 1–2 days) verified on the Linked accounts tab; unverified accounts auto-removed after 15 days.",
+    "other_flags": "instant_account_verification: Yes; microdeposit_fallback: Yes; unverified_removed_days: 15; email_validation_prompt: Yes",
+    "notes": "App demo (2025-08-22): Transfer & pay > Manage external accounts > 'Link a new bank account' > Connect your account (log in to the other bank with credentials, or manually add routing/account; manual triggers micro deposits) > Add an external account (type, routing, account, nickname) > Submit > Trial deposits ('Within 1-3 business days, you will see two deposits') > 'Send deposits' > 'Deposits on their way' (check email) > Done; later Manage external accounts shows the account as pending > Verify > enter exact amounts > Verify > 'Account added' (usable right away). Business web demo (2025-12-23): Accounts > Link an account > Connect your account > Select your institution (search; MX-branded demo bank) > institution login inside U.S. Bank screen > Connect > Connected (credential aggregation; MX likely aggregator per developer-portal case study – INFERRED).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s073",
+     "src-us-bank-s077",
+     "src-us-bank-s003",
+     "src-us-bank-s079"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P03-S02",
+    "name": "Outbound external transfer (standard ACH or Instant transfer)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send from U.S. Bank to a linked external account; choose delivery speed; instant 24/7 to participating FIs, else 1–3 business day ACH; no fee either way; confirmation with reference number.",
+    "other_flags": "auto_select_fastest_method: Yes; instant_transfer_no_fee: Yes; activity_history_days: 180",
+    "notes": "Statuses named in KB: Pending / Submitted / Complete; History tab shows completed or rejected. Edit/cancel only while Pending and not same-day (KB0069523 says before 7 a.m. CT on the scheduled day; KB0070154 says up to 11:59 p.m. CT the day before — inconsistent). Same-day cutoff 8 p.m. CT; email updates on completion. Consumer wording for the instant rail is only 'Instant payment network' (24/7, real-time, requests from merchants/billers/banks) — RTP vs FedNow never named to consumers.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "6-digit identity-verification code shown for recurring set-up (S080); one-time flow not stated"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s003",
+     "src-us-bank-s004",
+     "src-us-bank-s076",
+     "src-us-bank-s082",
+     "src-us-bank-s075"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P03-S03",
+    "name": "Inbound external transfer (standard, next-day, or instant via RfP)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Pull money from a linked external account into U.S. Bank; free standard (2–3 bd) or free next-day delivery; instant inbound uses a Request for Payment approved at the external bank within 5 days.",
+    "other_flags": "next_day_free: Yes; inbound_instant_via_RfP: Yes; rfp_approval_window_days: 5",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s075",
+     "src-us-bank-s045",
+     "src-us-bank-s007",
+     "src-us-bank-s081"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P03-S04",
+    "name": "Recurring external transfer",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "'Repeat this Transfer' with Frequency, Stop repeating, Start on, memo; 'Start recurring transfers'; identity verification with 6-digit code; edit via Account activity > Edit all remaining transfers.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "6-digit code at set-up"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s080",
+     "src-us-bank-s003"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P04",
+  "bank": "us-bank",
+  "name": "Wire transfers (Wires & ACH > Wire transfers)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "branch",
+   "phone"
+  ],
+  "network": "Fedwire (domestic); SWIFT (international)",
+  "ui_position": "Web: Transfer & Pay (top menu) > 'External transfers & wires' > Wire transfers card > 'Wire money' (demo); KB wording: Transfer & pay > Wires > Wire transfers; history under Wires > 'Past & current activity' (Filter: wire transfer history). App: Transfer & pay > TRANSFERS > Wires & ACH.",
+  "description": "Same-day and future-dated domestic wires in the app and online (USD to U.S. accounts; requires 6+ months banking history and an eligible account receiving direct deposits). International wires are digital for business deposit accounts only (USD, SWIFT BIC + IBAN); consumers send international wires at a branch or by phone. Fee shown before confirmation; email status updates.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s005",
+   "src-us-bank-s049",
+   "src-us-bank-s050",
+   "src-us-bank-s051",
+   "src-us-bank-s003"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P04-S01",
+    "name": "Domestic wire (digital)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Pick saved recipient or 'Send to one-time recipient' (individual/business, country, name, address, account + routing), choose from-account, Send on date, purpose, memo, amount → fee calculated; Review/Edit; 'Read authorization' + 'I agree to the wire transfer authorization' checkbox; Send transfer.",
+    "other_flags": "saved_recipients: Yes; one_time_recipient: Yes; purpose_field_required: Yes; cutoff_same_day: 7:30 a.m.–4:30 p.m. CT; federal_tax_cutoff: 2:30 p.m. CT",
+    "notes": "Web demo (2025-05-28) order: Transfer & Pay > External transfers & wires > Wire transfers card 'Wire money' > Wire details (Pay from; amount with 'View all dollar limits' link; Send on — schedule up to 15 days ahead, time disclaimer; Purpose; Reference info e.g. loan/invoice numbers; fee information) > Continue > Recipient info (name, address) > Bank info (routing, account) > Review (checkbox 'I agree to the Wire Transfer Authorization.'; OTP notice) > Submit > 'You're all set!'. Limits viewable only after recipient details are entered. Fee amount shown before confirmation, not published in KB. Future-dated wires: Wires > Past & current activity > Filter > Edit or Cancel until 11:59 p.m. CT the day before; approved wires cannot be edited (cancel and recreate); same-day pending wire: call 800-USBANKS. Email update when completed. Eligibility: customer ≥6 months, checking/savings/MMA, registered cellular device on profile ≥3 business days.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "One-time passcode after Submit (review screen: 'After selecting submit, you'll receive a one-time pass code to complete the wire transfer process.')"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s049",
+     "src-us-bank-s005",
+     "src-us-bank-s003"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P04-S02",
+    "name": "International wire (digital, business accounts only)",
+    "product": "wire-international",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Business deposit accounts can send USD international wires online/app: recipient type & country, SWIFT BIC, Account number/IBAN, purpose, memo, amount → fee; same-day only 7:30 a.m.–3 p.m. CT; no future dating.",
+    "other_flags": "currency: USD only; future_dated: No",
+    "notes": "Enhanced Payments press (July 2026) says international wires 'can now be initiated digitally rather than at a branch' (S060).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Wire authorization checkbox"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s050",
+     "src-us-bank-s053",
+     "src-us-bank-s060"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P04-S03",
+    "name": "International wire via branch or 24-Hour Banking (consumer)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "phone"
+    ],
+    "description": "Consumers (and any customer) can send international wires in a branch (appointment available) or by calling 800-USBANKS.",
+    "other_flags": "currency_options: unknown",
+    "notes": "Foreign-currency option and FX disclosure for consumer wires not found on fetched pages – UNKNOWN.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s005",
+     "src-us-bank-s050"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P04-S04",
+    "name": "Receive a wire (incoming)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "branch",
+     "phone"
+    ],
+    "description": "Sender needs name, account number, routing number (domestic) or SWIFT USBKUS44IMT (international) and U.S. Bank, 200 S 6th St, Minneapolis MN 55402; funds post to checking/savings once processed.",
+    "other_flags": "smart_assistant_routing_number_lookup: Yes",
+    "notes": "Incoming wire fee per pricing brochure (not captured).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s051",
+     "src-us-bank-s005"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P05",
+  "bank": "us-bank",
+  "name": "Bill pay (Pay bills)",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "bill-pay",
+   "rtp"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Bill-pay processor not named; RfP over The Clearing House RTP network",
+  "ui_position": "Web: Transfer & Pay > Pay bills — dashboard lists U.S. Bank bills automatically plus linked external bills under 'Other bills' with inline amount fields and a 'Review & pay N bill(s)' button; Activity tab; bill details panel with 'Set up autopay'. App: Transfer & pay > PAYMENTS & BILLS > Pay bills. Add bill offers 'Let us find your bills' (credit-report/merchant-network search) or manual add.",
+  "description": "Consumer bill pay: add billers (search or manual, company or person), one-time/scheduled/recurring payments, Autopay, Digital bills (eBills), expedited same-day/overnight delivery ($14.95), bill pay groups, and Request for Payment (RfP) instant bill payments over the RTP network. Electronic or paper check delivery chosen automatically; U.S. Bank Payment Guarantee for most payments.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s001",
+   "src-us-bank-s033",
+   "src-us-bank-s039",
+   "src-us-bank-s045",
+   "src-us-bank-s007"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P05-S01",
+    "name": "Add a biller & pay a bill (one-time / scheduled)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Add bill by search (match to statement) or Add manually (company/person; address prefill); pay with amount, payment date, from-account; Review & pay (web) / Pay now (app); electronic if deliver-by date ≤2 bd else paper check.",
+    "other_flags": "electronic_or_check_auto: Yes; expedited_same_day_overnight: Yes; expedited_fee: $14.95; payment_guarantee: Yes; credit_cards_cannot_fund: Yes",
+    "notes": "Add bill: 'Let us find your bills' (uses merchant networks and credit report info; authorization checkbox; Continue) > 'Here's what we found' > Add bill; or manual search/add (account number, nickname, ZIP) — 'Bills that are added manually will ensure the merchant is paid via paper check.' Pay: inline amount on dashboard > deliver-by date and pay-from account > 'Review & pay N bill' > pop-up confirm 'Pay $X' > 'Payment complete' details page with confirmation number > 'Back to bills'. U.S. Bank bills (cards, loans) can be paid from an external bank account added under Pay from > 'Manage external accounts' (credential login or manual + microdeposits; external accounts cannot be edited, only removed). Stop payment on a bill-pay paper check in-app: Activity > payment > 'Stop this check' > Continue > 'Agree & submit' (≥3 business days before scheduled date). Delivery: paper check needs up to 5 business days, electronic 1 business day.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s039",
+     "src-us-bank-s033",
+     "src-us-bank-s038",
+     "src-us-bank-s001"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P05-S02",
+    "name": "Autopay",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Per-biller 'Autopay set up now' with amount, frequency (weekly…annual), start date, from-account; Manage autopay / Remove autopay on the Autopay tab; edit next payment or whole series.",
+    "other_flags": "safe_debit_not_eligible: Yes",
+    "notes": "Set up from the bill details panel > 'Set up autopay' > choose payment amount, timing and funding account > 'Start autopay' > confirmation page. 'The auto payments typically take 1-2 statements to take effect so be sure to review your account and make payments until it takes effect.' Digital bills supply amount due/due date; otherwise entered manually.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s041",
+     "src-us-bank-s037",
+     "src-us-bank-s001"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P05-S03",
+    "name": "Digital bills (eBills)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Link a biller's electronic bill: biller > Digital bills > enter bill account info > Link bill; alert when bill is ready; enables autopay based on bill.",
+    "other_flags": "ebill_alert: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s036",
+     "src-us-bank-s035",
+     "src-us-bank-s001"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P05-S04",
+    "name": "Request for Payment (RfP) – instant bill pay via RTP",
+    "product": "rtp",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Customer elects 'Instant payment/RfP' with a participating biller; biller's RfP arrives in Bill Pay dashboard with email + digital-banking notification; customer pays instantly, schedules, or dismisses; no fee, no cutoff; confirmation when biller receives funds.",
+    "other_flags": "dismiss_request: Yes; partial_amount_if_biller_allows: Yes; expires_at_biller_expiration: Yes",
+    "notes": "Biller-side product launched Nov 2021 (S113 – title only).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s045",
+     "src-us-bank-s046",
+     "src-us-bank-s007"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P05-S05",
+    "name": "Bill pay groups",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Group billers (minimum five) under Settings > Create groups / Manage groups.",
+    "other_flags": "min_billers: 5",
+    "notes": "Management convenience only.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s042",
+     "src-us-bank-s007"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P05-S06",
+    "name": "Pay U.S. Bank bills from an external bank account",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Within Pay bills, a U.S. Bank bill (credit card, loan) can be paid from a checking/savings account at another bank added via Pay from > 'Manage external accounts' > 'Add an external account' (personal or business; log in with the other bank, or manual routing/account with microdeposit 'Request temporary deposit'). External accounts cannot be edited — remove (trashcan > Delete) and re-add.",
+    "other_flags": "funding_source: external ACH debit",
+    "notes": "KB0075424; aggregator login path mirrors external-transfer linking.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s951"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P05-S07",
+    "name": "Payment Switch",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Move recurring bills and subscriptions (streaming, mobile phone, utilities) to a U.S. Bank debit or credit card from the Bills & Subscriptions dashboard in the mobile app, without visiting each merchant site. Powered by Atomic; third component of U.S. Bank's 'Easy Switch' (with automated direct-deposit switching). Launched Oct 19 2026.",
+    "other_flags": "vendor: Atomic; card_on_file_switching: Yes",
+    "notes": "Added in verification (USB-C003); flow not mapped.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s959"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P06",
+  "bank": "us-bank",
+  "name": "Mobile check deposit (Deposit a check)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Not named",
+  "ui_position": "Mobile app: 'Deposit a check' shortcut near the top of the home screen, or Transfer & pay > DEPOSITS > Deposit a check; daily mobile deposit limit shown at the top of the Choose an account screen.",
+  "description": "App-only check deposit: sign check, Transfer & pay > Deposit a check, choose account, enter amount, photograph front/back, submit; two emails (received, accepted); View mobile check deposits (Pending / Completed tabs); first $275 available immediately; 10 p.m. CT cutoff.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s006",
+   "src-us-bank-s007"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P06-S01",
+    "name": "Deposit a check (mobile)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "As above; decline email with reasons; keep check 2 (landing) / 7 (FAQ) business days; up to 18 months of images in history.",
+    "other_flags": "immediate_availability_usd: 275; cutoff: 10:00 p.m. CT; new_account_limit_min: $50 (first 90 days); hold_notice_before_confirm: Yes",
+    "notes": "Demo (2026-08-05): 'Deposit a check' home shortcut > Choose an account (daily mobile check deposit limit shown; '$275 of the amount is available immediately, with the remainder being available within two business days') > front photo (landscape, dark surface) > Continue > back photo (sign in blue or black ink) > 'Review deposit' (amount editable by tapping) > 'Deposit check' > 'Check received' page with deposit-notification toggle, 'deposit another check' or Done.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s006",
+     "src-us-bank-s007"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P07",
+  "bank": "us-bank",
+  "name": "U.S. Bank Smart Assistant®",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "zelle",
+   "other"
+  ],
+  "channels": [
+   "voice-chat-assistant"
+  ],
+  "network": "U.S. Bank (built with Kasisto per historical press – not re-verified; UNKNOWN)",
+  "ui_position": "App: Assistant icon / microphone; Web: search field",
+  "description": "Voice/text assistant in the app (red Assistant icon / blue microphone), online banking search field and usbank.com; English and Spanish. Examples: 'Send 200 bucks to Tony', 'Transfer $100 from savings to checking', 'Pay the statement balance on my credit card', 'What's my routing number?'; FAQ adds starting disputes.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s083",
+   "src-us-bank-s007",
+   "src-us-bank-s005"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P07-S01",
+    "name": "Money movement by voice or text",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "voice-chat-assistant"
+    ],
+    "description": "Natural-language initiation of P2P send ('Send 200 bucks to Tony' – Zelle INFERRED, not named), internal transfers and U.S. Bank credit-card statement payments, routing-number lookup, dispute start; third-party bill pay via the assistant is not documented; execution confirmation flow not documented.",
+    "other_flags": "languages: English; Spanish; dispute_initiation: Yes",
+    "notes": "Whether 'Send 200 bucks to Tony' routes to Zelle is INFERRED (page does not name Zelle).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s083",
+     "src-us-bank-s007"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P08",
+  "bank": "us-bank",
+  "name": "Bill pay for business (Pay bills for your business)",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay",
+   "ach-origination"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Fiserv CashFlow Central (built with Melio), embedded in U.S. Bank business online/mobile banking",
+  "ui_position": "Transfer & pay > Pay bills for your business (tabs: Vendors / Bills; Pay button; blue + on mobile)",
+  "description": "Bill pay for business inside business online/mobile banking (Transfer & pay > Pay bills for your business). Two plans: Standard (free; one Level 1 user; pay any domestic biller/vendor; batch payments) and Pro ($15/mo; up to three users, +$15/mo per extra user; customizable user permissions; QuickBooks Online sync). Roles: Level 1 (full control incl. plan, users, approvals, reassign Level 1), Level 2 (schedule without limitation; approve Level 3 payments), Level 3 (own bills/payments; payments over the Level-1-set Payment limit require Level 1/2 approval). Funding-method access per user; account activation toggle.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s047",
+   "src-us-bank-s043",
+   "src-us-bank-s040",
+   "src-us-bank-s095",
+   "src-us-bank-s096",
+   "src-us-bank-s117"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P08-S01",
+    "name": "Add vendor & pay (ACH / check / card-funded)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "+Add vendor (search or +Add new vendor with nickname, account no., phone, email, optional ACH routing/account, address); Pay: vendor, funding account, payment method, one-time/recurring (frequency, first date, duration), arrival date with debit date shown, memo/invoice no. (prints on check), Confirm and pay.",
+    "other_flags": "card_funded_fee: 2.90%; credit_card_no_future_date: Yes; multi_vendor_desktop_only: Yes; user_levels: Level 1 and Level 2 users schedule payments without limitation; Level 3 payments above the Level-1-set Payment limit require Level 1 or Level 2 approval (Pro); vendor_enrollment_not_required: Yes",
+    "notes": "Approval model: Level 1 and Level 2 users schedule without limitation and 'Review and approve payments submitted by Level 3 users'; Level 3 users 'Require approval for payments over the limit set by the Level 1 user'. Settings > Users and roles: Account activation toggle, Roles and permissions, Funding method access (Full access or selected accounts), Payment limit amount (Level 3 only). Settings > Plans and billing > Manage plan (upgrade immediate; downgrade next cycle, deactivate extra users first). Level 1 can reassign the Level 1 role (confirmation step; immediate; scheduled payments intact). | Flag fix 2026-11-06: other_flags.user_levels corrected to match verified USB-J15 step 4 (gap-fill correction, S934); no USB-C0xx verification challenge covered this flag (none in verdicts.json), so it is attributed to the gap-fill patch rather than a challenge ID.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s040",
+     "src-us-bank-s043",
+     "src-us-bank-s047",
+     "src-us-bank-s091"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P08-S02",
+    "name": "Add bills (upload, photo, email inbox, manual, import)",
+    "product": "bill-pay",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Bills tab: Import bills > Upload files (JPEG/PNG/GIF/PDF); mobile Create a bill > Scan or upload; Add bill manual (vendor, amount, due date, invoice, line items); personalized email address for vendors; Pro accounting import/sync.",
+    "other_flags": "bill_capture: Yes; email_inbox: Yes; accounting_sync_pro: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s095",
+     "src-us-bank-s093",
+     "src-us-bank-s094"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P08-S03",
+    "name": "eBills for business",
+    "product": "bill-pay",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Vendor marked with eBill icon > View eBill settings > enter vendor-required info > accept T&Cs > Subscribe; up to two statement cycles to start.",
+    "other_flags": null,
+    "notes": "Article uses menu label 'Pay & transfer' (older label) rather than 'Transfer & pay'.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s096"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P09",
+  "bank": "us-bank",
+  "name": "ACH payments (small business, Wires & ACH dashboard)",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Nacha ACH (U.S. Bank ODFI)",
+  "ui_position": "Transfer & pay > Wires & ACH > ACH payments section > 'Send ACH payment'; saved recipients under Wires & ACH > 'Recipients & accounts' > ACH ('Add a new ACH recipient'); limits via 'How much can I send?' below the Total amount field; 'More about payment speeds' link.",
+  "description": "Single-recipient ACH credits from business online/mobile banking: enroll inside Wires & ACH (business questions; registered cellular device ≥3 business days), saved or new payee (name, account/routing, account type, individual/business), sending account, date, payment speed (standard vs same-day), memo, amount; confirmation page + email; Activity & approvals to view/cancel. Batch ACH available with Enhanced Payments.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s055",
+   "src-us-bank-s056",
+   "src-us-bank-s057",
+   "src-us-bank-s059",
+   "src-us-bank-s053"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P09-S01",
+    "name": "Send ACH payment (standard / same-day)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "As described; per-transaction fee disclosed at review (standard $1 / same-day $3 non-subscriber; $0.50 / $1.70 with Enhanced Payments).",
+    "other_flags": "saved_recipients: Yes; fees: standard: $1 / $0.50 EP; same_day: $3 / $1.70 EP",
+    "notes": "Send ACH payment flow (KB0234901): Wires & ACH > ACH payments > Send ACH payment > (first time: usage questions) > payee name, routing/account, checking or savings > Continue > from-account, date, payment speed ('More about payment speeds') > 'How much can I send?' pop-up (available to send now; daily and weekly limits) > Review page ('final chance to cancel') > 'Send payment' (cannot be stopped). Speeds per Apr 2026 video: instant, standard, or same day. Cutoffs: same-day ACH by 1:30 p.m. CT (after that but before 8 p.m. CT sends next business day); standard 1–3 business days, day one if before 8 p.m. CT. Recipients maintained under Wires & ACH > Recipients & accounts > ACH. No second-approver/dual control documented for business ACH, wires or instant payments in ordinary business online banking; delegates get 'view-only or transaction access' with 'daily transaction limits' via Shared Access / User management (money movement permission check boxes).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Registered cellular device required (OTP implied); explicit step not documented"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s055",
+     "src-us-bank-s053",
+     "src-us-bank-s059"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P09-S02",
+    "name": "Batch ACH (Enhanced Payments)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Batch ACH listed as 'Available' for both standard and Enhanced Payments tiers on the pricing table; no flow documented.",
+    "other_flags": null,
+    "notes": "Steps UNKNOWN.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s053"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P10",
+  "bank": "us-bank",
+  "name": "Instant payments (small business, Wires & ACH dashboard)",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "rtp",
+   "fednow"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "RTP (TCH) and FedNow (bank-level); SMB routing not disclosed",
+  "ui_position": "Instant is presented as a payment speed ('From instant, standard, or same day options you choose when your payment is sent') inside the business 'Send ACH payment' flow on the Wires & ACH dashboard, rather than a separate tile.",
+  "description": "Business online/mobile banking can send instant payments 24/7/365 (per-transaction fee $3, or $0.75 with Enhanced Payments); confirmation page shows send date, expected arrival, memo, transaction number. Network (RTP vs FedNow) not named on SMB pages; commercial pages confirm both with intelligent routing.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s048",
+   "src-us-bank-s058",
+   "src-us-bank-s053",
+   "src-us-bank-s061"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P10-S01",
+    "name": "Send instant payment",
+    "product": "rtp",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Payee account + routing; immediate, irrevocable; fee $3 ($0.75 EP).",
+    "other_flags": "fee: $3 / $0.75 EP; available_24_7: Yes",
+    "notes": "Instant appears as a delivery-speed choice ('instant, standard, or same day') within Send ACH payment; recipient needs account and routing number; 'with transparent fees'. Consumer/SMB wording never names RTP or FedNow.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s058",
+     "src-us-bank-s053",
+     "src-us-bank-s048"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P11",
+  "bank": "us-bank",
+  "name": "Enhanced Payments",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "U.S. Bank",
+  "ui_position": "Online banking only: Transfer & pay > Wires & ACH > 'Save on fees with Enhanced Payments' > Learn more > Enroll now > accept terms > 'Confirm & enroll' (confirmation email; usable immediately). Cannot enroll in the mobile app.",
+  "description": "Launched July 8 2026: $25/month subscription (first two billing cycles waived) that lowers per-transaction fees on domestic ACH, same-day ACH, batch ACH, domestic & international (USD) wires and instant payments inside the business online banking 'wires and ACH dashboard'; adds payee templates and a dedicated banking team.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s053",
+   "src-us-bank-s060",
+   "src-us-bank-s048"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P11-S01",
+    "name": "Enhanced Payments subscription (fee bundle + payee templates)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Pricing table: standard ACH $0.50 (vs $1), same-day ACH $1.70 (vs $3), domestic wire $16 (vs $30), international USD wire $35 (vs $45), instant payment $0.75 (vs $3).",
+    "other_flags": "monthly_fee: $25; payee_templates: Yes; batch_ach: Yes; cancel_via_banker: Yes",
+    "notes": "Support 866-872-6558 M–F 8–6 CT.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s053",
+     "src-us-bank-s060"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P12",
+  "bank": "us-bank",
+  "name": "SinglePoint® Essentials",
+  "former_names": null,
+  "segments": [
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow",
+   "internal-transfer"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app"
+  ],
+  "network": "U.S. Bank SinglePoint",
+  "ui_position": "Separate SinglePoint login; not inside consumer/business online banking",
+  "description": "Cash-management portal for larger small businesses and local governments: wires, domestic and international ACH, instant payments, transfers between U.S. Bank accounts and to loans, stop payments, Positive Pay, alerts, multiple user profiles, Mobile SinglePoint; partner tools (ACH Universal, Bank Positive Pay) for file import. Separate login (singlepoint.usbank.com).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s066",
+   "src-us-bank-s048"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P12-S01",
+    "name": "SinglePoint Essentials payments (wire, ACH, instant, book transfers)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "As listed; approval/dual-control detail not published.",
+    "other_flags": "positive_pay: Yes; stop_payments: Yes; multi_user: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s066"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j22"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P13",
+  "bank": "us-bank",
+  "name": "SinglePoint® (commercial treasury portal) + Mobile SinglePoint, APIs, ERP connectors, file transmission",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow",
+   "internal-transfer"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app"
+  ],
+  "network": "U.S. Bank",
+  "ui_position": "SinglePoint portal (separate login); Mobile SinglePoint",
+  "description": "SinglePoint® treasury portal (Celent 2026 Model Bank for Cash Management). Payment modules: ACH origination (domestic & international), domestic & international wires (real-time FX, payment tracking), account transfers (real-time, incl. loans), real-time payments (send/receive on 24/7 RTP network with payment details), check payables, liquidity/investments. Controls: 'Manage approvals, set payment limits and whitelist computer IP addresses', extensive user setup, positive pay, Trusteer Rapport. Mobile SinglePoint (browser or app) with modern authentication for approvals on the go. Dashboard shows 'accounts, reports, tracking, transfers and approvals'. API catalogue: Account Transfers, Account Validation, ACH Originations, Bank Information, Check Payables, Disbursements via Zelle, Foreign Exchange, Instant Payments, Payee Choice, Payee Token+, PaySmart, Positive Pay, Push to Card, Receivables, Tokenized Payments, Treasury Builder, U.S. Bank FBO Account, Virtual Account Reporting, Wire Transfers, Incoming Webhooks.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s100",
+   "src-us-bank-s103",
+   "src-us-bank-s104",
+   "src-us-bank-s061"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P13-S01",
+    "name": "SinglePoint payments (ACH, wires, instant payments, account transfers)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Rules-based user entitlements noted on AP hub; dual approval specifics not published on fetched pages.",
+    "other_flags": "rules_based_entitlements: Yes",
+    "notes": "SinglePoint portal page (S105) and SinglePoint page (S099) not retrievable – detailed module list UNKNOWN.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s104",
+     "src-us-bank-s061",
+     "src-us-bank-s100"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P13-S02",
+    "name": "Treasury management APIs / ERP connectors / file transmission",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "API, ERP connector and file channels for ACH, wires, instant payments (RTP/FedNow) and reporting; developer portal is a JS app (not fetched).",
+    "other_flags": "developer_portal: developer.usbank.com; partner_directory: partnerdirectory.usbank.com",
+    "notes": "Developer-portal catalogue (S942): Account Transfers, Account Validation, ACH Originations (same-day/standard credit or debit), Bank Information (routing validation incl. 'supported transfer modes'), Check Payables, Disbursements via Zelle (enrollment check by email/U.S. mobile then pay), Foreign Exchange (rate request/accept/settlement date), Instant Payments (RTP + FedNow credit; RfP RTP-only), Payee Choice, Payee Token+, PaySmart, Positive Pay, Push to Card, Receivables, Tokenized Payments, Treasury Builder bundle, U.S. Bank FBO Account (qualified partners), Virtual Account Reporting, Wire Transfers (domestic & international), Incoming Webhooks. Embedded payments page: FBO account with virtual accounts for moving money on behalf of others; 'intelligent routing to route payments via the best rail'; Connected Partnership Network.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": null,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s100",
+     "src-us-bank-s061"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P14",
+  "bank": "us-bank",
+  "name": "Instant payments – RTP® network and FedNow® Service (commercial)",
+  "former_names": "Real-time payments (RTP)",
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "rtp",
+   "fednow"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "The Clearing House RTP; Federal Reserve FedNow",
+  "ui_position": "SinglePoint / API / file",
+  "description": "Commercial instant payments over TCH RTP® and FedNow® (send and receive). Via the Instant Payments API, clients set a preferred network (TCH RTP, FedNow, or 'Instant' = bank chooses by business rules) at onboarding or per request; RfP send/cancel is RTP-only; $10M transaction limit on both networks per the API (FedNow network limit raised to $10M in Nov 2025; U.S. Bank's commercial marketing page still shows FedNow $1M – stale); receiving bank must be on RTP or FedNow; credit transfers irrevocable.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s061",
+   "src-us-bank-s062",
+   "src-us-bank-s065",
+   "src-us-bank-s069"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P14-S01",
+    "name": "Send instant payment (RTP / FedNow)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Credit push to any RTP/FedNow-reachable DDA; irrevocable; confirmation in seconds.",
+    "other_flags": "rtp_limit: $10M; fednow_limit: $10M (Instant Payments API; network limit since Nov 2025); marketing page still shows $1M; intelligent_routing: Yes",
+    "notes": "API: preferred network TCH RTP / FedNow / 'Instant' (bank chooses by business rules), settable at onboarding or per request; 24/7/365; $10M limit for both networks (the July 2023 fact sheet S065 listed $1M and $500K – the then-current RTP/FedNow limits); receiving bank must be on RTP or FedNow; irrevocable; webhook notifications; transaction statuses and reject reasons documented behind developer login.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s061",
+     "src-us-bank-s065"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P14-S02",
+    "name": "Receive instant payment (RTP / FedNow)",
+    "product": "fednow",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Receive with remittance data 24/7.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s061",
+     "src-us-bank-s065"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P14-S03",
+    "name": "Request for Payment (RfP) – biller send",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Send data-rich digital bill through the payer's bank for immediate payment (RTP only today); consumer side surfaces in U.S. Bank Bill Pay (USB-P05-S04).",
+    "other_flags": "fednow_rfp: expected later",
+    "notes": "RfP initiate and cancel via Instant Payments API; 'RFP functionality is currently limited to TCH RTP® only'. Example use case: utility builds RfP option that notifies the customer a payment is due; customer submits payment and can check whether the RfP is complete/received.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s061",
+     "src-us-bank-s045"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P15",
+  "bank": "us-bank",
+  "name": "Payee Choice (digital disbursement)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "rtp",
+   "zelle",
+   "push-to-card",
+   "ach-origination",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "U.S. Bank (multi-rail)",
+  "ui_position": "Treasury management > Accounts payable > Digital disbursement",
+  "description": "B2C disbursement platform: payee notified by email and text, chooses RTP, Zelle, push-to-card, ACH, mailed prepaid card or paper check on a personalized site; payee data stored for future payments; plug-and-play integration with reporting.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s063",
+   "src-us-bank-s061",
+   "src-us-bank-s062"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P15-S01",
+    "name": "Payee Choice multi-rail disbursement",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "As described.",
+    "other_flags": "payee_self_select: Yes; rails: RTP; Zelle; push-to-card; ACH; prepaid card; check",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s063"
+    ],
+    "journeys": [
+     "urn:kos:journey:us-bank:usb-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P16",
+  "bank": "us-bank",
+  "name": "Disbursements via Zelle® (Zelle® disbursements)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "zelle"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "Early Warning Services",
+  "ui_position": "Faster payments > Zelle disbursements; Payee Choice option",
+  "description": "Launched Nov 1 2017: corporate/commercial clients pay individuals using only a mobile number or email over the Zelle Network, real time or next day; use cases insurance payouts, emergency payroll, refunds, resort realtor payments (Sunriver case study).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s062",
+   "src-us-bank-s068",
+   "src-us-bank-s072"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P16-S01",
+    "name": "Zelle disbursement (B2C)",
+    "product": "zelle",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "As described.",
+    "other_flags": "next_day_option: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s062",
+     "src-us-bank-s068"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P17",
+  "bank": "us-bank",
+  "name": "Push-to-card (Visa Direct)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "push-to-card"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "Visa Direct",
+  "ui_position": "Faster payments > Push-to-card; Payee Choice option",
+  "description": "Push to Card (API and Payee Choice option): funds any eligible Visa® or Mastercard® U.S. debit card 'within 30 minutes, 24/7' over the Visa network; credit push only; $125,000 per transaction; irrevocable; payee tokens; 90-day transaction search; webhook status with rejection reasons.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s062",
+   "src-us-bank-s063"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P17-S01",
+    "name": "Push-to-card disbursement (B2C)",
+    "product": "push-to-card",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "As described.",
+    "other_flags": "card_networks: Visa; Mastercard; fraud_monitoring: Yes",
+    "notes": "Visa network push to any eligible Visa or Mastercard U.S. debit card; funds 'within 30 minutes, 24/7'; $125,000 per transaction; credit push only; irrevocable; payee token; webhook status incl. rejection reasons; 90-day search.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s062"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P18",
+  "bank": "us-bank",
+  "name": "Pay Smart (intelligent payment routing)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "U.S. Bank",
+  "ui_position": "Faster payments / Instant payments related solutions",
+  "description": "Rules-based routing service that recommends instant payments when the payee is reachable and otherwise prioritizes alternative methods.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s061",
+   "src-us-bank-s062"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P18-S01",
+    "name": "Pay Smart routing",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "As described.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s061"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P19",
+  "bank": "us-bank",
+  "name": "International electronic payments (business) – international wires, international ACH, FX Web",
+  "former_names": null,
+  "segments": [
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "wire-international",
+   "ach-origination"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "web",
+   "branch"
+  ],
+  "network": "SWIFT; Nacha IAT/partner ACH; U.S. Bank FX",
+  "ui_position": "Business services > Make payments > International electronic payments; FX Web separate tool",
+  "description": "Business/commercial international payments: international wires in USD or 60+ foreign currencies with integrated real-time FX via SinglePoint or preferred channel; international ACH in 19 currencies to 40+ countries (SinglePoint and file transmission; Canada credit in USD/CAD and debit origination); connectivity via host-to-host, Swift/FileAct; ISO 20022/BAI/ANSI/flat/CSV formats; FX platform SSO from SinglePoint; foreign currency accounts in 20+ currencies. Small business: International electronic payments / FX Web (existing).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s052",
+   "src-us-bank-s053"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P19-S01",
+    "name": "International wire (business, incl. foreign currency via FX Web)",
+    "product": "wire-international",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "api-treasury-portal",
+     "branch"
+    ],
+    "description": "USD international wires digitally (S050); foreign-currency payments via FX Web (steps not published).",
+    "other_flags": "fx_web: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s052",
+     "src-us-bank-s050"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P19-S02",
+    "name": "International ACH (Canada, Mexico, Europe)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "api-treasury-portal"
+    ],
+    "description": "Create and transmit ACH to Canada, Mexico and Europe online or via direct transmission.",
+    "other_flags": "countries: Canada; Mexico; Europe",
+    "notes": "Named 'Domestic and international ACH' under SinglePoint Essentials (S048).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s052"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P20",
+  "bank": "us-bank",
+  "name": "Paze℠ online checkout",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Early Warning Services (Paze)",
+  "ui_position": "Online banking / app > Paze Wallet page; Profile and settings > Personal details for email",
+  "description": "Note only (wallet, out of money-movement scope): eligible U.S. Bank credit/debit cards auto-provisioned to the bank-owned Paze wallet (Early Warning); opt-out via the Paze Wallet page in the app/website. Announced Sept 2024 (press title). No funding/receive money-movement role identified.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s064",
+   "src-us-bank-s114"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P20-S01",
+    "name": "Paze wallet (card checkout)",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Card tokenised checkout only.",
+    "other_flags": "auto_provisioned: Yes",
+    "notes": "Out of scope beyond note.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s064"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P21",
+  "bank": "us-bank",
+  "name": "Branch / ATM deposits and Bank by Mail",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "branch",
+   "atm",
+   "phone"
+  ],
+  "network": "U.S. Bank",
+  "ui_position": "usbank.com > Online & mobile banking > ATM Banking (/online-mobile-banking/atm.html). ATM main menu buttons: Settings | Exit & return items | Get cash | Make a deposit | Balances & statements | Transfers & payments.",
+  "description": "Deposit at any U.S. Bank branch or ATM, or mail checks to U.S. Bank/Bank by Mail, P.O. Box 1950, St. Paul MN 55101-0950 (named as alternatives when over mobile-deposit limits); wires and international wires available in branch and via 24-Hour Banking. Dedicated ATM money-movement journey pages were not fetched.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s006",
+   "src-us-bank-s005",
+   "src-us-bank-s050"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P21-S01",
+    "name": "Branch/ATM/mail deposit",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "atm"
+    ],
+    "description": "Alternatives to mobile deposit.",
+    "other_flags": null,
+    "notes": "ATM: all U.S. Bank ATMs accept cash and check deposits (processed as separate transactions; no coins, no foreign checks/currency; checks must be endorsed; full amount to one account — then transfer at the ATM). Cash deposits credited same business day; checks before 8 p.m. local posted same day. Demo flow: Insert or tap to get started (card, device or contactless) > PIN > Main menu 'Make a deposit' > 'Choose your deposit type' (Checks / Cash) > 'Deposit into which account?' ('Funds for deposits may not be available for immediate withdrawal.') > Insert cash > 'Verify your deposit summary' (Review cash details: bill type/quantity/subtotal) > receipt (Email / Print / Print & email / No receipt) > 'Your transaction was successful'. Mobile wallet works at ATMs only with a linked U.S. Bank debit card.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s006"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P21-S02",
+    "name": "ATM transfers & payments",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "At U.S. Bank ATMs the main menu offers 'Transfers & payments': transfer funds between your U.S. Bank accounts and make payments to U.S. Bank credit card or line of credit accounts ('Just insert your card and transfer your payment').",
+    "other_flags": "receipt_options: Email; Print; Print & email; No receipt; languages: multiple (Language, Idioma, 語言 button)",
+    "notes": "ATM main-menu labels: Settings | Exit & return items | Get cash | Make a deposit | Balances & statements | Transfers & payments.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "card + PIN (or tap device/contactless card)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s954",
+     "src-us-bank-s911"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "USB-P22",
+  "bank": "us-bank",
+  "name": "U.S. Bank Payroll (powered by Gusto) & Business remote check deposit",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination",
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "web"
+  ],
+  "network": "Gusto (payroll); RDC vendor not named",
+  "ui_position": "Business services > Payroll services; Check & cash services > Remote check deposit",
+  "description": "Embedded payroll (Gusto) inside business online banking for paying/onboarding employees (ACH direct deposit implied); Business remote check deposit (scanner RDC) listed in business navigation. Product pages not fetched – inventory entry only.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-us-bank-s044",
+   "src-us-bank-s066",
+   "src-us-bank-s060"
+  ],
+  "sub_products": [
+   {
+    "id": "USB-P22-S01",
+    "name": "U.S. Bank Payroll (Gusto) payroll direct deposit",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Existence confirmed; flow UNKNOWN.",
+    "other_flags": null,
+    "notes": "Journey not mapped – page not fetched.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s044",
+     "src-us-bank-s060"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "USB-P22-S02",
+    "name": "Business remote check deposit",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Existence confirmed in nav; flow UNKNOWN.",
+    "other_flags": null,
+    "notes": "Journey not mapped – page not fetched.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": null,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-us-bank-s044",
+     "src-us-bank-s066"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

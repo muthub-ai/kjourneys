@@ -39,7 +39,7 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 
 - **Provenance on every fact:** basis (observed, disclosed, inferred, internal, sample, awaiting), the MI evidence level it came from, sources, who asserted it and when, and validity dates.
 - **History is never lost:** facts are superseded, never overwritten, and git keeps every prior state. Tag the commit you present from.
-- **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 40 negative tests prove the rules hold.
+- **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 46 negative tests prove the rules hold.
 - **The line of visibility is a provenance boundary:** competitors' backstage is never presented as fact.
 
 ## Repo map

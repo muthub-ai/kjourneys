@@ -13,8 +13,13 @@
   - Journey: a stacked graph of the bank's stage scores against the best bank and Wells Fargo, over its gaps by severity with strengths above the line; stage cards; ranked gaps.
   - Blueprint: lenses, highlights and jump-to for every journey. The sample keeps its experience curve, hot spots, unhappy paths, app tracing and systems table.
   - Present mode and the engineering sequence diagram are back. The story's numbers are computed from the MI data.
+- **Customer journeys, bank journeys, products:**
+  - The 17 MI composites are the customer journeys. Each bank journey links to the one it delivers; the link is derived and labeled (MI's own references, else rail and segment, else rail only as a closest match). 209 of 236 are linked; the rest are grouped by rail.
+  - Each bank's catalog is imported: 143 products as marketed and 462 sub-products, with capability flags per sub-product. Journeys carry their product, sub-product, and limits, fees and cut-offs.
+  - The Journey tab opens on a customer journey: best-practice steps with the bank steps they come from, then every bank's journeys with product › sub-product and stage scores. A new Products tab shows each catalog. The blueprint gains a best-practice row and a picker grouped by customer journey. Compare cells list the sub-products behind each Yes or No.
+  - Workbook check: TD-J18 names product TD-P10, but its sub-product TD-P04-S05 belongs to TD-P04. The import uses TD-P04, keeps the original as x-mi_product_id, and records a warning in the manifest.
 - **Exports:** facts.jsonl adds findings and rankings; summary adds the ranking.
-- **Tests:** 40 negative fixtures (9 new for MI collections), now picking attributes by datatype; the ingest test uses its own TEST questions. `openpyxl` added to requirements.
+- **Tests:** 46 negative fixtures (15 new for MI collections, catalog and journey links), now picking attributes by datatype; the ingest test uses its own TEST questions. `openpyxl` added to requirements.
 
 ## 0.6.0 — 2026-11-06
 

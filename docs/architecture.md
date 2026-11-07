@@ -60,6 +60,7 @@ erDiagram
 - **Registries** (parties, products, capabilities, applications, metrics, processes, controls, sources) are shared and owned by the data office. Journeys and comparisons reference them by ID or URN.
 - **Identity:** `urn:kos:<kind>:<bank>:<local>`. It is immutable once published. Catalog entities are bank-scoped so journeys reuse them.
 - **Comparability** comes from shared vocabularies adopted from the MI study ([ADR-0007](adr/0007-adopt-mi-taxonomy.md)): ten banks, sixteen rails, nine stages, six evidence levels, sixteen capability flags and a 0–4 stage-score rubric, plus BIAN service domains for the Wells Fargo backstage.
+- **Three levels of journey and product:** a *customer journey* (MI composite, the same at every bank) is delivered by each bank's *bank journeys*, and each bank journey uses one *sub-product* of a *product* in that bank's catalog. Rails sit across all three and are the axis for scores and comparison.
 - **MI analysis** sits beside the journeys: findings (gaps and strengths at a journey step), composite best-practice journeys, observations, the MI verification round, network participation and the ranking. Each record names the report version it came from.
 
 ## 4. Repository layout
@@ -72,6 +73,7 @@ schema/                            ontology (human) + JSON Schema (machine)
 registries/                        shared catalogs                       → data office
 data/portfolio.json                banks and products in scope
 data/journeys/<bank>/*.json        MI journeys (mi-*.json, imported) and the Wells Fargo sample blueprint → MI session, journey owners
+data/catalog/<bank>.json           products as marketed → sub-products (capability flags, journeys) → MI session
 data/findings/<bank>.json          gaps and strengths                    → MI session
 data/composites/<product>.json     best-practice composite journeys      → MI session
 data/observations/, verifications/ per-bank observations, MI challenge round
@@ -99,7 +101,7 @@ flowchart LR
 | Assemble | `tools/assemble.py` | A file's bank or product disagrees with its folder |
 | Validate | `tools/validate_journey.py` | Schema, integrity, typing, temporal, provenance or publish-gate rule broken |
 | Import | `tools/import_mi_workbook.py` | Workbook sha mismatch, unknown bank, rail, stage or evidence level, unresolved source |
-| Negative tests | `tests/run_tests.sh` | Any of 40 known-bad fixtures passes |
+| Negative tests | `tests/run_tests.sh` | Any of 46 known-bad fixtures passes |
 | Ingest test | `tests/test_ingest.py` | Versioned ingest, history, refusal or immutability behaves wrongly |
 | Build | `tools/build_site.py` | Template or data missing |
 | Export | `tools/export.py` | — (produces facts, coverage, summary; summary is posted to the CI run) |

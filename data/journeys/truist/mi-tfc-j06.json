@@ -606,5 +606,13 @@
   }
  ],
  "assessment": "Mature Deliver-By bill pay with $50 guarantee and multi-payee batch; stop-payment path is analog (phone/mail).",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "TFC-P03",
+ "terms": {
+  "limits": "Adjustable at Truist discretion",
+  "fees": "Standard free; Same Day Bill Pay $4.95 / Overnight Check $14.95 (business schedule)",
+  "cutoffs": "Deliver By ≤ due date; electronic debit 2 business days prior"
+ },
+ "composite": "CJ-BILLPAY-SEND",
+ "composite_match": "mi-reference"
 }

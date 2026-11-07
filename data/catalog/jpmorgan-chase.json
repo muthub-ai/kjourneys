@@ -1,0 +1,2828 @@
+[
+ {
+  "id": "JPM-P01",
+  "bank": "jpmorgan-chase",
+  "name": "Zelle®",
+  "former_names": "Chase QuickPay® with Zelle®; Chase QuickPay",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle network)",
+  "ui_position": "Mobile: side menu 'Send money with Zelle®' (first use: 'Get started'); 'Pay & Transfer' > 'Send money with Zelle®' / 'Request/Split with Zelle®'. Web (chase.com): 'Pay & transfer' menu > 'Pay bills & send money with Zelle®' > 'Set up'. QR: 'Send Money with Zelle®' > 'Zelle® settings' > 'Zelle® QR code' > 'My Code'; scan via 'Send' > QR icon at top of 'Select Recipient' screen. Marketing hub tabs on chase.com/digital pages: Direct deposit | Zelle | Chase Online Bill Pay | Wire transfers | Digital transfers | Chase QuickDeposit | ATMs.",
+  "description": "Embedded Zelle P2P send/request/split inside Chase Mobile and chase.com, funded from eligible Chase checking accounts. Business customers can receive via a Zelle® tag.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s001",
+   "src-jpmorgan-chase-s014",
+   "src-jpmorgan-chase-s015",
+   "src-jpmorgan-chase-s016",
+   "src-jpmorgan-chase-s027",
+   "src-jpmorgan-chase-s042",
+   "src-jpmorgan-chase-s051"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P01-S01",
+    "name": "Send money with Zelle®",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "One-time, future-dated or repeating payment to a U.S. mobile number, email or Zelle tag; QR-code send.",
+    "other_flags": "social_media_origin_block: Yes; tiered_daily_limits: T0 $500 to T3 $10,000 consumer; $1,000 to $15,000 Private Client/Business/Private Bank/WM",
+    "notes": "Published scam wording (Security Center ALERT): 'For your protection, Chase will not allow you to send Zelle® payments identified as originating from contact through social media.' FAQ: 'Zelle® is intended for payments to recipients you know and trust and is not intended for the purchase of goods from retailers, online marketplaces or through social media posts.' Scam contact: 1-800-935-9935 opt. 8 (consumer) / 1-800-242-7338 (business; 'Qualifying imposter scams may be eligible for reimbursement'). Timing: Chase-to-Chase minutes (select next business day); other Zelle banks minutes (select 1-2 business days send / 1-3 receive). Daily limit dynamically determined per transaction and displayed at setup with remaining tier amount. In-flow questionnaire text remains login-gated.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "activation code at enrollment; payment-purpose/contact-origin questions may be asked (DSA/Zelle terms)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s001",
+     "src-jpmorgan-chase-s014",
+     "src-jpmorgan-chase-s042",
+     "src-jpmorgan-chase-s045",
+     "src-jpmorgan-chase-s901",
+     "src-jpmorgan-chase-s902",
+     "src-jpmorgan-chase-s910",
+     "src-jpmorgan-chase-s923"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j01"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P01-S02",
+    "name": "Request money with Zelle®",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Request a specific amount from enrolled Zelle users; requests expire 14 days after Send On date.",
+    "other_flags": "request_expiry_days: 14",
+    "notes": "Request/Split flow: swipe left on a checking or credit-card charge > 'Split' > choose/add contacts > 'Next' > 'Include my portion' > 'Request money' > 'Yes, send it now'; or 'Pay and Transfer' > 'Request/Split with Zelle®'. Business FAQ: 'payment requests to persons not already enrolled with Zelle® must be sent to an email address' (requests CAN target unenrolled persons via email).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s015",
+     "src-jpmorgan-chase-s042",
+     "src-jpmorgan-chase-s032"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P01-S03",
+    "name": "Split with Zelle®",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Split a checking or credit-card transaction with contacts; app calculates shares and sends requests.",
+    "other_flags": null,
+    "notes": "Entry from transaction detail (swipe left > Split) or 'Request/Split with Zelle®'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": true,
+     "qr-code": false,
+     "contact-sync": true,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s001",
+     "src-jpmorgan-chase-s015",
+     "src-jpmorgan-chase-s032"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P01-S04",
+    "name": "Zelle® tag (business receive identifier)",
+    "product": "zelle",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Custom 6-40 character identifier for business accounts so customers can pay without the owner's mobile/email; one tag per checking account, max 5 Zelle IDs.",
+    "other_flags": "business_only: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s001",
+     "src-jpmorgan-chase-s027",
+     "src-jpmorgan-chase-s032",
+     "src-jpmorgan-chase-s042"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P01-S05",
+    "name": "Zelle® QR code (My Code / scan to pay)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Display personal QR under Zelle settings > 'Zelle® QR code' > 'My Code'; scan a recipient's code from the 'Select Recipient' screen.",
+    "other_flags": null,
+    "notes": "My Code: 'Send Money with Zelle®' > 'Zelle® settings' > 'Zelle® QR code' > 'My Code' (view/share). Scan to pay: 'Send money with Zelle®' > 'Send' > QR icon at top of 'Select Recipient' screen > allow camera > point at recipient's code > amount > 'Send'; confirm displayed name for new recipients.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s001"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P02",
+  "bank": "jpmorgan-chase",
+  "name": "Transfer money (Account or Brokerage Transfer)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "atm",
+   "phone",
+   "branch"
+  ],
+  "network": "Chase (book transfer)",
+  "ui_position": "Mobile: 'Pay & Transfer' > 'Transfer' > 'Account or Brokerage Transfer'. Web: 'Pay & transfer' > 'Transfer money' > 'Schedule transfer'. Also from account tile swipe-left > 'Transfer'. ATM: transfers between accounts at any Chase ATM.",
+  "description": "Transfers between the customer's own Chase deposit, loan, card and J.P. Morgan investment accounts; one-time or repeating.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s002",
+   "src-jpmorgan-chase-s010",
+   "src-jpmorgan-chase-s023",
+   "src-jpmorgan-chase-s009"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P02-S01",
+    "name": "One-time or repeating internal transfer",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Move money between Chase checking/savings/credit/loan/investment accounts with date and memo.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s002",
+     "src-jpmorgan-chase-s010"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P02-S02",
+    "name": "Autosave (checking-to-savings automation)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Recurring automatic transfers from Chase checking to Chase savings on a schedule or when a deposit arrives.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s005"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P02-S03",
+    "name": "Chase First Banking parent-to-child transfer and allowance",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Parent moves money from their Chase checking into the child's Chase First Banking account (one-time 'Transfer money' or recurring 'Allowance' in the Earn tab); child can request money with a note.",
+    "other_flags": "child_p2p_blocked: Yes; funding_only_from_parent_chase_checking: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s054",
+     "src-jpmorgan-chase-s055"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P02-S04",
+    "name": "ATM account-to-account transfer",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Transfer funds between Chase accounts at a Chase ATM (no fee).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s023"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P02-S05",
+    "name": "Link Chase business and personal accounts (single sign-on transfers)",
+    "product": "internal-transfer",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Signers on business checking can link personal accounts to Chase Business Online and move money between them under one User ID.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s036"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P03",
+  "bank": "jpmorgan-chase",
+  "name": "External transfers (Digital transfers / External accounts)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "ach-external-transfer",
+   "rtp",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "ACH (Chase as ODFI); instant account verification via external-bank login (aggregator not named)",
+  "ui_position": "Web: 'Pay and transfer' tab > 'External accounts' > 'Add external account'; transfer via 'Transfer money' > 'Schedule transfer'. Mobile: account tile swipe-left > 'Transfer' > 'Manage external accounts' > 'Add an external account'. Desktop also 'Transfer Money' > 'Add an external checking or savings account'.",
+  "description": "Link external U.S. bank accounts (instant login, manual, or two trial deposits + one withdrawal) and schedule one-time or repeating ACH transfers in either direction; typically 2-3 business days. DSA Transfers Service addendum (June 2026): External Transfers schedule/cancel cutoff 8:00 PM ET on any Business Day; cancellable until the Cutoff Time on the Send On Date; daily maximum (all accounts aggregate) Consumer Banking $25,000, Chase Sapphire Banking / Chase Private Client / Private Banking / Business Banking $100,000, dynamically lowered per transfer and displayed at setup; 'Sent'/'Completed' transfers cannot be cancelled.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s009",
+   "src-jpmorgan-chase-s018",
+   "src-jpmorgan-chase-s019",
+   "src-jpmorgan-chase-s067"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P03-S01",
+    "name": "Add external account (instant login / manual / trial deposits)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Three verification paths: instant verification by logging into the other bank, manual routing/account entry, or two small deposits + one withdrawal verified in 2-3 business days.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "external-bank credential login for instant verification; trial deposits otherwise"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s009",
+     "src-jpmorgan-chase-s018",
+     "src-jpmorgan-chase-s019"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P03-S02",
+    "name": "Schedule external transfer (one-time or repeating)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Push or pull between Chase and linked external account; daily limit shown at setup; no Chase fee.",
+    "other_flags": null,
+    "notes": "Cutoff 8:00 PM ET Business Days (schedule and cancel); cancel online until cutoff on Send On Date; 'Sent'/'Completed' cannot be cancelled. Future-dated transfers with insufficient funds are retried up to two more times over the three succeeding Business Days with status 'Funds Needed', then Cancelled with 'Funding Failed' (customer notified of each attempt); current-day transfers are not retried. Daily max (aggregate): Consumer $25,000; Sapphire/CPC/Private/Business $100,000, dynamically reduced and shown at setup. Inbound credits provisional until settlement; Chase may delay availability of pulled funds. Web flow: 'Pay & transfer' > 'Transfer money' > 'Schedule transfer' > From > To > one-time/repeating > date > 'Next' > review > 'Transfer Money' > confirmation with transaction number.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s009"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P03-S03",
+    "name": "Fund J.P. Morgan investment account from external account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Link an external account to fund a J.P. Morgan Self-Directed/advised investment account; transfers and rollovers.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s005",
+     "src-jpmorgan-chase-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P03-S04",
+    "name": "Real-Time Payments Service (consumer / private banking send, receive and request for payment — terms-level)",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "DSA 'Addendum: Real-Time Payments Service' (10/26/2023) enables customers to 'send payments to and receive payments from Persons that bank with a financial institution that participates in the Real-Time Payments System, including JPMC… which includes the ability to send payments to your accounts with other Service Participants', submitted 'through Chase Online, Chase Mobile®, Chase Business Online, J.P. Morgan Online, J.P. Morgan Mobile'. 'If enabled by us', customers may also send and receive requests for payment. Service Transfers are irrevocable, typically complete within 15 seconds, funds available immediately 24/7; no buyer protection; return requests transmitted on request (877-242-7372). Limits: Consumer Account $5,000 per transaction / $10,000 per day / $50,000 per month; payments in response to a request for payment from a Consumer Account $25,000 single / $50,000 per day; Business $25,000 per transaction or daily transfer limit; Private Banking $10,000 / $20,000 per day. The addendum is network-agnostic (does not name RTP or FedNow). UI exposure for consumers is NOT confirmed — Chase marketing only shows the SMB 'Real-time payments' delivery option.",
+    "other_flags": "ui_availability_consumer: unconfirmed; terms_limits_consumer: $5,000/txn, $10,000/day, $50,000/month; rfp_response_limits_consumer: $25,000/txn, $50,000/day; fee: none except Vendors & Employees service (lesser of $25 or 1%)",
+    "notes": "Added because the bank's own agreement defines consumer-account real-time payment limits and channels; treat as terms-level capability until a UI capture confirms. Contradicts the first-wave weakness 'no consumer RTP/FedNow send' at the terms level only.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": null,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s910",
+     "src-jpmorgan-chase-s957"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P04",
+  "bank": "jpmorgan-chase",
+  "name": "Wires & global transfers",
+  "former_names": "Chase Global Transfer (name not found on current pages; not confirmed)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international",
+   "remittance"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "branch",
+   "phone"
+  ],
+  "network": "Fedwire / SWIFT; Chase FX desk",
+  "ui_position": "Web: 'Pay & transfer' > 'Wires and global transfers' (> 'Payment activity' for status; 'Add recipient'). Mobile: 'Pay & transfer' > 'See activity' > 'Wires & global transfers'. Business: separate sign-in entry points 'sign-in-wires' and 'sign-in-global-transfers'.",
+  "description": "Domestic USD wires and international wires in USD or 40+ foreign currencies to 90+ countries (consumer) / 240+ countries and territories (business), online or in branch; one-time, future-dated, or repeating.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s008",
+   "src-jpmorgan-chase-s012",
+   "src-jpmorgan-chase-s024",
+   "src-jpmorgan-chase-s029",
+   "src-jpmorgan-chase-s056"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P04-S01",
+    "name": "Domestic wire (online)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "USD wire to a U.S. bank; same-day wires cannot be cancelled; future-dated cancellable until 11:59 PM ET the day before.",
+    "other_flags": "fee_online: $25; fee_banker: $35; incoming_fee: $15 ($0 if sender used Chase)",
+    "notes": "DSA wire addendum (12/11/2025) section 1 'Protect Yourself Against Wire Scams' is the published scam text: 'Only wire money to people you know or recipients you have verified… once the wire is sent, you may not be able to recover your money. Know the signs of a scam. The requestor: Sends you wire instructions via email (ex. loan closing – always verify details by phone) • Contacts you unexpectedly • Claims there is an emergency • Pressures you into paying immediately • Only accepts payments via wire, gift cards, or crypto currency • Tells you to keep it secret or instructs you how to answer questions at the bank • Makes an offer… too good to be true • Asks for your personal information' plus six named scam types. Processing same Business Day if received and security procedures completed before 'the cutoff times we establish' (consumer cutoff not published); all requests subject to internal review (may contact customer, hold/subtract funds); once processing has begun no cancel/modify, but customer may ask Chase to attempt a return (recipient bank may agree; likely not full amount). Status updated on the Wire Payment activity page; email/secure message, call or SMS may follow; status reflects Chase processing only. Returned-wire reasons: wrong account number, missing country-specific info (e.g., statement of payment purpose), conflicting 'Message to recipient bank' field, name mismatch; returns may be net of fees/FX.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "username + password; may be asked for security questions, one-time codes and other methods; Chase 'may impose stricter security procedures… including requiring the use of a trusted device'; activation code when adding a recipient; must activate wire service and establish recipient first"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s012",
+     "src-jpmorgan-chase-s029",
+     "src-jpmorgan-chase-s056"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P04-S02",
+    "name": "International wire – USD",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "USD wire to a foreign bank via SWIFT/BIC; 30-minute cancel window for personal accounts after authorization.",
+    "other_flags": "fee_online_usd: $40; fee_banker: $50; consumer_recurring_or_future_dated: No",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s012",
+     "src-jpmorgan-chase-s056"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P04-S03",
+    "name": "Chase Global Transfer (international wire in foreign currency)",
+    "product": "remittance",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send in local currency (40+ currencies, 90+ countries; business 60+ countries local currency); guaranteed FX rate for 30 minutes with on-screen countdown; $5 online fee, $0 at $5,000+ USD equivalent.",
+    "other_flags": "fx_rate_lock_minutes: 30; fee_online_fx: $5 ($0 if >= $5,000); consumer_recurring_or_future_dated: No",
+    "notes": "Consumer International Funds Transfer (Reg E subpart B): pre-authorization disclosures (amount, fees/taxes, exchange rate, amount received, availability date, cancellation/error rights) shown at authorization or on receipt; cancel at no cost within 30 minutes of authorization; errors: call 1-855-536-1269, visit a branch or send a secure message within 180 days of the disclosed availability date; Chase determines within 90 days and reports within 3 business days. FX rate guaranteed 30 minutes with on-screen counter (FAQ). Repeating/future-dated not offered for Consumer International Funds Transfers.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s012",
+     "src-jpmorgan-chase-s024",
+     "src-jpmorgan-chase-s056"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P04-S04",
+    "name": "Branch / banker-assisted wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Wire initiated in branch with photo ID and mobile phone; higher fee ($35 domestic, $50 international).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s008",
+     "src-jpmorgan-chase-s056"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P04-S05",
+    "name": "Incoming wire (receive)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Provide account number + Chase routing number (domestic) or Chase SWIFT/BIC (international); no IBAN; posts within 24 hours of receipt.",
+    "other_flags": null,
+    "notes": "Chase Secure Banking: receive only.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s012",
+     "src-jpmorgan-chase-s058"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P05",
+  "bank": "jpmorgan-chase",
+  "name": "Chase Online℠ Bill Pay",
+  "former_names": "Online Bill Pay; Bill Payment & Transfer Service (agreement name)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "atm"
+  ],
+  "network": "Chase in-house bill pay (processor not disclosed)",
+  "ui_position": "Mobile/Web: 'Pay & Transfer' > 'Pay Bills' (> 'Schedule payment', 'Add a payee', 'Manage payees'); Automatic payments under 'Pay & Transfers' > 'Payment Activity' > 'Automatic payments'. Business: 'Pay & Transfer' > 'Bill Pay' / Payment Center.",
+  "description": "Chase Online℠ Bill Pay: pay companies, merchants or individuals electronically (1-2 days) or by paper check (5 days); Deliver By / Send On date selection; Online Bill Payment Guarantee. DSA Bill Payment Service addendum (1/25/2024) publishes statuses (Pending, Funded, Sent, Processed, Completed, Funds Needed, Funding Failed, Cancelled), cancel rules (any Pending or Funded payment up to the Cutoff Time on the Send On Date; 8:00 PM ET for non-Chase payees; automatic/future-dated payments to non-Chase payees before 10:00 AM ET on processing day; Chase credit-card payments any time before sent), e-Bills (enroll each payee; one FI per payee; payee approval up to 5 Business Days), variable automatic payments for e-Bill payees, and a default $100,000 aggregate daily maximum.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s003",
+   "src-jpmorgan-chase-s002",
+   "src-jpmorgan-chase-s030",
+   "src-jpmorgan-chase-s047",
+   "src-jpmorgan-chase-s026"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P05-S01",
+    "name": "Add a payee / Manage payees",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Add company or individual payee with account number and pay-to address; edit/remove under Manage payees.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s003",
+     "src-jpmorgan-chase-s030"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P05-S02",
+    "name": "Schedule one-time bill payment",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Choose payee, amount, 'Pay from' account, 'Send on' or 'Deliver by' date; receipt can be saved/shared.",
+    "other_flags": "chase_payees_same_day: Yes",
+    "notes": "Statuses in DSA: Pending, Funded, Sent, Processed, Completed, Funds Needed, Funding Failed, Cancelled ('Sent' = debited but not yet posted; once 'Processed' Chase no longer receives updates). Cutoff for non-Chase payees 8:00 PM ET on the Send On Date (schedule and cancel); Chase credit-card payments cancellable any time before sent. Delivery Method (electronic vs paper check) and lead time 'will be indicated on screen when your payment is scheduled'; email notice only when a payee's method becomes slower. Future-dated NSF: up to two retries over three Business Days ('Funds Needed'), then Cancelled / 'Funding Failed' with a message per attempt. Default max $100,000 aggregate per Business Day; min $0.01; prohibited: taxes, court-ordered payments, payees outside U.S. Web flow: 'Pay & transfer' > 'Pay Bills' > payee, amount, 'Pay from', 'Send on' > 'Next' > review > 'Schedule payment' > confirmation (save/share receipt).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s003"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P05-S03",
+    "name": "Automatic payments (recurring / autopay)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Set up an automatic payment to a payee from Payment Activity > Automatic payments.",
+    "other_flags": null,
+    "notes": "Two kinds: Repeating Bill Payments (fixed amount, same calendar day monthly; stop ≥3 Business Days before Send On date) and 'variable automatic Bill Payments for select Payees participating in e-Bills… triggered based on the associated billing date and/or the bill due date… the payment amount may vary each month' (additional terms presented at setup; if the e-Bill arrives late Chase may be unable to pay). 'Automatic and future-dated Bill Payments [to non-Chase payees] must be canceled before 10:00 a.m. ET on the day that Bill Payment is to be processed.' Setup path: 'Pay & Transfers' > 'Payment Activity' > 'Automatic payments' (Bill Pay side menu) > 'Set up an automatic payment' (add payee first).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s003"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P05-S04",
+    "name": "eBills",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Electronic bills from eligible payees enrolled from the Schedule Payment screen; due-date reminders.",
+    "other_flags": null,
+    "notes": "e-Bills: enroll on the Schedule Payment screen where eligible payees are flagged; each payee enrolled individually; customer agrees to the payee's terms (paper bills stop); right to receive e-Bills for a payee is limited to one financial institution; payee approval generally up to five Business Days; cancellation generally seven Business Days; Chase takes no responsibility for late payee data.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s003"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P05-S05",
+    "name": "Pay a Chase credit card / mortgage / home equity at ATM",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "At select Chase ATMs pay Chase card, mortgage or HE from checking/savings or with cash (card).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s022",
+     "src-jpmorgan-chase-s023"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P06",
+  "bank": "jpmorgan-chase",
+  "name": "Chase QuickDeposit℠",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Chase (remote deposit capture)",
+  "ui_position": "Mobile: top navigation / 'Pay & Transfer' > 'Deposit checks'. Business app: 'Deposit' menu (security administrator and entitled sub-users).",
+  "description": "Mobile check deposit with Auto Capture; next-business-day availability for deposits before 11 PM ET; email notices on receipt, acceptance, rejection. Business variant adds a desktop check scanner.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s004",
+   "src-jpmorgan-chase-s011",
+   "src-jpmorgan-chase-s036",
+   "src-jpmorgan-chase-s013"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P06-S01",
+    "name": "QuickDeposit (mobile)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Photograph endorsed check ('For electronic deposit only at Chase'), verify, Deposit; keep check 2 business days.",
+    "other_flags": "cutoff: 11 PM ET; daily_monthly_limits_shown_at_start: Yes",
+    "notes": "Flow: 'Deposit checks' (top navigation) > select account > enter amount > tap 'Front' ('Auto Capture' or manual photos) > verify > 'Deposit'; then 'deposit another check or view the receipt'. Emails: deposit received, then accepted; rejected deposits get an emailed explanation; review delays emailed. DSA limits: $2,000/day and $5,000 per rolling 30 days (Chase Private Client $25,000 / $100,000; Private Bank $100,000 / $500,000); 'the application will display your current available limit' when an account is selected; receipt shown on the device at completion; 11:00 PM ET deposit-day cutoff; funds generally next Business Day; Reg CC availability does not apply.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s004",
+     "src-jpmorgan-chase-s011",
+     "src-jpmorgan-chase-s036"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P06-S02",
+    "name": "Chase QuickDeposit℠ Check Scanner (business desktop RDC)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Desktop scanner-based remote deposit for business accounts with enroll/connect/deposit/troubleshoot guides.",
+    "other_flags": null,
+    "notes": "Help articles exist (basics, connect, deposit, enroll, troubleshoot) — not fetched in detail.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P06-S03",
+    "name": "QuickDeposit into J.P. Morgan investment account",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Deposit checks into a J.P. Morgan investment account via the app.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P07",
+  "bank": "jpmorgan-chase",
+  "name": "Chase ATM deposits, cardless access and cash services",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch",
+   "mobile-app"
+  ],
+  "network": "Chase ATM network",
+  "ui_position": "ATM: Main menu; app: ATM preferences and 'Schedule a withdrawal' under personal banking ATM tips.",
+  "description": "Cash and up to 30 checks per ATM deposit; cardless NFC ATM access via Apple/Google/Samsung wallet; Quick cash presets; schedule a withdrawal in app; branch deposits, money orders, cashier's checks.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s023",
+   "src-jpmorgan-chase-s022",
+   "src-jpmorgan-chase-s013",
+   "src-jpmorgan-chase-s057"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P07-S01",
+    "name": "ATM cash and check deposit",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Deposit cash and up to 30 checks per visit; 11 PM ET ATM cutoff; next-business-day availability with first $275 rule.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s023",
+     "src-jpmorgan-chase-s057"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P07-S02",
+    "name": "Cardless ATM access (NFC wallet)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm",
+     "mobile-app"
+    ],
+    "description": "Tap phone/watch with Chase debit card in Apple Pay, Google Wallet or Samsung Wallet, then enter PIN.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "device biometric + ATM PIN"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s023"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P07-S03",
+    "name": "Schedule a cash withdrawal (in-app, pick up at ATM)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm"
+    ],
+    "description": "Pre-stage a withdrawal in the Chase Mobile app for pickup at a Chase ATM.",
+    "other_flags": null,
+    "notes": "Personal and business Schedule-a-withdrawal help pages now 301 to /digital/atms, which does not mention the feature (2026-11-06); current availability unconfirmed.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "inferred",
+    "confidence": "low",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s013",
+     "src-jpmorgan-chase-s022"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "INFERRED"
+   },
+   {
+    "id": "JPM-P07-S04",
+    "name": "Branch deposits, money orders and cashier's checks",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Teller deposits, money orders ($5), cashier's checks ($10); free for Chase Secure Banking.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s056",
+     "src-jpmorgan-chase-s058"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P08",
+  "bank": "jpmorgan-chase",
+  "name": "Digital wallets and Paze℠ (wallet intersections)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Early Warning Services (Paze); Apple/Google/Samsung",
+  "ui_position": "Mobile: card account > 'Manage account' > 'Digital Wallets' > 'Paze℠' / Apple Pay etc.",
+  "description": "Chase cards can be added to Apple Pay/Google Wallet/Samsung Wallet (incl. cardless ATM) and activated in Paze from the app. No in-app funding of PayPal/Venmo/Apple Cash is documented; Chase First Banking cards are blocked from P2P wallets. Note: the DSA contains a \"PayPal Provisioning Platform\" addendum and a \"Gifting Service\" addendum whose scope was not read (open question).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s020",
+   "src-jpmorgan-chase-s023",
+   "src-jpmorgan-chase-s054",
+   "src-jpmorgan-chase-s021"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P08-S01",
+    "name": "Paze℠ activation and checkout",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Activate Paze from the card's Digital Wallets screen (hands off to Paze site); pay at merchant checkout with email + SMS code.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "email + SMS one-time code at Paze checkout"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s020"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P08-S02",
+    "name": "Add Chase debit card to device wallet (incl. cardless ATM)",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm"
+    ],
+    "description": "Add debit card to Apple Pay/Google Wallet/Samsung Wallet; use for NFC ATM access.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s023",
+     "src-jpmorgan-chase-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P08-S03",
+    "name": "Third-party P2P app funding (PayPal, Venmo, Cash App, Apple Cash)",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Chase provides only generic guidance; linking happens inside the third-party app. Not supported for Chase First Banking.",
+    "other_flags": null,
+    "notes": "No Chase-side flow documented; inferred from education article and First Banking exclusions.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "inferred",
+    "confidence": "low",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s021",
+     "src-jpmorgan-chase-s054"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "INFERRED"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P09",
+  "bank": "jpmorgan-chase",
+  "name": "ACH Payment Services (Pay Vendors and Employees) – Standard ACH, Same-day ACH, Real-time payments",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination",
+   "rtp",
+   "fednow"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Nacha ACH; The Clearing House RTP and FedNow (Chase states it participates in both)",
+  "ui_position": "Chase Business Online: 'Pay & transfer' > 'ACH Payment Services' / 'Payment Center' ('Schedule payments', 'Manage payees', 'Payment activity', 'Repeating ACH payments', 'Pending approvals'; 'More…' > 'Pay with ACH file upload'). Receivables hub: 'Collect & deposit' (mobile 'Pay & collect' > 'Collect & deposit') for invoicing, QuickAccept and QuickDeposit [S952].",
+  "description": "ACH Payment Services: single enrollment for Standard ACH (1-2 business days, 8 PM ET cutoff, reversible, future-dated), Same-Day ACH (by end of day, 2 PM ET cutoff, $100,000 per transaction, reversible) and Real-Time Payments ('Payment settled within moments • Uses the RTP network managed by The Clearing House'; cutoff Midnight ET; $25,000 per transaction; not reversible/cancelable; not future-dated; '60% of accounts can receive'). Mixed delivery methods allowed in one scheduling batch; payees flagged Personal (Employee) vs Business (Vendor); ACH File Upload up to 2,000 instructions, approved as a whole, 8:00 PM ET batch cutoff; reversal requested from the 'Request reversal' link under the payment's status tracker within 5 Business Days of the Deliver By Date.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s049",
+   "src-jpmorgan-chase-s026",
+   "src-jpmorgan-chase-s028",
+   "src-jpmorgan-chase-s037",
+   "src-jpmorgan-chase-s044",
+   "src-jpmorgan-chase-s043"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P09-S01",
+    "name": "Standard ACH payment (vendor or employee)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Next-business-day credit; 8 PM ET cutoff; cancellable before cutoff; reversible.",
+    "other_flags": "addenda_per_payee: Yes; payee_groups: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "activation code to add payee/enroll"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s049",
+     "src-jpmorgan-chase-s028"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P09-S02",
+    "name": "Same-day ACH payment",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Arrives end of day when authorized before 2 PM ET; 1% fee max $25; reversible; enrollment required.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s049",
+     "src-jpmorgan-chase-s028",
+     "src-jpmorgan-chase-s026"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P09-S03",
+    "name": "Real-time payment (TCH RTP send to vendor/employee; FedNow routing unconfirmed)",
+    "product": "rtp",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Arrives in moments; unavailable 2-6 AM ET on business days; cannot be cancelled or reversed; not all payee banks eligible; 1% fee max $25; Chase Dual Control approval if enabled.",
+    "other_flags": "network_per_bank_guide: TCH RTP (Feb 2026 Connect ACH guide); per_transaction_limit: $25,000; cutoff: Midnight ET; receiver_reach_stated: 60% of accounts",
+    "notes": "Chase/Connect ACH Payments Go-To Guide (Feb 2026) Payment Comparison: Real-Time Payments 'Payment settled within moments • Uses the RTP network managed by The Clearing House'; reversible/cancelable No; future-dated No; cutoff Midnight ET; $25,000 per transaction; '60% of accounts can receive Real-Time Payments'; use cases 'I want my payee to be paid in moments', 'I want to make a payment after ACH cutoff times'. Delivery method chosen per payee on the Schedule payments screen (Standard ACH / Same-Day ACH / Real-Time); mixed methods in one batch. Fee lesser of $25 or 1% (DSA). FedNow is not named in the Connect product guide.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s028",
+     "src-jpmorgan-chase-s049",
+     "src-jpmorgan-chase-s044"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P09-S04",
+    "name": "ACH File Upload (Nacha / CSV)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Upload a formatted Nacha or CSV batch; validation with error feedback; Submit to schedule; 8 PM ET.",
+    "other_flags": null,
+    "notes": "ACH File Upload: up to 2,000 employee/vendor instructions per NACHA or CSV file; validation errors displayed for correction; 'All files submitted by all users or when Dual Control is activated must be approved. The file needs to be approved as a whole and not for individual transactions'; batch cutoff 8:00 p.m. ET; uploaded transactions 'can only be cancelled, not edited'; existing entitlements and daily profile limit apply.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "identity confirmation + activation code"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s037",
+     "src-jpmorgan-chase-s061"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P09-S05",
+    "name": "ACH Collections Service (direct debit)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "phone"
+    ],
+    "description": "Debit customers' accounts; 7 PM ET cutoff; funds available 3 business days after Deliver By date; $25/month incl. 25 collections + $0.25; reversals by phone within 5 business days.",
+    "other_flags": "reversal_by_phone_only: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s043"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P09-S06",
+    "name": "Add/import payees and groups",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Add vendor/employee individually (activation code may be required) or import up to 100 via CSV; Fed E-payments routing directory lookup; payee groups.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "activation code"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s049"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P09-S07",
+    "name": "Chase invoicing (Collect & deposit > Create invoices)",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Business Complete Banking customers create and send invoices payable by card on a Chase checkout page (same-day deposit at no extra cost; 3.5% + 10¢), by Zelle or by mailed check (no processing fee). Web: Collect & deposit > Create invoices; mobile: Pay & collect > Collect & deposit > Create invoices.",
+    "other_flags": "zelle_payment_option: Yes; card_payment_option: Yes",
+    "notes": "Added by verification pass (JPM-C004). Parent assignment provisional (receivables, not ACH); QuickAccept/POS card acquiring left out of scope.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s952",
+     "src-jpmorgan-chase-s953"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P10",
+  "bank": "jpmorgan-chase",
+  "name": "Chase Business Online controls: Access & Security Manager, Chase Dual Control, Fraud Protection Services",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "other",
+   "ach-origination"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Chase",
+  "ui_position": "Access & Security Manager under the 'Access & Security' menu (Primary admin): All Users > Add user / Manage user (access level per account: See activity only / Transact only / See activity and transact; rights groups General incl. 'Approve pending transactions', Outgoing, Incoming, Security; daily limits); Account Activity; IP Security; Dual Control > Administration / Transaction > Activate. Approvals queue: 'Pay & transfer' > 'Pending approvals' ('See pending approvals'). Business marketing: 'Set daily transaction limits; Enforce dual approvals for transactions; Monitor user activity'.",
+  "description": "Entitlement and approval layer for business money movement: Access & Security Manager (users, rights, approve transactions, view activity), Chase Dual Control (transaction approval), transaction limit management, Check Monitoring, Check Protection Services (positive pay) and ACH Debit Block.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s031",
+   "src-jpmorgan-chase-s035",
+   "src-jpmorgan-chase-s039",
+   "src-jpmorgan-chase-s043",
+   "src-jpmorgan-chase-s061"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P10-S01",
+    "name": "Access & Security Manager – approve transactions",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Approver reviews 'Pending approvals', selects items, 'Approve items'; notified once processed.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s031"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P10-S02",
+    "name": "Chase Dual Control – Transactions",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "When active, payments (incl. file uploads, approved as a whole) route to pending approvals before processing.",
+    "other_flags": null,
+    "notes": "Dual Control–Transaction (Primary admin only): 'all transactions will automatically require approval by another user except for transfers between J.P. Morgan accounts, loan advances and loan payments'; at least one user must hold 'Approve pending transactions'; items appear in 'Pending approvals' through 'Pay & transfer' until approved. Dual Control–Administration: all admin actions (user info, account-/company-level rights) require approval by another System Administrator within three days; proxy admins may review. Bill Pay exception: healthcare-provider payments made with a Chase credit card are not submitted for approval even with dual control on.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s028",
+     "src-jpmorgan-chase-s061"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P10-S03",
+    "name": "ACH Debit Block",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Block all ACH debits or allow-list companies; review debits before posting; complimentary on Performance/Platinum/Analysis checking.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s035"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P10-S04",
+    "name": "Check Monitoring / Check Protection Services",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Review outgoing checks above a threshold or against issued-check data; approve/deny on dashboard; one of the two per account.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s035"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P11",
+  "bank": "jpmorgan-chase",
+  "name": "Chase Connect® (commercial banking digital platform)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "rtp",
+   "fednow",
+   "wire-domestic",
+   "wire-international",
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "api-treasury-portal"
+  ],
+  "network": "Nacha, RTP, FedNow, Fedwire/SWIFT",
+  "ui_position": "Connect (sign-in at chase.com/commercial-banking/connect): 'Pay & transfer' > 'Wires & global transfers' > Send money page ('Domestic (U.S.)' / 'International') > 'Schedule a wire'; 'Add a recipient'; 'Manage recipients'; 'Payment activity' > 'All wire activity' > 'Report a problem' (recall/amendment). 'Pay & transfer' > 'ACH Payment Services' tabs: Schedule payments | Manage payees | Company Activation | ACH file upload | Payment activity. 'Access & Security' > Access & Security Manager. Profile & Settings > Manage Alerts. Offerings: Fraud protection, Mobile banking (send payments, approve transactions), FX wires (~70 currencies, real-time tracking), Payment Tracker (accessportal.jpmorgan.com/PaymentTracker), Customer insights; Cashflow360℠ invoicing/payables; up to 24 months transaction history.",
+  "description": "Commercial-banking client portal sharing the Chase Business Online chassis: ACH Payment Services (Standard, Same-Day, Real-Time), ACH File Upload (up to 2,000 instructions), wires, Chase Dual Control–Transactions, Access & Security Manager entitlements, alerts.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s061",
+   "src-jpmorgan-chase-s063",
+   "src-jpmorgan-chase-s062"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P11-S01",
+    "name": "Chase Connect ACH (Standard / Same-Day / Real-Time)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Single, repeating and file-based ACH and RTP; 2022 guide limits: Same-Day $100,000, RTP $25,000 per transaction; cutoffs 8 PM / 2 PM / midnight ET.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s061"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P11-S02",
+    "name": "Chase Connect wires",
+    "product": "wire-domestic",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Domestic and international wires with entitlement-based approval.",
+    "other_flags": null,
+    "notes": "Connect wires (Oct 2026 guide): Add a recipient; Send money page > Domestic (U.S.) or International > Schedule a wire > find recipient > Next > details > Next > review > 'Send Wire' (domestic) / 'Authorize Wire' (international). Statuses: 'Scheduled' (future-dated, can still change/cancel), 'Processing' (left your account), 'Sent' (fully processed; recipient bank may take time), 'Failed' (contact service), 'Needs approval'/'Pending approval' (another user with approval authority must approve). Wire recall/amendment: Payment activity > All wire activity > 'Report a problem' > 'request a recall' > reason > Next > Done; only authorized users, up to 13 months after sending. Recipient bank details cannot be edited (new recipient required); recipient groups (10+); export. FX wires in nearly 70 currencies with real-time tracking; Payment Tracker for end-to-end status. Domestic ~1 business day; international 1-5.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s024",
+     "src-jpmorgan-chase-s063",
+     "src-jpmorgan-chase-s926"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "JPM-P12",
+  "bank": "jpmorgan-chase",
+  "name": "J.P. Morgan Access® and J.P. Morgan Payments (treasury)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow",
+   "request-to-pay",
+   "push-to-card",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "web",
+   "mobile-app"
+  ],
+  "network": "Fedwire, SWIFT, Nacha, RTP, FedNow, card networks",
+  "ui_position": "jpmorgan.com/payments > Solutions (Accept / Process / Send payments, Manage funds, Embedded finance); Access® portal; developer.payments.jpmorgan.com.",
+  "description": "J.P. Morgan Payments (treasury): processes >$10 trillion daily across 120 currencies / 160 countries / 40 payment methods. Access® platform (50+ countries, 120+ currencies, 10 languages) with Online, Mobile and Direct (APIs, file transmission, SWIFT) connectivity and 'Payment Control and Manager' entitlements. Instant payments: FedNow Service AND TCH RTP — 'Receive and pay funds within seconds across the U.S.'; one API integration reaches both rails and the solution 'optimizes across TCH and the FedNow Service rails for each transaction'. Emerging payments: 'real-time payments, Push to Card, Push to Wallet, Zelle®, Interac and Prepaid Card'. Cross-currency: send in ~130 currencies, receive in ~40, 200+ countries/territories, 100+ corridors; most payments settle same day, next day or two business days. Receivables: lockbox, remote deposit, Receivables Online, Digital Bill Payment, API/file connectivity.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-jpmorgan-chase-s063",
+   "src-jpmorgan-chase-s064",
+   "src-jpmorgan-chase-s062",
+   "src-jpmorgan-chase-s044"
+  ],
+  "sub_products": [
+   {
+    "id": "JPM-P12-S01",
+    "name": "FedNow (send/receive via J.P. Morgan Payments)",
+    "product": "fednow",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Named product page under 'Send payments'; Chase states it participates in RTP and FedNow.",
+    "other_flags": null,
+    "notes": "Send and receive on FedNow confirmed by J.P. Morgan ('among the first financial institutions to join the FedNow Service… one of the first to join TCH RTP in 2017'); 'With one API integration, you can access both the FedNow Service and TCH RTP rails'; 'the J.P. Morgan Payments solution optimizes across TCH and the FedNow Service rails for each transaction'. Fed participant list (11/02/2026) lists 'JPMORGAN CHASE BANK, NA' (no send/receive flag).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s063",
+     "src-jpmorgan-chase-s044"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S02",
+    "name": "Integrated Payables",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Multi-rail outbound payments (ACH, wire, real-time, check, card) from a single file/API.",
+    "other_flags": null,
+    "notes": "Rails list per product name; detail page not fetched.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s063"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S03",
+    "name": "Cross-Currency Solutions (international wires/FX)",
+    "product": "wire-international",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Cross-border payments in foreign currency with FX.",
+    "other_flags": null,
+    "notes": "Cross-Currency (FX) Solutions: send in ~130 currencies, receive in ~40, 200+ countries/territories, 100+ corridors; majority settle same day, next day or two business days; rate visibility, hedging, automated forecasting; Xpedite for FIs; Global Payments API ('one API to support multiple payment rails').",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s063"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S04",
+    "name": "Receivables (lockbox, RTP/FedNow receive, Request for Pay)",
+    "product": "request-to-pay",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Inbound collection suite.",
+    "other_flags": null,
+    "notes": "Receivables Solutions page: check deposits via wholly-owned lockbox facilities and remote deposit; currency services; 'Emerging and electronic receivables: Accept ACH, wire, card and other alternative payments faster'; Receivables Online reconciliation; cloud-based Digital Bill Payment (EBPP); API/file connectivity to ERP. RTP/FedNow receive and Request for Pay are not called out on this page (RFP evidenced only by 2021 press); DSA Real-Time Payments addendum covers requests for payment 'if enabled by us'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "inferred",
+    "confidence": "low",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s063"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "INFERRED"
+   },
+   {
+    "id": "JPM-P12-S05",
+    "name": "Push to Card (real-time card disbursements)",
+    "product": "push-to-card",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Card-rail disbursement for corporate clients.",
+    "other_flags": null,
+    "notes": "Bank page names \"Push to Card\"; card networks (Visa Direct / Mastercard Send) not stated by the bank. Commercial disbursements only.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s919"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S06",
+    "name": "J.P. Morgan Access® portal, Host-to-Host and Payments APIs",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Treasury portal, SFTP/H2H and REST APIs (Developer Portal) for payment initiation and reporting.",
+    "other_flags": null,
+    "notes": "Access®: 50+ countries, 120+ currencies, 10 languages; Online (cash management, pay-ins, reporting/reconciliation), Mobile (balances, review payments, liquidity), Direct (APIs, file transmission, SWIFT); 'Payment Control and Manager' security/entitlements; AI cash-flow forecasting; Payment Tracker (accessportal.jpmorgan.com/PaymentTracker).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s063"
+    ],
+    "journeys": [
+     "urn:kos:journey:jpmorgan-chase:jpm-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S07",
+    "name": "Kinexys by J.P. Morgan – JPM Coin (JPMD) USD deposit token",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Institutional on-chain USD deposit token enabling near-instant, 24/7 settlement and peer-to-peer transfers between EVM-compatible wallets; rolled out to institutional clients on Base (Nov 12, 2025).",
+    "other_flags": "blockchain: Base (Ethereum L2); settlement_24x7: Yes",
+    "notes": "Added by verification pass (JPM-C001).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s951"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S08",
+    "name": "Emerging payments disbursements (Push to Wallet, Zelle, Interac, Prepaid Card)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "J.P. Morgan Payments payables \"Emerging payments\": send and receive 24/7 with real-time payments, Push to Card, Push to Wallet, Zelle, Interac and Prepaid Card.",
+    "other_flags": "interac_canada: Yes",
+    "notes": "Added by verification pass (JPM-C002). Per-method detail pages not read.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s919"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "JPM-P12-S09",
+    "name": "Pay-by-bank (J.P. Morgan Payments with Mastercard open banking)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Biller-facing pay-by-bank: consumers choose their bank, consent via Mastercard open banking and authenticate with their bank; payments run on ACH; live Oct 2023 (Verizon pilot planned).",
+    "other_flags": null,
+    "notes": "Added by verification pass (JPM-C005); confirm on jpmorgan.com.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-jpmorgan-chase-s954"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

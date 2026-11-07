@@ -1,0 +1,2542 @@
+[
+ {
+  "id": "COF-P01",
+  "bank": "capital-one",
+  "name": "Send Money with Zelle®",
+  "former_names": "Zelle (Discover Online Banking, launched 2019)",
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle)",
+  "ui_position": "Account list > [checking account] > 'Send Money with Zelle®' (app and web); Zelle settings > 'Zelle QR code' / 'My Code'",
+  "description": "P2P send/request/receive via Zelle network, embedded in Capital One Mobile app and capitalone.com. Terms restrict to personal (non-business) use. Also offered on Discover checking (legacy) and on converted Discover->360 Checking accounts.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s001",
+   "src-capital-one-s002",
+   "src-capital-one-s049",
+   "src-capital-one-s076"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P01-S01",
+    "name": "Send money with Zelle",
+    "product": "zelle",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "One-time send to enrolled recipient by name + U.S. mobile/email, from phone contacts, or by scanning a Zelle QR code. Scheduled Zelle payments are referenced in the EFT disclosure ('Zelle Scheduled Payments').",
+    "other_flags": "personal_use_only_per_terms: Yes; unenrolled_recipient_expiry_days: 14; both_parties_must_be_bank_enrolled_since: 2025-03-31",
+    "notes": "Browser pass 2026-11-06: enrollment is app-only; sending works on web and app; OTP may be required (no OTP-capable mobile number = cannot send). Limits are shown in-app 'when setting up a payment'. Cancel only while recipient unenrolled via activity page > payment > 'Cancel This Payment'. Scam intake is phone-only (800-655-2265). The public pages describe only 'double-check the information… tap or slide to authorize' — no scam-warning interstitial is documented; the full help index has no Zelle cancel/scam article. 'Zelle settings' > 'Zelle QR code' > 'My Code'; app QR buttons 'Use a QR Code' / 'Show my code'.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "one-time passcode to mobile phone required (bank help center)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s001",
+     "src-capital-one-s002",
+     "src-capital-one-s074",
+     "src-capital-one-s049"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j01"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P01-S02",
+    "name": "Request money with Zelle",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Request from an enrolled Zelle user; request can be paid, denied or ignored and expires after 14 days.",
+    "other_flags": "no_debt_collection_per_terms: Yes",
+    "notes": "Unenrolled people must be requested by email per Zelle FAQ; 'Show my code' QR lets payer scan to pay you.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s001",
+     "src-capital-one-s077",
+     "src-capital-one-s049"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P01-S03",
+    "name": "Receive money with Zelle (incl. Zelle QR 'My Code')",
+    "product": "zelle",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Inbound Zelle credits to the enrolled Capital One checking account; QR code printable/shareable.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s001",
+     "src-capital-one-s002"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P01-S04",
+    "name": "Zelle on Discover checking (legacy) and converted 360 Checking",
+    "product": "zelle",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Discover checking Zelle (legacy, still governed by the Discover Zelle addendum modified 2026-06): eligible accounts are Cashback Debit or Personal Checking; send limit $600 per day (bank may raise); sender may cancel until the recipient enrolls, after which the request expires (14-day window); personal use only (no business); Zelle tags supported; re-verification after 18 months of inactivity. On conversion the account continues to 'send and receive Zelle® payments with your Capital One account' under Capital One terms ($3,000/day, $12,500/month).",
+    "other_flags": "discover_legacy: Yes; discover_zelle_page_redirects_to_capitalone: Yes",
+    "notes": "Discover's own Zelle feature page now 302-redirects to capitalone.com/bank/zelle/, so the Discover-specific Zelle journey is no longer publicly documented.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": true,
+     "split": null,
+     "qr-code": null,
+     "contact-sync": null,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s051",
+     "src-capital-one-s053",
+     "src-capital-one-s058",
+     "src-capital-one-s076",
+     "src-capital-one-s924",
+     "src-capital-one-s930"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P02",
+  "bank": "capital-one",
+  "name": "Transfers (Transfer / Transfer Money)",
+  "former_names": "Capital One 360 transfers (ING Direct heritage)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "phone"
+  ],
+  "network": "Nacha ACH (external); in-house (internal)",
+  "ui_position": "Account page > 'Transfer' / 'Transfer Money' (under 'I Want To' in app, next to balance on web); external accounts: Profile Menu > 'Account & Feature Settings' > 'Manage My External Accounts' (app) / 'external accounts' (web)",
+  "description": "Transfers between Capital One accounts (instant) and to/from up to 3 linked external personal accounts via ACH (1-3 business days out; inbound posts same day if set up before 5 PM ET). Includes scheduled and recurring transfers and the Automatic Savings tools (Autopilot, Recurring Transfers, Paycheck Percentage).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s004",
+   "src-capital-one-s005",
+   "src-capital-one-s006",
+   "src-capital-one-s007",
+   "src-capital-one-s008",
+   "src-capital-one-s009",
+   "src-capital-one-s042",
+   "src-capital-one-s080"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P02-S01",
+    "name": "Internal transfer between Capital One accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "phone"
+    ],
+    "description": "Immediate transfer between own Capital One 360/Capital One Bank accounts, one-time, future-dated or recurring.",
+    "other_flags": "frequencies: weekly; every other week; monthly; quarterly; memo: Yes; no_cutoff: Yes",
+    "notes": "Cancel path: scheduled one-time transfers cancelable until 11:59 PM ET day before per Zelle/EFT terms; UI cancel steps not documented in help center.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s004",
+     "src-capital-one-s006",
+     "src-capital-one-s008",
+     "src-capital-one-s074"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P02-S02",
+    "name": "External account linking (Add an External Account)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Link up to 3 external personal checking/savings/money market accounts by routing + account number; verification by instant confirmation or two micro-deposits (<$1 each; 3 attempts).",
+    "other_flags": "max_linked_accounts: 3; usage_types: Payments and Transfers; Payments; business_accounts_not_linkable_to_personal: Yes; linked_account_must_be_30_days_old_for_wire: Yes",
+    "notes": "Help center does not name an instant-verification vendor (e.g., Plaid); the learn article says 'verify ownership with a login to the other bank or small test transfers'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "additional security verification may be requested for 'Payments and Transfers' use"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s005",
+     "src-capital-one-s009",
+     "src-capital-one-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P02-S03",
+    "name": "External transfer (ACH) to/from linked account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "phone"
+    ],
+    "description": "Push to external account (1-3 business days) or pull from external account (posts same business day if before 5 PM ET; standard holds apply). Supports one-time, future-dated and recurring.",
+    "other_flags": "no_instant_or_same_day_outbound_option: Yes",
+    "notes": "No 'Instant transfer' / debit-card push-to-card option found anywhere on capitalone.com.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "same-day": "inbound only (before 5 PM ET)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s007",
+     "src-capital-one-s008",
+     "src-capital-one-s074"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P02-S04",
+    "name": "Automatic Savings (Autopilot, Recurring Transfers, Paycheck Percentage)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Rule-based internal/external transfers into a Capital One savings account: Autopilot (daily micro-transfers up to $15 based on checking activity), Recurring Transfers (from Capital One or external checking; weekly to annually), Paycheck Percentage (percent of direct deposit swept to savings).",
+    "other_flags": "autopilot_and_paycheck_percentage_app_only_setup: Yes",
+    "notes": "AutoSave page notes 'Discover-to-Capital One transfers may take longer' — evidence of cross-entity transfer support during the conversion period.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s042",
+     "src-capital-one-s040"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P02-S05",
+    "name": "Discover Online Banking transfers (legacy)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Discover checking/savings transfers (internal and external) continue on Discover.com/app until each account's conversion notice; scheduled transfers set up at Discover continue to work on the old routing number after conversion; eligible external accounts stay linked.",
+    "other_flags": "discover_legacy: Yes",
+    "notes": "Discover feature pages now redirect to Capital One; journey detail for the legacy Discover UI is UNKNOWN from public sources as of Nov 2026.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s053",
+     "src-capital-one-s055",
+     "src-capital-one-s054"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P02-S06",
+    "name": "Free transfer (automatic overdraft-covering transfer)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "One of three 360 Checking overdraft options (No-fee overdraft, Auto-decline, Free transfer): 'Choose to automatically transfer funds to your checking account to cover overdrafts.' Chosen via checking account > More Services > Overdraft Settings; no overdraft fees under any option. The funding account is not named on the page.",
+    "other_flags": "rule_based: Yes; triggered_by_overdraft: Yes; source_account_not_stated: Yes",
+    "notes": "Added in verification (COF-C009).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s951"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P02-S07",
+    "name": "MONEY teen allowance and parent/teen transfers",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "From the MONEY home screen a parent taps 'start an allowance' (amount, frequency, day; slide the green bar to confirm), or taps send/remove to send the teen a one-time transfer or have the teen pay the parent back; the teen moves money between 'spendable' and 'set aside' buckets and goals.",
+    "other_flags": "allowance_frequency_and_day: Yes; teen_pay_back: Yes; spendable_vs_set_aside_buckets: Yes",
+    "notes": "Added in verification (COF-C010); S911 was captured in gap-fill but not modeled.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s911"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P03",
+  "bank": "capital-one",
+  "name": "Bill Pay (Pay Bills)",
+  "former_names": "Capital One Online Bill Pay (prior platform, migrated to 'the New Bill Pay' with payees not carried over)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "phone"
+  ],
+  "network": "unknown (new platform; vendor not disclosed)",
+  "ui_position": "Checking account > 'Pay Bills' (web) / 'Bill Pay' (app) > Overview > Payees / Scheduled payments / Payment history",
+  "description": "Consumer bill pay with directory (electronic) and manual (paper check) payees, one-time and recurring payments, eBills for eligible payees (capability named only; no stepped article exists anywhere in the 78-article help index), 365-day future dating, $100,000 per-transaction limit and a late-fee guarantee; memos print only on paper checks. Payee maintenance (edit/delete) and payment cancel all live under Overview > Payees / Scheduled payments > '…' actions menu. Small business bill pay is marketed as 'Accounts Payable with Capital One' / 'Pay Vendors' inside the Capital One Business account ('Payments & expenses' tab > 'Manage Accounts Payable' > bill pay dashboard): fund from a Capital One Business card, any bank account or debit card; deliver as single-use virtual card (emailed), ACH or paper check; QuickBooks Online sync; no subscription fee; 2.9% when a card funds an ACH or check payment.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s014",
+   "src-capital-one-s015",
+   "src-capital-one-s016",
+   "src-capital-one-s017",
+   "src-capital-one-s018",
+   "src-capital-one-s019",
+   "src-capital-one-s020",
+   "src-capital-one-s033",
+   "src-capital-one-s036",
+   "src-capital-one-s067",
+   "src-capital-one-s074",
+   "src-capital-one-s903",
+   "src-capital-one-s904",
+   "src-capital-one-s905",
+   "src-capital-one-s906",
+   "src-capital-one-s907",
+   "src-capital-one-s916"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P03-S01",
+    "name": "Add payee (directory search or manual)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Directory payees are registered for electronic delivery; manual (non-directory) payees are paid by mailed paper check; the payee account number is required when a payee is first added; payee address is used for check delivery.",
+    "other_flags": "subscriber_us_physical_address_required: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s014",
+     "src-capital-one-s017",
+     "src-capital-one-s019",
+     "src-capital-one-s020",
+     "src-capital-one-s067"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P03-S02",
+    "name": "One-time and recurring bill payment",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Choose payee > '...' > one-time or recurring; electronic typically posts 1-2 business days, checks 7-10 days; notification if sent as paper check; cancel up to 1 business day before 'Send on' date.",
+    "other_flags": "max_future_days: 365; per_txn_limit_usd: 100000; late_fee_guarantee_usd: 100; memo_only_on_checks: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s015",
+     "src-capital-one-s016",
+     "src-capital-one-s018",
+     "src-capital-one-s020",
+     "src-capital-one-s074"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P03-S03",
+    "name": "eBills and recurring eBill payments",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "For eligible payees, enroll in eBills and set up recurring eBill (autopay-style) payments. Named on the set-up article; no stepped help article found.",
+    "other_flags": null,
+    "notes": "Capability existence confirmed by bank (set-up article: 'enroll in eBills for eligible payees and set up recurring eBills'). Browser pass expanded all 'Load more' pages of the Checking & Savings help index (78 articles) and every FAQ accordion on 'Welcome to the New Bill Pay': no eBill enrollment, autopay-amount rule, status or edit/cancel content exists anywhere on the public site; /bank/bill-pay/ and /bank/online-bill-pay/ 404. Gap is structural, not a fetch failure.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s014",
+     "src-capital-one-s016",
+     "src-capital-one-s903"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P03-S04",
+    "name": "Accounts Payable with Capital One Business Cards (SMB bill pay / 'Pay Vendors')",
+    "product": "bill-pay",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Business AP/bill pay inside the Capital One Business account: enroll in Accounts Payable under the 'Payments & expenses' tab; enter vendor/invoice manually, by invoice upload or by accounting-software sync; fund from a Capital One Business card, any bank account or debit card; vendor receives a single-use virtual card (emailed, exact amount), ACH ('bank transfer delivery') or paper check — 'even to vendors that don't accept cards'. Fees: virtual-card delivery 0% (card-funded); bank-account-funded ACH or check 0%; card- or debit-funded ACH or check 2.9%. No sign-up or subscription fee; QuickBooks Online sync; payments tracked from the bill pay dashboard ('Manage Accounts Payable'). Help line 1-800-867-0904. 'Eligibility for this capability is dynamic and may change.' Earlier marketing: for businesses with annual sales <= $10M; up to $50 late-fee reimbursement.",
+    "other_flags": "virtual_card_delivery: Yes; card_funded_ach_or_check_fee_pct: 2.9; quickbooks_online_sync: Yes; invoice_upload: Yes; approval_workflow: unknown",
+    "notes": "Marketed as a Capital One Business Card benefit and reached inside the Capital One Business account ('Payments & expenses' tab > 'Manage Accounts Payable'); 'Eligibility for this capability is dynamic and may change' [S916]. Separately, the live SMB online-banking page currently describes business bill pay by ACH, debit or credit card with QuickBooks Online sync, up to $50 late/penalty-fee reimbursement for Small Business Bank accounts, and excludes clients with annual sales above $10M [S033] — these are current terms, not earlier marketing.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s033",
+     "src-capital-one-s036",
+     "src-capital-one-s916"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j22"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P03-S05",
+    "name": "Discover Bill Pay (legacy)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Discover checking bill pay: 'Deliver by Date' model; Discover chooses electronic vs check; Repeating Payments; eBills (enrollment up to 5 bd, first eBill up to 60 days); up to 5 instructions and $20,000 per deliver-by date; $1-$5,000 per payment (newer Cashback Debit) or $1-$10,000 (older); cancel electronic until 'In-Process'; $50 late-fee guarantee. Bill Pay not available on savings after conversion; checking bill pay post-conversion not addressed by Capital One FAQ.",
+    "other_flags": "discover_legacy: Yes; ebills: Yes; repeating_payments: Yes",
+    "notes": "Terms PDF still live (©2026, 'Discover, a division of Capital One, N.A.').",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s056",
+     "src-capital-one-s053"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P03-S06",
+    "name": "Order a cashier's check (web, app, Cashier's Check Kiosk)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "branch"
+    ],
+    "description": "Official check funded from a chosen account and ordered online ('account services & settings' > 'checks' > 'cashier's check'), in the app ('I want to…' > 'view all' > 'checks' > 'Order a cashier's check'), or self-service at a Cashier's Check Kiosk (CCK) in a limited number of Capital One Cafés (requires the mobile app and camera; 360 Checking, Total Control Checking or Simply Checking; $5,000 per customer per day at the kiosk). Marketed as 'Pay with a check that's as good as cash by sending directly to the payee'. Converted Discover customers: cashier's checks 'only available at Capital One locations and now cost $10'.",
+    "other_flags": "self_service_kiosk: Yes",
+    "notes": "Kiosk is a differentiated self-service channel for an otherwise branch-bound instrument.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s913",
+     "src-capital-one-s053"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P04",
+  "bank": "capital-one",
+  "name": "Wire Money (Wire transfers)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "phone",
+   "branch"
+  ],
+  "network": "Fedwire; SWIFT (incoming international)",
+  "ui_position": "Account > 'Account Services & Settings' > 'Wire Money'",
+  "description": "Domestic outgoing wires online (Account Services & Settings > Wire Money) or by phone; $30; same-day if by 2 PM ET online / 3 PM ET phone; cannot be cancelled once submitted. International outgoing wires are branch-only ($40, 3 PM ET, 30-minute cancellation hold); not all account types eligible. Incoming domestic wires available same day if received by 5 PM ET; incoming international 3-5 (up to 10) business days; SWIFT HIBKUS44. Small business: domestic wires online (4 PM ET same day); international by branch or email request.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s010",
+   "src-capital-one-s011",
+   "src-capital-one-s012",
+   "src-capital-one-s013",
+   "src-capital-one-s087",
+   "src-capital-one-s036",
+   "src-capital-one-s034",
+   "src-capital-one-s083",
+   "src-capital-one-s074"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P04-S01",
+    "name": "Domestic outgoing wire (online)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Recipient types: Title company ($500k/day), Person or non-title business ($50k/day), External linked account (no limit; account must be linked 30+ days). Mobile phone required for authentication.",
+    "other_flags": "recipient_type_limits: Yes; no_cancel_after_submit: Yes",
+    "notes": "Mobile app availability stated on product page ('online banking or the mobile app'); help center steps are web-labelled.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "mobile-phone authentication required"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s010",
+     "src-capital-one-s011",
+     "src-capital-one-s013",
+     "src-capital-one-s074"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P04-S02",
+    "name": "Domestic outgoing wire (phone)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "phone"
+    ],
+    "description": "Phone-assisted wire, $30, 3 PM ET cutoff, no recipient limit; associates 8 am-5 pm ET M-F.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s013",
+     "src-capital-one-s087"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P04-S03",
+    "name": "International outgoing wire (branch only)",
+    "product": "wire-international",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Consumer international wires only at a Capital One branch; $40; 3 PM ET; 30-minute hold during which cancellation is possible by calling the sending branch; call 1-800-655-BANK first for eligibility. No online/phone channel.",
+    "other_flags": "branch_only: Yes; fx_currency_options: unknown",
+    "notes": "Capital One's branch footprint is limited (NY/NJ/LA/TX/MD/VA/DC); 360 Checking customers outside those states effectively lack an international wire channel.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "in-person"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s010",
+     "src-capital-one-s013",
+     "src-capital-one-s087"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P04-S04",
+    "name": "Incoming wire (domestic and international)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Provide account + routing number (and SWIFT HIBKUS44 and McLean VA address for international). $15 incoming fee only on Essential Checking, High-Yield Checking, Essential Savings; free on 360 products.",
+    "other_flags": null,
+    "notes": "Converted Discover accounts: wires to the old Discover routing number are returned.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s012",
+     "src-capital-one-s083",
+     "src-capital-one-s003"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P04-S05",
+    "name": "Small business wires (domestic online; international by branch/email)",
+    "product": "wire-international",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "branch",
+     "other"
+    ],
+    "description": "Business domestic wires sent through online banking; before 4 PM ET weekdays available same day. International payment requests at a branch or by emailing BusinessWireRequests@capitalone.com between 8 am-2 pm ET.",
+    "other_flags": "email_request_channel: Yes",
+    "notes": "Email-based international wire intake is an unusual, manual channel.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s036",
+     "src-capital-one-s034",
+     "src-capital-one-s083"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P04-S06",
+    "name": "Discover Bank (legacy) outgoing and incoming wires",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone"
+    ],
+    "description": "Under the Discover Deposit Account Agreement effective 2026-10-08, outgoing wires 'may be made upon request by completing the Discover Wire Transfer Form or by submitting the request in the Bank Account Center (online or in the Mobile App)' — Account Center: 'Transfer' menu > Wire Transfer; Discover App: 'Transfer' icon > Wire Transfers. Security procedures: username/password for online/app requests; verbal phone verification for form requests; plus one of (i) an authentication code, (ii) government ID copy and a photograph of yourself, (iii) notarized identity verification form, or (iv) a debit/credit card security code — 'There may be more than one level of verification.' Requests fully verified by 3 p.m. ET process same business day. Fee: 'Outgoing Wire Transfer $30' (not applicable to IRAs). Incoming wires: call 1-800-347-7000 for instructions (intermediary bank); received before 4 p.m. ET post same business day; foreign-currency wires converted at intermediary-bank rates. Converted accounts must use the Capital One routing number or incoming wires are returned.",
+    "other_flags": "legacy_discover: Yes; paper_form_option: Yes",
+    "notes": "Corrects blocked.md: Discover outgoing wires are not phone-only and the current charge is $30, not $0. Discover.com feature pages are gone; the agreement and forms page are the only surviving documentation.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "authentication code, ID+selfie, notarized form or card security code; multi-level"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s928",
+     "src-capital-one-s929",
+     "src-capital-one-s053"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P05",
+  "bank": "capital-one",
+  "name": "Mobile Deposit (Deposit checks with a snap)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "in-house (RDC)",
+  "ui_position": "Account > 'Deposit' (next to camera icon) / 'I Want To' > Deposit",
+  "description": "Remote deposit capture in Capital One Mobile app: 'Deposit' button > camera > amount > endorsement check > 'Slide to Deposit'. 9 PM ET cutoff; next-business-day availability for checking; 4-business-day hold on most savings products; in-app max shown at deposit time.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s021",
+   "src-capital-one-s043",
+   "src-capital-one-s003",
+   "src-capital-one-s037",
+   "src-capital-one-s085"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P05-S01",
+    "name": "Consumer mobile check deposit",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "See product description. Endorsement must read 'for Capital One mobile deposit' plus signature.",
+    "other_flags": "auto_amount_correction: Yes; extended_hold_notice: Yes",
+    "notes": "Product-page demo flow (olb-sites/rdc-demo now redirects here): '1. Start your deposit — Sign in, choose your checking or savings account, then tap Deposit. 2. Set the scene — good lighting and a dark background, then hit the camera icon. 3. Snap your pics — enter the amount, photograph front, flip and photograph signed back. 4. Wrap it up — add a memo if you like… swipe the Slide to Deposit button.' 'The app will indicate what your maximum deposit amount is.' Before 9 pm ET on a business day posts same day; most savings-type accounts carry a 4-business-day hold.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "device recognition",
+     "same-day": "posting same day if before 9 PM ET"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s021",
+     "src-capital-one-s043",
+     "src-capital-one-s085",
+     "src-capital-one-s917"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P05-S02",
+    "name": "Small business mobile deposit",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Same app; two emails (image uploaded; deposit succeeded); 1-3 business days to appear; duplicate-check detection may require branch/ATM/mail deposit; no VPN.",
+    "other_flags": "duplicate_detection_exception_path: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "same-day": "posting same day if before 9 PM ET"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s037",
+     "src-capital-one-s036"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P06",
+  "bank": "capital-one",
+  "name": "Add Cash in Store",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "unknown (retail cash-in network; vendor not disclosed)",
+  "ui_position": "Account > scroll to 'Add Cash in Store' > enter amount > barcode; 'View Barcode' to retrieve",
+  "description": "Barcode-based cash deposit at Walgreens/Duane Reade, CVS, Kroger family, Dollar General, 7-Eleven; $999/txn, $1,500/day, $5,000/month, 10/month; barcode expires in 30 minutes; funds typically available within minutes; free.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s041",
+   "src-capital-one-s003",
+   "src-capital-one-s039",
+   "src-capital-one-s040"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P06-S01",
+    "name": "Add Cash in Store (barcode cash deposit)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "See product.",
+    "other_flags": "barcode_single_use_30_min: Yes; screenshots_rejected: Yes; no_cancel_after_completion: Yes",
+    "notes": "Differentiator for a branch-light bank.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "cashier may require photo ID"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s041"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P07",
+  "bank": "capital-one",
+  "name": "ATM, Café and branch deposits & cardless ATM",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch",
+   "mobile-app"
+  ],
+  "network": "Allpoint, MoneyPass (withdrawals); Allpoint select (cash deposit)",
+  "ui_position": "ATM: Deposit; app: cardless ATM withdrawal (360/Total Control/Simply Checking)",
+  "description": "Cash and check deposits at Capital One ATMs (incl. Cafés) and branches; cash deposits at select Allpoint ATMs (checking customers only); cardless ATM withdrawals via app at Capital One ATMs; Bank by Mail (PO Box 85123 Richmond VA). ATM cash deposit into 360 Checking typically available immediately; 9 PM ET ATM cutoff.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s082",
+   "src-capital-one-s003",
+   "src-capital-one-s085",
+   "src-capital-one-s074",
+   "src-capital-one-s073",
+   "src-capital-one-s080"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P07-S01",
+    "name": "ATM / branch cash and check deposit",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm",
+     "branch"
+    ],
+    "description": "See product. ATM check deposit limit $999,999.99/day; one-time cash deposit max $5,000.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "card + PIN",
+     "instant": "cash yes"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s082",
+     "src-capital-one-s074",
+     "src-capital-one-s085"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P07-S02",
+    "name": "Cardless ATM withdrawal (mobile app)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm"
+    ],
+    "description": "App-initiated withdrawal at Capital One ATMs only; $500/day, $2,000/month per disclosures.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "app sign-in"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s082",
+     "src-capital-one-s074"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P08",
+  "bank": "capital-one",
+  "name": "Early Paycheck (direct deposit)",
+  "former_names": "Early Pay (Discover)",
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Nacha ACH (receive)",
+  "ui_position": "Checking account > 'I Want To' > 'View All' > Account Settings > 'Set Up Direct Deposit'",
+  "description": "Inbound ACH direct deposit made available up to 2 days early on 360 Checking; automatic for enrolled accounts; enrollment toggle in app; direct-deposit setup via account/routing numbers or pre-filled form ('I Want To' > 'View All' > 'Set Up Direct Deposit' > 'Get Form'). Discover 'Early Pay' ends for savings accounts upon conversion; 360 Checking early paycheck replaces it for converted checking.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s024",
+   "src-capital-one-s053",
+   "src-capital-one-s050",
+   "src-capital-one-s061"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P08-S01",
+    "name": "Early paycheck on 360 Checking",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "See product.",
+    "other_flags": "opt_out_in_app: Yes; ties_to_no_fee_overdraft_eligibility: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s024"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P09",
+  "bank": "capital-one",
+  "name": "Instant payments participation (RTP / FedNow)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "rtp",
+   "fednow"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "The Clearing House RTP; Federal Reserve FedNow",
+  "ui_position": "Not surfaced in customer UI (no product page)",
+  "description": "Capital One, N.A. appears on both operator lists (TCH RTP participants; FedNow participants XLSX as of 2026-11-02, 'CAPITAL ONE, NA | MCLEAN | VA'), but neither list carries a send/receive-only indicator. The only bank-authored statement is on the Discover-conversion checking page: using the Capital One routing number 'may also qualify you to receive instant transfers from external accounts or third-party apps… a real-time payment method offered by some merchants that's available 24/7 and routes funds within minutes'. No customer-facing instant-payment SEND product is marketed for consumers, small business or Intellix; no help-center article mentions RTP/FedNow. Discover Bank is not listed as a FedNow participant under its own name.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s022",
+   "src-capital-one-s023",
+   "src-capital-one-s025",
+   "src-capital-one-s027",
+   "src-capital-one-s028",
+   "src-capital-one-s901",
+   "src-capital-one-s902",
+   "src-capital-one-s924"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P09-S01",
+    "name": "RTP / FedNow receive (inbound instant credit)",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Inbound instant payments land in the account. Capital One's Discover-conversion checking page states that using the Capital One routing number 'may also qualify you to receive instant transfers from external accounts or third-party apps… available 24/7 and routes funds within minutes'. Rail (RTP vs FedNow) is not named; notification/posting label still undocumented.",
+    "other_flags": "send_capability: unknown; request_for_payment: unknown",
+    "notes": "Operator lists (TCH page; FedNow XLSX as of 2026-11-02) list Capital One, N.A. but carry no send/receive-only column, so send capability remains UNKNOWN. Discover Bank has no FedNow row of its own.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s022",
+     "src-capital-one-s027",
+     "src-capital-one-s028",
+     "src-capital-one-s901",
+     "src-capital-one-s902",
+     "src-capital-one-s924"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P10",
+  "bank": "capital-one",
+  "name": "Paze® Wallet (digital-wallet intersection)",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Paze)",
+  "ui_position": "Profile > 'Digital Wallet Manager' > 'Paze'",
+  "description": "Online checkout wallet (EWS) preloaded with eligible Capital One credit and debit cards; activated via Profile > 'Digital Wallet Manager' > 'Paze' > 'Activate Paze'. Discover products 'coming soon'. Not a money-movement rail per se; recorded as wallet intersection only.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s066"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P10-S01",
+    "name": "Paze activation and management",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "See product.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "identity verification with eligible card; passkeys"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s066"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P10-S02",
+    "name": "Third-party app linking (Venmo, PayPal, Robinhood, Acorns) via Security > 'Linked Apps'",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Consumer links Capital One deposit accounts to third-party wallets/apps through the third party's flow (select Capital One, log in, choose accounts, consent); managed under Security > 'Linked Apps'. Must be re-established after Discover conversion.",
+    "other_flags": null,
+    "notes": "Evidence of a consent-based data-sharing hub ('Linked Apps').",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OAuth-style consent"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s053"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P11",
+  "bank": "capital-one",
+  "name": "Capital One Business online banking payments (ACH payments, wires, transfers)",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "internal-transfer"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Nacha ACH; Fedwire",
+  "ui_position": "Account > 'Account Services & Settings' > 'Manage Account Users' (users); vendor payments: 'Payments & expenses' tab > 'Manage Accounts Payable' (bill pay dashboard, 'Pay Vendors'); ACH/wire payment menu labels still UNKNOWN (no public article).",
+  "description": "Small business online banking: 'Make payments' (ACH payments free on Basic/Enhanced/Premier Checking and Business Savings; wires same-day if processed before 4 p.m. ET weekdays), 'Deposit money', 'Protect your account' (alerts, delegate access via 'Manage Account Users', debit card lock). Business checking tiers carry wire fee schedules (Basic $25 outgoing domestic/$40 intl; Enhanced first five domestic free; Premier first ten domestic and first four intl free, treasury management included). Dual control (one user creates, another approves) is offered ONLY as 'Dual Control Authorization' for payments made via Intellix (treasury management), not in standard business online banking. The Small Business help center has 7 articles and none covers ACH, bill pay, wires, approvals or permissions.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s033",
+   "src-capital-one-s036",
+   "src-capital-one-s086",
+   "src-capital-one-s916",
+   "src-capital-one-s920",
+   "src-capital-one-s922",
+   "src-capital-one-s923"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P11-S01",
+    "name": "Small business ACH payments",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Send ACH payments from business accounts (vendor payments); free on named account types; 1-3 business days.",
+    "other_flags": null,
+    "notes": "Capability existence confirmed; journey still UNKNOWN. The fully expanded Small Business help index (7 articles) has no ACH article [S920]. Dual control available only by moving to Intellix [S922]. Either the account routing number or the check routing number works for ACH/wires/direct deposit [S921].",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s033",
+     "src-capital-one-s036",
+     "src-capital-one-s920",
+     "src-capital-one-s921",
+     "src-capital-one-s922"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P11-S02",
+    "name": "Account user delegation (Manage Account Users)",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Add account users via web only; user receives email to finish; permission levels not documented.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s086",
+     "src-capital-one-s033"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P12",
+  "bank": "capital-one",
+  "name": "Capital One Intellix® / Treasury Management Payables",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "internal-transfer"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app"
+  ],
+  "network": "Fedwire; Nacha; (portal vendor not disclosed)",
+  "ui_position": "intellix.capitalonebank.com (redirects to clientview.capitalone.com); Intellix Mobile app; dashboard > payments pending approval / Positive Pay exceptions",
+  "description": "Commercial treasury portal (Intellix web + Intellix Mobile) delivering ACH, Domestic and International Wire Transfer (Fedwire), Controlled Disbursement, Integrated Payables (single payable file), Positive Pay / Reverse Positive Pay, Electronic Debit Protection (ACH debit block/filter), Check Return Services, corporate/virtual card. 'Dual Control Authorization' is a named feature: 'requiring one person to create the payment and another to approve it before transmitting to Capital One for processing' for wires and ACH. Intellix Mobile (iOS 2.9★; Android 3.8★, 167 reviews, 50K+ installs, updated 2026-11-05) supports Face ID/Touch ID, dashboard, photo check deposit, internal transfers, approve/reject payments pending approval and Positive Pay exception decisions; enrollment via Client Administrator or TM Client Service 866-632-8888 opt 2 / TMHelp@capitalone.com. No public Intellix product page or user guide exists on capitalone.com (all candidate URLs 404; /commercial/intellix/ redirects to the Treasury Management hub).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s029",
+   "src-capital-one-s030",
+   "src-capital-one-s031",
+   "src-capital-one-s032",
+   "src-capital-one-s033",
+   "src-capital-one-s063",
+   "src-capital-one-s075",
+   "src-capital-one-s922",
+   "src-capital-one-s926"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P12-S01",
+    "name": "ACH services (origination)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Commercial ACH origination (payroll, vendor, collections).",
+    "other_flags": null,
+    "notes": "Dual control confirmed by bank: 'Dual Control Authorization… requiring one person to create the payment and another to approve it before transmitting to Capital One for processing' for ACH and wires via Intellix [S922]; approvals also actionable in Intellix Mobile [S063][S926].",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token (Token Manager)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s030",
+     "src-capital-one-s063",
+     "src-capital-one-s922",
+     "src-capital-one-s926"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j23"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P12-S02",
+    "name": "Domestic and International Wire Transfer (Fedwire)",
+    "product": "wire-international",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Commercial wires, domestic and international.",
+    "other_flags": null,
+    "notes": "App-store review notes wire deposits show no detail in mobile (COMMUNITY).",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s030",
+     "src-capital-one-s922"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P12-S03",
+    "name": "Integrated Payables",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Consolidates AP into a single payable file routed to ACH/wire/check/card.",
+    "other_flags": "file_based: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": null,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s030"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P12-S04",
+    "name": "Controlled Disbursement",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Check disbursement with early presentment totals.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s030"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P12-S05",
+    "name": "Positive Pay (check and, by inference, ACH)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Exception review/decision in Intellix web and mobile.",
+    "other_flags": null,
+    "notes": "ACH positive pay not explicitly named.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s030",
+     "src-capital-one-s063"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P12-S06",
+    "name": "Intellix Mobile internal transfers and photo check deposit",
+    "product": "internal-transfer",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Transfers between Capital One accounts and mobile RDC for TM clients.",
+    "other_flags": null,
+    "notes": "Android listing (package com.capitalone.intellix.mobile.prod): 3.8★, 167 reviews, 50K+ installs, updated 2026-11-05; features: Face ID/Touch ID, dashboard, photo check deposit, balances/transactions, transfers between Capital One accounts, approve/reject payments pending approval, Positive Pay exceptions. Enrollment via Client Administrator or TM Client Service 866-632-8888 opt 2 / TMHelp@capitalone.com.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Face ID / Touch ID"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s063",
+     "src-capital-one-s926"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P13",
+  "bank": "capital-one",
+  "name": "Treasury Management Receivables (Lockbox Services, Remote Deposit, Vault Services, Merchant Services)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "cash-atm-branch",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "unknown",
+  "ui_position": "Treasury Management > Receivables tabs",
+  "description": "Commercial receivables: Lockbox Services (Capital One processes customer payments), Remote Deposit (desktop/mobile RDC), Vault Services (cash vault), Merchant Services. No RTP receive / Request for Payment product named.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s031"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P13-S01",
+    "name": "Lockbox Services",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Wholesale/retail lockbox.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": false,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s031"
+    ],
+    "journeys": [
+     "urn:kos:journey:capital-one:cof-j24"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P13-S02",
+    "name": "Remote Deposit (commercial RDC)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Desktop scanner / mobile check deposit for TM clients.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s031",
+     "src-capital-one-s063"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "COF-P13-S03",
+    "name": "Vault Services",
+    "product": "cash-atm-branch",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Cash vault deposit/change-order services.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": false,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s031"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P14",
+  "bank": "capital-one",
+  "name": "Liquidity Management (Cash Concentration, Automated Investment & Loan Sweep, ZBA)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "internal-transfer"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "in-house",
+  "ui_position": "Treasury Management > Liquidity Management",
+  "description": "Automated intra-bank funds movement for commercial clients: Cash Concentration, Automated Investment & Loan Sweep, zero balance accounts, Liquidity Escrow; custom IOLTA/escrow/tenant security structures.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s032"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P14-S01",
+    "name": "Cash Concentration / ZBA / Sweep",
+    "product": "internal-transfer",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "See product.",
+    "other_flags": "automated_rules: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": false,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s032"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "COF-P15",
+  "bank": "capital-one",
+  "name": "Eno (virtual assistant) — money-movement intersection",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "voice-chat-assistant"
+  ],
+  "network": "in-house",
+  "ui_position": "Eno icon (web), chat in app, SMS",
+  "description": "Eno answers balance/account questions by SMS (227-898), in-app chat and web; sends proactive alerts. CORRECTION: Eno can initiate one money-movement action — 'pay bill' pays the customer's Capital One credit card bill — plus card lock/replace/activate. It does not initiate bank transfers, Zelle, wires or third-party bill payments, has 'the most robust capabilities… for credit card customers', is English-only, and remains 'not a channel for disputes or errors' (EFT/bill pay errors go to 1-888-464-0727).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-capital-one-s038",
+   "src-capital-one-s080",
+   "src-capital-one-s927"
+  ],
+  "sub_products": [
+   {
+    "id": "COF-P15-S01",
+    "name": "Ask Eno (balance, account Q&A, alerts)",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "voice-chat-assistant"
+    ],
+    "description": "Informational Q&A (balances, available credit, minimum payment, due dates, recent transactions, account summary) plus card controls (lock, replace, activate) and ONE payment command: 'pay bill' pays the Capital One credit card bill. No bank-transfer, Zelle, wire or third-party bill-pay commands.",
+    "other_flags": "no_bank_transfer_commands: Yes; credit_card_bill_payment_command: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "consent to automated texts"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-capital-one-s038",
+     "src-capital-one-s927"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

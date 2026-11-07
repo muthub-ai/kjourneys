@@ -1140,5 +1140,13 @@
   }
  ],
  "assessment": "Clear, bank-standard Zelle flow with explicit screen names and OTP for new recipients. Weakness: Zelle is mobile-only at PNC (no web send documented), limits only visible deep in the flow, and scam interstitial content is not published.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "PNC-P01",
+ "terms": {
+  "limits": "Shown in-app via 'Zelle Limits' link; no receive limits",
+  "fees": "No PNC fee",
+  "cutoffs": "Minutes between enrolled users"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

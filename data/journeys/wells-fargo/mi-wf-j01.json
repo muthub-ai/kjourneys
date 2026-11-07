@@ -1251,5 +1251,13 @@
   }
  ],
  "assessment": "Strength: deep native integration (bottom-nav tab, Fargo voice send, QR, repeat toggle, 24-month activity). Friction: step-up code on first-time recipient (good control, adds friction); only generic trust warnings — no published evidence of dynamic scam interstitials or payment-purpose prompts, which peers (e.g., Chase, BofA) now show; reimbursement limited to 'qualifying imposter scams'.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "WF-P01",
+ "terms": {
+  "limits": "Consumer $3,500/24h, $20,000/30d; business $15,000/$60,000 (FAQ & Addendum)",
+  "fees": "None from WF",
+  "cutoffs": "Scheduled payments send shortly after midnight on scheduled day; cancel until 11:30 PM PT prior day"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

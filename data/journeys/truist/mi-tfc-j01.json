@@ -996,5 +996,13 @@
   }
  ],
  "assessment": "Strong: QR send/receive, scheduled & recurring with 7-day reminders, cancel-in-app when possible, explicit pay-yourself scam education. Weak: no documented scam interstitial, no in-app claim path for Zelle, two support numbers, limits opaque.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "TFC-P01",
+ "terms": {
+  "limits": "Not published; shown in-flow. 2022 SMB transition doc cited $2,000/day, $10,000/30 days for business Zelle (may be stale).",
+  "fees": "Personal: none. Business receive: 1% capped $15.",
+  "cutoffs": "Minutes when both enrolled; 14-day expiry for unenrolled."
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

@@ -732,5 +732,13 @@
   }
  ],
  "assessment": "Mature bill pay with explicit guarantee and check-cashed visibility; no in-flow eligible 'instant' option except RfP-driven instant payments (J09).",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "WF-P03",
+ "terms": {
+  "limits": "$50,000 per payment (checking); $10,000 business credit card",
+  "fees": "None for Bill Pay; a $30 stop-payment fee may apply to stopping a mailed check (general check stop-payment fee)",
+  "cutoffs": "7 pm PT; funds withdrawn biz day after Send On; 2–5 biz days delivery"
+ },
+ "composite": "CJ-BILLPAY-SEND",
+ "composite_match": "mi-reference"
 }

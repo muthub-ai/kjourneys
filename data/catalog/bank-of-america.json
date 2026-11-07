@@ -1,0 +1,2243 @@
+[
+ {
+  "id": "BAC-P01",
+  "bank": "bank-of-america",
+  "name": "Zelle®",
+  "former_names": "clearXchange (pre-2017 network predecessor)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Early Warning Services (Zelle Network); Bank of America is a founding EWS owner",
+  "ui_position": "Mobile: Accounts > Pay & Transfer hub (Erica bar; tiles 'Transfer – between my accounts' | 'Zelle® – send or receive money' | 'Pay Bills – pay new or schedule' | 'Wire – U.S. or international'; Activity with SCHEDULED/HISTORY; bottom tabs Accounts | Pay & Transfer | Deposit Checks | Research | Trade) > Zelle® > Pay | Request | Settings | QR icon (My QR Code). Web: Accounts Overview > Pay & Transfer tab > Zelle® tile > 'Send money with Zelle®' page with Send Money / Settings tabs; Zelle Activity = Payment Activity (Scheduled / Action Needed / History). Erica prompts: 'Show me my Zelle® activity', 'Send money with Zelle®', 'Show me my Zelle® recipients'.",
+  "description": "P2P and small-business send/request/split between U.S. bank accounts using a U.S. mobile number, email or Zelle® tag. No fee in the app or Online Banking. Embedded in the Mobile Banking app and Online Banking; also voice/text-initiated via Erica.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s001",
+   "src-bank-of-america-s002",
+   "src-bank-of-america-s013",
+   "src-bank-of-america-s014",
+   "src-bank-of-america-s017",
+   "src-bank-of-america-s020",
+   "src-bank-of-america-s041",
+   "src-bank-of-america-s057",
+   "src-bank-of-america-s901",
+   "src-bank-of-america-s911",
+   "src-bank-of-america-s912",
+   "src-bank-of-america-s921",
+   "src-bank-of-america-s927"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P01-S01",
+    "name": "Send money with Zelle® (Pay)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "One-time immediate, future-dated ('Choose a payment date') or recurring ('Make payment recurring') payment to an enrolled or not-yet-enrolled recipient by mobile/email/tag or QR code. Erica can initiate.",
+    "other_flags": "recurring_requires_60_days_enrollment: Yes; recurring_not_available_to_unenrolled_recipient: Yes; recipient_name_check_field: Enrolled with Zelle® as; erica_initiation: Yes; temporary_higher_limit_to_select_recipients_shown_in_pay_flow: Yes; recipient_list_badges: purple Z = Zelle recipient; Bank of America logo = BofA account recipient (sent as internal transfer, not Zelle); scheduled_states: Scheduled → Processing (on payment date) → History; statement_descriptors: 'Zelle® Scheduled payment' / 'Zelle® Recurring payment'; edit_single_payment_in_series: No; cancel_single_payment_in_series: Yes; block_or_cancel_notice_by_email: Yes; web_send_money_tab: Send money with Zelle® page > Send Money tab",
+    "notes": "Immediate payments cannot be edited/cancelled; scheduled/recurring editable until 11:59 p.m. ET day before.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Mobile: one-time authorization code (SMS/email) may be required when adding a recipient and again when paying a new recipient. Web (Online Banking): one-time authorization code PLUS Debit card PIN at both points ('Enter the one-time authorization code and your Debit card PIN to verify'). USB security key (FIDO-2) is the alternative to SMS codes and also gates adding transfer recipients."
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s002",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s014",
+     "src-bank-of-america-s017",
+     "src-bank-of-america-s901",
+     "src-bank-of-america-s904",
+     "src-bank-of-america-s911"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j01"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P01-S02",
+    "name": "Request money with Zelle® / Split",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "voice-chat-assistant"
+    ],
+    "description": "Request from one enrolled Zelle user or split a total among up to 10 recipients ('Add Recipient'); requests expire after 14 days. Mobile app only.",
+    "other_flags": "split_max_recipients: 10; include_own_portion_option: Yes; per_recipient_amount_editable: Yes; request_expiry_days: 14; request_to_unenrolled_mobile: No; request_to_unenrolled_email: Yes; activity_sections: Payment Activity > Action Needed (outstanding) / History (expired, completed, canceled); mobile_only: Yes",
+    "notes": "Outstanding requests under Payment Activity > Action Needed; completed/expired/cancelled under History.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": true,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s002",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s017",
+     "src-bank-of-america-s901"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P01-S03",
+    "name": "Receive money with Zelle® (enrollment of mobile/email; My QR Code)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Register up to 5 U.S. mobile numbers/emails each tied to a different deposit account; share 'My QR Code'. Incoming payments may go to 'Incoming pending review'.",
+    "other_flags": "max_tokens: 5; non_customer_enroll: enroll.zellepay.com",
+    "notes": "Up to 5 U.S. mobile numbers/email addresses (small business: numbers, emails and Zelle tags in combination) each linkable to a different deposit account; change linked account any time in Zelle settings; alerts routed per Settings > Contact Info (mobile) or Accounts > Alerts (web). Web enrollment demo: Pay & Transfer > Zelle® > Settings tab > 'Add mobile number or email' > choose Deposit account > 'Send Code' > 'Enter Authorization Code' > 'You're all set up'. Eligible numbers: authenticated U.S./territory mobiles only (no VoIP, landline, Google Voice, 1-800, international). Codes sent from onlinebanking@ealerts.bankofamerica.com or short codes 739-81 / 992-17.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s002",
+     "src-bank-of-america-s041",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P01-S04",
+    "name": "Zelle® for your business (tags, Scan to Pay / My QR code, accept payments)",
+    "product": "zelle",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Small-business Zelle: receive customer payments via a custom Zelle® tag (e.g. 'UncleFinsFishing Charters') or printable QR code shown on invoices/POS; request payments; pay vendors. Higher tenure-based limits than consumer.",
+    "other_flags": "zelle_tag_create: Yes; erica_manage_tag: Yes; qr_print_share_pdf: Yes; accounting_software_integration: none – 'Zelle® does not currently integrate directly with accounting software'; transactions visible in transaction history; business may add its Zelle QR code or tag to digital/printed invoices; tag_rules: 6–40 characters; letters, numbers, hyphens only; no spaces; not case sensitive; no personal names/expletives; availability checked on submit; created at first enrollment or in Zelle settings (mobile or web); requires a U.S. mobile number as authentication contact method (add via Profile & Settings > Your Contact Info, then return to Zelle settings); max_tokens_incl_tags: 5; request_to_unenrolled_mobile: No; launched: QR codes + Zelle tags for small business launched late 2025 (per Mar 2026 press release); sb_2025_volume: 200M+ payments, $126B (2025)",
+    "notes": "Consumers cannot create tags but can pay/request to a business tag.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": true,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s007",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s018",
+     "src-bank-of-america-s020",
+     "src-bank-of-america-s901",
+     "src-bank-of-america-s921"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P02",
+  "bank": "bank-of-america",
+  "name": "Transfer Money (Transfer between my accounts; Transfers to Someone Else Using Their Account Number; Keep the Change®; Balance Connect® for overdraft protection)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "atm",
+   "phone",
+   "voice-chat-assistant"
+  ],
+  "network": "Bank of America (on-us book transfer)",
+  "ui_position": "Pay & Transfer > Transfer ('Transfer between my accounts' tile); scheduled items under Pay & Transfer > Activity > More Activity > Scheduled",
+  "description": "Immediate, future-dated (up to a year) and recurring transfers among linked Bank of America, Private Bank and Merrill accounts (incl. payments to BofA credit cards, loans, mortgages), and transfers to another Bank of America customer by account number. Available in app, Online Banking, ATM, phone IVR and Erica.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s004",
+   "src-bank-of-america-s009",
+   "src-bank-of-america-s042",
+   "src-bank-of-america-s013"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P02-S01",
+    "name": "Transfer between my accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "atm",
+     "phone",
+     "voice-chat-assistant"
+    ],
+    "description": "From/To/Amount/Date; immediate transfers post instantly to deposit accounts; recurring set-up in Online Banking or via Erica.",
+    "other_flags": "future_dating_horizon: up to 1 year; merrill_investment_accounts: Yes; erica_recurring_setup: Yes",
+    "notes": "Immediate transfers cannot be cancelled; scheduled/recurring cancellable before midnight ET prior business day.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s004",
+     "src-bank-of-america-s009",
+     "src-bank-of-america-s042",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P02-S02",
+    "name": "Transfers to Someone Else Using Their Account Number (other Bank of America customers)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "One-time or recurring transfer to another BofA customer's checking/savings/money market by account number; appears in Zelle recipient list with BofA logo and is sent as an internal transfer.",
+    "other_flags": "bank_cancel_reasons: closed account; ineligible; invalid recipient account number; deleted recipient; security; exceeded limits",
+    "notes": "Limits $3,500/day, $10,000/week (OLB SA 2.B).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer OTP or USB security key unlocks higher limits"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s002"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P02-S03",
+    "name": "Keep the Change®",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Rounds each enrolled debit-card purchase up to the next dollar and transfers the accumulated change daily from checking to the enrolled savings account; enrollment through Online Banking.",
+    "other_flags": "automatic_roundup: Yes",
+    "notes": "Added in verification (BAC-C011); mobile enrollment not stated on page.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s953"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P02-S04",
+    "name": "Balance Connect® for overdraft protection",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Automatically transfers available funds from up to five eligible linked Bank of America backup accounts to cover a pending overdraft; no transfer fee (credit-account transfers may accrue interest); enroll and manage in the Mobile Banking app or Online Banking; also offered on small business accounts.",
+    "other_flags": "automatic_sweep: Yes; max_backup_accounts: 5",
+    "notes": "Added in verification (BAC-C012).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s954",
+     "src-bank-of-america-s955"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P03",
+  "bank": "bank-of-america",
+  "name": "Transfers to other banks – Three Business Day ACH / Next Business Day ACH (menu: 'Wire/ACH' → 'Send a wire/ACH (includes external transfers)'; 'Add account from another bank')",
+  "former_names": "Direct Payments (small business ACH to vendors – closed to new enrollment)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "ach-external-transfer",
+   "ach-origination"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "phone"
+  ],
+  "network": "Nacha ACH (Bank of America as ODFI); external account linking via third-party login aggregator (vendor not named)",
+  "ui_position": "Mobile hub has no external-transfer tile: external accounts are added from Pay & Transfer > Pay Bills > (account to pay) > From > 'Add account from another bank', or (credit-card-only profiles) Pay & Transfer > Pay > Manage > 'Add/Edit Accounts from Other Banks'; web: hover Pay & Transfer > 'Manage accounts from other banks' > 'Add a Pay From Account'. Outbound external/third-party transfers sit under Pay & Transfer > Wire/ACH ('Send a wire/ACH (includes external transfers)'). Help Center names the logged-in screens 'Manage transfers', 'Transfer funds outside Bank of America® – set up transfers from your Bank of America® accounts to your accounts, or those of family and friends, at other banks' and 'Transfer money to an account outside the bank – transfer money to someone's non-Bank of America® account using his or her account number'.",
+  "description": "Link an external account (instant login via aggregator or routing/account entry) and move money inbound (consumer) or outbound (consumer/small business) via ACH with Three Business Day or Next Business Day delivery. Small business may push to an individual's or vendor's external account but cannot pull into a business account. Linked external accounts can also fund Bill Pay payments to BofA credit cards/vehicle loans.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s009",
+   "src-bank-of-america-s016",
+   "src-bank-of-america-s013",
+   "src-bank-of-america-s012",
+   "src-bank-of-america-s021"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P03-S01",
+    "name": "Add account from another bank (external account linking)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Get Started > find institution > log in to external account (instant verification) > Add Account; fallback 'Or, enter routing and account number'. Inbound registration limited to accounts you own; bank denies if ownership cannot be verified.",
+    "other_flags": "instant_login_verification: Yes; manual_routing_entry: Yes; trial_deposit_verification: not documented on any public page (instructions, EFT FAQs, Online Banking Service Agreement contain no trial/micro-deposit language); flow = find institution > log in to external account > review > Add Account, fallback 'Or, enter routing and account number' > Next > confirm > Add Account; Service Agreement: request denied if ownership cannot be verified; entry_points: Pay & Transfer > Pay Bills > From > 'Add account from another bank' (deposit profiles); Pay & Transfer > Pay > Manage > 'Add/Edit Accounts from Other Banks' (card/loan-only profiles); web 'Manage accounts from other banks' > 'Add a Pay From Account'; inbound_from_brokerage: defined list of investment firms",
+    "notes": "Confirmation shown after Add Account.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s009",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s902",
+     "src-bank-of-america-s916",
+     "src-bank-of-america-s926"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P03-S02",
+    "name": "Three Business Day ACH (inbound consumer; outbound small business)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Standard-speed ACH; 8:00 p.m. ET cutoff; consumer inbound $1,000/txn no fee; small business outbound $5,000/txn $1 fee.",
+    "other_flags": null,
+    "notes": "Weekend/non-business-day scheduled transfers process prior business day.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer OTP or USB security key required/raises limits"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s012",
+     "src-bank-of-america-s016"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P03-S03",
+    "name": "Next Business Day ACH (inbound consumer; outbound consumer & small business)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Faster ACH; consumer outbound $1,000 no fee; small business outbound $5,000 $5 fee; consumer inbound requires prior $500 received via 3-business-day inbound and 60 days of history.",
+    "other_flags": "inbound_availability_may_be_delayed: Yes",
+    "notes": "Help Center distinguishes two logged-in services: 'Transfer funds outside Bank of America®' (to your own or family/friends' accounts at other banks) and 'Transfer money to an account outside the bank' (to someone's non-BofA account using his or her account number). EFT FAQ: sole proprietors with linked personal+business accounts may transfer between them; non-sole-proprietors cannot move personal→business (workaround: add the business account as a 'Bank of America account recipient' under Pay & Transfer > 'Send to other BofA accounts', or use Zelle).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer OTP or USB security key"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s012"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P03-S04",
+    "name": "Direct Payments (small business ACH/wire to individuals & vendors) – closed to new enrollment",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Legacy SMB vendor-payment service: $10/month incl. 20 three-business-day payments; $10 per next-business-day; $25 domestic wire; $40 USD intl; $7,500 per 24h. Transactional-access only for sub-users.",
+    "other_flags": "closed_to_new_enrollment: Yes",
+    "notes": "Business Services Addendum §5.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s021"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P04",
+  "bank": "bank-of-america",
+  "name": "Wire Transfers (Same Business Day Domestic Wire; International Wire in U.S. dollars or foreign currency)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international",
+   "remittance"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "branch",
+   "phone",
+   "voice-chat-assistant"
+  ],
+  "network": "Fedwire, CHIPS (The Clearing House), SWIFT",
+  "ui_position": "Pay & Transfer > Wire (mobile tile) / Wire/ACH (web dropdown 'Send a wire/ACH (includes external transfers)') > Start a wire > Add new recipient / Manage recipients; status under Pay & Transfer > Activity",
+  "description": "Send domestic (Fedwire/CHIPS) and international (SWIFT) wires from the app or Online Banking in 140+ currencies to 200+ countries; foreign-currency wires carry no transfer fee (FX markup applies). Consumer international wires are regulated Remittance Transfers with a 30-minute cancellation right. Erica can send a wire and check wire status. Also available by appointment at a financial center.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s005",
+   "src-bank-of-america-s015",
+   "src-bank-of-america-s016",
+   "src-bank-of-america-s013",
+   "src-bank-of-america-s073"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P04-S01",
+    "name": "Same Business Day Domestic Wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "branch",
+     "voice-chat-assistant"
+    ],
+    "description": "Recipient name/address, account type, account number and wire routing number; 5 p.m. ET cutoff; $30 fee (waived for some tiers); $1,000/txn consumer and $5,000 small business base limits, higher with Secured Transfer/USB key.",
+    "other_flags": "receipt_share: Yes; email_confirmation: Yes; min_amount_usd: 10",
+    "notes": "Demo shows 'important scam reminder' interstitial after adding recipient.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer: debit card number + PIN + U.S. mobile OTP (or USB security key); authorization code above thresholds"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s005",
+     "src-bank-of-america-s015",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P04-S02",
+    "name": "International Wire – foreign currency (no transfer fee)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "branch",
+     "voice-chat-assistant"
+    ],
+    "description": "Send in local currency with estimated exchange rate displayed for 10 minutes; country-specific identifiers (IBAN, IFSC, CLABE, Transit); 1–5 business days; consumer transfers are Remittance Transfers (30-minute cancel, 180-day error right).",
+    "other_flags": "fx_rate_window_minutes: 10; remittance_transfer_cancel_minutes: 30; usd_only_countries: Colombia; Nigeria; Panama; Somalia; Timor-Leste; Venezuela; Palestinian Territories; foreign_currency_payments_guide: https://baml.bankofamerica.com/foreignpaymentsguide/#/world",
+    "notes": "If a USD request fails for undisclosed-fee reasons, bank suggests resubmitting in foreign currency.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer OTP to selected mobile number"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s005",
+     "src-bank-of-america-s016",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P04-S03",
+    "name": "International Wire – U.S. dollars ($45)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "branch"
+    ],
+    "description": "USD wire to a foreign account; conversion by intermediary/receiving bank; BofA may receive compensation on conversion.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer OTP"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s005",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P04-S04",
+    "name": "Receive a wire (domestic / international)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Share account number + wire routing 026009593 (domestic) or SWIFT BOFAUS3N (USD) / BOFAUS6S (foreign currency); view in Accounts > Account & Routing #. Incoming fee $15 (waivable).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s005",
+     "src-bank-of-america-s016",
+     "src-bank-of-america-s073"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P05",
+  "bank": "bank-of-america",
+  "name": "Bill Pay (Pay Bills) incl. eBills and AutoPay",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant",
+   "phone"
+  ],
+  "network": "Bill-pay processor not disclosed (electronic via ACH / single-use virtual card; corporate or personal check)",
+  "ui_position": "Mobile: Pay & Transfer > Pay Bills tile ('pay new or schedule') > 'Go to Bill Pay'; Add Payee (+); Activity tab. Web: Pay & Transfer > Pay Bills; Help Center names the web screens 'Bill Pay Center' (manage Pay To accounts, make payments, track activity, view incoming eBills and outgoing bill payments) and 'Bill Payments Overview' (scheduled and in-process bill payments; payment history). Erica prompts: 'Add a new payee', 'Pay a bill', 'Cancel a bill payment'.",
+  "description": "Pay companies or individuals in the U.S. from checking, money market, SafeBalance or HELOC; electronic (ACH or single-use virtual card) or check delivery; eBills with reminders; AutoPay rules (on due date, on receipt, N days before); payments to BofA credit card/vehicle loan can be funded from an external account. Erica can add a payee, pay a bill or cancel a bill payment.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s003",
+   "src-bank-of-america-s010",
+   "src-bank-of-america-s043",
+   "src-bank-of-america-s013",
+   "src-bank-of-america-s032"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P05-S01",
+    "name": "Add a payee (company or person)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Mobile: + beside 'Add Payee', choose company or person, complete fields, Save. Web: 'Add a Company or Person' tab; 'mail a paper check' link if company not found. Copy/paste of payee details added Dec 2025 (v25.12.0).",
+    "other_flags": "payee_types: company; person; erica_add_payee: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s010",
+     "src-bank-of-america-s003",
+     "src-bank-of-america-s032"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P05-S02",
+    "name": "Pay a bill (one-time / future-dated / recurring)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Select one or more payees > Pay > Pay From, Amount, Frequency, Deliver By, Reference note to self > Pay; confirmation shows Payment Type (how it reaches the merchant). Up to $99,999.99 per payment; one-time up to a year ahead.",
+    "other_flags": "multi_payee_batch: Yes; deliver_by_model: Yes; stop_payment_free: Yes",
+    "notes": "Cancel future-dated/recurring before 5 p.m. ET on the third bank business day before delivery date (OLB SA 3.E).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s043",
+     "src-bank-of-america-s010",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s073"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P05-S03",
+    "name": "eBills (Request eBills; Incoming eBills; pay full/minimum/other; cancel eBill)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Electronic bills delivered into Bill Pay; email notification when new eBill arrives; due reminders; 'Edit eBill options' > 'Cancel eBill'; 7 business days for payee to process discontinuation.",
+    "other_flags": "ebill_required_for_autopay: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s003",
+     "src-bank-of-america-s010",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P05-S04",
+    "name": "AutoPay (Add AutoPay / Set Up AutoPay / Change AutoPay Options / Stop AutoPay)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Automatic payment of an eBill: pay on due date, when received, or set days before; amount full/minimum/fixed. Business Card AutoPay requires first eBill.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s003",
+     "src-bank-of-america-s010"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P05-S05",
+    "name": "Pay a Bank of America credit card or vehicle loan from an external account",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Credit-card/vehicle-loan-only customers add an external asset account and schedule payments up to $249,999.99; same-day credit by 11:59 p.m. ET (card) / 5 p.m. ET (vehicle loan).",
+    "other_flags": null,
+    "notes": "Instructions (card/loan-only profiles): Mobile – Pay & Transfer > Pay > Under Manage tap 'Add/Edit Accounts from Other Banks' > 'Add Account from another bank' > Add Account (confirmation). One-time: tap blue square next to the account > Pay > fields > Pay. AutoPay: select account > 'Add AutoPay' > fields > Pay. Edit/cancel: Pay > Activity tab > Edit (Save) / Cancel (confirm). Web – hover Pay & Transfer > 'Manage accounts from other banks' > 'Add a Pay From Account'; one-time 'Make Payments'; scheduled payments panel > 'Change' > Save Changes / 'Cancel Payment'; AutoPay > 'Start Sending Payments'; edit 'Change AutoPay Options', cancel 'Stop AutoPay'. 'Request eBills' available for vehicle loans only.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s003",
+     "src-bank-of-america-s009",
+     "src-bank-of-america-s010",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s926"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P06",
+  "bank": "bank-of-america",
+  "name": "Mobile Check Deposit (Deposit Checks)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Bank of America (Check 21 image capture; vendor not disclosed)",
+  "ui_position": "Mobile app home/menu > Deposit Checks; help at Menu > Help > Browse More Topics > Mobile Check Deposit",
+  "description": "Photograph an endorsed check ('For deposit only at Bank of America'), choose account, enter amount, Submit; immediate 'processing' confirmation plus email; monthly limit shown at account selection; subject to verification/holds. Small businesses with <20 checks/month use the app; higher-volume use Remote Deposit Online (scanner).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s006",
+   "src-bank-of-america-s011",
+   "src-bank-of-america-s012",
+   "src-bank-of-america-s032"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P06-S01",
+    "name": "Deposit Checks (mobile)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Auto-capture or tap camera icon; front/back; duplicate detection; cannot cancel once submitted; problem deposits trigger a mailed letter to bring the check to a financial center.",
+    "other_flags": "endorsement_text: For deposit only at Bank of America; auto_capture: Yes; duplicate_detection: Yes; monthly_limit_shown_in_flow: Yes; excluded_from_security_guarantee: Yes; hold_notice_on_confirmation_screen: Yes; later_hold_notice_by_email_alert: Yes; hold_notice_by_mail_or_paperless_inbox: Yes; hold_duration_typical: 2–7 business days; screens: Deposit Checks > Front of Check > Back of Check > Select account > Enter Amount > Next > Submit > Confirm & Submit > Done; cancel_after_submit: No; copy_paste_deposit_details: app 26.02.02+ (Feb 2026)",
+    "notes": "Cutoff 9 p.m. ET / 8 p.m. PT for next-business-day availability.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s006",
+     "src-bank-of-america-s011",
+     "src-bank-of-america-s039",
+     "src-bank-of-america-s903",
+     "src-bank-of-america-s913",
+     "src-bank-of-america-s918"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P07",
+  "bank": "bank-of-america",
+  "name": "ATM & Financial Center deposits/transfers (ATM deposit; Make a Bank of America payment at an ATM; Remote Deposit Online; Business Deposit Card; Cash360)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch",
+   "web"
+  ],
+  "network": "Bank of America",
+  "ui_position": "info site nav: Deposit Money > ATM; Pay & Transfer > ATM; Business Online Banking: Business Services menu > Remote Deposit Online > Create New Deposit",
+  "description": "Cash/check deposit at ~15,000 ATMs (contactless/digital-wallet ATM access), transfers and BofA credit-card/loan payments at ATMs, wires by appointment at ~3,700 financial centers; small-business Remote Deposit Online scanner service ($15/mo); commercial Business Deposit Card and Cash360 smart-safe/recycler.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s001",
+   "src-bank-of-america-s004",
+   "src-bank-of-america-s059",
+   "src-bank-of-america-s062",
+   "src-bank-of-america-s068",
+   "src-bank-of-america-s025"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P07-S01",
+    "name": "ATM deposit and transfer / payment",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Deposit cash and checks at select ATMs; transfer between own accounts; make a Bank of America (card/loan) payment at an ATM; card-free contactless ATM access via digital wallet.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s001",
+     "src-bank-of-america-s004",
+     "src-bank-of-america-s059"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P07-S02",
+    "name": "Remote Deposit Online (small business)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Bank-supplied scanner; Business Services > Remote Deposit Online > Create New Deposit; later cutoffs; 2-year commitment, $250 early termination.",
+    "other_flags": "items_per_deposit_max: 99; daily_deposit_limit_usd: 999999.99; deposits_per_month: unlimited; single_user_id_only: Yes; sub_user_may_deposit_under_owner_id: Yes; funds_verification_at_deposit: No; deposits_subject_to_holds: Yes; business_accounts_only: Yes; check_retention_days: 14; entry_points: Business Services tab > 'Scan checks to deposit' / 'Remote Deposit Online' link; personal-profile business accounts: Account Details > 'Scan checks to deposit'; flow: RDO web app Home > 'Create new deposit' > enter total dollar amount > 'start capture'",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s062",
+     "src-bank-of-america-s905",
+     "src-bank-of-america-s907",
+     "src-bank-of-america-s924"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P08",
+  "bank": "bank-of-america",
+  "name": "Real Time Payment Network Service (Request for Payment via RTP) – consumer",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "rtp",
+   "request-to-pay"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "The Clearing House RTP network (BofA is a TCH co-owner)",
+  "ui_position": "Partially documented: future-scheduled RTP payments are cancelled via the Transfers section > 'Activity' (web and mobile) per Service Agreement §5.E; location of the RFP inbox itself is undocumented",
+  "description": "Per the Online Banking Service Agreement §5, eligible consumer checking customers can receive a Request for Payment (RFP) from a biller and pay it immediately or on a future date over the RTP network (irrevocable, no fee, limits $3,500/24h). Consumers can also receive inbound RTP credits (BofA is an RTP participant). No consumer-facing marketing page found; FedNow not offered.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s013",
+   "src-bank-of-america-s028",
+   "src-bank-of-america-s025"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P08-S01",
+    "name": "Pay a Request for Payment (RFP) over RTP",
+    "product": "rtp",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "One-time immediate or future-scheduled payment in response to an RFP; no recurring; cancel future-scheduled by 11:59 p.m. ET prior business day; customer must switch off duplicate eBills/autopay with same payee.",
+    "other_flags": "irrevocable: Yes; recurring_not_available: Yes",
+    "notes": "Terms exist; live UI exposure still unverified (no marketing/help content; Help Center search for RTP/Request for Payment returns nothing). Service Agreement §5: immediate RTP payments irrevocable; future-scheduled payments cancellable by 11:59 p.m. ET the business day before via 'Transfers section… tapping on Activity'; consumer limits for payments sent using RTP: $3,500/10 txns per 24h, $10,000/30 per 7 days, $20,000/60 per month.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P08-S02",
+    "name": "Receive real-time payments (RTP credit)",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Inbound RTP credits to BofA accounts (e.g., from Digital Disbursements/Recipient Select senders at other banks).",
+    "other_flags": null,
+    "notes": "TCH list does not separate receive-only vs send; BofA's own §5 and corporate send capability imply full participation.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s028"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P09",
+  "bank": "bank-of-america",
+  "name": "Erica® (virtual financial assistant) – money-movement actions",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay",
+   "internal-transfer",
+   "bill-pay",
+   "wire-domestic",
+   "wire-international",
+   "other"
+  ],
+  "channels": [
+   "voice-chat-assistant",
+   "mobile-app"
+  ],
+  "network": "Bank of America proprietary; third-party voice provider",
+  "ui_position": "Erica icon in Mobile Banking app ('Hi, I'm Erica. How can I help?')",
+  "description": "Voice/text assistant in the Mobile Banking app (natural-language processing + machine learning; explicitly 'not generative AI or large language models'; app 7.6+; English only). Capability cards: 'Manage your Zelle® transactions – send and request money with Zelle®, view activity and more'; 'Bill Reminders – remind you of all your upcoming bills and help easily schedule payments'; 'Track refunds'; 'Monitor recurring charges'; account/routing numbers; card lock/replace; live chat handoff; Merrill trades. Page-level prompts: Zelle ('Show me my Zelle® activity', 'Send money with Zelle®', 'Show me my Zelle® recipients'), Bill Pay ('Add a new payee', 'Pay a bill', 'Cancel a bill payment'), Wires ('Send a wire transfer', 'Check wire status', 'Receive a wire transfer'), Transfers (ask 'how to transfer money between your accounts'). Transactions completed via Erica receive the same confirmations as app transactions. Oct 2026 app releases (26.10.02–26.10.06) and Nov 3 2026 Android update 'refreshed Erica experience with easier access to personalized insights, guidance, and actions'.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s017",
+   "src-bank-of-america-s002",
+   "src-bank-of-america-s003",
+   "src-bank-of-america-s004",
+   "src-bank-of-america-s005",
+   "src-bank-of-america-s020",
+   "src-bank-of-america-s013",
+   "src-bank-of-america-s032",
+   "src-bank-of-america-s045"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P09-S01",
+    "name": "Erica-initiated payments and transfers",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "voice-chat-assistant"
+    ],
+    "description": "Conversational initiation of Zelle send/request, transfers, bill payments, wires; same confirmations as app flows.",
+    "other_flags": "not_generative_ai: Yes; voice_retained_90_days: Yes; other_voices_treated_as_authorized: Yes; min_app_version: 7.6; english_only: Yes; same_confirmations_as_app: Yes; specialist_handoff: phone or chat when Erica cannot answer; money_movement_prompts: Send money with Zelle®; Show me my Zelle® activity; Show me my Zelle® recipients; Add a new payee; Pay a bill; Cancel a bill payment; Send a wire transfer; Check wire status; Receive a wire transfer; transfer money between your accounts; bill_reminders_schedule_payments: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s003",
+     "src-bank-of-america-s005",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s017",
+     "src-bank-of-america-s910",
+     "src-bank-of-america-s918",
+     "src-bank-of-america-s919"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P10",
+  "bank": "bank-of-america",
+  "name": "Paze℠ online checkout (Early Warning) and digital wallets (Apple Pay, Google Pay, Samsung Pay)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Paze); Apple/Google/Samsung",
+  "ui_position": "Manage Card Settings page (app/online) > add/activate Paze; Digital Wallets info page",
+  "description": "Card-based wallets only. Paze auto-enabled for all eligible BofA credit and debit cards (rolled out from summer 2024); activation in Manage Card Settings or at first checkout with OTP + CVV. No published BofA content on funding Apple Cash, Venmo, PayPal or Cash App from a BofA account, or on debit-card push-to-card 'instant transfer'.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s060",
+   "src-bank-of-america-s059",
+   "src-bank-of-america-s036",
+   "src-bank-of-america-s058"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P10-S01",
+    "name": "Paze activation and checkout",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Enable in Manage Card Settings; checkout via Paze button + email + OTP; tokenized card; opt-out removes all cards.",
+    "other_flags": null,
+    "notes": "Out-of-scope card wallet; recorded only as intersection.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP to mobile + CVV at activation; OTP each transaction"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s060",
+     "src-bank-of-america-s036"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P11",
+  "bank": "bank-of-america",
+  "name": "Direct Deposit (Set up Direct Deposit – payroll switch)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Third-party payroll-switch provider (not named)",
+  "ui_position": "Account details > Account Management > Set up Direct Deposit",
+  "description": "In-app direct-deposit switch: Account Management > Set up Direct Deposit > select accounts > Get Started > find Employer or Payroll Provider > Accept > redirected to third-party site to complete; Online Banking generates a pre-filled PDF form with split percentages.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s011",
+   "src-bank-of-america-s001"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P11-S01",
+    "name": "Set up Direct Deposit",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Digital switch via third-party or PDF form; 'Deposits' alert when direct deposit credited.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s011",
+     "src-bank-of-america-s035"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P12",
+  "bank": "bank-of-america",
+  "name": "Business Advantage 360 – small business payments (Transfers, Pay bills, Wire, ACH, Zelle® for your business, Account Management, Cash Flow Monitor, Connected Apps, Payroll via ADP/QuickBooks Online Payroll)",
+  "former_names": "Small Business Online Banking; Payments and Invoicing Service (closed); Direct Payments (closed)",
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "bill-pay",
+   "wire-domestic",
+   "wire-international",
+   "ach-origination",
+   "zelle",
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Bank of America; QuickBooks/ADP integrations",
+  "ui_position": "Business Advantage 360 (web) uses the same Pay & Transfer tab as consumer (Zelle, Pay Bills, Transfer, Wire/ACH) plus 'Send to other Bank of America accounts' (under 'Pay a person') for cross-profile transfers; a 'Business Services' tab holds Add new users (Account Management), Scan checks to deposit (Remote Deposit Online), Payroll, Connected Apps and Cash Flow Monitor. Login panel offers password or passkey. 'Log in to other services: CashPro Online, Merchant Reporting, Business Investing'.",
+  "description": "Launched Feb 2019; integrated SMB digital banking sharing the consumer app/Online Banking shell. Payment suite marketed as Transfers (real-time, no fee), Pay bills, Wire (same-day, '$0 FX'), ACH (recurring larger payments, fixed pricing), Zelle for your business, Merchant Services and payroll. Account Management lets an Administrator create users with Transactional/View/No Access and Bill Pay Full/Limited access; no dual-approval workflow is documented. Cash Flow Monitor pulls QuickBooks Online, ADP, Google data (no money movement).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s018",
+   "src-bank-of-america-s019",
+   "src-bank-of-america-s021",
+   "src-bank-of-america-s022",
+   "src-bank-of-america-s061",
+   "src-bank-of-america-s063",
+   "src-bank-of-america-s064",
+   "src-bank-of-america-s065",
+   "src-bank-of-america-s067",
+   "src-bank-of-america-s905",
+   "src-bank-of-america-s906",
+   "src-bank-of-america-s907",
+   "src-bank-of-america-s908",
+   "src-bank-of-america-s909",
+   "src-bank-of-america-s925"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P12-S01",
+    "name": "Account Management (Account Permissions) – users and access levels",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Administrator creates/edits/monitors users; access per account: Transactional, View, No Access; Bill Pay Full Access (all accounts + new payees) vs Limited Access (specific accounts, existing payees); Payroll/Direct Payments transactional only; link multiple businesses under one User ID.",
+    "other_flags": "dual_approval_documented: No; per_user_limits: none shown – entitlements are per-account toggles only; entitlement_screen: Accounts & Services tab > select account > 'Allow this user access to this account' > View / Inquiry Settings (View statements; View check images) and Transactional Settings ('Transfer funds between eligible accounts or to other financial institutions') > Limited Access Bill Pay; General Services: Full Access Bill Pay, Payroll Services; setup_flow: Business Services tab > Add new users > complete fields > Continue > Continue > Accounts & Services tab > select services/accounts > Continue > Save > confirmation; add_user_by_email: Yes; fee: none with Business Advantage Banking",
+    "notes": "Dual approval for SMB payments not found in Addendum, product pages, BA360 feature page or the Account Management sub-user demo: the demo's entitlement modal offers only view/inquiry and transactional toggles per account plus Full/Limited Access Bill Pay – no approval workflow, no per-user dollar limits. Account Management promo: 'Easily delegate banking tasks like making payments, reconciling accounts or paying bills… Turn controlled access on or off quickly… Control account user activity with unique individual IDs.' D&B credit score and (per RDO FAQ) Remote Deposit login are owner-only features.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s021",
+     "src-bank-of-america-s063",
+     "src-bank-of-america-s064",
+     "src-bank-of-america-s905",
+     "src-bank-of-america-s906",
+     "src-bank-of-america-s908",
+     "src-bank-of-america-s909"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P12-S02",
+    "name": "Small business ACH (outbound to vendors/individuals) via Wire/ACH",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Three Business Day ($5,000, $1) and Next Business Day ($5,000, $5) outbound ACH to an individual's or vendor's external account; no inbound pull to business accounts.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Secured Transfer OTP / USB security key"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s013",
+     "src-bank-of-america-s016",
+     "src-bank-of-america-s018"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P12-S03",
+    "name": "Payroll (ADP; QuickBooks Online Payroll)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Referral/integrated third-party payroll; QuickBooks Online Payroll offers same-day direct deposit.",
+    "other_flags": null,
+    "notes": "Third-party processed; out of BofA rails.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s018",
+     "src-bank-of-america-s063"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "BAC-P13",
+  "bank": "bank-of-america",
+  "name": "CashPro® (CashPro Online, CashPro App, CashPro API, CashPro Connect, CashPro Chat with Erica, CashPro ACH, CashPro Forecasting, CashPro Data Intelligence)",
+  "former_names": "BA Direct (legacy)",
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "zelle",
+   "push-to-card",
+   "check-deposit-mobile",
+   "request-to-pay",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Fedwire, CHIPS, SWIFT, Nacha, TCH RTP, Zelle/EWS, Venmo/PayPal, Interac, card networks (Pay to Card)",
+  "ui_position": "CashPro Online navigation (Payments, Approvals, Reporting); CashPro App (approvals, alerts); CashPro API (Payments, RFP, Account Validation, Reporting, FX)",
+  "description": "Global treasury platform (Coalition Greenwich No. 1 digital channels four consecutive years; CashPro App No. 1 mobile). Payment initiation and approval across ACH (incl. Same Day), wires (Fedwire/CHIPS/SWIFT), U.S. RTP up to $10M, cross-border real-time (Mexico SPEI, UK FPS, India UPI – announced Jun 4 2026; Bradesco pilot Sep 2026; not confirmed generally available in CashPro as of Nov 2026), Global Digital Disbursements (Zelle/Venmo/Interac/PayPal), Recipient Select (Zelle, ACH, PayPal, RTP, Pay to Card, check), Request for Payment, Account Validation, ACH Positive Pay with mobile approvals, Mobile Token push authentication, QR Sign-In, mobile check deposit, Chat with Erica and live-advisor handoff.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-bank-of-america-s049",
+   "src-bank-of-america-s050",
+   "src-bank-of-america-s054",
+   "src-bank-of-america-s055",
+   "src-bank-of-america-s071",
+   "src-bank-of-america-s072",
+   "src-bank-of-america-s047",
+   "src-bank-of-america-s052",
+   "src-bank-of-america-s053",
+   "src-bank-of-america-s025",
+   "src-bank-of-america-s027"
+  ],
+  "sub_products": [
+   {
+    "id": "BAC-P13-S01",
+    "name": "CashPro ACH (CashPro ACH / Connect file / API) incl. Same Day ACH",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Credits/debits for payroll, supplier payments, collections, tax, cash concentration, cross-border ACH (Canada, Mexico, Panama, Europe); ACH Positive Pay with primary/secondary mobile approvals; Account Validation.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Mobile Token push authentication / QR Sign-In"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s054",
+     "src-bank-of-america-s055"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P13-S02",
+    "name": "CashPro wires (domestic Fedwire/CHIPS; international SWIFT; transactional FX)",
+    "product": "wire-international",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Initiate/approve wires in CashPro Online/App/API/Connect; FX at live or guaranteed rates via API; status reporting near real-time.",
+    "other_flags": null,
+    "notes": "SWIFT gpi tracking not explicitly confirmed on fetched pages.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Mobile Token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s049",
+     "src-bank-of-america-s071",
+     "src-bank-of-america-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P13-S03",
+    "name": "U.S. Real-Time Payments (RTP) send/receive up to $10M; Request for Payment",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "24/7 instant, irrevocable, ISO 20022; accepted/rejected visibility; RFP in select countries; one of the first banks to enable $10M limit (Jun 2025); FedNow not joined.",
+    "other_flags": "max_amount_usd: 10000000; fednow: No",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s025",
+     "src-bank-of-america-s047",
+     "src-bank-of-america-s071",
+     "src-bank-of-america-s030"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P13-S04",
+    "name": "Cross-border real-time payments (announced Jun 2026; pilot Sep 2026)",
+    "product": "wire-international",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Real-time option added to cross-border product via CashPro or Swift; pre-validation, tracking, scheduling; low-value high-volume B2C (gig, marketplaces); inbound real-time to U.S.",
+    "other_flags": null,
+    "notes": "Announced Jun 4 2026 (SPEI Mexico, FPS UK, UPI India; inbound real-time into U.S.; via Swift or CashPro APIs/host-to-host; recipient pre-validation), 'expected to launch next quarter'. Sep 29 2026: first pilot payment with Bradesco (Brazil→Hong Kong FPS over Swift); solution 'will later be made available through CashPro'. General availability not confirmed as of 2026-11-06.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s027",
+     "src-bank-of-america-s951",
+     "src-bank-of-america-s952"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j18"
+    ],
+    "x-mi_evidence": "THIRD_PARTY"
+   },
+   {
+    "id": "BAC-P13-S05",
+    "name": "Global Digital Disbursements (Zelle / Venmo / Interac / PayPal) and Recipient Select (Zelle, ACH, PayPal, RTP, Pay to Card, check)",
+    "product": "zelle",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "B2C disbursements by email/mobile without storing bank data; Recipient Select white-label portal lets payee pick method/speed incl. Pay to Card (push-to-card) and RTP.",
+    "other_flags": "push_to_card_via_recipient_select: Yes; canada_request_for_pay: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s052",
+     "src-bank-of-america-s053",
+     "src-bank-of-america-s025"
+    ],
+    "journeys": [
+     "urn:kos:journey:bank-of-america:bac-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "BAC-P13-S06",
+    "name": "Receivables: Intelligent Receivables, Wholesale Lockbox, Commerce Payment Portal, Pay by Bank, Remote Deposit, Cash360, Business Deposit Card",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "atm",
+     "branch"
+    ],
+    "description": "Note only (receivables out of money-movement scope). Pay by Bank = real-time account-to-account checkout.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-bank-of-america-s068"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

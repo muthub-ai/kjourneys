@@ -922,5 +922,13 @@
   }
  ],
  "assessment": "Mature Zelle implementation with QR, Zelle tag, scheduling and Split; strong tenure-based limit model. Weak public documentation of the actual in-app screens and scam interstitial copy; cancellation of scheduled payments is mobile-only per T&Cs.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "CITI-P01",
+ "terms": {
+  "limits": "Consumer untenured $500/day, $2,500/30 days; tenured Standard $2,500/day, $15,000/30 days; Citi Priority/Citigold/CPC/Private Bank $5,000/day, $20,000/30 days (S001)",
+  "fees": "None (S001)",
+  "cutoffs": "Daily limits reset 12:00 AM ET; typically minutes to arrive"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

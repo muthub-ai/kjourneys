@@ -25,7 +25,7 @@
       "kind": "report"
     }
   ],
-  "notes": "Imported with tools/import_mi_workbook.py; 2026-11-06-v1: 1156 sources, 236 journeys (2176 steps), 419 findings, 17 composites, 595 observations, 206 verifications, 70 participation rows, 10 rankings, 16 product comparisons, 3015 comparison facts",
+  "notes": "Imported with tools/import_mi_workbook.py; 2026-11-06-v1: 1156 sources, 236 journeys (2176 steps), 143 products (462 sub-products), 209 journeys linked to a customer journey, 419 findings, 17 composites, 595 observations, 206 verifications, 70 participation rows, 10 rankings, 16 product comparisons, 3015 comparison facts",
   "products": [
     "ach-external-transfer",
     "ach-origination",
@@ -44,5 +44,8 @@
     "wire-international",
     "zelle"
   ],
-  "workbook": "Money_Movement_CI_Data.xlsx"
+  "workbook": "Money_Movement_CI_Data.xlsx",
+  "import_warnings": [
+    "Journeys TD-J18: product_id TD-P10 does not own sub-product TD-P04-S05; using its parent TD-P04 (kept as x-mi_product_id)"
+  ]
 }

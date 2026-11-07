@@ -1,0 +1,3344 @@
+[
+ {
+  "id": "PNC-P01",
+  "bank": "pnc",
+  "name": "Zelle (Send Money with Zelle)",
+  "former_names": "PNC Popmoney (Online Banking P2P; discontinued by its provider and removed from PNC Online Banking June 24, 2023)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Early Warning Services (Zelle); Zelle-over-RTP since 2021 with The Clearing House",
+  "ui_position": "PNC Mobile app: bottom navigation 'Pay & Transfer' > 'Send Money with Zelle' (Send / Request / QR Code icon / Zelle Settings / Zelle Activity). Web Online Banking: not documented as a Zelle channel on pnc.com (Zelle transactions are visible in online activity).",
+  "description": "P2P and small-business send/request/receive by email, U.S. mobile number, Zelle QR code or (business) Zelle tag, embedded in the PNC Mobile app. Requires PNC Virtual Wallet or Personal Checking (consumer) or eligible business checking. No PNC fee. Payments to enrolled users arrive in minutes; unenrolled recipients have 14 calendar days to enroll. Supports immediate, future-dated and recurring payments per the Zelle Terms of Use.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s002",
+   "src-pnc-s003",
+   "src-pnc-s004",
+   "src-pnc-s017",
+   "src-pnc-s023",
+   "src-pnc-s058",
+   "src-pnc-s901",
+   "src-pnc-s917",
+   "src-pnc-s918",
+   "src-pnc-s922",
+   "src-pnc-s951"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P01-S01",
+    "name": "Send Money with Zelle",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Send to a recipient by name/email/U.S. mobile; one-time immediate, future-dated or recurring. First payment to a new recipient triggers a One-time Passcode.",
+    "other_flags": "zelle_ready_contacts: Yes; zelle_widgets: Yes; limits_link_in_flow: Zelle Limits link shown on recipient screen; scam_education_content: Yes",
+    "notes": "Zelle payment/request notifications and security notifications are delivered by text from short code 762265 (also Text Banking); OTP step-up texts come from 76200/76201/32858; out-of-band fraud-prevention confirmations ('Did you attempt a Zelle payment...') from 94387/76205. Texting STOP to 762265 silences Zelle texts along with Alerts and Text Banking. Zelle is only available in the PNC Mobile app (App Store description; Google Play reviewer: 'the only way to send money by Zelle is through the app'). In-flow scam interstitial wording remains unverified (not on pnc.com; videos have no transcripts).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP on first payment to a new recipient (CONFIRMED_BANK); out-of-band fraud-alert text 'Did you attempt a Zelle payment' (CONFIRMED_BANK sample)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s002",
+     "src-pnc-s003",
+     "src-pnc-s004",
+     "src-pnc-s017",
+     "src-pnc-s020",
+     "src-pnc-s901",
+     "src-pnc-s917",
+     "src-pnc-s922"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j01",
+     "urn:kos:journey:pnc:pnc-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P01-S02",
+    "name": "Request money with Zelle (one person)",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Request from one enrolled Zelle user; recipient has 14 days to respond; requests cannot be used to collect overdue debts.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s003",
+     "src-pnc-s017"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P01-S03",
+    "name": "Split an expense (Request from multiple people)",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Request equal shares from up to 10 enrolled contacts; Zelle calculates each share; each person has 14 days.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": true,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s003"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P01-S04",
+    "name": "Zelle QR Codes (send by scanning; receive via 'Your QR Code')",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "QR icon top right of Zelle screen; one QR per enrolled token; share by text/email/print; QR changes if enrolled token changes.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s003",
+     "src-pnc-s023"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P01-S05",
+    "name": "Zelle for Business (send, request, receive; Zelle tag)",
+    "product": "zelle",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Business Checking and other eligible business accounts; requires Controlling Party verification and a different token than personal Zelle; Zelle tag (>=6 chars) created in Zelle Settings; businesses cannot transact with Zelle-app-only users; no receive limits.",
+    "other_flags": "zelle_tag: Yes; accounting_integration: none (via bank feed only); scam_education_content: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Controlling Party verification at enrollment"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s023",
+     "src-pnc-s017"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P01-S06",
+    "name": "Scheduled and recurring Zelle payments",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Future-dated single payments and recurring series; editable/cancellable until 11:59 PM ET the day before the scheduled date in the Zelle section of the app.",
+    "other_flags": null,
+    "notes": "Documented in Terms of Use; screen names for scheduling not captured on pnc.com help pages.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s017"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P02",
+  "bank": "pnc",
+  "name": "PNC Transfers ('Make a PNC Transfer')",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "atm",
+   "phone",
+   "branch"
+  ],
+  "network": "PNC core (book transfer)",
+  "ui_position": "Online Banking: 'Pay and Transfer' > 'Transfers' > 'Make a PNC Transfer'; credit card/loan payments via account > 'Make a Payment' (and the 'PNC Payments and Advances' menu). Mobile: 'Pay & Transfer' (bottom nav).",
+  "description": "Transfers between PNC checking, savings, money market, loan, credit card and select investment accounts; one-time (same-day), scheduled, or recurring. Includes 'Auto Savings' (recurring checking-to-savings) and payments to PNC credit cards/loans ('Make a Payment' / 'PNC Payments and Advances').",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s004",
+   "src-pnc-s006",
+   "src-pnc-s014",
+   "src-pnc-s018",
+   "src-pnc-s034",
+   "src-pnc-s056"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P02-S01",
+    "name": "One-time / same-day PNC Transfer",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "atm"
+    ],
+    "description": "Immediate transfer between eligible PNC accounts; same-day transfers cannot be modified or deleted after submission.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s004",
+     "src-pnc-s006",
+     "src-pnc-s018",
+     "src-pnc-s046"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P02-S02",
+    "name": "Scheduled & recurring PNC Transfer (incl. 'Auto Savings')",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Future-dated or recurring at a chosen Frequency and Transfer Date; modify/delete until 3 a.m. ET on the Scheduled Transfer Date; cancel next occurrence or whole series.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s014",
+     "src-pnc-s018"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P02-S03",
+    "name": "Payments to PNC credit card / loan ('Make a Payment')",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "phone",
+     "branch"
+    ],
+    "description": "From PNC or external account; one-time, same-day, future-dated, recurring; consumer same-day cutoff before midnight ET, business 5 p.m. ET; payments from PNC checking immediately increase available credit.",
+    "other_flags": "from_external_account: Yes; voice_banking_no_cancel: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s052",
+     "src-pnc-s056",
+     "src-pnc-s034"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P02-S04",
+    "name": "Virtual Wallet Overdraft Protection auto-transfers (Reserve, then Growth)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Automatic transfer equal to the Spend overdraft amount from Reserve (first) then Growth (second); customers with only Spend designate another protecting account.",
+    "other_flags": "automated_rule: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s059"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P02-S05",
+    "name": "Business Account Linking Request (cross-TIN transfers)",
+    "product": "internal-transfer",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Lets a business view and transfer between eligible PNC accounts with different Taxpayer Identification Numbers under one Business Online Banking User ID.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s025"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P03",
+  "bank": "pnc",
+  "name": "External Transfers ('Make an External Transfer')",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Fiserv, Inc. ('Transfer Service Provider' per Digital Services Agreement)",
+  "ui_position": "Online Banking: 'Pay and Transfer' > 'Make an External Transfer'. Mobile: 'Pay & Transfer' (transfer between PNC and external accounts).",
+  "description": "Move money between PNC accounts and verified accounts you own at other U.S. institutions (savings, money market, investment included). One-time same-day, scheduled up to one year ahead, or recurring. Receiving account is usually credited 3-4 banking days after the debit; marketing says 'as few as 3 business days'. Verification by low-value test credits/debits or external databases/proof of ownership. No expedited/instant option documented.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s004",
+   "src-pnc-s006",
+   "src-pnc-s018",
+   "src-pnc-s034",
+   "src-pnc-s906",
+   "src-pnc-s921"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P03-S01",
+    "name": "Add & verify an external account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Verify ownership via test transfer (credit always before debit, never larger; customer reports amounts), external databases, or proof of ownership; email address must also be verified.",
+    "other_flags": "instant_account_verification: unknown",
+    "notes": "External Transfer Service is 'offered by PNC Bank and its Service Provider, Fiserv, Inc.'; PNC/Fiserv may validate accounts via external databases, proof of ownership or test transfers. Status views: Online Banking > Pay and Transfer > Transfers > Make an External Transfer shows 'Scheduled Transfers' and 'Transfer History'; Mobile: Pay and Transfer > External Transfers.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "email verification; trial-deposit confirmation"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s004",
+     "src-pnc-s018"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P03-S02",
+    "name": "One-time, scheduled, or recurring external transfer (inbound pull / outbound push)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Cutoff 1 a.m. ET next business day; settlement usually 3-4 banking days; scheduled transfers cancellable before process date; stop after processing requires contacting PNC (written request within 14 days; fee).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s006",
+     "src-pnc-s018",
+     "src-pnc-s906",
+     "src-pnc-s921"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P04",
+  "bank": "pnc",
+  "name": "Online Bill Pay (incl. eBills, AutoPay, Real-Time Bill Pay)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay",
+   "rtp"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Fiserv, Inc. ('Bill Pay is offered by PNC through Fiserv, Inc.' per Digital Services Agreement)",
+  "ui_position": "Online Banking: 'Pay and Transfer' > 'Bill Pay' (Bill Pay Dashboard; Your Payees; Payee Details). Virtual Wallet / Cash Flow Insight: 'Pay Bills Summary'. Mobile: 'Pay & Transfer' > schedule and manage bill payments.",
+  "description": "Pay companies and individuals; one-time, recurring, up to a year ahead; most payments next business day; eBills; AutoPay (incl. variable-amount autopay for eligible eBills); email reminders; Bill Pay Guarantee for late fees. Separate 'Real-Time Bill Pay' lets billers send an RTP Request for Payment into the PNC Mobile app, authorized for immediate, irrevocable debit. Three UI variants exist: 'Pay and Transfer > Bill Pay' (Bill Pay Dashboard), and two 'Pay Bills Summary' experiences (Virtual Wallet/Cash Flow Insight holders vs other accountholders).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s009",
+   "src-pnc-s018",
+   "src-pnc-s025",
+   "src-pnc-s034",
+   "src-pnc-s906",
+   "src-pnc-s921"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P04-S01",
+    "name": "Add a payee (company or person)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "'Your Payees' > 'Add a Payee' > Search > 'Enter Payee Details' or 'Enter their details manually' > Review > Submit; VW/CFI: 'Pay Bills Summary' > 'Add Bills'; others: 'Add a Company or Person'.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s009"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P04-S02",
+    "name": "Schedule single, recurring, or multiple payments",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Bill Pay Dashboard amount/date > 'Review Payment' > 'Make a Payment' (From Account, Amount, Frequency, Date, Memo, Note; Duration if recurring) > 'Review Payment Details' > Submit > 'Payment Scheduled'. Multiple: 'Enter Details for Multiple Payments' > 'Review Multiple Payment' > 'Multiple Payments Scheduled'.",
+    "other_flags": "electronic_or_paper_check: service decides; guarantee: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s009",
+     "src-pnc-s018"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P04-S03",
+    "name": "eBills",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Enroll from 'Payee Details' > 'Enroll in E-Bills' > 'Enter Enrollment Details' > Terms & 'Bill Delivery' method > Review > Submit; first eBill may take up to 60 days; cancellation up to 60 days.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s009",
+     "src-pnc-s018"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P04-S04",
+    "name": "AutoPay (incl. eBill autopay with varying amounts)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "'Set Up Autopay' in eBills section of 'Payee Details' (needs >=1 eBill received); VW/CFI: 'Manage My Bills' > 'Add automatic payment for this biller'; others: 'AutoPay' > 'Never Miss a Payment' > 'Set Up AutoPay'.",
+    "other_flags": "variable_amount_autopay: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s009"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P04-S05",
+    "name": "Real-Time Bill Pay (RTP Request for Payment)",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Billers send an RFP that appears in the Mobile app with an email alert; customer authorizes (immediate, irrevocable debit over RTP) or declines; RFP expiration set by biller; can pay more/less than requested; daily/monthly limits shown in app; electronic notice if delayed/not sent; may ask biller to return funds.",
+    "other_flags": "rfp_inbound: Yes; irrevocable: Yes",
+    "notes": "Governed by the 'Real-Time Bill Pay Service' section of the Digital Services Agreement; no marketing page found on pnc.com.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s018",
+     "src-pnc-s065"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P04-S06",
+    "name": "Bill Pay Guarantee & cancel/edit",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Cancel or update free any time before processing; PNC covers late charges/interest if a properly scheduled payment posts late and reimburses fees if a check settles early; excludes tax, securities, court-ordered, misrouted and NSF-returned payments.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s009",
+     "src-pnc-s018",
+     "src-pnc-s025"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P04-S07",
+    "name": "Quick Switch Center (switch direct deposits, automatic payments and bill-pay payees to PNC)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "branch"
+    ],
+    "description": "Online switch kit inside Online Banking/pnc.com that pre-fills customized letters to move a direct deposit from the old bank, switch or cancel automated payments so bills can be managed in PNC Online Bill Pay, close old accounts, plus 'a tool that will help you switch online bill payees from your old bank to Online Bill Pay quickly and easily' (requires the old bank's online-banking credentials and security answers). Branch assistance available.",
+    "other_flags": "payee_import_via_old_bank_credentials: Yes; direct_deposit_switch_letters: Yes",
+    "notes": "Found via site search; /services/quick-switch.html redirects to the Checking & Savings FAQ anchor.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s921"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P05",
+  "bank": "pnc",
+  "name": "Wire Transfers ('Wires and International Transfers')",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "branch"
+  ],
+  "network": "Fedwire / SWIFT",
+  "ui_position": "Online Banking: 'Pay and Transfer' > 'Wires and International Transfers' > 'Send a Domestic Wire' | 'Make an International Transfer'. Mobile: 'Pay & Transfer' > 'Domestic Wires' > 'Send a Wire' | 'International Transfers' > 'Make a Transfer'.",
+  "description": "Self-service domestic wires and international wires (180+ countries, USD or 20+ foreign currencies) from any personal PNC checking or savings account in Online Banking, the PNC Mobile app, or a branch, governed by the Self-Service Wire and Money Transfer Agreement (eff. June 3, 2025). First use requires accepting terms; each payment order is authenticated with at least one of: one-time passcode to the phone on file, debit card information, PIN/other PII, or a callback. Payment orders are processed the day received during business hours 8:30 a.m.-6:00 p.m. ET on business days (or on the requested later date). PNC does not send written advice, receipts or confirmations for domestic/business wires unless required by law; customers have no absolute right to cancel or amend after receipt (PNC makes a reasonable, no-liability effort before processing). Consumer international transfers get a pre-payment disclosure and receipt with a 'Date Available', a 30-minute cancellation right, and a 180-day error-notice window (Reg E). Incoming: routing 043000096 / SWIFT PNCCUS33.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s004",
+   "src-pnc-s010",
+   "src-pnc-s018",
+   "src-pnc-s905"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P05-S01",
+    "name": "Send a Domestic Wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "branch"
+    ],
+    "description": "Recipient name, address, U.S. routing and account number; typically received within two business days, same-day not guaranteed; fees vary by account type and are disclosed before submit when possible.",
+    "other_flags": "cutoff: unknown; cancel_recall: unknown; template_or_saved_recipients: unknown; scam_education_content: Yes",
+    "notes": "Processing window: business days 8:30 a.m.-6:00 p.m. ET (orders received later process next business day or on requested date). No written advice/receipt/confirmation unless required by law. Rejected orders: PNC endeavours to notify by phone/electronic means on or before the processing day. Limits are monthly per transfer type. Fedwire orders governed by Reg J Subpart B / PA UCC 4A.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Per Self-Service Wire and Money Transfer Agreement: at least one of (i) one-time passcode sent to the phone number on the account, (ii) debit card information, (iii) PIN or other identifying information, or (iv) a telephone call to the phone number on the account, in addition to user ID/password; order not 'received' until authentication succeeds (CONFIRMED_BANK)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s004",
+     "src-pnc-s010",
+     "src-pnc-s905"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P05-S02",
+    "name": "Make an International Transfer (international wire)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "branch"
+    ],
+    "description": "IBAN or account number + SWIFT/BIC; USD or 20+ currencies; intermediary/recipient bank fees may apply; timing varies by country.",
+    "other_flags": "fx_rate_disclosure: unknown; cutoff: unknown; cancel_recall: unknown; scam_education_content: Yes",
+    "notes": "Consumer International Transfers (individual sender to recipient outside the U.S.) are Reg E remittance transfers: pre-payment disclosure and receipt (or combined disclosure with proof of payment); funds delivered by the 'Date Available' on the receipt; 30-minute cancel; error notice up to 180 days after disclosed availability date, PNC determines within 90 days; timely-cancel refund within three business days. Non-executed FX orders refunded at current NY market value less expenses.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Same security procedures as domestic (OTP / debit card info / PIN-PII / callback) per Self-Service Wire and Money Transfer Agreement (CONFIRMED_BANK)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s004",
+     "src-pnc-s010",
+     "src-pnc-s905"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P05-S03",
+    "name": "Receive a wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "web"
+    ],
+    "description": "Provide account number plus routing 043000096 (domestic) or SWIFT PNCCUS33 (international); receiving fees vary by account type.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s004",
+     "src-pnc-s010"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P06",
+  "bank": "pnc",
+  "name": "International Money Transfers (Latin America)",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "remittance"
+  ],
+  "channels": [
+   "mobile-app",
+   "branch"
+  ],
+  "network": "Remittance network partner not named on pnc.com (UNKNOWN)",
+  "ui_position": "Mobile: 'Pay & Transfer' > 'International Transfers' > 'Make a Transfer' (shared entry point with international wire; the app routes LatAm destinations to the remittance product - INFERRED).",
+  "description": "Low-cost remittance to 10 Latin American countries (Mexico, Dominican Republic, Guatemala, El Salvador, Honduras, Panama, Colombia, Ecuador, Peru, Bolivia) via 100+ providers and 25,000+ locations (BBVA, Bancolombia, Elektra, Banrural). Deposit-to-account from the PNC Mobile app ($5) or branch ($10, also cash pickup). Delivery expected within one business day; cancel within 30 minutes at no fee; receipt provided; recipient details can be saved; available in Spanish.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s007",
+   "src-pnc-s004",
+   "src-pnc-s010"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P06-S01",
+    "name": "Digital remittance - deposit to account (mobile app)",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "From any PNC checking/savings to a supported bank account; $5 fee; daily/monthly limits (BBVA Mexico $10,000; others $1,500/$3,000); requires U.S. phone number for text/voice verification.",
+    "other_flags": "saved_recipients: Yes; spanish_ui: Yes; cancel_window_minutes: 30",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "U.S. phone number text/voice verification"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s007",
+     "src-pnc-s905"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P06-S02",
+    "name": "Branch remittance - deposit to account or cash pickup",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "$10 fee; deposit limits $3,000/day, $9,999/month; cash pickup $500/day, $1,000/month; no account number needed for cash pickup.",
+    "other_flags": "cash_pickup: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s007"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P07",
+  "bank": "pnc",
+  "name": "Mobile Deposit (with PNC Express Funds)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "PNC (vendor not named)",
+  "ui_position": "PNC Mobile app: bottom navigation 'Deposit'.",
+  "description": "Photograph and deposit checks in the PNC Mobile app ('Deposit' in bottom navigation, which also shows limits). Endorse 'For PNC Mobile Deposit Only'. Standard availability next business day for deposits before 10 p.m. ET (PNC-drawn checks same evening); optional PNC Express Funds gives immediate availability for a fee (2.50% over $100; $2 for $25-$100) when the check qualifies; if an Express Funds check is returned PNC does not debit the customer.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s004",
+   "src-pnc-s005",
+   "src-pnc-s016",
+   "src-pnc-s026",
+   "src-pnc-s034"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P07-S01",
+    "name": "Mobile check deposit - standard availability",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Next-business-day availability for deposits before 10 p.m. ET; pending deposits shown in italic all-caps in Recent Transactions; $50,000+/day may delay.",
+    "other_flags": "limits_shown_in_app: Yes; retain_check_days: 14",
+    "notes": "DSA Mobile Check Deposit terms: endorse 'For PNC Mobile Deposit Only'; image deemed received only when PNC confirms receipt; retain original 14 days then mark VOID and destroy; eligible = USD checks on U.S. banks incl. personal, business, most government; prohibited = third-party, altered, previously deposited, foreign, remotely created, non-USD, payable to Cash, savings bonds/money orders/cashier's/traveler's checks, unsigned/undated, postdated or >6 months old; non-conforming images may be returned unprocessed and charged back; limits shown in the app and vary by account; suspected errors must be reported within 60 days of the statement.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s004",
+     "src-pnc-s005",
+     "src-pnc-s062",
+     "src-pnc-s906",
+     "src-pnc-s921"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P07-S02",
+    "name": "PNC Express Funds (immediate availability for a fee)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm",
+     "branch"
+    ],
+    "description": "Offered only when the check qualifies; fee acknowledged in flow; funds immediately usable; also offered at DepositEasy ATMs and tellers.",
+    "other_flags": "fee: 2.50% >$100; $2 for $25-$100; no_debit_if_returned_nsf: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s005",
+     "src-pnc-s026",
+     "src-pnc-s046"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j14",
+     "urn:kos:journey:pnc:pnc-j24"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P08",
+  "bank": "pnc",
+  "name": "ATM Banking (DepositEasy, Card Free ATM Access, Mobile Tap)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch",
+   "mobile-app"
+  ],
+  "network": "PNC ATM network + Partner ATMs",
+  "ui_position": "Mobile: 'More' > 'Card Free ATM Access' > 'Generate Access Code'; ATM: 'ATM Preferences' screen for Express Funds opt-out/in.",
+  "description": "DepositEasy ATMs accept check deposits with optional Express Funds; cardless access via an 8-digit code generated in the app (More > Card Free ATM Access); Mobile Tap (wallet-provisioned debit) and Card Tap-n-Go at PNC ATMs; Fast Cash, custom withdrawals, transfers and balance inquiries. No PNC ATM fee at PNC or Partner ATMs. Branch: deposits, wires, remittances, stop payments.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s046",
+   "src-pnc-s005"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P08-S01",
+    "name": "DepositEasy ATM check deposit (with Express Funds option)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Deposits by 10 p.m. ET processed nightly; Express Funds selectable at ATM for a fee; opt out/in via ATM Preferences.",
+    "other_flags": null,
+    "notes": "Cash deposit at PNC ATMs not explicitly described on page (some Partner ATMs offer cash deposit) - UNKNOWN.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s046",
+     "src-pnc-s005"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P08-S02",
+    "name": "Card Free ATM Access",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm"
+    ],
+    "description": "Generate an 8-digit access code in app (30 minutes, one transaction) and enter with PIN at PNC ATMs.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "app-generated 8-digit code + card PIN"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s046"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P08-S03",
+    "name": "ATM transfers between own accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Transfers listed as an ATM function; details not given.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s046"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P09",
+  "bank": "pnc",
+  "name": "Virtual Wallet money-management tools (Low Cash Mode, Calendar, Money Bar, PNC Early Pay)",
+  "former_names": "Savings Engine; Punch the Pig; Danger Days; Wish List",
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "other",
+   "internal-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "PNC",
+  "ui_position": "Mobile: 'Profile and Settings' > 'Low Cash Mode' (setup); Low Cash Mode dashboard opens from 'Account Summary' when Spend is negative; 'Virtual Wallet Spending & Budgets' section in app. Low Cash Mode is not available in Online Banking.",
+  "description": "Virtual Wallet bundles Spend (checking), Reserve (secondary checking) and Growth (savings) with digital tools: Calendar (daily activity, bills and upcoming items), Money Bar (Free / Scheduled Out / Savings List), Spending and research cycle, savings goals, and Low Cash Mode on Spend (Intelligent Alerts, Extra Time of at least 24 hours, Payment Control to pay or return individual checks/ACH when negative). PNC Early Pay posts eligible direct deposits up to two business days early. Legacy tool names (Savings Engine, Punch the Pig, Danger Days, Wish List) no longer appear on pnc.com or in the account agreement; status UNKNOWN (likely retired in the app redesign - INFERRED).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s011",
+   "src-pnc-s012",
+   "src-pnc-s013",
+   "src-pnc-s034",
+   "src-pnc-s059",
+   "src-pnc-s060",
+   "src-pnc-s061",
+   "src-pnc-s914",
+   "src-pnc-s919",
+   "src-pnc-s921"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P09-S01",
+    "name": "Low Cash Mode - Payment Control (pay/return decisions on checks & ACH)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "When Spend is negative, eligible checks and ACH items are listed with a projected Pay/Return status the customer can change; debit card transactions excluded; PNC honors pay decisions at its discretion; returned items go back to the payee's bank as NSF.",
+    "other_flags": "extra_time_hours: 24; threshold_alerts: Yes; review_funding_options: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s013",
+     "src-pnc-s060",
+     "src-pnc-s061",
+     "src-pnc-s914"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P09-S02",
+    "name": "Calendar & Money Bar ('Scheduled Out', 'Savings List') and savings goals",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Calendar view of bills/payments/upcoming items; Money Bar shows Free vs Scheduled Out vs Savings List; research cycle auto-categorizes spending.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s012",
+     "src-pnc-s060"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P09-S03",
+    "name": "PNC Early Pay (early direct deposit)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Eligible ACH direct deposits (payroll, pension, government benefits; subject to a maximum dollar limit) made available up to 2 business days before the payor's settlement date, depending on when PNC receives notice; not guaranteed and may vary by pay period; no fee, no enrollment. Customers may turn it off via 'Account Actions' in Online Banking, a branch or Customer Care; unenrollment takes one to two pay cycles. Being added 'in a phased rollout to checking and savings accounts through December 2026'.",
+    "other_flags": "early_direct_deposit: Yes",
+    "notes": "Resolved: no dedicated Early Pay page exists on pnc.com (the guessed URL 404s); disclosures live on the Student Center page, the Checking & Savings FAQ and the account agreements.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s059",
+     "src-pnc-s919",
+     "src-pnc-s921"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P09-S04",
+    "name": "Legacy Virtual Wallet automations (Savings Engine, Punch the Pig, Danger Days, Wish List)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Historic Virtual Wallet features (rule-based saving, one-tap savings, calendar danger-day flags, goal lists). Not found on any current pnc.com page or in the Virtual Wallet agreement.",
+    "other_flags": null,
+    "notes": "Treat as retired/renamed pending browser verification inside the app.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "inferred",
+    "confidence": "low",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s011",
+     "src-pnc-s012",
+     "src-pnc-s059",
+     "src-pnc-s060"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "UNKNOWN"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P10",
+  "bank": "pnc",
+  "name": "Digital wallet intersections (Paze, PayPal card linking, PNC Pay)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Early Warning Services (Paze); PayPal; Visa",
+  "ui_position": "Mobile: 'More' > 'Paze'; 'More' > 'Cards' > 'View Card Details' > 'Digital Wallets'.",
+  "description": "PNC is one of seven large banks currently supporting Paze (PNC page; Paze launch/EWS owner-bank status is THIRD_PARTY): eligible PNC cards are auto-added and managed in the app (More > Paze). PayPal: PNC Visa cards can be pushed to PayPal from More > Cards > View Card Details > Digital Wallets. PNC Pay is an Android tap-to-pay wallet inside the PNC app (no P2P). No PNC documentation found for instant transfer to debit card from PayPal/Venmo/Cash App, Apple Cash funding, or Venmo linking.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s038",
+   "src-pnc-s039",
+   "src-pnc-s040",
+   "src-pnc-s041"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P10-S01",
+    "name": "Paze wallet management in PNC app",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Review/add/remove eligible PNC cards and activate Paze; checkout uses OTP to mobile; PNC notifies when a card is added; opt-out at mywallet.paze.com.",
+    "other_flags": null,
+    "notes": "Card wallet (out of money-movement scope) recorded only as an intersection; no funding/P2P capability.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP at Paze checkout"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s038"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P10-S02",
+    "name": "PayPal card push-provisioning",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Add PNC Visa debit/credit to PayPal from the app; commercial cards excluded; not available in Online Banking.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s040"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P11",
+  "bank": "pnc",
+  "name": "PNC Business Online Banking & Bill Pay",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay",
+   "internal-transfer",
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "PNC",
+  "ui_position": "Same 'Pay and Transfer' Online Banking and PNC Mobile app as consumer, under a Business Online Banking User ID.",
+  "description": "No-charge business digital banking: bill payments (one-time/recurring; Controlling Party verification at enrollment), transfers between eligible PNC deposit/loan accounts and to/from eligible accounts at other institutions, Account Linking Request (cross-TIN), stop payment orders, check images, alerts, Quicken/QuickBooks Direct Connect. Mobile: Zelle, bill pay, transfers (incl. business credit card payments), mobile deposit with Express Funds, Daily Card Sales (Merchant Services), Easy Lock.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s009",
+   "src-pnc-s022",
+   "src-pnc-s025",
+   "src-pnc-s026",
+   "src-pnc-s049",
+   "src-pnc-s906"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P11-S01",
+    "name": "Business Bill Pay",
+    "product": "bill-pay",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Enrollment requires verifying you are a Controlling Party; same payee/eBill/AutoPay flows as consumer; guarantee covers eligible unauthorized losses per agreement.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Controlling Party verification at enrollment"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s009",
+     "src-pnc-s025"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P11-S02",
+    "name": "Business Transfer Funds & Account Linking Request",
+    "product": "internal-transfer",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Transfer Funds between PNC business accounts and to/from external accounts; Account Linking (DSA) lets a Controlling Party/Authorized Representative link business accounts to a consumer profile, business accounts to another business profile, or consumer accounts to a business profile - approval of business-account links only by the Controlling Party; once linked, anyone with access to the primary profile can view, transact and 'move funds between the Linked ... Accounts and the Eligible Accounts in the Primary ... Profile'; unlinking available in Online Banking to the Controlling Party/certain Authorized Representatives.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s025",
+     "src-pnc-s026",
+     "src-pnc-s056",
+     "src-pnc-s906"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j25"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P11-S03",
+    "name": "Stop payment orders (online)",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Place stop payments on checks from Business Online Banking.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s022"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P11-S04",
+    "name": "Account Delegation (Businesses Only) - delegate access and entitlement management",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Eligible business account owners and certain Authorized Representatives appoint one or more Delegates in Online Banking and restrict which Eligible Accounts and what degree of access each Delegate has; a Delegate may be allowed to establish or manage other Delegates. Delegate transactions are deemed authorized until PNC is asked to remove the Delegate (self-service delete in Online Banking). No transaction-level dual approval or per-user limits are described (entitlement-level control only); dual control remains a PINACLE feature.",
+    "other_flags": "delegate_can_manage_delegates: Yes; account_scoped_access: Yes",
+    "notes": "From the Digital Services Agreement 'Account Delegation (Businesses Only)' section (previously unread).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s906"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P12",
+  "bank": "pnc",
+  "name": "Cash Flow Insight with Pay Receive Sync (Payables, Receivables, Sync)",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination",
+   "bill-pay",
+   "request-to-pay"
+  ],
+  "channels": [
+   "web"
+  ],
+  "network": "Vendor not named on pnc.com (SMB AP/AR platform - UNKNOWN)",
+  "ui_position": "Online Banking: Cash Flow Insight dashboard; enrollment in Pay Receive Sync 'exclusively' in Online Banking.",
+  "description": "Cash Flow Insight (free with eligible business checking) adds forecasting, expense tracking and export. The Pay Receive Sync add-on (subscription; 60-day fee waiver) adds Payables (pay vendors by ACH or PNC-printed/mailed check with masked account and positive pay, vendor payment network, approval workflow with policies and email notifications, document storage), Receivables (custom/recurring invoices, branded payment website, customer ACH auto-charge and auto-pay for recurring invoices, auto-reminders, messaging) and Sync (QuickBooks Desktop/Online, Intacct, NetSuite, Xero; import/export for Sage 50, Dynamics GP).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s022",
+   "src-pnc-s024",
+   "src-pnc-s049",
+   "src-pnc-s906"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P12-S01",
+    "name": "Payables (ACH to vendors or PNC-printed check; approval workflow)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Route bills for approval, approval policies, email notifications when bills are ready to approve/pay; cash-flow impact shown per decision; vendors can join network so bank details need not be shared.",
+    "other_flags": "check_print_and_mail: Yes; card_payments: not described",
+    "notes": "DSA: Cash Flow Insight Payables, Receivables and Accounting Software Sync are governed by the separate 'Pay Receive Sync Services Agreement (PRS Agreement)', which could not be located on pnc.com; access requires an Authorized Representative with Online Banking access to an eligible business checking account.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s024",
+     "src-pnc-s049",
+     "src-pnc-s906"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j22"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P12-S02",
+    "name": "Receivables & invoicing (branded payment portal, ACH auto-pay, reminders)",
+    "product": "request-to-pay",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Customers view invoice history, pay from any device, set up auto-pay for recurring invoices; card acceptance not explicitly described.",
+    "other_flags": "card_acceptance: not described",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s024",
+     "src-pnc-s049"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j23"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P12-S03",
+    "name": "Accounting Software Sync",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Syncs vendors, customers, bills, invoices and payments with QuickBooks, Intacct, NetSuite, Xero (fee applies).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s024"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P13",
+  "bank": "pnc",
+  "name": "PINACLE (PINACLE Payments, PINACLE Mobile, PINACLE Connect, PINACLE Pass)",
+  "former_names": null,
+  "segments": [
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "bill-pay",
+   "internal-transfer",
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app",
+   "web"
+  ],
+  "network": "PNC; RTP via The Clearing House (Finastra connectivity per 2018 press title)",
+  "ui_position": "treasury.pncbank.com portal; PINACLE Mobile app 'Manage Payments'; customizable dashboard.",
+  "description": "PNC's corporate online/mobile banking portal. PINACLE Payments routes payments over RTP, the Bill Payment service and ACH with real-time and same-day options and intelligent routing; Wire module for domestic, international USD and international FX wires (freeform or templates); ACH batches/templates with ACH Positive Pay; Account Transfers; Deposit On-Site remote deposit (scanner or mobile); Check/ACH/Reverse Positive Pay; alerts in PINACLE, email or text; reporting and 7 years of statements. Security: roles (Admin 1 & 2, Super User, Initiator, Approver, Viewer or custom), dual approval standard with optional self-approval using step-up authentication, company/user initiation and approval limits, token passcodes (PINACLE Pass app) for external money movement, PNC Protect fraud package, audit reports. Integration via PINACLE Connect (ERP/TMS, no technical resources), APIs (developer.pnc.com) and encrypted file transfers.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s027",
+   "src-pnc-s032",
+   "src-pnc-s033",
+   "src-pnc-s036",
+   "src-pnc-s048",
+   "src-pnc-s050",
+   "src-pnc-s911",
+   "src-pnc-s913",
+   "src-pnc-s923"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P13-S01",
+    "name": "PINACLE Payments (RTP, Bill Payment, ACH; intelligent routing; payee groups; payment lifecycle tracking)",
+    "product": "rtp",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Single tool for real-time and same-day payment options; save and group payees; track each payment's lifecycle.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Security token passcode (PINACLE Pass mobile app or physical token) may be required to initiate and/or approve depending on service/transaction; customer entitles users (CONFIRMED_BANK, PINACLE Transaction Initiation Services schedule)"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s033",
+     "src-pnc-s036",
+     "src-pnc-s048",
+     "src-pnc-s911",
+     "src-pnc-s913"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S02",
+    "name": "Wire (Domestic, International USD, International FX)",
+    "product": "wire-domestic",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Freeform or template wires; wire reporting, audit reports, items pending approval, future-dated transfers.",
+    "other_flags": "templates: Yes; mobile_initiate_repetitive_wires: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token passcode"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s036",
+     "src-pnc-s048"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j26"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S03",
+    "name": "ACH origination (batches, templates) and ACH Positive Pay",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "ACH batches from templates can be initiated and approved in PINACLE Mobile; ACH Positive Pay rules with exception review.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token passcode"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s036"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j27"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S04",
+    "name": "Real-Time Payments (RTP) send/receive with Request for Payment and 5 other message types",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "24/7/365; initiate via PINACLE, API, or direct transmission; RFP, RFI, Payment Acknowledgement, Credit Transfer (140-char remittance), Message Confirmation, Remittance Advice; credit transfers capped at $1,000,000; irrevocable; real-time fraud screening.",
+    "other_flags": "rfp_outbound: Yes; cap_usd: 1000000; cap_source: PNC marketing page (network limit $10M)",
+    "notes": "PNC RTP page states credit transfers 'Currently limited to $1,000,000' (PNC-stated; the RTP network limit has been $10M since Feb 9 2025, so the page may be stale or PNC applies a lower client cap).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s032",
+     "src-pnc-s055",
+     "src-pnc-s065"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j28"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S05",
+    "name": "Account Transfers (one-time or recurring between PNC business accounts; real-time in PINACLE Mobile)",
+    "product": "internal-transfer",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": null,
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s036"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S06",
+    "name": "PINACLE Mobile (approvals, positive pay decisions, template-based initiation, notifications)",
+    "product": "other",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Approve wires/templates, ACH batches/templates, operator passwords; Positive Pay exceptions and ACH Positive Pay suspects; initiate real-time account transfers, repetitive wires, ACH from templates; Face ID/Touch ID; token still required.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "biometric + token passcode"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s036",
+     "src-pnc-s027"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S07",
+    "name": "PINACLE Connect, APIs (developer.pnc.com) and File Transfers",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "developer.pnc.com API catalog (Nov 2026): OAUTH; Account Transfer API (between own PNC accounts); Bank Routing Number Verification (incl. RTP eligibility); Card Tokenization; Check Deposit (send check images); Check Images; ePayments (initiate / check status / cancel consumer payments); FX API (live rate before FX payment); Information Reporting; Payments (initiate Wire, ACH, RTP and Direct to Debit with Intelligent Routing); PINACLE Administration (operators/roles); Request For Payment (RTP RFP); Verification Services (counterparty identity/account); Webhooks API (payment and account status subscriptions); Zelle Lookup (is alias registered/eligible). Sandbox > Pre-Production (OAuth, mTLS) > Production with implementation specialists; PINACLE Connect and file transfer remain for batch.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s050",
+     "src-pnc-s053",
+     "src-pnc-s923"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S08",
+    "name": "Deposit On-Site / Deposit On-Site Mobile (remote check deposit)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Capture check images via scanner or mobile; submit multiple times a day.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s048"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S09",
+    "name": "Positive Pay (Check, ACH, Reverse Check)",
+    "product": "other",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Exception presentment and pay/return decisioning, incl. in PINACLE Mobile.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s027",
+     "src-pnc-s036"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P13-S10",
+    "name": "ACH Debit Block / ACH Debit Authorization",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "ACH debit filtering services listed on PNC small-business Cash Management alongside Positive Pay: block all ACH debits or authorize only specified originators.",
+    "other_flags": "fraud_control: Yes",
+    "notes": "Verification pass PNC-C017; names CONFIRMED_BANK; block-vs-authorize behaviour INFERRED from service names.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s955"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P14",
+  "bank": "pnc",
+  "name": "PNC Treasury Management payables & receivables (Integrated Payables, Intelligent Routing, ePayments, Direct to Debit Card, Zelle Disbursements, FedNow, Lockbox, EDI)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow",
+   "push-to-card",
+   "zelle",
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "The Clearing House RTP; Federal Reserve FedNow; Visa Direct (Direct to Debit Card push-to-card; collaboration renewed Oct 29 2025); Early Warning (Zelle)",
+  "ui_position": "PINACLE, API, direct transmission; Treasury Management Client Care 1-800-669-1518.",
+  "description": "Treasury Management disbursement and receivables suite documented in public Service Schedules (tmdocuments.html): Integrated/Consolidated Payables (check, card, ACH, AFT, wire); Intelligent Routing (customer-ranked Payment Types: Instant Payments, Same Day ACH, ACH, Wire; returned Instant Payments can be rerouted if the reroute option is enabled; PPD/CCD only; weekend/holiday future-dated items sent as Instant Payment shortly after midnight); ePayments (B2C disbursement via PINACLE, API or Direct File Transmission - payee is notified by email/text and chooses ACH, Instant Payment, check, debit card, Zelle, Direct to Debit (Visa), or PayPal/Venmo on a white-labeled portal; Payee Approver and expiration controls; expired payments fall back to a PNC-printed check); Direct to Debit Card (push-to-card, BAI 699); Zelle Disbursements (settle as ACH, status 'Delivered'); FedNow and RTP instant payments; Verification Services (Early Warning bank-account verification); API catalog incl. Payments (Wire/ACH/RTP/Direct to Debit with Intelligent Routing), ePayments (initiate/status/cancel), Request For Payment, Webhooks and Zelle Lookup; Lockbox, EDI, PayerExpress, Automated Cash Application, Cash Logistics.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s028",
+   "src-pnc-s029",
+   "src-pnc-s030",
+   "src-pnc-s031",
+   "src-pnc-s042",
+   "src-pnc-s055",
+   "src-pnc-s057",
+   "src-pnc-s907",
+   "src-pnc-s908",
+   "src-pnc-s909",
+   "src-pnc-s910",
+   "src-pnc-s911",
+   "src-pnc-s912",
+   "src-pnc-s913",
+   "src-pnc-s923"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P14-S01",
+    "name": "Integrated Payables (consolidated payment file: check, card, ACH, wire)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": null,
+    "other_flags": "release_timing_control: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s057",
+     "src-pnc-s030"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P14-S02",
+    "name": "Intelligent Routing (RTP / wire / Same Day ACH / next-day ACH auto-selection)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Customer ranks Payment Preferences across four Payment Types - Instant Payments, Same Day ACH, ACH, Wire Transfer/Funds Transfer - and PNC selects the type per payment (subject to limits, risk parameters, cutoffs and network rules). Returned Instant Payments can be rerouted to the next type only if the return reason is reroute-eligible and the client subscribed to reroute at setup; otherwise rejected and must be resubmitted. Returned ACH and cancelled/rejected wires are never reprocessed. Only PPD/CCD ACH allowed. Future-dated items go ACH if the date is a business day, otherwise as an Instant Payment sent shortly after midnight of the future date. Modification/cancel may be impossible once processing starts. Acknowledgement and confirmation files available.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s031",
+     "src-pnc-s055",
+     "src-pnc-s910",
+     "src-pnc-s923"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P14-S03",
+    "name": "ePayments (consumer disbursement by email/mobile; payee chooses method)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Business-to-consumer disbursement initiated through PINACLE, API ('ePayments: initiate, check status, or cancel payments to consumers') or Direct File Transmission using the payee's email/mobile ('Alias Information'). PNC notifies the Recipient of a Pending Payment by email and/or text (client-enabled Text Platform can also deliver OTPs); the Recipient accepts by the Expiration Date on a white-labeled portal (client supplies its own Terms/Privacy; no PNC branding; sample consent copy references the 'Pay Choice' brand) and chooses a Permissible Payment Method: ACH, Instant Payment, check, debit card, Zelle, Direct to Debit (Visa), PayPal/Venmo. Registered Recipients can auto-accept future/recurring payments. An optional Payee Approver (not the Recipient) must approve initiation. Settlement account is charged only after acceptance; expired payments are handled per client preference (default: PNC-printed check). Statuses in the Status file / PINACLE ePayments module: Released (ACH, check), Delivered (Instant Payments, Zelle, Direct to Debit Card, PayPal/Venmo), Failed (ACH return - no check fallback), Expired. Payee reminder texts come from short code 26489.",
+    "other_flags": null,
+    "notes": "Resolved: dedicated product page does not exist; the ePayments Service schedule (Version April 2026) and reconciliation deck document it. PayPal/Venmo added as a payee-choice method.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s030",
+     "src-pnc-s031",
+     "src-pnc-s055",
+     "src-pnc-s908",
+     "src-pnc-s909",
+     "src-pnc-s913",
+     "src-pnc-s923"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j29"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P14-S04",
+    "name": "Direct to Debit Card (push-to-card disbursements)",
+    "product": "push-to-card",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Push-to-card disbursement to a payee's debit card, listed as 'Direct to Debit (Visa®)' among ePayments Permissible Payment Methods and as 'Direct to Debit payments' in the Payments API (Wire, ACH, RTP, Direct to Debit with Intelligent Routing). Recipient supplies a debit card number on the ePayments portal; final status 'Delivered'; posts in Information Reporting/BAI2 as Miscellaneous Debits (code 699) with the Trace ID after 'DTDC Payer Name'. The standalone Direct to Debit Card Service schedule PDF is image-only (not readable).",
+    "other_flags": null,
+    "notes": "Runs on Visa Direct (PNC-Visa collaboration renewed Oct 29 2025); available via API and the ePayments platform.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s031",
+     "src-pnc-s908",
+     "src-pnc-s909",
+     "src-pnc-s923"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P14-S05",
+    "name": "Zelle Disbursements (business-to-consumer via Zelle)",
+    "product": "zelle",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Zelle offered as an ePayments Permissible Payment Method for B2C disbursements: PNC relies on the Zelle/Early Warning Network directory for the payee's email/mobile alias without verification; Non-Registered Recipients may be prompted to register; payments settle as ACH ('Zelle (settles as ACH)', BAI 455 with ACH Reconcilement Details) and show final status 'Delivered'; ACH returns show 'Failed' with no check fallback. The developer portal's Zelle Lookup API tells a client whether an alias is registered and eligible before paying.",
+    "other_flags": null,
+    "notes": "Details UNKNOWN.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s031",
+     "src-pnc-s908",
+     "src-pnc-s909",
+     "src-pnc-s923"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P14-S06",
+    "name": "FedNow instant payments",
+    "product": "fednow",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Joined Oct 21 2025; PYMNTS reports send and receive 24/7; use cases cited: emergency payroll, earned wage access, loan disbursements, gig payouts.",
+    "other_flags": null,
+    "notes": "FRB participant list (as of 2026-11-02) lists 'PNC BANK, NATIONAL ASSOCIATION | WILMINGTON | DE' but the current file carries no send/receive/RFP flags, so send vs receive cannot be confirmed from the operator. PNC's release and Intelligent Routing schedule treat 'Instant Payments' as an outbound disbursement type (INFERRED send). The developer API catalog (Nov 2026) still names RTP but not FedNow. PNC Corporate Responsibility Report 2025 (search snippet): 'We added FedNow in 2025 and began testing FedWire-to-CHIPS ... multi-rail'. No consumer-facing FedNow content exists on pnc.com.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s031",
+     "src-pnc-s042",
+     "src-pnc-s043",
+     "src-pnc-s044",
+     "src-pnc-s910",
+     "src-pnc-s915",
+     "src-pnc-s916",
+     "src-pnc-s923"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   },
+   {
+    "id": "PNC-P14-S07",
+    "name": "Receivables suite (Lockbox, EDI, online bill presentment & payment, Automated Cash Application, ACH debit origination, Cash Logistics)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": null,
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s029",
+     "src-pnc-s030",
+     "src-pnc-s027"
+    ],
+    "journeys": [
+     "urn:kos:journey:pnc:pnc-j30"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P14-S08",
+    "name": "Universal Payment Identification Code (UPIC)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Receivables service listed on PNC small-business Cash Management: a UPIC lets payers send ACH credits without exposing the receiving account number (masked identifier). Details beyond the product name not captured.",
+    "other_flags": "masked_account_identifier: Yes",
+    "notes": "Verification pass PNC-C017; product name CONFIRMED_BANK, function description from general UPIC definition (INFERRED).",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s955"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "PNC-P15",
+  "bank": "pnc",
+  "name": "PNC Alerts (Account Alerts, Security Alerts, Intelligent Alerts, fraud-alert texts)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "PNC",
+  "ui_position": "Mobile: 'Profile & Settings' (top-left icon) > 'Alerts' tile > Security Alerts / Account Alerts. Online Banking: profile icon (top-right) > 'Alerts and Communication' > 'Alert Management'.",
+  "description": "Push, email and text alerts: Account Alerts (balances, direct deposit arrival, overdraft, card spending - customer-selected) and Security Alerts (account-access changes, contact-information changes, suspicious activity - automatically on to the primary email and cannot be turned off there; text/push opt-in). Fraud-prevention confirmation messages (call/text/email/push) are separate from manageable alerts. Texts come from short codes: 762265 (PNC Alerts and Payment Notifications incl. Zelle payments, requests and security notifications; also Text Banking), 762273 (card activity), 76200/76201/32858 (OTP), 94387/76205 (fraud-prevention transaction confirmation), 90742 (online-purchase OTP), 762729 (adding a card to a wallet). Replying STOP to 762265 stops Text Banking, Zelle and Alerts texts together. Since app 4.63 (Apr 2026) push notifications can be turned on for all available alerts. Low Cash Mode Intelligent Alerts; Bill Pay email reminders.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-pnc-s009",
+   "src-pnc-s013",
+   "src-pnc-s015",
+   "src-pnc-s018",
+   "src-pnc-s020",
+   "src-pnc-s901",
+   "src-pnc-s906",
+   "src-pnc-s917",
+   "src-pnc-s922"
+  ],
+  "sub_products": [
+   {
+    "id": "PNC-P15-S01",
+    "name": "Account & security alerts",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Account Alerts (customer-selected: balances, direct deposit arrival, overdraft, card transactions) and Security Alerts (auto-on; account-access changes, contact changes, suspicious activity). Managed in Mobile (Profile & Settings > Alerts tile > Security Alerts / Account Alerts > alert > Push Notifications / Email / Text > Save) or Online Banking (profile icon > Alerts and Communication > Alert Management tab > toggle or 'Edit Delivery and Alert options'); mobile changes sync to web; push can only be managed in mobile; STOP opts out of texts (one confirmation message). Fraud-prevention transaction-confirmation messages (short codes 94387/76205) are separate and not manageable in the alert center.",
+    "other_flags": null,
+    "notes": "Still no dedicated transfer-sent / wire-sent alert types published; however the DSA and short-code page confirm Zelle payment and request notifications are delivered by text from 762265 and that fraud-prevention confirmations for Zelle/other payments come from 94387/76205. Push notifications for 'all available PNC alerts' enabled from app 4.63 (Apr 2026).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s015",
+     "src-pnc-s901",
+     "src-pnc-s906",
+     "src-pnc-s917"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "PNC-P15-S02",
+    "name": "Text Banking (PNCBNK 762265 commands)",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "phone"
+    ],
+    "description": "Informational SMS banking: text commands to 762265 from an enrolled U.S. mobile number - BAL (available balance per eligible account), FREE (Virtual Wallet Spend free balance), NICK (account nicknames), LAST \"CHK\" (last five transactions; NEXT for more), DUE (credit card due date/statement balance/minimum), RWD (rewards), CMD, HELP, STOP (stops all 762265 texts incl. Zelle and Alerts), ESP/ENG (language preference). No money-movement commands. Enrollment: Online Banking profile > Alerts and Communications > Text Banking > Manage Your Phone Numbers / Manage Text Banking Settings; Mobile: Profile & Settings > Phone numbers > Add Phone > OTP verification. One mobile number per Online Banking profile. Not available for all accounts.",
+    "other_flags": "informational_only: Yes; spanish_commands: Yes",
+    "notes": "Blocked item 'PNC text banking page' resolved. Text Banking shares the 762265 short code with Zelle/Alerts texts.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP to existing phone when adding a number"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-pnc-s922",
+     "src-pnc-s906",
+     "src-pnc-s901"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

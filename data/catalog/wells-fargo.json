@@ -1,0 +1,2690 @@
+[
+ {
+  "id": "WF-P01",
+  "bank": "wells-fargo",
+  "name": "Zelle®",
+  "former_names": "SurePay (Wells Fargo's pre-2017 P2P brand on clearXchange; still present in site meta keywords); clearXchange (network predecessor co-founded by Wells Fargo, 2011)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Early Warning Services (Zelle network); Wells Fargo is an EWS owner bank",
+  "ui_position": "Mobile: 'Zelle®' in bottom navigation bar. Desktop web (observed, logged in): 'Transfer & Pay' opens a panel headed 'Move Money & Pay Bills' listing Transfer Money · Pay WF Accounts · Pay Bills · Send Money with Zelle® · Wire Money · Send with ExpressSend® · Deposit a Check (Zelle is fourth). Zelle left menu: Send | Request | Scheduled | Activity | Family controls | Recipients | Manage payment profiles | Blocked contacts | Help. Fargo: purple Fargo icon in search bar.",
+  "description": "Bank-embedded P2P send/request/split via email, U.S. mobile number or (business-only) Zelle tag; QR code pay; recurring and future-dated; Fargo assistant can send to stored contacts. No standalone app since April 2025.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s002",
+   "src-wells-fargo-s005",
+   "src-wells-fargo-s010",
+   "src-wells-fargo-s016",
+   "src-wells-fargo-s019",
+   "src-wells-fargo-s063",
+   "src-wells-fargo-s902",
+   "src-wells-fargo-s903",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P01-S01",
+    "name": "Send money with Zelle®",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Send to an enrolled recipient by email/U.S. mobile/Zelle tag, from phone contacts, or by scanning a Zelle QR code; one-time, future-dated or repeating.",
+    "other_flags": "repeat_payment_toggle: Yes; schedule_up_to_1_year: Yes; unenrolled_recipient_14_day_window: Yes; fargo_voice_send_to_stored_contacts: Yes; block_contact: Yes; red_cross_donation_shortcut: Yes; limits_consumer: $3,500/24h, $20,000/30d (risk-based higher); limits_business: $15,000/24h, $60,000/30d; web_inline_limit_display: Yes; web_static_scam_banner_every_visit: Yes",
+    "notes": "Send flow verbatim (FAQ): Zelle® in bottom nav (web: Transfer and Pay > Send Money with Zelle®) → Send/Request → add or select recipient → amount + funding account → Continue → 'Carefully review the details of your payment before you send it. If it's the first time you've sent money to this recipient, we will send you an access code... If your recipient's U.S. mobile number or email address is enrolled with Zelle®, we'll display the name of the recipient on record before you continue (in some cases, this may only be a first name).' → confirmation screen. Notifications: email + secure inbox on schedule/change; email on fail/cancel; texts from 93557 or 93729 on new recipient / first-time send. Blocks are tied to the contact's enrollment at their bank (re-enrolling elsewhere clears a block). Refreshed marketing page frames use cases as split costs, recurring rent/utilities, QR 'Scan. Pay. Done.' for local merchants. No scam interstitial or payment-purpose prompt documented; scam victims call 1-800-956-4442; 'Qualifying imposters scams may be eligible for reimbursement.'",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "Access code (text to registered mobile or RSA SecurID) for first-time recipient and selected payments; Advanced Access"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s002",
+     "src-wells-fargo-s005",
+     "src-wells-fargo-s010",
+     "src-wells-fargo-s015",
+     "src-wells-fargo-s016",
+     "src-wells-fargo-s019",
+     "src-wells-fargo-s902",
+     "src-wells-fargo-s903",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j01",
+     "urn:kos:journey:wells-fargo:wf-j28",
+     "urn:kos:journey:wells-fargo:wf-j29"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P01-S02",
+    "name": "Request money with Zelle®",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Request a payment from an enrolled Zelle user by choosing your own enrolled email/mobile instead of a funding account on the 'Send or Request' screen.",
+    "other_flags": "max_pending_requests_consumer: 35; request_only_to_enrolled_users: Yes; debt_collection_prohibited: Yes; split_marketed_as_use_case_only: Yes; respond_to_token_selector: Yes",
+    "notes": "Requests limited to enrolled users; recipient may decline/ignore; up to 35 pending requests (non-small-business).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s005",
+     "src-wells-fargo-s010",
+     "src-wells-fargo-s019",
+     "src-wells-fargo-s035",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P01-S03",
+    "name": "Receive money with Zelle® (incl. Zelle tag & QR for business)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Receive to the deposit account linked to enrolled email/mobile/tag; small business can share a Zelle tag and 'Show your QR code' to get paid.",
+    "other_flags": "zelle_tag_business_only: Yes; no_receive_limit: Yes; commercial_accounts_cannot_receive: Yes",
+    "notes": "Zelle tags restricted to small business customers (FAQ + Addendum §3).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s005",
+     "src-wells-fargo-s019",
+     "src-wells-fargo-s034",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P01-S04",
+    "name": "Family controls (parent-managed Zelle® access for teen account holders)",
+    "product": "zelle",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Zelle menu item 'Family controls' = 'Update Zelle® access for teens': lists any teen account holder(s) with an Enabled/Disabled state and 'Zelle® access enabled by <parent> on <date>'; the parent toggles Enable/Disable. Not described on any public Wells Fargo page captured in the study and not present in any peer inventory built from public sources.",
+    "other_flags": "teen_access_toggle: Yes",
+    "notes": "Observed in a logged-in web session (web screen only); mobile presence not observed.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": null,
+     "split": null,
+     "qr-code": null,
+     "contact-sync": null,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": null,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "observed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "OBSERVED_SESSION"
+   },
+   {
+    "id": "WF-P01-S05",
+    "name": "Zelle® contact and profile controls (Blocked contacts; Manage payment profiles)",
+    "product": "zelle",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Web screens for two capabilities the public record already documents: 'Blocked contacts' lists blocked senders/requesters ('To block someone, go to Zelle® Activity and open a past payment or request'; blocking is documented publicly, S005), and 'Manage payment profiles' ('Receive money with Zelle®') shows each enrolled token (mobile, email) mapped to a deposit account with 'Edit account' and 'Unenroll' per token (receive mapping documented publicly under WF-P01-S03) plus a link to update contact information.",
+    "other_flags": "block_contact_from_activity: Yes; per_token_account_mapping: Yes",
+    "notes": "Observed on web; mobile not observed. Not a new capability — the screens give the public capabilities a management surface.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": null,
+     "split": null,
+     "qr-code": null,
+     "contact-sync": null,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": null,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "observed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s005",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "OBSERVED_SESSION"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P02",
+  "bank": "wells-fargo",
+  "name": "Transfers (Transfer Money)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant",
+   "atm",
+   "phone"
+  ],
+  "network": "Wells Fargo (ACH via Nacha for external)",
+  "ui_position": "Mobile: 'Transfer' in bottom bar; 'Scheduled Transfers & Payments'. Web: 'Transfer and Pay' > 'Transfer Money' screen ('Add Non-Wells Fargo Accounts' button); 'Transfer and payment Activity' with View/Edit, View/Delete. Fargo: 'Make a payment or transfer'.",
+  "description": "Move money between Wells Fargo accounts (immediate), to/from accounts at other U.S. financial institutions ('Bank-to-bank transfers' / 'Add Non-Wells Fargo Accounts'), pay Wells Fargo credit/loan accounts, automatic savings transfers, brokerage transfers.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s001",
+   "src-wells-fargo-s006",
+   "src-wells-fargo-s015",
+   "src-wells-fargo-s040",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P02-S01",
+    "name": "Between your accounts (internal transfer)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant",
+     "atm"
+    ],
+    "description": "Same-day immediate transfer between Wells Fargo deposit/credit accounts; future-dated and recurring with Frequency and Memo.",
+    "other_flags": "memo_field: Yes; edit_delete_until_1159pm_PT_day_before: Yes; atm_transfers: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": false,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s001",
+     "src-wells-fargo-s006",
+     "src-wells-fargo-s072"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P02-S02",
+    "name": "Bank-to-bank transfers (external, 'Transfer between banks')",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Link an external (non-Wells Fargo) account by routing and account number with an ownership attestation, then transfer to/from it. Observed (web): two account-use tiers — 'Payments only' (pay WF credit accounts from it) vs 'Transfers and payments' (outbound/inbound transfers); upgrading requires 'additional security measures (may take 2-3 business days)'; 'Set up for transfers' on an already-verified payments-only account completed instantly with no review step. No aggregator/credential-login option on the add-account form; 'To transfer money to another person, use Zelle®.'",
+    "other_flags": "outbound_2_biz_days: Yes; inbound_3_biz_days: Yes; expedited_next_day_discretionary: Yes; inbound_holds_3_4_biz_days: Yes; pay_WF_credit_accounts_while_pending_verification: Yes; account_use_tiers_payments_only_vs_transfers: Yes; frequency_options_web: Once, Daily, Weekly, Every two weeks, Twice a month, Last Friday of month, Monthly",
+    "notes": "Transfers FAQ (browser): 'click Add Non-Wells Fargo Accounts to get started... additional security measures are required. Verification may take 1-3 business days'; no instant/aggregator verification offered. Initial delivery speed 2 business days outbound / 3 inbound; 'Depending on your history of transfer activity, expedited transfer options may be available.' Mobile edit/delete: 'select Transfer in the bottom bar, tap on each transfer listed under Scheduled Transfers & Payments, and select Edit Transfer or Delete Transfer'; cutoff 11:59 pm PT the day before. Same-day transfers to Wells Fargo accounts cannot be canceled once submitted.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Advanced Access code when receiving from a new non-WF account; additional security measures at add-account"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s001",
+     "src-wells-fargo-s006",
+     "src-wells-fargo-s040",
+     "src-wells-fargo-s048",
+     "src-wells-fargo-s930",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P02-S03",
+    "name": "Wells Fargo payments (pay WF credit card/loan from WF or external account)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "atm"
+    ],
+    "description": "Pay a Wells Fargo credit card or loan from a WF deposit account or a linked external account. Observed (web): 'Pay My Wells Fargo Accounts' is the same single form as Transfer Money (From / To / Frequency / Amount → Continue), with 'Credit card Autopay terms' and a 'Transfer & payment activity' rail listing scheduled items (View / Edit → 'Autopay Details' with the fields From / To / Frequency / Next payment / Ending / Amount option / Status and the actions Delete Autopay / Edit Autopay / One-time payment).",
+    "other_flags": "external_funding_3_4_biz_days: Yes; cutoff_midnight_PT: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s001",
+     "src-wells-fargo-s006",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P02-S04",
+    "name": "Saving made easy (automatic recurring savings transfer)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Automatic recurring transfers into a WF savings account.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s001"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P02-S05",
+    "name": "Brokerage transfers (WellsTrade / Wells Fargo Advisors)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone"
+    ],
+    "description": "Transfers to/from linked brokerage accounts, 1–3 business days; phone 1-800-TRADERS.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s006",
+     "src-wells-fargo-s040"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P02-S06",
+    "name": "Stop future payments (online ACH debit stop) and Stop a check",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Accounts menu 'Stop Future Payments': select account → Continue → stop a merchant's future ACH debits online. In-page help scopes the online stop to ACH payments: a single check is stopped on the 'Stop a Check' page; a range of checks, a recurring debit-card payment, or a credit-card transaction require a phone call (1-800-869-3557 / number on the card); Bill Pay payments are cancelled on the Bill Pay page.",
+    "other_flags": "online_scope: ACH debits and single checks only; recurring card stops by phone",
+    "notes": "Adjacent capability (stop payments), not a transfer rail; observed on web.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": null,
+     "split": null,
+     "qr-code": null,
+     "contact-sync": null,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": null,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "observed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "OBSERVED_SESSION"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P03",
+  "bank": "wells-fargo",
+  "name": "Bill Pay (Online Bill Pay / Business Bill Pay)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay",
+   "rtp"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "voice-chat-assistant"
+  ],
+  "network": "Wells Fargo (processor not disclosed); RTP network (The Clearing House) for instant payments",
+  "ui_position": "Web: 'Transfer and Pay' > Bill Pay ('Add Payee', 'Manage Payee', 'Payment History'). Mobile: Bill Pay in Transfer & Pay. Fargo: 'Which bills are due?'",
+  "description": "Pay nearly any U.S. company or individual; electronic or mailed paper check; eBills; auto pay; Payment Guarantee; Bill Pay 'instant payments' over the RTP network in response to a payee's Request for Payment (mobile only).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s003",
+   "src-wells-fargo-s007",
+   "src-wells-fargo-s011",
+   "src-wells-fargo-s036",
+   "src-wells-fargo-s040"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P03-S01",
+    "name": "Add payee & pay a bill (one-time / scheduled)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "voice-chat-assistant"
+    ],
+    "description": "Add payee manually, browse list or search; schedule up to 1 year ahead; electronic or paper check delivery; 'Send On' date and 'Deliver by' date.",
+    "other_flags": "paper_check_fallback: Yes; payment_guarantee: Yes; no_tax_or_court_payments: Yes; per_payment_limit_checking: $50,000",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s003",
+     "src-wells-fargo-s007",
+     "src-wells-fargo-s011",
+     "src-wells-fargo-s040"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j07",
+     "urn:kos:journey:wells-fargo:wf-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P03-S02",
+    "name": "Auto pay (automatic recurring payments)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Set timing and amount rules; service pays recurring bills automatically, including variable-amount eBills.",
+    "other_flags": null,
+    "notes": "Marketed lowercase 'auto pay'; OAA calls it 'automatic (recurring)' payments.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s003",
+     "src-wells-fargo-s007",
+     "src-wells-fargo-s036"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P03-S03",
+    "name": "eBills",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Electronic versions of bills viewable/payable/printable in Bill Pay; reminders; activation from Bill Pay home, 'Manage Payee', or new payee setup; WF loan eBills.",
+    "other_flags": "biller_approval_up_to_10_biz_days: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s003",
+     "src-wells-fargo-s007",
+     "src-wells-fargo-s040"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P03-S04",
+    "name": "Bill Pay instant payments (RTP, in response to Request for Payment)",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "For participating payees only, in the Wells Fargo Mobile app: pay a payee's Request for Payment instantly; the service 'may use the RTP® network ... or another third party network'; funds typically available within seconds 24/7; cannot be canceled or amended; $50,000 per payment; not excluded from the Bill Pay Payment Guarantee (explicit RfP carve-out).",
+    "other_flags": "request_for_payment_inbound: Yes; mobile_only: Yes; limit_per_payment: $50,000; cannot_exceed_requested_amount: Yes",
+    "notes": "Only documented in Online Access Agreement §6(i) and Payment Guarantee exclusions; no marketing page found. Confirms WF consumer RTP send (credit-push) capability.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s011",
+     "src-wells-fargo-s040"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P04",
+  "bank": "wells-fargo",
+  "name": "Digital Wires (Wire Money)",
+  "former_names": "Online Wires",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "branch"
+  ],
+  "network": "Fedwire / SWIFT (WFBIUS6S)",
+  "ui_position": "Web/mobile: 'Transfer & Pay' > 'Wire Money'; sub-pages 'Recipients', 'Recipient's bank info', wire 'Activity', 'Wire details'. Enrollment deep link serviceType=digitalwires.",
+  "description": "Send domestic and international wires in USD or 30 foreign currencies to 200+ countries from Wells Fargo Online, Business Online or mobile; branch wires for amounts above digital limits.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s004",
+   "src-wells-fargo-s008",
+   "src-wells-fargo-s037",
+   "src-wells-fargo-s040",
+   "src-wells-fargo-s041",
+   "src-wells-fargo-s906",
+   "src-wells-fargo-s907",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P04-S01",
+    "name": "Domestic wire (USD)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "branch"
+    ],
+    "description": "Same-business-day if by 3:00 pm PT; recipient saved for reuse; statuses Scheduled/Pending/Completed/Failed/Canceled/Returned/Under review.",
+    "other_flags": "daily_and_rolling_30d_limits: Yes; above_limit_branch_only: Yes; internal_security_review: Yes; compare_options_explainer_in_flow: Yes; add_recipient_wizard_3_steps_with_aba_lookup: Yes",
+    "notes": "Recurring and future-dated wires (Preauthorized Orders) per OAA §8(h).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Required: valid U.S. mobile number (text code) or RSA SecurID device"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s004",
+     "src-wells-fargo-s008",
+     "src-wells-fargo-s040",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P04-S02",
+    "name": "International wire (USD or foreign currency)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "branch"
+    ],
+    "description": "SWIFT/BIC + IBAN/country codes (BSB, CLABE, IFSC, Sort Code, etc.); foreign-currency option locks rate; consumer FX wires $0 fee; 30-minute cancellation right for consumer international wires (Reg E remittance).",
+    "other_flags": "foreign_currency_rate_lock: Yes; 30_min_cancel_consumer: Yes; purpose_of_payment_some_countries: Yes; cutoff_2_20pm_PT: Yes; fx_estimate_tool_before_wire: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "U.S. mobile text code or RSA SecurID"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s004",
+     "src-wells-fargo-s008",
+     "src-wells-fargo-s040",
+     "src-wells-fargo-s041",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j11",
+     "urn:kos:journey:wells-fargo:wf-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P04-S03",
+    "name": "Receive incoming wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Domestic ABA 121000248; SWIFT WFBIUS6S; incoming FX converted to USD without notice; no incoming fee for consumer/non-analyzed business, $15 analyzed.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s008",
+     "src-wells-fargo-s041",
+     "src-wells-fargo-s042"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P05",
+  "bank": "wells-fargo",
+  "name": "ExpressSend®",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "remittance"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "branch",
+   "phone"
+  ],
+  "network": "Wells Fargo proprietary remittance network with named Remittance Network Members: Mexico – BBVA, Banorte, Banco Santander (account only), Soriana*, Telecomm Telégrafos (Financiera para el Bienestar)*, Farmacias Guadalajara*, Bodega Aurrera*, Walmart*, Superama*; Dominican Republic – Banco BHD León*, Banreservas*; El Salvador – Banco Agrícola, Banco Davivienda Salvadoreño, Sistema Fedecrédito, Banco Cuscatlán, Remesas BAC Credomatic, Despensa Don Juan*, Despensa Familiar*, Walmart*, Maxi Despensa*; Guatemala – Banrural, Banco Industrial, G&T Continental; Honduras – Banco Ficohsa, Banco Atlántida; Nicaragua – Banpro, Banco LAFISE BANCENTRO; Colombia – BBVA, Bancolombia, Banco Davivienda, Grupo Éxito*; Ecuador – Banco Guayaquil, SERVIPAGOS (via Produbanco)*, Banco Bolivariano; Peru – BBVA, Banco de Crédito del Perú, Interbank (account only); India – ICICI Bank, HDFC Bank, Axis Bank (account only); Philippines – BPI, BDO Unibank, Metrobank (account only), PNB, M. Lhuillier*, Cebuana Lhuillier*; Vietnam – Vietinbank, Vietcombank. (* cash pick-up only)",
+  "ui_position": "Mobile: 'Pay & Transfer' (a.k.a. Transfer & Pay) > 'Transfer Internationally' (ExpressSend) > 'Who are you sending to?' / 'How much are you sending?' / 'Activity'. Enrollment deep link serviceType=ExpressSendNative.",
+  "description": "Consumer person-to-person remittance to 12 countries (Mexico, Dominican Republic, El Salvador, Guatemala, Honduras, Nicaragua, Colombia, Ecuador, Peru, India, Philippines, Vietnam) with account credit or cash pickup through named Remittance Network Members. Two tracks coexist: (1) legacy ExpressSend service agreements — first remittance in person at a branch (or by Phone Bank for existing customers), later remittances at a branch, by Phone Bank, or through Wells Fargo Online on a desktop/laptop ('Transfer and Pay' > 'Send to Another Country'); (2) ExpressSend Mobile — nationwide launch announced Sep 14 2026 (in app release notes from v26.06.00, Jun 29 2026), first mobile transfer fee waived, up to 10 recipients, real-time tracking and alerts; once a customer accepts the mobile terms the service becomes app-only ('You'll no longer be able to use it in a web browser, at a branch, or by phone'). No recurring or future-dated transfers on either track. Wells Fargo states it is 'the only major U.S. bank offering a dedicated mobile remittance service'.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s009",
+   "src-wells-fargo-s012",
+   "src-wells-fargo-s013",
+   "src-wells-fargo-s053",
+   "src-wells-fargo-s061",
+   "src-wells-fargo-s905",
+   "src-wells-fargo-s908",
+   "src-wells-fargo-s909",
+   "src-wells-fargo-s922",
+   "src-wells-fargo-s926"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P05-S01",
+    "name": "Send to bank account abroad",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Credit to recipient's qualifying account (CLABE for Mexico, IFSC for India); paid in local currency for MX/DO/GT/HN/CO/IN/PH and USD for EC/SV/NI/PE/VN.",
+    "other_flags": "max_recipients_mobile: 10; first_mobile_transfer_fee_waived: Yes; real_time_tracking_and_alerts: Yes; legacy_web_desktop_only: Yes; legacy_first_remittance_branch_or_phone: Yes",
+    "notes": "Account-credit Remittance Network Members by country captured (see product network_or_vendor); beneficiary account must be denominated in the receiving currency (local currency for Mexico, DR, Guatemala, Honduras, Colombia, India, Philippines; USD for Ecuador, El Salvador, Nicaragua, Peru, Vietnam). Estimator data shows per-member daily/30-day limits (e.g., Colombia $1,500/day; Ecuador $1,000/day; minimum $25). Up to 10 recipients in mobile. Legacy web cancel path: 'Transfer and Pay' > 'Send to Another Country' > 'History' > select remittance.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s012",
+     "src-wells-fargo-s013",
+     "src-wells-fargo-s061",
+     "src-wells-fargo-s908",
+     "src-wells-fargo-s909",
+     "src-wells-fargo-s926",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P05-S02",
+    "name": "Send for cash pickup",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Recipient collects cash at supported location with government ID matching name exactly (fingerprint/photo may be required); 15 days to collect, else auto-cancel and refund.",
+    "other_flags": "uncollected_15_days_auto_cancel: Yes; cash_pickup_support_1_800_556_0605: Yes",
+    "notes": "Cash-pickup Remittance Network Members by country captured (retail chains such as Soriana, Walmart, Bodega Aurrera, Farmacias Guadalajara, Grupo Éxito, M. Lhuillier, Cebuana Lhuillier are cash-pickup only). Recipient name must exactly match government ID; 'Any cash pick-up transfer not picked up by the recipient within 15 days will be canceled without notice' and refunded to the funding account (check mailed if account closed). Cash pickup issues: 1-800-556-0605.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s009",
+     "src-wells-fargo-s012",
+     "src-wells-fargo-s013",
+     "src-wells-fargo-s061",
+     "src-wells-fargo-s908",
+     "src-wells-fargo-s909",
+     "src-wells-fargo-s926"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P06",
+  "bank": "wells-fargo",
+  "name": "Mobile Deposit (Wells Fargo Mobile® Deposit)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Wells Fargo (vendor not disclosed)",
+  "ui_position": "Mobile: 'Deposit' in bottom bar, or long-press app icon > 'Deposit Checks'; screens 'Deposit to'/'To', 'Enter Amount', photo capture, 'Deposit' button.",
+  "description": "Camera check deposit in the Wells Fargo Mobile app with guided capture, on-screen limits, email + Message Center confirmation, 9 pm PT cutoff.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s017",
+   "src-wells-fargo-s018",
+   "src-wells-fargo-s040"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P06-S01",
+    "name": "Deposit a check by photo",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Endorse with 'For Mobile Deposit at Wells Fargo Only' (or check the mobile-deposit box), capture front/back, confirm, submit; first $400 generally same-day.",
+    "other_flags": "default_account_setting: Yes; daily_and_30d_limits_on_screen: Yes; hold_notifications: Yes; retain_check_5_days: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s017",
+     "src-wells-fargo-s018",
+     "src-wells-fargo-s040",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j13",
+     "urn:kos:journey:wells-fargo:wf-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P07",
+  "bank": "wells-fargo",
+  "name": "ATM & branch deposits/transfers",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch"
+  ],
+  "network": "Wells Fargo (~11,000–12,700 ATMs, ~4,600–4,800 branches)",
+  "ui_position": "ATM menu (transfers, credit card payment, deposits); Contactless Symbol for wallet/contactless card access.",
+  "description": "Envelope-free ATM cash/check deposits (ATM scans checks, counts bills), ATM transfers between accounts and WF credit card payments, digital-wallet/contactless card-free ATM access, e-receipts; branch wires ($40) and deposits; Bank by Mail.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s004",
+   "src-wells-fargo-s020",
+   "src-wells-fargo-s071",
+   "src-wells-fargo-s072",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P07-S01",
+    "name": "ATM deposit (cash/check) and ATM transfer/payment",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Scan checks and count bills at ATM; transfer between personal or business accounts; pay WF credit card; 9 pm local cutoff; receipts by text/email/secure inbox.",
+    "other_flags": "card_free_wallet_access: Yes; contactless_card_tap: Yes; talking_atm: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s071",
+     "src-wells-fargo-s072"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P07-S02",
+    "name": "Branch wire / branch deposit",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Branch-initiated wires for amounts above digital limits or when digital wire cannot be completed; $40 branch wire fee.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s004",
+     "src-wells-fargo-s008",
+     "src-wells-fargo-s042"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P07-S03",
+    "name": "Cashier's checks (online order) and money orders (branch)",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "branch"
+    ],
+    "description": "Cashier's check ordered online ('Order a cashier's check': payable to ≤87 characters, amount, account to charge, terms checkbox → Submit; request 'reviewed and approved', then shipped by express delivery with signature required; U.S. addresses only, no PO Boxes; $2,000 per check and $6,000 per month per customer — observed) or at a branch; money orders at branch only.",
+    "other_flags": "online_order_limit: $2,000; monthly_limit: $6,000; stop_reissue_branch_only: Yes",
+    "notes": "Online-services fee schedule (verification pass).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s042",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P07-S04",
+    "name": "Foreign currency cash order (online; branch pickup required over $3,000)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "branch"
+    ],
+    "description": "Accounts menu 'Foreign Currency' → 'Order Foreign Currency Cash': Check Rates; choose currency and amount (in USD or the foreign currency) → Calculate → order basket of up to 5 currencies. Minimum order $200; orders over $3,000 USD must be picked up at a branch; branches no longer sell foreign currency cash over the counter for same-day purchase; business accounts must order in a branch.",
+    "other_flags": "min_order_usd: 200; branch_pickup_over_usd: 3000",
+    "notes": null,
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": null,
+     "split": null,
+     "qr-code": null,
+     "contact-sync": null,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": true,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "observed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "OBSERVED_SESSION"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P08",
+  "bank": "wells-fargo",
+  "name": "Direct Pay for Business",
+  "former_names": null,
+  "segments": [
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination"
+  ],
+  "channels": [
+   "web"
+  ],
+  "network": "Wells Fargo as ODFI (Nacha ACH)",
+  "ui_position": "Business Online: 'Transfer & Pay' (page also says 'Transfers & Payments') > 'Direct Pay for Business'; tabs 'Payees', 'Payments' > 'Create Payment'; pay groups 'Individual Master List' / 'Business Master List'; 'Enroll Another TIN' under General.",
+  "description": "Business Online ACH credit origination to employees, contractors, sales agents and vendors (U.S., Guam, PR, USVI); payee validation; one-time or recurring; next-business-day delivery; four user access levels giving input/approve/release separation; $10/month plus per-payment fees.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s028",
+   "src-wells-fargo-s031",
+   "src-wells-fargo-s032",
+   "src-wells-fargo-s039",
+   "src-wells-fargo-s042"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P08-S01",
+    "name": "Pay employees/contractors (direct deposit)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Individual Master List payees; net pay, bonuses, reimbursements; optional notification emails to payee.",
+    "other_flags": "schedule_13_months_ahead: Yes; cutoff_3pm_PT: Yes; next_biz_day: Yes; limit_tiers: Higher: $50k/individual payment, $500k/day; Lower: $5k/payment, $25k/day",
+    "notes": "Direct Pay FAQ (browser): enroll via Business Online 'Transfer and Pay' > 'Direct Pay for Business'; 'Enroll Another TIN' on the Direct Pay Main Page; $10/month per enrolled business, $0 to Wells Fargo personal accounts, $0.50 to non-WF personal accounts, $3 to business accounts; cutoff 3:00 pm PT; funds debited 3:00 pm PT on Send On Date; payee validation 2 business days (WF accounts) / up to 3 (other banks); edits to payee routing/account re-trigger validation; schedule up to 13 months ahead; access levels Input/Release/Control, Input/Release, Input Only, No Access. FAQ remains silent on cancel/edit of scheduled payments, returns and Same Day ACH.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "RSA SecurID or Advanced Access 6-digit code at enrollment/sensitive actions"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s031",
+     "src-wells-fargo-s032",
+     "src-wells-fargo-s039",
+     "src-wells-fargo-s931"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P08-S02",
+    "name": "Pay vendors / other businesses",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Business Master List payees; optional remittance information; $3 per payment to business accounts.",
+    "other_flags": "remittance_info: Yes; limit_business_payment: $250k (Higher tier)",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "RSA SecurID / Advanced Access"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s032",
+     "src-wells-fargo-s039",
+     "src-wells-fargo-s042"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P09",
+  "bank": "wells-fargo",
+  "name": "Fargo® virtual assistant",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "zelle",
+   "internal-transfer",
+   "bill-pay",
+   "other"
+  ],
+  "channels": [
+   "voice-chat-assistant"
+  ],
+  "network": "Wells Fargo (Google Cloud Dialogflow/Gemini per press — not fetched; UNKNOWN here)",
+  "ui_position": "Mobile: purple Fargo icon in the search bar; type or tap microphone.",
+  "description": "AI-powered virtual assistant in the Wells Fargo Mobile app (smartphone only, consumer accounts only, English/Spanish). Published capabilities: 'Transferring between accounts and sending money with Zelle®', 'Updating account and card settings', bills-due view, 'Make a payment or transfer', 'View Zelle® transactions', 'Find my routing number', 'I need to turn my card off', balance/activity forecasts, spending and subscription insights. Zelle initiation is peer parity (BofA Erica offers the same); scale is the differentiator (>1B interactions, >3M Spanish-speaking users).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s014",
+   "src-wells-fargo-s015",
+   "src-wells-fargo-s016",
+   "src-wells-fargo-s064",
+   "src-wells-fargo-s901",
+   "src-wells-fargo-s927"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P09-S01",
+    "name": "Fargo-initiated Zelle send / transfer / bill view",
+    "product": "zelle",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "voice-chat-assistant"
+    ],
+    "description": "Conversational initiation of a Zelle payment to a stored contact or an account transfer; confirms in the standard flow.",
+    "other_flags": "spanish: Yes; subscription_tracking: Yes",
+    "notes": "Fargo page video transcripts cover balance forecast, spending summary and bills ('Here's what I found. Which would you like to pay?'); no transcript or FAQ describes the confirmation screen for a Fargo-initiated Zelle send. Mar 2026 press release confirms Fargo is used for 'sending money with Zelle®, paying bills, locating routing numbers'. Confirmation UX remains INFERRED (standard Zelle review + first-time-recipient access code).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": true,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s015",
+     "src-wells-fargo-s016",
+     "src-wells-fargo-s901",
+     "src-wells-fargo-s927"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P10",
+  "bank": "wells-fargo",
+  "name": "Card Settings (card on/off, view recurring payments, digital wallets, account access) — formerly Control Tower℠",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Wells Fargo",
+  "ui_position": "Mobile: Menu > Card Settings — 'Easily activate or turn cards on or off, add cards to digital wallets, view recurring payments, and manage account access with Card Settings' (App Store description). Fargo prompt 'I need to turn my card off.' Business mobile: 'Card Controls'. The 'Control Tower' label no longer appears on any public page (all landing/FAQ URLs 404; site search empty).",
+  "description": "MANAGE-stage capability: consolidated view of where a debit/credit card is stored — recurring payments & subscriptions, digital wallets, data aggregators — with card on/off and data-sharing controls. Launched nationwide Oct 2018. Note: turning a card off does not stop recurring transactions.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s029",
+   "src-wells-fargo-s044",
+   "src-wells-fargo-s053",
+   "src-wells-fargo-s054",
+   "src-wells-fargo-s059",
+   "src-wells-fargo-s064",
+   "src-wells-fargo-s065",
+   "src-wells-fargo-s901",
+   "src-wells-fargo-s922",
+   "src-wells-fargo-s935",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P10-S01",
+    "name": "View recurring payments & subscriptions on card; card on/off",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Card Controls (web 'Turn Card On or Off'; app 'Card Settings', formerly Control Tower): per card — Card details · Card On or Off · International usage on/off · Digital wallets panel (wallets the card is provisioned to) · Recurring payments & subscriptions panel (merchants on file). Disclosure: turning a card off is not a replacement for reporting it lost or stolen. (Observed on web.)",
+    "other_flags": "card_off_does_not_stop_recurring: Yes; data_sharing_controls: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s029",
+     "src-wells-fargo-s044",
+     "src-wells-fargo-s053",
+     "src-wells-fargo-s065",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j26"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P11",
+  "bank": "wells-fargo",
+  "name": "Digital wallet intersections (Paze, PayPal, Apple/Google/Samsung Pay, card-free ATM)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "atm"
+  ],
+  "network": "Early Warning Services (Paze); PayPal; Apple/Google/Samsung",
+  "ui_position": "Mobile: Menu > Card Settings > Digital Wallet.",
+  "description": "Wells Fargo is a Paze participating bank (EWS wallet; some cards pre-added; enroll via Menu > Card Settings > Digital Wallet > Paze); cards can be added to PayPal (up to 24; small-business credit cards must be added in PayPal), Apple Pay, Google Pay, Samsung Pay and Garmin Pay; wallets enable card-free access at WF and participating non-WF ATMs. No Apple Cash/Venmo funding guidance published.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s020",
+   "src-wells-fargo-s040",
+   "src-wells-fargo-s059",
+   "src-wells-fargo-s060",
+   "src-wells-fargo-s073",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P11-S01",
+    "name": "Paze enrollment/activation",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Consumer debit/credit cards (not business) available in Paze; one-time activation in app or at checkout via email/OTP.",
+    "other_flags": "business_cards_excluded: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP to mobile/email at activation"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s020",
+     "src-wells-fargo-s059",
+     "src-wells-fargo-s060"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j27"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P11-S02",
+    "name": "Add WF card to PayPal / wallets from WF app",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Add a Wells Fargo card to digital wallets. Observed (web 'Add Cards to Digital Wallets'): 'Available wallets' offers PayPal push-provisioning directly from the web; Apple Pay / Google Pay are added from the phone via an on-page QR code ('Scan to add cards to digital wallets'); Paze® mark present. Mobile app: Card Settings > Digital Wallet.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "additional verification may be requested"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s020",
+     "src-wells-fargo-s072",
+     "src-wells-fargo-s073",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P12",
+  "bank": "wells-fargo",
+  "name": "Early Pay Day & inbound instant receive (RTP/FedNow/Zelle credits)",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "fednow",
+   "rtp",
+   "other"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Nacha ACH; RTP (TCH); FedNow (Federal Reserve)",
+  "ui_position": "Automatic; deposit alerts via 'Manage Alerts'.",
+  "description": "Early Pay Day posts eligible ACH direct deposits up to two business days early (no enrollment, no fee). The product page explicitly lists RTP® and FedNow® credits as ineligible — confirming WF receives both instant rails into consumer accounts.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s021",
+   "src-wells-fargo-s025",
+   "src-wells-fargo-s047",
+   "src-wells-fargo-s071",
+   "src-wells-fargo-s911",
+   "src-wells-fargo-s990"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P12-S01",
+    "name": "Receive RTP / FedNow instant credit",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Inbound instant payments post to WF accounts (evidenced only by Early Pay Day exclusion list and TCH participant list); customer-facing status/labels UNKNOWN.",
+    "other_flags": null,
+    "notes": "Receive capability confirmed; Early Pay Day footnote: 'instant payments processed through the RTP® network or FedNow℠ service... are not eligible for Early Pay Day' (they post as ordinary credits). How they are labeled in Account Activity still not published.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s021",
+     "src-wells-fargo-s057",
+     "src-wells-fargo-s911"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P12-S02",
+    "name": "Early Pay Day (ACH direct deposit early availability)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Up to 2 business days early, timing varies with payor file receipt; alerts optional.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s021"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P12-S03",
+    "name": "Set up direct deposit (prefilled form generator)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Accounts menu 'Set Up Direct Deposit' → 'Prefill your direct deposit form': 3 steps (select up to 3 accounts → allocate deposits across them → verify) → 'Create Form' produces a prefilled PDF to 'provide … to the company or agency that pays you'; 'Or download a blank form'. With one account the allocation step is skipped. No embedded payroll-provider switch (no employer search / credential-based switch).",
+    "other_flags": "payroll_switch_embedded: No; split_across_up_to_n_accounts: 3",
+    "notes": "Mobile path published as 'create Direct Deposit form in app' (S025); web observed.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": null,
+     "split": null,
+     "qr-code": null,
+     "contact-sync": null,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": null,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "observed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s025",
+     "src-wells-fargo-s990"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "OBSERVED_SESSION"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P13",
+  "bank": "wells-fargo",
+  "name": "Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®)",
+  "former_names": "Commercial Electronic Office (CEO) portal; CEO Mobile (app renamed Wells Fargo Vantage)",
+  "segments": [
+   "commercial",
+   "small-business"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow",
+   "internal-transfer",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app"
+  ],
+  "network": "Wells Fargo",
+  "ui_position": "Sign-on wellsoffice.ceo.wellsfargo.com; Vantage mobile app (iOS/Android, formerly CEO Mobile); Tasks hub; User Profile > App Settings > Mobile token.",
+  "description": "Next-generation commercial digital banking platform (microfrontends, APIs, AI/ML, GraphQL) with persona-driven dashboard, Tasks hub, Message Center alerts, dual custody, RSA mobile token, biometrics, Secure Validation (SMS/voice codes) and Token Validation (PIN + RSA SecurID). Published workflows: 'Review and approve payments, Process exceptions, Manage company users, Sign documents, View balances, Paydown loans, View transaction detail, Transfer money, Create wires, Create FX payments'. CEO being phased out with both available during migration (2026). Vantage mobile 2026 cadence (App Store): Tasks hub for ACH Fraud Filter/Positive Pay (Feb 17), domestic wire approvals (Mar 17), all wire approvals (Jul 21), Positive Pay decisions in Fraud Manager + Wires Status Search (Sep 10), approvals for wires/federal tax payments/book transfers/drawdowns + Cash Accounts history (Oct 13), payments tasks on home screen + 3 months card history + iPad (Nov 5). Tokenized deposits (on-chain, 24/7/365 settlement, smart-contract programmability) announced Aug 4 2026 for select corporate/commercial clients (USD→GBP pilot fall 2026; broader 2027 rollout), integrated into existing offering with automatic routing.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s050",
+   "src-wells-fargo-s051",
+   "src-wells-fargo-s052",
+   "src-wells-fargo-s055",
+   "src-wells-fargo-s056",
+   "src-wells-fargo-s066",
+   "src-wells-fargo-s920",
+   "src-wells-fargo-s921",
+   "src-wells-fargo-s923",
+   "src-wells-fargo-s924",
+   "src-wells-fargo-s928"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P13-S01",
+    "name": "ACH origination (payroll, vendor, collections) with ACH Fraud Filter",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "ACH payments/collections initiated in Vantage/CEO with dual custody; ACH Fraud Filter Stop/Review decisions in Tasks hub (mobile multi-item pay/return since Nov 2025).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "RSA SecurID hard token or Vantage mobile token; dual custody"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s049",
+     "src-wells-fargo-s055",
+     "src-wells-fargo-s066",
+     "src-wells-fargo-s067"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S02",
+    "name": "Wires (domestic, international, FX) with approvals and Wires Status Search",
+    "product": "wire-domestic",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Create wires and FX payments in Vantage; Vantage iOS app: approve/reject domestic pending wires (Mar 2026), all pending wires (Jul 2026), wires/federal tax payments/book transfers/drawdowns (Oct 2026); 'Wires Status Search' lifecycle tracking (Sep 2026); wire limits at company/account/user level. Android dates not verified.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token + dual custody"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s050",
+     "src-wells-fargo-s055",
+     "src-wells-fargo-s066"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S03",
+    "name": "Transfers (book transfers) and drawdowns",
+    "product": "internal-transfer",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Create/view/edit/cancel transfers in Vantage mobile (Jul 2025); approve book transfers and drawdowns.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s055"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S04",
+    "name": "Instant payments (RTP® / FedNow®) via API with smart rail routing",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "24/7/365 instant payments offered 'through an API channel that routes each payment over the most suitable rail' (RTP or FedNow). Portal-initiated instant payment UI and Request for Payment send not confirmed.",
+    "other_flags": "api_rail_routing: RTP | FEDNOW | RTP_and_FEDNOW (verify-routing-number endpoint); api_statuses: RECEIVED; PROCESSING; COMPLETED; REJECTED; api_reject_codes: IN01; IN02; MM20; MM21; NARR; request_for_payment_api: not in public v1 reference; idempotency_key_header: Yes",
+    "notes": "Confirmed by the public Instant Payments API v1 reference: 'Send a payment from your Wells Fargo account to another U.S. based bank account via Instant Payments'; GET /instant-payments/v1/routing-numbers/verify/{rtn}?amount= returns instant_payments_enabled, participant_available, payment_rail (RTP | FEDNOW | RTP_and_FEDNOW | INACTIVE), participant_name, supported_messages (CRDT Credit Transfer); POST /credit-transfers (end_to_end_id visible to recipient, duplicate_check lookback days, debtor/creditor/ultimate_debtor, USD only, 18-second timeout); GET /credit-transfers/{uetr} and POST /search return status RECEIVED | PROCESSING | COMPLETED | REJECTED with reason codes IN01, IN02, MM20, MM21, NARR (free text from receiving bank). Commercial hub: 'Our API channel offers intelligent routing — once the payment is initiated, it is sent through the most appropriate rail — RTP® and FedNow®.' No Request for Payment resource in the public v1 reference.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s049",
+     "src-wells-fargo-s912",
+     "src-wells-fargo-s913",
+     "src-wells-fargo-s916"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j22"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S05",
+    "name": "Consolidated payables (Integrated Payables)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "One file with multiple payment types and remittance detail from ERP/AP with approval in online banking; commercial/virtual card payables.",
+    "other_flags": "erp_file_integration: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s049"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j23"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S06",
+    "name": "Mobile deposit (multi-check) and deposit approvals",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Vantage app: deposit multiple checks, review/approve pending deposits, PDF confirmations.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s055",
+     "src-wells-fargo-s056"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j25"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S07",
+    "name": "Tokenized deposits (on-chain 24/7/365 settlement; USD→GBP pilot)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "'A blockchain-based representation of commercial bank money that when fully deployed will enable Wells Fargo's corporate and commercial clients to move, program, and settle funds 24/7/365 — without leaving the regulated, insured banking system.' Rolls out fall 2026 for select clients with USD→GBP exchange; expands through 2027 to more clients, countries and currencies. Integrated into the existing offering: payments are automatically routed through tokenized deposits 'when they can improve speed, timing, and flexibility'. Future: always-on settlement between accounts/subsidiaries/counterparties, smart-contract conditional payments, same deposit-insurance eligibility.",
+    "other_flags": "status: pilot (fall 2026); currencies: USD→GBP initially; programmable_payments: Yes; proprietary_blockchain: Yes",
+    "notes": "Announcement-level evidence only; client UI/entitlement flow not published.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s928"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P13-S08",
+    "name": "Treasury Management Services for Business Banking (via Vantage)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Small businesses can enroll in Treasury Management Services delivered through Wells Fargo Vantage and the Vantage app: same-day or future-dated domestic/cross-border wires with approve/reject on smartphone; ACH payments (prepaid credit) for payroll, tax and vendor payments; Desktop Deposit® (scanner) and Vantage mobile deposit; ACH fraud filter pay/return decisions; dual custody, user transaction limits and online user administration; ACH NOC/returns report.",
+    "other_flags": "enrollment_required: Yes; desktop_deposit_rdc: Yes; ach_fraud_filter: Yes",
+    "notes": "Corrects the chapter view that Vantage/approval workflows are unavailable to small business.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "Vantage credentials + token validation"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s951"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P14",
+  "bank": "wells-fargo",
+  "name": "Wells Fargo Gateway® APIs (developer portal)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "fednow",
+   "push-to-card",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "Wells Fargo",
+  "ui_position": "developer.wellsfargo.com",
+  "description": "Wells Fargo Gateway® developer portal (developer.wellsfargo.com) with product catalog, API references, guides and sandbox. Commercial products: Account Balance; Account Validation (Full Response / Logic Box — 'status and ownership information from over 750 million accounts'); ACH Payments (v2, no batch requirement, ACH Exception Reporting webhooks); Bank Lookup; Commercial User Administration; Dodd-Frank Payment Fees; Foreign Exchange (v3) and FX Banknotes; Image Retrieval; Instant Payments (v1); Investment Positions and Activity; Distribution Finance (Dealer/Manufacturer); Money Market Funds Trading; Positive Pay; Push to Card (v2); Transaction Detail (v3); Virtual Card Payments; Wire Payments (v1 — freeform/templated wires, straight-through vs secondary-approval, status); unified Payments API (v1); UK Open Banking (Account & Transaction Information, Confirmation of Funds, Payment Initiation); plus consumer data-sharing APIs (Consumer Access/Consent Management, Consumer Financial Data v6.5, Consumer Information, Consumer Tax Documents, Recipient Registration) and consumer products (Account Aggregation, Account Statements, Prescreened Offers, Private Label Credit Cards). Mutual TLS in Validation/Production; OAuth2 client-credentials keys regenerated every 24 hours.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s049",
+   "src-wells-fargo-s912",
+   "src-wells-fargo-s914",
+   "src-wells-fargo-s915",
+   "src-wells-fargo-s916",
+   "src-wells-fargo-s917",
+   "src-wells-fargo-s918",
+   "src-wells-fargo-s919"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P14-S01",
+    "name": "Payments & data APIs",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Instant payments API with rail routing; data & reporting APIs; account validation services.",
+    "other_flags": null,
+    "notes": "Catalog verified in browser: ACH Payments API v2, Wire Payments API v1 ('Originate freeform or templated wires and check wire status... Straight-through and secondary approval wires are all verified against account entitlements'), Instant Payments API v1, Push to Card API v2, Virtual Card Payments v1, unified Payments API v1 ('Initiate and search for transactions'), Bank Lookup v1, Account Balance v2, Transaction Detail v3, Account Validation (Full Response / Logic Box), Positive Pay v1, Foreign Exchange v3, Commercial User Administration, Dodd-Frank Payment Fees, Image Retrieval v2, UK Open Banking APIs.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s049",
+     "src-wells-fargo-s914",
+     "src-wells-fargo-s915",
+     "src-wells-fargo-s916",
+     "src-wells-fargo-s918",
+     "src-wells-fargo-s919"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P14-S02",
+    "name": "Push to Card API (near-real-time disbursement to U.S. debit / GPR prepaid cards)",
+    "product": "push-to-card",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "'Send payments in near real time to U.S. customer debit cards and general purpose reloadable prepaid cards'; tokenized payment capability to minimize PCI DSS scope; positioned for insurance claims, government tax refunds, and paying 'consumer and small business vendors in near real time'; can be combined with Account Balance API. Listed alongside FedNow, RTP and Zelle as an 'Instant payment method' in commercial marketing.",
+    "other_flags": "api_version: v2; card_types: U.S. consumer debit cards and GPR prepaid cards; tokenized_payments: Yes",
+    "notes": "Corrects rail_participation.push_to_card (previously false/INFERRED): Wells Fargo offers push-to-card as a commercial API disbursement product; no consumer-facing push-to-card product found.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "API entitlements; mutual TLS; OAuth2"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s914",
+     "src-wells-fargo-s915",
+     "src-wells-fargo-s917",
+     "src-wells-fargo-s913"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P14-S03",
+    "name": "Account Validation API (Full Response / Logic Box) and Bank Lookup",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Pre-payment account verification: 'Receive detailed responses to help boost payment accuracy and possibly reduce the cost of returns by accessing status and ownership information from over 750 million accounts' (Full Response) or simplified pass/fail responses (Logic Box); Bank Lookup 'Instantly validate bank routing numbers and retrieve bank information for supported payment types'. Marketed in the commercial hub as 'Account validation services — Reduce transaction fraud with real-time account ownership and account status screening'.",
+    "other_flags": "fraud_control: account ownership + status screening before ACH/instant payment",
+    "notes": "SET_UP/REVIEW-stage fraud control for commercial payment origination; not evidenced for consumer/SMB external-account linking.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "API entitlements; mutual TLS; OAuth2"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s912",
+     "src-wells-fargo-s914",
+     "src-wells-fargo-s915"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "WF-P15",
+  "bank": "wells-fargo",
+  "name": "Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay)",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "Wells Fargo",
+  "ui_position": "Vantage/CEO services; Fraud Manager in Vantage",
+  "description": "Inbound money-movement products: Perfect Receivables proxy account numbers for ACH/wire; Bill Manager e-invoicing with ACH collections; Integrated Receivables cash application; Lockbox; Global invoice payments (pay in local currency); fraud controls (ACH Fraud Filter Stop/Review, Positive Pay, Payee Validation, Reverse Positive Pay, Payment Authorization, Account validation).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-wells-fargo-s049",
+   "src-wells-fargo-s066",
+   "src-wells-fargo-s067",
+   "src-wells-fargo-s074"
+  ],
+  "sub_products": [
+   {
+    "id": "WF-P15-S01",
+    "name": "Bill Manager (e-invoice + ACH debit collection)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial",
+     "small-business"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "web"
+    ],
+    "description": "Send electronic invoices and reminders; collect via ACH; sync with accounting software.",
+    "other_flags": null,
+    "notes": "Segment overlap unclear (marketed on commercial TM page).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s049"
+    ],
+    "journeys": [
+     "urn:kos:journey:wells-fargo:wf-j24"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "WF-P15-S02",
+    "name": "Perfect Receivables® (proxy account numbers for ACH/wire receipts)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Unique proxy account numbers per payer to route and identify incoming ACH and wires.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-wells-fargo-s049",
+     "src-wells-fargo-s067"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

@@ -61,14 +61,15 @@ for j in d["journeys"]:
                      "basis": j["basis"], "e": j.get("x-mi_evidence") or j["basis"], "status": j["status"], "rv": j.get("report_version"),
                      "ch": j.get("channels"), "track": j.get("status_tracking"), "exc": j.get("exceptions", []), "ntf": j.get("notifications", []),
                      "assess": j.get("assessment"), "stages": j["stages"], "steps": [step(m) for m in j["moments"]],
-                     "sample": j["basis"] == "sample"})
+                     "sample": j["basis"] == "sample", "bp": j.get("bank_product"), "cj": j.get("composite"), "cjm": j.get("composite_match"),
+                     "terms": j.get("terms")})
 
 # ---- findings, observations, verifications, composites ----
 findings = [{"id": f["id"], "bank": f["bank"], "j": f.get("journey"), "p": f.get("product"), "s": f.get("stage"), "n": f.get("step"),
              "type": f["type"], "sev": f.get("severity"), "d": f["description"], "cj": f.get("composite"), "ref": f.get("reference_banks"),
              "fw": f.get("frameworks"), "e": f.get("x-mi_evidence") or f.get("basis"), "src": f.get("source_ids", [])} for f in d.get("findings", [])]
 sources = {s["id"]: [s.get("title"), s.get("url"), s.get("kind"), s.get("bank"), s.get("local_id"), s.get("access_status")] for s in d["sources"]}
-used = {x for c in caps.values() for row in c.values() for v in row.values() if v for x in v[4]} | {x for j in journeys for st in j["steps"] for x in st["src"]} | {x for f in findings for x in f["src"]} \
+used = {x for p in d.get("catalog", []) for x in p["source_ids"] + [y for sp in p["sub_products"] for y in sp["source_ids"]]} | {x for c in caps.values() for row in c.values() for v in row.values() if v for x in v[4]} | {x for j in journeys for st in j["steps"] for x in st["src"]} | {x for f in findings for x in f["src"]} \
      | {x for j in d["journeys"] for e in j.get("exceptions", []) for x in e.get("source_ids", [])} \
      | {x for p in d.get("participation", []) for x in p.get("source_ids", [])}
 by_bank = collections.Counter(v[3] for v in sources.values() if v[3])
@@ -85,6 +86,14 @@ V = {
                                "mot": s.get("moment_of_truth"), "from": s.get("derived_from"), "why": s.get("rationale")} for s in c["steps"]]}
                    for c in d.get("composites", [])],
     "participation": d.get("participation", []),
+    # each bank's products as marketed → sub-products (with their own capability flags) → the journeys that use them
+    "catalog": [{"id": p["id"], "bank": p["bank"], "name": p["name"], "former": p.get("former_names"), "seg": p.get("segments", []),
+                 "rails": p["rails"], "ch": p.get("channels", []), "net": p.get("network"), "ui": p.get("ui_position"), "d": p.get("description"),
+                 "e": p.get("x-mi_evidence") or p["basis"], "src": p["source_ids"],
+                 "subs": [{"id": x["id"], "name": x["name"], "p": x["product"], "seg": x.get("segments", []), "ch": x.get("channels", []),
+                           "d": x.get("description"), "flags": x["capabilities"], "fd": x.get("capability_detail", {}), "other": x.get("other_flags"),
+                           "notes": x.get("notes"), "e": x.get("x-mi_evidence") or x["basis"], "src": x["source_ids"], "j": x.get("journeys", [])}
+                          for x in p["sub_products"]]} for p in d.get("catalog", [])],
     "sources": {k: v for k, v in sources.items() if k in used or k.startswith("src-mi-")},
     "counts": {"journeys": len(journeys), "steps": sum(len(j["steps"]) for j in journeys), "findings": len(findings),
                "sources": len(d["sources"]), "verifications": len(d.get("verifications", [])),

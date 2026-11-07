@@ -977,5 +977,13 @@
   }
  ],
  "assessment": "Standard ACH link-and-transfer; slower than peers that offer instant account verification and same/next-day by default. Expedited 'next day' only discretionary.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "WF-P02",
+ "terms": {
+  "limits": "Not published; higher-limit service discretionary",
+  "fees": "None from WF",
+  "cutoffs": "WF→ext 2 biz days; ext→WF 3 biz days; expedited may be offered"
+ },
+ "composite": "CJ-ACH-EXT-SEND",
+ "composite_match": "mi-reference"
 }

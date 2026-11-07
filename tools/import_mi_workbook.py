@@ -9,13 +9,18 @@ Reads the workbook named in reports/<version>/manifest.json ("workbook"), verifi
   registries/products.json                each rail's product gets its MI journeys listed
   data/journeys/<bank>/mi-<id>.json       every MI journey: steps → moments, with exceptions, notifications, status
   data/findings/<bank>.json               gaps and strengths
-  data/composites/<product>.json          best-in-class composite journeys
+  data/composites/<product>.json          best-in-class composite journeys (the customer journeys)
+  data/catalog/<bank>.json                each bank's products as marketed, their sub-products and per-sub-product capability flags
   data/observations/<bank>.json           strengths, weaknesses, differentiators, recent changes, open questions
   data/verifications/<bank>.json          the verification debate (challenge → verdict)
   data/participation.json                 network participation (Zelle, RTP, FedNow, push-to-card, Paze)
   data/rankings.json                      overall index, coverage and rail means per bank
   data/comparisons/<product>/             questions per product (16 capability flags, 9 stage scores) + bank slots
   reports/<version>/extract/<product>/<bank>.json   comparison facts, applied by tools/ingest_mi.py
+
+Each bank journey is linked to the composite (customer journey) it delivers. The workbook has no column for this, so the
+link is derived and labeled: "mi-reference" when MI's own composite steps or gaps cite the journey, "rail-segment" when rail
+and segment match, "rail" when only the rail matches (the closest best-practice journey). Journeys with no match stay unlinked.
 
 Everything is regenerated from the workbook on every run, so rerunning is safe; git keeps history.
 Comparison facts go through ingest, which keeps assertion history across report versions.
@@ -62,7 +67,7 @@ missing = [s for s in NEED if s not in X]
 if missing: die(f"workbook is missing sheet(s) {missing}")
 
 # ---------- vocabularies ----------
-problems = []
+problems, warnings = [], []          # problems stop the import; warnings are data-quality notes about the workbook itself
 parties = {p["id"]: p for p in jl("registries/parties.json")}
 products = jl("registries/products.json")
 RAIL = {p["rail"]: p["id"] for p in products if p.get("rail")}
@@ -180,7 +185,11 @@ for r in X["Journeys"]:
                         for e in exc_by[(b, jid)]],
          "notifications": [{"event": s(n["Event"]) or "Not stated", "channels": split(n.get("Channels")), "configurable": tri(n.get("Configurable")),
                             "basis": ev(n.get("Evidence") or "UNKNOWN")[0]} for n in not_by[(b, jid)]],
-         "assessment": s(r.get("Analyst assessment")), "x-mi_evidence": r.get("Overall evidence") or "UNKNOWN"}
+         "assessment": s(r.get("Analyst assessment")), "x-mi_evidence": r.get("Overall evidence") or "UNKNOWN",
+         "bank_product": s(r.get("product_id")),
+         "terms": {k: v for k, v in {"limits": s(r.get("Limits (incidental)")), "fees": s(r.get("Fees (incidental)")),
+                                     "cutoffs": s(r.get("Cutoffs/timing (incidental)"))}.items() if v}}
+    if not j["terms"]: del j["terms"]
     journeys[(b, local)] = j
 
 # ---------- findings, composites, observations, verifications, participation, rankings ----------
@@ -207,6 +216,75 @@ for c in X["Composites"]:
         "derived_from": s(c.get("Derived from (bank:journey#step)")), "rationale": s(c.get("Rationale"))})
 by_product_comp = defaultdict(list)
 for c in comps.values(): c["steps"].sort(key=lambda x: x["n"]); by_product_comp[c["product"]].append(c)
+# ---------- customer journeys: link each bank journey to the composite it delivers ----------
+cref = defaultdict(lambda: defaultdict(int))       # (bank, journey id) -> composite -> evidence count
+for c in X["Composites"]:
+    for m in re.finditer(r"([a-z-]+):([A-Z]+-J\d+)", str(c.get("Derived from (bank:journey#step)") or "")): cref[(m.group(1), m.group(2))][c["composite_id"]] += 3
+for g in X["Gaps"]:
+    if s(g.get("Composite")) and s(g.get("journey_id")): cref[(g["bank_slug"], str(g["journey_id"]))][g["Composite"]] += 1
+DIRKW = {"RECEIVE": r"receiv|pull|get paid|incoming|in from|request for payment|rfp|payer", "REQUEST": r"request|split",
+         "DEPOSIT": r"deposit", "SEND": r"send|pay|push|transfer|move"}
+crail = {k: next(r["Rail"] for r in X["Composites"] if r["composite_id"] == k) for k in comps}
+for r in X["Journeys"]:
+    b, jid = r["bank_slug"], str(r["journey_id"]); j = journeys.get((b, jid.lower()))
+    if not j: continue
+    t = (s(r["Title"]) or "").lower(); seg = str(r.get("Segment") or ""); best = None
+    for k, c in comps.items():
+        ref = cref[(b, jid)].get(k, 0); rail = crail[k] == r["Rail"]; sg = (c.get("segment") or "") == seg
+        sc = ref + 2 * rail + sg + bool(re.search(DIRKW.get(c.get("direction") or "", "^$"), t)) + 2 * ("ebill" in k.lower() and bool(re.search("ebill|autopay", t)))
+        if best is None or sc > best[0]: best = (sc, k, rail, sg, ref)
+    if best and (best[2] or best[4] >= 2):
+        j["composite"] = best[1]
+        j["composite_match"] = "mi-reference" if best[4] else ("rail-segment" if best[3] else "rail")
+
+# ---------- catalog: products as marketed and their sub-products ----------
+caprow = {(c["bank_slug"], c["sub_product_id"]): c for c in X["Capabilities"]}
+FLAGLIST = list(FLAG_STAGE)
+def flag(v):
+    v = s(v)
+    if v is None: return None
+    lv = v.lower()
+    return True if lv == "yes" else False if lv in ("no", "none observed", "none") else None if lv in ("unknown", "n/a", "na", "u") else True
+jby_sub = defaultdict(list)
+for j in journeys.values():
+    if j.get("sub_product"): jby_sub[(j["bank"], j["sub_product"])].append(j["id"])
+catalog = defaultdict(list)
+subs_by = defaultdict(list)
+for sp in X["SubProducts"]: subs_by[(sp["bank_slug"], sp["product_id"])].append(sp)
+for pr in X["Products"]:
+    b = pr["bank_slug"]; w = f"Products {pr['product_id']}"
+    if not bank_ok(b, w): continue
+    rails = [RAIL[x] for x in split(pr.get("Rails")) if rail_ok(x, w)]
+    pb, pc = ev(pr.get("Evidence") or "UNKNOWN")
+    subs = []
+    for sp in subs_by[(b, pr["product_id"])]:
+        w2 = f"SubProducts {sp['sub_product_id']}"
+        if not rail_ok(sp["Rail"], w2): continue
+        cr = caprow.get((b, sp["sub_product_id"]), {}); sb, sc = ev(sp.get("Evidence") or "UNKNOWN")
+        caps = {f.replace("_", "-"): flag(cr.get(f)) for f in FLAGLIST}
+        detail = {f.replace("_", "-"): s(cr.get(f)) for f in FLAGLIST if s(cr.get(f)) and s(cr.get(f)).lower() not in ("yes", "no", "unknown", "n/a", "none observed")}
+        subs.append({"id": s(sp["sub_product_id"]), "name": s(sp.get("Sub-product")) or s(sp["sub_product_id"]), "product": RAIL[sp["Rail"]],
+                     "segments": [x.replace("_", "-") for x in split(sp.get("Segments"))], "channels": [CHANNEL.get(c, c.lower()) for c in split(sp.get("Channels"))],
+                     "description": s(sp.get("Description")), "other_flags": s(sp.get("Other flags")), "notes": s(sp.get("Notes")),
+                     "capabilities": caps, **({"capability_detail": detail} if detail else {}),
+                     "basis": sb, "confidence": sc, "source_ids": [REPORT_SRC] + srcs(b, sp.get("Sources"), w2),
+                     "journeys": sorted(jby_sub[(b, s(sp["sub_product_id"]))]), "x-mi_evidence": sp.get("Evidence") or "UNKNOWN"})
+    catalog[b].append({"id": s(pr["product_id"]), "bank": b, "name": s(pr.get("Product (as marketed)")) or s(pr["product_id"]),
+                       "former_names": s(pr.get("Former names")), "segments": [x.replace("_", "-") for x in split(pr.get("Segments"))],
+                       "rails": rails, "channels": [CHANNEL.get(c, c.lower()) for c in split(pr.get("Channels"))],
+                       "network": s(pr.get("Network / vendor")), "ui_position": s(pr.get("Position in bank UI")), "description": s(pr.get("Description")),
+                       "basis": pb, "confidence": pc, "source_ids": [REPORT_SRC] + srcs(b, pr.get("Sources"), w), "sub_products": subs,
+                       "report_version": version, "x-mi_evidence": pr.get("Evidence") or "UNKNOWN"})
+known_sub = {(b, sp["id"]): p["id"] for b, ps in catalog.items() for p in ps for sp in p["sub_products"]}
+for j in journeys.values():
+    if j.get("sub_product") and (j["bank"], j["sub_product"]) not in known_sub:
+        problems.append(f"Journeys {j['source_journey_id']}: sub-product {j['sub_product']} is not in the SubProducts sheet")
+    elif j.get("sub_product") and known_sub[(j["bank"], j["sub_product"])] != j.get("bank_product"):
+        parent = known_sub[(j["bank"], j["sub_product"])]
+        warnings.append(f"Journeys {j['source_journey_id']}: product_id {j.get('bank_product')} does not own sub-product {j['sub_product']}; "
+                        f"using its parent {parent} (kept as x-mi_product_id)")
+        j["x-mi_product_id"] = j.get("bank_product"); j["bank_product"] = parent
+
 observations = defaultdict(list)
 for o in X["Observations"]:
     if bank_ok(o["bank_slug"], "Observations"):
@@ -290,10 +368,13 @@ if problems:
     print(f"IMPORT FAIL — {len(problems)} problem(s), nothing written"); [print(" -", p) for p in problems[:40]]; sys.exit(1)
 
 summary = (f"{version}: {len(src_rows)} sources, {len(journeys)} journeys ({sum(len(j['moments']) for j in journeys.values())} steps), "
+           f"{sum(map(len, catalog.values()))} products ({sum(len(p['sub_products']) for ps in catalog.values() for p in ps)} sub-products), "
+           f"{sum(1 for j in journeys.values() if j.get('composite'))} journeys linked to a customer journey, "
            f"{sum(map(len, findings.values()))} findings, {len(comps)} composites, {sum(map(len, observations.values()))} observations, "
            f"{sum(map(len, verifs.values()))} verifications, {len(participation)} participation rows, {len(rankings)} rankings, "
            f"{len(cmp_products)} product comparisons, {sum(len(f) for bb in extracts.values() for f in bb.values())} comparison facts")
 print(summary)
+for w in warnings: print(" warning:", w)
 if args.dry_run: print("dry run — nothing written"); sys.exit(0)
 
 # ---------- write ----------
@@ -315,7 +396,7 @@ for p in products:
     p["journeys"] = [u for u in p.get("journeys", []) if u not in mi_urns and not re.search(r":[a-z0-9]+-j\d+$", u)]
     p["journeys"] += sorted(j["id"] for j in journeys.values() if j["product"] == p["id"])
 jd("registries/products.json", products)
-for folder, data in [("findings", findings), ("observations", observations), ("verifications", verifs), ("composites", by_product_comp)]:
+for folder, data in [("catalog", catalog), ("findings", findings), ("observations", observations), ("verifications", verifs), ("composites", by_product_comp)]:
     for old in glob.glob(os.path.join(ROOT, f"data/{folder}/*.json")): os.remove(old)
     for k, v in data.items(): jd(f"data/{folder}/{k}.json", v)
 jd("data/participation.json", participation)
@@ -350,5 +431,7 @@ primary = [f for f in files if f["path"].endswith(".html")] + [f for f in files 
 man.update({"products": sorted(extracts), "workbook": wbname, "files": primary})
 man.pop("product", None)
 man["notes"] = "Imported with tools/import_mi_workbook.py; " + summary
+if warnings: man["import_warnings"] = warnings
+else: man.pop("import_warnings", None)
 json.dump(man, open(mpath, "w"), ensure_ascii=False, indent=2); open(mpath, "a").write("\n")
 print("written — now run: scripts/refresh.sh " + os.path.relpath(rdir, ROOT))

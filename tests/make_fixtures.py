@@ -118,6 +118,21 @@ def _(d): d["observations"][0]["report_version"] = "1999-01-01-v1"
 def _(d):
     a, b = [j for j in d["journeys"] if j.get("source_journey_id") and j["bank"] == MI(d)["bank"]][:2]
     b["source_journey_id"] = a["source_journey_id"]
+@case("m10a_journey_unknown_sub_product")
+def _(d): next(j for j in d["journeys"] if j.get("sub_product"))["sub_product"] = "WF-P99-S99"
+@case("m10b_sub_product_under_wrong_product")
+def _(d):
+    j = next(j for j in d["journeys"] if j.get("sub_product") and j.get("bank_product"))
+    other = next(p for p in d["catalog"] if p["bank"] == j["bank"] and p["id"] != j["bank_product"])
+    j["bank_product"] = other["id"]
+@case("m10c_customer_journey_unknown")
+def _(d): next(j for j in d["journeys"] if j.get("composite"))["composite"] = "CJ-DOES-NOT-EXIST"
+@case("m10d_customer_journey_link_unlabeled")
+def _(d): next(j for j in d["journeys"] if j.get("composite"))["composite_match"] = None
+@case("m10e_catalog_duplicate_sub_product")
+def _(d): p = d["catalog"][0]; p["sub_products"].append(copy.deepcopy(p["sub_products"][0]))
+@case("m10f_catalog_unknown_capability_flag")
+def _(d): d["catalog"][0]["sub_products"][0]["capabilities"]["teleport"] = True
 @case("m9i_mi_step_unknown_stage")
 def _(d): MI(d)["moments"][0]["stage"] = "teleport"
 

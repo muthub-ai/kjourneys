@@ -766,5 +766,13 @@
   }
  ],
  "assessment": "Genuine SMB ACH origination with four-tier access model (dual control) inside Business Online — stronger than most peers' SMB offerings; weaknesses: desktop-only, next-day only (no Same Day ACH option documented), monthly fee, no published exception handling.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "WF-P08",
+ "terms": {
+  "limits": "Higher/Lower tiers as above",
+  "fees": "$10/month; $0/$0.50/$3 per payment; SecurID free for Direct Pay customers",
+  "cutoffs": "3:00 pm PT; next business day"
+ },
+ "composite": "CJ-ACH-ORIG-SMB-SEND",
+ "composite_match": "mi-reference"
 }

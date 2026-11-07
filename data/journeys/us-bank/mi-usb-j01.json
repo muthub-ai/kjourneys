@@ -1339,5 +1339,13 @@
   }
  ],
  "assessment": "Clean, label-consistent flow with explicit irrevocability acknowledgment and purple-Z/first-name recipient verification. Weaknesses: no in-app Zelle dispute or scam-report path (phone only), reimbursement stance is a single hedged sentence, and OTP trigger logic is opaque.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "USB-P01",
+ "terms": {
+  "limits": "Daily and 30-day send/request limits per person; viewable under Transaction limits; not changeable (S010)",
+  "fees": "No U.S. Bank fee (S002)",
+  "cutoffs": "Enrolled recipient minutes; first-time enrolled recipient 1–2 bd (S029) or up to 3 bd (S030)"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

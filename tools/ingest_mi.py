@@ -35,7 +35,7 @@ def jdump(p, o):                                   # atomic: write a temp file, 
     tmp = p + ".tmp"
     with open(tmp, "w") as f: json.dump(o, f, ensure_ascii=False, indent=2); f.write("\n")
     os.replace(tmp, p)
-MANIFEST_KEYS = {"report_version", "product", "products", "workbook", "title", "produced_by", "received_at", "files", "notes"}
+MANIFEST_KEYS = {"report_version", "product", "products", "workbook", "title", "produced_by", "received_at", "files", "notes", "import_warnings"}
 EXTRACT_KEYS = {"bank", "product", "facts"}
 FACT_KEYS = {"attribute", "value", "display", "qualifier", "basis", "confidence", "observed_on", "sources", "source_ids", "evidence"}
 SOURCE_KEYS = {"title", "url", "retrieved_at", "kind"}

@@ -877,5 +877,13 @@
   }
  ],
  "assessment": "Observed first-hand on the web (review and confirmation screens not reached). The send flow is compact (recipient → amount with inline limits and a repeat toggle → review) and shows the recipient's registered name before the amount, but the only scam messaging seen is a static banner on every visit. 'Family controls' for teen access is a control no public page describes; 'Blocked contacts' and 'Manage payment profiles' give publicly documented capabilities a management surface. The weak point is exception handling: a completed payment offers only 'Block', no Zelle item was offered in the online dispute picker on this profile, and scam intake is a phone number.",
- "x-mi_evidence": "OBSERVED_SESSION"
+ "x-mi_evidence": "OBSERVED_SESSION",
+ "bank_product": "WF-P01",
+ "terms": {
+  "limits": "Daily and 30-day limits shown inline on the amount screen (values not recorded)",
+  "fees": "None shown",
+  "cutoffs": "Scheduled payments cancellable until 11:30 pm PT the day before (Help)"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

@@ -1,0 +1,2987 @@
+[
+ {
+  "id": "CITI-P01",
+  "bank": "citi",
+  "name": "Zelle (Citibank with Zelle)",
+  "former_names": "Citi Popmoney (legacy P2P, pre-Zelle; not evidenced in current docs)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle)",
+  "ui_position": "Citi.com: Services > MOVE YOUR MONEY > Send Money with Zelle® (online.citi.com/US/nga/zelle/p2pmarketing). In the Citi Mobile App / Citi Online the menu item is 'Zelle®' or 'Send Money with Zelle®'; inside Zelle: 'Send Money', 'Request Money', 'QR code' > 'My Code', 'Zelle® Preferences' (Zelle tag). App Store copy: 'Zelle®: A fast, fee-free way within the Citi Mobile App to pay and easily split payments with people you trust.'",
+  "description": "Citi's P2P rail on the Zelle network. Consumers and CitiBusiness/Citibank Online for Small Business customers send, request and (consumers) split payments using an email address, U.S. mobile number, Zelle tag or QR code. Payments between enrolled users typically arrive in minutes; no fee; no purchase protection; reimbursement for unauthorized transactions and 'certain qualifying imposter scams'.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s001",
+   "src-citi-s003",
+   "src-citi-s004",
+   "src-citi-s013",
+   "src-citi-s018",
+   "src-citi-s019",
+   "src-citi-s029",
+   "src-citi-s031",
+   "src-citi-s901",
+   "src-citi-s909",
+   "src-citi-s911",
+   "src-citi-s916"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P01-S01",
+    "name": "Send money with Zelle",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "One-time payment to an enrolled or not-yet-enrolled recipient identified by email, U.S. mobile number, Zelle tag or scanned QR code. Consumer accounts may schedule a one-time future-dated send; recurring Zelle is not allowed.",
+    "other_flags": "zelle_tag: Yes; recurring_prohibited: Yes; future_dated_consumer_only: Yes; untenured_tenured_limits: Yes; cancel_scheduled_until_1_day_before_in_app: Yes",
+    "notes": "Send flow (Citi Mobile App/Citi Online): select 'Zelle®' or 'Send Money with Zelle®' > choose recipient from device contacts or add email/U.S. mobile (or scan QR) > amount > optional note > review > 'Send'; recipient notified by email/text; money in minutes if enrolled. Cancel only while recipient not enrolled: activity page > choose payment > 'Cancel'. Limits: Untenured $500/day, $2,500/30 days (all tiers); Tenured Standard $2,500/$15,000; Priority/Citigold/CPC/CPB $5,000/$20,000; limits shown at send time. Scam victims: 'Please Contact Us. Qualifying imposter scams may be eligible for reimbursement.' Future-dated one-time sends allowed for consumers; recurring prohibited.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s001",
+     "src-citi-s018",
+     "src-citi-s031"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j01",
+     "urn:kos:journey:citi:citi-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P01-S02",
+    "name": "Request money with Zelle",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send a payment request to an enrolled Zelle user; Citi/Zelle do not guarantee payment or send reminders. Requests cannot be used for debt collection.",
+    "other_flags": "enrolled_recipients_only: Yes; no_reminders_sent: Yes",
+    "notes": "Citi 'may restrict your ability to send requests'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s001"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P01-S03",
+    "name": "Split Payment ('Split') with Zelle",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Consumer-only feature that requests money from multiple enrolled users at once; each user receives a separate request.",
+    "other_flags": "consumer_only: Yes",
+    "notes": "App Store: 'pay and split payments'. T&Cs label the feature 'Split Payment' / 'Split'.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": true,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s001",
+     "src-citi-s018",
+     "src-citi-s019"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P01-S04",
+    "name": "Receive money with Zelle (enrollment token, QR code, Zelle tag)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Enroll an email, U.S. mobile number or Zelle tag against a Citi checking account to receive; generate a QR code; funds post within minutes; sender cannot stop a payment once initiated.",
+    "other_flags": "18_month_inactivity_reverification: Yes; carrier_change_unenrolls: Yes; new_qr_after_token_change: Yes",
+    "notes": "QR code: Citi Mobile App > 'Zelle®' > 'QR code' > 'My Code' (print/share icons); to pay by QR: 'Zelle®' > 'Send Money' > QR icon at top of the 'Select Recipient' screen > camera > amount > 'Send'; code stays active while the contact method is enrolled and must be regenerated if the contact method changes. 18-month inactivity re-verification; carrier change unenrolls.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s001"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P01-S05",
+    "name": "Zelle for CitiBusiness (business account signers)",
+    "product": "zelle",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Business checking customers use Zelle through authorized account signers via Citibank Online for Small Business / Citi Mobile; limits apply per account, not per signer.",
+    "other_flags": "per_account_limits: Yes; no_future_dated_for_business: Yes",
+    "notes": "Small-business enrollment: enter email/U.S. mobile > one-time verification code > accept T&Cs. Zelle tag: 6-40 chars, letters/numbers/hyphens, created under 'Zelle® Preferences' > 'Create a Zelle® tag'. Limits: Untenured $1,000/day, $4,000/month; Tenured $5,000/day, $40,000/month. No accounting integration; no dual control ('You are responsible for ensuring that all authorized account signers are aware of all Zelle transfers'). Consumers must be enrolled with Zelle through their own FI to pay a business.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s001",
+     "src-citi-s013",
+     "src-citi-s029"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j03"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P02",
+  "bank": "citi",
+  "name": "Online Bill Payment (Bill Pay / 'Pay Bills')",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "phone"
+  ],
+  "network": "Not disclosed (Citi-operated; Merchant Directory referenced)",
+  "ui_position": "Citi.com: Services > MOVE YOUR MONEY > Online Bill Payment (CTA 'Sign on and set up payees'). Citi Online: Payments Dashboard > 'Manage Payees and Bills' (payee list) / scheduled and completed payments in payment activity; eBills can be filed/unfiled (status 'due'). Citi Mobile App: 'Payments' (same-day or scheduled payments), 'Bill management' (limited availability). Telephone Automated Bill Payment Service via CitiPhone. CBOL: Main Menu > Transfers and Payments > bill payment items.",
+  "description": "__APPEND__: Features also include 'Bill payment check images as proof of payment' [S904].",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s002",
+   "src-citi-s004",
+   "src-citi-s031",
+   "src-citi-s010",
+   "src-citi-s006",
+   "src-citi-s018",
+   "src-citi-s019",
+   "src-citi-s030"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P02-S01",
+    "name": "One-time bill payment (add payee + pay)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone"
+    ],
+    "description": "Add a payee (Credit Card / Other type of business / Pay an Individual; Merchant Directory auto-fill) then schedule a one-time payment for next day up to one year ahead.",
+    "other_flags": "electronic_or_check: Yes; cancel_by_1159pm_ET_day_before: Yes; pay_bills_promise: Yes; check_image_proof: Yes",
+    "notes": "Product page: 'One time payments scheduled from the next day up to one year in advance'; 'Bill payment check images as proof of payment'; 'no need to enroll'. FAQ: electronic payments are debited and transmitted on the payment date; a Trace ID / payment reference number is available online for payee inquiries; missing-payment research via Contact Us Chat. Limits $10,000 per payment Standard ($50,000 Priority/Citigold/CPC), $50,000/day, $1 minimum. Cancel/change by 11:59 PM ET the day prior; electronic payments cannot be stopped once issued.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": null,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s002",
+     "src-citi-s031",
+     "src-citi-s004"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P02-S02",
+    "name": "Recurring payments",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone"
+    ],
+    "description": "Set up repeating payments to a payee; cancel or change the series by 11:59 PM ET the day before the next payment.",
+    "other_flags": null,
+    "notes": "CBOL: 'Set Up a Recurring Payment', 'Cancel or Change Recurring Payment Instructions'; max 14 standing orders per payee (S010).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s002",
+     "src-citi-s031",
+     "src-citi-s010"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P02-S03",
+    "name": "Pay an Individual",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Electronic payment to a person using an email address, or a bank account + routing number; otherwise a check is mailed.",
+    "other_flags": "email_based_payment: Yes",
+    "notes": "New individual payees take two business days to become active (S010, CBOL).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s002",
+     "src-citi-s010"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P02-S04",
+    "name": "Express payments (pay multiple bills at once)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Pay several listed payees in one session ('express payments'); CBOL caps 12 express payments per request.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s002",
+     "src-citi-s010"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P02-S05",
+    "name": "eBills / bill management",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Electronic bill presentment and 'view and manage bills and recurring payments in one place' (Citi Mobile App, limited availability). A legacy product page ID 'Ebill' exists but now redirects; current eBill mechanics (enrollment, autopay-on-eBill) not verifiable.",
+    "other_flags": "ebill_presentment: unknown; autopay_from_ebill: unknown",
+    "notes": "eBills confirmed: bills can be filed/unfiled online and carry a 'due' status. Enrollment flow, biller roster and automatic payment of eBills are still not documented publicly; the only 'AutoPay' FAQs on citi.com concern credit-card AutoPay (Manage AutoPay from the Payments Menu; cutoff 5:00 PM ET the business day prior).",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s045",
+     "src-citi-s018",
+     "src-citi-s019",
+     "src-citi-s004"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P02-S06",
+    "name": "Telephone Automated Bill Payment Service / CitiPhone bill pay",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "phone"
+    ],
+    "description": "Bill payments via IVR or a CitiPhone representative at no fee; counts as a qualifying bill payment for fee waivers.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s030"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P02-S07",
+    "name": "Bill payment alerts and payee spending report",
+    "product": "bill-pay",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Account alerts for payments due, low balance, cleared deposits; per-payee spending report.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s002",
+     "src-citi-s004",
+     "src-citi-s018"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P03",
+  "bank": "citi",
+  "name": "Transfers between linked Citibank accounts (Internal Transfers)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "phone",
+   "atm"
+  ],
+  "network": "Citi core (book transfer)",
+  "ui_position": "Citi Online: 'Transfer Between Your Accounts' page (linked Citi accounts and, per the IIT page, the new home for linked external accounts and scheduled transfers); Citi Mobile App transfers; Proprietary Citibank ATM 'Transfer' option; CitiPhone. Intra Citi Transfers (to another U.S. Citibank customer) sit under Services > MOVE YOUR MONEY > Transfers > 'Wire or Intra Citi Transfers' and are fee-free since November 8, 2025. CBOL: Main Menu > Transfers and Payments > Transfer Between Accounts.",
+  "description": "Move funds between linked Citibank checking, savings and credit accounts via Citi Online, Citi Mobile, CitiPhone Banking, Proprietary Citibank ATMs or Network ATMs; automatic weekly / every-other-week / monthly transfers; 'Intra Citi Transfer' to another U.S. Citibank customer by routing/account number (consumer).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s006",
+   "src-citi-s013",
+   "src-citi-s016",
+   "src-citi-s028",
+   "src-citi-s029",
+   "src-citi-s031",
+   "src-citi-s911"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P03-S01",
+    "name": "One-time internal transfer",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone",
+     "atm"
+    ],
+    "description": "Immediate transfer between linked accounts; 10:30 PM ET digital cutoff for same-business-day posting.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s028"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P03-S02",
+    "name": "Automatic (recurring) transfers",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone"
+    ],
+    "description": "Weekly, every-other-week or monthly transfers between linked checking and savings (e.g., sweep savings interest to checking); automatic payments to credit accounts.",
+    "other_flags": null,
+    "notes": "Business manual: cancel in branch/phone/writing at least 3 Business Days before the transfer (S013).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P03-S03",
+    "name": "Intra Citi Transfer (to another U.S. Citibank customer)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Consumer-only transfer from a U.S. consumer account to another U.S. Citibank customer's account using Citibank routing numbers; settled internally; 60-day error window.",
+    "other_flags": "settled_on_citi_books: Yes",
+    "notes": "Settled on Citi's books when the other account uses a listed Citibank routing number. Fees: Amendment effective November 8, 2025 waives all Intra Citi Transfer fees (incoming; outgoing online; outgoing via branch/banker) for every tier (previously $25 Standard / $17.50 Citi Priority online, $35 other channels). Requested online under 'Wire or Intra Citi Transfers' (same payee flow as wires).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s016"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P04",
+  "bank": "citi",
+  "name": "Inter-Institution Transfer (IIT) Service ('Transfer funds to other banks')",
+  "former_names": "Inter Institution Transfer Service",
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "ACH (Nacha); verification vendor not disclosed",
+  "ui_position": "Citi.com: Services > MOVE YOUR MONEY > Transfers > Inter Institution Transfers (page title 'Transfer funds to other banks'; CTA 'Sign on and Make a Transfer' → post-login route JRSMENU_Transfers). Citi Online: Payments Dashboard > 'Manage Bills & Payees' > 'External Accounts' tab > 'Add an External Account' (in the 'For Transfers' section); transfers are made on the 'Transfer Between Your Accounts' page (toggle 'Set Up a Recurring Transfer'); scheduled/recurring transfers are viewed and cancelled on the 'View/Manage Activity' page ('Cancel' link in the Actions column). Also available in the Citi Mobile App (CDAA 8.2.5).",
+  "description": "Free link-and-transfer service (one-time or recurring; weekly, biweekly or monthly) between a Citibank checking, savings or money market account and a checking, savings, money market or investment account the customer owns at another U.S. financial institution or credit union that accepts ACH (no third-party transfers; IRAs, custodial/trust, business accounts and loans excluded); set up with the external account number and ABA number, 'subject to verification by Citibank'; executed generally via ACH (same-day ACH if requested before 12:30 PM ET on a business day, otherwise next business day), estimated deposit date shown at review; per-transfer/aggregate limits by tenure (Tenured = Citi consumer accounts open ≥91 days: inbound $100,000/day and /30 days, outbound $25,000/day and $50,000/30 days; Untenured: $10,000/day, $15,000/30 days); cancel by 9:30 PM ET the day before (cancelling one of a series cancels the series). The IIT page recommends migrating linked external accounts and scheduled instructions to the new Citi 'Transfer Between Your Accounts' service.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s015",
+   "src-citi-s019",
+   "src-citi-s031",
+   "src-citi-s035",
+   "src-citi-s911"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P04-S01",
+    "name": "Link an external account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Add and verify an account you own at another U.S. institution (verification method - micro-deposits vs. instant - not evidenced).",
+    "other_flags": "verification_method: unknown",
+    "notes": "Link via Citi Online: Manage Bills & Payees > External Accounts tab > 'Add an External Account' (For Transfers section) with the external account number and ABA number; 'External accounts are subject to verification by Citibank' (method — micro-deposits vs. instant — still not disclosed; the IIT Terms and Conditions modal on the product page renders empty). Joint Citi accounts: both users can transfer only if both co-signed the external account. Remove via Manage Bills & Payees > 'Delete'. The product page recommends adding existing linked external accounts and scheduled instructions to the new 'Transfer Between Your Accounts' service.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P04-S02",
+    "name": "Outbound transfer to external account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Push funds from Citibank to a verified external account; one-time or series.",
+    "other_flags": "cancel_by_930pm_ET_day_before: Yes; cancel_one_cancels_series: Yes",
+    "notes": "Transfer Between Your Accounts page; recurring toggle (weekly/biweekly/monthly); same-day ACH before 12:30 PM ET; outbound availability subject to the external bank; limits Tenured $25,000/day, $50,000/30 days; Untenured $10,000/day, $15,000/30 days; cancel by 9:30 PM ET the day before on View/Manage Activity (no Cancel link = not cancellable; cancelling one recurring transfer cancels all future ones).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P04-S03",
+    "name": "Inbound transfer from external account",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Pull funds from a verified external account into Citibank; provisional until ACH final settlement.",
+    "other_flags": null,
+    "notes": "Inbound limits Tenured $100,000/day and /30 days; Untenured $10,000/day, $15,000/30 days; ACH credits are provisional until final payment; inbound external ACH transfers count toward 'Direct Deposits or other qualifying transactions' for the fee waiver.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s015"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P04-S04",
+    "name": "Stop payment on pre-authorized / one-time ACH debits",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "phone"
+    ],
+    "description": "Consumer can stop a recurring pre-authorized transfer (3 Business Days' notice) or a one-time future-dated ACH debit (by 11:59 PM ET the day before) via Citi Online or phone.",
+    "other_flags": "ach_stop_is_permanent_until_removed: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P04-S05",
+    "name": "Direct Deposit set-up with payer search (Enhanced Direct Deposit enrollment)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "In-app/online flow to route payroll, pension or government ACH credits to a Citi checking account: 'Search and select your payer from the list / Add accounts where you will deposit funds / Review and confirm your request' ('Get Started' routes to login nextRoute=directdeposit, i.e. online.citi.com/US/nga/directdeposit). Qualifying 'Direct Deposits or other qualifying transactions' of $250+/month ($1,000+ for Regular Checking from 01/01/2027) waive the Monthly Service Fee; Zelle incoming, external ACH credits and PayPal/Venmo ACH count; wires, MCD, branch/ATM and non-ACH instant transfers do not.",
+    "other_flags": "payer_search_list: Yes; post_login_route: /US/nga/directdeposit; fee_waiver_threshold_2027: 1000",
+    "notes": "Vendor behind payer search not identified. Captured from the Enhanced Direct Deposit page; the flow itself sits behind sign-on.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s906",
+     "src-citi-s911"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P05",
+  "bank": "citi",
+  "name": "Wire Transfers (Citi Online / Citi Mobile App 'Immediate Funds Transfers')",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "branch",
+   "api-treasury-portal"
+  ],
+  "network": "Fedwire, CHIPS, SWIFT correspondents",
+  "ui_position": "Citi.com: Services > MOVE YOUR MONEY > Transfers > 'Wire or Intra Citi Transfers' (page 'Wires or Intra Citi Transfers'); 'Learn About Transfers' hub CTA 'Make a wire transfer'. Citi Online: Payments Dashboard > 'Manage Payees and Bills' > 'People' tab > 'Add a New Payee/Recipient' (person vs business; country-specific fields prompted) → send; 'All Transfer Activity' filtered to 'Wires & Transfers' with a 'Scheduled' tab (View to edit / Cancel). Citi Mobile App supports self-service wires ('Online' fee tier). CBOL: Main Menu > Transfers and Payments > Set up a Wire Transfer (Domestic, Foreign or Models) / Domestic Wire (USA Destination) / Express Domestic Wires.",
+  "description": "Domestic (Fedwire/CHIPS) and international wires initiated digitally in Citi Online or the Citi Mobile App (consumer and small business), at a branch, or through CitiBusiness Online for business. International wires may be sent in USD or a foreign currency at Citi's rate (commission built in). Consumer international wires are regulated Remittance Transfers with a 30-minute cancellation window and 180-day error window.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s016",
+   "src-citi-s031",
+   "src-citi-s013",
+   "src-citi-s029",
+   "src-citi-s010",
+   "src-citi-s006",
+   "src-citi-s003",
+   "src-citi-s005"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P05-S01",
+    "name": "Domestic wire (online)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "USD wire to a U.S. beneficiary bank that is a Federal Reserve member/correspondent or CHIPS member; email notice if rejected; cancel only before execution.",
+    "other_flags": "rejection_email_same_day: Yes; claims_window_30_days: Yes",
+    "notes": "Online (self-service via Citi Online or Citi Mobile) domestic wire fee $25 Standard / $17.50 Citi Priority / waived Citigold+ in the Nov 2025 fee chart; amendment effective August 1, 2026 raises it to $30 Standard / $25 Citi Priority ('Fee for Domestic Funds Transfer'). Branch/banker-assisted domestic wire $35 (waived CPC); no maximum amount at a branch. Online: future-dated one-time and recurring domestic wires; save and reuse wires; cutoff 6:45 PM ET. Cancel same-day wires only before execution; future-dated/recurring until the day before via All Transfer Activity > Wires & Transfers > Scheduled > Cancel. Rejections notified at request time or as soon as determined.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s016"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P05-S02",
+    "name": "International wire in USD (online)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "USD wire to a foreign beneficiary; small-business accounts may schedule or set recurring future-dated USD international wires.",
+    "other_flags": "recurring_future_dated_small_business_only: Yes",
+    "notes": "Online international USD wire fee $35 Standard / $25 Citi Priority (Nov 2025 chart); amendment effective August 1, 2026 raises it to $40 / $35; waived for Citigold and Citigold Private Client. Foreign-currency online wires are fee-free for all tiers. Cutoff 6:00 PM ET. Small-business accounts may schedule/recur USD international wires.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s016"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P05-S03",
+    "name": "International wire in foreign currency / Remittance Transfer (consumer)",
+    "product": "wire-international",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Consumer wire to a foreign beneficiary for personal purposes; Reg E remittance disclosures at initiation; FX rate with commission shown; 30-minute cancellation; 180-day error window.",
+    "other_flags": "reg_e_remittance: Yes; cancel_within_30_minutes: Yes; currency_choice_local_or_usd: Yes; iban_bic_required_where_applicable: Yes",
+    "notes": "Remittance Transfer: cancel/amend within 30 minutes for a full refund unless funds already picked up/deposited — online by navigating to the specific transaction in the Activity Page, or by phone 1-888-606-9716; refund within 3 business days. Errors within 180 days; Citi decides within 90 days; remedy choice credit or resend. IBAN required for Europe, CLABE for Mexico; country-specific fields (e.g., reason for payment) are prompted when the payee is added.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s016",
+     "src-citi-s031"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P05-S04",
+    "name": "Branch-initiated wire",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Domestic or international wire requested with a banker; callback may apply above a dollar threshold; cutoff times available at branches.",
+    "other_flags": "callback_above_threshold: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s013",
+     "src-citi-s029"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P05-S05",
+    "name": "Incoming wires",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "phone"
+    ],
+    "description": "Credit to account; no separate credit advice; notice deemed given on statement; status visible via Citi Mobile App / Citi Online / phone.",
+    "other_flags": null,
+    "notes": "Wires count as New-to-Citibank Funds (S028).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s013",
+     "src-citi-s015"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P06",
+  "bank": "citi",
+  "name": "Citibank Global Transfer Service (Citi Global Transfers)",
+  "former_names": "Citibank Global Transfer (CGT)",
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "remittance"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "branch",
+   "atm"
+  ],
+  "network": "Citi proprietary global network (on-us)",
+  "ui_position": "Citi.com: Services > MOVE YOUR MONEY > Transfers > Citi Global Transfers (online.citi.com/US/nga/paymentHub/interCiti; CTA 'Sign on and Make a Transfer'); 'Learn About Transfers' hub CTA 'Make a Citibank Global Transfer'. Citi Online: Quick Link 'Add a CGT Payee' (Destination, Beneficiary Name, Beneficiary Nickname, Beneficiary Citibank Account #). Citi Mobile App: global transfers from checking accounts.",
+  "description": "Transfers from an eligible Citibank checking, savings or money market account to other Citibank accounts in the U.S. (immediate, USD) and in select countries (credited in the recipient's currency; FX rate includes a commission). Enrollment by accepting the Online Funds Transfer Agreement; recipient set-up needs only name and account number; 'Once your transfer is reviewed, your funds are debited from your account and transferred to the recipient's bank.' No fee to send or receive; $1 minimum. Outgoing limits (Standard / Citi Priority / Citigold / Citigold Private Client): daily $50,000 / $75,000 / $100,000 / $100,000 on Citi Online and on Citi Mobile; weekly $50,000 / $100,000 / $150,000 / $500,000; first-time transfers subject to lower limits; destination countries may impose lower limits and may change. International transfers are Remittance Transfers (30-minute cancellation; cancel via 1-866-515-1725, Citi Online or the Citi Mobile App; refund within 3 business days).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s016",
+   "src-citi-s017",
+   "src-citi-s028",
+   "src-citi-s031",
+   "src-citi-s911"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P06-S01",
+    "name": "Global Transfer to a U.S. Citibank customer",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app",
+     "branch",
+     "atm"
+    ],
+    "description": "Immediate USD credit to another Citibank U.S. customer; no fee; $1 minimum.",
+    "other_flags": "no_fee: Yes; not_new_to_citibank_funds: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s028"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P06-S02",
+    "name": "Global Transfer to a Citibank account in select markets (international)",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Cross-border transfer credited in recipient currency; FX commission in rate; countries subject to change; Remittance Transfer rules (30-minute cancel, 180-day errors).",
+    "other_flags": "recipient_may_be_self: Yes",
+    "notes": "Recipient set-up: Quick Link 'Add a CGT Payee' > Destination / Beneficiary Name / Beneficiary Nickname / Beneficiary Citibank Account # > verify > printable confirmation. Funds move 'once your transfer is reviewed'. First-time transfers subject to lower limits; destination countries may impose lower limits. Cancel (Remittance Transfer, 30 minutes): 1-866-515-1725 or sign into Citi Online / Citi Mobile App; refund within 3 business days. Checking Plus can fund a transfer; Safety Check does not apply to transfers. Savings/money market sources allow a limited number of transfers per statement period.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s016",
+     "src-citi-s017"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P06-S03",
+    "name": "Receive a Global Transfer from a U.S. Citibank customer",
+    "product": "remittance",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Inbound CGT credit; not counted as Enhanced Direct Deposit or New-to-Citibank Funds.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s028"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P07",
+  "bank": "citi",
+  "name": "Debit card person-to-person payments (Citibank Banking Card)",
+  "former_names": "Mastercard MoneySend (2017 statement insert)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "push-to-card",
+   "wallet-intersect"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Mastercard Send (INFERRED from Mastercard-branded Citibank Banking Card; 'MoneySend' wording from 2017 insert S017)",
+  "ui_position": "Not a Citi UI feature; occurs inside third-party apps (e.g., P2P wallets) that accept the Citi Debit Card.",
+  "description": "Citibank Debit Card accepts and sends Mastercard Send/MoneySend person-to-person transfers inside participating third-party apps. Consumer limits per CDAA 8.2.1: receive $2,500/day up to $10,000/month; business/government-to-person credits up to $50,000/month; send was $1,000/day up to $10,000/month and, effective September 19, 2026, is increased to $2,500/day (all Relationship Tiers). CitiBusiness Debit Card: send $1,000/calendar day, $10,000/month; receive $2,500/day, $10,000/month; statement labels 'DEBIT CARD TRANSFER CREDIT' / 'DEBIT CARD TRANSFER DEBIT'. Instant transfers from other FIs/P2P providers do not count as Direct Deposits.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s017",
+   "src-citi-s013",
+   "src-citi-s028",
+   "src-citi-s030"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P07-S01",
+    "name": "Receive funds to Citibank Debit Card (P2P, business or government disbursements)",
+    "product": "push-to-card",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Inbound push-to-card credits; limits $2,500/day and $10,000/month P2P, $50,000/month from business/government.",
+    "other_flags": "statement_label: 'MoneySend Credit' per 2017 insert (S017); current consumer label unverified",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s017",
+     "src-citi-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P07-S02",
+    "name": "Send P2P from Citibank Debit Card via participating apps",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Outbound card-funded P2P through participating third-party apps/merchants; $2,500 per day (raised from $1,000 effective Sept 19, 2026) up to $10,000 per month.",
+    "other_flags": "statement_label: 'MoneySend Debit' per 2017 insert (S017); current consumer label unverified; does_not_qualify_enhanced_direct_deposit: Yes",
+    "notes": "Debit-card P2P (e.g., Venmo/PayPal card-funded) explicitly excluded from Enhanced Direct Deposit; ACH-based P2P deposits count.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s017",
+     "src-citi-s013",
+     "src-citi-s030"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P08",
+  "bank": "citi",
+  "name": "Mobile Check Deposit",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Not disclosed",
+  "ui_position": "Citi.com: Services > WAYS TO BANK > Mobile Check Deposit. Citi Mobile App: sign on > 'Payments' tab (menu) > 'Deposit Checks'. CitiBusiness: 'Mobile Check Deposit' listed in the CitiBusiness Online / Citibank Online feature table; business clients enroll in either Mobile Check Deposit or Remote Check Deposit (one at a time).",
+  "description": "Deposit checks by photo in the Citi Mobile App (consumer and small business) and, on a limited basis, in CitiBusiness Mobile. Free; subject to eligibility, deposit limits and restrictions; deposits after 10:30 PM ET post the next Business Day; business customers must enroll and may hold Mobile Check Deposit or Remote Check Deposit but not both.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s003",
+   "src-citi-s015",
+   "src-citi-s013",
+   "src-citi-s029",
+   "src-citi-s018",
+   "src-citi-s019",
+   "src-citi-s021",
+   "src-citi-s036"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P08-S01",
+    "name": "Consumer Mobile Check Deposit",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Photo deposit into eligible accounts; limits and endorsement wording not retrievable (page blocked).",
+    "other_flags": "cutoff_1030pm_ET: Yes; limits: unknown; endorsement_wording: unknown",
+    "notes": "Flow: Citi Mobile App > Payments tab > Deposit Checks > (first use) review and accept T&Cs > select deposit account and enter amount > sign the back of the check > photograph both sides > submit. Two confirmation emails (received; accepted for processing). Account alerts include 'cleared deposits'. Deposits after 10:30 PM ET post next Business Day. Availability, limits and endorsement specifics are in the separate Mobile Check Deposit agreement (CDAA Appendix 2 defers to it; agreement not public). Support/info line 1-888-214-0036. Troubleshooting FAQ: app may crash when device memory is low.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s003",
+     "src-citi-s015",
+     "src-citi-s018",
+     "src-citi-s002"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P08-S02",
+    "name": "CitiBusiness Mobile check deposit (limited)",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Business photo deposit in CitiBusiness Mobile; user must be physically in the U.S. incl. Puerto Rico; enrollment required; exclusive with Remote Check Deposit.",
+    "other_flags": "limited_availability: Yes; exclusive_with_RCD: Yes",
+    "notes": "CitiBusiness Client Manual 6.1.1 fn 8: 'you must enroll in either the Mobile Check Deposit or the Remote Check Deposit service. You can only be enrolled in one service at a time.' Mobile Check Deposit appears in the CBOL/Citibank Online feature table and on the small-business Cash Management page ('Use your Citi Mobile App to deposit checks').",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s021",
+     "src-citi-s013",
+     "src-citi-s029"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P09",
+  "bank": "citi",
+  "name": "ATM, branch and Deposit/Payment Express deposits and transfers",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch"
+  ],
+  "network": "Citi ATM network; MoneyPass (surcharge-free for business)",
+  "ui_position": "Citibank Banking Card / CitiBusiness Banking Card at ATM; Citi Worldwide ATM/Branch Locator; 'ATM Finder' in app (60,000+ fee-free ATMs).",
+  "description": "Cash/check deposits at tellers, Proprietary Citibank ATMs (post same day until 10:30 PM ET), Deposit/Payment Express boxes at select branches and by mail; transfers between linked accounts at Proprietary and Network ATMs; branch cash withdrawals; Citi Global Transfers at branch/Proprietary ATM (2016 notice).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s015",
+   "src-citi-s013",
+   "src-citi-s029",
+   "src-citi-s031",
+   "src-citi-s018",
+   "src-citi-s017"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P09-S01",
+    "name": "ATM deposit (Proprietary Citibank ATM)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Cash/check deposit; after 10:30 PM ET posts next Business Day; provisional and subject to verification.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s015",
+     "src-citi-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P09-S02",
+    "name": "Teller / branch deposit and Deposit/Payment Express box",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Branch deposits post same day; Express boxes at select branches; mail deposits.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s015",
+     "src-citi-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P09-S03",
+    "name": "ATM transfers between linked accounts",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Transfers at Proprietary Citibank ATMs and Network ATMs displaying the card's network symbol.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s031",
+     "src-citi-s013"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P10",
+  "bank": "citi",
+  "name": "Instant Payments / Real Time Payments (RTP and FedNow receive; RTP Request for Payment e-bills)",
+  "former_names": "Real Time Payments (RTP) e-bills",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "rtp",
+   "fednow",
+   "bill-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "The Clearing House RTP; Federal Reserve FedNow",
+  "ui_position": "RfP e-bills presented inside Citi digital bill-pay experience (exact screens not documented in public sources).",
+  "description": "Citibank, N.A. is an RTP network participant (since the November 2017 launch) and joined FedNow in 2025. The November 2025 Consumer Deposit Account Agreement lists 'the Instant Payment Service' among consumer EFT services (8.1: 'transfers to or from your account utilizing the ACH Network, the Inter-Institution Transfer service, the Instant Payment Service, Intra Citi Transfers and Zelle®') and names 'Instant Payments' as an EFT example and 'Instant Payments, Real Time Payments' as qualifying New-to-Citibank Funds, but no consumer-facing page, FAQ or in-app label for instant send/receive exists on citi.com (site search returns nothing for instant payment / FedNow / real time), and the Enhanced Direct Deposit page excludes non-ACH transfers from fee-waiver qualification. Since September 2021 Citi's U.S. retail bank can receive, display and pay RTP Request-for-Payment e-bills from participating billers for customers who opt in.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s023",
+   "src-citi-s024",
+   "src-citi-s025",
+   "src-citi-s026",
+   "src-citi-s027",
+   "src-citi-s028",
+   "src-citi-s032"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P10-S01",
+    "name": "Receive instant payments (RTP / FedNow credits)",
+    "product": "rtp",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Inbound real-time credits to Citibank accounts; irrevocable; immediately available.",
+    "other_flags": "fednow_receive: true (Federal Reserve live-participant list) [S951]",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s028",
+     "src-citi-s023",
+     "src-citi-s024",
+     "src-citi-s025"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j13"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P10-S02",
+    "name": "Receive and pay RTP Request-for-Payment e-bills",
+    "product": "rtp",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Opt-in e-bills from participating billers (e.g., via Citi TTS / Present and Pay billers); customer decides whether and when to pay; settles over RTP 24/7/365.",
+    "other_flags": "customer_controls_timing: Yes; first_us_bank_sept_2021: Yes",
+    "notes": "Current biller roster and in-app labels unknown.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s027",
+     "src-citi-s026"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P11",
+  "bank": "citi",
+  "name": "Paze (online checkout wallet) - Citi credit cards",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "web",
+   "mobile-app"
+  ],
+  "network": "Early Warning Services (Paze)",
+  "ui_position": "Activation entry points on Citi.com and in the Citi Mobile App (per EWS release).",
+  "description": "Citi joined Paze (Early Warning Services' bank-owned online checkout wallet) in March 2026 for eligible Citi credit cardmembers, activated via Citi.com, the Citi Mobile App or mywallet.paze.com. Recorded for participation only - a card checkout wallet, not a money-movement rail; debit card enablement not announced.",
+  "basis": "disclosed",
+  "confidence": "medium",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s022"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P11-S01",
+    "name": "Paze activation for Citi credit cardmembers",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Enable Paze checkout using Citi credit cards.",
+    "other_flags": "credit_only_announced: Yes",
+    "notes": "Out of money-movement scope; captured for rail_participation.paze_wallet.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s022"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "THIRD_PARTY"
+ },
+ {
+  "id": "CITI-P12",
+  "bank": "citi",
+  "name": "CitiBusiness Online Transfers and Payments (Transfers, Wires, Bill Payments, ACH, Specialized Transfer Services)",
+  "former_names": null,
+  "segments": [
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "internal-transfer",
+   "wire-domestic",
+   "wire-international",
+   "bill-pay",
+   "ach-origination"
+  ],
+  "channels": [
+   "web",
+   "mobile-app",
+   "phone"
+  ],
+  "network": "Citi proprietary (CBOL); Fedwire/SWIFT; Nacha",
+  "ui_position": "CBOL 'Main Menu > Transfers and Payments' (Transfer Between Accounts; Planned and Pending Transfers; Completed Transfers; Set up a Wire Transfer; Domestic Wire (USA Destination); Express Domestic Wires; Planned and Pending Wires; Completed Wires; Repair/Edit Wire Requests; Wire Model Maintenance; Add a New Payee to Your List; Make One-Time Payments From Your List; Set Up a Recurring Payment; Review All Future Payments; Review All Payments in the Past 90 Days); 'Main Menu > Specialized Transfer Services'; 'ACH Processing Menu'; 'Customer Service > Report a Bill Payment Problem'.",
+  "description": "CitiBusiness Online (CBOL, www.citibusinessonline.com) is the business/commercial digital channel for Citi Commercial Bank and CitiBusiness clients: internal transfers (one-time, recurring, flexible recurring), domestic and foreign-currency wires with models, express wires, batch uploads and repair/edit queues, bill payments, ACH origination (payroll, vendor, collections, Same Day ACH, tax payments) with filters/blocks and return reporting, Specialized Transfer Services for Cash Manager clients, entitlement-based approvals (co-signing, dual approval, Maker-Checker), Secured Wires, and security tokens (Mobile Token in CitiBusiness Mobile, Hard Token). CitiBusiness Mobile provides balances, initiation of payments/transfers, wire approvals, Positive Pay decisions and limited mobile check deposit.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s006",
+   "src-citi-s007",
+   "src-citi-s009",
+   "src-citi-s010",
+   "src-citi-s011",
+   "src-citi-s013",
+   "src-citi-s014",
+   "src-citi-s021",
+   "src-citi-s029",
+   "src-citi-s907",
+   "src-citi-s908",
+   "src-citi-s915"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P12-S01",
+    "name": "Transfer Between Accounts (one-time, future-dated, recurring, flexible recurring)",
+    "product": "internal-transfer",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Book transfers between linked CitiBusiness accounts (and linked businesses under one business code); future-dated cancellable until 6:45 AM ET on the scheduled date; insufficient-funds retry daily for 5 calendar days; recurring may be suspended up to 2 years.",
+    "other_flags": "flexible_recurring_variable_amount: Yes; secured_transfers_entitlement: Yes; limit_999999999: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s006",
+     "src-citi-s010",
+     "src-citi-s009",
+     "src-citi-s021"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S02",
+    "name": "Domestic Wire (USA Destination) and Express Domestic Wires",
+    "product": "wire-domestic",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Immediate, future-dated or recurring USD wires; wire models; cancel scheduled wires until 5:45 AM ET on the scheduled date; executed wires require a recall via Customer Service; Fed reference number on Outgoing Wire Reports / Completed Wires.",
+    "other_flags": "wire_models: Yes; secured_wires: Yes; repair_edit_queue: Yes; token_required_for_approval: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s006",
+     "src-citi-s010",
+     "src-citi-s009"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S03",
+    "name": "Foreign Wire (foreign currency / international)",
+    "product": "wire-international",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "International wires in USD or foreign currency; FX rate valid 4 minutes (over $10,000); up to 6 beneficiaries per FX purchase; FX wires cannot be scheduled or recurring; IBAN/BIC required for EU/EEA euro payments; approver may accept rate or send to Approvals Queue.",
+    "other_flags": "fx_rate_4_minutes: Yes; exchange_rate_inquiry: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s010",
+     "src-citi-s006"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S04",
+    "name": "Wire Batch Uploads / Batch Book Transfer Upload (Specialized Transfer Services)",
+    "product": "wire-domestic",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "File-based wire and book-transfer batches for Cash Manager clients; every batch needs two separate authorized approvers; statuses 'Initial approval status' and 'Second approval indicated'.",
+    "other_flags": "batch_cannot_partially_approve: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s010",
+     "src-citi-s006"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j25"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S05",
+    "name": "Bill Payments (CBOL)",
+    "product": "bill-pay",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Payee list (up to 855 payees), one-time payments from list (12 per request), recurring (14 standing orders per payee), express payments; electronic ~2 business days, checks ~7; cancel by 11:45 PM ET the day before via 'Review All Future Bill Payments'; 'Report a Bill Payment Problem' for proof/re-credit/re-issue/check stop.",
+    "other_flags": "per_payment_limit_9999999: Yes; US_PR_Guam_only: Yes; frequent_payees_flag: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s010",
+     "src-citi-s006",
+     "src-citi-s007",
+     "src-citi-s009"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S06",
+    "name": "ACH Origination (CitiBusiness ACH: payroll, vendor payments, collections, Same Day ACH, tax payments)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "api-treasury-portal"
+    ],
+    "description": "Nacha-formatted batches/files via CBOL or direct file transmission; batches released 8:15 PM ET each business day; $99,999,999.99 per batch; Return Item Reporting and NOCs under the ACH Processing Menu; ACH Addenda report; debit blocks/filters; ACH entitlement per account.",
+    "other_flags": "same_day_ach: Yes; return_item_reporting: Yes; ach_block_filter: Yes; telephone_initiated: Yes",
+    "notes": "Step-level CBOL ACH screens (batch/template creation) not documented in fetched sources.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s010",
+     "src-citi-s011",
+     "src-citi-s014",
+     "src-citi-s009"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S07",
+    "name": "Approvals (co-signing, dual approval, Maker-Checker) and CitiBusiness Mobile approvals",
+    "product": "other",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Per-user, per-account dollar limits with 'No Additional Approval Required' or 'Required Approval' tiers (specific users or 'Any'; up to 3 designated approvers); Approvals Queue; Maker-Checker for admin tasks; approve wires in CitiBusiness Mobile with Mobile Token.",
+    "other_flags": "mobile_token: Yes; hard_token: Yes; push_notifications_added_aug_2025: Yes",
+    "notes": "Citi.com small-business pages: 'All new enrollments in ACH Origination must add the ACH Security (i.e., Maker/Checker) setting to their enrolled business checking account. This setting requires a minimum of two unique users and the second user to approve certain actions prior to their completion'; Cash Management page: ACH 'Requires two users to authorize ACH transactions'. CitiBusiness Manual 7.2.3: wire security procedure 'may entail a telephone call back when your funds transfer order exceeds a predetermined dollar threshold'. CitiBusiness Mobile: Mobile Token / Hard Token; push notifications added Aug 2025.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s009",
+     "src-citi-s010",
+     "src-citi-s008",
+     "src-citi-s021"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j22"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P12-S08",
+    "name": "Check Positive Pay and ACH Positive Pay (small business fraud controls)",
+    "product": "other",
+    "segments": [
+     "small-business"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Small-business fraud solutions on citi.com Cash Management: Check Positive Pay compares presented checks to the issuance file the client uploads and returns 'a list of checks that don't match your issuance file (exceptions) each day so you can pay or return them' (several options); ACH Positive Pay lets the client 'Authorize approved ACH debits to post to your account'.",
+    "other_flags": "daily_exception_decisioning: Yes",
+    "notes": "Commercial-tier Positive Pay suite is CITI-P13-S05; this entry records small-business availability.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s908"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P13",
+  "bank": "citi",
+  "name": "Citi Commercial Bank Instant Payments (RTP) and receivables suite",
+  "former_names": null,
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "rtp",
+   "other"
+  ],
+  "channels": [
+   "web",
+   "api-treasury-portal",
+   "branch"
+  ],
+  "network": "The Clearing House RTP; Citi proprietary",
+  "ui_position": "CitiBusiness Online product menus; CitiDirect Commercial Banking portal for onboarding/servicing; single sign-on to CitiDirect BE for Global Account Management.",
+  "description": "Commercial money-movement and receivables products delivered through CitiBusiness Online and CitiDirect Commercial Banking: Instant Payments (RTP) - real-time irrevocable USD payments with immediate availability; Remote Check Deposit; Lockbox; Image Cash Letter; Present and Pay (web/IVR/ACH/card bill presentment with account authentication and RTP); Citi Smart Match (AI cash application); Positive Pay (Payee, No Issue, Reverse, Teller); Controlled Disbursement; Match Pay; File Transmission (BAI2, EDI 822, DFT wire files).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s014",
+   "src-citi-s041",
+   "src-citi-s027"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P13-S01",
+    "name": "Instant Payments (RTP) send via CitiBusiness Online",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Real-time, irrevocable U.S. domestic payments with immediate funds availability, operated by The Clearing House.",
+    "other_flags": "irrevocable: Yes",
+    "notes": "Request for Payment origination for commercial billers runs through TTS (S026/S027).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s014"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j23"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P13-S02",
+    "name": "Remote Check Deposit (RCD) / Image Cash Letter",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Scanned check deposits from the business location (web app, CitiBusiness Online Mobile App) or ICL files via FTPS/SFTP/HTTPS.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s014",
+     "src-citi-s013"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j26"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P13-S03",
+    "name": "Lockbox (retail and wholesale)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web"
+    ],
+    "description": "Check collection at a P.O. box with daily credit and images in CBOL.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s014"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P13-S04",
+    "name": "Present and Pay (with RTP and account authentication)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "phone"
+    ],
+    "description": "Biller-facing bill presentment/collection via web, IVR, ACH or card, with posting files; RTP/RfP enabled in 2021.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s014",
+     "src-citi-s041",
+     "src-citi-s027"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P13-S05",
+    "name": "Positive Pay / Controlled Disbursement / Match Pay / ARP",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "mobile-app"
+    ],
+    "description": "Check-fraud and disbursement controls with decisions available in CitiBusiness Mobile.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s014",
+     "src-citi-s021"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "CITI-P14",
+  "bank": "citi",
+  "name": "Citi Services / Treasury and Trade Solutions (TTS) payments (CitiDirect, 24/7 USD clearing, Citi Express, RTP Request for Payment, Citi Payment Exchange with Mastercard Send)",
+  "former_names": "Citi Treasury and Trade Solutions (TTS)",
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "rtp",
+   "fednow",
+   "wire-domestic",
+   "wire-international",
+   "push-to-card",
+   "other"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "TCH RTP; FedNow; SWIFT; Mastercard Send",
+  "ui_position": "CitiDirect (web/mobile) and CitiConnect APIs (API naming not verified in this pass).",
+  "description": "Institutional payments franchise (Citi Services, formerly TTS) delivered via CitiDirect / CitiDirect BE and APIs: 24/7 USD clearing (about 300 banks in 40 countries), Citi Express instant payments live in 22 markets (target 30), RTP participant since 2017 with Request-for-Payment e-bill origination for U.S. billers (2021), FedNow joined in 2025, Citi Payment Exchange disbursements to debit cards via Mastercard Send (2021), partnerships with Mastercard, Coinbase and Euronet's Dandelion for cross-border. Out of full-journey scope; inventory only.",
+  "basis": "disclosed",
+  "confidence": "medium",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-citi-s024",
+   "src-citi-s026",
+   "src-citi-s027",
+   "src-citi-s040",
+   "src-citi-s014"
+  ],
+  "sub_products": [
+   {
+    "id": "CITI-P14-S01",
+    "name": "RTP Request for Payment origination for billers (TTS)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "U.S. institutional billers send RfP e-bills to Citi and other participating banks' consumers; end-to-end bill presentment and real-time settlement.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s027",
+     "src-citi-s026"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j24"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P14-S02",
+    "name": "24/7 USD clearing and Citi Express instant payments",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Always-on USD clearing for FI clients; Citi Express instant local payments in 22 markets.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s024"
+    ],
+    "journeys": [
+     "urn:kos:journey:citi:citi-j27"
+    ],
+    "x-mi_evidence": "THIRD_PARTY"
+   },
+   {
+    "id": "CITI-P14-S03",
+    "name": "Citi Payment Exchange - push to debit card via Mastercard Send",
+    "product": "push-to-card",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Corporate disbursements to consumer debit cards (2021 announcement; details unverified).",
+    "other_flags": null,
+    "notes": "Search-result title only; Not fetched in this cycle; .",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s040"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   },
+   {
+    "id": "CITI-P14-S04",
+    "name": "FedNow participation (institutional, 2025)",
+    "product": "fednow",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Citi joined FedNow in 2025 per Citi Services head of payments; participation type (receive-only vs. send) not confirmed.",
+    "other_flags": "participation_type: unknown",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": null,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s024",
+     "src-citi-s025"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   },
+   {
+    "id": "CITI-P14-S05",
+    "name": "Citi Token Services",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Tokenized deposits on a private permissioned blockchain giving institutional clients 24/7 near-instant liquidity, collateral and cross-border payments across Citi's network; live in the United States, Ireland, Hong Kong, Singapore, UK, Japan and UAE (Sept 2026).",
+    "other_flags": "available_24_7: Yes; tokenized_deposits: Yes",
+    "notes": "Added by verification (CITI-C009).",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s952"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "CITI-P14-S06",
+    "name": "WorldLink Payment Services / multi-market instant payments on the Swift payments scheme",
+    "product": "wire-international",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Cross-currency payment network for financial institutions via API; since Sept 29, 2026 Citi is live with multiple markets on the Swift payments scheme (AUD via NPP, GBP via FPS, INR via IMPS, and USD via expanded USD Clearing so participating banks can send dollar payments credited to Citi U.S. account holders in real time).",
+    "other_flags": "financial_institution_clients: Yes",
+    "notes": "Added by verification (CITI-C010).",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-citi-s953",
+     "src-citi-s954"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "THIRD_PARTY"
+ }
+]

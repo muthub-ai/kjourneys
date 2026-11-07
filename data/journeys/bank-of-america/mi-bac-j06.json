@@ -788,5 +788,13 @@
   }
  ],
  "assessment": "Low base limits ($1,000) and the Wire/ACH labelling are the main consumer frictions; instant-login linking is modern.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "BAC-P03",
+ "terms": {
+  "limits": "Consumer $1,000 per transaction each direction (base); higher with Secured Transfer/USB key; small business outbound $5,000",
+  "fees": "Consumer $0; SB $1 (3-day) / $5 (next-day)",
+  "cutoffs": "8 p.m. ET; no same-day ACH"
+ },
+ "composite": "CJ-ACH-EXT-SEND",
+ "composite_match": "mi-reference"
 }

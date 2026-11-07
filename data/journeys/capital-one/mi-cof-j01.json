@@ -880,5 +880,13 @@
   }
  ],
  "assessment": "Clean account-scoped flow with QR and contact pick; OTP step-up on send. Gaps vs peers: no split, no documented scam interstitial, no in-app scam/dispute reporting, enrollment only in app, and the 2025 Zelle terms expressly exclude business use.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "COF-P01",
+ "terms": {
+  "limits": "Dynamic; converted Discover 360 Checking shows $3,000/day, $12,500/month (press). Request has no limit.",
+  "fees": "None",
+  "cutoffs": "Minutes for enrolled recipients; scheduled Zelle cancel by 11:59 PM ET day before"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }

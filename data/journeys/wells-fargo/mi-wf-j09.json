@@ -589,5 +589,13 @@
   }
  ],
  "assessment": "Important hidden capability: WF consumers can SEND RTP credit-push payments, but only in response to a biller RfP inside Bill Pay, mobile-only — a 'request-to-pay' (inbound RfP) consumer experience that few peers have. Zero marketing presence; terms-only evidence.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "WF-P03",
+ "terms": {
+  "limits": "$50,000 per payment",
+  "fees": "Not stated (none documented)",
+  "cutoffs": "24/7/365, seconds"
+ },
+ "composite": "CJ-INSTANT-RECEIVE-RFP",
+ "composite_match": "mi-reference"
 }

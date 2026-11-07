@@ -1,7 +1,7 @@
 # KOS Journey Ontology — kos-journey/0.7.0
 # Human-readable schema. The machine contract is journey-ontology.schema.json (JSON Schema 2020-12),
 # enforced in CI with validate_journey.py (structure, integrity, typing, temporal rules, publish gates)
-# and tests/run_tests.sh (40 negative fixtures that must fail) plus tests/test_ingest.py.
+# and tests/run_tests.sh (46 negative fixtures that must fail) plus tests/test_ingest.py.
 # Canonical instance: JSON, split across registries/ and data/ and assembled by tools/assemble.py.
 
 ontology: kos-journey/0.7.0
@@ -15,6 +15,8 @@ changelog:
     - Source kinds extended to the MI source types; sources carry bank, local_id, publisher, access_status, notes
     - MI evidence levels map onto basis + confidence; the original level is kept as x-mi_evidence (or evidence.mi_level on comparison facts)
     - The focus bank may now hold MI facts in comparisons (the study scores Wells Fargo too)
+    - "Catalog: each bank's products as marketed and their sub-products, with per-sub-product capability flags (data/catalog/<bank>.json)"
+    - "Journeys gain bank_product, terms (limits, fees, cut-offs), and composite + composite_match: the customer journey they deliver and how the link was made (mi-reference, rail-segment, rail)"
   "0.6.0":
     - "Breaking: comparison (one) becomes comparisons[] (one per product); data/comparisons/<product>/ per product (tools/migrate_0_5_to_0_6.py)"
     - MI reports may cover several products; extracts live in extract/<product>/<bank>.json
@@ -208,7 +210,15 @@ Finding:
   type: [strength, transparency, friction, missing-capability, security-trust, exception-handling, channel-gap]
   severity: [critical, high, medium, low]
   rules: ["STR- ids are strengths and GAP- ids are gaps", "journey, product, stage and composite must resolve"]
-Composite: { fields: [id, title, product, segment, direction, steps], note: "Best-practice journey assembled across banks; steps cite derived_from bank:journey#step" }
+Composite: { fields: [id, title, product, segment, direction, steps], note: "The customer journey: what the customer is trying to do, the same at every bank. Best-practice steps assembled across banks; steps cite derived_from bank:journey#step" }
+CatalogProduct:   # data/catalog/<bank>.json — a product as the bank markets it
+  fields: [id, bank, name, former_names, segments, rails, channels, network, ui_position, description, basis, confidence, source_ids, sub_products, report_version]
+  id: "<BANK>-P<nn>, e.g. WF-P01"
+SubProduct:
+  fields: [id, name, product, segments, channels, description, other_flags, notes, capabilities, capability_detail, basis, confidence, source_ids, journeys]
+  id: "<BANK>-P<nn>-S<nn>, numbered under its product"
+  capabilities: "map<flag, true | false | null> — the 16 comparison flags for this one sub-product; comparisons roll them up per rail"
+hierarchy: "Customer journey (Composite) ← delivered by → bank Journey → uses → SubProduct ⊂ CatalogProduct; rail (Product) is the cross-bank axis for scores"
 Observation: { fields: [bank, type, text], type: [strength, weakness, differentiator, recent-change, open-question] }
 Verification: { fields: [id, bank, target_type, target, challenge_type, claim, finding, verdict, resolution, evidence, reviewer], verdict: [accepted, partial, rejected, unresolved] }
 Participation: { fields: [bank, network, participates, note, basis, source_ids], network: [zelle, rtp-receive, rtp-send, fednow-receive, fednow-send, push-to-card, paze-wallet] }
@@ -243,7 +253,8 @@ layers: [feeling, action, touchpoint, "— line of interaction —", frontstage,
 views:
   overview:  "Level 0 · ranking, rail × bank heat map of mean stage scores, Wells Fargo's highest-severity gaps"
   stages:    "Level 1 · one bank, rails × nine stages, score or points behind the best bank"
-  journey:   "Level 1 · stage scores (bank, best bank, Wells Fargo) stacked over gaps by severity and strengths; stage cards; ranked gaps (sample: experience curve and ranked hot spots)"
+  products:  "Level 1 · each bank's catalog: products → sub-products, capability flags per sub-product, journeys that use each"
+  journey:   "Level 1 · customer journey first (best-practice steps, every bank's versions with product › sub-product), then a bank journey: stage scores (bank, best bank, Wells Fargo) stacked over gaps by severity and strengths; stage cards; ranked gaps (sample: experience curve and ranked hot spots)"
   blueprint: "Level 2 · any journey as a blueprint with lenses (executive, product, engineering, full), paths or highlights, jump to stage, step drawer; sample adds the backstage, app tracing and systems table"
   compare:   "Level 1 · one rail across banks: stage scores and capability flags"
   findings:  "Gaps and strengths, filterable by bank, type, severity, rail and stage"

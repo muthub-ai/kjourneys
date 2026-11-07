@@ -1,0 +1,2108 @@
+[
+ {
+  "id": "FITB-P01",
+  "bank": "fifth-third",
+  "name": "Send Money with Zelle®",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "zelle",
+   "request-to-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Early Warning Services (Zelle Network)",
+  "ui_position": "Mobile: bottom nav 'Move Money' > 'Send Money with Zelle®' (> 'Get Started' on first use; eligible business accounts see a 'personal use or for your business' menu / 'Enroll a Business Account'). Web: left-hand navigation 'Send money with Zelle®'. Inside Zelle: 'Send Money', 'Request Money', 'Scan a QR Code' > 'My Code', Profile icon (QR), activity page.",
+  "description": "Zelle embedded in the Fifth Third Mobile Banking app and 53.com Online Banking (no fee; enrolled with email or U.S. mobile number). Same app and screens serve consumer and 'Fifth Third for Business' customers; eligible business accounts see an 'Enroll a Business Account' choice.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s001",
+   "src-fifth-third-s003",
+   "src-fifth-third-s011",
+   "src-fifth-third-s034",
+   "src-fifth-third-s901",
+   "src-fifth-third-s902",
+   "src-fifth-third-s903",
+   "src-fifth-third-s907",
+   "src-fifth-third-s908"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P01-S01",
+    "name": "Send money with Zelle",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Send to an enrolled or unenrolled U.S. recipient by email, U.S. mobile number or Zelle tag; typically minutes; cannot be canceled once recipient is enrolled.",
+    "other_flags": "zelle_tag: Yes; limits_shown_on_recipient_screen: Yes; one_contact_method_per_customer: Yes; name_mismatch_warning: Yes; contact_picker_labels: 'Suggested' (enrolled) vs 'Available' (valid, not enrolled); first_receipt_after_enrollment: 2-3 days; subsequent within minutes; cancel_button_label: Cancel This Payment; recurring_or_scheduled_send: not published; split: not published; scam_warning_basis: name-mismatch warning (CONFIRMED_BANK S902); SmartShield 'Zelle fraud identification before you pay' advertised; scam-specific interstitial copy unpublished",
+    "notes": "In-flow warning confirmed: when a token is enrolled under a different name than the address-book entry, the app warns of a name mismatch and will pay the name in the network; wrong-recipient recovery is 'work with the recipient' (enrolled) or call 800-972-3030 to cancel while pending (unenrolled). Limits are dynamic by recipient payment history and shown on the recipient screen; sending limits otherwise only disclosed by phone. SmartShield 'Zelle fraud identification before you pay' remains undocumented in detail. Recurring/scheduled send, split and request-cancel are not mentioned on any public page.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": true,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": true,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP at enrollment (confirmed); in-flow step-up unknown"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s001",
+     "src-fifth-third-s003",
+     "src-fifth-third-s011",
+     "src-fifth-third-s901",
+     "src-fifth-third-s902",
+     "src-fifth-third-s903",
+     "src-fifth-third-s907",
+     "src-fifth-third-s908",
+     "src-fifth-third-s932"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j01"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P01-S02",
+    "name": "Request money with Zelle",
+    "product": "request-to-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "'Request Money' from a contact or enrolled email/mobile/Zelle tag; recipient must be enrolled (unenrolled requests require email).",
+    "other_flags": null,
+    "notes": "Request flow: 'Request Money' > choose contact or enter enrolled email / U.S. mobile / Zelle tag (unenrolled payers must be requested by email) > amount + optional note > review > 'Request'. Cancellation/expiry of an outstanding request is not published on consumer or business FAQs.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": true,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s001",
+     "src-fifth-third-s003",
+     "src-fifth-third-s901",
+     "src-fifth-third-s907"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j02"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P01-S03",
+    "name": "Receive money with Zelle (incl. QR 'My Code' for business)",
+    "product": "zelle",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Share enrolled token or QR code; funds deposit directly to the Fifth Third account, typically minutes; no receive limit at Fifth Third.",
+    "other_flags": null,
+    "notes": "Business QR: Move Money > Send Money with Zelle® > Send Money > 'Scan a QR Code' > 'My Code' (print/share icons); or Profile icon inside Zelle. Paying by QR: Send Money > Scan a QR code > camera > amount > Send; app shows the recipient's displayed name to confirm. Receiving: enrolled token; first payment after enrollment may take 2-3 days.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": true,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s001",
+     "src-fifth-third-s003",
+     "src-fifth-third-s031",
+     "src-fifth-third-s902",
+     "src-fifth-third-s907"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j03",
+     "urn:kos:journey:fifth-third:fitb-j14"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P02",
+  "bank": "fifth-third",
+  "name": "Transfers (Move Money)",
+  "former_names": "Now Balance and Transfer Funds (legacy marketing label)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "internal-transfer",
+   "ach-external-transfer"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Unknown (external transfers presumably ACH; vendor not disclosed)",
+  "ui_position": "Mobile: bottom nav 'Move Money' ('transfer funds, pay bills and send money'); 'Move Money' > 'Make a Payment'; 'Move Money' > 'Set Up Direct Deposit'. Web: 'Make a Payment' in the account summary bar; in-product help section 'External Transfers'.",
+  "description": "Account-to-account transfers in the app/online banking: between Fifth Third accounts, to/from accounts at other banks (external), scheduled/recurring transfers (e.g., checking to savings), Smart Savings automatic micro-transfers, and 'Make a Payment' to Fifth Third loans/cards. Fifth Third publishes almost no public documentation of the external-transfer flow; the in-product help page 'External Transfers' exists but is blocked to crawlers.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s084",
+   "src-fifth-third-s010",
+   "src-fifth-third-s017",
+   "src-fifth-third-s055",
+   "src-fifth-third-s106",
+   "src-fifth-third-s053",
+   "src-fifth-third-s030"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P02-S01",
+    "name": "Internal transfer between Fifth Third accounts",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "branch",
+     "phone"
+    ],
+    "description": "One-time, scheduled or recurring transfer between own Fifth Third deposit accounts (e.g., checking to savings); not permitted for 529 or minor-owned accounts.",
+    "other_flags": null,
+    "notes": "Recurring confirmed via Savings FAQ 'Automatic Transfers'. Instant posting inferred from 'transfer money between your accounts' marketing (legacy page) and Now Balance.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s030",
+     "src-fifth-third-s053",
+     "src-fifth-third-s017",
+     "src-fifth-third-s063"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j04"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P02-S02",
+    "name": "External transfer (link account at another bank)",
+    "product": "ach-external-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Transfer to/from an account at another institution. Existence confirmed by Welcome Center ('transfer money from another bank'), the DSUA (external-transfer error hold up to 30 days) and the title of the blocked help page 'External Transfers'. Verification method, limits, timing and screen labels are UNKNOWN.",
+    "other_flags": "verification_method: unknown; instant_option: unknown",
+    "notes": "Still publicly undocumented after browser pass: the legacy in-product help host (linkpath.53.com) now redirects to the 53.com homepage and 53.com site search returns no external-transfer page. Only public rule (current DSUA): 'Any errors occurring on external transfers may result in an extended hold of up to 30 days for resolution and the return of funds'; bank may impose security limits at any time. Verification method, limits, timing and cancel rules require a logged-in session.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s011",
+     "src-fifth-third-s017",
+     "src-fifth-third-s031",
+     "src-fifth-third-s055",
+     "src-fifth-third-s106",
+     "src-fifth-third-s932"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j05"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P02-S03",
+    "name": "Smart Savings (automatic micro-transfers)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Mobile-only automated transfer from checking to savings based on a checking threshold and weekly limit; $0–$300 per Business Day up to twice daily; can be turned off in mobile.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s017",
+     "src-fifth-third-s050"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P02-S04",
+    "name": "Make a Payment (to Fifth Third loan / credit card)",
+    "product": "internal-transfer",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "phone",
+     "branch"
+    ],
+    "description": "Pay a Fifth Third credit card, loan or mortgage from a deposit account; autopay for minimum/statement/fixed amount; online card payments before 7pm ET process same day.",
+    "other_flags": null,
+    "notes": "Paying from an external bank account is not documented (UNKNOWN).",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s010",
+     "src-fifth-third-s090",
+     "src-fifth-third-s005"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j11"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P02-S05",
+    "name": "Set Up Direct Deposit / Direct Deposit Switch (inbound ACH credit with Early Pay)",
+    "product": "other",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "In-app payroll-provider login flow ('Move Money' > 'Set Up Direct Deposit'); Early Pay posts eligible ACH credits up to 2 days early (tax refunds 5 days) on Momentum, Preferred, Express, Momentum Savings; push notification when Early Pay funds post.",
+    "other_flags": "early_pay: Yes; excludes_zelle_rtp_bank_transfers: Yes",
+    "notes": "Direct Deposit Switch: Move Money > 'Set Up Direct Deposit' > 1 Choose your employer or payroll provider > 2 Log in using your existing account > 3 'Congrats! You're all set up' (or type 'Direct Deposit' in the in-app search bar). Early Pay is automatic for Momentum Checking/Savings, Express Banking and Preferred Checking; qualifying deposits: paychecks, tax refunds (5 days), some retirement, child support, government benefits; bank-to-bank transfers, P2P (Zelle) and real-time payments do not qualify; deposits over $10,000 post on payday; may take 1-2 pay periods to start. Early Pay push notification toggled at Profile > Alerts > Manage Alerts > Manage by Account.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "payroll provider login"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s014",
+     "src-fifth-third-s061",
+     "src-fifth-third-s099",
+     "src-fifth-third-s101",
+     "src-fifth-third-s104",
+     "src-fifth-third-s902",
+     "src-fifth-third-s912",
+     "src-fifth-third-s914",
+     "src-fifth-third-s921"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j10"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P03",
+  "bank": "fifth-third",
+  "name": "Bill Pay (Online Bill Pay)",
+  "former_names": "Fifth Third Internet Banking and Bill Payment",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "bill-pay"
+  ],
+  "channels": [
+   "mobile-app",
+   "web"
+  ],
+  "network": "Not disclosed",
+  "ui_position": "Mobile: 'Move Money' > pay bills. Web: Bill Payment interface (Payee List, 'Deliver By'). Quicken/QuickBooks Direct Connect also initiates bill payments.",
+  "description": "Online Bill Pay from an eligible checking account (mobile app 'Move Money' and web Bill Payment interface): pre-populated payee list or add any U.S. person/business; one-time or recurring payments with a 'Deliver By' date (non-business day → preceding business day; earliest date computed by system, may be up to 5 business days out; daily cut-off shown inside the Bill Payment interface); payments are remitted either by check or by ACH at the bank's choice; eBills from participating billers; 24-month history; $250 late-fee guarantee for bank-caused errors. Express Banking accounts cannot use Online Bill Pay. Autopay for Fifth Third credit cards/loans/mortgages is a separate 'Automatic Payments' flow via in-app messaging or 1-800-837-2000.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s005",
+   "src-fifth-third-s016",
+   "src-fifth-third-s017",
+   "src-fifth-third-s059",
+   "src-fifth-third-s060",
+   "src-fifth-third-s063",
+   "src-fifth-third-s904",
+   "src-fifth-third-s905",
+   "src-fifth-third-s931",
+   "src-fifth-third-s932",
+   "src-fifth-third-s933"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P03-S01",
+    "name": "Add payee and pay a bill (one-time)",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Choose from pre-populated payee list or add a person or business; enter amount and 'Deliver By' date; non-business-day delivery moves to preceding Business Day; may need to schedule up to 5 business days before due date.",
+    "other_flags": "delivery_methods: check or ACH (bank's choice; customer cannot pick); expedited_or_overnight: not offered/not published; deliver_by_model: Yes; cutoff: shown in Bill Payment interface (value not published); edit_cancel_until: cut-off on processing business day; states: Pending; In Process; Paid; stop_payment_for_in_process: via Customer Service, fee may apply",
+    "notes": "States seen: Pending, In Process, Paid. Electronic vs check delivery not documented.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s005",
+     "src-fifth-third-s017",
+     "src-fifth-third-s063",
+     "src-fifth-third-s905",
+     "src-fifth-third-s932",
+     "src-fifth-third-s933"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j06"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P03-S02",
+    "name": "eBills and recurring (automatic) payments",
+    "product": "bill-pay",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app",
+     "web"
+    ],
+    "description": "Receive electronic bills from participating billers; set recurring payments 'perfect for e-bills'; edit/cancel after current instance processes; undeliverable-eBill alerts automatic.",
+    "other_flags": null,
+    "notes": "Recurring payments 'perfect for e-bills'; a recurring payment may be edited or canceled only after the current instance finishes processing; eBills are electronic statements from participating billers; automatic alerts cover payee updates, payment cancellations and undeliverable e-bills. Insufficient funds may lead to a temporary block from Bill Pay and reduced transaction/daily limits.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s005",
+     "src-fifth-third-s017",
+     "src-fifth-third-s059",
+     "src-fifth-third-s063",
+     "src-fifth-third-s905",
+     "src-fifth-third-s932",
+     "src-fifth-third-s933"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j07"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P04",
+  "bank": "fifth-third",
+  "name": "Mobile Deposit (and Mobile Deposit with Immediate Funds)",
+  "former_names": "App, Tap, Deposit®",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "check-deposit-mobile"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Not disclosed",
+  "ui_position": "Bottom nav 'Deposit' > 'New Deposit' (guide PDF: 'Check Deposit' under 'Deposit').",
+  "description": "Deposit U.S. checks and money orders by photo in the app; standard availability free, 'Immediate Funds' option for a fee shown before each deposit; 8 p.m. ET cutoff; limits shown in-app; not available on Basic Checking / Access 360°.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s006",
+   "src-fifth-third-s009",
+   "src-fifth-third-s014",
+   "src-fifth-third-s017",
+   "src-fifth-third-s084",
+   "src-fifth-third-s060"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P04-S01",
+    "name": "Standard mobile check deposit",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "7–8 step flow; endorsement 'For mobile deposit only'; on-screen success confirmation; keep check 14 days.",
+    "other_flags": null,
+    "notes": "Deposit alerts typically next business day [S059].",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s006",
+     "src-fifth-third-s009",
+     "src-fifth-third-s014"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j08"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P04-S02",
+    "name": "Mobile Deposit with Immediate Funds",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Immediate access to full deposit amount for a service fee accepted per transaction (Express Banking: check-cashing rate schedule).",
+    "other_flags": null,
+    "notes": "Immediate Funds: 'immediately access the full amount of the mobile deposit'; a service fee may apply (may be waived for checks under a certain amount), based on check amount/type and banking relationship; fee is presented for acceptance on each transaction; available to checking, savings and Express Banking; NOT available to business accounts (App Store disclosure); Express Banking mobile deposits REQUIRE the Immediate Funds option. Funds available the business day of deposit (Deposit Account Rules).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s006",
+     "src-fifth-third-s009",
+     "src-fifth-third-s017",
+     "src-fifth-third-s060",
+     "src-fifth-third-s913",
+     "src-fifth-third-s918",
+     "src-fifth-third-s930",
+     "src-fifth-third-s931",
+     "src-fifth-third-s932"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P05",
+  "bank": "fifth-third",
+  "name": "Wire Transfers (consumer / small business)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wire-domestic",
+   "wire-international"
+  ],
+  "channels": [
+   "branch"
+  ],
+  "network": "Fedwire / CHIPS / SWIFT",
+  "ui_position": "Not in digital channels; Customer Service > 'How do I send a wire transfer?' -> visit a branch.",
+  "description": "Consumer/SMB wires are branch-initiated only ('Visit a financial institution or Fifth Third Branch to set up a wire transfer'); no online, mobile or phone wire for consumers is documented, including for Preferred Checking (which only waives fees: 'Complimentary wire transfers'). Published consumer fees: incoming $15 (domestic or international); outgoing domestic USD $30; outgoing foreign-currency $50; outgoing international in USD $85. Governed by Deposit Account Rules §9.4: callback/verification security procedures; bank relies on account/ABA numbers not names; no obligation to cancel after submission (Remittance Transfers: 30-minute cancel window); errors must be reported in writing within 14 days of statement; no separate notice of incoming/outgoing wires beyond the periodic statement. Incoming: routing 042000314, SWIFT FTBCUS3C, no IBAN.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s010",
+   "src-fifth-third-s011",
+   "src-fifth-third-s031",
+   "src-fifth-third-s032",
+   "src-fifth-third-s062",
+   "src-fifth-third-s902",
+   "src-fifth-third-s904",
+   "src-fifth-third-s930",
+   "src-fifth-third-s931"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P05-S01",
+    "name": "Outgoing domestic wire (branch)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Branch-initiated domestic USD wire; published fee $30 (waived for Preferred Checking). Security procedures include call-back/verification; bank has no obligation to cancel or amend after submission but may make a reasonable effort if not yet executed; transfer appears on the periodic statement (no separate notice); errors must be reported in writing within 14 days.",
+    "other_flags": "online_self_service: No",
+    "notes": "Status tracking: none beyond periodic statement (bank states it is not required to provide separate notice of outgoing funds transfers).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "in-person ID; bank security procedures 'including a call back or verification of the payment order'"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s010",
+     "src-fifth-third-s011",
+     "src-fifth-third-s031",
+     "src-fifth-third-s902",
+     "src-fifth-third-s904",
+     "src-fifth-third-s930",
+     "src-fifth-third-s931"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j09"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P05-S02",
+    "name": "Outgoing international wire (branch; USD or FX)",
+    "product": "wire-international",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Branch-initiated international wire in foreign currency ($50) or in USD ($85); 'exchange rates, other bank fees, and taxes may apply'; consumer international wires are 'Remittance Transfers' under Reg E subpart B with disclosures at initiation and a 30-minute window to request cancel/amend. Fifth Third has no IBAN; SWIFT FTBCUS3C.",
+    "other_flags": "online_self_service: No",
+    "notes": "Fee figures reported by Exiap are unsourced; record only as THIRD_PARTY in supplementary.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": true,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "in-person ID"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s010",
+     "src-fifth-third-s011",
+     "src-fifth-third-s032",
+     "src-fifth-third-s062",
+     "src-fifth-third-s904",
+     "src-fifth-third-s930",
+     "src-fifth-third-s931"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P05-S03",
+    "name": "Incoming wire (domestic/international)",
+    "product": "wire-domestic",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "branch",
+     "web"
+    ],
+    "description": "Incoming domestic or international wire: $15 fee (waived for Preferred Checking); routing 042000314; SWIFT FTBCUS3C; wire address 38 Fountain Square Plaza, Cincinnati OH 45263; no IBAN. Funds available on the business day received; periodic statement serves as notice.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s010",
+     "src-fifth-third-s011",
+     "src-fifth-third-s904",
+     "src-fifth-third-s930",
+     "src-fifth-third-s931"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P06",
+  "bank": "fifth-third",
+  "name": "Cash, ATM and branch deposits (Easy Deposit ATMs, Cardless ATM)",
+  "former_names": null,
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "cash-atm-branch"
+  ],
+  "channels": [
+   "atm",
+   "branch",
+   "mobile-app"
+  ],
+  "network": "Allpoint/partner network (name not stated on fetched pages)",
+  "ui_position": "Mobile app 'Cardless ATM feature'; Branch & ATM Locator > Advanced Filters > 'ATM Accepts Deposits'.",
+  "description": "ATM/branch cash and check deposits (Easy Deposit ATMs) plus Cardless ATM: in the mobile app the customer requests to scan a one-time code displayed on a Fifth Third ATM screen for a single use, enabling the same transactions as an ATM/debit card; frequency/dollar limits and the card's daily ATM withdrawal limit apply; Fifth Third ATMs only; no fee. Debit card cannot be locked in-app (credit cards can).",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s002",
+   "src-fifth-third-s007",
+   "src-fifth-third-s014",
+   "src-fifth-third-s017",
+   "src-fifth-third-s057",
+   "src-fifth-third-s060",
+   "src-fifth-third-s100",
+   "src-fifth-third-s929",
+   "src-fifth-third-s932",
+   "src-fifth-third-s934"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P06-S01",
+    "name": "ATM deposit (Easy Deposit)",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "atm"
+    ],
+    "description": "Cash and check deposits at deposit-taking ATMs; receipt can include check images.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": true,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "card+PIN"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s014",
+     "src-fifth-third-s057"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j12"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P06-S02",
+    "name": "Cardless ATM withdrawal",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "atm"
+    ],
+    "description": "Withdraw cash at Fifth Third ATMs without a card using the mobile app ('Fifth Third Bank Cardless ATM Service' in DSUA).",
+    "other_flags": null,
+    "notes": "DSUA: customer requests to scan a one-time code; the ATM displays a generated single-use code; same transaction types as a debit/ATM card; frequency and dollar limits plus the card's daily ATM limit apply; Fifth Third ATMs only; no fee. Hub page: 'Use the Cardless ATM feature in the mobile app to get cash at a nationwide network of Fifth Third ATMs — even without your card.'",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "app login"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s002",
+     "src-fifth-third-s007",
+     "src-fifth-third-s017",
+     "src-fifth-third-s058",
+     "src-fifth-third-s929",
+     "src-fifth-third-s932"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P06-S03",
+    "name": "Branch deposit / check cashing / money orders",
+    "product": "cash-atm-branch",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "branch"
+    ],
+    "description": "Branch deposits free with standard availability; Immediate Funds option at branch; Express Banking check cashing (2% / $3 min for non-Fifth Third checks) and no-cost money orders.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "in-person"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s060",
+     "src-fifth-third-s012"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P07",
+  "bank": "fifth-third",
+  "name": "Digital wallets (Apple Pay, Google Pay, Samsung Pay) — intersection only",
+  "former_names": "Masterpass (2016–17 era)",
+  "segments": [
+   "consumer",
+   "small-business"
+  ],
+  "rails": [
+   "wallet-intersect"
+  ],
+  "channels": [
+   "mobile-app"
+  ],
+  "network": "Apple / Google / Samsung; Mastercard (Direct Express)",
+  "ui_position": "53.com > Bank > Online and Mobile Banking > 'Pay faster with digital wallets'.",
+  "description": "Fifth Third debit/credit cards can be added to Apple Pay, Google Pay (Google Wallet) and Samsung Pay. No Paze participation (not on Paze list as of 11/2026); no documented PayPal/Venmo/Cash App linking guidance; Zelle is the only bank-native P2P. Direct Express (federal benefits prepaid, Fifth Third financial agent since 9/2025) plans wallet integration.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s051",
+   "src-fifth-third-s082",
+   "src-fifth-third-s102"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P07-S01",
+    "name": "Add card to Apple Pay / Google Pay / Samsung Pay",
+    "product": "wallet-intersect",
+    "segments": [
+     "consumer",
+     "small-business"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "5-step setup per wallet; same fraud protection as physical card; no extra fees.",
+    "other_flags": null,
+    "notes": "Out of scope as a money-movement rail; recorded for intersection only.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "issuer verification during provisioning"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s051"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P08",
+  "bank": "fifth-third",
+  "name": "Fifth Third Direct® (commercial / treasury online platform)",
+  "former_names": "Comerica Business Connect / Comerica Treasury Payments (migrated Sept 8, 2026)",
+  "segments": [
+   "small-business",
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "wire-domestic",
+   "wire-international",
+   "rtp",
+   "internal-transfer",
+   "fednow"
+  ],
+  "channels": [
+   "api-treasury-portal",
+   "mobile-app",
+   "phone"
+  ],
+  "network": "Fedwire, CHIPS, SWIFT, Nacha, TCH RTP (via FIS connectivity, 2018)",
+  "ui_position": "Navigation bar 'Payments & Transfers' > Payments Management > 'New Payment' (Freeform Entry / From Template / Express Templates); 'Payments' status list; 'Reports & Statements'.",
+  "description": "Fifth Third Direct® is the commercial/treasury online platform (Payments & Transfers module, Data Exchange file upload, Direct Send SFTP, API for Instant Payments) with a companion Fifth Third Direct mobile app (Remote Deposit Capture, approve/decline/manage payments, balances, role-based access). Security Procedures (Oct 2025): OCAA + Channel Administrator; two-factor Credentials (token passcode) required for all wire/ACH origination and approval; optional Dual Administration Control, Dual Transaction Approval and multi-approver 'Approval Workflows'; per-user payment-type/account entitlements; customer-set daily limits block approvals above limit; proprietary transaction monitoring may halt a wire/ACH/instant payment pending a call-back to an Authorized Agent.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s019",
+   "src-fifth-third-s020",
+   "src-fifth-third-s024",
+   "src-fifth-third-s025",
+   "src-fifth-third-s039",
+   "src-fifth-third-s040",
+   "src-fifth-third-s045",
+   "src-fifth-third-s072",
+   "src-fifth-third-s074",
+   "src-fifth-third-s078",
+   "src-fifth-third-s079",
+   "src-fifth-third-s915",
+   "src-fifth-third-s916",
+   "src-fifth-third-s917",
+   "src-fifth-third-s926",
+   "src-fifth-third-s927",
+   "src-fifth-third-s928"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P08-S01",
+    "name": "ACH origination (credits/debits, Same Day ACH, ACH Direct Send file)",
+    "product": "ach-origination",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Online origination in FTD with ACH Company ID, Payment Date, Business Unit, Security Level, receiver create/import; Same Day ACH requires company configuration, approval by 1 p.m. ET (deadline table 2 p.m. online / 3 p.m. Direct Send); ACH Direct Send for file transmission with control totals; IAT/CTX/tax separate.",
+    "other_flags": "templates: Yes; import_profiles: Yes; control_totals: Yes",
+    "notes": "Submission channels per Security Procedures: Payments & Transfers module (entry), Data Exchange file upload via FTD, Direct Send SFTP with control-total File Authentication (via FTD, a separate one-record control file, or telephone 1-866-475-0729 press 2,1 + PIN — telephone authentication for ACH files only). Two-factor Credentials required; optional Dual Transaction Approval; proprietary monitoring may halt an ACH Entry pending a call-back.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP (text/email) or hard/soft token at create/approve"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s019",
+     "src-fifth-third-s024",
+     "src-fifth-third-s025",
+     "src-fifth-third-s037",
+     "src-fifth-third-s072",
+     "src-fifth-third-s074",
+     "src-fifth-third-s915"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j15"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S02",
+    "name": "Domestic wire (online, PIN phone, batch, standing order, drawdown)",
+    "product": "wire-domestic",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "phone"
+    ],
+    "description": "Freeform/template/express template wires; Pending Approval -> Processed; 6:00/7:00 a.m.–6:15 p.m. ET; email and mailed wire advices; PIN-based phone initiation; batch wire CPU-to-CPU; Automatic Standing Order; drawdown wires.",
+    "other_flags": "templates: Yes; wire_advices: Yes; pin_phone_wires: Yes; standing_orders: Yes",
+    "notes": "Security Procedures (Oct 2025): online wires require User ID + password + token passcode; optional Dual Transaction Approval (originate vs release on separate devices) and Approval Workflows with unlimited approvers. Telephone PIN wires: PINs mailed and confirmed annually, per-agent dollar limits; non-repetitive wires > $250,000 require a second PIN holder's approval by bank call-back (threshold can be lowered by service form); repetitive wires need no further approval. Standing-order and drawdown wires set up by signed service form are not re-verified per wire. Manual (email/in-person) wires need an Outgoing Wire Transfer Request Agreement, signature verification, then call-back to a secondary individual and/or in-/out-of-wallet questions; failure = order deemed canceled; Dual Control Security Waiver required to opt out. Transaction monitoring may halt/delay a wire pending confirmation.",
+    "capabilities": {
+     "recurring": true,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP or token; Dual Transaction Approval recommended in MTMA"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s019",
+     "src-fifth-third-s020",
+     "src-fifth-third-s025",
+     "src-fifth-third-s072",
+     "src-fifth-third-s915"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j16"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S03",
+    "name": "International wire (USD, same-currency, FX conversion, Canlink)",
+    "product": "wire-international",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "phone"
+    ],
+    "description": "USD international, same-currency multicurrency, USD-to-FX wires up to $1M USD-equivalent in FTD (larger via Fifth Third Market Trade eFX); beneficiary town/city/country required; cutoffs 3:00–4:30 p.m. ET with next/two-day settlement; IAT in USD to Canada/Mexico.",
+    "other_flags": "fx_in_portal_up_to_1M: Yes; market_trade_efx: Yes; swift_bic: FTBCUS3C",
+    "notes": "SWIFT gpi tracking not evidenced (UNKNOWN).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": true,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP or token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s020",
+     "src-fifth-third-s042",
+     "src-fifth-third-s073",
+     "src-fifth-third-s019"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j17"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S04",
+    "name": "Account transfers (book transfers, loan advances & paydowns, intercompany)",
+    "product": "internal-transfer",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "New Payment > account transfer types 'Advances & Paydowns' and 'Intercompany Transfers'; Pending Approval until approvals complete; 7 a.m.–9 p.m. ET; loan cutoff 7 p.m.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP or token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s019",
+     "src-fifth-third-s025"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S05",
+    "name": "Instant Payments — RTP send and receive (Request for Payment)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "'Instant Payments' powered by RTP®, 24/7/365, irrevocable, immediate confirmation and real-time status. Origination is by Data Exchange file upload in Fifth Third Direct or through the API channel (Instant Payments API / Newline). No single-entry RTP type appears in the FTD 'How do I initiate payments' guide, and RTP items are searchable in FTD Historical Payments. Request for Payment early adopter. Migrated Comerica clients are receive-only, with a $1 fee per received instant payment from 9/8/2026. Account Validation is available before RTP.",
+    "other_flags": "rfp: Yes; receive_fee_migrated_clients: $1",
+    "notes": "Security Procedures name the API Access Channel (Client ID/Client Secret → access token; declared originating IPs) as the Security Procedure 'currently available ... for Instant Payments', and allow Instant Payments files via Data Exchange. The FTD transition FAQ tells migrated Comerica clients who originated RTP to 'plan to transition to same-day ACH or Wires' and that at Fifth Third they 'can continue to receive instant payments through the RTP® Network only' — i.e., RTP origination is not a standard FTD portal function for migrated clients; send is positioned via API/Newline and enterprise Instant Payments. Product page now says 'powered by RTP®' with no FedNow mention. Exact FTD RTP initiation screens remain unevidenced.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": true,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "OTP or token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s018",
+     "src-fifth-third-s022",
+     "src-fifth-third-s025",
+     "src-fifth-third-s045",
+     "src-fifth-third-s071",
+     "src-fifth-third-s074",
+     "src-fifth-third-s915",
+     "src-fifth-third-s927",
+     "src-fifth-third-s928"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j13",
+     "urn:kos:journey:fifth-third:fitb-j18"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S06",
+    "name": "FedNow (receive) — status",
+    "product": "fednow",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "FedNow is NOT live at Fifth Third: the Federal Reserve's participant list as of November 2, 2026 (1,973 institutions) contains no Fifth Third Bank or Comerica entry; the FTD transition page says FedNow receipt 'will remain unavailable to clients until further notice'; Newline docs still say 'FedNow® – Coming Soon ... not yet available'; and the commercial Instant Payments product page now cites RTP only. Fifth Third articles (Feb/Apr 2026) market a future dual-network approach but give no date.",
+    "other_flags": "send: not available (not a FedNow participant as of 2026-11-02); receive: not available (not a FedNow participant as of 2026-11-02; FTD page: unavailable until further notice)",
+    "notes": "Conflicting signals; see rail_participation.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "medium",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s018",
+     "src-fifth-third-s025",
+     "src-fifth-third-s043",
+     "src-fifth-third-s047",
+     "src-fifth-third-s071",
+     "src-fifth-third-s924",
+     "src-fifth-third-s925",
+     "src-fifth-third-s927",
+     "src-fifth-third-s928"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "THIRD_PARTY"
+   },
+   {
+    "id": "FITB-P08-S07",
+    "name": "ACH Positive Pay, Check Positive Pay, ACH Transaction Control, Account Validation (fraud controls)",
+    "product": "other",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Pay/Return decisioning in FTD (ACH credits post automatically and cannot be reviewed). Return decisions before 12:00 p.m. ET post the same day; the final decision deadline is 8:00 p.m. ET, after which the default decision applies. Also: Bank- and Customer-Maintained Check Positive Pay; Payee Name Verification; Reverse and Teller Positive Pay; Check Block; ACH Transaction Control filters; Account Validation API for ACH/wire/RTP incl. Nacha WEB debit rule.",
+    "other_flags": "hourly_exception_reminders: Yes",
+    "notes": "Security Procedures add: Dual Administration Control (second admin approves user/entitlement changes), Dual Transaction Approval ('Secondary Authorization'), Approval Workflows (any number of approvers, per payment type/account), customer-set daily transaction limits that block approvals above the limit (raising limits requires new signed Implementation Materials), and bank transaction monitoring that may halt wires/ACH/instant payments pending a call-back. FTD video guides cover ACH Positive Pay, Check Positive Pay and 'Centralized Exceptions' (exception queue management).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s024",
+     "src-fifth-third-s037",
+     "src-fifth-third-s045",
+     "src-fifth-third-s072",
+     "src-fifth-third-s078",
+     "src-fifth-third-s915",
+     "src-fifth-third-s926"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j21"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S08",
+    "name": "Electronic Deposit Manager (remote deposit capture) and EDM mobile app",
+    "product": "check-deposit-mobile",
+    "segments": [
+     "small-business",
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal",
+     "mobile-app"
+    ],
+    "description": "Desktop scanner RDC creating virtual deposit slips; 24/7 image access; new EDM mobile app; daily cutoff unchanged (time not stated).",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s081",
+     "src-fifth-third-s037",
+     "src-fifth-third-s012"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j20"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S09",
+    "name": "Fifth Third Direct mobile app (approvals/balances)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "mobile-app"
+    ],
+    "description": "Fifth Third Direct® mobile app (iOS id6759976853 v2.2.0 Nov 2026; Android com.fifththird.commercial.ftd.mobile updated Nov 4 2026): 'Securely deposit checks, access your accounts, approve payments and view recent activity.' Features: Remote Deposit Capture with deposit status/history (continuous multi-check deposit praised in reviews); 'Quickly approve, decline, or manage payments from your phone'; balances, transaction details; role-based permissions limiting accounts/actions per user. Same credentials as FTD; authentication token required for mobile access; Global Treasury accounts not shown; sweep detail limited. No payment initiation, positive-pay decisioning or RTP functions listed.",
+    "other_flags": null,
+    "notes": "Low rating count (7 on iOS) and Sep/Oct 2026 reviews indicate a re-launched app in 2026; one review reports activation failure ('account is suspended') needing treasury support (COMMUNITY).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": null,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": true,
+     "international": false,
+     "same-day": false,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "token"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s025",
+     "src-fifth-third-s916",
+     "src-fifth-third-s917",
+     "src-fifth-third-s927"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j22"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S10",
+    "name": "Integrated Payables / Managed Payables (outsourced AP disbursement)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Commercial AP solutions listed under Commercial Payments. Integrated Payables covers ACH payments, controlled disbursement, wire, payroll (Paycor), tax payment services, healthcare payables and the commercial card program. Managed Payables adds invoice automation and 'streamline[s] payments across all payment types', with vendor payment-method enrollment campaigns, vendor bank authentication and MFA. Payment-type mix and file formats are not published.",
+    "other_flags": "multi_rail: Yes; vendor_enrollment_campaigns: Yes",
+    "notes": "Added in verification (FITB-C008). Previously only in P08.extra.other_treasury_products.",
+    "capabilities": {
+     "recurring": null,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": null,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": null,
+     "international": null,
+     "same-day": null,
+     "instant": null
+    },
+    "capability_detail": {
+     "step-up-auth": "MFA; vendor bank authentication"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s041",
+     "src-fifth-third-s953"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P08-S11",
+    "name": "Fifth Third Choice Disbursements for Patient Refunds (Healthcare Payables)",
+    "product": "other",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "web",
+     "api-treasury-portal"
+    ],
+    "description": "B2C disbursement for healthcare organizations. The recipient gets a personalized email link to a branded portal holding funds on a digital prepaid card (usable in mobile wallets and online), and can swap to an ACH bank transfer, a check or a physical card. A mailed package is used when no email is held.",
+    "other_flags": "recipient_choice: digital prepaid card / ACH / check / physical card",
+    "notes": "Added in verification (FITB-C008). Not push-to-card (prepaid card issuance).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": null,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": null,
+     "status-tracking": null,
+     "push-notifications": null,
+     "email-sms-notifications": true,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": null,
+     "international": false,
+     "same-day": null,
+     "instant": null
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s954"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P09",
+  "bank": "fifth-third",
+  "name": "Newline™ by Fifth Third (embedded payments / banking-as-a-service)",
+  "former_names": "Rize Money (acquired 2023)",
+  "segments": [
+   "commercial"
+  ],
+  "rails": [
+   "ach-origination",
+   "rtp",
+   "wire-domestic",
+   "internal-transfer",
+   "fednow"
+  ],
+  "channels": [
+   "api-treasury-portal"
+  ],
+  "network": "Fifth Third proprietary (Rize) on TCH RTP, Nacha, Fedwire/CHIPS",
+  "ui_position": "53.com Commercial Payments > 'Embedded Payments' (redirects to newline53.com) > Solutions: Move money / Issue cards / Manage accounts.",
+  "description": "API-first platform (developers.newline53.com) letting fintechs, processors and payroll platforms move money directly with Fifth Third: ACH (all major SEC codes, Same Day ACH, prefunded/exposure models, account-level blocks), RTP instant payments send/receive via Virtual Reference Numbers with queueing, outgoing USD domestic wires, book transfers, webhooks/message queue, returns/NOC/reversal/recall handling, account validation, card issuing sponsorship, MCP Server + Skills for AI agents (Dec 2025/Apr 2026). Clients: Stripe, Trustly, Brex, AngelList, Blackbaud, Nuvei, Payroc, Mazooma; logos Circle, Worldpay.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s023",
+   "src-fifth-third-s043",
+   "src-fifth-third-s044",
+   "src-fifth-third-s047",
+   "src-fifth-third-s048",
+   "src-fifth-third-s049",
+   "src-fifth-third-s088",
+   "src-fifth-third-s089",
+   "src-fifth-third-s103",
+   "src-fifth-third-s064"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P09-S01",
+    "name": "Newline ACH API (credit/debit, Same Day)",
+    "product": "ach-origination",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "CCD/PPD/WEB/TEL/CIE/IAT; standard cutoff 10 p.m. ET; Same Day windows 8:50 a.m./1:20 p.m./2:50 p.m.; prefunded holds; returns within 3 banking days; delete/reversal (5 days)/recall; micro-entry 'ACCTVERIFY' and Account Validation API.",
+    "other_flags": "webhooks: Yes; returns_noc: Yes; blocks_filters: Yes",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": true,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": true,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "API credentials"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s048",
+     "src-fifth-third-s089"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P09-S02",
+    "name": "Newline Instant Payments (RTP send/receive)",
+    "product": "rtp",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Single API call on RTP; send limit $1,000,000, receive $10,000,000; receive via Virtual Reference Numbers registered for RTP; RTP queueing during network outages; outcomes complete/rejected/failed/queued; reject codes; Sunday 4–6 a.m. ET maintenance (HTTP 503).",
+    "other_flags": "queueing: Yes; vrn_receive: Yes; rfp: not documented",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "API credentials"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s047",
+     "src-fifth-third-s088",
+     "src-fifth-third-s089"
+    ],
+    "journeys": [
+     "urn:kos:journey:fifth-third:fitb-j19"
+    ],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P09-S03",
+    "name": "Newline Wire API (outgoing USD domestic)",
+    "product": "wire-domestic",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Fed or CHIPS (IMAD / CHIPS SSN); 7 a.m.–6:15 p.m. ET same day else queued; invalid ABA returned instantly; recall possible if already sent to Fed; internal if counterparty banks at Fifth Third.",
+    "other_flags": "international: not supported",
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": true,
+     "instant": false
+    },
+    "capability_detail": {
+     "step-up-auth": "API credentials"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s049"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P09-S04",
+    "name": "Newline Book Transfer API",
+    "product": "internal-transfer",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Instant movement between Fifth Third accounts under same ownership.",
+    "other_flags": null,
+    "notes": null,
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": true,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "capability_detail": {
+     "step-up-auth": "API credentials"
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s043",
+     "src-fifth-third-s044"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   },
+   {
+    "id": "FITB-P09-S05",
+    "name": "Newline FedNow (coming soon)",
+    "product": "fednow",
+    "segments": [
+     "commercial"
+    ],
+    "channels": [
+     "api-treasury-portal"
+    ],
+    "description": "Listed as 'coming soon' on newline53.com; developer docs: 'Support for FedNow... is not yet available.'",
+    "other_flags": "status: not live",
+    "notes": "Re-checked 2026-11-06: Newline docs still read 'FedNow® – Coming Soon. Support for FedNow® ... is not yet available. Documentation and functionality will be updated once FedNow® is live.' No timeline; consistent with Fifth Third's absence from the Fed participant list (11/2/2026).",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": false,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s043",
+     "src-fifth-third-s047",
+     "src-fifth-third-s924",
+     "src-fifth-third-s925"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ },
+ {
+  "id": "FITB-P10",
+  "bank": "fifth-third",
+  "name": "Momentum® Banking money-movement features (Early Pay, Extra Time®, MyAdvance®)",
+  "former_names": null,
+  "segments": [
+   "consumer"
+  ],
+  "rails": [
+   "other"
+  ],
+  "channels": [
+   "mobile-app",
+   "web",
+   "phone",
+   "branch"
+  ],
+  "network": "Fifth Third",
+  "ui_position": "Early Pay: automatic; MyAdvance: 'Open an account' > MyAdvance; advance via online, mobile, 800-972-3030 or branch.",
+  "description": "Account-level features that interact with money movement: Early Pay (early ACH credit posting), Extra Time (deposit by midnight ET next business day to cure overdraft — incl. transfers/mobile deposits), MyAdvance (instant cash advance into checking, repaid from next direct deposit). Extended to Comerica customers 9/8/2026 and to Fifth Third for Business (Premium/Elite checking) 6/2026.",
+  "basis": "disclosed",
+  "confidence": "high",
+  "source_ids": [
+   "src-mi-2026-11-06-v1",
+   "src-fifth-third-s050",
+   "src-fifth-third-s061",
+   "src-fifth-third-s091",
+   "src-fifth-third-s099",
+   "src-fifth-third-s101",
+   "src-fifth-third-s910",
+   "src-fifth-third-s911",
+   "src-fifth-third-s912",
+   "src-fifth-third-s921"
+  ],
+  "sub_products": [
+   {
+    "id": "FITB-P10-S01",
+    "name": "MyAdvance® cash advance (instant credit to checking)",
+    "product": "other",
+    "segments": [
+     "consumer"
+    ],
+    "channels": [
+     "mobile-app",
+     "web",
+     "phone",
+     "branch"
+    ],
+    "description": "$50–$1,000 line; advance 'instantly into your account'; 5%/3% fee; auto-repaid from next qualified direct deposit; manual payments online/mobile/phone/branch.",
+    "other_flags": null,
+    "notes": "Noted only where relevant per brief.",
+    "capabilities": {
+     "recurring": false,
+     "scheduled-future-dated": false,
+     "request-money": false,
+     "split": false,
+     "qr-code": false,
+     "contact-sync": false,
+     "cancel-before-send": false,
+     "status-tracking": true,
+     "push-notifications": false,
+     "email-sms-notifications": false,
+     "scam-warning-interstitial": false,
+     "step-up-auth": null,
+     "dual-approval-smb": false,
+     "international": false,
+     "same-day": false,
+     "instant": true
+    },
+    "basis": "disclosed",
+    "confidence": "high",
+    "source_ids": [
+     "src-mi-2026-11-06-v1",
+     "src-fifth-third-s050",
+     "src-fifth-third-s091",
+     "src-fifth-third-s910",
+     "src-fifth-third-s911"
+    ],
+    "journeys": [],
+    "x-mi_evidence": "CONFIRMED_BANK"
+   }
+  ],
+  "report_version": "2026-11-06-v1",
+  "x-mi_evidence": "CONFIRMED_BANK"
+ }
+]

@@ -698,5 +698,13 @@
   }
  ],
  "assessment": "Recently re-platformed ('New Bill Pay'); migration forced payee re-entry — a significant one-time friction. Status vocabulary and eBill flow are thinly documented.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "COF-P03",
+ "terms": {
+  "limits": "$100,000 per transaction; 365 days future dating",
+  "fees": "None",
+  "cutoffs": "Electronic 1-2 bd; check 7-10 days; cancel until 1 bd before send-on"
+ },
+ "composite": "CJ-BILLPAY-SEND",
+ "composite_match": "mi-reference"
 }

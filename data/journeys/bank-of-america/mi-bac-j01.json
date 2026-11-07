@@ -1178,5 +1178,13 @@
   }
  ],
  "assessment": "Strong step-up and warning layering (new-recipient OTP, 'authorizing a payment to someone new', disclaimer acknowledgement) but warnings are generic rather than purpose-based; 60-day tenure gate on recurring; no web split/request; opaque 'Pending review'.",
- "x-mi_evidence": "CONFIRMED_BANK"
+ "x-mi_evidence": "CONFIRMED_BANK",
+ "bank_product": "BAC-P01",
+ "terms": {
+  "limits": "Consumer daily $1,000 (≤30 days enrolled) / $2,000 (31–60) / $3,500 (>60), 10 txns; monthly $20,000 / 60 txns; unenrolled recipients $500/day; new recipients first 5 days $2,000; min $1; no receiving limit (OLB SA 4.K)",
+  "fees": "No Zelle fee",
+  "cutoffs": "Minutes to enrolled recipients; unenrolled first transfer up to 2 business days after enrollment; scheduled edits until 11:59 p.m. ET day before"
+ },
+ "composite": "CJ-ZELLE-CONSUMER-SEND",
+ "composite_match": "mi-reference"
 }
