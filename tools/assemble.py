@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Assemble the split source files into one instance (dist/kjourneys.json) for validation and the site.
 
-Sources (each owned and reviewed separately, so PRs stay small and never collide):
+Sources (each owned and reviewed separately, so changes stay small and never collide):
   manifest.json                               manifest: ontology version
   registries/*.json                           shared catalogs (data office)
   data/portfolio.json                         banks and products in the study

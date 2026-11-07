@@ -12,18 +12,36 @@ Effect:
   registries/sources.json                          + the report itself and every cited URL
   data/comparisons/<product>/values/<bank>.json    + one assertion per fact; a changed value
                                                      closes the previous one and supersedes it
-  reports/ingest-log.json                          + one entry per version (re-ingest is refused)
-Then run `make check`; CI gates the result like any other change.
+  reports/ingest-log.json                          + one entry per version
+
+Rerunnable: ingesting a version again first rolls back everything that version wrote (its facts,
+reopening what they superseded, and its report source), then applies the extracts afresh. So you can
+fix an extract and rerun on the same branch. Refused only if a later version already builds on it.
+Usually run through scripts/refresh.sh.
 """
 import argparse, glob, hashlib, json, os, re, sys
-from datetime import date
+from datetime import date, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ALLOWED_BASIS = {"observed", "disclosed", "inferred"}
 ALLOWED_CONF = {"high", "medium", "low"}
 
-def jload(p): return json.load(open(p))
-def jdump(p, o): json.dump(o, open(p, "w"), ensure_ascii=False, indent=2); open(p, "a").write("\n")
+def jload(p):
+    try: return json.load(open(p))
+    except FileNotFoundError: sys.exit(f"INGEST FAIL — {os.path.relpath(p, ROOT)} not found")
+    except json.JSONDecodeError as e: sys.exit(f"INGEST FAIL — {os.path.relpath(p, ROOT)} is not valid JSON: {e}")
+def jdump(p, o):                                   # atomic: write a temp file, then rename over the target
+    tmp = p + ".tmp"
+    with open(tmp, "w") as f: json.dump(o, f, ensure_ascii=False, indent=2); f.write("\n")
+    os.replace(tmp, p)
+MANIFEST_KEYS = {"report_version", "product", "title", "produced_by", "received_at", "files", "notes"}
+EXTRACT_KEYS = {"bank", "product", "facts"}
+FACT_KEYS = {"attribute", "value", "display", "qualifier", "basis", "confidence", "observed_on", "sources", "evidence"}
+SOURCE_KEYS = {"title", "url", "retrieved_at", "kind"}
+def unknown(obj, allowed, where):
+    extra = sorted(set(obj) - allowed)
+    if extra: fail(f"{where}: unknown field(s) {extra} — allowed: {sorted(allowed)}")
+    return not extra
 def sha256(p):
     h = hashlib.sha256()
     with open(p, "rb") as f:
@@ -31,19 +49,26 @@ def sha256(p):
     return h.hexdigest()
 def slug(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
+problems = []
+def fail(msg): problems.append(msg)
+
 ap = argparse.ArgumentParser(); ap.add_argument("report_dir"); ap.add_argument("--dry-run", action="store_true")
 args = ap.parse_args()
 rdir = os.path.abspath(args.report_dir)
 version = os.path.basename(rdir.rstrip("/"))
-problems = []
-def fail(msg): problems.append(msg)
-
 # ---------- manifest and immutability ----------
+if not os.path.isfile(os.path.join(rdir, "manifest.json")): sys.exit(f"INGEST FAIL — {args.report_dir}/manifest.json not found (see reports/README.md)")
 man = jload(os.path.join(rdir, "manifest.json"))
+unknown(man, MANIFEST_KEYS, "manifest")
+try: datetime.fromisoformat(str(man.get("received_at", "")).replace("Z", "+00:00"))
+except ValueError: fail("manifest: received_at must be an ISO 8601 date-time, e.g. 2026-11-20T17:30:00-06:00")
 for k in ["report_version", "product", "produced_by", "received_at", "files"]:
     if k not in man: fail(f"manifest: missing '{k}'")
 if man.get("report_version") != version: fail(f"manifest: report_version '{man.get('report_version')}' must equal folder name '{version}'")
 if not re.fullmatch(r"\d{4}-\d{2}-\d{2}-v\d+", version): fail(f"version folder '{version}' must look like YYYY-MM-DD-vN")
+else:
+    try: date.fromisoformat(version[:10])
+    except ValueError: fail(f"version folder '{version}' does not start with a real date")
 if not str(man.get("produced_by", "")).startswith(("process:", "human:", "group:", "role:")): fail("manifest: produced_by must be a principal (process:, human:, group:, role:)")
 for f in man.get("files", []):
     p = os.path.join(rdir, f["path"])
@@ -56,7 +81,7 @@ cdir = os.path.join(ROOT, "data/comparisons", str(product))
 if not os.path.isdir(cdir): fail(f"no comparison folder for product '{product}'")
 log_path = os.path.join(ROOT, "reports/ingest-log.json")
 log = jload(log_path) if os.path.exists(log_path) else []
-if any(e["report_version"] == version for e in log): fail(f"{version} was already ingested — add a new version folder for corrections")
+rerun = any(e["report_version"] == version for e in log)
 if problems: print("INGEST FAIL"); [print(" -", p) for p in problems]; sys.exit(1)
 
 comparison = jload(os.path.join(cdir, "comparison.json"))
@@ -65,14 +90,43 @@ sources = jload(os.path.join(ROOT, "registries/sources.json"))
 src_ids = {s["id"] for s in sources}
 parties = {p["id"]: p for p in jload(os.path.join(ROOT, "registries/parties.json"))}
 
-# ---------- register the report as a source ----------
 report_src = f"src-mi-{version}"
+touched = {}
+
+# ---------- rerun: roll back what this version wrote ----------
+rolled_back = 0
+if rerun:
+    for vpath in sorted(glob.glob(os.path.join(cdir, "values", "*.json"))):
+        vfile = jload(vpath); changed = False
+        for aid, hist in vfile["values"].items():
+            mine = [a for a in hist if report_src in a.get("source_ids", [])]
+            if not mine: continue
+            mine_ids = {a["id"] for a in mine}
+            rest = [a for a in hist if a["id"] not in mine_ids]
+            if any(a.get("supersedes") in mine_ids for a in rest):
+                fail(f"{os.path.relpath(vpath, ROOT)} {aid}: a later version supersedes {version}; rerun the latest version instead")
+                continue
+            for a in rest:
+                if a.get("valid_to") and any(m.get("supersedes") == a["id"] for m in mine): a["valid_to"] = None
+            bank = vfile["bank"]
+            vfile["values"][aid] = rest or [{"basis": "awaiting", "source_ids": [], "asserted_by": None, "asserted_at": None,
+                                             "observed_on": None, "valid_to": None, "verified_by": None, "verified_at": None,
+                                             "id": f"urn:kos:assertion:{bank}:{product}:{aid[5:]}:1"}]
+            rolled_back += len(mine); changed = True
+        if changed: touched[vpath] = vfile
+    sources = [s for s in sources if s["id"] != report_src]
+    src_ids = {s["id"] for s in sources}
+    log = [e for e in log if e["report_version"] != version]
+    if problems: print("INGEST FAIL — nothing written"); [print(" -", p) for p in problems]; sys.exit(1)
+
+# ---------- register the report as a source ----------
 primary = man["files"][0]
 new_sources = [{"id": report_src, "kind": "mi-report", "title": man.get("title", f"Market-intelligence report {version}"),
                 "origin": man["produced_by"], "url": None, "retrieved_at": man["received_at"],
                 "path": f"reports/{version}/{primary['path']}", "sha256": primary["sha256"], "report_version": version}]
 
 def url_source(s):
+    s = dict(s)
     sid = "src-" + slug(s.get("title") or s["url"])[:40] + "-" + hashlib.sha256(s["url"].encode()).hexdigest()[:8]
     if sid not in src_ids and all(n["id"] != sid for n in new_sources):
         new_sources.append({"id": sid, "kind": s.get("kind", "web-page"), "title": s.get("title") or s["url"],
@@ -81,7 +135,8 @@ def url_source(s):
     return sid
 
 # ---------- apply facts ----------
-applied, unchanged, touched = 0, 0, {}
+applied, unchanged = 0, 0
+runs = 1 + next((e.get("runs", 1) for e in (jload(log_path) if os.path.exists(log_path) else []) if e["report_version"] == version), 0)
 for ex in sorted(glob.glob(os.path.join(rdir, "extract/*.json"))):
     e = jload(ex); bank = e.get("bank"); where = os.path.relpath(ex, ROOT)
     if os.path.splitext(os.path.basename(ex))[0] != bank: fail(f"{where}: file name must equal bank id"); continue
@@ -89,19 +144,27 @@ for ex in sorted(glob.glob(os.path.join(rdir, "extract/*.json"))):
     if parties[bank]["role"] == "focus": fail(f"{where}: MI extracts are for competitors; {bank} facts come from journey owners"); continue
     if e.get("product") != product: fail(f"{where}: product must be '{product}'"); continue
     vpath = os.path.join(cdir, "values", f"{bank}.json")
+    if not unknown(e, EXTRACT_KEYS, where): continue
+    if not os.path.exists(vpath): fail(f"{where}: {bank} has no comparison file {os.path.relpath(vpath, ROOT)}; add the bank to the study first"); continue
     vfile = touched.get(vpath) or jload(vpath)
     seen_attrs = set()
     for i, f in enumerate(e.get("facts", []), 1):
         w = f"{where} fact {i}"
+        if not isinstance(f, dict) or not unknown(f, FACT_KEYS, w): continue
+        bad_src = [s for s in f.get("sources", []) if not isinstance(s, dict) or not s.get("url") or not unknown(s, SOURCE_KEYS, f"{w} source")]
+        if bad_src: fail(f"{w}: every source needs a url (and only title, url, retrieved_at, kind)"); continue
+        if f.get("value") is None and not f.get("display"): fail(f"{w}: value is null, so display (the bank's wording) is required"); continue
         aid = f.get("attribute")
         if aid not in attrs: fail(f"{w}: unknown attribute '{aid}'"); continue
         if aid in seen_attrs: fail(f"{w}: attribute {aid} appears twice"); continue
         seen_attrs.add(aid)
         if f.get("basis") not in ALLOWED_BASIS: fail(f"{w}: basis must be observed, disclosed or inferred"); continue
         if f.get("confidence") not in ALLOWED_CONF: fail(f"{w}: confidence must be high, medium or low"); continue
+        if f["basis"] == "inferred" and f["confidence"] != "low": fail(f"{w}: inferred facts must have confidence low"); continue
         if not f.get("sources") and f["basis"] != "inferred": fail(f"{w}: observed/disclosed facts need at least one source URL"); continue
         try: obs = date.fromisoformat(f["observed_on"])
         except Exception: fail(f"{w}: observed_on must be YYYY-MM-DD"); continue
+        if obs > date.today(): fail(f"{w}: observed_on {obs} is in the future"); continue
         sids = [report_src] + [url_source(s) for s in f.get("sources", [])]
         hist = vfile["values"][aid]
         cur = next((a for a in hist if not a.get("valid_to")), None)
@@ -126,11 +189,25 @@ for ex in sorted(glob.glob(os.path.join(rdir, "extract/*.json"))):
     touched[vpath] = vfile
 
 if problems: print("INGEST FAIL — nothing written"); [print(" -", p) for p in problems]; sys.exit(1)
-print(f"{version}: {applied} fact(s) applied, {unchanged} unchanged, {len(new_sources)} new source(s), {len(touched)} bank file(s)")
-if args.dry_run: print("dry run — nothing written"); sys.exit(0)
-for p, v in touched.items(): jdump(p, v)
-jdump(os.path.join(ROOT, "registries/sources.json"), sources + new_sources)
+print(f"{version}: {'rerun — rolled back ' + str(rolled_back) + ' fact(s); ' if rerun else ''}{applied} fact(s) applied, {unchanged} unchanged, {len(new_sources)} new source(s), {len(touched)} bank file(s)")
 log.append({"report_version": version, "product": product, "produced_by": man["produced_by"], "ingested_facts": applied,
-            "unchanged": unchanged, "banks": sorted(os.path.splitext(os.path.basename(p))[0] for p in touched)})
-jdump(log_path, log)
-print("written — now run: make check")
+            "unchanged": unchanged, "runs": runs, "ingested_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+            "banks": sorted(os.path.splitext(os.path.basename(p))[0] for p in touched)})
+outputs = {**touched, os.path.join(ROOT, "registries/sources.json"): sources + new_sources, log_path: log}
+
+# ---------- validate the result before touching the repo ----------
+import shutil, subprocess, tempfile
+scratch = tempfile.mkdtemp(prefix="kj-ingest-")
+try:
+    shutil.copytree(ROOT, scratch, dirs_exist_ok=True, ignore=shutil.ignore_patterns(".git", "dist", "fixtures", "__pycache__"))
+    for p, v in outputs.items():
+        q = os.path.join(scratch, os.path.relpath(p, ROOT)); json.dump(v, open(q, "w"), ensure_ascii=False, indent=2)
+    for cmd in (["python3", "tools/assemble.py"], ["python3", "tools/validate_journey.py", "dist/kjourneys.json", "schema/journey-ontology.schema.json"]):
+        r = subprocess.run(cmd, cwd=scratch, capture_output=True, text=True)
+        if r.returncode:
+            print("INGEST FAIL — the extracts would make the data invalid; nothing written"); print(r.stdout + r.stderr); sys.exit(1)
+finally:
+    shutil.rmtree(scratch, ignore_errors=True)
+if args.dry_run: print("dry run — valid; nothing written"); sys.exit(0)
+for p, v in outputs.items(): jdump(p, v)          # ingest log last, so a crash never records an unapplied version
+print("written — validated before writing")

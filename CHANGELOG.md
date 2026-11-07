@@ -3,12 +3,23 @@
 ## 0.5.0 — 2026-11-06
 
 - **Versioned MI reports:** `reports/<YYYY-MM-DD-vN>/` holds each report as received, its manifest (sha256-pinned) and per-bank extracts.
-- **`tools/ingest_mi.py` (`make ingest REPORT=...`):**
+- **`scripts/refresh.sh [reports/<version>] [--commit] [--push]`:** one rerunnable command on the current branch: ingest, validate, test, rebuild the site and exports, and optionally commit. CI now only re-validates on push and no longer builds the site; pull-request mode is gone.
+- **`tools/ingest_mi.py`:**
   - Turns extracts into sourced facts and registers the report and every cited URL as sources.
   - Supersedes changed facts instead of overwriting them.
-  - Refuses re-ingest, sample basis, and MI facts for Wells Fargo.
+  - Rerunnable: re-ingesting a version rolls back what it wrote and applies it afresh. It refuses only when a later version builds on it.
+  - Refuses sample basis, and MI facts for Wells Fargo.
 - **Validation:** fails if any ingested report is missing or edited.
-- **`tests/test_ingest.py`:** 10 end-to-end checks of the ingest flow, run in CI.
+- **`tests/test_ingest.py`:** 22 end-to-end checks of the ingest, rerun and refusal flows, run in CI.
+- **Independent review fixes:**
+  - Ingest validates the complete result in a scratch copy before writing, then writes atomically, ingest log last. A bad extract leaves the repo untouched.
+  - Ingest refuses unknown fields (typos), a null value without display wording, inferred facts that aren't low confidence, future `observed_on`, sources without `url`, impossible version dates and bad `received_at`.
+  - Missing manifests or bank files give clear messages instead of tracebacks.
+  - Tests are data-independent: fixtures pick awaiting slots at runtime, and the ingest test starts from placeholders. Real MI data no longer turns the build red.
+  - The validator resolves report paths from the repo root, rejects duplicate list items, and accepts full ISO 8601 durations (W, fractions).
+  - Site: Wells Fargo pinned first, competitor values shown as readable text, counts by evidence type, and no claim of legal review that isn't enforced.
+  - `tools/migrate_0_4_to_0_5.py` for the breaking rename. Docs corrected for IDs, source fields, dry run, recovery, tags and fonts.
+  - CI actions bumped to checkout@v5 and setup-python@v6.
 - **Wording:** the "our bank" label is removed; Wells Fargo is the focus bank (`portfolio.focus_bank`, party role `focus`).
 
 ## 0.4.0 — 2026-11-06

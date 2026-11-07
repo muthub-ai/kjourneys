@@ -1,6 +1,6 @@
 # Market-intelligence data contract
 
-How the market-intelligence (MI) session delivers competitor facts into kjourneys. Follow it exactly and `make check` passes; skip a rule and CI rejects the pull request.
+How the market-intelligence (MI) session delivers competitor facts into kjourneys. Follow it exactly and `scripts/refresh.sh` passes; skip a rule and it stops with the reason.
 
 ## What you write
 
@@ -57,7 +57,7 @@ Replace the `awaiting` entry with a sourced assertion. Example: a disclosed dail
 ]
 ```
 
-The number above is illustrative only. And its source in `registries/sources.json`:
+The number above is illustrative only. When you use `scripts/refresh.sh`, you don't write this by hand: ingest assigns the assertion ID (the next number after the `:1` placeholder, so the first real fact is `:2`), adds the report itself (`src-mi-<version>`) and each cited URL (`src-<title-slug>-<hash>`) to the sources, and fills in the asserter and dates. Its source entry in `registries/sources.json` looks like this:
 
 ```json
 { "id": "src-chase-zelle-faq-2026-11", "kind": "web-page", "title": "Chase — Zelle FAQs",
@@ -66,10 +66,11 @@ The number above is illustrative only. And its source in `registries/sources.jso
 
 ## Rules CI enforces
 
-1. **Basis.** Named competitors take `observed` (seen first-hand), `disclosed` (public source) or `inferred` (reasoned; set `confidence: low`). Never `sample` or `internal`.
+1. **Basis.** Named competitors take `observed` (seen first-hand), `disclosed` (public source) or `inferred` (reasoned, and then `confidence` must be `low`). Never `sample` or `internal`.
 2. **Sources.** Any non-awaiting fact needs at least one `source_ids` entry that exists in `registries/sources.json`, plus `asserted_by` and `asserted_at`.
 3. **Types.** The `value` must match the attribute datatype and, for enums, the allowed values.
-4. **Awaiting means empty.** An `awaiting` entry carries no `value` and no `valid_from`.
+4. **Awaiting means empty.** An `awaiting` entry carries no `value` and no `valid_from`. A real fact with `value: null` must have `display` wording.
+8. **No duplicates, no future dates.** List values don't repeat an item, and `observed_on` is never in the future.
 5. **History, never overwrite.** When a fact changes, set `valid_to` on the old entry and append a new one with `"supersedes": "<old id>"` and the next sequence number in its ID. Exactly one entry per attribute has `valid_to: null`.
 6. **Dates.** `valid_from` is on or before `valid_to`; timestamps are RFC 3339.
 7. **Principals.** `asserted_by` and `verified_by` look like `process:mi-session` or `human:<id>`.
@@ -80,16 +81,13 @@ The preferred path is a versioned report, so every fact links back to the report
 
 1. Add the report as received to `reports/<YYYY-MM-DD-vN>/`, with a `manifest.json` ([reports/README.md](../reports/README.md)).
 2. Add one `extract/<bank>.json` per bank ([mi-extraction.md](mi-extraction.md)).
-3. Run `make ingest REPORT=reports/<version>`. It writes the facts and sources described above, keeps history, and runs the full check.
-4. Commit the report folder and the data changes together on a branch named `mi/zelle/<version>`.
+3. Run `scripts/refresh.sh reports/<version>`. It writes the facts and sources described above, keeps history, validates, runs the tests, and rebuilds the site and exports.
+4. If it stops, fix the extract and run the same command again. Rerunning a version replaces what it wrote before.
+5. When it passes, run it once more with `--commit` (and `--push` if you want) to commit the report folder and data changes together on the current branch.
 
-For a single quick fix, you can still edit `values/<bank>.json` by hand using the rules above, on a branch named `mi/zelle/<bank-id>/<yyyy-mm-dd>`.
+For a single quick fix, you can still edit `values/<bank>.json` by hand using the rules above, then run `scripts/refresh.sh --commit`.
 
-Either way:
-
-- Run `make check` locally; it must print `PASS` and no `HOLE` lines.
-- Open the pull request with the template. Legal review is required on everything under `data/comparisons/` (see CODEOWNERS).
-- After merge, CI rebuilds the page and the Compare view fills in for that bank.
+The rebuilt site is `dist/index.html`, and the Compare view shows a column for every bank that now has facts. Have legal review competitor facts before the site is shared.
 
 ## What not to collect
 

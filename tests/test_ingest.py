@@ -5,14 +5,18 @@ import hashlib, json, os, shutil, subprocess, sys, tempfile
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 tmp = tempfile.mkdtemp(prefix="kjourneys-ingest-")
-files = subprocess.run(["git", "ls-files"], cwd=REPO, capture_output=True, text=True).stdout.split()
-if not files:  # not a git checkout (e.g. zip): copy the tree
-    shutil.copytree(REPO, tmp, dirs_exist_ok=True, ignore=shutil.ignore_patterns(".git", "dist", "fixtures"))
-else:
-    for f in files:
-        os.makedirs(os.path.join(tmp, os.path.dirname(f)), exist_ok=True); shutil.copy2(os.path.join(REPO, f), os.path.join(tmp, f))
-for f in ["tools/ingest_mi.py", "tools/validate_journey.py", "tests/test_ingest.py"]:   # use working-tree versions
-    shutil.copy2(os.path.join(REPO, f), os.path.join(tmp, f))
+# copy the working tree as it is now (including uncommitted reports), never the generated outputs
+shutil.copytree(REPO, tmp, dirs_exist_ok=True, ignore=shutil.ignore_patterns(".git", "dist", "fixtures", "__pycache__"))
+
+# start every test from placeholders, whatever real MI data the repo already holds
+for vp in os.listdir(os.path.join(tmp, "data/comparisons/zelle/values")):
+    path = os.path.join(tmp, "data/comparisons/zelle/values", vp); vf = json.load(open(path))
+    if vf["bank"] == "wells-fargo": continue
+    for aid in vf["values"]:
+        vf["values"][aid] = [{"basis": "awaiting", "source_ids": [], "asserted_by": None, "asserted_at": None, "observed_on": None,
+                              "valid_to": None, "verified_by": None, "verified_at": None, "id": f"urn:kos:assertion:{vf['bank']}:zelle:{aid[5:]}:1"}]
+    json.dump(vf, open(path, "w"), indent=2)
+json.dump([], open(os.path.join(tmp, "reports/ingest-log.json"), "w"))
 
 def run(*cmd): return subprocess.run(cmd, cwd=tmp, capture_output=True, text=True)
 def check():
@@ -46,7 +50,20 @@ v1 = make_report("2000-01-01-v1", {"citi": [
 
 r = run("python3", "tools/ingest_mi.py", v1); expect(r.returncode == 0, "ingest v1 applies")
 ok, out = check(); expect(ok, "repo validates after v1" + ("" if ok else f"\n{out}"))
-r = run("python3", "tools/ingest_mi.py", v1); expect(r.returncode != 0 and "already ingested" in r.stdout, "re-ingesting v1 is refused")
+snap = open(os.path.join(tmp, "data/comparisons/zelle/values/citi.json")).read()
+r = run("python3", "tools/ingest_mi.py", v1)
+expect(r.returncode == 0 and "rolled back 2" in r.stdout and open(os.path.join(tmp, "data/comparisons/zelle/values/citi.json")).read() == snap,
+       "rerunning v1 unchanged is a no-op on the data")
+ex = os.path.join(tmp, v1, "extract", "citi.json"); e = json.load(open(ex))
+e["facts"][0].update(value=1112, display="TEST $1,112"); json.dump(e, open(ex, "w"), indent=2)
+r = run("python3", "tools/ingest_mi.py", v1)
+h = json.load(open(os.path.join(tmp, "data/comparisons/zelle/values/citi.json")))["values"]["attr-daily-limit"]
+expect(r.returncode == 0 and len(h) == 1 and h[0]["value"] == 1112, "rerun after fixing an extract replaces the fact, no extra history")
+e["facts"][0].update(value=1111, display="TEST $1,111"); json.dump(e, open(ex, "w"), indent=2)
+r = run("python3", "tools/ingest_mi.py", v1); expect(r.returncode == 0, "rerun restores v1")
+log = json.load(open(os.path.join(tmp, "reports/ingest-log.json")))
+mine = [x for x in log if x["report_version"].startswith("2000-")]
+expect([x["report_version"] for x in mine] == ["2000-01-01-v1"] and mine[0]["runs"] == 4, "ingest log keeps one entry per version and counts runs")
 
 v2 = make_report("2000-02-01-v1", {"citi": [
     {"attribute": "attr-daily-limit", "value": 2222, "display": "TEST $2,222", "qualifier": "segment: TEST",
@@ -57,6 +74,9 @@ r = run("python3", "tools/ingest_mi.py", v2); expect(r.returncode == 0 and "1 fa
 hist = json.load(open(os.path.join(tmp, "data/comparisons/zelle/values/citi.json")))["values"]["attr-daily-limit"]
 expect(len(hist) == 2 and hist[0]["valid_to"] == "2000-02-01" and hist[1]["supersedes"] == hist[0]["id"], "history kept: old fact closed, new one supersedes it")
 ok, out = check(); expect(ok, "repo validates after v2" + ("" if ok else f"\n{out}"))
+r = run("python3", "tools/ingest_mi.py", v1); expect(r.returncode != 0 and "later version" in r.stdout, "rerunning v1 is refused once v2 builds on it")
+r = run("python3", "tools/ingest_mi.py", v2); h = json.load(open(os.path.join(tmp, "data/comparisons/zelle/values/citi.json")))["values"]["attr-daily-limit"]
+expect(r.returncode == 0 and len(h) == 2 and h[0]["valid_to"] == "2000-02-01" and h[1]["value"] == 2222, "rerunning the latest version is safe")
 
 open(os.path.join(tmp, v1, "report.md"), "a").write("edited later\n")
 ok, out = check(); expect(not ok and "sha256 mismatch" in out, "editing an ingested report fails validation")
@@ -67,8 +87,22 @@ r = run("python3", "tools/ingest_mi.py", bad); expect(r.returncode != 0 and "com
 bad = make_report("2000-04-01-v1", {"pnc": [{"attribute": "attr-daily-limit", "value": 1, "basis": "sample", "confidence": "low", "observed_on": "2000-04-01", "sources": src}]})
 r = run("python3", "tools/ingest_mi.py", bad); expect(r.returncode != 0 and "basis" in r.stdout, "sample basis is refused")
 bad = make_report("2000-05-01-v1", {"pnc": [{"attribute": "attr-daily-limit", "value": "lots", "basis": "disclosed", "confidence": "low", "observed_on": "2000-05-01", "sources": src}]})
-r = run("python3", "tools/ingest_mi.py", bad); ok, out = check()
-expect(r.returncode == 0 and not ok and "not a valid money" in out, "wrongly typed values are caught by validation")
+snap = open(os.path.join(tmp, "data/comparisons/zelle/values/pnc.json")).read()
+r = run("python3", "tools/ingest_mi.py", bad)
+expect(r.returncode != 0 and "not a valid money" in r.stdout and open(os.path.join(tmp, "data/comparisons/zelle/values/pnc.json")).read() == snap,
+       "wrongly typed values are refused before anything is written")
+def refused(version, facts, needle, label, bank="pnc"):
+    rd = make_report(version, {bank: facts}); r = run("python3", "tools/ingest_mi.py", rd)
+    expect(r.returncode != 0 and needle in (r.stdout + r.stderr), label)
+base = {"attribute": "attr-new-payee-warning", "value": "first-payment", "basis": "disclosed", "confidence": "low", "observed_on": "2000-06-01", "sources": src}
+refused("2000-06-01-v1", [dict(base, valeu="x")], "unknown field", "a typo'd field name is refused")
+refused("2000-06-02-v1", [dict(base, value=None)], "display", "a null value without display wording is refused")
+refused("2000-06-03-v1", [dict(base, basis="inferred", confidence="high")], "confidence low", "inferred facts must be low confidence")
+refused("2000-06-04-v1", [dict(base, value="First-Payment")], "not in allowed values", "an enum in the wrong case is refused")
+refused("2000-06-05-v1", [dict(base, sources=[{"title": "no url"}])], "needs a url", "a source without a url is refused")
+os.makedirs(os.path.join(tmp, "reports/2000-06-07-v1"), exist_ok=True)
+r = run("python3", "tools/ingest_mi.py", "reports/2000-06-07-v1"); expect(r.returncode != 0 and "manifest.json not found" in r.stdout + r.stderr and "Traceback" not in r.stderr, "a missing manifest gives a message, not a traceback")
+r = run("python3", "tools/ingest_mi.py", "reports/2000-06-04-v1", "--dry-run"); expect(r.returncode != 0, "dry run reports the same failure")
 
 shutil.rmtree(tmp)
 print(f"\n{'PASS' if not fails else 'FAIL'} — ingest flow ({len(fails)} failure(s))"); sys.exit(1 if fails else 0)

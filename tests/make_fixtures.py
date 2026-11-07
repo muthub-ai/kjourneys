@@ -37,7 +37,10 @@ def _(d): WF(d)["attr-stepup-trigger"][0]["supersedes"] = "urn:kos:assertion:doe
 @case("m3g_unprefixed_principal")
 def _(d): WF(d)["attr-stepup-trigger"][0]["verified_by"] = "bob"
 @case("m3h_awaiting_with_value")
-def _(d): d["comparison"]["values"]["citi"]["attr-daily-limit"][0]["value"] = 5000
+def _(d):
+    slot = next(h for b, row in d["comparison"]["values"].items() if b != d["portfolio"]["focus_bank"]
+                for h in row.values() if h[-1]["basis"] == "awaiting")
+    slot[-1]["value"] = 5000
 @case("m3i_two_current_assertions")
 def _(d): h = WF(d)["attr-enroll-steps"]; h.append(dict(h[0], id=h[0]["id"][:-1] + "2"))
 @case("m4a_published_with_sample")
@@ -77,7 +80,8 @@ for name, f in cases.items():
 
 # competitor facts may never be sample or internal (added with the repo)
 d = copy.deepcopy(SRC)
-d["comparison"]["values"]["citi"]["attr-enroll-steps"] = [dict(SRC["comparison"]["values"]["wells-fargo"]["attr-enroll-steps"][0],
-    id="urn:kos:assertion:citi:zelle:enroll-steps:1")]
+comp = next(b for b in d["comparison"]["values"] if b != d["portfolio"]["focus_bank"])
+d["comparison"]["values"][comp]["attr-enroll-steps"] = [dict(SRC["comparison"]["values"]["wells-fargo"]["attr-enroll-steps"][0],
+    id=f"urn:kos:assertion:{comp}:zelle:enroll-steps:9")]
 json.dump(d, open(f"{OUT}/m7_competitor_sample_fact.json", "w"), indent=1)
 print(len(cases) + 1, "fixtures written")

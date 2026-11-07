@@ -9,7 +9,7 @@ Audiences range from executives on a shared link to agents and BI tools. Running
 
 ## Decision
 
-Publish four static output ports from CI: kjourneys.json (canonical), facts.jsonl (flat facts), coverage.json (health), and index.html (self-contained journey site with data inlined). Any host can serve them: an artifact link, internal static hosting, or KOS ingestion.
+Publish four static output ports from CI: kjourneys.json (canonical), facts.jsonl (flat facts), coverage.json (health), and index.html (a journey site with all data inlined; only web fonts load from Google Fonts, with system fonts as the fallback offline). Any host can serve them: an artifact link, internal static hosting, or KOS ingestion.
 
 ## Consequences
 

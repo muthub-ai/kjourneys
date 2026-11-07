@@ -1,6 +1,6 @@
 # kjourneys
 
-A git-native data product for customer journeys in banking. It holds our own service blueprints and sourced, dated competitor facts on the same stages. Every change is validated, reviewed and versioned, and is published as an executive journey site plus machine-readable outputs.
+A git-native data product for customer journeys in banking. It holds Wells Fargo service blueprints and sourced, dated competitor facts on the same stages. Every change is validated, reviewed and versioned, and is published as an executive journey site plus machine-readable outputs.
 
 First study: **money movement** (Zelle, ACH, wire, bill pay, instant payments) across the top 10 US banks.
 
@@ -10,17 +10,19 @@ First study: **money movement** (Zelle, ACH, wire, bill pay, instant payments) a
 
 ```bash
 pip install -r requirements.txt
-make check          # assemble → validate → negative tests → build site → export
+scripts/refresh.sh                                   # validate, test, rebuild site + exports
+scripts/refresh.sh reports/2026-11-20-v1             # ingest an MI report first (rerunnable)
+scripts/refresh.sh reports/2026-11-20-v1 --commit    # commit on the current branch when it passes
 open dist/index.html
 ```
 
-`make check` must print `PASS` and no `HOLE` lines. CI runs the same pipeline on every pull request and posts a data-status summary.
+Everything runs locally on your branch, and you can rerun it as often as you like. On every push, CI re-validates the data as a safety net; it does not build the site.
 
 ## How data gets in
 
 | You are | You change | Reviewed by | Guide |
 |---|---|---|---|
-| Market-intelligence session | `reports/<version>/` (report + extracts), then `make ingest` | CI legal + study lead | [MI contract](docs/market-intelligence-contract.md) · [extraction](docs/mi-extraction.md) · [reports](reports/README.md) |
+| Market-intelligence session | `reports/<version>/` (report + extracts), then `scripts/refresh.sh` | CI legal + study lead | [MI contract](docs/market-intelligence-contract.md) · [extraction](docs/mi-extraction.md) · [reports](reports/README.md) |
 | Journey owner | `data/journeys/<bank>/<journey>.json` | Journey owners | [Ontology](schema/journey-ontology.yaml) |
 | Data office | `registries/`, `schema/`, `tools/` | Data office | [Architecture](docs/architecture.md) |
 
@@ -36,7 +38,7 @@ open dist/index.html
 ## Why trust it
 
 - **Provenance on every fact:** basis (observed, disclosed, inferred, internal, sample, awaiting), sources, who asserted it and when, and validity dates.
-- **History is never lost:** facts are superseded, never overwritten, and every readout cites a release tag.
+- **History is never lost:** facts are superseded, never overwritten, and git keeps every prior state. Tag the commit you present from.
 - **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 29 negative tests prove the rules hold.
 - **The line of visibility is a provenance boundary:** competitors' backstage is never presented as fact.
 

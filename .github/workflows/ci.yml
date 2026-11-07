@@ -1,41 +1,25 @@
 name: kjourneys-ci
+# Safety net only: validates data on every push. The site is built locally with scripts/refresh.sh.
 on:
-  pull_request:
   push:
-    branches: [main]
 permissions:
   contents: read
 jobs:
-  check:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Assemble split files
         run: python3 tools/assemble.py
-      - name: Validate (schema, integrity, typing, temporal, publish gates)
+      - name: Validate (schema, integrity, typing, temporal, publish gates, report integrity)
         run: python3 tools/validate_journey.py dist/kjourneys.json schema/journey-ontology.schema.json
       - name: Negative tests (every fixture must fail)
         run: bash tests/run_tests.sh
-      - name: Ingest flow test (versioned MI reports)
+      - name: Ingest flow test
         run: python3 tests/test_ingest.py
-      - name: Build the page
-        run: python3 tools/build_site.py
-      - name: Export output ports (facts, coverage, summary)
-        run: |
-          python3 tools/export.py
-          cat dist/summary.md >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: kjourneys-dist
-          path: |
-            dist/index.html
-            dist/kjourneys.json
-            dist/facts.jsonl
-            dist/coverage.json
-          retention-days: 30

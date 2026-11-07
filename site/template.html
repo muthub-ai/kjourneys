@@ -468,7 +468,7 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
   <section class="view" id="v-compare" data-view="compare" hidden>
     <div class="sec-head">
       <div><div class="eyebrow">Level 1 · Competitor view</div><h2>Zelle across ten banks</h2></div>
-      <p>Same stages, same questions, one column per bank. Each cell is a sourced, dated assertion. Named banks show only observed or disclosed facts, after legal review.</p>
+      <p>Same stages, same questions, one column per bank. Each cell is a sourced, dated fact labeled observed, disclosed or inferred. Share competitor facts only once legal review is approved; its status is shown below.</p>
     </div>
     <div class="dataline" id="cmpLine"></div>
     <div class="panel tbl-scroll" id="cmpPanel" style="padding:0"><table class="cmp" id="cmp"></table></div>
@@ -510,7 +510,7 @@ sequenceDiagram
   p2phb->>notif: payment.completed
   notif-->>C: Push and email confirmation
 </pre>
-        <div class="callout"><b>The line of visibility is also the limit of market intelligence.</b> For competitors, customer and frontstage lanes are filled from walkthroughs and public sources. Lanes below the line stay inferred. For our own journeys they come from KOS application bundles.</div>
+        <div class="callout"><b>The line of visibility is also the limit of market intelligence.</b> For competitors, customer and frontstage lanes are filled from walkthroughs and public sources. Lanes below the line stay inferred. For Wells Fargo journeys they come from KOS application bundles.</div>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
         <div class="sec-head"><h3>journey-ontology.yaml · <span id="ontVer"></span></h3><button type="button" class="linkbtn" id="copySchema">Copy schema</button></div>
@@ -551,6 +551,7 @@ const party = by(DATA.parties), prod = by(DATA.products), cap = by(DATA.capabili
 const met = by(DATA.metrics), proc = by(DATA.processes), ctrl = by(DATA.controls), stageById = by(STAGES);
 const byUrn = by(M), code = urn => byUrn[urn]?.code;
 const bankName = party[PF.focus_bank].name;
+const BANKS = [PF.focus_bank, ...PF.banks.filter(b => b !== PF.focus_bank)];
 const score = m => m.hotspot.pain + m.hotspot.risk + m.hotspot.cost;
 const who = p => String(p||"").replace(/^(human|group|role|process):/,"").replace(/-/g," ").replace(/^./,c=>c.toUpperCase());
 const cur = h => Array.isArray(h) ? (h.find(a=>!a.valid_to) || h[h.length-1]) : h;
@@ -567,7 +568,8 @@ const cmpCells = Object.values(CMP.values).flatMap(r => Object.values(r).map(cur
 const cmpAwait = cmpCells.filter(a => a.basis==="awaiting").length;
 const slots = PF.products.length * PF.banks.length;
 const mapped = DATA.products.reduce((n,p)=>n+p.journeys.length,0);
-$("#pillText").textContent = `· sample data · ${cmpAwait} of ${cmpCells.length} comparison cells pending`;
+const cmpReal = cmpCells.filter(a => ["observed","disclosed","inferred","internal"].includes(a.basis)).length;
+$("#pillText").textContent = cmpReal ? `· ${cmpReal} sourced, ${cmpAwait} pending of ${cmpCells.length} comparison cells` : `· sample data · ${cmpAwait} of ${cmpCells.length} comparison cells pending`;
 $("#tb-prod").textContent = PF.products.length;
 $("#tb-banks").textContent = PF.banks.length;
 $("#tb-ont").textContent = DATA.ontology.replace("kos-journey/","v");
@@ -597,9 +599,9 @@ PF.products.forEach(pid=>{
 });
 heat += `<tr class="queued"><td><b style="color:var(--ink)">${queued.length} more products</b><br>${badge("awaiting")}</td><td colspan="${STAGES.length}">Queued for market intelligence: ${esc(queued.join(", "))}. Same six stages, so they drop into this grid as they land.</td></tr>`;
 $("#heat").innerHTML = heat + `</tbody>`;
-let cov = `<thead><tr><th>Product</th>${PF.banks.map(b=>`<th class="${b===PF.focus_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}</tr></thead><tbody>`;
+let cov = `<thead><tr><th>Product</th>${BANKS.map(b=>`<th class="${b===PF.focus_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}</tr></thead><tbody>`;
 PF.products.forEach(pid=>{ const p = prod[pid];
-  cov += `<tr><td><b>${esc(p.name)}</b></td>${PF.banks.map(b=>{ const has = b===J.bank && p.journeys.includes(J.id);
+  cov += `<tr><td><b>${esc(p.name)}</b></td>${BANKS.map(b=>{ const has = b===J.bank && p.journeys.includes(J.id);
     return `<td class="${b===PF.focus_bank?"us":""}"><span class="covdot${has?" s":""}" title="${has?"Sample journey":"Awaiting"}"></span></td>`; }).join("")}</tr>`; });
 $("#cov").innerHTML = cov + `</tbody>`;
 
@@ -769,10 +771,23 @@ $("#appRows").innerHTML = DATA.applications.slice().sort((a,b)=>counts[b.app_id]
 
 /* ---------- compare ---------- */
 let showAllBanks = false;
+const LABEL = {"mobile-app":"Mobile app","web":"Online banking","branch":"Branch","standalone-app":"Standalone app","chat":"Chat","contact-center":"Phone",
+  "push":"Push","email":"Email","sms":"Text","in-app":"In-app","none":"None","first-payment":"First payment","every-payment":"Every payment","risk-based":"Risk-based",
+  "never":"Never","only-if-unclaimed":"Only if unclaimed","within-window":"Within a time window","always":"Always"};
+function pretty(v, a){
+  if(v===null || v===undefined) return "—";
+  if(typeof v === "boolean") return v ? "Yes" : "No";
+  if(Array.isArray(v)) return v.map(x=>LABEL[x]||x).join(", ");
+  if(a.datatype==="money") return "$" + Number(v).toLocaleString("en-US");
+  if(a.datatype==="duration"){ const m = /^PT?(?:(\d+(?:\.\d+)?)D)?T?(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?$/.exec(v);
+    if(m){ const parts=[[m[1],"day"],[m[2],"hr"],[m[3],"min"],[m[4],"sec"]].filter(p=>p[0]).map(p=>`${p[0]} ${p[1]}`); if(parts.length) return parts.join(" "); } return v; }
+  if(a.datatype==="integer" && a.unit) return `${v} ${a.unit}`;
+  return LABEL[v] || String(v);
+}
 function renderCompare(){
   const hasData = b => Object.values(CMP.values[b]||{}).some(h => cur(h).basis !== "awaiting");
-  const shown = PF.banks.filter(b => showAllBanks || b===PF.focus_bank || hasData(b));
-  const pending = PF.banks.filter(b => !shown.includes(b));
+  const shown = BANKS.filter(b => showAllBanks || b===PF.focus_bank || hasData(b));
+  const pending = BANKS.filter(b => !shown.includes(b));
   let h = `<thead><tr><th>Attribute</th>${shown.map(b=>`<th class="${b===PF.focus_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}${pending.length?`<th>${pending.length} banks pending<br><span style="text-transform:none;letter-spacing:0;font-family:var(--f-body);font-weight:500">${esc(pending.map(b=>party[b].name).join(", "))}</span></th>`:""}</tr></thead><tbody>`;
   STAGES.forEach(st=>{ const attrs = CMP.attributes.filter(a=>a.stage===st.id); if(!attrs.length) return;
     h += `<tr class="stg"><td colspan="${shown.length+1+(pending.length?1:0)}">${esc(st.name)}</td></tr>`;
@@ -780,13 +795,14 @@ function renderCompare(){
       h += `<tr><td title="${esc(a.normalization)}"><span class="an">${esc(a.name)}</span><span class="dt">${esc(a.datatype)}${a.unit?` · ${esc(a.unit)}`:""}${a.allowed_values?` · ${esc(a.allowed_values.join(" | "))}`:""}</span></td>` + shown.map(b=>{
         const v = cur(CMP.values[b]?.[a.id]);
         if(!v || v.basis==="awaiting") return `<td class="${b===PF.focus_bank?"us":""}"><span class="await">Awaiting MI</span></td>`;
-        const val = v.display ?? (Array.isArray(v.value) ? v.value.join(", ") : String(v.value));
+        const val = v.display ?? pretty(v.value, a);
         return `<td class="${b===PF.focus_bank?"us":""}"><div class="val"><span>${esc(val)}</span>${v.qualifier?`<span class="dt">${esc(v.qualifier)}</span>`:""}${badge(v.basis)}</div></td>`;
       }).join("") + (pending.length?`<td><span class="await">${pending.length} × awaiting</span></td>`:"") + `</tr>`;
     });
   });
   $("#cmp").innerHTML = h + `</tbody>`;
-  $("#cmpLine").innerHTML = `<span><b>${cmpCells.length - cmpAwait}</b> of ${cmpCells.length} cells filled ${badge("sample")}</span><span><b>${cmpAwait}</b> awaiting ${badge("awaiting")}</span><span>Legal review: <b>${esc(CMP.governance.ci_legal_review.status)}</b></span><button type="button" class="linkbtn" id="bankToggle">${showAllBanks?"Collapse pending banks":`Show all ${PF.banks.length} bank columns`}</button><span class="muted">Hover an attribute for its normalization rule</span>`;
+  const tally = cmpCells.reduce((o,a)=>(o[a.basis]=(o[a.basis]||0)+1,o),{});
+  $("#cmpLine").innerHTML = `${["observed","disclosed","inferred","sample","awaiting"].filter(b=>tally[b]).map(b=>`<span><b>${tally[b]}</b> ${badge(b)}</span>`).join("")}<span class="muted">of ${cmpCells.length} cells</span><span>Legal review: <b>${esc(CMP.governance.ci_legal_review.status)}</b></span><button type="button" class="linkbtn" id="bankToggle">${showAllBanks?"Collapse pending banks":`Show all ${PF.banks.length} bank columns`}</button><span class="muted">Hover an attribute for its normalization rule</span>`;
   $("#bankToggle").addEventListener("click", ()=>{ showAllBanks = !showAllBanks; renderCompare(); });
 }
 renderCompare();

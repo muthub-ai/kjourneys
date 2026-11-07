@@ -5,7 +5,7 @@
 
 ## Context
 
-A single instance file would make ten concurrent market-intelligence PRs conflict, and would prevent per-folder ownership.
+A single instance file would make ten concurrent market-intelligence updates conflict, and would prevent per-folder ownership.
 
 ## Decision
 
@@ -13,4 +13,4 @@ Split sources by owner and change rate: registries/, data/journeys/<bank>/, data
 
 ## Consequences
 
-No merge conflicts between banks. CODEOWNERS can route legal review to comparisons only. One more build step. The assembled file is the only thing consumers see, so the split stays an internal detail.
+No merge conflicts between banks, and folder-level ownership stays possible (a CODEOWNERS template is included). One more build step. The assembled file is the only thing consumers see, so the split stays an internal detail.

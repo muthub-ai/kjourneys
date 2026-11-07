@@ -4,7 +4,7 @@ Market-intelligence (MI) reports, kept exactly as received, one folder per versi
 
 ```
 reports/
-  ingest-log.json             every version ingested, when, and what it changed
+  ingest-log.json             every version ingested: when, how many runs, facts applied, banks touched
   2026-11-20-v1/              <delivery date>-v<n>
     manifest.json             version, product, producer, received_at, files + sha256
     report.pdf                the deliverable as received (any format)
@@ -17,8 +17,9 @@ reports/
 ## Rules
 
 - **Immutable.** Once a version is ingested, its files never change. The validator re-checks every report's sha256 on every build. Corrections arrive as a new version.
-- **One version, one pull request.** Commit the report folder and the data it produces together, so reviewers see the evidence beside the change.
-- **No re-ingest.** `tools/ingest_mi.py` refuses a version already in `ingest-log.json`.
+- **One version, one commit.** Commit the report folder and the data it produces together (`scripts/refresh.sh <version> --commit`), so the evidence sits beside the change.
+- **Rerun freely.** Ingesting a version again rolls back what it wrote and applies its extracts afresh, so you can fix an extract and rerun. Once a later version supersedes its facts, only the latest version can be rerun.
+- **The report files themselves never change.** Only extracts can be fixed between runs.
 - **Version names** are `YYYY-MM-DD-vN`: the delivery date, plus a counter for same-day deliveries.
 
 ## manifest.json
@@ -41,7 +42,8 @@ Get the hash with `shasum -a 256 report.pdf` (macOS) or `sha256sum report.pdf` (
 ## Ingest
 
 ```bash
-make ingest REPORT=reports/2026-11-20-v1
+scripts/refresh.sh reports/2026-11-20-v1            # rerun as often as needed
+scripts/refresh.sh reports/2026-11-20-v1 --commit   # commit on the current branch when it passes
 ```
 
-This applies the extracts, registers the report and every cited URL as sources, keeps history for changed facts, logs the version, and runs the full check.
+This applies the extracts, registers the report and every cited URL as sources, keeps history for changed facts, logs the version, validates, runs the tests, and rebuilds the site (`dist/index.html`) and exports.

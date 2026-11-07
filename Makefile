@@ -1,5 +1,5 @@
-.PHONY: check validate test site export ingest clean
-check: validate test site export   ## everything CI runs
+.PHONY: check validate test site export ingest refresh clean
+check: validate test site export   ## what scripts/refresh.sh runs
 
 dist/kjourneys.json: $(shell find manifest.json registries data -name '*.json')
 	python3 tools/assemble.py
@@ -19,8 +19,10 @@ export: dist/kjourneys.json
 
 ingest:                             ## make ingest REPORT=reports/2026-11-20-v1
 	@test -n "$(REPORT)" || (echo "usage: make ingest REPORT=reports/<version>"; exit 1)
-	python3 tools/ingest_mi.py $(REPORT)
-	$(MAKE) -B check
+	scripts/refresh.sh $(REPORT)
+
+refresh:                            ## make refresh [REPORT=reports/<version>]
+	scripts/refresh.sh $(REPORT)
 
 clean:
 	rm -rf dist tests/fixtures

@@ -64,23 +64,31 @@ def check_assertion(a, where, attr=None):
         v, dt = a["value"], attr["datatype"]
         ok = {"text": isinstance(v, str), "integer": isinstance(v, int) and not isinstance(v, bool),
               "boolean": isinstance(v, bool), "money": isinstance(v, (int, float)) and not isinstance(v, bool),
-              "duration": isinstance(v, str) and re.fullmatch(r"P(?!$)(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?", v or "") is not None,
+              "duration": isinstance(v, str) and re.fullmatch(r"P(?!$)(\d+(\.\d+)?Y)?(\d+(\.\d+)?M)?(\d+(\.\d+)?W)?(\d+(\.\d+)?D)?(T(?=\d)(\d+(\.\d+)?H)?(\d+(\.\d+)?M)?(\d+(\.\d+)?S)?)?", v or "") is not None,
               "enum": isinstance(v, str), "enum_list": isinstance(v, list)}[dt]
         need(ok, f"type: {where} value {v!r} is not a valid {dt}")
+        if ok and dt == "enum_list": need(len(v) == len(set(v)), f"type: {where} lists a value twice")
         if ok and "allowed_values" in attr:
             vals = v if isinstance(v, list) else [v]
             for x in vals: need(x in attr["allowed_values"], f"type: {where} '{x}' not in allowed values")
+    if attr and a["basis"] != "awaiting":
+        need(a.get("value") is not None or a.get("display"), f"value: {where} has no value and no display wording")
+        if a["basis"] == "inferred": need(a.get("confidence") == "low", f"value: {where} is inferred, so confidence must be low")
+        if a.get("observed_on"): need(parse_date(a["observed_on"]) <= date.today(), f"temporal: {where} observed_on is in the future")
     return a
 
 # ---------- 3. catalogs ----------
 import hashlib, os
 for s in d["sources"]:
     if s["kind"] == "mi-report":
-        rp = s["path"]
-        if not os.path.exists(rp): errors.append(f"report: source {s['id']} points to missing file {rp}")
+        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(inst_path)))   # dist/x.json and tests/fixtures/x.json → repo
+        if not os.path.exists(os.path.join(repo_root, s["path"])) and os.path.exists(os.path.join(repo_root, "..", s["path"])):
+            repo_root = os.path.dirname(repo_root)
+        rp = os.path.join(repo_root, s["path"])
+        if not os.path.exists(rp): errors.append(f"report: source {s['id']} points to missing file {s['path']}")
         else:
             h = hashlib.sha256(open(rp, "rb").read()).hexdigest()
-            need(h == s["sha256"], f"report: {rp} changed after ingestion (sha256 mismatch) — reports are immutable")
+            need(h == s["sha256"], f"report: {s['path']} changed after ingestion (sha256 mismatch) — reports are immutable")
         need(s["path"].startswith(f"reports/{s['report_version']}/"), f"report: source {s['id']} path is not in its version folder")
 for a in d["applications"]:
     for c in a["capabilities"]: need(c in CAPS, f"ref: app {a['app_id']} capability {c}")

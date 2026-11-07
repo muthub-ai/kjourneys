@@ -1,13 +1,13 @@
 # KOS Journey Ontology — kos-journey/0.5.0
 # Human-readable schema. The machine contract is journey-ontology.schema.json (JSON Schema 2020-12),
 # enforced in CI with validate_journey.py (structure, integrity, typing, temporal rules, publish gates)
-# and tests/run_tests.sh (28 negative fixtures that must fail).
-# Canonical instance format: JSON. YAML copies are generated, never edited.
+# and tests/run_tests.sh (29 negative fixtures that must fail) plus tests/test_ingest.py.
+# Canonical instance: JSON, split across registries/ and data/ and assembled by tools/assemble.py.
 
 ontology: kos-journey/0.5.0
 changelog:
   "0.5.0":
-    - "Breaking: portfolio.our_bank renamed focus_bank; party role our_bank renamed focus"
+    - "Breaking: portfolio.our_bank renamed focus_bank; party role our_bank renamed focus (tools/migrate_0_4_to_0_5.py)"
     - Source kind mi-report with path, sha256 and report_version; reports are immutable and integrity-checked
   "0.4.0":
     - Comparison slots hold Assertion[] history with exactly one current entry (valid_to null)
@@ -34,13 +34,13 @@ changelog:
   "0.1.0": [Initial journey, stage, moment, layers, lenses]
 
 conventions:
-  versioning: "Semver. Minor = additive; major = breaking. Every minor ships a migration script."
+  versioning: "Semver. From 1.0: minor = additive, major = breaking. Before 1.0 a minor may break. Every breaking change ships a migration script (tools/migrate_<from>_to_<to>.py)."
   deprecation: "Fields are deprecated with {since, replaced_by}; removed only in the next major."
   extensions: "Only under keys prefixed x- (e.g. x-wf-segment). Unknown keys fail validation."
   identity: "urn:kos:<kind>:<bank>:<local> — immutable once published; renames use aliases. Catalog entities (process, control) are bank-scoped so journeys reuse them."
   principals: "human:<id> | group:<slug> | role:<slug> | process:<name>"
   percent: "unit percent always means 0-100 (scale: 0-100); formulas multiply ratios by 100"
-  registries: "Catalogs are embedded per file today. Next: separately versioned registry files referenced by URN, one per catalog, owned by the data office."
+  registries: "Catalogs live in registries/<catalog>.json, owned by the data office, and are referenced by ID or URN from journeys and comparisons."
   temporal: "Every Assertion carries valid_from/valid_to (business time) and asserted_at (system time). Slots hold Assertion[]; a new fact closes the old one (valid_to) and points to it (supersedes). Exactly one current entry per slot."
 
 # ---------------------------------------------------------------------------
@@ -52,7 +52,7 @@ types:
     observed:  "Seen first-hand (mystery shop, app walkthrough, screenshots)"
     disclosed: "Public source (bank help pages, filings, network rules, press)"
     inferred:  "Reasoned from patterns; needs confirmation"
-    internal:  "From our own systems and KOS bundles"
+    internal:  "From Wells Fargo systems and KOS bundles"
     sample:    "Illustrative placeholder; replace before decisions"
     awaiting:  "Slot defined, no data yet"
   Assertion:
