@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P12",
   "line_of_business": "wf-cbl",
-  "content_sha256": "61f165c49234ba81efce94c989f5131308d83137b8580ec99953697757bbecc1",
+  "content_sha256": "7910bc017082b440459b1b6959cd330113dd1e79f983999e2f86a7ee22b54e61",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -51,7 +51,7 @@ Where it sits in the bank's app and site: Automatic; deposit alerts via 'Manage 
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P12-S01 | WF-P12-S02 | WF-P12-S03 | Detail |
 |---|---|---|---|---|

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "3278caf2dc01f2eac50938519a0a0e8e2c00b729fd7e0b2b1d574a8afd1fbdce",
+  "content_sha256": "c46bbd580b101773168fcb82565d2387c7dce977bc69f28dd9037b527238f1f7",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -45,7 +45,7 @@
 
 Delivers the customer journey **Consumer sends money to a new recipient with Zelle (mobile-first)** (linked by mi reference).[^1][^2]
 
-MI assessment: Strength: deep native integration (bottom-nav tab, Fargo voice send, QR, repeat toggle, 24-month activity). Friction: step-up code on first-time recipient (good control, adds friction); only generic trust warnings — no published evidence of dynamic scam interstitials or payment-purpose prompts, which peers (e.g., peer banks) now show; reimbursement limited to 'qualifying imposter scams'.[^1]
+MI assessment: Strength: deep native integration (bottom-nav tab, Fargo voice send, QR, repeat toggle, 24-month activity). Friction: step-up code on first-time recipient (good control, adds friction); only generic trust warnings — no published evidence of dynamic scam interstitials or payment-purpose prompts, which peers now show; reimbursement limited to 'qualifying imposter scams'.[^1]
 
 ## `WF-J02` Consumer requests money / splits a cost with Zelle®
 
@@ -89,7 +89,7 @@ Delivers the customer journey **Consumer sends money to a new recipient with Zel
 
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1][^3][^5][^7][^8][^9]
 
-[^1]: kj · journey/WF-J01 · 5459e5785f84
+[^1]: kj · journey/WF-J01 · 251e989b61ea
 [^2]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 54cdbe9360ea
 [^3]: kj · journey/WF-J02 · 14bc08a80f04
 [^4]: kj · customer-journey/CJ-ZELLE-REQUEST · ff349a4a3d24

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P08",
   "line_of_business": "wf-cbl",
-  "content_sha256": "66e75ad787947d14ccf656ab4dca771e6b70860c2a9d29e26fd7c39b651d7cdb",
+  "content_sha256": "a571cd771981329a02a4ebc404b37a1bd73056977c76b6820907e330ef544655",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -50,4 +50,4 @@ MI assessment: Genuine SMB ACH origination with four-tier access model (dual con
 Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../dist/index.html#journeys) and [Blueprint](../../../../dist/index.html#blueprint) views).[^1]
 
 [^1]: kj · journey/WF-J16 · 67eed586f4fc
-[^2]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · e1251bb592b3
+[^2]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9

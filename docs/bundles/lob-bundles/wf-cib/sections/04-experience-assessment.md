@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cib",
-  "content_sha256": "e9f027a2c925e9c6d1b1cbe7b4afcf63e4783c309b964ac4b82c83ee5831d7d9",
+  "content_sha256": "9a5940ae28087f53a71cf840f09d1b2f9f6f69ad7694354d758f3665411bff67",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -44,4 +44,4 @@ None recorded in this study.[^1]
 
 None recorded in this study.[^1]
 
-[^1]: kj · lob/wf-cib · a1a43acc1266
+[^1]: kj · lob/wf-cib · faa94254fcea

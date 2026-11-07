@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P09",
   "line_of_business": "wf-cbl",
-  "content_sha256": "f1c548cc554bd7a3295744b6271f2cf4f69f067c08b4c8bd85d0a06e1ae7a75e",
+  "content_sha256": "2c962a13c4d317fd673bc2d179d35d06083b1704e151a279df235cd1d48c4f90",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -39,7 +39,7 @@
 
 # Fargo® virtual assistant — experience assessment
 
-Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.[^1]
+*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.
 
 | Rail | Stage | Wells Fargo | Best practice | Gap |
 |---|---|---|---|---|
@@ -100,11 +100,11 @@ None recorded in this study.[^29]
 [^19]: kj · score/zelle/discover · 2bd0b74d37f1
 [^20]: kj · score/zelle/set-up · f3093057d59e
 [^21]: kj · score/zelle/initiate · 673a47124b13
-[^22]: kj · score/zelle/review-authorize · c20c7f17c2eb
+[^22]: kj · score/zelle/review-authorize · a3f06b174bf4
 [^23]: kj · score/zelle/execute-track · 02cb1535a9b8
 [^24]: kj · score/zelle/confirm-complete · 02cb1535a9b8
 [^25]: kj · score/zelle/manage · 8d99b809a6a4
-[^26]: kj · score/zelle/exception · 5cd8d0e17f2b
+[^26]: kj · score/zelle/exception · 89e1f8bb4e9d
 [^27]: kj · score/zelle/support · 850a938312d2
 [^28]: kj · finding/GAP-WF-0005 · aed989733509
-[^29]: kj · product/WF-P09 · 87601a523c62
+[^29]: kj · product/WF-P09 · d4d1ce4a76b1

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "604b6bab2f0c30cf076918bc08358760ba53bebcf5db0c685408356a5054c8e3",
+  "content_sha256": "a330a4c271fdee139dc5a7e6ca2e7830c98afa310adae99ba0ec4dfcde2b1956",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,6 +47,6 @@ No application IDs are mapped to this product's journeys yet; they come from the
 
 *Assessment:* Product owner, steward and approver are not assigned; set them in knowledge-source.json before this bundle is submitted for review.
 
-[^1]: kj · assignment/WF-P13 · 8799b4a3e937
-[^2]: kj · lob/wf-cb · 81d8b2643976
+[^1]: kj · assignment/WF-P13 · c64f59363a8c
+[^2]: kj · lob/wf-cb · 56d63ed70382
 [^3]: kj · product/WF-P13 · 8d686fdb6385

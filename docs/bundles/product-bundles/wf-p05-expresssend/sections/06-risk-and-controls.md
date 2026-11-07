@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P05",
   "line_of_business": "wf-cbl",
-  "content_sha256": "21ffb55afb6c603658ad7ff2394d37520e389b3f196bbbf31ec60401fc30d0da",
+  "content_sha256": "16d32bcaa6e602f81ed942e6f0d05fce6518d63cb3cccf1480e00a7a6f970727",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -55,7 +55,7 @@ None recorded in this study.[^1]
 - `WF-J12` · Cancel within 30 min: Full refund in 3 business days → [^4]
 - `WF-J12` · Error/dispute: 180-day notice; 90-day investigation → [^4]
 
-[^1]: kj · product/WF-P05 · dea532b3a3e2
+[^1]: kj · product/WF-P05 · 4247b60967aa
 [^2]: kj · step/WF-J12#M02 · 9d6bbabdc09e
 [^3]: kj · step/WF-J12#M09 · 9ce0d2fd3d00
 [^4]: kj · journey/WF-J12 · 94fc27116502

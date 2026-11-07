@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cb",
-  "content_sha256": "9aa3f1bb49fccf58a591def5f2665e58a17eeaae8c7378de59df595e75338de2",
+  "content_sha256": "a465026795bac7a480f75862e889daedced7a65bedad08ffbf0856ae5d076997",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -51,9 +51,9 @@
 None recorded in this study.[^7]
 
 [^1]: kj · product/WF-P13 · 8d686fdb6385
-[^2]: kj · assignment/WF-P13 · 8799b4a3e937
+[^2]: kj · assignment/WF-P13 · c64f59363a8c
 [^3]: kj · product/WF-P14 · 716df6a9b366
-[^4]: kj · assignment/WF-P14 · fda8c386281c
+[^4]: kj · assignment/WF-P14 · 3a904d805836
 [^5]: kj · product/WF-P15 · 1b70c83e2760
-[^6]: kj · assignment/WF-P15 · c990e0f81a08
-[^7]: kj · lob/wf-cb · 81d8b2643976
+[^6]: kj · assignment/WF-P15 · 0dd0a5a36565
+[^7]: kj · lob/wf-cb · 56d63ed70382

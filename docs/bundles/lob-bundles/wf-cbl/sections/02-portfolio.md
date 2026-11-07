@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "e8ebb4d97bf545988ed71c3f4548cd6ebca90d3d5bd23c7a1d914f76bc754019",
+  "content_sha256": "be178d022443425ec577b103c70dcb11389270d152e3b4cf153746991288972d",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -42,7 +42,7 @@
 
 | Product | Component | Sub-products | Journeys | Gaps | Bundle |
 |---|---|---|---|---|---|
-| `WF-P01` Zelle® | Consumer, Small and Business Banking | 5 | 6 | 8 | [wf-p01-zelle](../../product-bundles/wf-p01-zelle/index.md)[^1][^2] |
+| `WF-P01` Zelle® | Consumer, Small and Business Banking | 5 | 5 | 8 | [wf-p01-zelle](../../product-bundles/wf-p01-zelle/index.md)[^1][^2] |
 | `WF-P02` Transfers (Transfer Money) | Consumer, Small and Business Banking | 6 | 2 | 7 | [wf-p02-transfers](../../product-bundles/wf-p02-transfers/index.md)[^3][^4] |
 | `WF-P03` Bill Pay (Online Bill Pay / Business Bill Pay) | Consumer, Small and Business Banking | 4 | 4 | 4 | [wf-p03-bill-pay](../../product-bundles/wf-p03-bill-pay/index.md)[^5][^6] |
 | `WF-P04` Digital Wires (Wire Money) | Consumer, Small and Business Banking | 3 | 3 | 5 | [wf-p04-digital-wires](../../product-bundles/wf-p04-digital-wires/index.md)[^7][^8] |
@@ -69,7 +69,7 @@
 [^6]: kj · assignment/WF-P03 · e2aaf98a158a
 [^7]: kj · product/WF-P04 · 7ae69c334eed
 [^8]: kj · assignment/WF-P04 · 70de3dac3dfc
-[^9]: kj · product/WF-P05 · dea532b3a3e2
+[^9]: kj · product/WF-P05 · 4247b60967aa
 [^10]: kj · assignment/WF-P05 · 607b1c155d64
 [^11]: kj · product/WF-P06 · aa0e6fda3732
 [^12]: kj · assignment/WF-P06 · 14c5b738cdf5
@@ -77,7 +77,7 @@
 [^14]: kj · assignment/WF-P07 · a7162a28f27a
 [^15]: kj · product/WF-P08 · 3868912428e5
 [^16]: kj · assignment/WF-P08 · 59a2dcfc7280
-[^17]: kj · product/WF-P09 · 87601a523c62
+[^17]: kj · product/WF-P09 · d4d1ce4a76b1
 [^18]: kj · assignment/WF-P09 · 335f6c8682e1
 [^19]: kj · product/WF-P10 · ae4ea79539a2
 [^20]: kj · assignment/WF-P10 · 61f49f4b4a83
@@ -85,4 +85,4 @@
 [^22]: kj · assignment/WF-P11 · eccf60df1390
 [^23]: kj · product/WF-P12 · d73da35d0cb8
 [^24]: kj · assignment/WF-P12 · 64f7eaee3789
-[^25]: kj · assignment/WF-P13 · 8799b4a3e937
+[^25]: kj · assignment/WF-P13 · c64f59363a8c

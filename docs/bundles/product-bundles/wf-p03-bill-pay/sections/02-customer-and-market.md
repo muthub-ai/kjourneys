@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P03",
   "line_of_business": "wf-cbl",
-  "content_sha256": "322c10ad3b79174cb9fa2ca63e9997d53a65d3852227bedd2894f49c88cf67f1",
+  "content_sha256": "9236637587c7cca04833559a33305c873932fe0897a18237c384d5b85e44e382",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -58,7 +58,7 @@ Network or vendor: Wells Fargo (processor not disclosed); RTP network (The Clear
 - `WF-J17` Small business pays an invoice with Business Bill Pay funded by a business credit card — persona: Small business owner managing cash flow; goal: “Pay a supplier while extending float on a business card”[^9]
 
 [^1]: kj · product/WF-P03 · b839aacb8026
-[^2]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · e1251bb592b3
+[^2]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9
 [^3]: kj · customer-journey/CJ-BILLPAY-EBILL-MANAGE · 10f51b6b94d0
 [^4]: kj · customer-journey/CJ-BILLPAY-SEND · 2108d8b1b57d
 [^5]: kj · customer-journey/CJ-INSTANT-RECEIVE-RFP · faad41fab3cd

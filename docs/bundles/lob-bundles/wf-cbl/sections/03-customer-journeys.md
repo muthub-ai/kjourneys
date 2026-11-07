@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "0a3e34a2c97f76b0b9cea41faae6d3102777f78a843f7b4ccd91f481431f650b",
+  "content_sha256": "8ad0143967b036ed8757bd9a78cf3e0345726ee21a5e16864f86c98605d89fb5",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -54,7 +54,7 @@
 
 [^1]: kj · customer-journey/CJ-ACH-EXT-SEND · 74e77a0ea302
 [^2]: kj · journey/WF-J06 · ee855eb97a21
-[^3]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · e1251bb592b3
+[^3]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9
 [^4]: kj · journey/WF-J17 · adbdce251781
 [^5]: kj · journey/WF-J18 · 7f1916a52a55
 [^6]: kj · journey/WF-J16 · 67eed586f4fc
@@ -76,7 +76,7 @@
 [^22]: kj · customer-journey/CJ-WIRE-INTL-CONSUMER-SEND · eee82a62d089
 [^23]: kj · journey/WF-J11 · e4ed66bc72f0
 [^24]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 54cdbe9360ea
-[^25]: kj · journey/WF-J01 · 5459e5785f84
+[^25]: kj · journey/WF-J01 · 251e989b61ea
 [^26]: kj · journey/WF-J28 · b20fda0a115f
 [^27]: kj · journey/WF-J29 · d718f795aee2
 [^28]: kj · journey/WF-J04 · 292f135b2287

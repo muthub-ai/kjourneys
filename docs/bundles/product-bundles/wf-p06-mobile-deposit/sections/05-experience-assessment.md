@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P06",
   "line_of_business": "wf-cbl",
-  "content_sha256": "ab9754a6bbb2dd2c80df11ef940170a713053b7eddfbdf66f29c25c9e618956f",
+  "content_sha256": "7859dd845ecb83bb06191cb23813c962f5eff9f0f9bceced536d59d18ca60360",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -39,7 +39,7 @@
 
 # Mobile Deposit (Wells Fargo Mobile® Deposit) — experience assessment
 
-Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.[^1]
+*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.
 
 | Rail | Stage | Wells Fargo | Best practice | Gap |
 |---|---|---|---|---|

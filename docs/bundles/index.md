@@ -1,6 +1,6 @@
 # Wells Fargo bundles
 
-Line-of-business and product bundles in OKF v0.2, built by `tools/build_bundles.py` from the Wells Fargo-only export `_source/wells-fargo.json` (`7320ba3f33f2`, MI report 2026-11-06-v1).
+Line-of-business and product bundles in OKF v0.2, built by `tools/build_bundles.py` from the Wells Fargo-only export `_source/wells-fargo.json` (`749175201ed7`, MI report 2026-11-06-v1).
 
 ## Lines of business
 
@@ -13,7 +13,7 @@ Line-of-business and product bundles in OKF v0.2, built by `tools/build_bundles.
 
 | Bundle | Product | Owned by | Sub-products | Journeys | Gaps |
 |---|---|---|---|---|---|
-| [wf-p01-zelle](product-bundles/wf-p01-zelle/index.md) | Zelle® | Consumer Banking and Lending | 5 | 6 | 8 |
+| [wf-p01-zelle](product-bundles/wf-p01-zelle/index.md) | Zelle® | Consumer Banking and Lending | 5 | 5 | 8 |
 | [wf-p02-transfers](product-bundles/wf-p02-transfers/index.md) | Transfers (Transfer Money) | Consumer Banking and Lending | 6 | 2 | 7 |
 | [wf-p03-bill-pay](product-bundles/wf-p03-bill-pay/index.md) | Bill Pay (Online Bill Pay / Business Bill Pay) | Consumer Banking and Lending | 4 | 4 | 4 |
 | [wf-p04-digital-wires](product-bundles/wf-p04-digital-wires/index.md) | Digital Wires (Wire Money) | Consumer Banking and Lending | 3 | 3 | 5 |
@@ -28,5 +28,11 @@ Line-of-business and product bundles in OKF v0.2, built by `tools/build_bundles.
 | [wf-p13-wells-fargo-vantage](product-bundles/wf-p13-wells-fargo-vantage/index.md) | Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®) | Commercial Banking | 8 | 5 | 3 |
 | [wf-p14-wells-fargo-gateway-apis](product-bundles/wf-p14-wells-fargo-gateway-apis/index.md) | Wells Fargo Gateway® APIs (developer portal) | Commercial Banking | 3 | 0 | 0 |
 | [wf-p15-commercial-receivables-fraud](product-bundles/wf-p15-commercial-receivables-fraud/index.md) | Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay) | Commercial Banking | 2 | 1 | 0 |
+
+## Findings not tied to a journey
+
+MI recorded these for Wells Fargo as a whole; no journey or product carries them.
+
+- **medium** · `GAP-WF-0025` · No consumer push-to-card instant transfer; Push to Card exists only as a commercial disbursement API. (kj · finding/GAP-WF-0025 · 7b9569066388)
 
 See [README.md](README.md) for the layout, citation rules and how to rebuild.

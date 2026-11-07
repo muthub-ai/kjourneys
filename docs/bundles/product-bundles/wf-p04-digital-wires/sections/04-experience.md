@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P04",
   "line_of_business": "wf-cbl",
-  "content_sha256": "2dbfc41a018e7cffa55d954e9e0e3afea83be6cfe3a42087bf4339c32281d9e2",
+  "content_sha256": "81b2c7ecc26e877229464bc9fda4830d04faab188bb8e87834b20dd184605f84",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -70,4 +70,4 @@ Every journey opens as a blueprint in the kjourneys site ([Journey](../../../../
 [^3]: kj · journey/WF-J11 · e4ed66bc72f0
 [^4]: kj · customer-journey/CJ-WIRE-INTL-CONSUMER-SEND · eee82a62d089
 [^5]: kj · journey/WF-J18 · 7f1916a52a55
-[^6]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · e1251bb592b3
+[^6]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9

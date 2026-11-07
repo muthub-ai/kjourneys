@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P03",
   "line_of_business": "wf-cbl",
-  "content_sha256": "3408b3f94f4dfe12afaf2fa2cf8dc21a128ce1ba54e40e35b35adf36f5ed7205",
+  "content_sha256": "d07a6b3e93ec7a41407bebc5440aeb5c62e656d44e8d17edaa8f6ed9fad6d36e",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -52,7 +52,7 @@ Where it sits in the bank's app and site: Web: 'Transfer and Pay' > Bill Pay ('A
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4][^5]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P03-S01 | WF-P03-S02 | WF-P03-S03 | WF-P03-S04 | Detail |
 |---|---|---|---|---|---|

@@ -233,6 +233,8 @@ for j in d["journeys"]:
         if j.get("composite_match") == "rail-segment" and j["composite"] in COMPP:
             need(COMPP[j["composite"]] == j["product"], f"ref: {w} is linked by rail and segment to {j['composite']}, a customer journey on another rail")
 LOB = d.get("lines_of_business")
+FB = d.get("portfolio", {}).get("focus_bank")
+need(LOB or not any(p["bank"] == FB for p in CAT), f"ref: {FB} has catalog products but registries/lines-of-business.json is missing")
 if LOB:
     ids = [l["id"] for l in LOB["lines_of_business"]]; unique(ids, "line of business")
     for l in LOB["lines_of_business"]:

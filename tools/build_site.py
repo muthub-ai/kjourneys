@@ -113,38 +113,66 @@ def wf_map():
     J = {j["id"]: j for j in X["journeys"]}; CJ = {c["id"]: c for c in X["customer_journeys"]}
     jk = lambda j: j.get("source_journey_id") or "sample"
     N, E = {}, []
-    def node(i, t, label, **kw): N[i] = {"id": i, "t": t, "l": label, **kw}
+    def node(nid, t, label, **kw): N[nid] = {"id": nid, "t": t, "l": label, **kw}
+    import glob as _g
+    BUN = {json.load(open(k)).get("product_id") or json.load(open(k)).get("line_of_business"): os.path.relpath(os.path.dirname(k), ROOT)
+           for k in _g.glob(os.path.join(ROOT, "docs/bundles/*-bundles/*/knowledge-source.json"))}
+    STG = {x["id"]: x["name"] for x in X["stages"]}
+    node("bank/" + X["bank"]["id"], "bank", X["bank"]["name"], i=[["Scope", "Every Wells Fargo record in this MI study; no other bank."], ["Bundles", "docs/bundles/"]])
     served = {a["owner"] for a in LOB["assignments"]} | {x for a in LOB["assignments"] for x in a.get("also", [])}
     for l in LOB["lines_of_business"]:
-        if l["id"] in served: node("lob/" + l["id"], "lob", l["name"])   # a line of business with no product in the study stays off the map (listed in the side panel)
+        if l["id"] in served:
+            node("lob/" + l["id"], "lob", l["name"], i=[["Line-of-business bundle", BUN.get(l["id"], "—")]]); E.append(("bank/" + X["bank"]["id"], "lob/" + l["id"], "line of business"))   # a line of business with no product in the study stays off the map (listed in the side panel)
     for p in X["products"]:
-        node("product/" + p["id"], "product", re.sub(r"\s*\(.*", "", p["name"]), ref=p["id"])
+        node("product/" + p["id"], "product", re.sub(r"\s*\(.*", "", p["name"]), ref=p["id"],
+             i=[["Product ID", p["id"]], ["Sub-products", str(len(p["sub_products"]))], ["Product bundle", BUN.get(p["id"], "—")]])
         a = A[p["id"]]; E.append(("lob/" + a["owner"], "product/" + p["id"], "owns"))
         for o in a.get("also", []): E.append(("lob/" + o, "product/" + p["id"], "serves"))
         for sp in p["sub_products"]:
-            node("sub/" + sp["id"], "sub", sp["name"], ref=sp["id"], bank=p["bank"], hollow=not sp.get("journeys"))
+            node("sub/" + sp["id"], "sub", sp["name"], ref=sp["id"], hollow=not sp.get("journeys"),
+                 i=[["Sub-product ID", sp["id"]]] + ([["Segment", ", ".join(sp["segments"]) if isinstance(sp.get("segments"), list) else str(sp["segments"])]] if sp.get("segments") else []))
             E.append(("product/" + p["id"], "sub/" + sp["id"], "has"))
             for u in sp.get("journeys", []):
                 if u in J: E.append(("sub/" + sp["id"], "journey/" + u, "used by"))
     for j in X["journeys"]:
-        node("journey/" + j["id"], "journey", f"{jk(j)} {j['title']}", ref=j["id"], sample=j.get("basis") == "sample")
+        node("journey/" + j["id"], "journey", f"{jk(j)} {j['title']}", ref=j["id"], sample=j.get("basis") == "sample",
+             i=[["Steps", str(len(j["moments"]))], ["Stages", " → ".join(dict.fromkeys(STG.get(m.get("stage"), m.get("stage") or "") for m in j["moments"] if m.get("stage")))],
+                ["Customer journey", CJ[j["composite"]]["title"] if j.get("composite") in CJ else "none linked"]] + ([["Note", "Hand-built sample: emotions, process, controls and app IDs are placeholders."]] if j.get("basis") == "sample" else []))
         if j.get("composite") in CJ: E.append(("journey/" + j["id"], "cj/" + j["composite"], "delivers"))
         for a in sorted({x for m in j["moments"] for x in m.get("applications", [])}):
             node("app/" + a, "app", a); E.append(("journey/" + j["id"], "app/" + a, "runs on"))
     sample = next((j for j in X["journeys"] if j.get("basis") == "sample"), None)
     if sample:   # the sample journey is a Zelle send: attach it to the Zelle product
         E.append(("product/WF-P01", "journey/" + sample["id"], "sample"))
-    for c in X["customer_journeys"]: node("cj/" + c["id"], "cj", c["title"], ref=c["id"])
+    for c in X["customer_journeys"]: node("cj/" + c["id"], "cj", c["title"], ref=c["id"],
+                                          i=[["Best-practice steps", str(len(c["steps"]))]] + [[f"{k + 1}. {STG.get(st['stage'], st['stage'])}", st["action"]] for k, st in enumerate(c["steps"][:8])])
     for f in X["findings"]:
-        if not f.get("journey") or f["journey"] not in J: continue
         t = "strength" if f["type"] == "strength" else "gap"
-        node("finding/" + f["id"], t, f["description"][:90], ref=f["id"], sev=f.get("severity"))
-        E.append(("journey/" + f["journey"], "finding/" + f["id"], t))
+        node("finding/" + f["id"], t, f["description"] if len(f["description"]) <= 90 else f["description"][:88].rsplit(" ", 1)[0].rstrip(",;:") + "…", ref=f["id"], sev=f.get("severity"),
+             i=[["Finding", f["id"]], ["Stage", STG.get(f.get("stage"), f.get("stage") or "—")], ["Detail", f["description"]]])
+        # a finding MI did not tie to a journey belongs to Wells Fargo as a whole
+        E.append(("journey/" + f["journey"] if f.get("journey") in J else "bank/" + X["bank"]["id"], "finding/" + f["id"], t))
     E = [e for e in E if e[0] in N and e[1] in N]
     G = nx.Graph(); G.add_nodes_from(N); G.add_edges_from((a, b) for a, b, _ in E)
-    w = {"lob": 6, "product": 4, "cj": 3}
     comp = max(nx.connected_components(G), key=len)
+    root = "bank/" + X["bank"]["id"]   # laid out without the root (it would pull every line of business together), then placed
+    comp = max(nx.connected_components(G.subgraph([n for n in G if n != root])), key=len)
     pos = nx.kamada_kawai_layout(G.subgraph(comp))
+    import numpy as _np
+    P = _np.array([pos[n] for n in comp]); c0 = P.mean(axis=0)
+    cand = [c0 + _np.array([dx, dy]) for dx in _np.linspace(-.6, .6, 13) for dy in _np.linspace(-.6, .6, 13)]
+    pos[root] = tuple(max(cand, key=lambda q: _np.min(_np.linalg.norm(P - q, axis=1)) - .15 * _np.linalg.norm(q - c0)))   # the emptiest spot near the middle
+    # lines of business that serve the same products land on one spot: push them apart
+    L = [n for n in comp if n.startswith("lob/")]
+    for _ in range(30):
+        for i1 in range(len(L)):
+            for i2 in range(i1 + 1, len(L)):
+                p1, p2 = _np.array(pos[L[i1]]), _np.array(pos[L[i2]]); dv = p2 - p1; dist = _np.linalg.norm(dv)
+                if dist < .22:
+                    u = dv / dist if dist > 1e-6 else _np.array([1.0, 0.0]); m = (.22 - dist) / 2
+                    pos[L[i1]] = tuple(p1 - u * m); pos[L[i2]] = tuple(p2 + u * m)
+    for k, n in enumerate(sorted(m for m in G[root] if m not in pos)):   # findings on Wells Fargo as a whole sit beside the root
+        pos[n] = (pos[root][0] + .09 * _np.cos(k * 1.3 + 2.4), pos[root][1] + .09 * _np.sin(k * 1.3 + 2.4))
     rest = [n for n in G if n not in pos]
     for i, n in enumerate(rest): pos[n] = (1.15, -1 + 2 * i / max(1, len(rest)))   # anything disconnected sits in a column at the right
     xs = [p[0] for p in pos.values()]; ys = [p[1] for p in pos.values()]
@@ -176,8 +204,8 @@ def wf_map():
             "lobs": LOB["lines_of_business"], "assign": LOB["assignments"],
             "counts": {"products": len(X["products"]), "subs": sum(len(p["sub_products"]) for p in X["products"]),
                        "subs_unmapped": sum(1 for p in X["products"] for sp in p["sub_products"] if not sp.get("journeys")),
-                       "journeys": len(X["journeys"]), "cjs": len(X["customer_journeys"]), "gaps": sum(1 for f in X["findings"] if f["type"] != "strength"),
-                       "strengths": sum(1 for f in X["findings"] if f["type"] == "strength"), "peer_replaced": X["meta"]["peer_mentions_replaced"]}}
+                       "journeys": len(X["journeys"]), "cjs": len(X["customer_journeys"]), "gaps": sum(1 for n in N.values() if n["t"] == "gap"),
+                       "strengths": sum(1 for n in N.values() if n["t"] == "strength")}}
 V["map"] = wf_map()
 
 t = open(os.path.join(ROOT, "site/template.html")).read()

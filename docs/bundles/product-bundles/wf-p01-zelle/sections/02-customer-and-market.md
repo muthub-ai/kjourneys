@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "f1abca90e84d4c9584d823a0fa01cc64f6b109a0de306b6d7ca788ddf385bd4f",
+  "content_sha256": "ae8186e2951039a8a78378a63c97ddbefd09ef988022fe7dd498f6e3f836e656",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -62,7 +62,7 @@ Network or vendor: Early Warning Services (Zelle network); Wells Fargo is an EWS
 [^2]: kj · customer-journey/CJ-ZELLE-CONSUMER-SEND · 54cdbe9360ea
 [^3]: kj · customer-journey/CJ-ZELLE-REQUEST · ff349a4a3d24
 [^4]: kj · customer-journey/CJ-ZELLE-SMB-RECEIVE · 1a1ab5a1e86e
-[^5]: kj · journey/WF-J01 · 5459e5785f84
+[^5]: kj · journey/WF-J01 · 251e989b61ea
 [^6]: kj · journey/WF-J02 · 14bc08a80f04
 [^7]: kj · journey/WF-J03 · b89c841e1309
 [^8]: kj · journey/WF-J28 · b20fda0a115f

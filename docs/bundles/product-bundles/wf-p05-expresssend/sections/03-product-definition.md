@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P05",
   "line_of_business": "wf-cbl",
-  "content_sha256": "167ab32fd7c31a986042de61911cf25f115cdcfdec056bec6d8e196c284ad180",
+  "content_sha256": "798e9833f261a090d32c7ec099cf8ef220f35073ce9e429b17784364b54a56a8",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -50,7 +50,7 @@ Where it sits in the bank's app and site: Mobile: 'Pay & Transfer' (a.k.a. Trans
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P05-S01 | WF-P05-S02 | Detail |
 |---|---|---|---|
@@ -79,7 +79,7 @@ Where it sits in the bank's app and site: Mobile: 'Pay & Transfer' (a.k.a. Trans
 
 - `WF-J12` — cutoffs: Same business day for many locations; fees: Per-country $3–$12; first mobile transfer free; limits: $25 min; $5,000/day; $12,500/30 days; 10 recipients[^4]
 
-[^1]: kj · product/WF-P05 · dea532b3a3e2
+[^1]: kj · product/WF-P05 · 4247b60967aa
 [^2]: kj · sub-product/WF-P05-S01 · 9697c6c44150
 [^3]: kj · sub-product/WF-P05-S02 · dfcb6ac16268
 [^4]: kj · journey/WF-J12 · 94fc27116502

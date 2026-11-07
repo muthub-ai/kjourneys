@@ -14,7 +14,7 @@
         "Auto",
         "Personal Lending"
       ],
-      "description": "Consumer Banking and Lending offers diversified financial products and services for consumers and small businesses.",
+      "description": "Diversified financial products and services for consumers and small businesses.",
       "source_ids": [
         "src-wells-fargo-10q-2026q3"
       ]
@@ -29,7 +29,7 @@
         "Treasury management and payments",
         "Other"
       ],
-      "description": "Commercial Banking provides financial solutions to private, family owned and certain public companies.",
+      "description": "Financial solutions for private, family-owned and certain public companies.",
       "source_ids": [
         "src-wells-fargo-10q-2026q3"
       ]
@@ -44,7 +44,7 @@
         "Commercial Real Estate",
         "Markets"
       ],
-      "description": "Corporate and Investment Banking delivers a suite of capital markets, banking, and financial products.",
+      "description": "Capital markets, banking and financial products and services for corporate, commercial real estate, government and institutional clients.",
       "source_ids": [
         "src-wells-fargo-10q-2026q3"
       ]
@@ -55,7 +55,7 @@
       "kind": "reportable-segment",
       "bank": "wells-fargo",
       "components": [],
-      "description": "Wealth and Investment Management provides personalized wealth management, brokerage, financial planning.",
+      "description": "Personalized wealth management, brokerage, financial planning, lending, private banking and trust services for affluent, high-net-worth and ultra-high-net-worth clients.",
       "source_ids": [
         "src-wells-fargo-10q-2026q3"
       ]
@@ -179,7 +179,7 @@
         "wf-cbl"
       ],
       "basis": "inferred",
-      "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q); also used by small businesses",
+      "rule": "MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed; small-business use (one sub-product) adds Consumer Banking and Lending. Confirm.",
       "confirm": true
     },
     {
@@ -190,7 +190,7 @@
         "wf-cib"
       ],
       "basis": "inferred",
-      "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)",
+      "rule": "MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm.",
       "confirm": true
     },
     {
@@ -201,9 +201,9 @@
         "wf-cib"
       ],
       "basis": "inferred",
-      "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)",
+      "rule": "MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm.",
       "confirm": true
     }
   ],
-  "note": "Owning line of business per marketed product. Inferred from each product's MI segments and Wells Fargo's segment definitions; confirm items marked confirm=true."
+  "note": "Wells Fargo's four reportable segments (Q3 2026 Form 10-Q). Descriptions are summaries of the 10-Q wording, not quotations. Each product's owner is inferred from its MI segments; items with confirm=true need the line-of-business owner's confirmation."
 }

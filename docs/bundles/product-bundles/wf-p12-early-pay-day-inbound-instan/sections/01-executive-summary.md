@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P12",
   "line_of_business": "wf-cbl",
-  "content_sha256": "aebe0621f9cda332384ad94d8e39db732b54a7c23da9835f1d3e94e1d93083cc",
+  "content_sha256": "6a1d03fe64dafafa494d0449c98e0a97dfe4ddfcaa915ed9423e078fe4015a40",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -50,17 +50,17 @@ MI documented 1 journey(s) for it, delivering 1 customer journey(s); they carry 
 ## Most severe gaps
 
 - **medium** · Initiate · How inbound RTP/FedNow credits are labelled and alerted is unpublished.[^8]
-- **medium** · Set up · Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit form' → 'Create Form' → hand to the employer); there is no embedded payroll-login direct-deposit switch of the kind peer banks offer (a peer bank Quick Switch Center generates switch letters).[^9]
+- **medium** · Set up · Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit form' → 'Create Form' → hand to the employer).[^9]
 - **low** · Confirm & complete · Observed: the web 'Manage Alerts' page offers checking accounts only balance (zero/low/high), Direct Deposit and Returned Deposited Item alerts — no transfer-sent, transfer-received or Zelle alert options on the web (app alert catalogue not observed).[^10]
 
 [^1]: kj · product/WF-P12 · d73da35d0cb8
 [^2]: kj · assignment/WF-P12 · 64f7eaee3789
-[^3]: kj · lob/wf-cbl · 949b2dbdb1b9
+[^3]: kj · lob/wf-cbl · 9bd65bef07df
 [^4]: kj · sub-product/WF-P12-S01 · cdbc7b849c06
 [^5]: kj · sub-product/WF-P12-S02 · df182af38e17
 [^6]: kj · sub-product/WF-P12-S03 · 9a2db967acf9
 [^7]: kj · journey/WF-J15 · e61f32bb5fb1
 [^8]: kj · finding/GAP-WF-0023 · bbb6b037be46
-[^9]: kj · finding/GAP-WF-0038 · cfe18a485b12
+[^9]: kj · finding/GAP-WF-0038 · afdbdd7ae471
 [^10]: kj · finding/GAP-WF-0039 · d396e36594a3
 [^11]: kj · finding/STR-WF-0015 · 2a19538886f3

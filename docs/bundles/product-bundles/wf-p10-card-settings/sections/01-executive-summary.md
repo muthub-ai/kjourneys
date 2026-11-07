@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P10",
   "line_of_business": "wf-cbl",
-  "content_sha256": "e75d9595ea171c42a8ae41f9a5e3a432db7cd2c203c6f4db50525eceafe56406",
+  "content_sha256": "914ad55c82eb327c02c4905399f5e15e04d5852bad5560a31099236131902cd1",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -49,6 +49,6 @@ MI documented 1 journey(s) for it, delivering 0 customer journey(s); they carry 
 
 [^1]: kj · product/WF-P10 · ae4ea79539a2
 [^2]: kj · assignment/WF-P10 · 61f49f4b4a83
-[^3]: kj · lob/wf-cbl · 949b2dbdb1b9
+[^3]: kj · lob/wf-cbl · 9bd65bef07df
 [^4]: kj · sub-product/WF-P10-S01 · 4dcbb04ef48b
 [^5]: kj · journey/WF-J26 · 63eb2e769619

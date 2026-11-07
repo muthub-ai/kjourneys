@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P02",
   "line_of_business": "wf-cbl",
-  "content_sha256": "d49f084e200e121c7b225416f8ccd6e4a670d174da932799aae8903de82b6191",
+  "content_sha256": "dfc108aad374bde6f39414c32191e73822df694f22a45d4cf6f4b52dec470c1e",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -54,7 +54,7 @@ Where it sits in the bank's app and site: Mobile: 'Transfer' in bottom bar; 'Sch
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4][^5][^6][^7]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P02-S01 | WF-P02-S02 | WF-P02-S03 | WF-P02-S04 | WF-P02-S05 | WF-P02-S06 | Detail |
 |---|---|---|---|---|---|---|---|

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "65aa41c61c55134a470eb1f82c38a2b8f9e9a28b82eea4c2fc2237cf606728c8",
+  "content_sha256": "04f953076600ed94e7516cecafd9655a6ba3178491f167cad30ab27f4853b016",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -64,7 +64,7 @@ Owning line of business: **Consumer Banking and Lending**, Consumer, Small and B
 *Assessment:* Product owner, steward and approver are not assigned; set them in knowledge-source.json before this bundle is submitted for review.
 
 [^1]: kj · assignment/WF-P01 · daf9fc88d74e
-[^2]: kj · lob/wf-cbl · 949b2dbdb1b9
+[^2]: kj · lob/wf-cbl · 9bd65bef07df
 [^3]: kj · app/agent · 400d264333ad
 [^4]: kj · app/amlmn · 137f74a3a1df
 [^5]: kj · app/authn · 2df3575c89c2

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P08",
   "line_of_business": "wf-cbl",
-  "content_sha256": "425fa9b9d4f53fc2616172ba688c92ae1f7a1555a08674c671f78bc132460052",
+  "content_sha256": "c44bd21125969df2689675f0745e35d91a957d9d01fc55fda5baa63614f9fe09",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -50,7 +50,7 @@ Where it sits in the bank's app and site: Business Online: 'Transfer & Pay' (pag
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P08-S01 | WF-P08-S02 | Detail |
 |---|---|---|---|

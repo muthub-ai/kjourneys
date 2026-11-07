@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "fe85ac9195ffea16f2984de3f13aad078871e1b199017c61b129b660f8c01f0a",
+  "content_sha256": "6859247a7521d9df1ae8b27442201d185dfc749558b03aac328a946071e21cd2",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -38,8 +38,8 @@
 
 # Consumer Banking and Lending — operating model
 
-- Confirm: `WF-P13` Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®) — Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q); also used by small businesses[^1]
+- Confirm: `WF-P13` Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®) — MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed; small-business use (one sub-product) adds Consumer Banking and Lending. Confirm.[^1]
 
 *Assessment:* Line-of-business owner, steward and approver are not assigned; set them in knowledge-source.json.
 
-[^1]: kj · assignment/WF-P13 · 8799b4a3e937
+[^1]: kj · assignment/WF-P13 · c64f59363a8c

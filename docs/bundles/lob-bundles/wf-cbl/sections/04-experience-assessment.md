@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "d9fa3e3aae639fbe31fb7013b301f5c61d7b4fb73993f3dc604f0f72d016e4cd",
+  "content_sha256": "d4ce74989dd1aeafebe4c0ceb29706cf89b3ab6cac5d64aa27055ade15af8707",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -142,20 +142,20 @@
 
 ## Most severe gaps across its products
 
-- **high** · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: a peer bank purpose questions, a peer bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^100]
-- **high** · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (a peer bank Status Tracker, a peer bank Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^101]
+- **high** · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^100]
+- **high** · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^101]
 - **high** · Business Zelle sends in Business Online can be executed by a single 'View and Transact' delegate; no secondary approval (INFERRED from OAA per WF-C003). Dual custody exists only for Vantage Treasury Management enrollees.[^102]
 - **high** · No consumer- or SMB-initiated RTP/FedNow send exists outside RfP-driven Bill Pay, and instant rails are not marketed at all, despite WF being a dual-rail sender via API (CONFIRMED_BANK S916).[^103]
 - **high** · Direct Pay is desktop-browser only: SMB owners cannot initiate or approve ACH on mobile unless they enrol in Vantage Treasury Management.[^104]
 - **high** · SMB wires from Business Online have no dual approval (INFERRED, WF-C003); a single delegate can release a foreign-currency wire.[^105]
 - **medium** · Scam-reimbursement stance is the network minimum ('qualifying imposter scams'); eligibility criteria and decision timeline for authorized-scam claims are not published.[^106]
 - **medium** · Fraud and scam support is split across at least four phone numbers with different scopes (1-800-869-3557, 1-800-956-4442, 1-866-867-5568, 1-800-225-5935).[^107]
-- **medium** · 'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts (a peer bank J02, a peer bank split-from-transaction).[^108]
-- **medium** · External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification (peer banks offer it). Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation and an account-use choice ('Payments only' vs 'Transfers and payments'); enabling transfers is quoted as 'additional security measures (may take 2-3 business days)'; no aggregator option is offered.[^109]
+- **medium** · 'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts.[^108]
+- **medium** · External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification. Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation and an account-use choice ('Payments only' vs 'Transfers and payments'); enabling transfers is quoted as 'additional security measures (may take 2-3 business days)'; no aggregator option is offered.[^109]
 
 [^1]: kj · score/ach-external-transfer/discover · 516e0c8f9b3a
-[^2]: kj · score/ach-external-transfer/set-up · d9857091979e
-[^3]: kj · score/ach-external-transfer/initiate · 3e8737bbceeb
+[^2]: kj · score/ach-external-transfer/set-up · 583615d6bc29
+[^3]: kj · score/ach-external-transfer/initiate · 485f4a13f91d
 [^4]: kj · score/ach-external-transfer/review-authorize · ee3085b5cb36
 [^5]: kj · score/ach-external-transfer/execute-track · ee3085b5cb36
 [^6]: kj · score/ach-external-transfer/confirm-complete · 40b39d959133
@@ -209,7 +209,7 @@
 [^54]: kj · score/remittance/support · 1e5fe25e9536
 [^55]: kj · score/request-to-pay/discover · 8aaf5ddcb63e
 [^56]: kj · score/request-to-pay/set-up · 64a250a3c380
-[^57]: kj · score/request-to-pay/initiate · 5bc6f747f19d
+[^57]: kj · score/request-to-pay/initiate · 72fbb231701c
 [^58]: kj · score/request-to-pay/review-authorize · 64a250a3c380
 [^59]: kj · score/request-to-pay/execute-track · 64a250a3c380
 [^60]: kj · score/request-to-pay/confirm-complete · 64a250a3c380
@@ -246,19 +246,19 @@
 [^91]: kj · score/zelle/discover · 2bd0b74d37f1
 [^92]: kj · score/zelle/set-up · f3093057d59e
 [^93]: kj · score/zelle/initiate · 673a47124b13
-[^94]: kj · score/zelle/review-authorize · c20c7f17c2eb
+[^94]: kj · score/zelle/review-authorize · a3f06b174bf4
 [^95]: kj · score/zelle/execute-track · 02cb1535a9b8
 [^96]: kj · score/zelle/confirm-complete · 02cb1535a9b8
 [^97]: kj · score/zelle/manage · 8d99b809a6a4
-[^98]: kj · score/zelle/exception · 5cd8d0e17f2b
+[^98]: kj · score/zelle/exception · 89e1f8bb4e9d
 [^99]: kj · score/zelle/support · 850a938312d2
-[^100]: kj · finding/GAP-WF-0001 · fe402b582be2
-[^101]: kj · finding/GAP-WF-0002 · 5e1a68d46efd
+[^100]: kj · finding/GAP-WF-0001 · 38c101614c6a
+[^101]: kj · finding/GAP-WF-0002 · 4e09e7353ec2
 [^102]: kj · finding/GAP-WF-0008 · 35e06b5dbd70
 [^103]: kj · finding/GAP-WF-0021 · 6a96d04bb8de
 [^104]: kj · finding/GAP-WF-0026 · 98f60378df46
 [^105]: kj · finding/GAP-WF-0030 · f8866096040e
 [^106]: kj · finding/GAP-WF-0003 · a9b601e4c21e
 [^107]: kj · finding/GAP-WF-0004 · 069260253e2f
-[^108]: kj · finding/GAP-WF-0006 · a363c8f8a1bc
-[^109]: kj · finding/GAP-WF-0009 · ba68193d896f
+[^108]: kj · finding/GAP-WF-0006 · 3782e8a4f392
+[^109]: kj · finding/GAP-WF-0009 · 0194eced10a6

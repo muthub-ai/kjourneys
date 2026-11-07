@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P14",
   "line_of_business": "wf-cb",
-  "content_sha256": "a45cbfa70ad3218723a815c7aa1e69d1f1d994f54de6c7bb7cfa92936e8b4fc4",
+  "content_sha256": "cee24c4daa0f9ff85081905dfc55aa7421f38f5370acb62ef6566e19663d3e81",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -51,7 +51,7 @@ Where it sits in the bank's app and site: developer.wellsfargo.com[^1]
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P14-S01 | WF-P14-S02 | WF-P14-S03 | Detail |
 |---|---|---|---|---|

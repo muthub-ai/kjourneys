@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "8f00f29564c12e3692529924ead0df3cbe17a4059086544f4bfcb851b5c3cea7",
+  "content_sha256": "2b38ce9109d7268b89f459885c8105177bf9baba12653ddbc5fd5ad2cc694877",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -43,7 +43,7 @@
 
 Former names: Commercial Electronic Office (CEO) portal; CEO Mobile (app renamed Wells Fargo Vantage)[^1]
 
-It is owned by **Commercial Banking** (Treasury management and payments); it also serves Corporate and Investment Banking, Consumer Banking and Lending. Basis: inferred — Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q); also used by small businesses.[^2][^3]
+It is owned by **Commercial Banking** (Treasury management and payments); it also serves Corporate and Investment Banking, Consumer Banking and Lending. Basis: inferred — MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed; small-business use (one sub-product) adds Consumer Banking and Lending. Confirm..[^2][^3]
 
 It has 8 sub-products, 5 of them with a mapped journey, across the ACH origination (business), Mobile check deposit, FedNow, Internal transfer, Other money movement, RTP (The Clearing House), Domestic wire, International wire rail(s).[^1][^4][^5][^6][^7][^8][^9][^10][^11]
 
@@ -56,8 +56,8 @@ MI documented 5 journey(s) for it, delivering 1 customer journey(s); they carry 
 - **low** · Exception · Fallback when a receiver is unreachable on both rails is undocumented.[^19]
 
 [^1]: kj · product/WF-P13 · 8d686fdb6385
-[^2]: kj · assignment/WF-P13 · 8799b4a3e937
-[^3]: kj · lob/wf-cb · 81d8b2643976
+[^2]: kj · assignment/WF-P13 · c64f59363a8c
+[^3]: kj · lob/wf-cb · 56d63ed70382
 [^4]: kj · sub-product/WF-P13-S01 · d47d872c35b3
 [^5]: kj · sub-product/WF-P13-S02 · fcdcd0d9bd23
 [^6]: kj · sub-product/WF-P13-S03 · 09da1d723a6a

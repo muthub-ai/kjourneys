@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P09",
   "line_of_business": "wf-cbl",
-  "content_sha256": "7ef0c16d2fdf7b9cb2a45b8f5630fd209a44754a6fc39f4fae6c795023566ad4",
+  "content_sha256": "80ed304542a9ca7a74289129d63963a8d4a4d264e62c08dc7db18b922b4e8143",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -49,7 +49,7 @@ Where it sits in the bank's app and site: Mobile: purple Fargo icon in the searc
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P09-S01 | Detail |
 |---|---|---|
@@ -73,5 +73,5 @@ Where it sits in the bank's app and site: Mobile: purple Fargo icon in the searc
 
 - `WF-P09-S01`: Fargo page video transcripts cover balance forecast, spending summary and bills ('Here's what I found. Which would you like to pay?'); no transcript or FAQ describes the confirmation screen for a Fargo-initiated Zelle send. Mar 2026 press release confirms Fargo is used for 'sending money with Zelle®, paying bills, locating routing numbers'. Confirmation UX remains INFERRED (standard Zelle review + first-time-recipient access code).[^2]
 
-[^1]: kj · product/WF-P09 · 87601a523c62
+[^1]: kj · product/WF-P09 · d4d1ce4a76b1
 [^2]: kj · sub-product/WF-P09-S01 · c81b73e86911

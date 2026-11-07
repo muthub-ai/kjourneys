@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P08",
   "line_of_business": "wf-cbl",
-  "content_sha256": "591d6f99a0b81d123a9b9fccf5e7bc35e1b67b0ab8c2ed102f94c73a68174c30",
+  "content_sha256": "37ca0c976d5d147989ad75497f3e69163dd07db8233d663426527cc100314330",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -52,5 +52,5 @@ Network or vendor: Wells Fargo as ODFI (Nacha ACH).[^1]
 - `WF-J16` Small business enrolls in Direct Pay, adds payees and runs an ACH payroll/vendor payment with dual control — persona: Owner + bookkeeper at a 10-employee firm; goal: “Pay employees and vendors electronically next business day with separation of duties”[^3]
 
 [^1]: kj · product/WF-P08 · 3868912428e5
-[^2]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · e1251bb592b3
+[^2]: kj · customer-journey/CJ-ACH-ORIG-SMB-SEND · 18172095afc9
 [^3]: kj · journey/WF-J16 · 67eed586f4fc

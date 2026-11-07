@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cib",
-  "content_sha256": "7cc43c082fcceeea2b98a2ec5602bab56c635f4decec78158e617d8768e35c38",
+  "content_sha256": "f7f21c9fac2e2cfa05c2458c9966cd5321af4cb29b5d68e226056e595c955e8c",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -38,13 +38,13 @@
 
 # Corporate and Investment Banking — executive summary
 
-**Corporate and Investment Banking** is a reportable segment of Wells Fargo: Corporate and Investment Banking delivers a suite of capital markets, banking, and financial products.[^1]
+**Corporate and Investment Banking** is a reportable segment of Wells Fargo: Capital markets, banking and financial products and services for corporate, commercial real estate, government and institutional clients.[^1]
 
 It reports through: Banking (Lending; Treasury Management and Payments; Investment Banking), Commercial Real Estate, Markets.[^1]
 
 In this study it owns 0 money-movement product(s) and also serves 3 owned elsewhere.[^1][^2][^3][^4]
 
-[^1]: kj · lob/wf-cib · a1a43acc1266
-[^2]: kj · assignment/WF-P13 · 8799b4a3e937
-[^3]: kj · assignment/WF-P14 · fda8c386281c
-[^4]: kj · assignment/WF-P15 · c990e0f81a08
+[^1]: kj · lob/wf-cib · faa94254fcea
+[^2]: kj · assignment/WF-P13 · c64f59363a8c
+[^3]: kj · assignment/WF-P14 · 3a904d805836
+[^4]: kj · assignment/WF-P15 · 0dd0a5a36565

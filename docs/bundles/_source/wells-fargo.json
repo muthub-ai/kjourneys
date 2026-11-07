@@ -784,7 +784,7 @@
      "stage": "review-authorize"
     },
     {
-     "action": "Item and batch statuses (a peer bank 19 named states)",
+     "action": "Item and batch statuses",
      "actor": "BANK_SYSTEM",
      "channel": "WEB",
      "moment_of_truth": "STATUS_CHECK",
@@ -1817,7 +1817,7 @@
    "basis": "disclosed",
    "composite": "CJ-ZELLE-CONSUMER-SEND",
    "composite_step": 5,
-   "description": "Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: a peer bank purpose questions, a peer bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.",
+   "description": "Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.",
    "frameworks": "Javelin2025 – Security Empowerment; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
    "id": "GAP-WF-0001",
    "journey": "urn:kos:journey:wells-fargo:wf-j01",
@@ -1841,7 +1841,7 @@
    "basis": "disclosed",
    "composite": "CJ-ZELLE-CONSUMER-SEND",
    "composite_step": 10,
-   "description": "Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (a peer bank Status Tracker, a peer bank Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.",
+   "description": "Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.",
    "frameworks": "Javelin2025 – Customer Service; JDPower2025 – Information/Content; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Customer experience",
    "id": "GAP-WF-0002",
    "journey": "urn:kos:journey:wells-fargo:wf-j28",
@@ -1932,7 +1932,7 @@
    "basis": "disclosed",
    "composite": "CJ-ZELLE-REQUEST",
    "composite_step": 3,
-   "description": "'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts (a peer bank J02, a peer bank split-from-transaction).",
+   "description": "'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts.",
    "frameworks": "Javelin2025 – Ease of Use; JDPower2025 – Speed; ForresterDXR2025 – User Experience; DeloitteDBM2024 – Everyday banking",
    "id": "GAP-WF-0006",
    "journey": "urn:kos:journey:wells-fargo:wf-j02",
@@ -1997,7 +1997,7 @@
    "basis": "disclosed",
    "composite": "CJ-ACH-EXT-SEND",
    "composite_step": 2,
-   "description": "External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification (peer banks offer it). Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation and an account-use choice ('Payments only' vs 'Transfers and payments'); enabling transfers is quoted as 'additional security measures (may take 2-3 business days)'; no aggregator option is offered.",
+   "description": "External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification. Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation and an account-use choice ('Payments only' vs 'Transfers and payments'); enabling transfers is quoted as 'additional security measures (may take 2-3 business days)'; no aggregator option is offered.",
    "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
    "id": "GAP-WF-0009",
    "journey": "urn:kos:journey:wells-fargo:wf-j06",
@@ -2020,7 +2020,7 @@
    "basis": "disclosed",
    "composite": "CJ-ACH-EXT-SEND",
    "composite_step": 3,
-   "description": "Outbound external transfers default to 2-3 business days; next-day is discretionary and there is no same-day or instant option, although WF already sends RTP/FedNow via its Instant Payments API (a peer bank offers free instant with auto rail selection).",
+   "description": "Outbound external transfers default to 2-3 business days; next-day is discretionary and there is no same-day or instant option, although WF already sends RTP/FedNow via its Instant Payments API.",
    "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
    "id": "GAP-WF-0010",
    "journey": "urn:kos:journey:wells-fargo:wf-j06",
@@ -2085,7 +2085,7 @@
    "basis": "disclosed",
    "composite": "CJ-ACH-EXT-RECEIVE",
    "composite_step": 3,
-   "description": "Inbound pulls are standard ACH only; no free next-day or RfP-based instant pull (a peer bank J06).",
+   "description": "Inbound pulls are standard ACH only; no free next-day or RfP-based instant pull.",
    "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
    "id": "GAP-WF-0013",
    "journey": "urn:kos:journey:wells-fargo:wf-j06",
@@ -2637,7 +2637,7 @@
    "basis": "observed",
    "composite": "CJ-ACH-EXT-RECEIVE",
    "composite_step": 2,
-   "description": "Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit form' → 'Create Form' → hand to the employer); there is no embedded payroll-login direct-deposit switch of the kind peer banks offer (a peer bank Quick Switch Center generates switch letters).",
+   "description": "Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit form' → 'Create Form' → hand to the employer).",
    "frameworks": "Javelin2025 – Money Movement; JDPower2025 – Information/Content; ForresterDXR2025 – Functionality; DeloitteDBM2024 – Everyday banking",
    "id": "GAP-WF-0038",
    "journey": "urn:kos:journey:wells-fargo:wf-j15",
@@ -3177,7 +3177,7 @@
  "journeys": [
   {
    "as_of": "2026-11-06",
-   "assessment": "Strength: deep native integration (bottom-nav tab, Fargo voice send, QR, repeat toggle, 24-month activity). Friction: step-up code on first-time recipient (good control, adds friction); only generic trust warnings — no published evidence of dynamic scam interstitials or payment-purpose prompts, which peers (e.g., peer banks) now show; reimbursement limited to 'qualifying imposter scams'.",
+   "assessment": "Strength: deep native integration (bottom-nav tab, Fargo voice send, QR, repeat toggle, 24-month activity). Friction: step-up code on first-time recipient (good control, adds friction); only generic trust warnings — no published evidence of dynamic scam interstitials or payment-purpose prompts, which peers now show; reimbursement limited to 'qualifying imposter scams'.",
    "bank": "wells-fargo",
    "bank_product": "WF-P01",
    "basis": "disclosed",
@@ -14538,7 +14538,7 @@
      "fail_points": [
       {
        "id": "fp-wells-fargo-wf-j15-3",
-       "text": "No embedded payroll-login direct-deposit switch (peer banks offer one; a peer bank Quick Switch Center generates switch letters); the customer carries a PDF to the employer. The web alert catalogue for money movement is thin (no transfer-sent/received or Zelle alert options on the web page; app catalogue not observed)."
+       "text": "No embedded payroll-login direct-deposit switch; the customer carries a PDF to the employer. The web alert catalogue for money movement is thin (no transfer-sent/received or Zelle alert options on the web page; app catalogue not observed)."
       }
      ],
      "frontstage": "",
@@ -25056,7 +25056,7 @@
     "confirm": true,
     "owner": "wf-cb",
     "product": "WF-P13",
-    "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q); also used by small businesses"
+    "rule": "MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed; small-business use (one sub-product) adds Consumer Banking and Lending. Confirm."
    },
    {
     "also": [
@@ -25067,7 +25067,7 @@
     "confirm": true,
     "owner": "wf-cb",
     "product": "WF-P14",
-    "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)"
+    "rule": "MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm."
    },
    {
     "also": [
@@ -25078,7 +25078,7 @@
     "confirm": true,
     "owner": "wf-cb",
     "product": "WF-P15",
-    "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)"
+    "rule": "MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm."
    }
   ],
   "bank": "wells-fargo",
@@ -25092,7 +25092,7 @@
      "Auto",
      "Personal Lending"
     ],
-    "description": "Consumer Banking and Lending offers diversified financial products and services for consumers and small businesses.",
+    "description": "Diversified financial products and services for consumers and small businesses.",
     "id": "wf-cbl",
     "kind": "reportable-segment",
     "name": "Consumer Banking and Lending",
@@ -25107,7 +25107,7 @@
      "Treasury management and payments",
      "Other"
     ],
-    "description": "Commercial Banking provides financial solutions to private, family owned and certain public companies.",
+    "description": "Financial solutions for private, family-owned and certain public companies.",
     "id": "wf-cb",
     "kind": "reportable-segment",
     "name": "Commercial Banking",
@@ -25122,7 +25122,7 @@
      "Commercial Real Estate",
      "Markets"
     ],
-    "description": "Corporate and Investment Banking delivers a suite of capital markets, banking, and financial products.",
+    "description": "Capital markets, banking and financial products and services for corporate, commercial real estate, government and institutional clients.",
     "id": "wf-cib",
     "kind": "reportable-segment",
     "name": "Corporate and Investment Banking",
@@ -25133,7 +25133,7 @@
    {
     "bank": "wells-fargo",
     "components": [],
-    "description": "Wealth and Investment Management provides personalized wealth management, brokerage, financial planning.",
+    "description": "Personalized wealth management, brokerage, financial planning, lending, private banking and trust services for affluent, high-net-worth and ultra-high-net-worth clients.",
     "id": "wf-wim",
     "kind": "reportable-segment",
     "name": "Wealth and Investment Management",
@@ -25142,13 +25142,11 @@
     ]
    }
   ],
-  "note": "Owning line of business per marketed product. Inferred from each product's MI segments and Wells Fargo's segment definitions; confirm items marked confirm=true."
+  "note": "Wells Fargo's four reportable segments (Q3 2026 Form 10-Q). Descriptions are summaries of the 10-Q wording, not quotations. Each product's owner is inferred from its MI segments; items with confirm=true need the line-of-business owner's confirmation."
  },
  "meta": {
   "focus_only": true,
-  "peer_mentions_replaced": 49,
-  "rules": "Other banks' records are excluded; other banks named in Wells Fargo text are replaced with 'a peer bank'; best_practice scores are the highest score any bank reached, without naming the bank.",
-  "source_dataset_sha256": null
+  "rules": "Other banks' records are excluded. Any sentence, clause or aside in Wells Fargo text that mentions another bank is removed, and URLs that name one are dropped. Best-practice scores are the highest score any bank reached, with no bank named."
  },
  "observations": [
   {
@@ -25190,7 +25188,7 @@
   {
    "bank": "wells-fargo",
    "report_version": "2026-11-06-v1",
-   "text": "ExpressSend Mobile launched nationwide Sep 14 2026 with first-transfer fee waiver, up to 10 recipients, real-time tracking and alerts, upfront FX/fee display; Wells Fargo states it is 'the only major U.S. bank offering a dedicated mobile remittance service' [S926][S908].",
+   "text": "ExpressSend Mobile launched nationwide Sep 14 2026 with first-transfer fee waiver, up to 10 recipients, real-time tracking and alerts, upfront FX/fee display;",
    "type": "strength"
   },
   {
@@ -25220,7 +25218,7 @@
   {
    "bank": "wells-fargo",
    "report_version": "2026-11-06-v1",
-   "text": "ExpressSend: proprietary consumer remittance with cash pickup in 12 countries, transparent per-country fees ($3–$12), 30-minute cancel and first-mobile-transfer fee waiver; Wells Fargo states it is 'the only major U.S. bank offering a dedicated mobile remittance service' (bank claim, not independently verified) [S926][S042].",
+   "text": "ExpressSend: proprietary consumer remittance with cash pickup in 12 countries, transparent per-country fees ($3–$12), 30-minute cancel and first-mobile-transfer fee waiver;",
    "type": "strength"
   },
   {
@@ -25322,7 +25320,7 @@
   {
    "bank": "wells-fargo",
    "report_version": "2026-11-06-v1",
-   "text": "Observed (web session): direct-deposit setup is a prefilled PDF ('Create Form') rather than an embedded payroll-login switch (peer banks offer one; a peer bank Quick Switch Center generates switch letters), and the web 'Manage Alerts' page offers only balance, Direct Deposit and Returned Deposited Item alerts for checking accounts — no transfer-sent/received or Zelle alert options on the web (app catalogue not observed) [S990].",
+   "text": "Observed (web session): direct-deposit setup is a prefilled PDF ('Create Form') rather than an embedded payroll-login switch, and the web 'Manage Alerts' page offers only balance, Direct Deposit and Returned Deposited Item alerts for checking accounts — no transfer-sent/received or Zelle alert options on the web (app catalogue not observed) [S990].",
    "type": "weakness"
   },
   {
@@ -25394,7 +25392,7 @@
   {
    "bank": "wells-fargo",
    "report_version": "2026-11-06-v1",
-   "text": "Fargo scale (>1B interactions; >3M Spanish-speaking users) — Zelle initiation by assistant is peer parity with a peer bank Erica [S927][S953].",
+   "text": "Fargo scale (>1B interactions; >3M Spanish-speaking users).",
    "type": "differentiator"
   },
   {
@@ -25418,7 +25416,7 @@
   {
    "bank": "wells-fargo",
    "report_version": "2026-11-06-v1",
-   "text": "CFPB sued Early Warning, peer banks and Wells Fargo over Zelle fraud handling on Dec 20, 2024; CFPB voluntarily dismissed with prejudice Mar 4, 2025 (court order Mar 5, 2025).",
+   "text": "CFPB voluntarily dismissed with prejudice Mar 4, 2025 (court order Mar 5, 2025).",
    "type": "recent-change"
   },
   {
@@ -25544,7 +25542,7 @@
   {
    "bank": "wells-fargo",
    "report_version": "2026-11-06-v1",
-   "text": "UNRESOLVED (WF-C013): Is ExpressSend truly the only proprietary consumer remittance/cash-pickup product among the top-4? WF self-claim vs a peer bank proprietary global-transfer service; needs peer product check.",
+   "text": "UNRESOLVED (WF-C013): Is ExpressSend truly the only proprietary consumer remittance/cash-pickup product among the top-4? needs peer product check.",
    "type": "open-question"
   },
   {
@@ -26725,11 +26723,11 @@
     "phone"
    ],
    "confidence": "high",
-   "description": "Consumer person-to-person remittance to 12 countries (Mexico, Dominican Republic, El Salvador, Guatemala, Honduras, Nicaragua, Colombia, Ecuador, Peru, India, Philippines, Vietnam) with account credit or cash pickup through named Remittance Network Members. Two tracks coexist: (1) legacy ExpressSend service agreements — first remittance in person at a branch (or by Phone Bank for existing customers), later remittances at a branch, by Phone Bank, or through Wells Fargo Online on a desktop/laptop ('Transfer and Pay' > 'Send to Another Country'); (2) ExpressSend Mobile — nationwide launch announced Sep 14 2026 (in app release notes from v26.06.00, Jun 29 2026), first mobile transfer fee waived, up to 10 recipients, real-time tracking and alerts; once a customer accepts the mobile terms the service becomes app-only ('You'll no longer be able to use it in a web browser, at a branch, or by phone'). No recurring or future-dated transfers on either track. Wells Fargo states it is 'the only major U.S. bank offering a dedicated mobile remittance service'.",
+   "description": "Consumer person-to-person remittance to 12 countries (Mexico, Dominican Republic, El Salvador, Guatemala, Honduras, Nicaragua, Colombia, Ecuador, Peru, India, Philippines, Vietnam) with account credit or cash pickup through named Remittance Network Members. Two tracks coexist: (1) legacy ExpressSend service agreements — first remittance in person at a branch (or by Phone Bank for existing customers), later remittances at a branch, by Phone Bank, or through Wells Fargo Online on a desktop/laptop ('Transfer and Pay' > 'Send to Another Country'); (2) ExpressSend Mobile — nationwide launch announced Sep 14 2026 (in app release notes from v26.06.00, Jun 29 2026), first mobile transfer fee waived, up to 10 recipients, real-time tracking and alerts; once a customer accepts the mobile terms the service becomes app-only ('You'll no longer be able to use it in a web browser, at a branch, or by phone'). No recurring or future-dated transfers on either track.",
    "former_names": null,
    "id": "WF-P05",
    "name": "ExpressSend®",
-   "network": "Wells Fargo proprietary remittance network with named Remittance Network Members: Mexico – BBVA, Banorte, Banco Santander (account only), Soriana*, Telecomm Telégrafos (Financiera para el Bienestar)*, Farmacias Guadalajara*, Bodega Aurrera*, Walmart*, Superama*; Dominican Republic – Banco BHD León*, Banreservas*; El Salvador – Banco Agrícola, Banco Davivienda Salvadoreño, Sistema Fedecrédito, Banco Cuscatlán, Remesas a peer bank Credomatic, Despensa Don Juan*, Despensa Familiar*, Walmart*, Maxi Despensa*; Guatemala – Banrural, Banco Industrial, G&T Continental; Honduras – Banco Ficohsa, Banco Atlántida; Nicaragua – Banpro, Banco LAFISE BANCENTRO; Colombia – BBVA, Bancolombia, Banco Davivienda, Grupo Éxito*; Ecuador – Banco Guayaquil, SERVIPAGOS (via Produbanco)*, Banco Bolivariano; Peru – BBVA, Banco de Crédito del Perú, Interbank (account only); India – ICICI Bank, HDFC Bank, Axis Bank (account only); Philippines – BPI, BDO Unibank, Metrobank (account only), PNB, M. Lhuillier*, Cebuana Lhuillier*; Vietnam – Vietinbank, Vietcombank. (* cash pick-up only)",
+   "network": "Wells Fargo proprietary remittance network with named Remittance Network Members: Mexico – BBVA, Banorte, Banco Santander (account only), Soriana*, Telecomm Telégrafos (Financiera para el Bienestar)*, Farmacias Guadalajara*, Bodega Aurrera*, Walmart*, Superama*; Dominican Republic – Banco BHD León*, Banreservas*; El Salvador – Banco Agrícola, Banco Davivienda Salvadoreño, Sistema Fedecrédito, Banco Cuscatlán, Remesas BAC Credomatic, Despensa Don Juan*, Despensa Familiar*, Walmart*, Maxi Despensa*; Guatemala – Banrural, Banco Industrial, G&T Continental; Honduras – Banco Ficohsa, Banco Atlántida; Nicaragua – Banpro, Banco LAFISE BANCENTRO; Colombia – BBVA, Bancolombia, Banco Davivienda, Grupo Éxito*; Ecuador – Banco Guayaquil, SERVIPAGOS (via Produbanco)*, Banco Bolivariano; Peru – BBVA, Banco de Crédito del Perú, Interbank (account only); India – ICICI Bank, HDFC Bank, Axis Bank (account only); Philippines – BPI, BDO Unibank, Metrobank (account only), PNB, M. Lhuillier*, Cebuana Lhuillier*; Vietnam – Vietinbank, Vietcombank. (* cash pick-up only)",
    "rails": [
     "remittance"
    ],
@@ -27264,7 +27262,7 @@
     "voice-chat-assistant"
    ],
    "confidence": "high",
-   "description": "AI-powered virtual assistant in the Wells Fargo Mobile app (smartphone only, consumer accounts only, English/Spanish). Published capabilities: 'Transferring between accounts and sending money with Zelle®', 'Updating account and card settings', bills-due view, 'Make a payment or transfer', 'View Zelle® transactions', 'Find my routing number', 'I need to turn my card off', balance/activity forecasts, spending and subscription insights. Zelle initiation is peer parity (a peer bank Erica offers the same); scale is the differentiator (>1B interactions, >3M Spanish-speaking users).",
+   "description": "AI-powered virtual assistant in the Wells Fargo Mobile app (smartphone only, consumer accounts only, English/Spanish). Published capabilities: 'Transferring between accounts and sending money with Zelle®', 'Updating account and card settings', bills-due view, 'Make a payment or transfer', 'View Zelle® transactions', 'Find my routing number', 'I need to turn my card off', balance/activity forecasts, spending and subscription insights. Zelle initiation is peer parity; scale is the differentiator (>1B interactions, >3M Spanish-speaking users).",
    "former_names": null,
    "id": "WF-P09",
    "name": "Fargo® virtual assistant",
@@ -29343,7 +29341,7 @@
    "report_version": "2026-11-06-v1",
    "retrieved_at": "2026-11-06T21:03:00-06:00",
    "sha256": "b9a60999aa1273f195fc7d6d81ad81fea0e5e011c8863bd458c5f58c622c8e88",
-   "title": "Money Movement Intelligence — top-10 US banks, November 2026",
+   "title": "Money-movement market intelligence, report 2026-11-06-v1",
    "url": null
   },
   {
@@ -30157,8 +30155,8 @@
    "publisher": "CFPB",
    "report_version": "2026-11-06-v1",
    "retrieved_at": "2026-11-06T12:00:00-06:00",
-   "title": "CFPB press release: CFPB sues peer banks, and Wells Fargo for allowing fraud to fester on Zelle",
-   "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-sues-jpmorgan-chase-bank-of-america-and-wells-fargo-for-allowing-fraud-to-fester-on-zelle/"
+   "title": "Source title withheld: it names other banks",
+   "url": null
   },
   {
    "access_status": "fetched",
@@ -30628,7 +30626,7 @@
    "id": "src-wells-fargo-s926",
    "kind": "press",
    "local_id": "S926",
-   "notes": "captured via browser; nationwide launch of ExpressSend Mobile; 'only major U.S. bank offering a dedicated mobile remittance service'",
+   "notes": "captured via browser; nationwide launch of ExpressSend Mobile;",
    "origin": "Wells Fargo",
    "publisher": "Wells Fargo",
    "report_version": "2026-11-06-v1",
@@ -30764,7 +30762,7 @@
    "initiate": {
     "best_practice": 4,
     "evidence": "CONFIRMED_BANK",
-    "rationale": "ACH-EXT-SEND=2: MEDIUM MISSING_CAPABILITY: Outbound external transfers default to 2-3 business days; next-day is discretionary and there is no same-day or instant option, although WF already sends RTP/FedNow via its Instant Payments API (a peer bank offers free instant with auto rail selection). [GAP-WF-0010]; ACH-EXT-RECEIVE=2: MEDIUM MISSING_CAPABILITY: Inbound pulls are standard ACH only; no free",
+    "rationale": "ACH-EXT-SEND=2: MEDIUM MISSING_CAPABILITY: Outbound external transfers default to 2-3 business days; next-day is discretionary and there is no same-day or instant option, although WF already sends RTP/FedNow via its Instant Payments API. [GAP-WF-0010]; ACH-EXT-RECEIVE=2: MEDIUM MISSING_CAPABILITY: Inbound pulls are standard ACH only; no free",
     "score": 2
    },
    "manage": {
@@ -30782,7 +30780,7 @@
    "set-up": {
     "best_practice": 3,
     "evidence": "CONFIRMED_BANK",
-    "rationale": "ACH-EXT-SEND=2: MEDIUM MISSING_CAPABILITY: External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification (peer banks offer it). Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation",
+    "rationale": "ACH-EXT-SEND=2: MEDIUM MISSING_CAPABILITY: External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification. Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation",
     "score": 2
    },
    "support": {
@@ -31156,7 +31154,7 @@
    "initiate": {
     "best_practice": 4,
     "evidence": "CONFIRMED_BANK",
-    "rationale": "MEDIUM FRICTION: 'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts (a peer bank J02, a peer bank split-from-transaction). [GAP-WF-0006]",
+    "rationale": "MEDIUM FRICTION: 'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts. [GAP-WF-0006]",
     "score": 2
    },
    "manage": {
@@ -31368,7 +31366,7 @@
    "exception": {
     "best_practice": 2,
     "evidence": "CONFIRMED_BANK",
-    "rationale": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (a peer bank Status Tracker, a peer bank Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only",
+    "rationale": "ZELLE-CONSUMER-SEND=1: HIGH EXCEPTION_HANDLING: Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only",
     "score": 2
    },
    "execute-track": {
@@ -31392,7 +31390,7 @@
    "review-authorize": {
     "best_practice": 3,
     "evidence": "CONFIRMED_BANK",
-    "rationale": "ZELLE-CONSUMER-SEND=1: HIGH SECURITY_TRUST: Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: a peer bank purpose questions, a peer bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messa",
+    "rationale": "ZELLE-CONSUMER-SEND=1: HIGH SECURITY_TRUST: Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messa",
     "score": 1
    },
    "set-up": {

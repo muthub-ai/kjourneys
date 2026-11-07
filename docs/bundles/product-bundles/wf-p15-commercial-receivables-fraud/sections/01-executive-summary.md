@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P15",
   "line_of_business": "wf-cb",
-  "content_sha256": "f606a62b4f0ebccd4534b05cf1e7c9ec79205b390b4579b2633ffe02b25483c0",
+  "content_sha256": "83c57469516079288f1b0513b50351d032d1e17f22722e8966eb787afff8603c",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -41,15 +41,15 @@
 
 **Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay)** (`WF-P15`) is a Wells Fargo product. Inbound money-movement products: Perfect Receivables proxy account numbers for ACH/wire; Bill Manager e-invoicing with ACH collections; Integrated Receivables cash application; Lockbox; Global invoice payments (pay in local currency); fraud controls (ACH Fraud Filter Stop/Review, Positive Pay, Payee Validation, Reverse Positive Pay, Payment Authorization, Account validation).[^1]
 
-It is owned by **Commercial Banking** (Treasury management and payments); it also serves Corporate and Investment Banking. Basis: inferred — Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q).[^2][^3]
+It is owned by **Commercial Banking** (Treasury management and payments); it also serves Corporate and Investment Banking. Basis: inferred — MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm..[^2][^3]
 
 It has 2 sub-products, 1 of them with a mapped journey, across the ACH origination (business), Other money movement, Domestic wire rail(s).[^1][^4][^5]
 
 MI documented 1 journey(s) for it, delivering 0 customer journey(s); they carry 0 gap(s) () and 0 strength(s).[^6]
 
 [^1]: kj · product/WF-P15 · 1b70c83e2760
-[^2]: kj · assignment/WF-P15 · c990e0f81a08
-[^3]: kj · lob/wf-cb · 81d8b2643976
+[^2]: kj · assignment/WF-P15 · 0dd0a5a36565
+[^3]: kj · lob/wf-cb · 56d63ed70382
 [^4]: kj · sub-product/WF-P15-S01 · 8329a58bb402
 [^5]: kj · sub-product/WF-P15-S02 · 9ea8fd1b8b2b
 [^6]: kj · journey/WF-J24 · 72f66a396d8c

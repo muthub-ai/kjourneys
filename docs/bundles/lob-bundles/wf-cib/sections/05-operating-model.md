@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cib",
-  "content_sha256": "a0908305e5dbb27b2186cf692656ba73fad538dc24e9079dcc8402ef19cf1e68",
+  "content_sha256": "c7be23f27ad21c819cea9e8310ad903707bbbfc79785b4afc44d52d6d0f50039",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -38,12 +38,12 @@
 
 # Corporate and Investment Banking — operating model
 
-- Confirm: `WF-P13` Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®) — Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q); also used by small businesses[^1]
-- Confirm: `WF-P14` Wells Fargo Gateway® APIs (developer portal) — Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)[^2]
-- Confirm: `WF-P15` Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay) — Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)[^3]
+- Confirm: `WF-P13` Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®) — MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed; small-business use (one sub-product) adds Consumer Banking and Lending. Confirm.[^1]
+- Confirm: `WF-P14` Wells Fargo Gateway® APIs (developer portal) — MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm.[^2]
+- Confirm: `WF-P15` Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay) — MI tags this product commercial. Wells Fargo reports treasury management and payments revenue in both Commercial Banking and Corporate and Investment Banking, so which one owns the product is a judgment, not a disclosure; Commercial Banking is assumed. Confirm.[^3]
 
 *Assessment:* Line-of-business owner, steward and approver are not assigned; set them in knowledge-source.json.
 
-[^1]: kj · assignment/WF-P13 · 8799b4a3e937
-[^2]: kj · assignment/WF-P14 · fda8c386281c
-[^3]: kj · assignment/WF-P15 · c990e0f81a08
+[^1]: kj · assignment/WF-P13 · c64f59363a8c
+[^2]: kj · assignment/WF-P14 · 3a904d805836
+[^3]: kj · assignment/WF-P15 · 0dd0a5a36565

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "7da205a06a50c7f885eb0d3cdd9495b039751dd1fee2122dbb3ee2f04b59cf16",
+  "content_sha256": "cc5439fc788a7d61c640d0fe6abf1b388333165639367c09f30c51cb0579c5cf",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -47,34 +47,34 @@ It is owned by **Consumer Banking and Lending** (Consumer, Small and Business Ba
 
 It has 5 sub-products, 3 of them with a mapped journey, across the Request to pay, Zelle rail(s).[^1][^4][^5][^6][^7][^8]
 
-MI documented 6 journey(s) for it, delivering 3 customer journey(s); they carry 8 gap(s) (3 high, 3 medium, 2 low) and 6 strength(s).[^9][^10][^11][^12][^13][^14][^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25][^26][^27][^28]
+MI documented 5 journey(s) for it (plus the hand-built sample blueprint), delivering 3 customer journey(s); they carry 8 gap(s) (3 high, 3 medium, 2 low) and 6 strength(s).[^9][^10][^11][^12][^13][^14][^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25][^26][^27][^28]
 
 ## Most severe gaps
 
-- **high** · Review & authorize · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: a peer bank purpose questions, a peer bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^15]
-- **high** · Exception · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (a peer bank Status Tracker, a peer bank Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^16]
+- **high** · Review & authorize · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^15]
+- **high** · Exception · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^16]
 - **high** · Review & authorize · Business Zelle sends in Business Online can be executed by a single 'View and Transact' delegate; no secondary approval (INFERRED from OAA per WF-C003). Dual custody exists only for Vantage Treasury Management enrollees.[^17]
 
 [^1]: kj · product/WF-P01 · 7db18a666d60
 [^2]: kj · assignment/WF-P01 · daf9fc88d74e
-[^3]: kj · lob/wf-cbl · 949b2dbdb1b9
+[^3]: kj · lob/wf-cbl · 9bd65bef07df
 [^4]: kj · sub-product/WF-P01-S01 · dac14fe19dea
 [^5]: kj · sub-product/WF-P01-S02 · 22b37fa1ea11
 [^6]: kj · sub-product/WF-P01-S03 · 677aab3d9fbb
 [^7]: kj · sub-product/WF-P01-S04 · 05811c9bbdb1
 [^8]: kj · sub-product/WF-P01-S05 · 8377db259ff9
-[^9]: kj · journey/WF-J01 · 5459e5785f84
+[^9]: kj · journey/WF-J01 · 251e989b61ea
 [^10]: kj · journey/WF-J02 · 14bc08a80f04
 [^11]: kj · journey/WF-J03 · b89c841e1309
 [^12]: kj · journey/WF-J28 · b20fda0a115f
 [^13]: kj · journey/WF-J29 · d718f795aee2
 [^14]: kj · journey/sample · e85b2befb3b0
-[^15]: kj · finding/GAP-WF-0001 · fe402b582be2
-[^16]: kj · finding/GAP-WF-0002 · 5e1a68d46efd
+[^15]: kj · finding/GAP-WF-0001 · 38c101614c6a
+[^16]: kj · finding/GAP-WF-0002 · 4e09e7353ec2
 [^17]: kj · finding/GAP-WF-0008 · 35e06b5dbd70
 [^18]: kj · finding/GAP-WF-0003 · a9b601e4c21e
 [^19]: kj · finding/GAP-WF-0004 · 069260253e2f
-[^20]: kj · finding/GAP-WF-0006 · a363c8f8a1bc
+[^20]: kj · finding/GAP-WF-0006 · 3782e8a4f392
 [^21]: kj · finding/GAP-WF-0007 · 8cfc91935657
 [^22]: kj · finding/GAP-WF-0036 · 100d7a3aaf40
 [^23]: kj · finding/STR-WF-0001 · bb3dd7fabeb8

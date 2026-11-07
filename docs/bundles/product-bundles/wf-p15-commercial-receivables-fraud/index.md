@@ -1,6 +1,6 @@
 # Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay) · product bundle
 
-Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`7320ba3f33f2`).
+Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`749175201ed7`).
 
 ## Sections
 

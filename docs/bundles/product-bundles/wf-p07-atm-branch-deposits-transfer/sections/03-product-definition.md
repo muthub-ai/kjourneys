@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P07",
   "line_of_business": "wf-cbl",
-  "content_sha256": "2ec8f97c5bc35b031dd1228f223a0319d93583a4bac116906664c7c85cf4ba90",
+  "content_sha256": "91c1c3dee19418f8501efe804b8edff59258bedab9d387ebaf04c425eb89b301",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -52,7 +52,7 @@ Where it sits in the bank's app and site: ATM menu (transfers, credit card payme
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4][^5]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P07-S01 | WF-P07-S02 | WF-P07-S03 | WF-P07-S04 | Detail |
 |---|---|---|---|---|---|

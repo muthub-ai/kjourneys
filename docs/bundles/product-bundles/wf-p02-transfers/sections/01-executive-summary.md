@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P02",
   "line_of_business": "wf-cbl",
-  "content_sha256": "11bdf94a6cbbf7b6b58cc67be42a0e972ba1a92268613ab67ed3c3a11a60410b",
+  "content_sha256": "9ad0ebc3320f0992403de6e0f39d371334b6028c17a82bae986118c1aad5115f",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -49,13 +49,13 @@ MI documented 2 journey(s) for it, delivering 2 customer journey(s); they carry 
 
 ## Most severe gaps
 
-- **medium** · Set up · External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification (peer banks offer it). Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation and an account-use choice ('Payments only' vs 'Transfers and payments'); enabling transfers is quoted as 'additional security measures (may take 2-3 business days)'; no aggregator option is offered.[^12]
-- **medium** · Initiate · Outbound external transfers default to 2-3 business days; next-day is discretionary and there is no same-day or instant option, although WF already sends RTP/FedNow via its Instant Payments API (a peer bank offers free instant with auto rail selection).[^13]
+- **medium** · Set up · External-account linking is micro-deposit/proof-of-ownership only — verification 1-3 business days per the public FAQ; no instant credential/aggregator verification. Corroborated on the web (Nov 2026, S990): the 'Add Non-Wells Fargo Account' form takes keyed routing and account numbers with an ownership attestation and an account-use choice ('Payments only' vs 'Transfers and payments'); enabling transfers is quoted as 'additional security measures (may take 2-3 business days)'; no aggregator option is offered.[^12]
+- **medium** · Initiate · Outbound external transfers default to 2-3 business days; next-day is discretionary and there is no same-day or instant option, although WF already sends RTP/FedNow via its Instant Payments API.[^13]
 - **medium** · Exception · Returned/failed external transfers lead to suspension and reinstatement at lower limits with no published plain-language reason codes; ACH return handling is INFERRED.[^14]
 
 [^1]: kj · product/WF-P02 · 9eb25008fe7d
 [^2]: kj · assignment/WF-P02 · 8fdf77850db2
-[^3]: kj · lob/wf-cbl · 949b2dbdb1b9
+[^3]: kj · lob/wf-cbl · 9bd65bef07df
 [^4]: kj · sub-product/WF-P02-S01 · 9d6d0e037925
 [^5]: kj · sub-product/WF-P02-S02 · 341dc9701a79
 [^6]: kj · sub-product/WF-P02-S03 · 3e7dc4b77244
@@ -64,10 +64,10 @@ MI documented 2 journey(s) for it, delivering 2 customer journey(s); they carry 
 [^9]: kj · sub-product/WF-P02-S06 · 74d7e77234fa
 [^10]: kj · journey/WF-J05 · 961155a3b7eb
 [^11]: kj · journey/WF-J06 · ee855eb97a21
-[^12]: kj · finding/GAP-WF-0009 · ba68193d896f
-[^13]: kj · finding/GAP-WF-0010 · 6c91b1c549a1
+[^12]: kj · finding/GAP-WF-0009 · 0194eced10a6
+[^13]: kj · finding/GAP-WF-0010 · ce6ee0b68b21
 [^14]: kj · finding/GAP-WF-0011 · 907c3416ca30
-[^15]: kj · finding/GAP-WF-0013 · 73fe0c3986d5
+[^15]: kj · finding/GAP-WF-0013 · 82e2204f8b74
 [^16]: kj · finding/GAP-WF-0012 · 4d065129c300
 [^17]: kj · finding/GAP-WF-0033 · deb4b6489d31
 [^18]: kj · finding/GAP-WF-0037 · 966f77825654

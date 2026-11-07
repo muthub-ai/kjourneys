@@ -335,13 +335,16 @@ ul.steps{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:3px}
 .mapwrap{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;align-items:start}
 @media (max-width:980px){.mapwrap{grid-template-columns:minmax(0,1fr)}}
 .mapbox{position:relative;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--bg);min-width:0}
-.mapbox svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+dl.mi{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0;font-size:13px}dl.mi dt{color:var(--muted)}dl.mi dd{margin:0}dl.mi code{font-size:12px;word-break:break-all}
+.mn:focus{outline:none}.mn:focus-visible circle{stroke:#2745D6;stroke-width:3}
+.mapbox svg{display:block;width:100%;height:auto;touch-action:pan-y;cursor:grab}
 .mapbox svg.dragging{cursor:grabbing}
 .mapbox .zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
 .mapbox .zoom button{width:32px;height:32px;border:1px solid var(--rule);border-radius:7px;background:var(--bg);cursor:pointer;font-weight:700}
 .mapside{border:1px solid var(--rule);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;position:sticky;top:calc(var(--navh) + 12px)}
 .mapside .kind{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .mapside ul{margin:0;padding-left:16px;font-size:13px;display:flex;flex-direction:column;gap:3px;max-height:300px;overflow:auto}
+.mapside li .textbtn{vertical-align:top;font:inherit;font-weight:600}
 .mapkey{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);align-items:center}
 .mapkey label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
 .mapkey i{display:inline-block;width:12px;height:12px;border-radius:50%}
@@ -1256,11 +1259,11 @@ function showProd(key) { const p = CATP[key]; if (!p) return; pBank = p.bank; $(
 
 /* ---------- L0 Wells Fargo map ---------- */
 const MAP = V.map;
-const MT = {lob: {c: "#152036", r: 15, n: "Line of business"}, product: {c: "#2745D6", r: 10, n: "Product"}, sub: {c: "#0E7490", r: 5.5, n: "Sub-product"},
+const MT = {bank: {c: "#0B1220", r: 18, n: "Wells Fargo"}, lob: {c: "#152036", r: 15, n: "Line of business"}, product: {c: "#2745D6", r: 10, n: "Product"}, sub: {c: "#0E7490", r: 5.5, n: "Sub-product"},
   journey: {c: "#3B4660", r: 4.5, n: "Journey"}, cj: {c: "#6D28D9", r: 8, n: "Customer journey"}, gap: {c: "#B42318", r: 3.5, n: "Gap"},
   strength: {c: "#15803D", r: 3.5, n: "Strength"}, app: {c: "#8A93A6", r: 4, n: "App ID (sample)"}};
 const SEVR = {critical: 6, high: 5, medium: 3.8, low: 3};
-let mapMode = "net", mapSel = null, mapShow = {lob: 1, product: 1, sub: 1, journey: 1, cj: 1, gap: 1, strength: 0, app: 1}, mapT = {k: 1, x: 0, y: 0};
+let mapMode = "net", mapSel = null, mapShow = {bank: 1, lob: 1, product: 1, sub: 1, journey: 1, cj: 1, gap: 1, strength: 0, app: 1}, mapT = {k: 1, x: 0, y: 0};
 const MN = MAP ? Object.fromEntries(MAP.nodes.map(n => [n.id, n])) : {};
 const MADJ = {}; (MAP?.edges || []).forEach(e => { (MADJ[e.a] ||= []).push([e.b, e.r]); (MADJ[e.b] ||= []).push([e.a, e.r]); });
 function renderMap() {
@@ -1279,7 +1282,7 @@ function drawNet() {
   const q = $("#mapQ").value.trim().toLowerCase(), hit = q ? new Set(MAP.nodes.filter(n => n.l.toLowerCase().includes(q) || (n.ref || "").toLowerCase().includes(q)).map(n => n.id)) : null;
   const nb = mapSel ? new Set([mapSel, ...(MADJ[mapSel] || []).map(x => x[0])]) : null;
   const R = n => n.t === "gap" ? SEVR[n.sev] || 3.5 : MT[n.t].r + (["product", "cj"].includes(n.t) ? Math.min(6, Math.sqrt(n.d)) : 0);
-  const lab = n => ["lob", "product", "cj"].includes(n.t) || (nb && nb.has(n.id)) || (hit && hit.has(n.id)) || (mapT.k > 2.2 && ["sub", "journey"].includes(n.t));
+  const lab = n => ["bank", "lob", "product", "cj"].includes(n.t) || (nb && nb.has(n.id)) || (hit && hit.has(n.id)) || (mapT.k > 2.2 && ["sub", "journey"].includes(n.t));
   const short = t => t.length > 34 ? t.slice(0, 32) + "…" : t;
   let g = "";
   MAP.edges.forEach(e => { const a = MN[e.a], b = MN[e.b]; if (!visible(a) || !visible(b)) return;
@@ -1287,8 +1290,8 @@ function drawNet() {
     g += `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${e.r === "serves" ? "#8A93A6" : "#C4CAD6"}" stroke-width="${e.r === "owns" ? 1.6 : 1}" ${e.r === "serves" ? 'stroke-dasharray="4 4"' : ""} class="${dim ? "dimmed" : ""}"/>`; });
   MAP.nodes.forEach(n => { if (!visible(n)) return; const t = MT[n.t], r = R(n), dim = (nb && !nb.has(n.id)) || (hit && !hit.has(n.id));
     const fill = n.hollow ? "#FFFFFF" : n.sample ? "#B45309" : t.c;
-    g += `<g class="mn ${dim ? "dimmed" : ""}" data-mn="${esc(n.id)}"><circle cx="${n.x}" cy="${n.y}" r="${r}" fill="${fill}" stroke="${n.hollow ? t.c : n.id === mapSel ? "#2745D6" : "#FFFFFF"}" stroke-width="${n.id === mapSel ? 3 : n.hollow ? 1.5 : 1}" ${n.hollow ? 'stroke-dasharray="2 2"' : ""}><title>${esc(t.n)}: ${esc(n.l)}</title></circle>
-      ${lab(n) ? `<text x="${n.x + r + 3}" y="${n.y + 4}" class="${["lob", "product"].includes(n.t) ? "big" : ""}">${esc(short(n.l))}</text>` : ""}</g>`; });
+    g += `<g class="mn ${dim ? "dimmed" : ""}" data-mn="${esc(n.id)}" tabindex="0" role="button" aria-pressed="${n.id === mapSel}" aria-label="${esc(t.n)}: ${esc(n.l)}"><circle cx="${n.x}" cy="${n.y}" r="${r}" fill="${fill}" stroke="${n.hollow ? t.c : n.id === mapSel ? "#2745D6" : "#FFFFFF"}" stroke-width="${n.id === mapSel ? 3 : n.hollow ? 1.5 : 1}" ${n.hollow ? 'stroke-dasharray="2 2"' : ""}><title>${esc(t.n)}: ${esc(n.l)}</title></circle>
+      ${lab(n) ? `<text x="${n.x + r + 3}" y="${n.y + 4}" class="${["bank", "lob", "product"].includes(n.t) ? "big" : ""}">${esc(short(n.l))}</text>` : ""}</g>`; });
   $("#mapBox").innerHTML = `<svg id="mapSvg" viewBox="-40 -30 1180 760" role="img" aria-label="Wells Fargo knowledge map"><g id="mapG" transform="translate(${mapT.x},${mapT.y}) scale(${mapT.k})">${g}</g></svg>
     <div class="zoom"><button type="button" data-z="1.4" aria-label="Zoom in">+</button><button type="button" data-z="0.7" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Fit">⤢</button></div>`;
   wirePan();
@@ -1299,11 +1302,14 @@ function wirePan() {
   const apply = () => G.setAttribute("transform", `translate(${mapT.x},${mapT.y}) scale(${mapT.k})`);
   svg.addEventListener("wheel", e => { e.preventDefault(); const p = pt(e), f = e.deltaY < 0 ? 1.15 : 1 / 1.15, k = Math.max(.5, Math.min(6, mapT.k * f));
     mapT.x = p.x - (p.x - mapT.x) * k / mapT.k; mapT.y = p.y - (p.y - mapT.y) * k / mapT.k; mapT.k = k; apply(); }, {passive: false});
-  svg.addEventListener("pointerdown", e => { drag = {p: pt(e), x: mapT.x, y: mapT.y}; moved = false; svg.setPointerCapture(e.pointerId); });
+  const pick = (id, kb) => { mapSel = id ? (mapSel === id ? null : id) : null; drawNet(); mapDetail(mapSel); if (kb && id) $(`#mapSvg [data-mn="${CSS.escape(id)}"]`)?.focus(); };
+  svg.addEventListener("keydown", e => { const n = e.target.closest?.("[data-mn]"); if (n && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); pick(n.dataset.mn, true); } });
+  svg.addEventListener("pointerdown", e => { if (e.button !== 0) return; drag = {p: pt(e), x: mapT.x, y: mapT.y}; moved = false; svg.setPointerCapture(e.pointerId); });
   svg.addEventListener("pointermove", e => { if (!drag) return; const p = pt(e); if (Math.abs(p.x - drag.p.x) + Math.abs(p.y - drag.p.y) > 3) { moved = true; svg.classList.add("dragging"); }
     mapT.x = drag.x + (p.x - drag.p.x); mapT.y = drag.y + (p.y - drag.p.y); apply(); });
-  svg.addEventListener("pointerup", e => { svg.classList.remove("dragging"); const wasDrag = moved; drag = null;
-    if (!wasDrag) { const n = document.elementFromPoint(e.clientX, e.clientY)?.closest("[data-mn]"); mapSel = n ? (mapSel === n.dataset.mn ? null : n.dataset.mn) : null; drawNet(); mapDetail(mapSel); } });
+  svg.addEventListener("pointerup", e => { if (!drag) return; svg.classList.remove("dragging"); const wasDrag = moved; drag = null;
+    if (!wasDrag) pick(document.elementFromPoint(e.clientX, e.clientY)?.closest("[data-mn]")?.dataset.mn); });
+  svg.addEventListener("pointercancel", () => { drag = null; svg.classList.remove("dragging"); });
 }
 function drawFlow() {
   const F = MAP.flow, W = 1240, colX = [0, 210, 430, 720, 1010], cw = 14, gap = 7;
@@ -1315,17 +1321,18 @@ function drawFlow() {
   const pos = {};
   F.cols.forEach((col, ci) => { const sum = col.reduce((a, id) => a + v(id) * unit, 0) + (col.length - 1) * gap; let y = (H - sum) / 2;
     col.forEach(id => { pos[id] = {x: colX[ci], y, h: Math.max(2, v(id) * unit), ci, oo: 0, io: 0}; y += pos[id].h + gap; }); });
+  const heads = ["Line of business", "Product", "Sub-product", "Journey", "Customer journey"];
   const colr = ci => ["#152036", "#2745D6", "#0E7490", "#3B4660", "#6D28D9"][ci];
   let g = "";
   F.links.forEach(l => { const a = pos[l.a], b = pos[l.b]; if (!a || !b) return; const w = Math.max(1, l.v * unit);
     const y0 = a.y + a.oo + w / 2, y1 = b.y + b.io + w / 2; a.oo += w; b.io += w; const x0 = a.x + cw, x1 = b.x, mx = (x0 + x1) / 2;
     g += `<path class="fl" d="M${x0},${y0} C${mx},${y0} ${mx},${y1} ${x1},${y1}" stroke="${l.v < 1 ? "#C4CAD6" : colr(a.ci)}" stroke-width="${w}" data-fa="${esc(l.a)}" data-fb="${esc(l.b)}"><title>${esc(F.label[l.a] || l.a)} → ${esc(F.label[l.b] || l.b)}</title></path>`; });
   Object.entries(pos).forEach(([id, p]) => { const lbl = F.label[id] || id, right = true;
-    g += `<rect x="${p.x}" y="${p.y}" width="${cw}" height="${p.h}" fill="${id === "none" ? "#C4CAD6" : colr(p.ci)}" data-fid="${esc(id)}" data-fc="${p.ci}"><title>${esc(lbl)}</title></rect>`;
+    g += `<rect x="${p.x}" y="${p.y}" width="${cw}" height="${p.h}" fill="${id === "none" ? "#C4CAD6" : colr(p.ci)}" data-fid="${esc(id)}" data-fc="${p.ci}" tabindex="0" role="button" aria-label="${esc(heads[p.ci])}: ${esc(lbl)}"><title>${esc(lbl)}</title></rect>`;
     if (p.h >= 8 || p.ci <= 1 || p.ci === 4) g += `<text x="${right ? p.x + cw + 4 : p.x - 4}" y="${p.y + p.h / 2 + 4}" text-anchor="start" style="${p.ci <= 1 ? "font-weight:700;font-size:12px" : ""}">${esc(lbl.length > (p.ci === 4 ? 34 : 40) ? lbl.slice(0, p.ci === 4 ? 32 : 38) + "…" : lbl)}</text>`; });
-  const heads = ["Line of business", "Product", "Sub-product", "Journey", "Customer journey"];
   g += heads.map((h, i) => `<text x="${colX[i]}" y="-12" text-anchor="start" style="font-family:var(--f-display);font-weight:700;font-size:12px;fill:var(--muted);letter-spacing:.06em">${h.toUpperCase()}</text>`).join("");
   $("#mapBox").innerHTML = `<div class="tbl-scroll"><svg class="flow" viewBox="-10 -30 ${W + 10} ${H + 40}" style="min-width:980px;cursor:default" role="img" aria-label="Wells Fargo flow from line of business to customer journey">${g}</svg></div>`;
+  $("#mapBox svg").onkeydown = e => { if ((e.key === "Enter" || e.key === " ") && e.target.closest?.("[data-fid]")) { e.preventDefault(); $("#mapBox svg").onclick(e); } };
   $("#mapBox svg").onclick = e => { const r = e.target.closest("[data-fid]"); if (!r) return;
     const pre = ["lob/", "product/", "sub/", "journey/", "cj/"][+r.dataset.fc], id = r.dataset.fid;
     $$("#mapBox .fl").forEach(p => p.classList.toggle("on", p.dataset.fa === id || p.dataset.fb === id));
@@ -1333,16 +1340,11 @@ function drawFlow() {
 }
 function mapDetail(id) {
   const n = id && MN[id], S = $("#mapSide");
-  if (!n) { S.innerHTML = `<span class="kind">Wells Fargo map</span><h3>Click a node or block</h3><p class="muted small">You'll see what it is, what it connects to, and a link to the right view. Every product links to its product bundle in docs/bundles.</p>
+  if (!n) { S.innerHTML = `<span class="kind">Wells Fargo map</span><h3>Click a node or block</h3><p class="muted small">You'll see what it is, what it connects to, and where its bundle lives in docs/bundles. Everything here is Wells Fargo only; the other tabs compare banks.</p>
     <span class="lbl">Lines of business</span><ul>${MAP.lobs.map(l => MN["lob/" + l.id] ? `<li><button type="button" class="textbtn" data-msel="lob/${esc(l.id)}">${esc(l.name)}</button></li>` : `<li>${esc(l.name)} <span class="muted small">no money-movement product in this study</span></li>`).join("")}</ul>`; return; }
   const nbrs = (MADJ[id] || []).map(([o, r]) => [MN[o], r]).filter(x => x[0]);
   const group = {}; nbrs.forEach(([o, r]) => (group[MT[o.t].n] ||= []).push([o, r]));
-  let act = "";
-  if (n.t === "product") act = `<button type="button" class="linkbtn" data-prod="${esc("wells-fargo|" + n.ref)}">Open in Products</button>`;
-  if (n.t === "sub") act = `<button type="button" class="linkbtn" data-sub="${esc("wells-fargo|" + n.ref)}">Sub-product details</button>`;
-  if (n.t === "journey") act = `<button type="button" class="linkbtn" data-bjid="${esc(n.ref)}">Open journey</button> <button type="button" class="linkbtn" data-bpj="${esc(n.ref)}">Blueprint</button>`;
-  if (n.t === "cj") act = `<button type="button" class="linkbtn" data-cj2b="${esc(n.ref)}">Open customer journey</button>`;
-  if (n.t === "gap" || n.t === "strength") act = `<button type="button" class="linkbtn" data-f="${esc(n.ref)}">Finding details</button>`;
+  const act = (n.i || []).length ? `<dl class="mi">${n.i.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${/^docs\//.test(v) ? `<code>${esc(v)}</code>` : esc(v)}</dd>`).join("")}</dl>` : "";
   const lob = n.t === "lob" ? MAP.lobs.find(l => "lob/" + l.id === id) : null;
   S.innerHTML = `<span class="kind">${esc(MT[n.t].n)}${n.sev ? " · " + esc(n.sev) : ""}${n.sample ? " · sample" : ""}</span><h3>${esc(n.l)}</h3>
     ${lob ? `<p class="small">${esc(lob.description)}</p>${lob.components?.length ? `<p class="muted small">Reports through: ${esc(lob.components.join(", "))}</p>` : ""}` : ""}
@@ -1352,7 +1354,7 @@ function mapDetail(id) {
     ${Object.entries(group).map(([k, xs]) => `<span class="lbl">${esc(k)} (${xs.length})</span><ul>${xs.map(([o, r]) => `<li><button type="button" class="textbtn" data-msel="${esc(o.id)}">${esc(o.l)}</button> <span class="muted small">${esc(r)}</span></li>`).join("")}</ul>`).join("")}`;
 }
 $("#mapMode").onclick = e => { const b = e.target.closest("[data-mm]"); if (b) { mapMode = b.dataset.mm; renderMap(); } };
-$("#mapKey").onchange = e => { const c = e.target.closest("[data-mk]"); if (c) { mapShow[c.dataset.mk] = c.checked ? 1 : 0; drawNet(); } };
+$("#mapKey").onchange = e => { const c = e.target.closest("[data-mk]"); if (c) { mapShow[c.dataset.mk] = c.checked ? 1 : 0; if (mapSel && !mapShow[MN[mapSel]?.t]) { mapSel = null; mapDetail(null); } drawNet(); } };
 $("#mapQ").oninput = () => { if (mapMode === "net") drawNet(); };
 document.addEventListener("click", e => {
   const z = e.target.closest("[data-z]"); if (z) { const f = +z.dataset.z; if (!f) mapT = {k: 1, x: 0, y: 0}; else { const cx = 560, cy = 350, k = Math.max(.5, Math.min(6, mapT.k * f)); mapT.x = cx - (cx - mapT.x) * k / mapT.k; mapT.y = cy - (cy - mapT.y) * k / mapT.k; mapT.k = k; } drawNet(); return; }

@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "48eff523a790ec54aa73b82692da066d3eec8ae722874284034bf4c20701b2e8",
+  "content_sha256": "60f8d0a7beb7d40d5c9ae0ff9d269b788b98534fe206781981039d2418266901",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -53,7 +53,7 @@ Where it sits in the bank's app and site: Mobile: 'Zelle®' in bottom navigation
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4][^5][^6]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P01-S01 | WF-P01-S02 | WF-P01-S03 | WF-P01-S04 | WF-P01-S05 | Detail |
 |---|---|---|---|---|---|---|
@@ -96,7 +96,7 @@ Where it sits in the bank's app and site: Mobile: 'Zelle®' in bottom navigation
 [^4]: kj · sub-product/WF-P01-S03 · 677aab3d9fbb
 [^5]: kj · sub-product/WF-P01-S04 · 05811c9bbdb1
 [^6]: kj · sub-product/WF-P01-S05 · 8377db259ff9
-[^7]: kj · journey/WF-J01 · 5459e5785f84
+[^7]: kj · journey/WF-J01 · 251e989b61ea
 [^8]: kj · journey/WF-J02 · 14bc08a80f04
 [^9]: kj · journey/WF-J03 · b89c841e1309
 [^10]: kj · journey/WF-J28 · b20fda0a115f

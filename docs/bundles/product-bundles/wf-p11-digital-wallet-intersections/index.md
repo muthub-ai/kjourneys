@@ -1,6 +1,6 @@
 # Digital wallet intersections (Paze, PayPal, Apple/Google/Samsung Pay, card-free ATM) · product bundle
 
-Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`7320ba3f33f2`).
+Product bundle for Wells Fargo, built from the Wells Fargo-only kjourneys export (`749175201ed7`).
 
 ## Sections
 

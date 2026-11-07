@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "87208a43238e0dba66b632a91ff14cbae7cf70ab91784da7b6215a9c3932924d",
+  "content_sha256": "cd191d3e2ae39550dd44ab41ed0a6aaba8bba4085541ed2f1e14a43e524c5aaf",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -41,8 +41,8 @@
 
 ## Security, trust and exception gaps
 
-- **high** · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: a peer bank purpose questions, a peer bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^1]
-- **high** · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (a peer bank Status Tracker, a peer bank Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^2]
+- **high** · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^1]
+- **high** · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^2]
 - **high** · Business Zelle sends in Business Online can be executed by a single 'View and Transact' delegate; no secondary approval (INFERRED from OAA per WF-C003). Dual custody exists only for Vantage Treasury Management enrollees.[^3]
 
 ## Fail points along the journeys
@@ -120,8 +120,8 @@
 - **regulatory** · Network rules for imposter-scam recovery[^48]
 - **aml** · Suspicious activity reporting where required[^49]
 
-[^1]: kj · finding/GAP-WF-0001 · fe402b582be2
-[^2]: kj · finding/GAP-WF-0002 · 5e1a68d46efd
+[^1]: kj · finding/GAP-WF-0001 · 38c101614c6a
+[^2]: kj · finding/GAP-WF-0002 · 4e09e7353ec2
 [^3]: kj · finding/GAP-WF-0008 · 35e06b5dbd70
 [^4]: kj · step/WF-J01#M07 · 5047050ad99b
 [^5]: kj · step/WF-J03#M05 · 48e6034a19c5
@@ -141,7 +141,7 @@
 [^19]: kj · step/sample#M09 · 4722e6c6318e
 [^20]: kj · step/sample#M10 · 7fc18dfcea5b
 [^21]: kj · step/sample#M11 · 66d75bc680d5
-[^22]: kj · journey/WF-J01 · 5459e5785f84
+[^22]: kj · journey/WF-J01 · 251e989b61ea
 [^23]: kj · journey/WF-J02 · 14bc08a80f04
 [^24]: kj · journey/WF-J03 · b89c841e1309
 [^25]: kj · journey/WF-J28 · b20fda0a115f

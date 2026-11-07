@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-cbl",
-  "content_sha256": "a1baeea18e77d95f1b8fc51e06e1107787a6bcafea51ce37046ab5a21a964b3e",
+  "content_sha256": "4b22fb5a0c543048900a86f7c2a0729b0b60b688336dddee799774cb766aafe7",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -38,7 +38,7 @@
 
 # Consumer Banking and Lending — executive summary
 
-**Consumer Banking and Lending** is a reportable segment of Wells Fargo: Consumer Banking and Lending offers diversified financial products and services for consumers and small businesses.[^1]
+**Consumer Banking and Lending** is a reportable segment of Wells Fargo: Diversified financial products and services for consumers and small businesses.[^1]
 
 It reports through: Consumer, Small and Business Banking, Credit Card, Home Lending, Auto, Personal Lending.[^1]
 
@@ -46,7 +46,7 @@ In this study it owns 12 money-movement product(s) and also serves 1 owned elsew
 
 Across its products MI recorded 35 gap(s): 6 high, 18 medium, 11 low.[^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25][^26]
 
-[^1]: kj · lob/wf-cbl · 949b2dbdb1b9
+[^1]: kj · lob/wf-cbl · 9bd65bef07df
 [^2]: kj · assignment/WF-P01 · daf9fc88d74e
 [^3]: kj · assignment/WF-P02 · 8fdf77850db2
 [^4]: kj · assignment/WF-P03 · e2aaf98a158a
@@ -59,16 +59,16 @@ Across its products MI recorded 35 gap(s): 6 high, 18 medium, 11 low.[^15][^16][
 [^11]: kj · assignment/WF-P10 · 61f49f4b4a83
 [^12]: kj · assignment/WF-P11 · eccf60df1390
 [^13]: kj · assignment/WF-P12 · 64f7eaee3789
-[^14]: kj · assignment/WF-P13 · 8799b4a3e937
+[^14]: kj · assignment/WF-P13 · c64f59363a8c
 [^15]: kj · product/WF-P01 · 7db18a666d60
 [^16]: kj · product/WF-P02 · 9eb25008fe7d
 [^17]: kj · product/WF-P03 · b839aacb8026
 [^18]: kj · product/WF-P04 · 7ae69c334eed
-[^19]: kj · product/WF-P05 · dea532b3a3e2
+[^19]: kj · product/WF-P05 · 4247b60967aa
 [^20]: kj · product/WF-P06 · aa0e6fda3732
 [^21]: kj · product/WF-P07 · 60c66e3aae03
 [^22]: kj · product/WF-P08 · 3868912428e5
-[^23]: kj · product/WF-P09 · 87601a523c62
+[^23]: kj · product/WF-P09 · d4d1ce4a76b1
 [^24]: kj · product/WF-P10 · ae4ea79539a2
 [^25]: kj · product/WF-P11 · df9119f7188e
 [^26]: kj · product/WF-P12 · d73da35d0cb8

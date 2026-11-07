@@ -81,6 +81,7 @@ class Doc:
     def h(self, text): self.blocks.append(f"## {text}")
     def p(self, text, *refs): self.blocks.append(f"{text}{self.cite(*refs)}")
     def assess(self, text): self.blocks.append(f"*Assessment:* {text}")
+    def method(self, text): self.blocks.append(f"*Method:* {text}")          # how to read the section; states no fact about Wells Fargo
     def li(self, items, none="None recorded in this study."):
         self.blocks.append("\n".join(f"- {t}{self.cite(*r)}" for t, r in items) if items else f"{none}{self.cite(self.about)}")
     def table(self, head, rows):
@@ -139,7 +140,8 @@ for p in X["products"]:
     if p.get("former_names"): D.p(f"Former names: {p['former_names']}", pr)
     D.p(f"It is owned by **{owner['name']}** ({a.get('component') or 'segment level'}){'; it also serves ' + ', '.join(LOBS[x]['name'] for x in a.get('also', [])) if a.get('also') else ''}. Basis: {a['basis']} — {a['rule']}.", f"assignment/{p['id']}", f"lob/{owner['id']}")
     D.p(f"It has {len(subs)} sub-products, {sum(1 for s in subs if s.get('journeys'))} of them with a mapped journey, across the {', '.join(RAIL.get(r, r) for r in rails)} rail(s).", pr, *[f"sub-product/{s['id']}" for s in subs])
-    if js: D.p(f"MI documented {len(js)} journey(s) for it, delivering {len(cjs)} customer journey(s); they carry {len(gaps)} gap(s) ({', '.join(f'{n} {k}' for k, n in sorted(Counter(f['severity'] for f in gaps).items(), key=lambda kv: SEVO[kv[0]]))}) and {len(strengths)} strength(s).",
+    nmi = sum(1 for j in js if j.get("basis") != "sample")
+    if js: D.p(f"MI documented {nmi} journey(s) for it{' (plus the hand-built sample blueprint)' if nmi < len(js) else ''}, delivering {len(cjs)} customer journey(s); they carry {len(gaps)} gap(s) ({', '.join(f'{n} {k}' for k, n in sorted(Counter(f['severity'] for f in gaps).items(), key=lambda kv: SEVO[kv[0]]))}) and {len(strengths)} strength(s).",
                *[f"journey/{jkey(j)}" for j in js], *[f"finding/{f['id']}" for f in fs])
     else: D.p("MI documented no journey for this product yet; its sub-products are listed in the product definition.", pr)
     if gaps:
@@ -161,7 +163,7 @@ for p in X["products"]:
     D.h("Sub-products")
     D.table(["Sub-product", "Rail", "Segments", "Description"], [((f"`{s['id']}` {s['name']}", RAIL.get(s["product"], s["product"]), ", ".join(s.get("segments") or []), s.get("description") or "—"), [f"sub-product/{s['id']}"]) for s in subs])
     D.h("Capabilities by sub-product")
-    D.p("✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).", *[f"sub-product/{s['id']}" for s in subs])
+    D.method("✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).")
     D.table(["Capability"] + [s["id"] for s in subs] + ["Detail"], [
         ([X["capability_names"].get(k, k)] + [{True: "✓", False: "✗", None: "—"}[s["capabilities"].get(k)] for s in subs] +
          ["; ".join(f"{s['id']}: {s.get('capability_detail', {})[k]}" for s in subs if s.get("capability_detail", {}).get(k)) or ""], [f"sub-product/{s['id']}" for s in subs])
@@ -186,7 +188,7 @@ for p in X["products"]:
     sec["04-experience"] = ("Journeys and experience", f"Each {p['name']} journey: steps, stages, channels and MI's assessment", D)
     # 5 experience assessment
     D = Doc(pr, f"{p['name']} — experience assessment")
-    D.p("Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.", *[r[1][0] for r in stage_rows(rails)][:1] or [pr])
+    D.method("Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.")
     D.table(["Rail", "Stage", f"{BANK}", "Best practice", "Gap"], stage_rows(rails))
     D.h("Gaps")
     D.li([(f"**{f['severity']}** · {STG.get(f.get('stage'), '')} · {f['type'].replace('-', ' ')} · {f['description']}", [f"finding/{f['id']}"]) for f in gaps])
@@ -231,7 +233,8 @@ for p in X["products"]:
             [{"from": f"journey/{jkey(j)}", "to": f"customer-journey/{j['composite']}", "rel": "delivers"} for j in js if j.get("composite")] + \
             [{"from": f"journey/{jkey(JOUR[f['journey']])}", "to": f"finding/{f['id']}", "rel": "finding"} for f in fs]
     put(f"{base}/journey-graph/graph.json", json.dumps({"bundle_id": bid, "nodes": nodes, "edges": edges}, ensure_ascii=False, indent=1))
-    metrics = {"bundle_id": bid, "sub_products": len(subs), "sub_products_with_journey": sum(1 for s in subs if s.get("journeys")), "journeys": len(js),
+    metrics = {"bundle_id": bid, "sub_products": len(subs), "sub_products_with_journey": sum(1 for s in subs if s.get("journeys")),
+               "journeys": sum(1 for j in js if j.get("basis") != "sample"), "sample_journeys": sum(1 for j in js if j.get("basis") == "sample"),
                "steps": sum(len(j["moments"]) for j in js), "customer_journeys": len(cjs), "gaps": dict(Counter(f["severity"] for f in gaps)),
                "strengths": len(strengths), "rails": rails, "export_sha256": EXPORT_SHA}
     put(f"{base}/journey-graph/metrics.json", json.dumps(metrics, ensure_ascii=False, indent=1, sort_keys=True))
@@ -296,6 +299,14 @@ for lid, l in LOBS.items():
         "source": {"path": SRC_REL, "sha256": EXPORT_SHA, "reports": REPORTS}, "owners": [], "approver": None, "steward": None}, ensure_ascii=False, indent=1))
     lob_index.append((lid, l, own, also))
 
+# ---------- insert-only logs: keep every existing entry (including human ones), add one when the export changes ----------
+def logfile(rel, title, line):
+    p = os.path.join(args.out, rel)
+    have = open(p).read() if os.path.exists(p) else f"# Log — {title}\n"
+    head = f"## {GEN_AT[:10]} · Built from export {EXPORT_SHA[:12]} (MI report{'s' if len(REPORTS) > 1 else ''} {', '.join(REPORTS)})"
+    if head not in have: have = have.rstrip("\n") + f"\n\n{head}\n\n{line}\n"
+    put(rel, have)
+
 # ---------- control files per bundle: index.md, log.md, bundle-manifest.json ----------
 def controls(base, bid, kind, title):
     sec = sorted(k for k in files if k.startswith(base + "/sections/"))
@@ -306,7 +317,7 @@ def controls(base, bid, kind, title):
     put(f"{base}/index.md", f"# {title}\n\n{kind.replace('-', ' ').capitalize()} for {BANK}, built from the Wells Fargo-only kjourneys export (`{EXPORT_SHA[:12]}`).\n\n## Sections\n\n" + "\n".join(rows) +
         "\n\n## Derived (script-built, never edit by hand)\n\n" + "\n".join(f"- [{k[len(base) + 1:]}]({k[len(base) + 1:]})" for k in sorted(files) if k.startswith(base + "/journey-graph/")) +
         "\n\n## Control files\n\n- [bundle-manifest.json](bundle-manifest.json) · [knowledge-source.json](knowledge-source.json) · [log.md](log.md)\n- [knowledge-sources/](knowledge-sources/README.md) — human-authored, never generated\n")
-    put(f"{base}/log.md", f"# Log — {title}\n\n" + "\n".join(f"## {v[:10]} · Bundle built from MI report {v}\n\n- Generated by process:build-bundles from the Wells Fargo-only export `{EXPORT_SHA[:12]}`.\n- Status: candidate; not yet verified by a human.\n" for v in REPORTS))
+    logfile(f"{base}/log.md", title, "- Generated by process:build-bundles from the Wells Fargo-only export.\n- Status: candidate; not yet verified by a human.")
     man = {"schema": "kf-bundle-manifest/0.1", "bundle_id": bid, "kind": kind, "bank": X["bank"]["id"], "okf": "0.2",
            "source": {"path": SRC_REL, "sha256": EXPORT_SHA, "reports": REPORTS}, "generated": {"by": "process:build-bundles", "at": GEN_AT},
            "files": [{"path": k[len(base) + 1:], "sha256": hashlib.sha256(files[k].encode()).hexdigest()} for k in sorted(files) if k.startswith(base + "/") and not k.endswith("bundle-manifest.json")]}
@@ -319,8 +330,11 @@ put("index.md", f"# {BANK} bundles\n\nLine-of-business and product bundles in OK
     "## Lines of business\n\n" + "\n".join(f"- [{l['name']}](lob-bundles/{lid}/index.md) — owns {len(own)} product(s), also serves {len(also)}" for lid, l, own, also in lob_index) +
     "\n\n## Products\n\n| Bundle | Product | Owned by | Sub-products | Journeys | Gaps |\n|---|---|---|---|---|---|\n" +
     "\n".join(f"| [{bid}](product-bundles/{bid}/index.md) | {p['name']} | {owner['name']} | {m['sub_products']} | {m['journeys']} | {g} |" for bid, p, owner, m, g in prod_index) +
-    "\n\nSee [README.md](README.md) for the layout, citation rules and how to rebuild.\n")
-put("log.md", "# Log — bundles\n\n" + "\n".join(f"## {v[:10]} · Bundles built from MI report {v}\n\n- {len(prod_index)} product bundles and {len(lob_index)} line-of-business bundles generated by process:build-bundles.\n" for v in REPORTS))
+    "\n\n" + (lambda un: ("## Findings not tied to a journey\n\nMI recorded these for Wells Fargo as a whole; no journey or product carries them.\n\n" +
+        "\n".join(f"- **{f['severity'] if f['type'] != 'strength' else 'strength'}** · `{f['id']}` · {f['description']} (kj · finding/{f['id']} · {sha12(REC['finding/' + f['id']])})" for f in un) + "\n\n") if un else "")(
+        [f for f in X["findings"] if not f.get("journey")]) +
+    "See [README.md](README.md) for the layout, citation rules and how to rebuild.\n")
+logfile("log.md", "bundles", f"- {len(prod_index)} product bundles and {len(lob_index)} line-of-business bundles generated by process:build-bundles.")
 
 # ---------- write or check ----------
 MANAGED = ("index.md", "log.md", "lob-bundles/", "product-bundles/")

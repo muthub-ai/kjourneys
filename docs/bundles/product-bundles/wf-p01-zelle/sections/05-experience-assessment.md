@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P01",
   "line_of_business": "wf-cbl",
-  "content_sha256": "ef530f6029546c2d7c561ee029bc38eeca979060fc8bbba3add03fd1b3e2873b",
+  "content_sha256": "503db6862507532045dd5ce36f1af03fd350252de65a378669e1962d4d3c599c",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -39,7 +39,7 @@
 
 # Zelle® — experience assessment
 
-Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.[^1]
+*Method:* Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material friction, 1 only by switching channel or a critical gap, 0 absent, U not scored. Best practice is the highest score any bank in the study reached; no bank is named.
 
 | Rail | Stage | Wells Fargo | Best practice | Gap |
 |---|---|---|---|---|
@@ -64,12 +64,12 @@ Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material fric
 
 ## Gaps
 
-- **high** · Review & authorize · security trust · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s (composite: a peer bank purpose questions, a peer bank full-screen warning + irrevocability checkbox). Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^19]
-- **high** · Exception · exception handling · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle (a peer bank Status Tracker, a peer bank Disputes Center cover P2P). Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^20]
+- **high** · Review & authorize · security trust · Review screen carries only static 'only send to people you know and trust' copy; no risk-tiered interstitial, payment-purpose or contact-origin question is documented, and the Zelle-specific scam page now 404s. Observed on the web (Nov 2026): the only scam messaging before the amount screen is a static banner shown on every Zelle visit; the review screen itself was not reached.[^19]
+- **high** · Exception · exception handling · Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or by mail to a P.O. box; no in-app 'report a problem' on the Zelle transaction and no in-app claim status tracker for Zelle. Corroborated on the web (Nov 2026, S990): a completed Zelle payment's detail screen offers only 'Block'; on the observed profile the 'Track Claims > Dispute a charge' picker listed only debit-card purchases (whether non-card items are excluded is unconfirmed); 'Report Phish & Email Scams' leaves the secure session for a public education page.[^20]
 - **high** · Review & authorize · security trust · Business Zelle sends in Business Online can be executed by a single 'View and Transact' delegate; no secondary approval (INFERRED from OAA per WF-C003). Dual custody exists only for Vantage Treasury Management enrollees.[^21]
 - **medium** · Exception · transparency · Scam-reimbursement stance is the network minimum ('qualifying imposter scams'); eligibility criteria and decision timeline for authorized-scam claims are not published.[^22]
 - **medium** · Support · friction · Fraud and scam support is split across at least four phone numbers with different scopes (1-800-869-3557, 1-800-956-4442, 1-866-867-5568, 1-800-225-5935).[^23]
-- **medium** · Initiate · friction · 'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts (a peer bank J02, a peer bank split-from-transaction).[^24]
+- **medium** · Initiate · friction · 'Split' is marketed but implemented as separate single requests; no multi-payer split screen with per-person amounts.[^24]
 - **low** · Manage · friction · No request reminders; a payer who refuses cannot be re-requested.[^25]
 - **low** · Discover · friction · Observed: on the web, Zelle is the fourth item of the 'Move Money & Pay Bills' panel and the hub offers no guidance on when to use Zelle versus a transfer or wire; the rail comparison lives inside Wire Money.[^26]
 
@@ -84,7 +84,7 @@ Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material fric
 
 [^1]: kj · score/request-to-pay/discover · 8aaf5ddcb63e
 [^2]: kj · score/request-to-pay/set-up · 64a250a3c380
-[^3]: kj · score/request-to-pay/initiate · 5bc6f747f19d
+[^3]: kj · score/request-to-pay/initiate · 72fbb231701c
 [^4]: kj · score/request-to-pay/review-authorize · 64a250a3c380
 [^5]: kj · score/request-to-pay/execute-track · 64a250a3c380
 [^6]: kj · score/request-to-pay/confirm-complete · 64a250a3c380
@@ -94,18 +94,18 @@ Stage scores use MI's rubric: 4 sets the reference, 3 at parity, 2 material fric
 [^10]: kj · score/zelle/discover · 2bd0b74d37f1
 [^11]: kj · score/zelle/set-up · f3093057d59e
 [^12]: kj · score/zelle/initiate · 673a47124b13
-[^13]: kj · score/zelle/review-authorize · c20c7f17c2eb
+[^13]: kj · score/zelle/review-authorize · a3f06b174bf4
 [^14]: kj · score/zelle/execute-track · 02cb1535a9b8
 [^15]: kj · score/zelle/confirm-complete · 02cb1535a9b8
 [^16]: kj · score/zelle/manage · 8d99b809a6a4
-[^17]: kj · score/zelle/exception · 5cd8d0e17f2b
+[^17]: kj · score/zelle/exception · 89e1f8bb4e9d
 [^18]: kj · score/zelle/support · 850a938312d2
-[^19]: kj · finding/GAP-WF-0001 · fe402b582be2
-[^20]: kj · finding/GAP-WF-0002 · 5e1a68d46efd
+[^19]: kj · finding/GAP-WF-0001 · 38c101614c6a
+[^20]: kj · finding/GAP-WF-0002 · 4e09e7353ec2
 [^21]: kj · finding/GAP-WF-0008 · 35e06b5dbd70
 [^22]: kj · finding/GAP-WF-0003 · a9b601e4c21e
 [^23]: kj · finding/GAP-WF-0004 · 069260253e2f
-[^24]: kj · finding/GAP-WF-0006 · a363c8f8a1bc
+[^24]: kj · finding/GAP-WF-0006 · 3782e8a4f392
 [^25]: kj · finding/GAP-WF-0007 · 8cfc91935657
 [^26]: kj · finding/GAP-WF-0036 · 100d7a3aaf40
 [^27]: kj · finding/STR-WF-0001 · bb3dd7fabeb8

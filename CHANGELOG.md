@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.8.1 — 2026-11-07 · Map and bundles review
+
+A second independent review (map, export and bundles) found these; each was checked, then fixed.
+
+- **Other banks could still be inferred.** Replacing names with "a peer bank" left comparisons readable, and lowercase names, URL slugs, domains and product names slipped through. `tools/peers.py` is now the one detector (exporter and validator share it); every sentence, clause or aside that mentions another bank is removed, URLs naming one are dropped, and the export re-checks itself before writing (28 passages removed).
+- **The validator could be fooled.** It now rebuilds the bundles and compares byte for byte, requires the full bundle set, checks manifest kind/bank/OKF, knowledge-source fields, `verified` and review types, counts assessments per line (and only at line start), and enforces insert-only logs against git.
+- **Logs were rewritten on each build;** they now only grow.
+- **The unattached gap** (push-to-card) is listed in the root index and sits on the map under a Wells Fargo root node; map counts now match the export (39 gaps, 23 strengths).
+- **Map side panel** no longer jumps into the all-bank views; it shows Wells Fargo details and the bundle path. Nodes and flow blocks work from the keyboard; touch scrolling, right-click and hidden selections behave.
+- **Lines of business:** descriptions are labelled summaries of the 10-Q; the commercial ownership rule now says plainly it's a judgement to confirm; a focus bank with products must have the registry.
+- **Bundle text:** the scoring rubric and flag legend are `*Method:*` notes; journey counts exclude the sample blueprint.
+
 ## 0.8.0 — 2026-11-07 · Wells Fargo map and bundles
 
 - **Lines of business:** `registries/lines-of-business.json` records Wells Fargo's four reportable segments (Q3 2026 10-Q) and each marketed product's owning line of business, with the rule used; validated.

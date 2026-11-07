@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P05",
   "line_of_business": "wf-cbl",
-  "content_sha256": "a3d2aa99859bea46a7bae977004e7f212fbce56399f9f6b01aae87df642156e1",
+  "content_sha256": "8105fe85732a2b66bb3b9538b95882a23d6fa8a9157385cb7e696c2af67083e5",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -41,7 +41,7 @@
 
 Segments: consumer. Channels: mobile-app, web, branch, phone.[^1]
 
-Network or vendor: Wells Fargo proprietary remittance network with named Remittance Network Members: Mexico – BBVA, Banorte, Banco Santander (account only), Soriana*, Telecomm Telégrafos (Financiera para el Bienestar)*, Farmacias Guadalajara*, Bodega Aurrera*, Walmart*, Superama*; Dominican Republic – Banco BHD León*, Banreservas*; El Salvador – Banco Agrícola, Banco Davivienda Salvadoreño, Sistema Fedecrédito, Banco Cuscatlán, Remesas a peer bank Credomatic, Despensa Don Juan*, Despensa Familiar*, Walmart*, Maxi Despensa*; Guatemala – Banrural, Banco Industrial, G&T Continental; Honduras – Banco Ficohsa, Banco Atlántida; Nicaragua – Banpro, Banco LAFISE BANCENTRO; Colombia – BBVA, Bancolombia, Banco Davivienda, Grupo Éxito*; Ecuador – Banco Guayaquil, SERVIPAGOS (via Produbanco)*, Banco Bolivariano; Peru – BBVA, Banco de Crédito del Perú, Interbank (account only); India – ICICI Bank, HDFC Bank, Axis Bank (account only); Philippines – BPI, BDO Unibank, Metrobank (account only), PNB, M. Lhuillier*, Cebuana Lhuillier*; Vietnam – Vietinbank, Vietcombank. (* cash pick-up only).[^1]
+Network or vendor: Wells Fargo proprietary remittance network with named Remittance Network Members: Mexico – BBVA, Banorte, Banco Santander (account only), Soriana*, Telecomm Telégrafos (Financiera para el Bienestar)*, Farmacias Guadalajara*, Bodega Aurrera*, Walmart*, Superama*; Dominican Republic – Banco BHD León*, Banreservas*; El Salvador – Banco Agrícola, Banco Davivienda Salvadoreño, Sistema Fedecrédito, Banco Cuscatlán, Remesas BAC Credomatic, Despensa Don Juan*, Despensa Familiar*, Walmart*, Maxi Despensa*; Guatemala – Banrural, Banco Industrial, G&T Continental; Honduras – Banco Ficohsa, Banco Atlántida; Nicaragua – Banpro, Banco LAFISE BANCENTRO; Colombia – BBVA, Bancolombia, Banco Davivienda, Grupo Éxito*; Ecuador – Banco Guayaquil, SERVIPAGOS (via Produbanco)*, Banco Bolivariano; Peru – BBVA, Banco de Crédito del Perú, Interbank (account only); India – ICICI Bank, HDFC Bank, Axis Bank (account only); Philippines – BPI, BDO Unibank, Metrobank (account only), PNB, M. Lhuillier*, Cebuana Lhuillier*; Vietnam – Vietinbank, Vietcombank. (* cash pick-up only).[^1]
 
 ## Customer journeys this product delivers
 
@@ -51,6 +51,6 @@ Network or vendor: Wells Fargo proprietary remittance network with named Remitta
 
 - `WF-J12` Consumer sends an ExpressSend® remittance for cash pickup or account credit (mobile) — persona: Consumer sending money home to Mexico; goal: “Send money to family abroad cheaply, with cash pickup”[^3]
 
-[^1]: kj · product/WF-P05 · dea532b3a3e2
+[^1]: kj · product/WF-P05 · 4247b60967aa
 [^2]: kj · customer-journey/CJ-REMITTANCE-SEND · e13395512089
 [^3]: kj · journey/WF-J12 · 94fc27116502

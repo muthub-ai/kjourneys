@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P13",
   "line_of_business": "wf-cb",
-  "content_sha256": "f3d0a10b0afcafdab8978918420d937d0a4dcb00f62f13eccc12830674119c3a",
+  "content_sha256": "acd85533cbd7144972bb06524fcafa18290ca0543c1a5098080b06a1737a8fbd",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -56,7 +56,7 @@ Where it sits in the bank's app and site: Sign-on wellsoffice.ceo.wellsfargo.com
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2][^3][^4][^5][^6][^7][^8][^9]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P13-S01 | WF-P13-S02 | WF-P13-S03 | WF-P13-S04 | WF-P13-S05 | WF-P13-S06 | WF-P13-S07 | WF-P13-S08 | Detail |
 |---|---|---|---|---|---|---|---|---|---|

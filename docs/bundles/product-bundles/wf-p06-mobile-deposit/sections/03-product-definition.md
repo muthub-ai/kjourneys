@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P06",
   "line_of_business": "wf-cbl",
-  "content_sha256": "e655dd0a9158d84512f2630d946c1bd9b27983b42dba5e385841ad54c4d6363e",
+  "content_sha256": "61870a1c4b82d2650707b97e8ac6ade272e4d1651d5f4a6edebafeb7344632b2",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -49,7 +49,7 @@ Where it sits in the bank's app and site: Mobile: 'Deposit' in bottom bar, or lo
 
 ## Capabilities by sub-product
 
-✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).[^2]
+*Method:* ✓ yes · ✗ no · — unknown or not assessed, counted the way MI counts them (only a literal Yes is yes).
 
 | Capability | WF-P06-S01 | Detail |
 |---|---|---|

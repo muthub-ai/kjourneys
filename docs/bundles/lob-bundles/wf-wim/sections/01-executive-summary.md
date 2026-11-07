@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -27,7 +27,7 @@
   "bank": "wells-fargo",
   "kind": "lob-bundle",
   "line_of_business": "wf-wim",
-  "content_sha256": "450b0498d7c137e97eead77a7030342e944c195f1213bb14d823c00c5dc4c5c3",
+  "content_sha256": "25acd77b8283c4dcbde4f12b9472536433bb077c646b55c86f03ca8928fc3300",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -38,8 +38,8 @@
 
 # Wealth and Investment Management — executive summary
 
-**Wealth and Investment Management** is a reportable segment of Wells Fargo: Wealth and Investment Management provides personalized wealth management, brokerage, financial planning.[^1]
+**Wealth and Investment Management** is a reportable segment of Wells Fargo: Personalized wealth management, brokerage, financial planning, lending, private banking and trust services for affluent, high-net-worth and ultra-high-net-worth clients.[^1]
 
 The money-movement study has no product owned by or serving this line of business.[^1]
 
-[^1]: kj · lob/wf-wim · 9d6e176b8d9c
+[^1]: kj · lob/wf-wim · 7e19af4a8c9c

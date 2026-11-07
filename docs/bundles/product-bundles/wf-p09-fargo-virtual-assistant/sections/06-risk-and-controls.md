@@ -7,7 +7,7 @@
   {
    "id": "kj-wells-fargo",
    "path": "docs/bundles/_source/wells-fargo.json",
-   "sha256": "7320ba3f33f2f88d6c7aa278ce5e73815a221e37edfb352b6b11bcd36c0aedb7"
+   "sha256": "749175201ed7a14af05937360afbf82f3ec2afe567c9152116002b2adbe035f9"
   },
   {
    "id": "mi-2026-11-06-v1",
@@ -28,7 +28,7 @@
   "kind": "product-bundle",
   "product_id": "WF-P09",
   "line_of_business": "wf-cbl",
-  "content_sha256": "af6dc0e3dbf7f25243872a56863d687e4cf294a011322b6399bbffb377e3bacc",
+  "content_sha256": "5bbfc651c95a96da345503889277f26684d8e08e2cd093057db79407ee55fd7a",
   "review": {
    "submitted_as": "candidate",
    "approver": null
@@ -52,5 +52,5 @@ None recorded in this study.[^1]
 - `WF-J04` · Fargo misunderstands request: Fargo asks again or routes to Customer Service → [^2]
 - `WF-J04` · Community: AI assistant 'unhelpful' complaints in Google Play reviews: Frustration → [^2]
 
-[^1]: kj · product/WF-P09 · 87601a523c62
+[^1]: kj · product/WF-P09 · d4d1ce4a76b1
 [^2]: kj · journey/WF-J04 · 292f135b2287
