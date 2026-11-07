@@ -9,6 +9,10 @@
 - **Schema:** new collections (findings, composites, observations, verifications, participation, rankings); moment backstage fields optional; moments gain actor, decision, notification; journeys gain exceptions, notifications, status tracking and assessment.
 - **Validator:** MI references resolve, STR/GAP IDs match their type, records cite a known report, MI journey IDs are unique per bank. The focus bank may now hold MI facts.
 - **Site rebuilt for MI data:** overview (ranking, rail heat map, top Wells Fargo gaps), stage scores per bank with a gap-to-best mode, any journey as a blueprint with findings and sources, bank-by-bank compare per rail, filterable gaps and strengths, method (files, evidence levels, verification round). A compact view model keeps the page near 2.8 MB.
+- **Journey and blueprint views carried over for every journey:**
+  - Journey: a stacked graph of the bank's stage scores against the best bank and Wells Fargo, over its gaps by severity with strengths above the line; stage cards; ranked gaps.
+  - Blueprint: lenses, highlights and jump-to for every journey. The sample keeps its experience curve, hot spots, unhappy paths, app tracing and systems table.
+  - Present mode and the engineering sequence diagram are back. The story's numbers are computed from the MI data.
 - **Exports:** facts.jsonl adds findings and rankings; summary adds the ranking.
 - **Tests:** 40 negative fixtures (9 new for MI collections), now picking attributes by datatype; the ingest test uses its own TEST questions. `openpyxl` added to requirements.
 

@@ -90,6 +90,9 @@ V = {
                "sources": len(d["sources"]), "verifications": len(d.get("verifications", [])),
                "score_cells": sum(len(st) for b in scores.values() for st in b.values())},
     "governance": next((c["governance"] for c in d["comparisons"]), {}),
+    # the hand-built sample blueprint keeps its full backstage: process steps, controls, app IDs, metrics, unhappy paths
+    "sample": next(({"journey": j, "applications": d["applications"], "processes": d["processes"], "controls": d["controls"],
+                     "capabilities": d["capabilities"], "metrics": d["metrics"]} for j in d["journeys"] if j["basis"] == "sample"), None),
 }
 t = open(os.path.join(ROOT, "site/template.html")).read()
 payload = json.dumps(V, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")

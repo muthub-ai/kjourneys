@@ -243,9 +243,16 @@ layers: [feeling, action, touchpoint, "— line of interaction —", frontstage,
 views:
   overview:  "Level 0 · ranking, rail × bank heat map of mean stage scores, Wells Fargo's highest-severity gaps"
   stages:    "Level 1 · one bank, rails × nine stages, score or points behind the best bank"
-  journeys:  "Level 2 · any journey as a blueprint: customer, touchpoint, frontstage, decision, backstage, fail points, findings, sources"
+  journey:   "Level 1 · stage scores (bank, best bank, Wells Fargo) stacked over gaps by severity and strengths; stage cards; ranked gaps (sample: experience curve and ranked hot spots)"
+  blueprint: "Level 2 · any journey as a blueprint with lenses (executive, product, engineering, full), paths or highlights, jump to stage, step drawer; sample adds the backstage, app tracing and systems table"
   compare:   "Level 1 · one rail across banks: stage scores and capability flags"
   findings:  "Gaps and strengths, filterable by bank, type, severity, rail and stage"
+  present:   "Guided walkthrough computed from the data: rank, rail heat map, biggest shortfall, a Wells Fargo journey and its blueprint, high-severity gaps, compare, the sample backstage"
+lenses:
+  executive:   [feeling, action, controls, decision, hotspot, kpis, fail_points, findings]
+  product:     [feeling, action, touchpoint, frontstage, decision, process, hotspot, kpis, fail_points, findings]
+  engineering: [action, frontstage, decision, process, controls, applications, interfaces, capabilities, findings, sources]
+  full:        all
 
 # ---------------------------------------------------------------------------
 # Required before publish (needs owners of these systems)

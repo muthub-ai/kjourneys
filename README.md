@@ -30,7 +30,7 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 
 | Port | File | For |
 |---|---|---|
-| Journey site | `dist/index.html` | Executives, product, engineering: ranking and rail heat map, stage scores, journey blueprints, bank-by-bank compare, gaps and strengths, method |
+| Journey site | `dist/index.html` | Executives, product, engineering: ranking and rail heat map, stage scores, journey graphs, blueprints with lenses, bank-by-bank compare, gaps and strengths, method, present mode |
 | Canonical instance | `dist/kjourneys.json` | KOS ingestion, tooling |
 | Facts | `dist/facts.jsonl` | BI, agents, retrieval: one row per current fact (comparison cells, step evidence, findings, rankings) with basis and sources |
 | Coverage | `dist/coverage.json` | Health: completeness by bank and basis, staleness, legal status |

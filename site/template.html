@@ -5,26 +5,30 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap">
 <style>
 /* Layout: a drafting sheet on white (white-only by request, so one deliberate light theme).
-   Summary first (rank, rail heat map), then stage scores, journeys as blueprints, bank-by-bank compare, findings, method.
+   Zoom levels: overview (L0) → stage scores and journey (L1) → blueprint (L2); compare, findings and method beside them.
    Color has one meaning each: ink = structure, blue = Wells Fargo / interaction, score ramp red→blue = 0→4 on the MI rubric,
-   red = gaps and severity, green = strengths, amber = sample data only, dashed grey = unknown / awaiting. */
+   red ramp = gap severity, green = strengths and positive emotion, amber = sample data only, purple = third party, dashed grey = unknown. */
 :root{
-  --bg:#FFFFFF; --ink:#152036; --ink2:#3B4660; --muted:#5A6478; --faint:#8A93A6; --rule:#DDE1E8; --rule2:#EEF0F4; --tint:#F6F8FC; --tint2:#F2F4F8;
-  --accent:#2745D6; --accent-soft:#EAEEFD;
-  --good:#15803D; --good-soft:#E8F6ED; --bad:#B42318; --bad-soft:#FDEEEC; --warn:#B45309; --warn-soft:#FEF3E2;
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#152036; --ink2:#3B4660; --muted:#5A6478; --faint:#8A93A6; --rule:#DDE1E8; --rule2:#EEF0F4; --tint:#F6F8FC; --tint2:#F2F4F8;
+  --accent:#2745D6; --accent-soft:#EAEEFD; --linec:#6B7489;
+  --good:#15803D; --good-soft:#E8F6ED; --bad:#B42318; --bad-soft:#FDEEEC; --warn:#B45309; --warn-soft:#FEF3E2; --warn-rule:#F3D3A6;
   --s0:#F6C9C2; --s1:#FBE3DA; --s2:#EEF0F4; --s3:#B9C6F4; --s4:#2745D6;
-  --ext:#6D28D9; --ext-soft:#F1EBFD; --teal:#0E7490; --teal-soft:#EAF4F8; --plum:#5B4A86;
+  --g-crit:#B42318; --g-high:#E8796F; --g-med:#F2B37A; --g-low:#C9CED8;
+  --lane-cust:#F6F8FC; --lane-front:#FFFFFF; --lane-back:#F8F9FB; --lane-sys:#F2F4F8; --lane-meas:#FCFCFD;
+  --sev1:#FBF0EF; --sev2:#F5BDB7; --sev3:#C8382F; --sev-ink:#9F1D16;
+  --seg1:#2A3550; --seg2:#7A8499; --seg3:#BCC3CF;
+  --ext:#6D28D9; --ext-soft:#F1EBFD; --teal:#0E7490; --teal-soft:#EAF4F8; --plum:#5B4A86; --aml:#0E7490;
   --shadow:0 1px 2px rgba(21,32,54,.06),0 10px 30px rgba(21,32,54,.10);
   --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --navh:58px; color-scheme:light;
+  --navh:58px; --colw:220px; --gap:8px; --labelw:168px; --hdrh:58px; color-scheme:light;
 }
 html{background:var(--bg)}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 80px}
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 96px}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:16;background:var(--bg)}
 .wrap{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
@@ -33,8 +37,8 @@ h2{font-size:23px;font-weight:720;font-stretch:90%}
 h3{font-size:15.5px;font-weight:700}
 p{margin:0}
 .mono{font-family:var(--f-mono)}
-.eyebrow,.lbl,th{font-family:var(--f-display);font-stretch:75%;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.eyebrow{font-size:12px}.lbl{font-size:11px}
+.eyebrow,.lbl,th,.seglabel{font-family:var(--f-display);font-stretch:75%;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{font-size:12px}.lbl,.seglabel{font-size:11px}
 .muted{color:var(--muted)} .small{font-size:13px}
 a{color:var(--accent)}
 button,select,input{font:inherit;color:inherit}
@@ -59,15 +63,22 @@ body:not([data-view="overview"]) .sheet-head{display:none}
 body[data-view="overview"] .brand{display:none}
 .tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0}
 .tabs::-webkit-scrollbar{display:none}
-.tabs a{text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap}
+.tabs a{display:flex;align-items:baseline;gap:6px;text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap}
+.tabs a .lv{font-family:var(--f-mono);font-size:11px;font-weight:500}
 .tabs a[aria-current="page"]{background:var(--ink);color:#FFFFFF}
+.tabs a[aria-current="page"] .lv{color:#C9D1E3}
 .tabs a:hover:not([aria-current="page"]){background:var(--accent-soft);color:var(--ink)}
+.navr{display:flex;align-items:center;gap:10px;flex:none}
 .pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink2);border:1px solid var(--rule);border-radius:999px;padding:4px 11px;white-space:nowrap;text-decoration:none}
 .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--warn)}
-@media (max-width:760px){.brand,.pill .long{display:none}}
+.present{border:0;background:var(--accent);color:#FFFFFF;font-weight:650;padding:9px 16px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.present:hover{filter:brightness(1.08)}
+@media (max-width:760px){.tabs{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:28px}
+  .brand,.pill .long,#v-blueprint .legend,#v-blueprint .jump{display:none}.nav{flex-wrap:wrap;gap:6px}.navl{flex-basis:100%}.navr{width:100%;justify-content:space-between}.present{padding:7px 14px}}
 
 /* Generic */
 .view{display:flex;flex-direction:column;gap:20px}
+.view.parked{position:absolute;left:-20000px;top:0;width:1300px;visibility:hidden}
 .sec-head{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between}
 .sec-head > *{min-width:0}
 .sec-head p{color:var(--muted);max-width:76ch}
@@ -80,7 +91,8 @@ th{font-size:11px;text-align:left;padding:8px 10px;border-bottom:1.5px solid var
 td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
 td.num,th.num{font-variant-numeric:tabular-nums;text-align:right}
 tr.us td{background:var(--accent-soft)}
-.linkbtn{border:1px solid var(--rule);background:var(--bg);border-radius:7px;padding:6px 12px;cursor:pointer;font-weight:600;font-size:13.5px;text-decoration:none;color:var(--ink)}
+tr.go{cursor:pointer} tr.go:hover td{background:var(--accent-soft)}
+.linkbtn{border:1px solid var(--rule);background:var(--bg);border-radius:7px;padding:6px 12px;cursor:pointer;font-weight:600;font-size:13.5px;text-decoration:none;color:var(--ink);display:inline-block}
 .linkbtn:hover{border-color:var(--accent);color:var(--accent)}
 .textbtn{border:0;background:none;padding:0;cursor:pointer;font-weight:600;color:var(--ink);text-align:left}
 .textbtn:hover{color:var(--accent)}
@@ -89,22 +101,25 @@ tr.us td{background:var(--accent-soft)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:#FFFFFF}
 .seg button:hover:not([aria-pressed="true"]){background:var(--accent-soft);color:var(--ink)}
 .ctl{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end}
+.ctlgroup{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .ctl label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);min-width:0}
 select,input[type=search]{border:1px solid var(--rule);border-radius:8px;padding:7px 10px;background:var(--bg);color:var(--ink);font-size:13.5px;min-width:0;max-width:100%}
 .dataline{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}
 .key{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);align-items:center}
 .key i{display:inline-block;width:18px;height:12px;border-radius:3px;margin-right:5px;vertical-align:middle}
 .blank{color:var(--faint);font-style:italic}
+.callout{border-left:3px solid var(--ink2);background:var(--tint2);padding:12px 16px;border-radius:0 10px 10px 0;font-size:14px}
+.callout.warn{border-left-color:var(--warn);background:var(--warn-soft)}
 
-/* Evidence badges (MI levels) */
+/* Evidence badges (MI levels and ontology bases) */
 .ev{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:500;line-height:1.55;padding:0 6px;border-radius:5px;white-space:nowrap;vertical-align:middle}
 .ev-CONFIRMED_BANK,.ev-disclosed{background:var(--accent-soft);color:var(--accent)}
 .ev-OBSERVED_SESSION,.ev-observed{background:var(--good-soft);color:var(--good)}
 .ev-THIRD_PARTY{background:var(--teal-soft);color:var(--teal)}
 .ev-COMMUNITY{background:var(--ext-soft);color:var(--ext)}
 .ev-INFERRED,.ev-inferred{background:var(--tint2);color:var(--plum)}
-.ev-UNKNOWN{background:var(--bg);color:var(--muted);border:1px dashed #AEB6C4}
-.ev-sample{background:var(--warn-soft);color:var(--warn);border:1px solid #F3D3A6}
+.ev-UNKNOWN,.ev-awaiting{background:var(--bg);color:var(--muted);border:1px dashed #AEB6C4}
+.ev-sample{background:var(--warn-soft);color:var(--warn);border:1px solid var(--warn-rule)}
 .ev-internal{background:var(--tint2);color:var(--ink2);border:1px solid var(--rule)}
 
 /* Score cells */
@@ -140,11 +155,11 @@ select,input[type=search]{border:1px solid var(--rule);border-radius:8px;padding
 .bar span{position:absolute;inset:0 auto 0 0;border-radius:3px;background:var(--ink2)}
 tr.us .bar span{background:var(--accent)}
 
-/* Journeys */
-.jgrid{display:grid;grid-template-columns:330px minmax(0,1fr);gap:18px;align-items:start}
+/* Journey (L1) */
+.jgrid{display:grid;grid-template-columns:320px minmax(0,1fr);gap:18px;align-items:start}
 @media (max-width:980px){.jgrid{grid-template-columns:minmax(0,1fr)}}
 .jlist{border:1px solid var(--rule);border-radius:12px;max-height:calc(100vh - var(--navh) - 120px);overflow-y:auto;position:sticky;top:calc(var(--navh) + 12px)}
-@media (max-width:980px){.jlist{position:static;max-height:340px}}
+@media (max-width:980px){.jlist{position:static;max-height:320px}}
 .jitem{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--rule);background:var(--bg);padding:10px 12px;cursor:pointer}
 .jitem:hover{background:var(--accent-soft)}
 .jitem[aria-current="true"]{background:var(--ink);color:#FFFFFF}
@@ -152,28 +167,133 @@ tr.us .bar span{background:var(--accent)}
 .jitem .t{font-weight:650;font-size:13.5px;line-height:1.3}
 .jitem .m{font-size:12px;display:flex;gap:4px 8px;flex-wrap:wrap}
 .jdetail{display:flex;flex-direction:column;gap:16px;min-width:0}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
 .facts > div{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:13.5px}
-.bp-scroll{overflow:auto;border:1px solid var(--rule);border-radius:12px;max-height:80vh}
-.bp{display:grid;grid-template-columns:140px repeat(var(--n),210px);width:max-content;font-size:13px}
-.bp > div{padding:8px 10px;border-bottom:1px solid var(--rule2);min-width:0}
-.bp .lab{position:sticky;left:0;z-index:2;background:var(--bg);border-right:1px solid var(--rule);font-family:var(--f-display);font-stretch:80%;font-weight:700;font-size:12.5px}
-.bp .lab small{display:block;font-family:var(--f-body);font-weight:400;font-stretch:100%;font-size:11px;color:var(--muted);line-height:1.3}
-.bp .hd{position:sticky;top:0;z-index:1;background:var(--bg);border-bottom:2px solid var(--ink)}
-.bp .hd.lab{z-index:3}
-.bp .hd .code{font-family:var(--f-mono);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
-.bp .hd .st{font-family:var(--f-display);font-weight:720;font-stretch:88%;font-size:13.5px}
-.bp .z-cust{background:var(--tint)} .bp .z-back{background:var(--tint2)}
-.bp .lab.z-cust,.bp .lab.z-back{background:var(--bg)}
-.bp .line{grid-column:1 / -1;position:relative;height:22px;padding:0;border:0;display:flex;align-items:center}
-.bp .line::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #6B7489}
-.bp .line span{position:sticky;left:10px;z-index:3;background:var(--bg);font-family:var(--f-display);font-stretch:75%;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);padding:0 8px}
+.goal{font-size:19px;font-family:var(--f-display);font-weight:680;font-stretch:90%;line-height:1.25}
+.curve svg{display:block;width:100%;height:auto}
+.curve text{font-family:var(--f-body);font-size:12px;fill:var(--muted)}
+.curve .ttl{font-family:var(--f-display);font-weight:700;font-size:12.5px;fill:var(--ink)}
+.curve .mt{fill:var(--ink);font-weight:600}
+.curve .val{font-family:var(--f-mono);font-size:11.5px;fill:var(--ink)}
+.stagecards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.stagecard{border:1px solid var(--rule);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:7px;background:var(--bg);min-width:0}
+.stagecard .strip{height:6px;border-radius:3px}
+.stagecard .sg{font-size:13px;color:var(--muted)}
+.kp{display:flex;flex-direction:column;font-size:13px;gap:1px}
+.kp .tg{font-family:var(--f-mono);font-size:12px;color:var(--ink2)}
+.rank{display:flex;flex-direction:column}
+.rank button{display:grid;grid-template-columns:52px minmax(0,1fr) minmax(240px,40%);gap:14px;align-items:center;text-align:left;border:0;background:transparent;padding:12px 8px;border-bottom:1px solid var(--rule);cursor:pointer;border-radius:6px}
+.rank button.nobar{grid-template-columns:70px minmax(0,1fr)}
+.rank button:hover{background:var(--accent-soft)}
+.rank .scn{font-family:var(--f-display);font-weight:780;font-size:26px;font-stretch:82%;font-variant-numeric:tabular-nums;color:var(--sev-ink)}
+@media (max-width:700px){.rank button{grid-template-columns:44px minmax(0,1fr)}.rank .stack{grid-column:1 / -1}}
+.stack{display:flex;flex-direction:column;gap:3px;min-width:0}
+.stack .sbar{position:relative;height:18px;border-radius:4px;background:var(--rule2);display:flex;overflow:visible}
+.stack .sbar span{display:flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:11px;color:#FFFFFF;height:100%}
+.stack .sbar span:first-child{border-radius:4px 0 0 4px}
+.stack .s1{background:var(--seg1)} .stack .s2{background:var(--seg2)} .stack .s3{background:var(--seg3);color:var(--ink)!important}
+.stack .thr{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1.5px dashed var(--sev3)}
+.stack .axis{position:relative;height:14px;font-family:var(--f-mono);font-size:11px;color:var(--faint)}
+.stack .axis i{position:absolute;font-style:normal;transform:translateX(-50%)}
+
+/* Blueprint (L2) */
+.bpctl{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.jump{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.jump button{border:1px solid var(--rule);background:var(--bg);border-radius:999px;padding:4px 12px;cursor:pointer;font-weight:600;font-size:12.5px}
+.jump button:hover{border-color:var(--accent);color:var(--accent)}
+.jump button.has{border-color:var(--accent);background:var(--accent-soft)}
+.focusbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;font-size:14px}
+.focusbar .what{flex:1 1 320px;min-width:0}
+.focusbar .nav2{display:flex;gap:6px;align-items:center;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:22px;height:0;border-top:2px dashed var(--linec);vertical-align:middle;margin-right:6px}
+.legend .k{display:inline-flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.bp-frame{position:relative}
+.bp-frame::after{content:"";position:absolute;top:1px;right:1px;bottom:1px;width:56px;border-radius:0 12px 12px 0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),#FFFFFF);transition:opacity .2s}
+.bp-frame.at-end::after{opacity:0}
+.bp-scroll{overflow:auto;max-height:calc(100vh - var(--navh) - 40px);border:1px solid var(--rule);border-radius:12px;background:var(--bg);box-shadow:var(--shadow)}
+.bp{display:grid;grid-template-columns:var(--labelw) repeat(var(--n),var(--colw));column-gap:var(--gap);padding:0 14px 14px 0;width:max-content}
+.bp .lab{position:sticky;left:0;z-index:2;background:var(--bg);padding:10px 12px 10px 16px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:2px;box-shadow:var(--gap) 0 0 var(--bg)}
+.bp .stagehdr,.bp .mrow{box-shadow:var(--gap) 0 0 var(--bg)}
+.bp .lab .n{font-family:var(--f-display);font-stretch:80%;font-weight:700;font-size:13.5px}
+.bp .lab .h{font-size:11.5px;color:var(--muted);line-height:1.35}
+.bp .lab.corner{top:0;z-index:6}
+.bp .lab.corner2{top:var(--hdrh);z-index:6}
+.bp .cell{padding:10px;font-size:13.5px;min-width:0;transition:opacity .15s,filter .15s}
+.z-customer{background:var(--lane-cust)} .z-frontstage{background:var(--lane-front)}
+.z-backstage{background:var(--lane-back)} .z-systems{background:var(--lane-sys)} .z-measures{background:var(--lane-meas)} .z-path{background:var(--accent-soft)}
+.bp .lab.z-customer,.bp .lab.z-frontstage,.bp .lab.z-backstage,.bp .lab.z-systems,.bp .lab.z-measures,.bp .lab.z-path{background:var(--bg)}
+.stagehdr{position:sticky;top:0;z-index:4;height:var(--hdrh);background:var(--bg);padding:12px 10px 6px;border-bottom:2px solid var(--ink);font-family:var(--f-display);font-weight:750;font-stretch:85%;font-size:14.5px;transition:opacity .15s,filter .15s}
+.stagehdr .sh{position:sticky;left:calc(var(--labelw) + 10px);display:inline-block;max-width:100%}
+.stagehdr small{display:block;font-family:var(--f-body);font-weight:400;font-size:11.5px;color:var(--muted);font-stretch:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stagehdr.exc{border-bottom-style:dashed}
+.mrow{position:sticky;top:var(--hdrh);z-index:4;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--rule)}
+.mhead{width:100%;height:100%;cursor:pointer;background:var(--bg);border:1px solid var(--rule);text-align:left;display:flex;flex-direction:column;gap:1px;border-radius:9px;padding:8px 10px;transition:opacity .15s,filter .15s,border-color .15s}
+.mhead:hover{border-color:var(--accent);background:var(--accent-soft)}
+.mhead .id{font-family:var(--f-mono);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
+.mhead .t{font-family:var(--f-display);font-weight:720;font-size:14px;font-stretch:88%;line-height:1.2;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lineRow{grid-column:1 / -1;position:relative;height:24px;display:flex;align-items:center}
+.lineRow::before{content:"";position:absolute;left:0;right:-14px;top:50%;border-top:2px dashed var(--linec)}
+.lineRow span{position:sticky;left:16px;z-index:3;background:var(--bg);color:var(--ink2);font-family:var(--f-display);font-stretch:75%;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:0 8px;margin-left:8px}
+.lineRow span em{font-style:normal;color:var(--muted);letter-spacing:.02em;text-transform:none;font-family:var(--f-body);font-weight:400;font-size:12px;margin-left:6px}
+.bandcell{grid-column:2 / -1;padding:10px 12px;font-size:13px;color:var(--muted);background:repeating-linear-gradient(135deg,var(--lane-sys) 0 10px,var(--bg) 10px 20px);border-radius:8px;margin:4px 0}
+.bandcell span{position:sticky;left:calc(var(--labelw) + 12px);background:var(--bg);padding:2px 8px;border-radius:6px}
+.feelcell{grid-column:2 / -1;padding:4px 0}
+.feelcell svg{display:block}
+.feelcell text{font-family:var(--f-body);font-size:11.5px;fill:var(--muted)}
 .who{display:inline-block;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-bottom:3px}
-.fp{font-size:12.5px;background:var(--bad-soft);border-radius:6px;padding:4px 7px;margin-bottom:4px}
+.dec{font-size:12.5px;color:var(--ink2);border-left:2px solid var(--ink2);padding-left:6px;margin-top:6px}
+.ntf{font-size:12.5px;color:var(--muted);margin-top:6px}
+ul.steps{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:3px}
+.pid{font-family:var(--f-mono);font-size:11px;color:var(--muted);display:block;margin-bottom:2px}
+.pname{font-weight:650;display:block;margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-family:var(--f-mono);font-size:12.5px;font-weight:500;border:1px solid var(--rule);background:var(--bg);border-radius:6px;padding:3px 8px;cursor:pointer;min-height:28px}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.ext{color:var(--ext);background:var(--ext-soft);border-color:transparent}
+.chip.on{background:var(--accent);color:#FFFFFF;border-color:var(--accent)}
+.tag{font-size:12.5px;line-height:1.35;padding:4px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--rule)}
+.ctlist{display:flex;flex-direction:column;gap:5px}
+.ctlist .tag{display:flex;flex-direction:column;gap:1px}
+.ty{font-family:var(--f-display);font-stretch:75%;font-weight:700;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.ty-fraud{color:var(--sev-ink)} .ty-aml{color:var(--aml)} .ty-regulatory{color:var(--ink)} .ty-security{color:var(--accent)} .ty-operational{color:var(--muted)}
+.ifc{display:flex;flex-direction:column;gap:3px;font-family:var(--f-mono);font-size:12px;overflow-wrap:anywhere}
+.cap{display:flex;flex-direction:column;gap:4px}
+.cap span{font-size:12.5px;padding-left:8px;border-left:2px solid var(--ink2)}
+.kpi{display:flex;flex-direction:column;gap:7px}
+.fail{display:flex;flex-direction:column;gap:5px}
+.fail div{font-size:13px;background:var(--bad-soft);border-radius:6px;padding:5px 8px;display:flex;gap:7px}
+.fail div::before{content:"";flex:none;width:7px;height:7px;margin-top:7px;border-radius:50%;background:var(--sev3)}
+.tp{display:flex;flex-direction:column;gap:4px}
+.tp b{display:block;font-family:var(--f-display);font-stretch:75%;font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.handoff{margin-top:4px;font-size:12px;color:var(--ink2);display:flex;gap:5px;font-weight:600}
+.handoff::before{content:"⇄"}
+.pathtxt{font-size:13px}
 .fnd{display:block;width:100%;text-align:left;font-size:12.5px;border:1px solid var(--rule);border-radius:6px;padding:4px 7px;margin-bottom:4px;background:var(--bg);cursor:pointer;line-height:1.35}
 .fnd:hover{border-color:var(--accent)}
-.dec{font-size:12px;color:var(--ink2);border-left:2px solid var(--ink2);padding-left:6px;margin-bottom:4px}
-.na{color:var(--faint);font-size:12px;font-style:italic}
+.clamp{display:block}
+.bp.dimming [data-m]{opacity:.42;filter:grayscale(1)}
+.bp.dimming [data-m].hit{opacity:1;filter:none}
+.bp.dimming .mhead.hit{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+#bpFrame:has([data-lens="executive"]) .bp-scroll{max-height:none}
+.bp[data-lens="executive"]{--colw:112px;--labelw:124px;--gap:4px}
+.bp[data-lens="executive"] .stagehdr,.bp[data-lens="executive"] .mrow{position:static}
+.bp[data-lens="executive"] .lab.corner,.bp[data-lens="executive"] .lab.corner2{top:auto}
+.bp[data-lens="executive"] .cell{font-size:12px;padding:8px 6px}
+.bp[data-lens="executive"] .stagehdr{font-size:12.5px;padding:10px 6px 4px}
+.bp[data-lens="executive"] .stagehdr small{display:none}
+.bp[data-lens="executive"] .mhead{padding:6px}
+.bp[data-lens="executive"] .mhead .t{font-size:12px}
+.bp[data-lens="executive"] .clamp,.bp[data-lens="executive"] .fail div,.bp[data-lens="executive"] .fnd{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.bp[data-lens="executive"] .ctlist .tag > span:last-child{display:none}
+.bp[data-lens="executive"] .lab .h{display:none}
+.bp[data-lens="executive"] .pathtxt{font-size:11.5px}
+[data-lens="executive"] [data-layer="touchpoint"],[data-lens="executive"] [data-layer="frontstage"],[data-lens="executive"] [data-layer="process"],
+[data-lens="executive"] [data-layer="apps"],[data-lens="executive"] [data-layer="interfaces"],[data-lens="executive"] [data-layer="capabilities"],[data-lens="executive"] [data-layer="sources"],
+[data-lens="product"] [data-layer="controls"],[data-lens="product"] [data-layer="apps"],[data-lens="product"] [data-layer="interfaces"],[data-lens="product"] [data-layer="capabilities"],[data-lens="product"] [data-layer="sources"],
+[data-lens="engineering"] [data-layer="feeling"],[data-lens="engineering"] [data-layer="touchpoint"],[data-lens="engineering"] [data-layer="kpis"],[data-lens="engineering"] [data-layer="fail_points"],[data-lens="engineering"] [data-layer="hotspot"]{display:none}
+[data-lens="executive"] [data-line="internal"],[data-lens="product"] [data-line="internal"],[data-lens="engineering"] [data-line="interaction"]{display:none}
 
 /* Compare */
 .cmp{border-collapse:separate;border-spacing:0}
@@ -196,8 +316,11 @@ tr.us .bar span{background:var(--accent)}
 
 /* Method */
 pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;background:var(--tint2);border:1px solid var(--rule);border-radius:10px;padding:14px;overflow:auto;max-height:520px;white-space:pre}
-.callout{border-left:3px solid var(--ink2);background:var(--tint2);padding:12px 16px;border-radius:0 10px 10px 0;font-size:14px}
-.callout.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+pre.mermaid{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:16px;overflow-x:auto;margin:0}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.why .panel{display:flex;flex-direction:column;gap:8px}
+.why .panel p{color:var(--muted);font-size:14px}
+.why .src{font-size:12.5px}
 
 /* Drawer */
 .drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--bg);border-left:1px solid var(--rule);box-shadow:var(--shadow);z-index:50;overflow-y:auto;
@@ -207,8 +330,35 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
 .drawer h3{padding-right:70px}
 .drawer ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
 .drawer ol a{overflow-wrap:anywhere}
+.drawer dl{margin:0;display:grid;gap:14px}
+.drawer dt{font-family:var(--f-display);font-stretch:75%;font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px;align-items:center}
+.drawer dd{margin:4px 0 0;font-size:14px}
+.drawer .meta{font-size:12.5px;color:var(--muted);margin-top:3px}
 .drawer .q{font-size:13.5px;background:var(--tint);border-radius:8px;padding:10px 12px;white-space:pre-wrap}
 .scrim{position:fixed;inset:0;background:rgba(10,15,30,.28);z-index:49}
+
+/* Present mode */
+.story{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:min(640px,calc(100% - 32px));background:var(--ink);color:#FFFFFF;border-radius:14px;box-shadow:var(--shadow);padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.story .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.story .stp{font-family:var(--f-mono);font-size:12px;color:#C9D1E3}
+.story h3{font-size:22px;color:#FFFFFF;font-stretch:88%;line-height:1.2}
+.story p{font-size:16px;color:#DCE2EE;line-height:1.5}
+.story .btns{display:flex;gap:8px;justify-content:flex-end;margin-top:auto}
+.story button{border:1px solid #47557A;background:transparent;color:#FFFFFF;border-radius:8px;padding:8px 16px;cursor:pointer;font-weight:600}
+.story button.primary{background:#FFFFFF;color:var(--ink);border-color:#FFFFFF}
+.story button:disabled{opacity:.4;cursor:default}
+.story .prog{height:3px;background:#33405F;border-radius:2px;overflow:hidden}
+.story .prog span{display:block;height:100%;background:#8EA2FF}
+.story .keys{font-size:12px;color:#9AA6C2}
+body.presenting .navr .pill,body.presenting .present{display:none}
+body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--accent),0 0 0 100vmax rgba(14,19,34,.42);border-radius:12px}
+@media (min-width:1200px){
+  body.presenting{padding-left:396px}
+  body.presenting .story{left:16px;top:calc(16px + env(safe-area-inset-top,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:none;width:360px;padding:26px 24px}
+  body.presenting .story h3{font-size:27px}
+  body.presenting .story p{font-size:18px}
+}
+@media (max-width:600px){:root{--labelw:108px;--colw:196px}.bp .lab{padding-left:10px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 
@@ -233,20 +383,24 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
     <div class="navl">
       <span class="brand">Money movement journeys</span>
       <div class="tabs">
-        <a href="#overview" data-view="overview">Overview</a>
-        <a href="#stages" data-view="stages">Stage scores</a>
-        <a href="#journeys" data-view="journeys">Journeys</a>
-        <a href="#compare" data-view="compare">Compare banks</a>
-        <a href="#findings" data-view="findings">Gaps &amp; strengths</a>
-        <a href="#method" data-view="method">Method &amp; data</a>
+        <a href="#overview" data-view="overview"><span class="lv">L0</span>Overview</a>
+        <a href="#stages" data-view="stages"><span class="lv">L1</span>Stage scores</a>
+        <a href="#journeys" data-view="journeys"><span class="lv">L1</span>Journey</a>
+        <a href="#blueprint" data-view="blueprint"><span class="lv">L2</span>Blueprint</a>
+        <a href="#compare" data-view="compare"><span class="lv">L1</span>Compare banks</a>
+        <a href="#findings" data-view="findings"><span class="lv">·</span>Gaps &amp; strengths</a>
+        <a href="#method" data-view="method"><span class="lv">·</span>Method</a>
       </div>
     </div>
-    <a class="pill" href="#method" title="Open data status"><span>Draft</span><span class="long">· CI legal review pending</span></a>
+    <div class="navr">
+      <a class="pill" href="#method" title="Open data status"><span>Draft</span><span class="long">· CI legal review pending</span></a>
+      <button type="button" class="present" id="presentBtn">▶ Present</button>
+    </div>
   </nav>
 
-  <!-- OVERVIEW -->
+  <!-- L0 OVERVIEW -->
   <section class="view" id="v-overview" data-view="overview">
-    <div class="insight">
+    <div class="insight" id="insight">
       <div class="hyp">
         <div class="eyebrow">Overall money-movement index · MI stage scores, scaled to 100</div>
         <h2 id="hyp"></h2>
@@ -257,7 +411,7 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
         <a class="linkbtn" href="#findings" id="allGaps" style="align-self:flex-start;margin-top:6px">All Wells Fargo gaps →</a></div>
     </div>
     <div class="two">
-      <div class="panel"><div class="sec-head" style="margin-bottom:8px"><h3>Ranking</h3></div>
+      <div class="panel" id="rankPanel0"><div class="sec-head" style="margin-bottom:8px"><h3>Ranking</h3></div>
         <p class="muted small" style="margin-bottom:8px">Overall and domestic-core index, and the share of rail × stage cells the study could score.</p>
         <div class="tbl-scroll"><table id="rankTbl"></table></div></div>
       <div class="panel" style="display:flex;flex-direction:column;gap:10px"><h3>Reading the scores</h3>
@@ -265,23 +419,23 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
         <div class="key" id="scoreKey"></div>
         <p class="muted small">Click a bank to open its stage scores, or a rail to compare all banks on it.</p></div>
     </div>
-    <div class="panel"><div class="sec-head" style="margin-bottom:8px"><h3>Rail by rail · mean stage score</h3></div><div class="tbl-scroll"><table class="heat" id="railHeat"></table></div></div>
+    <div class="panel" id="railPanel"><div class="sec-head" style="margin-bottom:8px"><h3>Rail by rail · mean stage score</h3></div><div class="tbl-scroll"><table class="heat" id="railHeat"></table></div></div>
   </section>
 
-  <!-- STAGES -->
+  <!-- L1 STAGES -->
   <section class="view" id="v-stages" data-view="stages" hidden>
     <div class="sec-head"><div><div class="eyebrow">Stage scores · one bank, every rail</div><h2 id="stTitle"></h2></div>
       <p>Each cell is the MI analyst's 0–4 score for that rail at that stage. Click a cell for the rationale and the findings behind it.</p></div>
     <div class="ctl"><div class="seg" id="stBanks" role="group" aria-label="Bank"></div>
       <label for="stMode">Show<select id="stMode"><option value="score">Score</option><option value="gap">Points behind the best bank</option></select></label></div>
     <div class="key" id="scoreKey2"></div>
-    <div class="panel"><div class="tbl-scroll"><table class="heat" id="stHeat"></table></div></div>
+    <div class="panel" id="stPanel"><div class="tbl-scroll"><table class="heat" id="stHeat"></table></div></div>
   </section>
 
-  <!-- JOURNEYS -->
+  <!-- L1 JOURNEY -->
   <section class="view" id="v-journeys" data-view="journeys" hidden>
-    <div class="sec-head"><div><div class="eyebrow">Journeys · as documented by MI, step by step</div><h2>Customer journeys</h2></div>
-      <p>Steps run left to right. Customer and recipient actions sit above the line of interaction, screens and bank staff above the line of visibility, and what bank systems, the network or third parties do below it. For competitors, everything below the line comes from disclosures or inference.</p></div>
+    <div class="sec-head"><div><div class="eyebrow">Level 1 · Journey</div><h2>Customer journeys</h2></div>
+      <p>Pick a journey to see how its bank scores stage by stage, where the gaps sit, and its worst moments. Open the blueprint for every step.</p></div>
     <div class="ctl">
       <label for="jBank">Bank<select id="jBank"></select></label>
       <label for="jProd">Rail<select id="jProd"></select></label>
@@ -291,12 +445,46 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
     <div class="jgrid"><div class="jlist" id="jList" role="list"></div><div class="jdetail" id="jDetail"></div></div>
   </section>
 
-  <!-- COMPARE -->
+  <!-- L2 BLUEPRINT -->
+  <section class="view" id="v-blueprint" data-view="blueprint" hidden>
+    <div class="sec-head">
+      <div><div class="eyebrow" id="bpEyebrow"></div><h2 id="bpTitle"></h2></div>
+      <p>Steps run left to right. Each column drops through the line of visibility to what happens behind it. For competitors, everything below the line is what the bank discloses or what MI infers.</p>
+    </div>
+    <div class="ctl"><label for="bpPick" style="flex:1 1 360px">Journey<select id="bpPick"></select></label><a class="linkbtn" href="#journeys">← Journey summary</a></div>
+    <div class="bpctl">
+      <div class="ctlgroup"><span class="seglabel">Lens</span>
+        <div class="seg" id="lensSeg" role="group" aria-label="Audience lens">
+          <button type="button" data-lens="executive" aria-pressed="false">Executive</button>
+          <button type="button" data-lens="product" aria-pressed="false">Business &amp; product</button>
+          <button type="button" data-lens="engineering" aria-pressed="false">Engineering</button>
+          <button type="button" data-lens="full" aria-pressed="true">Full</button>
+        </div></div>
+      <div class="ctlgroup"><span class="seglabel" id="pathLabel">Path</span><div class="seg" id="pathSeg" role="group" aria-label="Path or highlight"></div></div>
+    </div>
+    <div class="jump" id="jump"></div>
+    <div class="focusbar" id="focusbar" hidden>
+      <div class="what" id="focusWhat"></div>
+      <div class="nav2"><button type="button" class="linkbtn" id="fPrev" aria-label="Previous highlighted step">←</button><span id="fPos"></span><button type="button" class="linkbtn" id="fNext" aria-label="Next highlighted step">→</button><button type="button" class="linkbtn" id="fClear">Clear</button></div>
+    </div>
+    <div class="legend" id="bpLegend"></div>
+    <div class="bp-frame" id="bpFrame"><div class="bp-scroll" id="bpScroll" tabindex="0" aria-label="Blueprint grid, scrollable"><div class="bp" id="bp" data-lens="full"></div></div></div>
+    <div class="panel" id="appsPanel" hidden>
+      <div class="sec-head" style="margin-bottom:8px"><h3>Systems behind the journey</h3><span class="muted" style="font-size:13px">App IDs <span class="ev ev-sample">sample</span> · click a row to trace · CMDB links required before publish</span></div>
+      <div class="tbl-scroll"><table><thead><tr><th>App ID</th><th>Name</th><th>Layer</th><th>Owner</th><th>BIAN service domain</th><th>Depends on</th><th>KOS bundle</th><th class="num">Steps</th></tr></thead><tbody id="appRows"></tbody></table></div>
+    </div>
+    <div class="panel" id="actorsPanel" hidden>
+      <div class="sec-head" style="margin-bottom:8px"><h3>Who acts in this journey</h3><span class="muted" style="font-size:13px">Steps by actor, as documented by MI · click a row to highlight</span></div>
+      <div class="tbl-scroll"><table><thead><tr><th>Actor</th><th>Lane</th><th class="num">Steps</th><th>Evidence</th></tr></thead><tbody id="actorRows"></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- L1 COMPARE -->
   <section class="view" id="v-compare" data-view="compare" hidden>
     <div class="sec-head"><div><div class="eyebrow">Compare banks · one rail</div><h2 id="cmpTitle"></h2></div>
       <p>The same stages and capability questions for every bank. A capability is Yes when any of the bank's sub-products on this rail has it and No only when every one lacks it. Click a cell for its sources.</p></div>
     <div class="ctl"><label for="cmpProd">Rail<select id="cmpProd"></select></label><span class="dataline" id="cmpLine" style="padding-bottom:8px"></span></div>
-    <div class="panel tbl-scroll" style="padding:0"><table class="cmp" id="cmp"></table></div>
+    <div class="panel tbl-scroll" id="cmpPanel" style="padding:0"><table class="cmp" id="cmp"></table></div>
   </section>
 
   <!-- FINDINGS -->
@@ -318,7 +506,7 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
   </section>
 
   <!-- METHOD -->
-  <section class="view" id="v-method" data-view="method" hidden>
+  <section class="view parked" id="v-method" data-view="method" aria-label="Method and data">
     <div class="sec-head"><div><div class="eyebrow">Method &amp; data</div><h2>Where the numbers come from</h2></div>
       <p>Everything on this page renders from one validated data product, kjourneys, imported from the MI workbook and checked on every change by a JSON Schema, an integrity checker and negative test cases.</p></div>
     <div class="two">
@@ -333,9 +521,45 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
       <div class="panel" style="display:flex;flex-direction:column;gap:10px"><h3>Governance</h3><div id="gov"></div>
         <div class="callout">The line of visibility is also the limit of market intelligence. Competitor journeys above it come from bank sites, help centers, app stores and walkthroughs; below it they are disclosures or inference. Wells Fargo's own backstage (process, controls, app IDs) appears only on the hand-built sample blueprint, labeled sample.</div></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
-      <div class="sec-head"><h3>journey-ontology.yaml · <span id="ontVer"></span></h3><button type="button" class="linkbtn" id="copySchema">Copy schema</button></div>
-      <pre class="code" id="schemaText"></pre>
+    <div class="two">
+      <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <h3>Core Zelle send flow (engineering) · <span class="ev ev-sample">sample</span></h3>
+<pre class="mermaid">
+sequenceDiagram
+  autonumber
+  actor C as Customer
+  participant mobil as mobil · Mobile app
+  participant p2phb as p2phb · P2P hub
+  participant limit as limit · Limits
+  participant frdsc as frdsc · Fraud scoring
+  participant ledgr as ledgr · DDA ledger
+  participant Z as ext-zelle · Network
+  participant notif as notif · Notifications
+  C->>mobil: Amount, memo, Send
+  mobil->>p2phb: POST /p2p/payments
+  p2phb->>limit: Check limits
+  p2phb->>frdsc: risk.score (sync)
+  alt high risk
+    frdsc-->>mobil: Step-up or hold
+  end
+  p2phb->>ledgr: Debit sender (memo post)
+  p2phb->>Z: Payment request
+  Z-->>p2phb: Accepted, receiving bank credits recipient
+  p2phb->>notif: payment.completed
+  notif-->>C: Push and email confirmation
+</pre>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+        <div class="sec-head"><h3>journey-ontology.yaml · <span id="ontVer"></span></h3><button type="button" class="linkbtn" id="copySchema">Copy schema</button></div>
+        <pre class="code" id="schemaText"></pre>
+      </div>
+    </div>
+    <div class="why">
+      <div class="panel"><h3>Three zoom levels</h3><p>Journey-management practice separates a lifecycle view for executives, stage-level journeys for product leads, and detailed micro-journeys for designers and engineers, each linked to the one above.</p><a class="src" href="https://www.theydo.com/guides/the-3-zoom-levels-of-a-journey-framework" target="_blank" rel="noopener">TheyDo: 3 zoom levels</a></div>
+      <div class="panel"><h3>A blueprint under the journey</h3><p>A journey map shows what the customer experiences. A blueprint lays it over the backstage processes and systems, split by the lines of interaction, visibility and internal interaction.</p><a class="src" href="https://www.smaply.com/blog/what-is-a-service-blueprint" target="_blank" rel="noopener">Smaply on service blueprints</a></div>
+      <div class="panel"><h3>End-to-end metrics and a heat map</h3><p>Measure value end to end rather than per function, and track journey maturity on a heat map that leadership reviews regularly.</p><a class="src" href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/rethinking-customer-journeys-with-the-next-generation-operating-model" target="_blank" rel="noopener">McKinsey: next-generation operating model</a></div>
+      <div class="panel"><h3>Handoffs and living maps</h3><p>Journeys break at handoffs between channels and systems, and maps go stale. Show channel switches, keep owners and provenance, and update continuously.</p><a class="src" href="https://www.backbase.com/blog/banking-customer-journey" target="_blank" rel="noopener">Backbase: journey mapping mistakes</a> <a class="src" href="https://www.nngroup.com/articles/service-blueprinting-practice/" target="_blank" rel="noopener">NN/g on blueprinting in practice</a></div>
+      <div class="panel"><h3>Shared banking vocabulary</h3><p>BIAN service domains name each capability the same way at every bank, so ten banks' journeys compare even though their systems never will.</p><a class="src" href="https://bian.org/?p=436" target="_blank" rel="noopener">BIAN Payments working group</a></div>
     </div>
   </section>
 </div>
@@ -345,33 +569,81 @@ pre.code{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.55;back
   <button type="button" class="linkbtn x" id="dClose">Close</button>
   <div id="dBody"></div>
 </aside>
+<div class="story" id="story" hidden role="dialog" aria-label="Presentation">
+  <div class="top"><span class="stp" id="storyStep"></span><button type="button" id="storyExit">Exit</button></div>
+  <div class="prog"><span id="storyProg"></span></div>
+  <h3 id="storyTitle"></h3>
+  <p id="storyText"></p>
+  <span class="keys">← → to move · Esc to exit</span>
+  <div class="btns"><button type="button" id="storyPrev">Back</button><button type="button" class="primary" id="storyNext">Next</button></div>
+</div>
 
 <script>
 const V = __DATA__;
 const SCHEMA = __SCHEMA__;
 const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const BANK = Object.fromEntries(V.banks.map(b => [b.id, b]));
-const PROD = Object.fromEntries(V.products.map(p => [p.id, p]));
+const by = (arr, k = "id") => Object.fromEntries((arr || []).map(x => [x[k], x]));
+const BANK = by(V.banks), PROD = by(V.products);
 const STG = V.stages, STGN = Object.fromEntries(STG.map(s => [s.id, s.name]));
 const bn = id => BANK[id]?.name || id, pn = id => PROD[id]?.name || id;
 const FOCUS = V.focus, REP = V.reports[0] || {};
 const RANK = [...V.rankings].sort((a, b) => a.rank - b.rank);
 const SCORED = V.products.map(p => p.id).filter(p => V.banks.some(b => V.scores[b.id]?.[p]));
-const EVN = {CONFIRMED_BANK:"bank-confirmed", OBSERVED_SESSION:"observed session", THIRD_PARTY:"third party", COMMUNITY:"community", INFERRED:"inferred", UNKNOWN:"unknown", sample:"sample", internal:"internal", disclosed:"disclosed", observed:"observed", inferred:"inferred"};
+const EVN = {CONFIRMED_BANK:"bank-confirmed", OBSERVED_SESSION:"observed session", THIRD_PARTY:"third party", COMMUNITY:"community", INFERRED:"inferred", UNKNOWN:"unknown", sample:"sample", internal:"internal", disclosed:"disclosed", observed:"observed", inferred:"inferred", awaiting:"awaiting"};
 const ev = e => e ? `<span class="ev ev-${esc(e)}" title="Evidence: ${esc(EVN[e] || e)}">${esc(EVN[e] || e)}</span>` : "";
 const TYPEN = {"strength":"Strength","transparency":"Transparency","friction":"Friction","missing-capability":"Missing capability","security-trust":"Security & trust","exception-handling":"Exception handling","channel-gap":"Channel gap"};
-const SEVO = {critical:0, high:1, medium:2, low:3};
+const SEVO = {critical:0, high:1, medium:2, low:3}, SEVS = ["critical", "high", "medium", "low"];
+const SEVC = {critical:"var(--g-crit)", high:"var(--g-high)", medium:"var(--g-med)", low:"var(--g-low)"};
 const RUBRIC = ["absent", "only by switching channel, or a critical gap", "material friction", "at parity", "sets the reference"];
 const isGap = f => f.type !== "strength";
 const fmt1 = x => x == null ? "—" : (+x).toFixed(1).replace(/\.0$/, "");
 const pct = x => x == null ? "—" : Math.round(x * 100) + "%";
+const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const FBYJ = {}; V.findings.forEach(f => { if (f.j) (FBYJ[f.j] ||= []).push(f); });
-const JBYID = Object.fromEntries(V.journeys.map(j => [j.id, j]));
+const JBYID = by(V.journeys);
 const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
 const sevChip = f => `<span class="sev ${isGap(f) ? "sev-" + esc(f.sev) : "sev-strength"}">${isGap(f) ? esc(f.sev) : "strength"}</span>`;
 const scCls = v => v == null ? "scU" : "sc" + Math.max(0, Math.min(4, Math.round(v)));
 const scoreKey = el => { el.innerHTML = [0,1,2,3,4].map(i => `<span><i class="sc${i}"></i>${i} ${RUBRIC[i]}</span>`).join("") + `<span><i class="scU"></i>U could not score</span>`; };
+const cut = (t, n) => (t || "").length > n ? t.slice(0, t.lastIndexOf(" ", n)) + "…" : (t || "");
+function best(p, s) { let m = null, who = []; V.banks.forEach(b => { const v = V.scores[b.id]?.[p]?.[s]?.[0]; if (v == null) return; if (m == null || v > m) { m = v; who = [b.id]; } else if (v === m) who.push(b.id); }); return [m, who]; }
+
+/* ---------- the sample blueprint's catalogs ---------- */
+const SM = V.sample || {};
+const APP = by(SM.applications, "app_id"), PROC = by(SM.processes), CTRL = by(SM.controls), CAPB = by(SM.capabilities), MET = by(SM.metrics);
+const UNIT = {percent:"%",bps:" bps",ms:" ms",seconds:" s",days:" days",count:"",usd:" USD",per_1000:" per 1,000"};
+const CMPSYM = {"<":"<","<=":"≤","==":"=",">=":"≥",">":">"};
+const fmtTarget = k => { const mm = MET[k.metric]; if (!mm) return ""; if (k.target) return `${CMPSYM[k.target.comparator]} ${k.target.value}${UNIT[mm.unit] ?? ""}`;
+  return mm.direction === "monitor" ? "monitor" : `trend ${mm.direction === "increase" ? "up" : "down"}`; };
+const hot = m => m.hot ? m.hot.pain + m.hot.risk + m.hot.cost : null;
+const hlevel = s => s >= 7 ? 3 : s >= 5 ? 2 : 1, HLV = ["", "Low", "Medium", "High"];
+const who = p => String(p || "").replace(/^(human|group|role|process):/, "").replace(/-/g, " ").replace(/^./, c => c.toUpperCase());
+
+/* One step model for every journey: MI steps and the sample's moments render through the same blueprint. */
+const LANEOF = w => (w === "customer" || w === "recipient") ? "customer" : (w === "bank-staff" ? "frontstage" : "backstage");
+function model(j) {
+  if (j._m) return j._m;
+  const fs = FBYJ[j.id] || [], byStep = {}; fs.forEach(f => (byStep[f.n] ||= []).push(f));
+  let steps, variants = [];
+  if (j.sample && SM.journey) {
+    const raw = SM.journey, code = Object.fromEntries(raw.moments.map(m => [m.id, m.code]));
+    steps = raw.moments.map((m, i) => ({code: m.code, stage: m.stage, title: m.title, who: m.customer_action ? "customer" : "bank-system",
+      action: m.customer_action, tp: m.touchpoints || [], handoff: m.handoff, fs: m.frontstage, dec: null, ntf: null,
+      proc: PROC[m.process], ctl: (m.controls || []).map(c => CTRL[c]).filter(Boolean), apps: m.applications || [], ifc: m.interfaces || [], data: m.data || [],
+      caps: (m.capabilities || []).map(c => CAPB[c]?.name || c), kpis: m.kpis || [], fp: (m.fail_points || []).map(f => f.text),
+      emo: m.emotion, emoNote: m.emotion_note, hot: m.hotspot, owner: m.owner, find: byStep[i + 1] || [], src: [...new Set(Object.values(m.evidence).flatMap(a => a.source_ids || []))],
+      e: "sample", evid: Object.fromEntries(Object.entries(m.evidence).map(([k, a]) => [k, a.basis]))}));
+    variants = (raw.variants || []).map(v => ({code: v.code, name: v.name, trigger: v.trigger, codes: v.moments.map(x => code[x]),
+      notes: Object.fromEntries(Object.entries(v.notes || {}).map(([k, t]) => [code[k], t]))}));
+  } else {
+    steps = j.steps.map((s, i) => ({code: s.c, stage: s.s, title: s.t, who: s.who, action: s.a,
+      tp: s.tp ? s.tp.split("; ").map(x => { const k = x.indexOf(": "); return k > 0 ? {channel: x.slice(0, k), screen: x.slice(k + 2)} : {channel: x, screen: ""}; }) : [],
+      fs: s.fs, dec: s.dec, ntf: s.ntf, fp: s.fp, find: byStep[i + 1] || [], src: s.src, e: s.e, ctl: [], apps: [], ifc: [], data: [], caps: [], kpis: []}));
+  }
+  return j._m = {steps, variants, sample: !!j.sample};
+}
 
 /* ---------- header ---------- */
 $("#tb-rep").textContent = REP.version || "—";
@@ -380,18 +652,16 @@ $("#tb-rails").textContent = `${V.products.length} (${SCORED.length} scored)`;
 $("#tb-ont").textContent = V.ontology;
 $("#tb-class").textContent = V.governance.classification || "internal";
 $("#tb-legal").textContent = V.governance.ci_legal_review?.status || "pending";
-$("#lede").textContent = `${V.counts.journeys} journeys and ${V.counts.steps.toLocaleString()} steps across ${V.banks.length} banks and ${V.products.length} payment rails, each step traced to its sources. Start with the ranking, then open stage scores and journeys, and compare banks rail by rail.`;
+$("#lede").textContent = `${V.counts.journeys} journeys and ${V.counts.steps.toLocaleString()} steps across ${V.banks.length} banks and ${V.products.length} payment rails, each step traced to its sources. Start with the ranking, then open stage scores, a journey and its blueprint, and compare banks rail by rail.`;
 
-/* ---------- overview ---------- */
+/* ---------- L0 overview ---------- */
+const WFR = RANK.find(r => r.bank === FOCUS), LEAD = RANK[0], WFF = V.findings.filter(f => f.bank === FOCUS);
 function overview() {
-  const wf = RANK.find(r => r.bank === FOCUS), lead = RANK[0];
-  const wfF = V.findings.filter(f => f.bank === FOCUS);
-  $("#hyp").innerHTML = wf ? `${esc(bn(FOCUS))} ranks <em>#${wf.rank} of ${RANK.length}</em> on money movement, ${fmt1(lead.overall_index - wf.overall_index)} points behind ${esc(bn(lead.bank))}.` : "No ranking in this report.";
-  $("#hypSub").textContent = wf ? `Overall index ${fmt1(wf.overall_index)} against ${fmt1(lead.overall_index)} for the leader, with ${pct(wf.coverage)} of Wells Fargo's rail × stage cells scored. MI recorded ${wfF.filter(isGap).length} gaps and ${wfF.filter(f => !isGap(f)).length} strengths for Wells Fargo.` : "";
+  $("#hyp").innerHTML = WFR ? `${esc(bn(FOCUS))} ranks <em>#${WFR.rank} of ${RANK.length}</em> on money movement, ${fmt1(LEAD.overall_index - WFR.overall_index)} points behind ${esc(bn(LEAD.bank))}.` : "No ranking in this report.";
+  $("#hypSub").textContent = WFR ? `Overall index ${fmt1(WFR.overall_index)} against ${fmt1(LEAD.overall_index)} for the leader, with ${pct(WFR.coverage)} of Wells Fargo's rail × stage cells scored. MI recorded ${WFF.filter(isGap).length} gaps and ${WFF.filter(f => !isGap(f)).length} strengths for Wells Fargo.` : "";
   $("#dataline").innerHTML = [["journeys", V.counts.journeys], ["steps", V.counts.steps], ["findings", V.counts.findings], ["scored cells", V.counts.score_cells], ["sources", V.counts.sources], ["verification checks", V.counts.verifications]]
     .map(([k, v]) => `<span><b>${v.toLocaleString()}</b> ${k}</span>`).join("");
-  const top = wfF.filter(isGap).sort((a, b) => SEVO[a.sev] - SEVO[b.sev] || a.id.localeCompare(b.id)).slice(0, 5);
-  const cut = (t, n) => t.length > n ? t.slice(0, t.lastIndexOf(" ", n)) + "…" : t;
+  const top = WFF.filter(isGap).sort((a, b) => SEVO[a.sev] - SEVO[b.sev] || a.id.localeCompare(b.id)).slice(0, 5);
   $("#topGaps").innerHTML = top.map(f => `<button type="button" class="gaprow" data-f="${esc(f.id)}">${sevChip(f)}<span>${esc(cut(f.d, 150))}<br><span class="muted small">${esc(pn(f.p))} · ${esc(STGN[f.s] || f.s)} · ${esc(f.id)}</span></span></button>`).join("");
   $("#rankTbl").innerHTML = `<thead><tr><th class="num">#</th><th>Bank</th><th>Overall</th><th class="num">Index</th><th class="num">Domestic core</th><th class="num">Coverage</th></tr></thead><tbody>` +
     RANK.map(r => `<tr class="${r.bank === FOCUS ? "us" : ""}"><td class="num">${r.rank}</td><td><button type="button" class="textbtn" data-stbank="${esc(r.bank)}">${esc(bn(r.bank))}</button></td><td style="width:32%"><div class="bar"><span style="width:${r.overall_index}%"></span></div></td><td class="num">${fmt1(r.overall_index)}</td><td class="num">${fmt1(r.domestic_core_index)}</td><td class="num">${pct(r.coverage)}</td></tr>`).join("") + "</tbody>";
@@ -402,9 +672,8 @@ function overview() {
 }
 $("#allGaps").onclick = () => { Object.assign(fState, {bank: FOCUS, kind: "gap", type: "", sev: "", p: "", s: "", n: 60}); };
 
-/* ---------- stage scores ---------- */
+/* ---------- L1 stage scores ---------- */
 let stBank = FOCUS;
-function best(p, s) { let m = null, who = []; V.banks.forEach(b => { const v = V.scores[b.id]?.[p]?.[s]?.[0]; if (v == null) return; if (m == null || v > m) { m = v; who = [b.id]; } else if (v === m) who.push(b.id); }); return [m, who]; }
 function renderStages() {
   $("#stBanks").innerHTML = RANK.map(r => `<button type="button" data-b="${esc(r.bank)}" aria-pressed="${r.bank === stBank}">${esc(bn(r.bank))}</button>`).join("");
   const r = RANK.find(x => x.bank === stBank);
@@ -413,10 +682,10 @@ function renderStages() {
   const gap = $("#stMode").value === "gap";
   $("#stHeat").innerHTML = `<thead><tr><th>Rail</th>${STG.map(s => `<th>${esc(s.name)}</th>`).join("")}<th class="num">Mean</th></tr></thead><tbody>` +
     SCORED.map(p => { const row = V.scores[stBank]?.[p] || {};
-      return `<tr><td><button type="button" class="textbtn" data-cmp="${esc(p)}">${esc(pn(p))}</button></td>${STG.map(s => { const c = row[s.id], v = c?.[0]; const [m, who] = best(p, s.id);
+      return `<tr><td><button type="button" class="textbtn" data-cmp="${esc(p)}">${esc(pn(p))}</button></td>${STG.map(s => { const c = row[s.id], v = c?.[0]; const [m, whoB] = best(p, s.id);
         if (v == null) return `<td><button type="button" class="sc scU" data-p="${esc(p)}" data-s="${esc(s.id)}" title="Not scored">U</button></td>`;
         const behind = m - v, label = gap ? (behind === 0 ? "best" : "−" + behind) : v;
-        return `<td><button type="button" class="sc ${gap ? scCls(4 - behind) : scCls(v)}" data-p="${esc(p)}" data-s="${esc(s.id)}" title="${esc(pn(p))} · ${esc(s.name)}: ${v} of 4; best ${m} (${esc(who.map(bn).join(", "))}); evidence ${esc(EVN[c[1]] || c[1])}">${label}</button></td>`; }).join("")}
+        return `<td><button type="button" class="sc ${gap ? scCls(4 - behind) : scCls(v)}" data-p="${esc(p)}" data-s="${esc(s.id)}" title="${esc(pn(p))} · ${esc(s.name)}: ${v} of 4; best ${m} (${esc(whoB.map(bn).join(", "))}); evidence ${esc(EVN[c[1]] || c[1])}">${label}</button></td>`; }).join("")}
         <td class="num">${fmt1(r?.rail_means?.[p])}</td></tr>`; }).join("") + "</tbody>";
 }
 $("#stBanks").onclick = e => { const b = e.target.closest("[data-b]"); if (b) { stBank = b.dataset.b; renderStages(); } };
@@ -424,15 +693,15 @@ $("#stMode").onchange = renderStages;
 $("#stHeat").onclick = e => { const c = e.target.closest(".sc[data-s]"); if (c) showScore(stBank, c.dataset.p, c.dataset.s); };
 function showScore(bank, p, s) {
   const c = V.scores[bank]?.[p]?.[s]; const fs = V.findings.filter(f => f.bank === bank && f.p === p && f.s === s);
-  const [m, who] = best(p, s);
+  const [m, whoB] = best(p, s);
   openDrawer(`<span class="eyebrow">${esc(bn(bank))} · ${esc(pn(p))}</span><h3>${esc(STGN[s])}: ${c ? c[0] + " of 4, " + RUBRIC[c[0]] : "not scored (U)"}</h3>
-    ${c ? `<div>${ev(c[1])}</div>` : ""}<p class="muted small">Best on this rail and stage: ${m == null ? "—" : m + " · " + esc(who.map(bn).join(", "))}</p>
+    ${c ? `<div>${ev(c[1])}</div>` : ""}<p class="muted small">Best on this rail and stage: ${m == null ? "—" : m + " · " + esc(whoB.map(bn).join(", "))}</p>
     ${c?.[2] ? `<span class="lbl">Analyst rationale</span><div class="q">${esc(c[2])}</div>` : ""}
     <span class="lbl">Findings at this stage (${fs.length})</span>${fs.map(fcard).join("") || `<p class="blank">None recorded</p>`}`);
 }
 
-/* ---------- journeys ---------- */
-let jSel = (V.journeys.find(j => j.bank === FOCUS && j.p === "zelle" && !j.sample) || V.journeys[0]).id;
+/* ---------- L1 journey ---------- */
+let jSel = (V.journeys.find(j => j.bank === FOCUS && j.p === "zelle" && !j.sample) || V.journeys[0]).id, jScope = "rail";
 $("#jBank").innerHTML = opt("", "All banks") + RANK.map(r => opt(r.bank, bn(r.bank), r.bank === FOCUS)).join("");
 $("#jProd").innerHTML = opt("", "All rails") + V.products.map(p => opt(p.id, p.name)).join("");
 function jFiltered() {
@@ -443,61 +712,331 @@ function jFiltered() {
 }
 function renderJourneyList() {
   const L = jFiltered();
-  $("#jCount").textContent = `${L.length} journey${L.length === 1 ? "" : "s"}`;
+  $("#jCount").textContent = plural(L.length, "journey");
   if (L.length && !L.some(j => j.id === jSel)) jSel = L[0].id;
-  $("#jList").innerHTML = L.map(j => { const fs = FBYJ[j.id] || [];
+  $("#jList").innerHTML = L.map(j => { const g = (FBYJ[j.id] || []).filter(isGap).length;
     return `<button type="button" class="jitem" role="listitem" data-j="${esc(j.id)}" aria-current="${j.id === jSel}"><span class="t">${esc(j.t)}</span>
-      <span class="m muted"><span class="mono">${esc(j.sjid || "sample")}</span><span>${esc(bn(j.bank))}</span><span>${esc(pn(j.p))}</span><span>${j.steps.length} steps</span>${(g => g ? `<span>${g} gap${g > 1 ? "s" : ""}</span>` : "")(fs.filter(isGap).length)}</span></button>`; }).join("")
+      <span class="m muted"><span class="mono">${esc(j.sjid || "sample")}</span><span>${esc(bn(j.bank))}</span><span>${esc(pn(j.p))}</span><span>${plural(j.steps.length, "step")}</span>${g ? `<span>${plural(g, "gap")}</span>` : ""}</span></button>`; }).join("")
     || `<p class="blank" style="padding:12px">No journeys match these filters.</p>`;
-  renderJourney(L.length > 0);
+  if (L.length) renderJourney(); else $("#jDetail").innerHTML = "";
 }
 ["#jBank", "#jProd"].forEach(s => $(s).onchange = renderJourneyList);
 $("#jQ").oninput = renderJourneyList;
 $("#jList").onclick = e => { const b = e.target.closest("[data-j]"); if (b) { jSel = b.dataset.j; renderJourneyList(); } };
-const LANE = w => (w === "customer" || w === "recipient") ? "cust" : (w === "bank-staff" ? "front" : "back");
-function renderJourney(any = true) {
-  const j = JBYID[jSel]; if (!j || !any) { $("#jDetail").innerHTML = ""; return; }
-  const fs = FBYJ[j.id] || [], byStep = {}; fs.forEach(f => (byStep[f.n] ||= []).push(f));
-  const steps = j.steps;
-  const cell = (cls, html) => `<div class="${cls}">${html}</div>`;
-  const row = (label, hint, cls, fn) => cell("lab " + cls, `${label}<small>${hint}</small>`) + steps.map((s, i) => cell(cls, fn(s, i))).join("");
-  const act = s => `<span class="who">${esc(s.who)}</span><div>${esc(s.a)}</div>`;
-  const back = s => {
-    let h = LANE(s.who) === "back" ? act(s) : "";
-    if (s.proc) h += `<div class="small"><b>${esc(s.proc)}</b></div>`;
-    if (s.apps?.length) h += `<div class="mono small">${s.apps.map(esc).join(" · ")}</div>`;
-    if (s.ctl?.length) h += `<div class="small muted">${s.ctl.length} control${s.ctl.length > 1 ? "s" : ""}</div>`;
-    return h;
-  };
-  const bp = cell("hd lab", `Step<small>stage · evidence</small>`) + steps.map(s => cell("hd", `<div class="code"><span>${esc(s.c)}</span>${ev(s.e)}</div><div class="st">${esc(STGN[s.s] || s.s)}</div>`)).join("")
-    + row("Customer", "customer and recipient actions", "z-cust", s => LANE(s.who) === "cust" ? act(s) : "")
-    + `<div class="line"><span>Line of interaction</span></div>`
-    + row("Touchpoint", "channel and screen", "", s => s.tp ? `<div class="small">${esc(s.tp)}</div>` : "")
-    + row("Frontstage", "what the bank shows, or staff do", "", s => (LANE(s.who) === "front" ? act(s) : "") + (s.fs ? `<div class="small">${esc(s.fs)}</div>` : ""))
-    + row("Decision · notice", "branch points and messages", "", s => (s.dec ? `<div class="dec">${esc(s.dec)}</div>` : "") + (s.ntf ? `<div class="small muted">Notice: ${esc(s.ntf)}</div>` : ""))
-    + `<div class="line"><span>Line of visibility</span></div>`
-    + row("Backstage", j.sample ? "process, app IDs, controls (sample)" : "systems, network and third parties, as disclosed or inferred", "z-back", back)
-    + row("Fail points", "where it can go wrong", "", s => s.fp.map(t => `<div class="fp">${esc(t)}</div>`).join(""))
-    + row("Findings", "MI gaps and strengths at this step", "", (s, i) => (byStep[i + 1] || []).map(f => `<button type="button" class="fnd" data-f="${esc(f.id)}">${sevChip(f)} ${esc(f.d.slice(0, 90))}${f.d.length > 90 ? "…" : ""}</button>`).join(""))
-    + row("Sources", "click to open", "", (s, i) => s.src.length ? `<button type="button" class="linkbtn" style="font-size:12px;padding:3px 8px" data-src="${i}">${s.src.length} source${s.src.length > 1 ? "s" : ""}</button>` : `<span class="na">none cited</span>`);
-  const exc = j.exc || [], ntf = j.ntf || [];
+
+/* Stacked graph: stage scores (bank, best bank, Wells Fargo) over gaps per stage by severity, strengths above the line. */
+function scoreGapSVG(j) {
+  const p = j.p, bank = j.bank, scored = SCORED.includes(p);
+  const fs = jScope === "rail" ? V.findings.filter(f => f.bank === bank && f.p === p) : (FBYJ[j.id] || []);
+  const W = 1240, padL = 120, padR = 20, n = STG.length, cw = (W - padL - padR) / n, x = i => padL + cw * i + cw / 2;
+  const T0 = 46, T1 = 196, y = v => T1 - v * (T1 - T0) / 4;
+  const gaps = STG.map(s => SEVS.map(sv => fs.filter(f => isGap(f) && f.s === s.id && f.sev === sv).length));
+  const strs = STG.map(s => fs.filter(f => !isGap(f) && f.s === s.id).length);
+  const maxG = Math.max(1, ...gaps.map(g => g.reduce((a, b) => a + b, 0))), maxS = Math.max(1, ...strs);
+  const unit = Math.min(16, 120 / maxG), sunit = Math.min(10, 34 / maxS);
+  const B0 = 236 + maxS * sunit;              // gap baseline: strengths rise above it, gaps hang below
+  const H = B0 + maxG * unit + 34;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Stage scores for ${esc(bn(bank))} on ${esc(pn(p))}, with gaps and strengths per stage">`;
+  STG.forEach((st, i) => { s += `<rect x="${padL + cw * i + 2}" y="0" width="${cw - 4}" height="26" rx="6" fill="${i % 2 ? "#F2F4F8" : "#F6F8FC"}"/><text class="ttl" x="${x(i)}" y="17" text-anchor="middle">${esc(st.name)}</text>`; });
+  if (scored) {
+    [0, 1, 2, 3, 4].forEach(v => { s += `<line x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 2 ? "#C4CAD6" : "#EEF0F4"}"/><text x="${padL - 10}" y="${y(v) + 4}" text-anchor="end" style="font-family:var(--f-mono)">${v}</text>`; });
+    s += `<text x="${padL - 26}" y="${y(4) + 4}" text-anchor="end">reference</text><text x="${padL - 26}" y="${y(0) + 4}" text-anchor="end">absent</text>`;
+    const line = (vals, stroke, width, dash) => { let segs = [], cur = []; vals.forEach((v, i) => { if (v == null) { if (cur.length) segs.push(cur); cur = []; } else cur.push([x(i), y(v)]); }); if (cur.length) segs.push(cur);
+      return segs.map(g => g.length === 1 ? `<circle cx="${g[0][0]}" cy="${g[0][1]}" r="3" fill="${stroke}"/>` : `<polyline fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linejoin="round" ${dash ? `stroke-dasharray="${dash}"` : ""} points="${g.map(q => q.join(",")).join(" ")}"/>`).join(""); };
+    const mine = STG.map(st => V.scores[bank]?.[p]?.[st.id]?.[0] ?? null), bestV = STG.map(st => best(p, st.id)[0]), wf = STG.map(st => V.scores[FOCUS]?.[p]?.[st.id]?.[0] ?? null);
+    s += line(bestV, "#8A93A6", 2, "5 5");
+    if (bank !== FOCUS) s += line(wf, "var(--accent)", 2.5);
+    s += line(mine, bank === FOCUS ? "var(--accent)" : "var(--ink)", 3.5);
+    mine.forEach((v, i) => { if (v == null) { s += `<text x="${x(i)}" y="${y(2) + 4}" text-anchor="middle" class="val" style="fill:var(--faint)">U</text>`; return; }
+      const behind = bestV[i] - v;
+      s += `<circle cx="${x(i)}" cy="${y(v)}" r="7" fill="${bank === FOCUS ? "var(--accent)" : "var(--ink)"}" stroke="#FFFFFF" stroke-width="2"/><text class="val" x="${x(i) + 11}" y="${y(v) - 8}">${v}${behind > 0 ? ` (−${behind})` : ""}</text>`; });
+  } else {
+    s += `<text x="${padL + 10}" y="${(T0 + T1) / 2}" class="mt">MI did not score stages on this rail; gaps and strengths are below.</text>`;
+  }
+  s += `<line x1="${padL}" x2="${W - padR}" y1="${B0}" y2="${B0}" stroke="#152036" stroke-width="1.5"/>`;
+  s += `<text x="${padL - 10}" y="${B0 - 8}" text-anchor="end" style="fill:var(--good)">strengths ↑</text><text x="${padL - 10}" y="${B0 + 18}" text-anchor="end" style="fill:var(--bad)">gaps ↓</text>`;
+  STG.forEach((st, i) => {
+    const bw = Math.min(56, cw * .5), bx = x(i) - bw / 2;
+    if (strs[i]) s += `<rect x="${bx}" y="${B0 - strs[i] * sunit - 1}" width="${bw}" height="${strs[i] * sunit}" rx="2" fill="var(--good)"/><text class="val" x="${x(i)}" y="${B0 - strs[i] * sunit - 6}" text-anchor="middle" style="fill:var(--good)">${strs[i]}</text>`;
+    let yy = B0 + 1; gaps[i].forEach((c, k) => { if (!c) return; s += `<rect x="${bx}" y="${yy}" width="${bw}" height="${c * unit - 1}" fill="${SEVC[SEVS[k]]}"><title>${c} ${SEVS[k]}</title></rect>`; yy += c * unit; });
+    const tot = gaps[i].reduce((a, b) => a + b, 0);
+    if (tot) s += `<text class="val" x="${x(i)}" y="${yy + 14}" text-anchor="middle">${tot}</text>`;
+    s += `<rect x="${padL + cw * i}" y="30" width="${cw}" height="${H - 30}" fill="transparent" data-stage="${st.id}" style="cursor:pointer"><title>${esc(st.name)}: open its findings</title></rect>`;
+  });
+  return s + `</svg>`;
+}
+function emotionSVG(m) {
+  const M = m.steps, W = 1240, H = 236, padL = 92, padR = 16, top = 40, bot = 160, n = M.length, step = (W - padL - padR) / n;
+  const x = i => padL + step * i + step / 2, y = v => top + (2 - v) * (bot - top) / 4;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Customer emotion by step, from -2 frustrated to +2 delighted">`;
+  [2, 1, 0, -1, -2].forEach(v => { s += `<line x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 0 ? "#C4CAD6" : "#EEF0F4"}"/><text x="${padL - 10}" y="${y(v) + 4}" text-anchor="end" style="font-family:var(--f-mono)">${v > 0 ? "+" : ""}${v}</text>`; });
+  s += `<text x="${padL - 10}" y="${y(2) - 12}" text-anchor="end">delighted</text><text x="${padL - 10}" y="${y(-2) + 20}" text-anchor="end">frustrated</text>`;
+  const pts = M.map((q, i) => ({x: x(i), v: q.emo, q})); let seg = [], segs = [];
+  pts.forEach(p => { if (p.v == null) { if (seg.length) segs.push(seg); seg = []; } else seg.push(p); }); if (seg.length) segs.push(seg);
+  for (let k = 0; k < segs.length - 1; k++) { const a = segs[k].at(-1), b = segs[k + 1][0]; s += `<line x1="${a.x}" y1="${y(a.v)}" x2="${b.x}" y2="${y(b.v)}" stroke="#8A93A6" stroke-width="2" stroke-dasharray="4 5"/>`; }
+  segs.forEach(g => s += `<polyline fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" points="${g.map(p => `${p.x},${y(p.v)}`).join(" ")}"/>`);
+  pts.forEach(p => {
+    if (p.v == null) s += `<rect x="${p.x - 50}" y="${y(0) - 11}" width="100" height="22" rx="11" fill="#FFFFFF" stroke="#C4CAD6" stroke-dasharray="3 3"/><text x="${p.x}" y="${y(0) + 4}" text-anchor="middle">backstage only</text>`;
+    else s += `<circle cx="${p.x}" cy="${y(p.v)}" r="7.5" fill="${p.v > 0 ? "var(--good)" : p.v < 0 ? "var(--sev3)" : "#FFFFFF"}" stroke="${p.v === 0 ? "#5A6478" : "#FFFFFF"}" stroke-width="2"/><text x="${p.x + 11}" y="${y(p.v) - 9}" class="val">${p.v > 0 ? "+" : ""}${p.v}</text>`;
+    const words = p.q.title.split(" "); let l1 = "", l2 = ""; words.forEach(w => { if (!l2 && (l1 + " " + w).trim().length <= 13) l1 = (l1 + " " + w).trim(); else l2 = (l2 + " " + w).trim(); });
+    s += `<text class="mt" x="${p.x}" y="${H - 36}" text-anchor="middle">${esc(l1)}</text><text class="mt" x="${p.x}" y="${H - 20}" text-anchor="middle">${esc(cut(l2, 16))}</text>`;
+  });
+  return s + `</svg>`;
+}
+function stackBar(h, axis = true) {
+  const sc = h.pain + h.risk + h.cost, w = v => v / 9 * 100;
+  return `<div class="stack" aria-label="Score ${sc} of 9: pain ${h.pain}, risk ${h.risk}, cost ${h.cost}"><div class="sbar">
+    <span class="s1" style="width:${w(h.pain)}%">${h.pain}</span><span class="s2" style="width:${w(h.risk)}%">${h.risk}</span><span class="s3" style="width:${w(h.cost)}%">${h.cost}</span>
+    <i class="thr" style="left:${w(5)}%"></i><i class="thr" style="left:${w(7)}%"></i></div>
+    ${axis ? `<div class="axis">${[0, 3, 6, 9].map(t => `<i style="left:${t / 9 * 100}%">${t}</i>`).join("")}</div>` : ""}</div>`;
+}
+function renderJourney() {
+  const j = JBYID[jSel]; if (!j) return;
+  const m = model(j), steps = m.steps, fs = FBYJ[j.id] || [];
+  const stagesHere = STG.filter(s => steps.some(q => q.stage === s.id));
+  const cards = stagesHere.map(st => {
+    const qs = steps.filter(q => q.stage === st.id), sc = V.scores[j.bank]?.[j.p]?.[st.id], [bm, bw] = best(j.p, st.id);
+    const g = fs.filter(f => isGap(f) && f.s === st.id).sort((a, b) => SEVO[a.sev] - SEVO[b.sev])[0];
+    const nf = qs.reduce((a, q) => a + q.fp.length, 0);
+    let worst = "";
+    if (m.sample) { const w = qs.filter(q => q.hot).reduce((a, q) => !a || hot(q) > hot(a) ? q : a, null);
+      if (w) worst = `<span class="lbl">Worst moment · ${HLV[hlevel(hot(w))]} · ${hot(w)}/9</span><p style="font-size:13.5px"><b>${esc(w.title)}</b>: ${esc(w.fp[0] || "")}</p>`;
+      const kp = qs.flatMap(q => q.kpis).slice(0, 2);
+      if (kp.length) worst += `<span class="lbl">KPIs ${ev("sample")}</span>` + kp.map(k => `<div class="kp"><span>${esc(MET[k.metric]?.name || k.metric)}</span><span class="tg">${esc(fmtTarget(k))}</span></div>`).join("");
+      worst += `<span class="lbl">Owner</span><p style="font-size:13px">${esc([...new Set(qs.map(q => who(q.owner)))].join(", "))}</p>`;
+    } else worst = g ? `<span class="lbl">Worst gap · ${esc(g.sev)}</span><button type="button" class="fnd" data-f="${esc(g.id)}">${esc(cut(g.d, 150))}</button>` : `<span class="lbl">Gaps</span><p class="blank small">None recorded on this journey</p>`;
+    return `<div class="stagecard"><div class="strip ${sc ? scCls(sc[0]) : "scU"}"></div><h3>${esc(st.name)}</h3><p class="sg">${esc(st.customer_goal || "")}</p>
+      <span class="lbl">Stage score · ${esc(pn(j.p))}</span><p style="font-size:13.5px">${sc ? `<b>${sc[0]} of 4</b> · ${esc(RUBRIC[sc[0]])}` : `<span class="blank">not scored</span>`}${bm != null ? `<br><span class="muted small">Best ${bm}: ${esc(cut(bw.map(bn).join(", "), 60))}</span>` : ""}</p>
+      <p class="muted small">${plural(qs.length, "step")} · ${plural(nf, "fail point")}</p>${worst}</div>`;
+  }).join("");
+  let rank;
+  if (m.sample) {
+    const ranked = steps.filter(q => q.hot).sort((a, b) => hot(b) - hot(a) || b.hot.risk - a.hot.risk).slice(0, 6);
+    rank = `<div class="sec-head" style="margin-bottom:8px"><h3>Ranked hot spots</h3><div class="key"><span><i style="background:var(--seg1)"></i>Pain</span><span><i style="background:var(--seg2)"></i>Risk</span><span><i style="background:var(--seg3)"></i>Cost</span><span>Dashed lines: Medium 5, High 7 · ${ev("sample")}</span></div></div>
+      <div class="rank">${ranked.map(q => `<button type="button" data-step="${esc(q.code)}"><span class="scn">${hot(q)}</span><span><b>${esc(q.title)}</b> <span class="muted">· ${esc(STGN[q.stage])} · ${HLV[hlevel(hot(q))]}</span><br><span style="font-size:13.5px">${esc(q.fp[0] || "")}</span></span>${stackBar(q.hot)}</button>`).join("")}</div>`;
+  } else {
+    const g = fs.filter(isGap).sort((a, b) => SEVO[a.sev] - SEVO[b.sev] || (a.n || 0) - (b.n || 0));
+    rank = `<div class="sec-head" style="margin-bottom:8px"><h3>Ranked gaps on this journey</h3><span class="muted small">${plural(g.length, "gap")}, ${plural(fs.length - g.length, "strength")}, worst first</span></div>
+      <div class="rank">${g.map(f => { const q = steps[(f.n || 1) - 1]; return `<button type="button" class="nobar" data-f="${esc(f.id)}">${sevChip(f)}<span><b>${esc(q ? q.code + " · " + cut(q.title, 80) : "Journey-wide")}</b> <span class="muted">· ${esc(STGN[f.s] || "")} · ${esc(TYPEN[f.type] || f.type)}</span><br><span style="font-size:13.5px">${esc(f.d)}</span></span></button>`; }).join("")
+        || `<p class="blank" style="padding:8px">MI recorded no gaps on this journey.${fs.length ? " Its strengths are in the graph above." : ""}</p>`}</div>`;
+  }
+  const exc = j.exc || [];
   $("#jDetail").innerHTML = `
-    <div class="sec-head"><div><div class="eyebrow">${esc(bn(j.bank))} · ${esc(pn(j.p))} · <span class="mono">${esc(j.sjid || "sample")}</span>${j.sub ? ` · <span class="mono">${esc(j.sub)}</span>` : ""}</div><h2>${esc(j.t)}</h2></div><div>${ev(j.e)}</div></div>
-    ${j.sample ? `<div class="callout warn">Hand-built sample blueprint for design review. Its process, controls and app IDs are placeholders, not market intelligence.</div>` : ""}
+    <div class="sec-head"><div><div class="eyebrow">${esc(bn(j.bank))} · ${esc(pn(j.p))} · <span class="mono">${esc(j.sjid || "sample")}</span>${j.sub ? ` · <span class="mono">${esc(j.sub)}</span>` : ""} ${ev(j.e)}</div><h2>${esc(j.t)}</h2></div>
+      <a class="linkbtn" href="#blueprint" data-bpj="${esc(j.id)}">Open full blueprint →</a></div>
+    ${m.sample ? `<div class="callout warn">Hand-built sample blueprint for design review. Its emotions, hot spots, process, controls and app IDs are placeholders, not market intelligence.</div>` : ""}
     <div class="facts">
-      <div><span class="lbl">Customer goal</span><span>${j.goal ? esc(j.goal) : `<span class="blank">not stated</span>`}</span></div>
+      <div><span class="lbl">Customer goal</span><p class="goal">${j.goal ? "“" + esc(j.goal) + "”" : `<span class="blank">not stated</span>`}</p></div>
       <div><span class="lbl">Persona · segment</span><span>${esc(j.persona || "—")}${j.seg ? ` · ${esc(j.seg)}` : ""}</span></div>
       <div><span class="lbl">Channels</span><span>${j.ch ? esc([...(j.ch.entry || []), ...(j.ch.other || [])].join(", ")) : "—"}</span></div>
       <div><span class="lbl">Status tracking</span><span>${j.track ? esc(j.track.where || "") + (j.track.states?.length ? `<br><span class="muted small">${esc(j.track.states.join(" · "))}</span>` : "") : "—"}</span></div>
     </div>
     ${j.assess ? `<div class="callout"><b>Analyst assessment.</b> ${esc(j.assess)}</div>` : ""}
-    <div class="bp-scroll" tabindex="0" aria-label="Journey blueprint, scrollable"><div class="bp" style="--n:${steps.length}">${bp}</div></div>
+    <div class="panel curve" id="curvePanel">
+      <div class="sec-head" style="margin-bottom:6px"><h3>Stage scores and gaps · ${esc(bn(j.bank))} · ${esc(pn(j.p))}</h3>
+        <div class="seg" id="jScopeSeg" role="group" aria-label="Which findings"><button type="button" data-scope="rail" aria-pressed="${jScope === "rail"}">All ${esc(bn(j.bank))} journeys on this rail</button><button type="button" data-scope="journey" aria-pressed="${jScope === "journey"}">This journey only</button></div></div>
+      <div class="key" style="margin-bottom:6px"><span><i style="background:${j.bank === FOCUS ? "var(--accent)" : "var(--ink)"};height:4px"></i>${esc(bn(j.bank))}</span>${j.bank !== FOCUS ? `<span><i style="background:var(--accent);height:3px"></i>Wells Fargo</span>` : ""}<span><i style="border-top:2px dashed #8A93A6;height:0;border-radius:0"></i>Best bank</span>
+        ${SEVS.map(s => `<span><i style="background:${SEVC[s]}"></i>${s}</span>`).join("")}<span><i style="background:var(--good)"></i>strength</span><span>Click a stage for its findings</span></div>
+      <div class="tbl-scroll"><div style="min-width:940px" id="sgChart">${scoreGapSVG(j)}</div></div>
+    </div>
+    ${m.sample ? `<div class="panel curve"><div class="sec-head" style="margin-bottom:6px"><h3>Experience curve</h3><span class="muted small">${ev("sample")} to be replaced by research</span></div><div class="tbl-scroll"><div style="min-width:940px">${emotionSVG(m)}</div></div></div>` : ""}
+    <div class="stagecards" id="stagecards">${cards}</div>
+    <div class="panel" id="jRankPanel">${rank}</div>
     ${exc.length ? `<div class="panel"><h3 style="margin-bottom:8px">Exceptions (${exc.length})</h3><div class="tbl-scroll"><table><thead><tr><th>Trigger</th><th>Customer sees</th><th>Bank handling</th><th>Resolution</th><th>Evidence</th></tr></thead><tbody>${exc.map(x => `<tr><td>${esc(x.trigger)}</td><td>${esc(x.customer_experience)}</td><td>${esc(x.bank_handling)}</td><td>${esc(x.resolution)}</td><td>${ev(x.basis)}</td></tr>`).join("")}</tbody></table></div></div>` : ""}
-    ${ntf.length ? `<div class="panel"><h3 style="margin-bottom:8px">Notifications</h3><div class="tbl-scroll"><table><thead><tr><th>Event</th><th>Channels</th><th>Configurable</th></tr></thead><tbody>${ntf.map(x => `<tr><td>${esc(x.event)}</td><td>${esc((x.channels || []).join(", "))}</td><td>${x.configurable == null ? "—" : x.configurable ? "Yes" : "No"}</td></tr>`).join("")}</tbody></table></div></div>` : ""}`;
-  $("#jDetail").onclick = e => {
-    const f = e.target.closest("[data-f]"); if (f) return showFinding(f.dataset.f);
-    const s = e.target.closest("[data-src]"); if (s) { const st = j.steps[+s.dataset.src]; openDrawer(`<span class="eyebrow">${esc(bn(j.bank))} · ${esc(j.sjid || "sample")} · ${esc(st.c)}</span><h3>${esc(st.a)}</h3><div>${ev(st.e)}</div>${srcList(st.src)}`); }
-  };
+    ${(j.ntf || []).length ? `<div class="panel"><h3 style="margin-bottom:8px">Notifications</h3><div class="tbl-scroll"><table><thead><tr><th>Event</th><th>Channels</th><th>Configurable</th></tr></thead><tbody>${j.ntf.map(x => `<tr><td>${esc(x.event)}</td><td>${esc((x.channels || []).join(", "))}</td><td>${x.configurable == null ? "—" : x.configurable ? "Yes" : "No"}</td></tr>`).join("")}</tbody></table></div></div>` : ""}`;
+}
+$("#jDetail").addEventListener("click", e => {
+  const sc = e.target.closest("[data-scope]"); if (sc) { jScope = sc.dataset.scope; renderJourney(); return; }
+  const st = e.target.closest("#sgChart [data-stage]"); if (st) { const j = JBYID[jSel]; Object.assign(fState, {bank: j.bank, kind: "", type: "", sev: "", p: j.p, s: st.dataset.stage, n: 60}); go("findings"); return; }
+  const sp = e.target.closest("[data-step]"); if (sp) { openStep(JBYID[jSel], sp.dataset.step); return; }
+});
+
+/* ---------- L2 blueprint ---------- */
+const LAYERS = [
+  {key:"feeling", name:"Customer feeling", hint:"Emotion, −2 to +2", zone:"customer", sample:true},
+  {key:"action", name:"Customer action", hint:"What the customer or recipient does", zone:"customer"},
+  {key:"touchpoint", name:"Touchpoints", hint:"Channel and screen", zone:"customer"},
+  {line:"interaction", label:"Line of interaction"},
+  {key:"frontstage", name:"Frontstage", hint:"What the bank shows, or staff do", zone:"frontstage"},
+  {key:"decision", name:"Decision · notice", hint:"Branch points and messages", zone:"frontstage", mi:true},
+  {line:"visibility", label:"Line of visibility", note:"customers and competitors can't see below"},
+  {key:"process", name:"Business process", hint:"Backstage steps", zone:"backstage", sample:true},
+  {key:"process", name:"Backstage", hint:"Bank systems, network, third parties: as disclosed or inferred", zone:"backstage", mi:true},
+  {key:"controls", name:"Controls & risk", hint:"Fraud, AML, regulatory", zone:"backstage", sample:true},
+  {line:"internal", label:"Line of internal interaction", sample:true},
+  {key:"apps", name:"Applications", hint:"App IDs: click to trace", zone:"systems", sample:true},
+  {key:"interfaces", name:"Interfaces & data", hint:"APIs, events, objects", zone:"systems", sample:true},
+  {key:"capabilities", name:"Capability", hint:"BIAN service domain", zone:"systems", sample:true},
+  {band:true, mi:true},
+  {key:"hotspot", name:"Hot spot", hint:"Pain · risk · cost, of 9", zone:"measures", sample:true},
+  {key:"kpis", name:"KPIs", hint:"Targets · sample", zone:"measures", sample:true},
+  {key:"fail_points", name:"Fail points", hint:"Where it breaks", zone:"measures"},
+  {key:"findings", name:"Gaps & strengths", hint:"MI findings at this step", zone:"measures", mi:true},
+  {key:"sources", name:"Evidence", hint:"Level and sources", zone:"measures"}
+];
+const bp = $("#bp"), scroller = $("#bpScroll");
+let bpJ = null, path = "all", traced = null, tracedActor = null, hits = [], hitPos = 0;
+const chip = id => `<button type="button" class="chip${id.startsWith("ext-") ? " ext" : ""}" data-app="${esc(id)}" title="${esc(APP[id]?.name || id)}">${esc(id)}</button>`;
+function cellHTML(key, q) {
+  switch (key) {
+    case "action": return LANEOF(q.who) === "customer" ? `${q.who === "recipient" ? `<span class="who">recipient</span>` : ""}<span class="clamp">${esc(q.action)}</span>` : `<span class="blank">${bpJ && !bpJ.sample ? "Not a customer step" : "No customer action — backstage only"}</span>`;
+    case "touchpoint": return q.tp.length ? `<div class="tp">${q.tp.map(t => `<div><b>${esc(t.channel.replace(/-/g, " "))}</b>${esc(t.screen)}</div>`).join("")}</div>${q.handoff ? `<div class="handoff">${esc(q.handoff)}</div>` : ""}` : `<span class="blank">—</span>`;
+    case "frontstage": return (LANEOF(q.who) === "frontstage" ? `<span class="who">${esc(q.who)}</span><div class="clamp">${esc(q.action)}</div>` : "") + (q.fs ? `<div class="clamp${q.proc && !q.action ? " blank" : ""}">${esc(q.fs)}</div>` : "");
+    case "decision": return (q.dec ? `<div class="dec">${esc(q.dec)}</div>` : "") + (q.ntf ? `<div class="ntf">Notice: ${esc(q.ntf)}</div>` : "");
+    case "process": if (q.proc) return `<span class="pid">${esc(q.proc.code)}</span><span class="pname">${esc(q.proc.name)}</span><ul class="steps">${q.proc.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ul>`;
+      return LANEOF(q.who) === "backstage" ? `<span class="who">${esc(q.who)}</span><div class="clamp">${esc(q.action)}</div>` : "";
+    case "controls": return `<div class="ctlist">${q.ctl.map(c => `<div class="tag"><span class="ty ty-${c.type}">${esc(c.type)}${c.design ? ` · ${esc(c.design)}` : ""}</span><span>${esc(c.text)}</span></div>`).join("")}</div>`;
+    case "apps": return `<div class="chips">${q.apps.map(chip).join("")}</div>`;
+    case "interfaces": return `<div class="ifc">${q.ifc.map(i => `<span>${esc(i)}</span>`).join("")}</div><div style="margin-top:6px;font-size:12px;color:var(--muted)">${esc(q.data.join(" · "))}</div>`;
+    case "capabilities": return `<div class="cap">${q.caps.map(c => `<span>${esc(c)}</span>`).join("")}</div>`;
+    case "hotspot": return q.hot ? `<div style="display:flex;flex-direction:column;gap:4px"><span><b style="font-family:var(--f-display);font-size:19px;font-stretch:85%">${hot(q)}</b><span class="muted"> /9 · ${HLV[hlevel(hot(q))]}</span></span>${stackBar(q.hot, false)}</div>` : "";
+    case "kpis": return `<div class="kpi">${q.kpis.map(k => `<div class="kp"><span style="font-weight:600">${esc(MET[k.metric]?.name || k.metric)}</span><span class="tg">${esc(fmtTarget(k))}</span></div>`).join("")}</div>`;
+    case "fail_points": return q.fp.length ? `<div class="fail">${q.fp.map(f => `<div>${esc(f)}</div>`).join("")}</div>` : "";
+    case "findings": return q.find.map(f => `<button type="button" class="fnd" data-f="${esc(f.id)}">${sevChip(f)} ${esc(cut(f.d, 90))}</button>`).join("");
+    case "sources": return `<div style="display:flex;flex-direction:column;gap:5px;align-items:flex-start">${ev(q.e)}${q.src.length ? `<button type="button" class="linkbtn" style="font-size:12px;padding:3px 8px" data-step="${esc(q.code)}">${plural(q.src.length, "source")}</button>` : `<span class="blank small">none cited</span>`}</div>`;
+  }
+  return "";
+}
+function feelingSVG(m) {
+  const M = m.steps, cw = parseFloat(getComputedStyle(bp).getPropertyValue("--colw")), g = parseFloat(getComputedStyle(bp).getPropertyValue("--gap"));
+  const W = M.length * cw + (M.length - 1) * g, H = 96, top = 14, bot = 78, y = v => top + (2 - v) * (bot - top) / 4;
+  const pts = M.map((q, i) => ({x: i * (cw + g) + cw / 2, v: q.emo, q}));
+  let seg = [], segs = []; pts.forEach(p => { if (p.v == null) { if (seg.length) segs.push(seg); seg = []; } else seg.push(p); }); if (seg.length) segs.push(seg);
+  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Customer emotion across the journey">`;
+  [2, 0, -2].forEach(v => s += `<line x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${v ? "#EEF0F4" : "#C4CAD6"}"/>`);
+  for (let k = 0; k < segs.length - 1; k++) { const a = segs[k].at(-1), b = segs[k + 1][0]; s += `<line x1="${a.x}" y1="${y(a.v)}" x2="${b.x}" y2="${y(b.v)}" stroke="#8A93A6" stroke-width="1.5" stroke-dasharray="3 4"/>`; }
+  segs.forEach(gg => s += `<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" points="${gg.map(p => `${p.x},${y(p.v)}`).join(" ")}"/>`);
+  pts.forEach(p => { s += p.v == null ? `<g data-m="${p.q.code}"><text x="${p.x}" y="${y(0) + 4}" text-anchor="middle">not seen</text></g>`
+    : `<g data-m="${p.q.code}"><circle cx="${p.x}" cy="${y(p.v)}" r="6" fill="${p.v > 0 ? "var(--good)" : p.v < 0 ? "var(--sev3)" : "#FFFFFF"}" stroke="${p.v === 0 ? "#5A6478" : "#FFFFFF"}" stroke-width="2"/><text x="${p.x}" y="${p.v >= 0 ? y(p.v) + 20 : y(p.v) - 11}" text-anchor="middle">${esc((p.q.emoNote || "").split(" —")[0])}</text></g>`; });
+  return s + `</svg>`;
+}
+/* MI journeys have no unhappy-path variants, so their "paths" are highlights computed from the steps. */
+function pathsFor(m) {
+  if (m.sample) return [{code: "all", name: "All moments"}, ...m.variants];
+  const S = m.steps, P = [{code: "all", name: "All steps"}];
+  const mk = (code, name, trigger, f) => { const codes = S.filter(f).map(q => q.code); if (codes.length) P.push({code, name: `${name} (${codes.length})`, trigger, codes}); };
+  mk("gaps", "Steps with gaps", "Steps where MI recorded a gap", q => q.find.some(isGap));
+  mk("fails", "Fail points", "Steps where the journey can break", q => q.fp.length);
+  mk("decisions", "Decisions", "Branch points in the journey", q => q.dec);
+  mk("customer", "Customer steps", "What the customer or recipient does", q => LANEOF(q.who) === "customer");
+  mk("bank", "Bank and network", "What the bank, its staff, the network or third parties do", q => LANEOF(q.who) !== "customer");
+  mk("exception", "Exception handling", "Steps in the Exception and Support stages", q => q.stage === "exception" || q.stage === "support");
+  return P;
+}
+function renderBP() {
+  const j = bpJ, m = model(j), M = m.steps, cur = pathsFor(m).find(p => p.code === path);
+  bp.style.setProperty("--n", M.length);
+  let h = `<div class="lab corner" style="border-bottom:2px solid var(--ink);height:var(--hdrh)"><span class="n">Stage</span></div>`;
+  const runs = []; M.forEach(q => { const r = runs.at(-1); if (r && r.stage === q.stage) r.codes.push(q.code); else runs.push({stage: q.stage, codes: [q.code]}); });
+  runs.forEach(r => { const st = STG.find(s => s.id === r.stage);
+    h += `<div class="stagehdr${r.stage === "exception" || r.stage === "support" ? " exc" : ""}" style="grid-column:span ${r.codes.length}" data-stage="${esc(r.stage)}"><span class="sh" data-m="${r.codes.join(" ")}">${esc(st?.name || r.stage)}<small>${esc(st?.customer_goal || "")}</small></span></div>`; });
+  h += `<div class="lab corner2" style="border-bottom:1px solid var(--rule)"><span class="n">${m.sample ? "Moment" : "Step"}</span><span class="h">Click for full detail</span></div>`;
+  M.forEach(q => h += `<div class="mrow"><button type="button" class="mhead" data-m="${q.code}" data-step="${q.code}" data-col="${q.code}"><span class="id"><span>${q.code}</span>${q.find.some(isGap) ? `<span style="color:var(--bad)">● gap</span>` : ""}</span><span class="t">${esc(q.title)}</span></button></div>`);
+  if (cur?.notes && Object.keys(cur.notes).length) {
+    h += `<div class="lab z-path"><span class="n">On this path</span><span class="h">${esc(cur.name)}</span></div>`;
+    M.forEach(q => h += `<div class="cell z-path pathtxt" data-m="${q.code}">${cur.notes[q.code] ? esc(cur.notes[q.code]) : (cur.codes.includes(q.code) ? '<span class="blank">As happy path</span>' : "")}</div>`);
+  }
+  LAYERS.forEach(L => {
+    if (L.sample && !m.sample) return; if (L.mi && m.sample) return;
+    if (L.band) { h += `<div class="lab z-systems" data-layer="apps"><span class="n">Controls &amp; systems</span><span class="h">Not observable</span></div><div class="bandcell" data-layer="apps"><span>Controls, application IDs, interfaces and capabilities sit behind the line of visibility. MI cannot see them for any bank; for Wells Fargo they come from KOS application bundles.</span></div>`; return; }
+    if (L.line) { h += `<div class="lineRow" data-line="${L.line}"><span>${esc(L.label)}${L.note ? `<em>${esc(L.note)}</em>` : ""}</span></div>`; return; }
+    h += `<div class="lab z-${L.zone}" data-layer="${L.key}"><span class="n">${esc(L.name)}</span><span class="h">${esc(L.hint)}</span></div>`;
+    if (L.key === "feeling") { h += `<div class="feelcell z-customer" data-layer="feeling">${feelingSVG(m)}</div>`; return; }
+    M.forEach(q => h += `<div class="cell z-${L.zone}" data-layer="${L.key}" data-m="${q.code}">${cellHTML(L.key, q)}</div>`);
+  });
+  bp.innerHTML = h;
+  applyFocus(false);
+}
+function setupBP(id) {
+  const next = JBYID[id] || JBYID[jSel], changed = !bpJ || bpJ.id !== next.id;
+  bpJ = next; const m = model(bpJ);
+  if (changed) { path = "all"; traced = null; tracedActor = null; scroller.scrollLeft = 0; scroller.scrollTop = 0; }
+  const order = (a, b) => (a.sample - b.sample) || (a.sjid || "").localeCompare(b.sjid || "");
+  $("#bpPick").innerHTML = RANK.map(r => `<optgroup label="${esc(bn(r.bank))}">${V.journeys.filter(x => x.bank === r.bank).sort(order).map(x => opt(x.id, `${x.sjid || "Sample"} · ${x.t}`, x.id === bpJ.id)).join("")}</optgroup>`).join("");
+  $("#bpEyebrow").innerHTML = `Level 2 · Service blueprint · ${esc(bn(bpJ.bank))} · ${esc(pn(bpJ.p))} · <span class="mono">${esc(bpJ.sjid || "sample")}</span> ${ev(bpJ.e)}`;
+  $("#bpTitle").textContent = bpJ.t;
+  $("#pathLabel").textContent = m.sample ? "Path" : "Highlight";
+  $("#pathSeg").innerHTML = pathsFor(m).map(p => `<button type="button" data-path="${esc(p.code)}" aria-pressed="${p.code === path}">${esc(p.name)}</button>`).join("");
+  $("#jump").innerHTML = `<span class="seglabel">Jump to</span>` + STG.filter(s => m.steps.some(q => q.stage === s.id)).map(s => `<button type="button" data-jump="${s.id}">${esc(s.name)}</button>`).join("");
+  $("#bpLegend").innerHTML = `<span class="k"><i></i>Lines of interaction, visibility${m.sample ? ", internal interaction" : ""}</span><span class="k"><span class="dot" style="background:var(--sev3)"></span>Fail point / gap</span>` +
+    (m.sample ? `<span class="k">⇄ Channel handoff</span><span class="k"><span class="chip ext" style="cursor:default;min-height:0">ext-zelle</span>Third party</span><span class="k"><span class="chip" style="cursor:default;min-height:0">p2phb</span>App ID — click to trace</span>`
+      : `<span class="k"><span class="who" style="margin:0">bank-system</span>Who acts at the step</span><span class="k">${ev("CONFIRMED_BANK")} Evidence level per step</span>`);
+  $("#appsPanel").hidden = !m.sample; $("#actorsPanel").hidden = m.sample;
+  if (m.sample) {
+    const counts = Object.fromEntries((SM.applications || []).map(a => [a.app_id, m.steps.filter(q => q.apps.includes(a.app_id)).length])), maxC = Math.max(1, ...Object.values(counts));
+    $("#appRows").innerHTML = (SM.applications || []).slice().sort((a, b) => counts[b.app_id] - counts[a.app_id]).map(a => `
+      <tr class="go" data-row="${esc(a.app_id)}" tabindex="0"><td>${chip(a.app_id)}</td><td>${esc(a.name)}</td><td>${esc(a.layer)}</td><td>${esc(a.owner_team)}</td>
+      <td>${esc(a.capabilities.map(c => CAPB[c]?.name || c).join(", "))}</td><td class="mono" style="font-size:12px">${esc(a.depends_on.join(", ") || "—")}</td>
+      <td class="mono" style="font-size:12px">${a.bundle ? esc(a.bundle) : '<span class="muted">n/a — third party</span>'}</td>
+      <td class="num">${counts[a.app_id]}<span style="display:inline-block;height:6px;border-radius:3px;background:var(--ink2);margin-left:8px;width:${Math.round(counts[a.app_id] / maxC * 48)}px"></span></td></tr>`).join("");
+  } else {
+    const A = {}; m.steps.forEach(q => { (A[q.who] ||= {n: 0, ev: {}}).n++; A[q.who].ev[q.e] = (A[q.who].ev[q.e] || 0) + 1; });
+    $("#actorRows").innerHTML = Object.entries(A).sort((a, b) => b[1].n - a[1].n).map(([w, a]) => `<tr class="go" data-actor="${esc(w)}" tabindex="0"><td class="mono">${esc(w)}</td><td>${esc({customer: "Customer", frontstage: "Frontstage", backstage: "Backstage"}[LANEOF(w)])}</td><td class="num">${a.n}</td><td>${Object.entries(a.ev).map(([e, n]) => `${ev(e)} ${n}`).join(" ")}</td></tr>`).join("");
+  }
+  renderBP();
+  requestAnimationFrame(edge);
+}
+function setLens(l) { const changed = bp.dataset.lens !== l; bp.dataset.lens = l; $$("#lensSeg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lens === l))); if (changed) renderBP(); requestAnimationFrame(edge); }
+$$("#lensSeg button").forEach(b => b.addEventListener("click", () => setLens(b.dataset.lens)));
+function setPath(p, scroll = true) { path = p; $$("#pathSeg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.path === p))); renderBP(); if (scroll) applyFocus(true); }
+$("#pathSeg").addEventListener("click", e => { const b = e.target.closest("[data-path]"); if (b) setPath(b.dataset.path); });
+$("#bpPick").addEventListener("change", () => { jSel = $("#bpPick").value; setupBP(jSel); });
+function scrollToCol(c, smooth = true) {
+  const el = bp.querySelector(`.mhead[data-col="${c}"]`); if (!el) return;
+  const lw = parseFloat(getComputedStyle(bp).getPropertyValue("--labelw"));
+  scroller.scrollTo({left: Math.max(0, el.parentElement.offsetLeft - lw - 12), behavior: smooth ? "smooth" : "auto"});
+}
+function applyFocus(scroll) {
+  const m = model(bpJ), M = m.steps, P = pathsFor(m).find(p => p.code === path && p.code !== "all");
+  const active = !!traced || !!tracedActor || !!P;
+  hits = M.filter(q => (!traced || q.apps.includes(traced)) && (!tracedActor || q.who === tracedActor) && (!P || P.codes.includes(q.code))).map(q => q.code);
+  bp.classList.toggle("dimming", active);
+  $$("#bp [data-m]").forEach(el => { const ids = el.dataset.m.split(" "); el.classList.toggle("hit", active && ids.some(id => hits.includes(id))); });
+  $$(".chip[data-app]").forEach(c => c.classList.toggle("on", c.dataset.app === traced));
+  $$("#jump [data-jump]").forEach(b => b.classList.toggle("has", active && M.some(q => q.stage === b.dataset.jump && hits.includes(q.code))));
+  const fb = $("#focusbar");
+  if (!active) { fb.hidden = true; return; }
+  const what = [];
+  if (P) what.push(`<b>${esc(P.name)}.</b> ${esc(P.trigger || "")}.`);
+  if (traced) { const a = APP[traced]; what.push(`<b class="mono">${esc(traced)}</b> · ${esc(a?.name || "")}${a?.owner_team ? `, owned by ${esc(a.owner_team)}` : ""}.`); }
+  if (tracedActor) what.push(`Steps taken by <b class="mono">${esc(tracedActor)}</b>.`);
+  $("#focusWhat").innerHTML = what.join(" ") + ` <span class="muted">${hits.length} of ${M.length} ${m.sample ? "moments" : "steps"} highlighted.</span>`;
+  fb.hidden = false; hitPos = 0; $("#fPos").textContent = hits.length ? `1 / ${hits.length}` : "0";
+  if (scroll && hits.length) scrollToCol(hits[0]);
+}
+function stepHit(d) { if (!hits.length) return; hitPos = (hitPos + d + hits.length) % hits.length; $("#fPos").textContent = `${hitPos + 1} / ${hits.length}`; scrollToCol(hits[hitPos]); }
+$("#fPrev").addEventListener("click", () => stepHit(-1)); $("#fNext").addEventListener("click", () => stepHit(1));
+$("#fClear").addEventListener("click", () => { traced = null; tracedActor = null; setPath("all", false); });
+function trace(id, scroll = true) { traced = (id === null || traced === id) ? null : id; applyFocus(scroll); }
+function edge() { $("#bpFrame").classList.toggle("at-end", scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4); }
+scroller.addEventListener("scroll", edge, {passive: true});
+
+/* step detail drawer (both kinds of journey) */
+function openStep(j, c) {
+  const m = model(j), M = m.steps, i = M.findIndex(q => q.code === c), q = M[i]; if (!q) return;
+  const prev = M[(i - 1 + M.length) % M.length], next = M[(i + 1) % M.length];
+  const L = (label, body, basis) => body ? `<dt><span>${label}</span><span>${basis ? ev(basis) : ""}</span></dt><dd>${body}</dd>` : "";
+  const st = STG.find(s => s.id === q.stage);
+  openDrawer(`<div class="eyebrow">${esc(st?.name || q.stage)} · ${q.code} · ${esc(bn(j.bank))} · <span class="mono">${esc(j.sjid || "sample")}</span></div><h3 style="margin-top:4px">${esc(q.title)}</h3>
+    <div style="display:flex;gap:6px"><button type="button" class="linkbtn" data-stepj="${esc(j.id)}" data-step2="${esc(prev.code)}" aria-label="Previous step">← ${prev.code}</button><button type="button" class="linkbtn" data-stepj="${esc(j.id)}" data-step2="${esc(next.code)}" aria-label="Next step">${next.code} →</button></div>
+    <dl>
+      ${L("Who acts", `<span class="mono">${esc(q.who)}</span>`)}
+      ${L(LANEOF(q.who) === "customer" ? "Customer action" : "Action", esc(q.action || "—"), q.evid?.action || q.e)}
+      ${m.sample ? L("Feeling", q.emo == null ? '<span class="blank">Not experienced by the customer</span>' : `${q.emo > 0 ? "+" : ""}${q.emo} · ${esc(q.emoNote)}`, q.evid?.feeling) : ""}
+      ${L("Touchpoints", q.tp.length ? cellHTML("touchpoint", q) : "", q.evid?.touchpoint)}
+      ${L("Frontstage", esc(q.fs || ""), q.evid?.frontstage)}
+      ${L("Decision", esc(q.dec || ""))}${L("Notice to the customer", esc(q.ntf || ""))}
+      ${q.proc ? L("Business process", cellHTML("process", q), q.evid?.process) : ""}
+      ${q.ctl.length ? L("Controls", q.ctl.map(c => `<div style="margin-bottom:8px"><span class="ty ty-${c.type}">${esc(c.type)}</span> ${esc(c.text)}<div class="meta">${esc(c.design || "design not confirmed")} · ${esc(c.automation || "automation not confirmed")}${(c.regulation || []).length ? ` · ${esc(c.regulation.join(", "))}` : ""} · GRC ID: ${esc(c.grc_control_id || "required before publish")}</div></div>`).join(""), q.evid?.controls) : ""}
+      ${q.apps.length ? L("Applications", cellHTML("apps", q) + `<div style="margin-top:8px;display:flex;flex-direction:column;gap:3px;font-size:13px">${q.apps.map(a => `<span><span class="mono">${esc(a)}</span> — ${esc(APP[a]?.name || "")} <span class="muted">(${esc(APP[a]?.owner_team || "")})</span></span>`).join("")}</div>`, q.evid?.applications) : ""}
+      ${q.ifc.length ? L("Interfaces & data", cellHTML("interfaces", q), q.evid?.interfaces) : ""}
+      ${q.caps.length ? L("Capability (BIAN)", cellHTML("capabilities", q), q.evid?.capabilities) : ""}
+      ${q.hot ? L("Hot spot", stackBar(q.hot), q.evid?.hotspot) : ""}
+      ${q.kpis.length ? L("KPIs", q.kpis.map(k => { const x = MET[k.metric] || {}; return `<div style="margin-bottom:9px"><b>${esc(x.name || k.metric)}</b> <span class="mono">${esc(fmtTarget(k))}</span><div class="meta">${esc(x.definition || "")}</div></div>`; }).join(""), q.evid?.kpis) : ""}
+      ${L("Fail points", cellHTML("fail_points", q), q.evid?.fail_points)}
+      ${q.find.length ? `<dt><span>Gaps &amp; strengths</span></dt><dd>${q.find.map(fcard).join("")}</dd>` : ""}
+      ${m.variants.filter(v => v.notes[q.code]).map(v => `<dt><span>Path · ${esc(v.name)}</span></dt><dd>${esc(v.notes[q.code])}</dd>`).join("")}
+    </dl>${srcList(q.src)}`);
 }
 
 /* ---------- compare ---------- */
@@ -552,7 +1091,7 @@ function fcard(f) {
   return `<div class="fcard ${f.bank === FOCUS ? "us" : ""}"><div class="top">${sevChip(f)}
     <span class="id">${esc(f.id)}</span><span>${esc(bn(f.bank))}</span><span>${esc(pn(f.p))}</span><span>${esc(STGN[f.s] || f.s || "")}</span>${isGap(f) ? `<span>${esc(TYPEN[f.type] || f.type)}</span>` : ""}${ev(f.e)}</div>
     <p>${esc(f.d)}</p>${f.ref ? `<p class="muted small">Reference banks: ${esc(f.ref)}</p>` : ""}
-    <div class="acts">${j ? `<button type="button" class="linkbtn" data-openj="${esc(j.id)}">Open journey ${esc(j.sjid || "")}${f.n ? ", step " + f.n : ""}</button>` : ""}<button type="button" class="linkbtn" data-fsrc="${esc(f.id)}">${f.src.length} source${f.src.length === 1 ? "" : "s"}</button></div></div>`;
+    <div class="acts">${j ? `<button type="button" class="linkbtn" data-openj="${esc(j.id)}">Journey ${esc(j.sjid || "")}</button><button type="button" class="linkbtn" data-openbp="${esc(j.id)}" data-col="${f.n ? "M" + String(f.n).padStart(2, "0") : ""}">Blueprint${f.n ? ", step " + f.n : ""}</button>` : ""}<button type="button" class="linkbtn" data-fsrc="${esc(f.id)}">${plural(f.src.length, "source")}</button></div></div>`;
 }
 function renderFindings() {
   Object.entries(FMAP).forEach(([id, k]) => $("#" + id).value = fState[k]);
@@ -561,7 +1100,7 @@ function renderFindings() {
     .sort((a, b) => (isGap(b) - isGap(a)) || ((SEVO[a.sev] ?? 9) - (SEVO[b.sev] ?? 9)) || a.id.localeCompare(b.id));
   $("#fTitle").textContent = fState.bank ? `${bn(fState.bank)}: gaps and strengths` : "Gaps and strengths, all banks";
   const g = L.filter(isGap);
-  $("#fLine").innerHTML = `<span><b>${L.length}</b> shown</span><span><b>${g.length}</b> gaps:</span>` + ["critical", "high", "medium", "low"].map(s => `<span>${g.filter(f => f.sev === s).length} ${s}</span>`).join("") + `<span><b>${L.length - g.length}</b> strengths</span>`;
+  $("#fLine").innerHTML = `<span><b>${L.length}</b> shown</span><span><b>${g.length}</b> gaps:</span>` + SEVS.map(s => `<span>${g.filter(f => f.sev === s).length} ${s}</span>`).join("") + `<span><b>${L.length - g.length}</b> strengths</span>`;
   $("#fList").innerHTML = L.slice(0, fState.n).map(fcard).join("") || `<p class="blank">No findings match these filters.</p>`;
   $("#fMore").hidden = L.length <= fState.n;
 }
@@ -586,30 +1125,98 @@ $("#copySchema").onclick = async () => { try { await navigator.clipboard.writeTe
 /* ---------- drawer ---------- */
 let lastFocus = null;
 function openDrawer(html) { lastFocus = document.activeElement; $("#dBody").innerHTML = html; $("#drawer").hidden = false; $("#scrim").hidden = false; $("#drawer").scrollTop = 0; $("#dClose").focus(); }
-function closeDrawer() { $("#drawer").hidden = true; $("#scrim").hidden = true; lastFocus?.focus?.(); }
+function closeDrawer() { if ($("#drawer").hidden) return; $("#drawer").hidden = true; $("#scrim").hidden = true; lastFocus?.focus?.(); }
 $("#dClose").onclick = closeDrawer; $("#scrim").onclick = closeDrawer;
-document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#drawer").hidden) closeDrawer(); });
 
-/* ---------- shared clicks ---------- */
+/* ---------- shared clicks and keys ---------- */
 document.addEventListener("click", e => {
   const t = e.target;
   const sb = t.closest("[data-stbank]"); if (sb) { stBank = sb.dataset.stbank; return go("stages"); }
   const c = t.closest("[data-cmp]"); if (c) { cmpProd = c.dataset.cmp; return go("compare"); }
-  const f = t.closest("#topGaps [data-f]"); if (f) return showFinding(f.dataset.f);
-  const o = t.closest("[data-openj]"); if (o) { const j = JBYID[o.dataset.openj]; jSel = j.id; $("#jBank").value = j.bank; $("#jProd").value = ""; $("#jQ").value = ""; closeDrawer(); return go("journeys"); }
-  const s = t.closest("[data-fsrc]"); if (s) return showFinding(s.dataset.fsrc);
+  const bj = t.closest("[data-bpj]"); if (bj) { e.preventDefault(); jSel = bj.dataset.bpj; return go("blueprint"); }
+  const ob = t.closest("[data-openbp]"); if (ob) { jSel = ob.dataset.openbp; closeDrawer(); go("blueprint"); if (ob.dataset.col) requestAnimationFrame(() => scrollToCol(ob.dataset.col)); return; }
+  const oj = t.closest("[data-openj]"); if (oj) { const j = JBYID[oj.dataset.openj]; jSel = j.id; $("#jBank").value = j.bank; $("#jProd").value = ""; $("#jQ").value = ""; closeDrawer(); return go("journeys"); }
+  const fs = t.closest("[data-fsrc]"); if (fs) return showFinding(fs.dataset.fsrc);
+  const s2 = t.closest("[data-step2]"); if (s2) return openStep(JBYID[s2.dataset.stepj], s2.dataset.step2);
+  const f = t.closest("[data-f]"); if (f) return showFinding(f.dataset.f);
+  if (t.closest("#v-blueprint")) {
+    const a = t.closest("[data-app]"); if (a) return trace(a.dataset.app);
+    const r = t.closest("[data-row]"); if (r) { trace(r.dataset.row); $("#bpFrame").scrollIntoView({behavior: "smooth", block: "start"}); return; }
+    const ac = t.closest("[data-actor]"); if (ac) { tracedActor = tracedActor === ac.dataset.actor ? null : ac.dataset.actor; applyFocus(true); $("#bpFrame").scrollIntoView({behavior: "smooth", block: "start"}); return; }
+    const jp = t.closest("[data-jump]"); if (jp) { const q = model(bpJ).steps.find(q => q.stage === jp.dataset.jump); if (q) scrollToCol(q.code); return; }
+    const st = t.closest("[data-step]"); if (st) return openStep(bpJ, st.dataset.step);
+  }
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") { if (!$("#drawer").hidden) closeDrawer(); else if (!$("#story").hidden) endStory(); return; }
+  if (e.key === "Enter" && e.target.matches?.("tr[data-row],tr[data-actor]")) { e.target.click(); return; }
+  if (!$("#story").hidden && $("#drawer").hidden) { if (e.key === "ArrowRight") { e.preventDefault(); storyGo(1); } if (e.key === "ArrowLeft") { e.preventDefault(); storyGo(-1); } }
 });
 
 /* ---------- routing ---------- */
-const VIEWS = {overview, stages: renderStages, journeys: renderJourneyList, compare: renderCompare, findings: renderFindings, method: renderMethod};
+const VIEWS = {overview, stages: renderStages, journeys: renderJourneyList, blueprint: () => setupBP(jSel), compare: renderCompare, findings: renderFindings, method: renderMethod};
+let currentView = null;
 function go(v) { if (location.hash.slice(1) === v) route(); else location.hash = v; }
 function route() {
   const v = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "overview";
+  const moved = v !== currentView; currentView = v;
   document.body.dataset.view = v;
-  Object.keys(VIEWS).forEach(x => $("#v-" + x).hidden = x !== v);
-  document.querySelectorAll(".tabs a").forEach(a => a.dataset.view === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  $$("section.view[data-view]").forEach(s => { if (s.dataset.view === "method") { s.classList.toggle("parked", v !== "method"); s.hidden = false; } else s.hidden = s.dataset.view !== v; });
+  $$(".tabs a").forEach(a => a.dataset.view === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
   VIEWS[v]();
+  if (moved && !document.body.classList.contains("presenting")) window.scrollTo(0, 0);
 }
-window.addEventListener("hashchange", () => { route(); window.scrollTo(0, 0); });
+window.addEventListener("hashchange", route);
+
+/* ---------- present mode: the MI story, numbers computed from the data ---------- */
+function weakest(bank) {                       // the focus bank's largest shortfall against the best bank, rail × stage
+  let w = null;
+  SCORED.forEach(p => STG.forEach(s => { const v = V.scores[bank]?.[p]?.[s.id]?.[0]; if (v == null) return; const [m, whoB] = best(p, s.id); const d = m - v;
+    if (!w || d > w.d || (d === w.d && v < w.v)) w = {p, s: s.id, v, m, whoB, d}; }));
+  return w;
+}
+function storySteps() {
+  const W = weakest(FOCUS), wfJ = V.journeys.find(j => j.bank === FOCUS && j.p === (W?.p || "zelle") && !j.sample) || V.journeys.find(j => j.bank === FOCUS && !j.sample);
+  const wfG = WFF.filter(isGap), hi = wfG.filter(f => f.sev === "critical" || f.sev === "high");
+  const leadRails = SCORED.filter(p => { const v = WFR?.rail_means?.[p]; return v != null && v >= 3 && RANK.every(r => (r.rail_means?.[p] ?? -1) <= v); });
+  const jG = (FBYJ[wfJ?.id] || []).filter(isGap).length, sample = V.journeys.find(j => j.sample);
+  return [
+    {view: "overview", spot: "#insight", title: `Wells Fargo is #${WFR?.rank} of ${RANK.length} on money movement`, text: `Its index is ${fmt1(WFR?.overall_index)} against ${fmt1(LEAD.overall_index)} for ${bn(LEAD.bank)}. MI recorded ${wfG.length} gaps for Wells Fargo, ${hi.length} of them high or critical. Competitor facts are still pending CI legal review.`},
+    {view: "overview", spot: "#railPanel", title: leadRails.length ? `Wells Fargo leads or ties on ${leadRails.map(pn).join(", ")}` : "No rail where Wells Fargo leads outright", text: "Each cell is a bank's mean stage score on a rail, from 0 (absent) to 4 (sets the reference). Read across a row for a bank's spread, down a column for who leads a rail."},
+    W && {view: "stages", bank: FOCUS, spot: "#stPanel", title: `Biggest shortfall: ${pn(W.p)}, ${STGN[W.s]}`, text: `Wells Fargo scores ${W.v} of 4 there; ${W.whoB.map(bn).join(", ")} score${W.whoB.length === 1 ? "s" : ""} ${W.m}. Every cell opens the analyst's rationale and the findings behind it.`},
+    wfJ && {view: "journeys", j: wfJ.id, spot: "#curvePanel", title: `${wfJ.sjid}: ${cut(wfJ.t, 70)}`, text: `The line is Wells Fargo's score at each stage against the best bank; the bars underneath are its gaps by severity, with strengths above the line. This journey carries ${plural(jG, "gap")}.`},
+    wfJ && {view: "blueprint", j: wfJ.id, lens: "executive", path: "gaps", spot: "#bpFrame", title: "The same journey as a blueprint", text: "The executive lens keeps the customer's action, fail points and findings for every step. Highlighting the steps with gaps shows where to act first."},
+    {view: "findings", spot: "#fList", fstate: {bank: FOCUS, kind: "gap", sev: "high"}, title: `${hi.length} high-severity gaps to prioritize`, text: "Each finding names the step, stage and type, cites its sources, and links back to its journey and blueprint."},
+    {view: "compare", prod: W?.p || "zelle", spot: "#cmpPanel", title: `${pn(W?.p || "zelle")} across ten banks`, text: "Same stages, same capability questions, one column per bank. Click any cell for its evidence."},
+    sample && {view: "blueprint", j: sample.id, lens: "engineering", path: "all", trace: "frdsc", spot: "#bpFrame", title: "Below the line: Wells Fargo's own backstage", text: "MI can't see any bank's systems. The hand-built sample shows what KOS application bundles add for Wells Fargo: process, controls and app IDs you can trace. Its values are placeholders."}
+  ].filter(Boolean);
+}
+let STORY = [], si = -1;
+function storyGo(d) { const n = si + d; if (n < 0) return; if (n >= STORY.length) { endStory(); return; } si = n; applyStory(); }
+function applyStory() {
+  const s = STORY[si];
+  $$(".spot").forEach(e => e.classList.remove("spot"));
+  closeDrawer();
+  if (s.bank) stBank = s.bank;
+  if (s.j) jSel = s.j;
+  if (s.prod) cmpProd = s.prod;
+  if (s.fstate) Object.assign(fState, {bank: "", kind: "", type: "", sev: "", p: "", s: "", n: 60}, s.fstate);
+  if (s.view === "journeys" && s.j) { const j = JBYID[s.j]; $("#jBank").value = j.bank; $("#jProd").value = ""; $("#jQ").value = ""; }
+  go(s.view);
+  if (s.view === "blueprint") { setLens(s.lens || "full"); traced = null; tracedActor = null; setPath(s.path || "all", false); if (s.trace) trace(s.trace, false); }
+  $("#storyStep").textContent = `${si + 1} / ${STORY.length}`;
+  $("#storyProg").style.width = `${(si + 1) / STORY.length * 100}%`;
+  $("#storyTitle").textContent = s.title; $("#storyText").textContent = s.text;
+  $("#storyPrev").disabled = si === 0; $("#storyNext").textContent = si === STORY.length - 1 ? "Finish" : "Next";
+  requestAnimationFrame(() => { const el = $(s.spot); if (!el) return; el.classList.add("spot");
+    el.scrollIntoView({behavior: "smooth", block: s.view === "blueprint" ? "start" : "center"});
+    if (s.view === "blueprint") { scroller.scrollTop = 0; if (hits.length && (s.path !== "all" || s.trace)) scrollToCol(hits[0]); } });
+}
+function endStory() { $("#story").hidden = true; document.body.classList.remove("presenting"); $$(".spot").forEach(e => e.classList.remove("spot")); si = -1; }
+$("#presentBtn").addEventListener("click", () => { STORY = storySteps(); document.body.classList.add("presenting"); $("#story").hidden = false; si = -1; storyGo(1); });
+$("#storyNext").addEventListener("click", () => storyGo(1));
+$("#storyPrev").addEventListener("click", () => storyGo(-1));
+$("#storyExit").addEventListener("click", endStory);
+
 route();
 </script>
