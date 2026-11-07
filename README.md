@@ -20,7 +20,7 @@ open dist/index.html
 
 | You are | You change | Reviewed by | Guide |
 |---|---|---|---|
-| Market-intelligence session | `data/comparisons/<product>/values/<bank>.json` | CI legal + study lead | [MI data contract](docs/market-intelligence-contract.md) |
+| Market-intelligence session | `reports/<version>/` (report + extracts), then `make ingest` | CI legal + study lead | [MI contract](docs/market-intelligence-contract.md) · [extraction](docs/mi-extraction.md) · [reports](reports/README.md) |
 | Journey owner | `data/journeys/<bank>/<journey>.json` | Journey owners | [Ontology](schema/journey-ontology.yaml) |
 | Data office | `registries/`, `schema/`, `tools/` | Data office | [Architecture](docs/architecture.md) |
 
@@ -44,7 +44,7 @@ open dist/index.html
 
 ```
 manifest.json  dataproduct.yaml  Makefile  requirements.txt
-schema/      registries/      data/      tools/      tests/      site/      docs/
+schema/   registries/   data/   reports/   tools/   tests/   site/   docs/
 ```
 
 Design and decisions: [docs/architecture.md](docs/architecture.md) · [docs/adr/](docs/adr/) · [dataproduct.yaml](dataproduct.yaml)

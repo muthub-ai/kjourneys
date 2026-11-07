@@ -1,11 +1,14 @@
-# KOS Journey Ontology — kos-journey/0.4.0
+# KOS Journey Ontology — kos-journey/0.5.0
 # Human-readable schema. The machine contract is journey-ontology.schema.json (JSON Schema 2020-12),
 # enforced in CI with validate_journey.py (structure, integrity, typing, temporal rules, publish gates)
 # and tests/run_tests.sh (28 negative fixtures that must fail).
 # Canonical instance format: JSON. YAML copies are generated, never edited.
 
-ontology: kos-journey/0.4.0
+ontology: kos-journey/0.5.0
 changelog:
+  "0.5.0":
+    - "Breaking: portfolio.our_bank renamed focus_bank; party role our_bank renamed focus"
+    - Source kind mi-report with path, sha256 and report_version; reports are immutable and integrity-checked
   "0.4.0":
     - Comparison slots hold Assertion[] history with exactly one current entry (valid_to null)
     - Assertion gains id, qualifier; awaiting assertions may not carry a value; supersedes must resolve
@@ -86,8 +89,8 @@ types:
 # Catalogs (shared across journeys)
 # ---------------------------------------------------------------------------
 catalogs:
-  Source:     { fields: [id, kind, title, origin, url, retrieved_at] }
-  Party:      { fields: [id, name, lei, lei_basis, role], note: "Banks keyed by LEI once populated" }
+  Source:     { fields: [id, kind, title, origin, url, retrieved_at, path, sha256, report_version], kind_values: [placeholder, walkthrough, screenshot, web-page, filing, network-rule, internal-system, kos-bundle, interview, mi-report], note: "mi-report sources point at an immutable file in reports/<version>/ and carry its sha256" }
+  Party:      { fields: [id, name, lei, lei_basis, role], role_values: [focus, competitor, network, vendor], note: "Banks keyed by LEI once populated; exactly one focus bank (Wells Fargo)" }
   Product:    { fields: [id, name, family, fibo_class, journeys], family_values: [zelle, ach, wire, bill-pay, instant, card-transfer, other] }
   Capability: { fields: [id, name, bian_id, bian_version, basis], note: "BIAN service domain; ID + version required before publish" }
   Application:
@@ -149,7 +152,7 @@ hotspot_rubric:
 # ---------------------------------------------------------------------------
 # Portfolio and comparison
 # ---------------------------------------------------------------------------
-Portfolio: { fields: [our_bank, banks, banks_note, products] }
+Portfolio: { fields: [focus_bank, banks, banks_note, products] }
 Comparison:
   fields:
     product: "ref Product"

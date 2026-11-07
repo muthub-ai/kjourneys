@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.0 — 2026-11-06
+
+- **Versioned MI reports:** `reports/<YYYY-MM-DD-vN>/` holds each report as received, its manifest (sha256-pinned) and per-bank extracts.
+- **`tools/ingest_mi.py` (`make ingest REPORT=...`):**
+  - Turns extracts into sourced facts and registers the report and every cited URL as sources.
+  - Supersedes changed facts instead of overwriting them.
+  - Refuses re-ingest, sample basis, and MI facts for Wells Fargo.
+- **Validation:** fails if any ingested report is missing or edited.
+- **`tests/test_ingest.py`:** 10 end-to-end checks of the ingest flow, run in CI.
+- **Wording:** the "our bank" label is removed; Wells Fargo is the focus bank (`portfolio.focus_bank`, party role `focus`).
+
 ## 0.4.0 — 2026-11-06
 
 First repository release.

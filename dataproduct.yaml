@@ -3,7 +3,7 @@
 
 id: urn:kos:dataproduct:kjourneys
 name: kjourneys
-version: 0.4.0                    # follows the ontology version
+version: 0.5.0                    # follows the ontology version
 status: prototype                 # prototype → pilot → production
 domain: customer-experience / money-movement
 description: >
@@ -29,9 +29,10 @@ classification:
 # ---------------------------------------------------------------- input ports
 input_ports:
   - id: market-intelligence
-    description: Competitor facts per bank per product
-    path: data/comparisons/<product>/values/<bank>.json
-    contract: docs/market-intelligence-contract.md
+    description: Versioned MI reports (immutable, sha256-pinned) plus structured extracts, ingested into competitor facts
+    path: reports/<YYYY-MM-DD-vN>/ → data/comparisons/<product>/values/<bank>.json
+    tool: tools/ingest_mi.py (make ingest REPORT=...)
+    contract: [docs/market-intelligence-contract.md, docs/mi-extraction.md, reports/README.md]
     producer: process:mi-session
     review: [role:ci-legal, role:ci-study-lead]
   - id: journey-authoring
@@ -76,6 +77,8 @@ quality_gates:                       # every PR; failure blocks merge
   - provenance: every non-awaiting fact has sources, asserter, timestamp; competitors never sample/internal
   - publish_gate: in-review/published needs real data, steward, retention, GRC + CMDB links, approved legal review
   - negative_tests: tests/fixtures (29 cases) must all fail
+  - ingest_flow: tests/test_ingest.py (10 end-to-end checks of versioned report ingestion)
+  - report_integrity: every mi-report source's file exists and matches its sha256
 
 slos:
   freshness: "Competitor facts re-verified within 90 days (observed_on); stale facts flagged in coverage"

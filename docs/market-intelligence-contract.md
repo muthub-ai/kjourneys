@@ -76,7 +76,17 @@ The number above is illustrative only. And its source in `registries/sources.jso
 
 ## How to submit
 
-- Branch: `mi/zelle/<bank-id>/<yyyy-mm-dd>`, one bank per pull request.
+The preferred path is a versioned report, so every fact links back to the report it came from:
+
+1. Add the report as received to `reports/<YYYY-MM-DD-vN>/`, with a `manifest.json` ([reports/README.md](../reports/README.md)).
+2. Add one `extract/<bank>.json` per bank ([mi-extraction.md](mi-extraction.md)).
+3. Run `make ingest REPORT=reports/<version>`. It writes the facts and sources described above, keeps history, and runs the full check.
+4. Commit the report folder and the data changes together on a branch named `mi/zelle/<version>`.
+
+For a single quick fix, you can still edit `values/<bank>.json` by hand using the rules above, on a branch named `mi/zelle/<bank-id>/<yyyy-mm-dd>`.
+
+Either way:
+
 - Run `make check` locally; it must print `PASS` and no `HOLE` lines.
 - Open the pull request with the template. Legal review is required on everything under `data/comparisons/` (see CODEOWNERS).
 - After merge, CI rebuilds the page and the Compare view fills in for that bank.

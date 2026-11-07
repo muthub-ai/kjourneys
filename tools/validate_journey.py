@@ -73,6 +73,15 @@ def check_assertion(a, where, attr=None):
     return a
 
 # ---------- 3. catalogs ----------
+import hashlib, os
+for s in d["sources"]:
+    if s["kind"] == "mi-report":
+        rp = s["path"]
+        if not os.path.exists(rp): errors.append(f"report: source {s['id']} points to missing file {rp}")
+        else:
+            h = hashlib.sha256(open(rp, "rb").read()).hexdigest()
+            need(h == s["sha256"], f"report: {rp} changed after ingestion (sha256 mismatch) — reports are immutable")
+        need(s["path"].startswith(f"reports/{s['report_version']}/"), f"report: source {s['id']} path is not in its version folder")
 for a in d["applications"]:
     for c in a["capabilities"]: need(c in CAPS, f"ref: app {a['app_id']} capability {c}")
     for x in a.get("depends_on", []): need(x in APPS, f"ref: app {a['app_id']} depends_on {x}")
@@ -85,8 +94,8 @@ for m in d["metrics"]:
     need(m["bank"] in PARTIES and m["product"] in PRODUCTS, f"ref: metric {m['id']} bank/product scope")
 for c in d["controls"]: urn_kind(c["id"], "control", where="control")
 for p in d["processes"]: urn_kind(p["id"], "process", where="process")
-ours = [p["id"] for p in d["parties"] if p["role"] == "our_bank"]
-need(len(ours) == 1, f"party: exactly one our_bank required, found {len(ours)}")
+focus_ids = [p["id"] for p in d["parties"] if p["role"] == "focus"]
+need(len(focus_ids) == 1, f"party: exactly one focus bank (role focus) required, found {len(focus_ids)}")
 
 # ---------- 4. journeys ----------
 GATED = {"in-review", "published"}
@@ -141,7 +150,7 @@ for j in d["journeys"]:
         bases = [a["basis"] for m in j["moments"] for a in m["evidence"].values()]
         need("sample" not in bases and "awaiting" not in bases, f"gate: journey is {j['status']} but still holds sample or awaiting facts")
         need(g["steward"] is not None and g["retention_class"], f"gate: journey is {j['status']} without steward and retention class")
-        if j["bank"] not in ours:
+        if j["bank"] not in focus_ids:
             need(g["ci_legal_review"]["status"] == "approved", f"gate: competitor journey is {j['status']} without approved CI legal review")
         for c in (CTRLS & {c for m in j["moments"] for c in m["controls"]}):
             cc = next(x for x in d["controls"] if x["id"] == c)
@@ -154,8 +163,8 @@ for j in d["journeys"]:
 # ---------- 5. portfolio and comparison ----------
 pf = d.get("portfolio", {})
 if pf:
-    need(pf["our_bank"] in ours, "portfolio: our_bank must be the party with role our_bank")
-    need(pf["our_bank"] in pf["banks"], "portfolio: our_bank must be in banks")
+    need(pf["focus_bank"] in focus_ids, "portfolio: focus_bank must be the party with role focus")
+    need(pf["focus_bank"] in pf["banks"], "portfolio: focus_bank must be in banks")
     unique(pf["banks"], "portfolio bank"); unique(pf["products"], "portfolio product")
     for b in pf["banks"]: need(b in PARTIES, f"ref: portfolio bank {b}")
     for p in pf["products"]: need(p in PRODUCTS, f"ref: portfolio product {p}")
@@ -172,7 +181,7 @@ if cmp:
         for at in attrs: need(at in cmp["values"].get(b, {}), f"slot: comparison missing {b}/{at}")
     for b, row in cmp["values"].items():
         need(b in PARTIES, f"ref: comparison bank {b}")
-        if b not in ours:
+        if b not in focus_ids:
             for at, hist in row.items():
                 for a in hist:
                     need(a["basis"] in ("observed", "disclosed", "inferred", "awaiting"),
@@ -186,7 +195,7 @@ if cmp:
         for at, hist in row.items():
             for a in hist:
                 if a.get("supersedes"): need(a["supersedes"] in assertion_ids, f"ref: {b}/{at} supersedes unknown {a['supersedes']}")
-    filled_competitor = any(a["basis"] in ("observed", "disclosed", "inferred") for b, row in cmp["values"].items() if b not in ours
+    filled_competitor = any(a["basis"] in ("observed", "disclosed", "inferred") for b, row in cmp["values"].items() if b not in focus_ids
                             for hist in row.values() for a in hist if not a.get("valid_to"))
     if filled_competitor:
         need(cmp["governance"]["ci_legal_review"]["status"] in ("pending", "approved"),

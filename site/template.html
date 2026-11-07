@@ -391,7 +391,7 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
     <div class="dataline" id="dataline"></div>
 
     <div class="panel" id="heatPanel">
-      <div class="sec-head" style="margin-bottom:10px"><h3>Where journeys hurt · <span id="ourBank1"></span></h3>
+      <div class="sec-head" style="margin-bottom:10px"><h3>Where journeys hurt · <span id="focusBank1"></span></h3>
         <div class="heatkey"><span><i class="l1"></i>Low ≤4</span><span><i class="l2"></i>Medium 5–6</span><span><i class="l3"></i>High ≥7</span><span>Worst moment in each stage; pain + risk + cost</span></div></div>
       <div class="tbl-scroll"><table class="heat" id="heat"></table></div>
     </div>
@@ -550,7 +550,7 @@ const J = DATA.journeys[0], M = J.moments, STAGES = DATA.codelists.stages, PF = 
 const party = by(DATA.parties), prod = by(DATA.products), cap = by(DATA.capabilities), app = by(DATA.applications, "app_id");
 const met = by(DATA.metrics), proc = by(DATA.processes), ctrl = by(DATA.controls), stageById = by(STAGES);
 const byUrn = by(M), code = urn => byUrn[urn]?.code;
-const ourName = party[PF.our_bank].name;
+const bankName = party[PF.focus_bank].name;
 const score = m => m.hotspot.pain + m.hotspot.risk + m.hotspot.cost;
 const who = p => String(p||"").replace(/^(human|group|role|process):/,"").replace(/-/g," ").replace(/^./,c=>c.toUpperCase());
 const cur = h => Array.isArray(h) ? (h.find(a=>!a.valid_to) || h[h.length-1]) : h;
@@ -583,7 +583,7 @@ $("#hypText").innerHTML = `Scam claims are Zelle’s worst moment: <em>${score(t
 $("#hypSub").textContent = `All three peak at “${topM.title}” in ${stageById[topM.stage].name}. The risk itself is created earlier, at “${ranked[1].title}” (${score(ranked[1])}/9).`;
 $("#top3").innerHTML = ranked.slice(0,3).map(m=>`<button type="button" class="hrow" data-open="${m.code}"><span class="sc">${score(m)}<small>/9</small></span><span><span class="t">${esc(m.title)}</span> <span class="d">· ${esc(stageById[m.stage].name)}</span><br><span class="d">${esc(m.fail_points[0].text)}</span></span></button>`).join("");
 $("#dataline").innerHTML = `<span><b>${mapped}</b> of ${slots} bank × product journeys mapped ${badge("sample")}</span><span><b>${cmpAwait}</b> of ${cmpCells.length} competitor facts awaiting ${badge("awaiting")}</span><span>CI legal review: <b>${esc(J.governance.ci_legal_review.status)}</b></span>`;
-$("#ourBank1").textContent = ourName;
+$("#focusBank1").textContent = bankName;
 $("#banksNote").textContent = PF.banks_note;
 let heat = `<thead><tr><th>Product</th>${STAGES.map(s=>`<th>${esc(s.name)}</th>`).join("")}</tr></thead><tbody>`;
 const queued = [];
@@ -597,14 +597,14 @@ PF.products.forEach(pid=>{
 });
 heat += `<tr class="queued"><td><b style="color:var(--ink)">${queued.length} more products</b><br>${badge("awaiting")}</td><td colspan="${STAGES.length}">Queued for market intelligence: ${esc(queued.join(", "))}. Same six stages, so they drop into this grid as they land.</td></tr>`;
 $("#heat").innerHTML = heat + `</tbody>`;
-let cov = `<thead><tr><th>Product</th>${PF.banks.map(b=>`<th class="${b===PF.our_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}</tr></thead><tbody>`;
+let cov = `<thead><tr><th>Product</th>${PF.banks.map(b=>`<th class="${b===PF.focus_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}</tr></thead><tbody>`;
 PF.products.forEach(pid=>{ const p = prod[pid];
   cov += `<tr><td><b>${esc(p.name)}</b></td>${PF.banks.map(b=>{ const has = b===J.bank && p.journeys.includes(J.id);
-    return `<td class="${b===PF.our_bank?"us":""}"><span class="covdot${has?" s":""}" title="${has?"Sample journey":"Awaiting"}"></span></td>`; }).join("")}</tr>`; });
+    return `<td class="${b===PF.focus_bank?"us":""}"><span class="covdot${has?" s":""}" title="${has?"Sample journey":"Awaiting"}"></span></td>`; }).join("")}</tr>`; });
 $("#cov").innerHTML = cov + `</tbody>`;
 
 /* ---------- L1 journey ---------- */
-$("#jEyebrow").innerHTML = `Level 1 · ${esc(ourName)} · owner: ${esc(who(J.governance.owner))} ${badge(J.basis)}`;
+$("#jEyebrow").innerHTML = `Level 1 · ${esc(bankName)} · owner: ${esc(who(J.governance.owner))} ${badge(J.basis)}`;
 $("#jTitle").textContent = J.title;
 $("#jGoal").textContent = `“${J.customer_goal}”`;
 $("#jPersona").textContent = `Persona: ${J.persona}`;
@@ -652,7 +652,7 @@ $("#rank").innerHTML = ranked.slice(0,6).map(m=>`<button type="button" data-open
   <span><b>${esc(m.title)}</b> <span class="muted">· ${esc(stageById[m.stage].name)} · ${LV[level(score(m))]}</span><br><span style="font-size:13.5px">${esc(m.fail_points[0].text)}</span></span>${stackBar(m)}</button>`).join("");
 
 /* ---------- L2 blueprint ---------- */
-$("#bpBank").textContent = ourName;
+$("#bpBank").textContent = bankName;
 const LAYERS = [
   {key:"feeling",name:"Customer feeling",hint:"Emotion, −2 to +2",zone:"customer"},
   {key:"action",name:"Customer action",hint:"What the customer does",zone:"customer"},
@@ -771,17 +771,17 @@ $("#appRows").innerHTML = DATA.applications.slice().sort((a,b)=>counts[b.app_id]
 let showAllBanks = false;
 function renderCompare(){
   const hasData = b => Object.values(CMP.values[b]||{}).some(h => cur(h).basis !== "awaiting");
-  const shown = PF.banks.filter(b => showAllBanks || b===PF.our_bank || hasData(b));
+  const shown = PF.banks.filter(b => showAllBanks || b===PF.focus_bank || hasData(b));
   const pending = PF.banks.filter(b => !shown.includes(b));
-  let h = `<thead><tr><th>Attribute</th>${shown.map(b=>`<th class="${b===PF.our_bank?"us":""}">${esc(party[b].name)}${b===PF.our_bank?'<br><span style="text-transform:none;letter-spacing:0;font-family:var(--f-body);font-weight:500">our bank</span>':''}</th>`).join("")}${pending.length?`<th>${pending.length} banks pending<br><span style="text-transform:none;letter-spacing:0;font-family:var(--f-body);font-weight:500">${esc(pending.map(b=>party[b].name).join(", "))}</span></th>`:""}</tr></thead><tbody>`;
+  let h = `<thead><tr><th>Attribute</th>${shown.map(b=>`<th class="${b===PF.focus_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}${pending.length?`<th>${pending.length} banks pending<br><span style="text-transform:none;letter-spacing:0;font-family:var(--f-body);font-weight:500">${esc(pending.map(b=>party[b].name).join(", "))}</span></th>`:""}</tr></thead><tbody>`;
   STAGES.forEach(st=>{ const attrs = CMP.attributes.filter(a=>a.stage===st.id); if(!attrs.length) return;
     h += `<tr class="stg"><td colspan="${shown.length+1+(pending.length?1:0)}">${esc(st.name)}</td></tr>`;
     attrs.forEach(a=>{
       h += `<tr><td title="${esc(a.normalization)}"><span class="an">${esc(a.name)}</span><span class="dt">${esc(a.datatype)}${a.unit?` · ${esc(a.unit)}`:""}${a.allowed_values?` · ${esc(a.allowed_values.join(" | "))}`:""}</span></td>` + shown.map(b=>{
         const v = cur(CMP.values[b]?.[a.id]);
-        if(!v || v.basis==="awaiting") return `<td class="${b===PF.our_bank?"us":""}"><span class="await">Awaiting MI</span></td>`;
+        if(!v || v.basis==="awaiting") return `<td class="${b===PF.focus_bank?"us":""}"><span class="await">Awaiting MI</span></td>`;
         const val = v.display ?? (Array.isArray(v.value) ? v.value.join(", ") : String(v.value));
-        return `<td class="${b===PF.our_bank?"us":""}"><div class="val"><span>${esc(val)}</span>${v.qualifier?`<span class="dt">${esc(v.qualifier)}</span>`:""}${badge(v.basis)}</div></td>`;
+        return `<td class="${b===PF.focus_bank?"us":""}"><div class="val"><span>${esc(val)}</span>${v.qualifier?`<span class="dt">${esc(v.qualifier)}</span>`:""}${badge(v.basis)}</div></td>`;
       }).join("") + (pending.length?`<td><span class="await">${pending.length} × awaiting</span></td>`:"") + `</tr>`;
     });
   });

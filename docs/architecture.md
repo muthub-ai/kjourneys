@@ -8,7 +8,8 @@ The descriptor in [`dataproduct.yaml`](../dataproduct.yaml) is the contract. Thi
 
 ```mermaid
 flowchart LR
-  MI["Market-intelligence session<br/>(process:mi-session)"] -->|PR: values/&lt;bank&gt;.json| REPO
+  MI["Market-intelligence session<br/>(process:mi-session)"] -->|"PR: reports/&lt;version&gt;/ + extracts"| ING["tools/ingest_mi.py"]
+  ING -->|values/&lt;bank&gt;.json + sources| REPO
   JO["Journey owners"] -->|PR: journeys/&lt;bank&gt;/*.json| REPO
   DO["Data office"] -->|PR: registries, schema| REPO
   LG["CI legal"] -.->|required review on comparisons| REPO
@@ -60,6 +61,7 @@ erDiagram
 ```
 manifest.json                         manifest: ontology version, study
 dataproduct.yaml                   data product contract: owners, ports, gates, SLOs
+reports/<YYYY-MM-DD-vN>/           MI reports as received + extracts      → MI session (immutable)
 schema/                            ontology (human) + JSON Schema (machine)
 registries/                        shared catalogs                       → data office
 data/portfolio.json                banks and products in scope
@@ -87,6 +89,7 @@ flowchart LR
 | Assemble | `tools/assemble.py` | A file's bank or product disagrees with its folder |
 | Validate | `tools/validate_journey.py` | Schema, integrity, typing, temporal, provenance or publish-gate rule broken |
 | Negative tests | `tests/run_tests.sh` | Any of 29 known-bad fixtures passes |
+| Ingest test | `tests/test_ingest.py` | Versioned ingest, history, refusal or immutability behaves wrongly |
 | Build | `tools/build_site.py` | Template or data missing |
 | Export | `tools/export.py` | — (produces facts, coverage, summary; summary is posted to the CI run) |
 
@@ -99,7 +102,7 @@ Run it all locally with `make check`.
 | Who may change what | CODEOWNERS per folder; branch protection requires owner review and the `kjourneys-ci` check |
 | Competitor-intelligence legality | Legal is a required reviewer on `data/comparisons/**`. The validator rejects sample or internal facts for named banks. The publish gate requires approved review. |
 | Classification | `governance` block per journey and per comparison (classification, PII, MNPI, retention, access). The validator blocks contradictions (MNPI marked public). |
-| Lineage | Assertion → `source_ids` → `registries/sources.json` (URL, retrieved_at), plus git blame for who merged it |
+| Lineage | Assertion → `source_ids` → `registries/sources.json` (URL, retrieved_at) and the MI report it came from (`reports/<version>/`, sha256-pinned), plus git blame for who merged it |
 | History and audit | Assertions are append-only, git keeps every state, and releases are tags |
 | Hosting | Prototype: personal org, sample data only. Production: enterprise GitHub, private, with SSO. |
 
@@ -124,4 +127,4 @@ This product is deliberately shaped like a KOS knowledge bundle so it can fold i
 | One comparison per instance (Zelle) | Make `comparison` a list keyed by product when the second product's MI begins |
 | GRC, CMDB, LEI and BIAN IDs are empty | Filled by system owners. The publish gate blocks release until they are. |
 | The page inlines all data (~200 KB today) | Fine to several MB. Beyond that, load `kjourneys.json` as a sibling file. |
-| Sample data for our bank | Replace from KOS bundles and journey owners. Sample is never allowed past draft. |
+| Sample data for Wells Fargo | Replace from KOS bundles and journey owners. Sample is never allowed past draft. |

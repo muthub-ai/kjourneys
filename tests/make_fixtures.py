@@ -65,10 +65,10 @@ def _(d): d["applications"][0]["bundle"] = "application-bundles/zzzzz/"
 def _(d): J(d)["moments"][0]["evidence"]["vibes"] = dict(J(d)["moments"][0]["evidence"]["action"])
 @case("m5f_duplicate_control_ref")
 def _(d): m = J(d)["moments"][0]; m["controls"].append(m["controls"][0])
-@case("m5g_our_bank_missing")
+@case("m5g_focus_bank_missing")
 def _(d): d["portfolio"]["banks"].remove("wells-fargo"); del d["comparison"]["values"]["wells-fargo"]
-@case("m5h_two_our_banks")
-def _(d): d["parties"][0]["role"] = "our_bank"
+@case("m5h_two_focus_banks")
+def _(d): d["parties"][0]["role"] = "focus"
 @case("m6_enum_without_allowed_values")
 def _(d): d["comparison"]["attributes"][0].pop("allowed_values")
 

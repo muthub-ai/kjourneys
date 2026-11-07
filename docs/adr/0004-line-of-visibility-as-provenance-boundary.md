@@ -9,7 +9,7 @@ Service blueprints separate what the customer sees from the backstage. That is a
 
 ## Decision
 
-Lanes above the line of visibility can hold observed or disclosed facts for any bank. Lanes below it hold internal facts for our bank (sourced from KOS bundles) and only inferred facts for competitors. Named competitors never take sample or internal facts; the validator enforces this.
+Lanes above the line of visibility can hold observed or disclosed facts for any bank. Lanes below it hold internal facts for Wells Fargo (sourced from KOS bundles) and only inferred facts for competitors. Named competitors never take sample or internal facts; the validator enforces this.
 
 ## Consequences
 
