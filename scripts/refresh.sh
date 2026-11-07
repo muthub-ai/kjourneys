@@ -11,6 +11,7 @@
 # Rerunning a report version rolls back what it wrote before and applies its extracts afresh,
 # so fix an extract and run the same command again.
 # Output: docs/bundles/ (Wells Fargo product and line-of-business bundles), dist/index.html (journey site), dist/kjourneys.json, dist/facts.jsonl, dist/coverage.json, dist/summary.md
+# Final step: everything above that a reader needs is copied to docs/site/<MI report version>/ (tools/store_site.py).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -19,7 +20,7 @@ for a in "$@"; do
   case "$a" in
     --commit) COMMIT=1 ;;
     --push)   PUSH=1; COMMIT=1 ;;
-    -h|--help) sed -n '2,15p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,16p' "$0"; exit 0 ;;
     reports/*|./reports/*) REPORT="${a#./}"; REPORT="${REPORT%/}" ;;
     *) echo "unknown argument: $a (see --help)"; exit 2 ;;
   esac
@@ -53,11 +54,13 @@ fi
 
 step "Data status"
 cat dist/summary.md
-echo; echo "Site: dist/index.html"
+
+step "Store the site and outputs in docs/site/ (final step)"
+python3 tools/store_site.py
 
 if [[ $COMMIT -eq 1 ]]; then
   step "Commit on $(git rev-parse --abbrev-ref HEAD)"
-  git add data registries reports docs/bundles
+  git add data registries reports docs/bundles docs/site
   if git diff --cached --quiet; then
     echo "No data changes to commit."
   else

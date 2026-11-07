@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.1 — 2026-11-07 · Site stored per report
+
+- The last step of `scripts/refresh.sh` (`tools/store_site.py`) copies the site and outputs (index.html, summary.md, coverage.json, kjourneys.json, facts.jsonl) to `docs/site/<MI report version>/` and refreshes `docs/site/README.md`. Same report: the folder is replaced. New report: a new folder; earlier ones stay. Not part of CI.
+
 ## 0.9.0 — 2026-11-07 · MI report v2
 
 - **Imported `reports/2026-11-07-v2/`** (supersedes v1): 236 journeys, 2,179 steps, 444 gaps and strengths, 664 observations, 1,374 sources. Wells Fargo: 30 journeys, 63 findings (one new strength, STR-WF-0024 on domestic wire), index 69.6, #3 (domestic core 68.4).

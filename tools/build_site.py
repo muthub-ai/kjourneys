@@ -216,8 +216,9 @@ head = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n')
 cut_at = frag.index('<div class="wrap">')                       # title, metas, font links and styles go in the head
 doc = head + frag[:cut_at] + "</head>\n<body>\n" + frag[cut_at:] + "\n</body>\n</html>\n"
+kb = len(doc.encode()) // 1024
+if kb > 15 * 1024: raise SystemExit("dist/index.html is over 15 MB; the published page limit is 16 MB")
+os.makedirs(os.path.join(ROOT, "dist"), exist_ok=True)
 open(os.path.join(ROOT, "dist/index.html"), "w").write(doc)
 open(os.path.join(ROOT, "dist/artifact.html"), "w").write(frag)
-kb = len(doc.encode()) // 1024
 print(f"built dist/index.html ({kb} KB) and dist/artifact.html")
-if kb > 15 * 1024: raise SystemExit("dist/index.html is over 15 MB; the published page limit is 16 MB")

@@ -30,12 +30,14 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 
 | Port | File | For |
 |---|---|---|
-| Journey site | `dist/index.html` | Executives, product, engineering: ranking and rail heat map, stage scores, journey graphs, blueprints with lenses, bank-by-bank compare, gaps and strengths, method, present mode |
+| Journey site | `docs/site/<MI report>/index.html` (built to `dist/index.html`) | Executives, product, engineering: ranking and rail heat map, stage scores, journey graphs, blueprints with lenses, bank-by-bank compare, gaps and strengths, method, present mode |
 | Canonical instance | `dist/kjourneys.json` | KOS ingestion, tooling |
 | Facts | `dist/facts.jsonl` | BI, agents, retrieval: one row per current fact (comparison cells, step evidence, findings, rankings) with basis and sources |
 | Coverage | `dist/coverage.json` | Health: completeness by bank and basis, staleness, legal status |
 
 ## Wells Fargo bundles and map
+
+`docs/site/` keeps one copy of the site per MI report; `scripts/refresh.sh` copies the site and outputs there as its last step. See [docs/site/README.md](docs/site/README.md).
 
 `docs/bundles/` holds Wells Fargo product and line-of-business bundles (OKF v0.2), built from a Wells Fargo-only export that no other bank can leak into. The site's "Wells Fargo map" tab shows line of business → product → sub-product → journey → customer journey. See [docs/bundles/README.md](docs/bundles/README.md).
 
