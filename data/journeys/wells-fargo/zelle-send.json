@@ -1,0 +1,2392 @@
+{
+  "id": "urn:kos:journey:wells-fargo:zelle-send",
+  "title": "Send money with Zelle",
+  "bank": "wells-fargo",
+  "product": "zelle",
+  "persona": "Retail checking customer paying a friend back",
+  "segment": "retail-consumer",
+  "lob": "consumer-banking",
+  "customer_goal": "Get money to someone I know, in minutes, without worrying",
+  "scope": {
+    "starts": "Customer opens Zelle in the mobile app",
+    "ends": "Payment confirmed, or a problem resolved",
+    "excludes": [
+      "Requesting money",
+      "Small-business Zelle",
+      "Receiving money"
+    ]
+  },
+  "version": "0.1.0",
+  "as_of": "2026-11-06",
+  "status": "draft",
+  "basis": "sample",
+  "governance": {
+    "owner": "role:head-of-digital-payments",
+    "steward": null,
+    "classification": "confidential",
+    "contains_pii": false,
+    "mnpi": false,
+    "ci_legal_review": {
+      "status": "pending",
+      "reviewer": null,
+      "date": null
+    },
+    "retention_class": null,
+    "access_policy": "Need-to-know: study sponsors and journey owners"
+  },
+  "stages": [
+    "setup",
+    "choose",
+    "send",
+    "move",
+    "confirm",
+    "help"
+  ],
+  "moments": [
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m01",
+      "code": "M01",
+      "stage": "setup",
+      "title": "Open Zelle",
+      "customer_action": "Taps Send & Receive with Zelle in the app",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Pay & Transfer › Zelle"
+        }
+      ],
+      "frontstage": "Zelle hub with Send, Request and Activity; first-timers see Get started",
+      "process": "urn:kos:process:wells-fargo:check-eligibility",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m01-1",
+        "urn:kos:control:wells-fargo:p2p-m01-2"
+      ],
+      "applications": [
+        "mobil",
+        "authn",
+        "cstmr",
+        "p2phb"
+      ],
+      "interfaces": [
+        "GET /p2p/profile",
+        "party.lookup"
+      ],
+      "data": [
+        "Party",
+        "Deposit account",
+        "Device"
+      ],
+      "capabilities": [
+        "cap-party-authentication",
+        "cap-customer-product-and-service-eligibility"
+      ],
+      "kpis": [
+        {
+          "metric": "met-enroll-start-conv",
+          "target": {
+            "comparator": ">=",
+            "value": 60
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m01-1",
+          "text": "Ineligible account hits a dead-end message"
+        }
+      ],
+      "emotion": 0,
+      "emotion_note": "Neutral — expects it to be quick",
+      "owner": "group:digital-payments-product",
+      "hotspot": {
+        "pain": 1,
+        "risk": 1,
+        "cost": 1,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m02",
+      "code": "M02",
+      "stage": "setup",
+      "title": "Enroll email or mobile",
+      "customer_action": "Chooses email or U.S. mobile number and enters a one-time code",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Zelle › Enroll › Verify"
+        }
+      ],
+      "frontstage": "Token pre-filled from profile, code sent by text, terms shown",
+      "process": "urn:kos:process:wells-fargo:register-token",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m02-1",
+        "urn:kos:control:wells-fargo:p2p-m02-2"
+      ],
+      "applications": [
+        "mobil",
+        "p2phb",
+        "tokdr",
+        "notif",
+        "ext-zelle"
+      ],
+      "interfaces": [
+        "POST /p2p/enrollments",
+        "Network: register token",
+        "otp.sent event"
+      ],
+      "data": [
+        "Token (email / phone)",
+        "Enrollment",
+        "Consent"
+      ],
+      "capabilities": [
+        "cap-party-reference-data-directory",
+        "cap-correspondence"
+      ],
+      "kpis": [
+        {
+          "metric": "met-enroll-completion",
+          "target": {
+            "comparator": ">=",
+            "value": 85
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        },
+        {
+          "metric": "met-otp-delivery-p95",
+          "target": {
+            "comparator": "<=",
+            "value": 10
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m02-1",
+          "text": "Token already enrolled at another bank, so the customer must move it"
+        },
+        {
+          "id": "fp-m02-2",
+          "text": "Code never arrives"
+        }
+      ],
+      "emotion": -1,
+      "emotion_note": "Mild friction — one more code",
+      "owner": "group:digital-payments-product",
+      "hotspot": {
+        "pain": 2,
+        "risk": 1,
+        "cost": 1,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": "App → SMS for the one-time code",
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m03",
+      "code": "M03",
+      "stage": "choose",
+      "title": "Find recipient",
+      "customer_action": "Picks a contact or types an email or mobile number",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Send › Recipient"
+        }
+      ],
+      "frontstage": "Shows whether the recipient is ready to receive",
+      "process": "urn:kos:process:wells-fargo:resolve-recipient",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m03-1",
+        "urn:kos:control:wells-fargo:p2p-m03-2"
+      ],
+      "applications": [
+        "mobil",
+        "p2phb",
+        "tokdr",
+        "ext-zelle"
+      ],
+      "interfaces": [
+        "GET /p2p/recipients/resolve",
+        "Network: look up token"
+      ],
+      "data": [
+        "Recipient",
+        "Token"
+      ],
+      "capabilities": [
+        "cap-payment-order",
+        "cap-party-reference-data-directory"
+      ],
+      "kpis": [
+        {
+          "metric": "met-directory-lookup-p95",
+          "target": {
+            "comparator": "<",
+            "value": 500
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m03-1",
+          "text": "A typo pays a stranger's token"
+        },
+        {
+          "id": "fp-m03-2",
+          "text": "Recipient not enrolled, so the payment will sit pending"
+        }
+      ],
+      "emotion": 0,
+      "emotion_note": "Focused",
+      "owner": "group:digital-payments-product",
+      "hotspot": {
+        "pain": 2,
+        "risk": 2,
+        "cost": 1,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m04",
+      "code": "M04",
+      "stage": "choose",
+      "title": "Confirm who it is",
+      "customer_action": "Checks the name shown before continuing",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Send › Confirm recipient"
+        }
+      ],
+      "frontstage": "Registered name shown with an \"only send to people you know\" message",
+      "process": "urn:kos:process:wells-fargo:confirm-payee-and-warn",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m04-1",
+        "urn:kos:control:wells-fargo:p2p-m04-2"
+      ],
+      "applications": [
+        "mobil",
+        "p2phb",
+        "frdsc"
+      ],
+      "interfaces": [
+        "warning.shown event"
+      ],
+      "data": [
+        "Recipient",
+        "Warning acknowledgement"
+      ],
+      "capabilities": [
+        "cap-fraud-detection",
+        "cap-customer-event-history"
+      ],
+      "kpis": [
+        {
+          "metric": "met-scam-warning-abandon",
+          "target": null,
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m04-1",
+          "text": "Imposters register names that look legitimate"
+        }
+      ],
+      "emotion": 0,
+      "emotion_note": "Reassured, or a little wary",
+      "owner": "group:fraud-strategy",
+      "hotspot": {
+        "pain": 1,
+        "risk": 3,
+        "cost": 1,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m05",
+      "code": "M05",
+      "stage": "send",
+      "title": "Enter amount",
+      "customer_action": "Enters the amount and an optional memo",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Send › Amount"
+        }
+      ],
+      "frontstage": "Shows available balance and today's remaining limit",
+      "process": "urn:kos:process:wells-fargo:check-funds-and-limits",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m05-1",
+        "urn:kos:control:wells-fargo:p2p-m05-2"
+      ],
+      "applications": [
+        "mobil",
+        "limit",
+        "ledgr",
+        "amlmn"
+      ],
+      "interfaces": [
+        "GET /accounts/{id}/available",
+        "POST /limits/check"
+      ],
+      "data": [
+        "Available balance",
+        "Limit profile"
+      ],
+      "capabilities": [
+        "cap-current-account",
+        "cap-customer-access-entitlement"
+      ],
+      "kpis": [
+        {
+          "metric": "met-limit-exceeded-rate",
+          "target": {
+            "comparator": "<",
+            "value": 2
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m05-1",
+          "text": "Limit hit with no path to raise it"
+        }
+      ],
+      "emotion": 1,
+      "emotion_note": "Easy",
+      "owner": "group:digital-payments-product",
+      "hotspot": {
+        "pain": 2,
+        "risk": 1,
+        "cost": 1,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m06",
+      "code": "M06",
+      "stage": "send",
+      "title": "Review and send",
+      "customer_action": "Reviews the details and taps Send",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Send › Review"
+        }
+      ],
+      "frontstage": "Summary; a step-up code or purpose question appears only when risk is high",
+      "process": "urn:kos:process:wells-fargo:authorize-payment",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m06-1",
+        "urn:kos:control:wells-fargo:p2p-m06-2",
+        "urn:kos:control:wells-fargo:p2p-m06-3"
+      ],
+      "applications": [
+        "mobil",
+        "frdsc",
+        "authn",
+        "p2phb"
+      ],
+      "interfaces": [
+        "POST /p2p/payments",
+        "risk.score (sync, < 150 ms)"
+      ],
+      "data": [
+        "Payment order",
+        "Risk decision",
+        "Device signals"
+      ],
+      "capabilities": [
+        "cap-payment-order",
+        "cap-fraud-detection",
+        "cap-party-authentication"
+      ],
+      "kpis": [
+        {
+          "metric": "met-fraud-loss-bps",
+          "target": null,
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        },
+        {
+          "metric": "met-false-decline-rate",
+          "target": null,
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m06-1",
+          "text": "Genuine payments declined"
+        },
+        {
+          "id": "fp-m06-2",
+          "text": "A scammer coaches the customer through step-up"
+        }
+      ],
+      "emotion": -1,
+      "emotion_note": "Anxious if challenged",
+      "owner": "group:fraud-strategy",
+      "hotspot": {
+        "pain": 2,
+        "risk": 3,
+        "cost": 2,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m07",
+      "code": "M07",
+      "stage": "move",
+      "title": "Payment executes",
+      "customer_action": "Waits a few seconds on the sending screen",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Send › Processing"
+        }
+      ],
+      "frontstage": "\"Sending…\" then success",
+      "process": "urn:kos:process:wells-fargo:execute-payment",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m07-1",
+        "urn:kos:control:wells-fargo:p2p-m07-2"
+      ],
+      "applications": [
+        "p2phb",
+        "ledgr",
+        "evtbs",
+        "ext-zelle"
+      ],
+      "interfaces": [
+        "Network: payment request / response",
+        "payment.debited event",
+        "payment.completed event"
+      ],
+      "data": [
+        "Payment",
+        "Ledger entry"
+      ],
+      "capabilities": [
+        "cap-payment-execution",
+        "cap-position-keeping",
+        "cap-financial-gateway"
+      ],
+      "kpis": [
+        {
+          "metric": "met-payment-success-rate",
+          "target": {
+            "comparator": ">=",
+            "value": 99.5
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        },
+        {
+          "metric": "met-send-e2e-p95",
+          "target": {
+            "comparator": "<",
+            "value": 5
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m07-1",
+          "text": "Network timeout leaves the status unknown"
+        },
+        {
+          "id": "fp-m07-2",
+          "text": "Duplicate debit on retry"
+        }
+      ],
+      "emotion": 1,
+      "emotion_note": "Fast — feels like a message",
+      "owner": "group:digital-payments-engineering",
+      "hotspot": {
+        "pain": 1,
+        "risk": 2,
+        "cost": 2,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m08",
+      "code": "M08",
+      "stage": "move",
+      "title": "Settle and reconcile",
+      "customer_action": null,
+      "touchpoints": [],
+      "frontstage": "Nothing visible to the customer",
+      "process": "urn:kos:process:wells-fargo:settle-and-reconcile",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m08-1",
+        "urn:kos:control:wells-fargo:p2p-m08-2",
+        "urn:kos:control:wells-fargo:p2p-m08-3"
+      ],
+      "applications": [
+        "sttle",
+        "ledgr",
+        "amlmn",
+        "ext-zelle"
+      ],
+      "interfaces": [
+        "Network settlement report",
+        "GL posting batch"
+      ],
+      "data": [
+        "Settlement position",
+        "GL journal",
+        "Reconciliation break"
+      ],
+      "capabilities": [
+        "cap-financial-accounting",
+        "cap-regulatory-compliance"
+      ],
+      "kpis": [
+        {
+          "metric": "met-recon-breaks-aged",
+          "target": {
+            "comparator": "==",
+            "value": 0
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m08-1",
+          "text": "Unworked breaks return weeks later as \"missing money\" calls"
+        }
+      ],
+      "emotion": null,
+      "emotion_note": "Invisible to the customer",
+      "owner": "group:payments-operations",
+      "hotspot": {
+        "pain": 1,
+        "risk": 2,
+        "cost": 2,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m09",
+      "code": "M09",
+      "stage": "confirm",
+      "title": "Get confirmation",
+      "customer_action": "Sees confirmation; the recipient hears from their own bank",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Send › Done"
+        },
+        {
+          "channel": "push",
+          "screen": "Payment sent"
+        },
+        {
+          "channel": "email",
+          "screen": "Payment confirmation"
+        }
+      ],
+      "frontstage": "Confirmation number, amount and recipient; \"usually available in minutes\"",
+      "process": "urn:kos:process:wells-fargo:notify-both-sides",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m09-1"
+      ],
+      "applications": [
+        "notif",
+        "mobil",
+        "p2phb"
+      ],
+      "interfaces": [
+        "notification.send",
+        "payment.completed (consumer)"
+      ],
+      "data": [
+        "Notification",
+        "Activity record"
+      ],
+      "capabilities": [
+        "cap-correspondence",
+        "cap-customer-event-history"
+      ],
+      "kpis": [
+        {
+          "metric": "met-notification-p95",
+          "target": {
+            "comparator": "<",
+            "value": 30
+          },
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m09-1",
+          "text": "Sender sees Completed while the recipient sees nothing yet"
+        }
+      ],
+      "emotion": 2,
+      "emotion_note": "Done — relief",
+      "owner": "group:digital-payments-product",
+      "hotspot": {
+        "pain": 1,
+        "risk": 1,
+        "cost": 1,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": "App → push and email",
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m10",
+      "code": "M10",
+      "stage": "confirm",
+      "title": "Track activity",
+      "customer_action": "Checks status in Activity and cancels if still pending",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Zelle › Activity"
+        }
+      ],
+      "frontstage": "Status: Completed, Pending (recipient not enrolled), Expired or Canceled",
+      "process": "urn:kos:process:wells-fargo:manage-payment-status",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m10-1"
+      ],
+      "applications": [
+        "mobil",
+        "p2phb",
+        "ledgr"
+      ],
+      "interfaces": [
+        "GET /p2p/payments",
+        "DELETE /p2p/payments/{id}"
+      ],
+      "data": [
+        "Payment status"
+      ],
+      "capabilities": [
+        "cap-payment-order",
+        "cap-customer-event-history"
+      ],
+      "kpis": [
+        {
+          "metric": "met-wism-calls-per-1000",
+          "target": null,
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m10-1",
+          "text": "Pending status isn't explained"
+        }
+      ],
+      "emotion": 1,
+      "emotion_note": "In control",
+      "owner": "group:digital-payments-product",
+      "hotspot": {
+        "pain": 2,
+        "risk": 1,
+        "cost": 2,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": null,
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "urn:kos:moment:wells-fargo:zelle-send:m11",
+      "code": "M11",
+      "stage": "help",
+      "title": "Report a problem",
+      "customer_action": "Reports a wrong recipient, a scam or an unauthorized payment",
+      "touchpoints": [
+        {
+          "channel": "mobile-app",
+          "screen": "Help › Report a problem"
+        },
+        {
+          "channel": "chat",
+          "screen": "Digital assistant"
+        },
+        {
+          "channel": "contact-center",
+          "screen": "Phone"
+        }
+      ],
+      "frontstage": "Claim taken; customer told next steps and timeline",
+      "process": "urn:kos:process:wells-fargo:resolve-claim",
+      "controls": [
+        "urn:kos:control:wells-fargo:p2p-m11-1",
+        "urn:kos:control:wells-fargo:p2p-m11-2",
+        "urn:kos:control:wells-fargo:p2p-m11-3"
+      ],
+      "applications": [
+        "dspte",
+        "agent",
+        "frdsc",
+        "amlmn",
+        "ext-zelle"
+      ],
+      "interfaces": [
+        "POST /claims",
+        "Network: recall / return request"
+      ],
+      "data": [
+        "Claim",
+        "Case",
+        "Evidence"
+      ],
+      "capabilities": [
+        "cap-customer-case-management",
+        "cap-contact-handler",
+        "cap-regulatory-compliance"
+      ],
+      "kpis": [
+        {
+          "metric": "met-claim-resolution-days",
+          "target": null,
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        },
+        {
+          "metric": "met-claim-recovery-rate",
+          "target": null,
+          "actual": null,
+          "period_end": null,
+          "basis": "sample"
+        }
+      ],
+      "fail_points": [
+        {
+          "id": "fp-m11-1",
+          "text": "Authorized scam payments often aren't covered, an expectation gap"
+        },
+        {
+          "id": "fp-m11-2",
+          "text": "Customer repeats the story across channels"
+        }
+      ],
+      "emotion": -2,
+      "emotion_note": "Stressed, wants a person",
+      "owner": "group:claims-operations",
+      "hotspot": {
+        "pain": 3,
+        "risk": 3,
+        "cost": 3,
+        "method": "kos-hotspot-rubric/1"
+      },
+      "handoff": "App → chat → phone; customer often repeats the story",
+      "evidence": {
+        "feeling": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "action": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "touchpoint": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "frontstage": {
+          "basis": "sample",
+          "intended_basis": "observed",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "process": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "controls": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "applications": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "interfaces": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "capabilities": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "kpis": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "fail_points": {
+          "basis": "sample",
+          "intended_basis": "inferred",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T20:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        },
+        "hotspot": {
+          "basis": "sample",
+          "intended_basis": "internal",
+          "source_ids": [
+            "src-sample"
+          ],
+          "asserted_by": "process:claude-draft",
+          "asserted_at": "2026-11-06T21:00:00-06:00",
+          "verified_by": null,
+          "verified_at": null
+        }
+      }
+    }
+  ],
+  "variants": [
+    {
+      "id": "urn:kos:variant:wells-fargo:zelle-send:happy",
+      "code": "happy",
+      "name": "Happy path",
+      "trigger": "Customer (enrolling if needed) pays an enrolled recipient",
+      "entry": "urn:kos:moment:wells-fargo:zelle-send:m01",
+      "exit": "urn:kos:moment:wells-fargo:zelle-send:m10",
+      "moments": [
+        "urn:kos:moment:wells-fargo:zelle-send:m01",
+        "urn:kos:moment:wells-fargo:zelle-send:m02",
+        "urn:kos:moment:wells-fargo:zelle-send:m03",
+        "urn:kos:moment:wells-fargo:zelle-send:m04",
+        "urn:kos:moment:wells-fargo:zelle-send:m05",
+        "urn:kos:moment:wells-fargo:zelle-send:m06",
+        "urn:kos:moment:wells-fargo:zelle-send:m07",
+        "urn:kos:moment:wells-fargo:zelle-send:m08",
+        "urn:kos:moment:wells-fargo:zelle-send:m09",
+        "urn:kos:moment:wells-fargo:zelle-send:m10"
+      ],
+      "notes": {},
+      "scope_rule": "Lists the moments that change or matter on this path; omitted moments behave as the happy path or do not occur",
+      "basis": "sample"
+    },
+    {
+      "id": "urn:kos:variant:wells-fargo:zelle-send:hold",
+      "code": "hold",
+      "name": "Fraud hold or step-up",
+      "trigger": "Risk score is high at Review and send",
+      "entry": "urn:kos:moment:wells-fargo:zelle-send:m05",
+      "exit": "urn:kos:moment:wells-fargo:zelle-send:m10",
+      "moments": [
+        "urn:kos:moment:wells-fargo:zelle-send:m05",
+        "urn:kos:moment:wells-fargo:zelle-send:m06",
+        "urn:kos:moment:wells-fargo:zelle-send:m07",
+        "urn:kos:moment:wells-fargo:zelle-send:m09",
+        "urn:kos:moment:wells-fargo:zelle-send:m10"
+      ],
+      "notes": {
+        "urn:kos:moment:wells-fargo:zelle-send:m06": "Step-up code, or payment held for manual review; customer sees 'We're reviewing this payment'",
+        "urn:kos:moment:wells-fargo:zelle-send:m07": "Runs only after review clears; delay of minutes to hours",
+        "urn:kos:moment:wells-fargo:zelle-send:m09": "Confirmation arrives late; this is the moment trust is won or lost",
+        "urn:kos:moment:wells-fargo:zelle-send:m10": "Status shows Under review"
+      },
+      "scope_rule": "Lists the moments that change or matter on this path; omitted moments behave as the happy path or do not occur",
+      "basis": "sample"
+    },
+    {
+      "id": "urn:kos:variant:wells-fargo:zelle-send:unenrolled",
+      "code": "unenrolled",
+      "name": "Recipient not enrolled",
+      "trigger": "Directory lookup finds no token at Find recipient",
+      "entry": "urn:kos:moment:wells-fargo:zelle-send:m03",
+      "exit": "urn:kos:moment:wells-fargo:zelle-send:m10",
+      "moments": [
+        "urn:kos:moment:wells-fargo:zelle-send:m03",
+        "urn:kos:moment:wells-fargo:zelle-send:m04",
+        "urn:kos:moment:wells-fargo:zelle-send:m05",
+        "urn:kos:moment:wells-fargo:zelle-send:m06",
+        "urn:kos:moment:wells-fargo:zelle-send:m07",
+        "urn:kos:moment:wells-fargo:zelle-send:m10"
+      ],
+      "notes": {
+        "urn:kos:moment:wells-fargo:zelle-send:m03": "Customer told the recipient must enroll to receive",
+        "urn:kos:moment:wells-fargo:zelle-send:m04": "No registered name to show — highest wrong-recipient risk",
+        "urn:kos:moment:wells-fargo:zelle-send:m07": "Funds held; recipient gets an invite to enroll",
+        "urn:kos:moment:wells-fargo:zelle-send:m10": "Pending until claimed; expires and returns per network rules; cancel allowed"
+      },
+      "scope_rule": "Lists the moments that change or matter on this path; omitted moments behave as the happy path or do not occur",
+      "basis": "sample"
+    },
+    {
+      "id": "urn:kos:variant:wells-fargo:zelle-send:scam",
+      "code": "scam",
+      "name": "Scam claim",
+      "trigger": "Customer reports being tricked after paying",
+      "entry": "urn:kos:moment:wells-fargo:zelle-send:m04",
+      "exit": "urn:kos:moment:wells-fargo:zelle-send:m11",
+      "moments": [
+        "urn:kos:moment:wells-fargo:zelle-send:m04",
+        "urn:kos:moment:wells-fargo:zelle-send:m06",
+        "urn:kos:moment:wells-fargo:zelle-send:m07",
+        "urn:kos:moment:wells-fargo:zelle-send:m09",
+        "urn:kos:moment:wells-fargo:zelle-send:m11"
+      ],
+      "notes": {
+        "urn:kos:moment:wells-fargo:zelle-send:m04": "Warning was shown but the customer trusted the scammer",
+        "urn:kos:moment:wells-fargo:zelle-send:m06": "Payment was authorized by the customer, sometimes after step-up",
+        "urn:kos:moment:wells-fargo:zelle-send:m07": "Irrevocable once accepted; only a recall request is possible",
+        "urn:kos:moment:wells-fargo:zelle-send:m11": "Claim classified; qualifying imposter scams follow network recovery rules; others may not be covered"
+      },
+      "scope_rule": "Lists the moments that change or matter on this path; omitted moments behave as the happy path or do not occur",
+      "basis": "sample"
+    }
+  ]
+}

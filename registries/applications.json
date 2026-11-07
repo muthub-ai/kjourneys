@@ -1,0 +1,222 @@
+[
+  {
+    "app_id": "mobil",
+    "name": "Mobile Banking App",
+    "layer": "channel",
+    "owner_team": "Digital Channels",
+    "capabilities": [
+      "cap-contact-handler"
+    ],
+    "bundle": "application-bundles/mobil/",
+    "cmdb_ci": null,
+    "depends_on": [
+      "authn",
+      "p2phb"
+    ],
+    "basis": "sample"
+  },
+  {
+    "app_id": "authn",
+    "name": "Identity & Authentication",
+    "layer": "security",
+    "owner_team": "Identity Platform",
+    "capabilities": [
+      "cap-party-authentication"
+    ],
+    "bundle": "application-bundles/authn/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "cstmr",
+    "name": "Customer Profile",
+    "layer": "core",
+    "owner_team": "Customer Data",
+    "capabilities": [
+      "cap-customer-product-and-service-eligibility",
+      "cap-party-reference-data-directory"
+    ],
+    "bundle": "application-bundles/cstmr/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "p2phb",
+    "name": "P2P Payments Hub",
+    "layer": "orchestration",
+    "owner_team": "Digital Payments Engineering",
+    "capabilities": [
+      "cap-customer-event-history",
+      "cap-payment-execution",
+      "cap-payment-order"
+    ],
+    "bundle": "application-bundles/p2phb/",
+    "cmdb_ci": null,
+    "depends_on": [
+      "tokdr",
+      "limit",
+      "frdsc",
+      "ledgr",
+      "evtbs",
+      "notif"
+    ],
+    "basis": "sample"
+  },
+  {
+    "app_id": "tokdr",
+    "name": "Token Directory Adapter",
+    "layer": "integration",
+    "owner_team": "Digital Payments Engineering",
+    "capabilities": [
+      "cap-party-reference-data-directory"
+    ],
+    "bundle": "application-bundles/tokdr/",
+    "cmdb_ci": null,
+    "depends_on": [
+      "ext-zelle"
+    ],
+    "basis": "sample"
+  },
+  {
+    "app_id": "notif",
+    "name": "Notification Service",
+    "layer": "platform",
+    "owner_team": "Customer Communications",
+    "capabilities": [
+      "cap-correspondence"
+    ],
+    "bundle": "application-bundles/notif/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "limit",
+    "name": "Limits & Entitlements",
+    "layer": "core",
+    "owner_team": "Payments Risk Platform",
+    "capabilities": [
+      "cap-customer-access-entitlement"
+    ],
+    "bundle": "application-bundles/limit/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "ledgr",
+    "name": "Deposit Ledger (DDA core)",
+    "layer": "core",
+    "owner_team": "Core Banking",
+    "capabilities": [
+      "cap-current-account",
+      "cap-position-keeping"
+    ],
+    "bundle": "application-bundles/ledgr/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "frdsc",
+    "name": "Real-time Fraud Scoring",
+    "layer": "risk",
+    "owner_team": "Fraud Strategy & Engineering",
+    "capabilities": [
+      "cap-fraud-detection"
+    ],
+    "bundle": "application-bundles/frdsc/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "amlmn",
+    "name": "AML Transaction Monitoring",
+    "layer": "risk",
+    "owner_team": "Financial Crimes Technology",
+    "capabilities": [
+      "cap-regulatory-compliance"
+    ],
+    "bundle": "application-bundles/amlmn/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "evtbs",
+    "name": "Payments Event Bus",
+    "layer": "platform",
+    "owner_team": "Integration Platform",
+    "capabilities": [
+      "cap-customer-event-history"
+    ],
+    "bundle": "application-bundles/evtbs/",
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  },
+  {
+    "app_id": "sttle",
+    "name": "Settlement & Reconciliation",
+    "layer": "operations",
+    "owner_team": "Payments Operations",
+    "capabilities": [
+      "cap-financial-accounting"
+    ],
+    "bundle": "application-bundles/sttle/",
+    "cmdb_ci": null,
+    "depends_on": [
+      "ledgr",
+      "ext-zelle"
+    ],
+    "basis": "sample"
+  },
+  {
+    "app_id": "dspte",
+    "name": "Disputes & Claims",
+    "layer": "operations",
+    "owner_team": "Claims Operations",
+    "capabilities": [
+      "cap-customer-case-management"
+    ],
+    "bundle": "application-bundles/dspte/",
+    "cmdb_ci": null,
+    "depends_on": [
+      "frdsc",
+      "ext-zelle"
+    ],
+    "basis": "sample"
+  },
+  {
+    "app_id": "agent",
+    "name": "Contact Center Workbench",
+    "layer": "channel",
+    "owner_team": "Contact Center Technology",
+    "capabilities": [
+      "cap-contact-handler"
+    ],
+    "bundle": "application-bundles/agent/",
+    "cmdb_ci": null,
+    "depends_on": [
+      "dspte",
+      "cstmr"
+    ],
+    "basis": "sample"
+  },
+  {
+    "app_id": "ext-zelle",
+    "name": "Zelle Network (Early Warning Services)",
+    "layer": "external",
+    "owner_team": "Third party — managed by Payments Partnerships",
+    "capabilities": [
+      "cap-financial-gateway"
+    ],
+    "bundle": null,
+    "cmdb_ci": null,
+    "depends_on": [],
+    "basis": "sample"
+  }
+]

@@ -1,0 +1,37 @@
+name: kjourneys-ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Assemble split files
+        run: python3 tools/assemble.py
+      - name: Validate (schema, integrity, typing, temporal, publish gates)
+        run: python3 tools/validate_journey.py dist/kjourneys.json schema/journey-ontology.schema.json
+      - name: Negative tests (every fixture must fail)
+        run: bash tests/run_tests.sh
+      - name: Build the page
+        run: python3 tools/build_site.py
+      - name: Export output ports (facts, coverage, summary)
+        run: |
+          python3 tools/export.py
+          cat dist/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kjourneys-dist
+          path: |
+            dist/index.html
+            dist/kjourneys.json
+            dist/facts.jsonl
+            dist/coverage.json
+          retention-days: 30

@@ -1,0 +1,225 @@
+{
+  "bank": "wells-fargo",
+  "product": "zelle",
+  "values": {
+    "attr-enroll-where": [
+      {
+        "value": [
+          "mobile-app",
+          "web"
+        ],
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Mobile app and online banking",
+        "id": "urn:kos:assertion:wells-fargo:zelle:enroll-where:1"
+      }
+    ],
+    "attr-enroll-steps": [
+      {
+        "value": 3,
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "3 screens, one code",
+        "id": "urn:kos:assertion:wells-fargo:zelle:enroll-steps:1"
+      }
+    ],
+    "attr-payee-name-shown": [
+      {
+        "value": true,
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Yes",
+        "id": "urn:kos:assertion:wells-fargo:zelle:payee-name-shown:1"
+      }
+    ],
+    "attr-new-payee-warning": [
+      {
+        "value": "first-payment",
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Yes, first payment",
+        "id": "urn:kos:assertion:wells-fargo:zelle:new-payee-warning:1"
+      }
+    ],
+    "attr-daily-limit": [
+      {
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "$X,XXX by segment (placeholder)",
+        "id": "urn:kos:assertion:wells-fargo:zelle:daily-limit:1",
+        "qualifier": "segment: standard consumer"
+      }
+    ],
+    "attr-stepup-trigger": [
+      {
+        "value": "High risk score",
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "High risk score",
+        "id": "urn:kos:assertion:wells-fargo:zelle:stepup-trigger:1"
+      }
+    ],
+    "attr-time-to-recipient": [
+      {
+        "value": null,
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Minutes",
+        "id": "urn:kos:assertion:wells-fargo:zelle:time-to-recipient:1"
+      }
+    ],
+    "attr-notifications": [
+      {
+        "value": [
+          "push",
+          "email"
+        ],
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Push, email",
+        "id": "urn:kos:assertion:wells-fargo:zelle:notifications:1"
+      }
+    ],
+    "attr-cancel-pending": [
+      {
+        "value": "only-if-unclaimed",
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Only if unclaimed",
+        "id": "urn:kos:assertion:wells-fargo:zelle:cancel-pending:1"
+      }
+    ],
+    "attr-report-channels": [
+      {
+        "value": [
+          "mobile-app",
+          "chat",
+          "contact-center"
+        ],
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "App, chat, phone",
+        "id": "urn:kos:assertion:wells-fargo:zelle:report-channels:1"
+      }
+    ],
+    "attr-scam-reimbursement": [
+      {
+        "value": "Network rules for qualifying imposter scams",
+        "basis": "sample",
+        "source_ids": [
+          "src-sample"
+        ],
+        "asserted_by": "process:claude-draft",
+        "asserted_at": "2026-11-06T20:00:00-06:00",
+        "observed_on": null,
+        "valid_from": "2026-11-06",
+        "valid_to": null,
+        "verified_by": null,
+        "verified_at": null,
+        "confidence": "low",
+        "display": "Network rules for qualifying imposter scams",
+        "id": "urn:kos:assertion:wells-fargo:zelle:scam-reimbursement:1"
+      }
+    ]
+  }
+}

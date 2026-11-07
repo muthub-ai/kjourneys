@@ -1,0 +1,138 @@
+{
+  "product": "zelle",
+  "governance": {
+    "owner": "role:ci-study-lead",
+    "steward": null,
+    "classification": "confidential",
+    "contains_pii": false,
+    "mnpi": false,
+    "ci_legal_review": {
+      "status": "pending",
+      "reviewer": null,
+      "date": null
+    },
+    "retention_class": null,
+    "access_policy": "Study sponsors only until legal review is approved"
+  },
+  "attributes": [
+    {
+      "id": "attr-enroll-where",
+      "stage": "setup",
+      "name": "Where customers enroll",
+      "datatype": "enum_list",
+      "unit": null,
+      "normalization": "All that apply",
+      "allowed_values": [
+        "mobile-app",
+        "web",
+        "branch",
+        "standalone-app"
+      ]
+    },
+    {
+      "id": "attr-enroll-steps",
+      "stage": "setup",
+      "name": "Steps to enroll",
+      "datatype": "integer",
+      "unit": "screens",
+      "normalization": "Count distinct screens from Zelle hub to first send"
+    },
+    {
+      "id": "attr-payee-name-shown",
+      "stage": "choose",
+      "name": "Recipient name shown before send",
+      "datatype": "boolean",
+      "unit": null,
+      "normalization": "Yes only if the registered name is shown before confirming"
+    },
+    {
+      "id": "attr-new-payee-warning",
+      "stage": "choose",
+      "name": "New-payee scam warning",
+      "datatype": "enum",
+      "unit": null,
+      "normalization": "Choose from the attribute's allowed values",
+      "allowed_values": [
+        "none",
+        "first-payment",
+        "every-payment",
+        "risk-based"
+      ]
+    },
+    {
+      "id": "attr-daily-limit",
+      "stage": "send",
+      "name": "Daily send limit",
+      "datatype": "money",
+      "unit": "USD",
+      "normalization": "Lowest published standard-tier limit; record segment in qualifier"
+    },
+    {
+      "id": "attr-stepup-trigger",
+      "stage": "send",
+      "name": "When step-up is triggered",
+      "datatype": "text",
+      "unit": null,
+      "normalization": "Quote or paraphrase the bank's public wording, with source"
+    },
+    {
+      "id": "attr-time-to-recipient",
+      "stage": "move",
+      "name": "Typical time to recipient",
+      "datatype": "duration",
+      "unit": "ISO 8601 duration",
+      "normalization": "Typical time stated by the bank for enrolled recipients"
+    },
+    {
+      "id": "attr-notifications",
+      "stage": "confirm",
+      "name": "Notifications offered",
+      "datatype": "enum_list",
+      "unit": null,
+      "normalization": "All that apply",
+      "allowed_values": [
+        "push",
+        "email",
+        "sms",
+        "in-app"
+      ]
+    },
+    {
+      "id": "attr-cancel-pending",
+      "stage": "confirm",
+      "name": "Cancel a pending payment",
+      "datatype": "enum",
+      "unit": null,
+      "normalization": "Choose from the attribute's allowed values",
+      "allowed_values": [
+        "never",
+        "only-if-unclaimed",
+        "within-window",
+        "always"
+      ]
+    },
+    {
+      "id": "attr-report-channels",
+      "stage": "help",
+      "name": "Channels to report a problem",
+      "datatype": "enum_list",
+      "unit": null,
+      "normalization": "All that apply",
+      "allowed_values": [
+        "mobile-app",
+        "web",
+        "chat",
+        "contact-center",
+        "branch"
+      ]
+    },
+    {
+      "id": "attr-scam-reimbursement",
+      "stage": "help",
+      "name": "Scam reimbursement stance",
+      "datatype": "text",
+      "unit": null,
+      "normalization": "Quote or paraphrase the bank's public wording, with source"
+    }
+  ]
+}

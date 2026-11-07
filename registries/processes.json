@@ -1,0 +1,136 @@
+[
+  {
+    "id": "urn:kos:process:wells-fargo:check-eligibility",
+    "code": "BP-P2P-01",
+    "name": "Check eligibility",
+    "steps": [
+      "Validate session and device",
+      "Check account standing and tenure",
+      "Load Zelle profile if already enrolled"
+    ],
+    "owner": "group:digital-payments-product",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:register-token",
+    "code": "BP-P2P-02",
+    "name": "Register token",
+    "steps": [
+      "Send one-time code and verify possession",
+      "Capture acceptance of Zelle terms",
+      "Register token-to-account link in the network directory"
+    ],
+    "owner": "group:digital-payments-product",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:resolve-recipient",
+    "code": "BP-P2P-03",
+    "name": "Resolve recipient",
+    "steps": [
+      "Look up the token in the network directory",
+      "Return enrolled status and registered name",
+      "Save recipient to the customer's list"
+    ],
+    "owner": "group:digital-payments-product",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:confirm-payee-and-warn",
+    "code": "BP-P2P-04",
+    "name": "Confirm payee and warn",
+    "steps": [
+      "Display the registered name",
+      "Show a scam warning for first payment to a new recipient",
+      "Log the acknowledgement"
+    ],
+    "owner": "group:fraud-strategy",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:check-funds-and-limits",
+    "code": "BP-P2P-05",
+    "name": "Check funds and limits",
+    "steps": [
+      "Read available balance",
+      "Check daily and 30-day send limits",
+      "Screen memo text"
+    ],
+    "owner": "group:digital-payments-product",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:authorize-payment",
+    "code": "BP-P2P-06",
+    "name": "Authorize payment",
+    "steps": [
+      "Score risk in real time: device, behavior, payee newness, amount",
+      "Approve, step up, hold for review, or decline",
+      "Create the payment order"
+    ],
+    "owner": "group:fraud-strategy",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:execute-payment",
+    "code": "BP-P2P-07",
+    "name": "Execute payment",
+    "steps": [
+      "Debit the sender's account (memo post)",
+      "Send the payment instruction to the Zelle network",
+      "Receiving bank credits the recipient, usually within minutes",
+      "Record the network acknowledgement"
+    ],
+    "owner": "group:digital-payments-engineering",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:settle-and-reconcile",
+    "code": "BP-P2P-08",
+    "name": "Settle and reconcile",
+    "steps": [
+      "Interbank settlement runs on a schedule, after the customer sees the money",
+      "Post to the general ledger",
+      "Reconcile the network report to the ledger and work breaks"
+    ],
+    "owner": "group:payments-operations",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:notify-both-sides",
+    "code": "BP-P2P-09",
+    "name": "Notify both sides",
+    "steps": [
+      "Send push and email to the sender",
+      "Network tells the receiving bank, which notifies the recipient",
+      "Write the activity record"
+    ],
+    "owner": "group:digital-payments-product",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:manage-payment-status",
+    "code": "BP-P2P-10",
+    "name": "Manage payment status",
+    "steps": [
+      "Show status from the payment record",
+      "Allow cancel only while unclaimed",
+      "Expire unclaimed payments and return funds per network rules"
+    ],
+    "owner": "group:digital-payments-product",
+    "basis": "sample"
+  },
+  {
+    "id": "urn:kos:process:wells-fargo:resolve-claim",
+    "code": "BP-P2P-11",
+    "name": "Resolve claim",
+    "steps": [
+      "Classify: unauthorized, scam, or sent in error",
+      "Unauthorized → Regulation E investigation",
+      "Qualifying imposter scam → network recovery rules",
+      "Sent in error → recall request to the receiving bank"
+    ],
+    "owner": "group:claims-operations",
+    "basis": "sample"
+  }
+]

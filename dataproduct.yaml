@@ -1,0 +1,94 @@
+# Data product descriptor — the contract this repo offers its consumers.
+# Read with docs/architecture.md. Changes to ports, SLOs or the schema major version need an ADR.
+
+id: urn:kos:dataproduct:kjourneys
+name: kjourneys
+version: 0.4.0                    # follows the ontology version
+status: prototype                 # prototype → pilot → production
+domain: customer-experience / money-movement
+description: >
+  Governed customer-journey knowledge for bank products: layered service blueprints for our own
+  journeys, and sourced, dated competitor facts on the same stages, for executive decisions.
+
+ownership:
+  product_owner: role:distinguished-architect-kos     # accountable for the product and its roadmap
+  data_steward: role:data-office                      # registries, schema, quality rules
+  domain_owners:
+    journeys: role:journey-owners                     # one per product journey
+    competitor_data: role:ci-study-lead               # the market-intelligence study
+  required_approvers:
+    data/comparisons/**: [role:ci-legal]
+
+classification:
+  default: confidential
+  pii: false
+  mnpi: false
+  competitive_intelligence: true                      # legal review gates publication
+  hosting: "prototype: personal org with sample data only; production: enterprise GitHub"
+
+# ---------------------------------------------------------------- input ports
+input_ports:
+  - id: market-intelligence
+    description: Competitor facts per bank per product
+    path: data/comparisons/<product>/values/<bank>.json
+    contract: docs/market-intelligence-contract.md
+    producer: process:mi-session
+    review: [role:ci-legal, role:ci-study-lead]
+  - id: journey-authoring
+    description: Our own journeys (moments, processes, controls, apps)
+    path: data/journeys/<bank>/<journey>.json
+    producer: journey owners; later generated from KOS application bundles
+    review: [role:journey-owners]
+  - id: registries
+    description: Shared catalogs (parties, products, apps, metrics, controls, processes, capabilities, sources)
+    path: registries/*.json
+    review: [role:data-office]
+
+# ---------------------------------------------------------------- output ports
+output_ports:
+  - id: instance
+    format: application/json
+    path: dist/kjourneys.json
+    schema: schema/journey-ontology.schema.json
+    consumers: [kos-ingestion, analytics]
+  - id: facts
+    format: application/x-ndjson
+    path: dist/facts.jsonl
+    description: One row per current fact with basis and sources; joinable, agent- and BI-friendly
+    consumers: [analytics, kos-retrieval, agents]
+  - id: coverage
+    format: application/json
+    path: dist/coverage.json
+    description: Completeness and provenance health of the product itself
+  - id: site
+    format: text/html
+    path: dist/index.html
+    description: Self-contained executive journey site (portfolio, journey, blueprint, compare, method)
+    consumers: [executives, product, engineering]
+
+# ---------------------------------------------------------------- quality
+quality_gates:                       # every PR; failure blocks merge
+  - assemble: split files agree with their folders (bank, product)
+  - schema: JSON Schema 2020-12, closed objects, x- extensions only
+  - integrity: unique IDs, URN kind and bank, references resolve, capabilities realized by apps
+  - typing: values match attribute datatype and allowed values
+  - temporal: one current assertion per slot, valid_from <= valid_to, supersedes resolves
+  - provenance: every non-awaiting fact has sources, asserter, timestamp; competitors never sample/internal
+  - publish_gate: in-review/published needs real data, steward, retention, GRC + CMDB links, approved legal review
+  - negative_tests: tests/fixtures (29 cases) must all fail
+
+slos:
+  freshness: "Competitor facts re-verified within 90 days (observed_on); stale facts flagged in coverage"
+  completeness_target: "≥ 90% of comparison cells non-awaiting before the executive readout"
+  build: "Merged change visible in the journey site within one CI run"
+
+lifecycle:
+  versioning: semver on the ontology; data changes are commits; releases are tags (kjourneys-YYYY-MM-DD)
+  history: assertions are append-only (supersede, never overwrite); git keeps every prior state
+  deprecation: fields deprecated for one minor version before removal, with a migration script
+
+kos_alignment:
+  knowledge_format: OKF-compatible provenance (sources[], asserted_by = generated, verified_by = verified)
+  links:
+    - applications[].bundle → application-bundles/<appid>/ in KOS LOB repos
+  path_to_kos: "Journey becomes a KOS knowledge-bundle type; this repo becomes its Knowledge Factory recipe"

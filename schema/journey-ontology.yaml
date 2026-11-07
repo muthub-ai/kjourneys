@@ -1,0 +1,207 @@
+# KOS Journey Ontology — kos-journey/0.4.0
+# Human-readable schema. The machine contract is journey-ontology.schema.json (JSON Schema 2020-12),
+# enforced in CI with validate_journey.py (structure, integrity, typing, temporal rules, publish gates)
+# and tests/run_tests.sh (28 negative fixtures that must fail).
+# Canonical instance format: JSON. YAML copies are generated, never edited.
+
+ontology: kos-journey/0.4.0
+changelog:
+  "0.4.0":
+    - Comparison slots hold Assertion[] history with exactly one current entry (valid_to null)
+    - Assertion gains id, qualifier; awaiting assertions may not carry a value; supersedes must resolve
+    - Comparison has its own governance and CI legal review
+    - Publish gates enforced - in-review/published requires no sample or awaiting facts, steward, retention, GRC and CMDB links, approved legal review for competitor journeys
+    - Owners, stewards, asserters and verifiers are principals (human:, group:, role:, process:)
+    - Control and process URNs are bank-scoped, not journey-scoped; unknown control design/automation is null, not guessed
+    - Metrics carry bank, product and, for percent, scale (0-100)
+    - Enum attributes declare allowed_values; durations are ISO 8601
+    - Hot spot joins the evidence map; layer keys and channels are codelists
+    - x- extensions allowed on every object; journey.version is the content version
+    - Validator enforces uniqueness, URN kind and bank, variant order and entry/exit, value typing, date order
+  "0.3.0":
+    - Global URN identity for journeys, moments, processes, controls, variants
+    - Catalog entities (parties, products, capabilities, applications, metrics, processes, controls) referenced by ID
+    - Assertion wrapper with per-fact provenance and effective dating; explicit "awaiting" slots
+    - Governance block with classification and competitive-intelligence legal review
+    - Metric catalog (definition, formula, unit, grain, period, direction, source system); no prose targets
+    - Attribute catalog with datatypes and normalization rules for competitor comparison
+    - Single stage codelist; touchpoints[]; FailPoint entity; variant entry/exit and scope rule
+    - App ID pattern fixed to allow digits; KOS bundle path required for internal apps
+  "0.2.0": [Portfolio, hot spots, variants, comparison, sample and awaiting bases]
+  "0.1.0": [Initial journey, stage, moment, layers, lenses]
+
+conventions:
+  versioning: "Semver. Minor = additive; major = breaking. Every minor ships a migration script."
+  deprecation: "Fields are deprecated with {since, replaced_by}; removed only in the next major."
+  extensions: "Only under keys prefixed x- (e.g. x-wf-segment). Unknown keys fail validation."
+  identity: "urn:kos:<kind>:<bank>:<local> — immutable once published; renames use aliases. Catalog entities (process, control) are bank-scoped so journeys reuse them."
+  principals: "human:<id> | group:<slug> | role:<slug> | process:<name>"
+  percent: "unit percent always means 0-100 (scale: 0-100); formulas multiply ratios by 100"
+  registries: "Catalogs are embedded per file today. Next: separately versioned registry files referenced by URN, one per catalog, owned by the data office."
+  temporal: "Every Assertion carries valid_from/valid_to (business time) and asserted_at (system time). Slots hold Assertion[]; a new fact closes the old one (valid_to) and points to it (supersedes). Exactly one current entry per slot."
+
+# ---------------------------------------------------------------------------
+# Core types
+# ---------------------------------------------------------------------------
+types:
+  URN: { type: string, pattern: "^urn:kos:[a-z]+:[a-z0-9-]+(:[a-z0-9-]+)*$" }
+  EvidenceBasis:
+    observed:  "Seen first-hand (mystery shop, app walkthrough, screenshots)"
+    disclosed: "Public source (bank help pages, filings, network rules, press)"
+    inferred:  "Reasoned from patterns; needs confirmation"
+    internal:  "From our own systems and KOS bundles"
+    sample:    "Illustrative placeholder; replace before decisions"
+    awaiting:  "Slot defined, no data yet"
+  Assertion:
+    description: Wraps any fact that needs provenance (comparison cells, layer evidence)
+    fields:
+      id:           { type: URN, pattern: "urn:kos:assertion:..." }
+      value:        { type: any, nullable: true, note: "Must be absent when basis is awaiting; typed by the attribute datatype" }
+      qualifier:    { type: string, nullable: true, note: "e.g. segment: standard consumer" }
+      display:      { type: string, note: "Human wording when value is normalized" }
+      basis:        { type: EvidenceBasis, required: true }
+      intended_basis: { type: EvidenceBasis, note: "Basis the fact will have once real data replaces the sample" }
+      source_ids:   { type: "ref Source[]", note: "Required unless basis is awaiting" }
+      asserted_by:  { type: principal, note: "human:<id> or process:<name>" }
+      asserted_at:  { type: datetime }
+      observed_on:  { type: date, nullable: true }
+      valid_from:   { type: date, nullable: true }
+      valid_to:     { type: date, nullable: true }
+      supersedes:   { type: "ref Assertion", nullable: true }
+      verified_by:  { type: principal, nullable: true }
+      verified_at:  { type: datetime, nullable: true }
+      confidence:   { type: enum, values: [high, medium, low], nullable: true }
+  Governance:
+    fields:
+      owner:           { type: principal, required: true }
+      steward:         { type: principal, nullable: true }
+      classification:  { type: enum, values: [public, internal, confidential, restricted], required: true }
+      contains_pii:    { type: bool, required: true }
+      mnpi:            { type: bool, required: true }
+      ci_legal_review: { type: object, fields: { status: "enum [not-required, pending, approved, rejected]", reviewer: principal, date: date } }
+      retention_class: { type: string, nullable: true }
+      access_policy:   { type: string }
+
+# ---------------------------------------------------------------------------
+# Catalogs (shared across journeys)
+# ---------------------------------------------------------------------------
+catalogs:
+  Source:     { fields: [id, kind, title, origin, url, retrieved_at] }
+  Party:      { fields: [id, name, lei, lei_basis, role], note: "Banks keyed by LEI once populated" }
+  Product:    { fields: [id, name, family, fibo_class, journeys], family_values: [zelle, ach, wire, bill-pay, instant, card-transfer, other] }
+  Capability: { fields: [id, name, bian_id, bian_version, basis], note: "BIAN service domain; ID + version required before publish" }
+  Application:
+    fields: [app_id, name, layer, owner_team, capabilities, bundle, cmdb_ci, depends_on, basis]
+    app_id: "^[a-z0-9]{5}$ or ^ext-[a-z-]+$"
+    rules: ["bundle required unless layer = external", "capabilities ⊇ every capability a supported moment claims"]
+  Metric:
+    fields: [id, name, definition, formula, unit, scale, grain, period, direction, source_system, bank, product, steward, dq_status, basis]
+    unit: [percent, bps, ms, seconds, days, count, usd, per_1000]
+    grain: [transaction, customer, event, case, day]
+    period: [daily, monthly, quarterly]
+    direction: [increase, decrease, monitor]
+    dq_status: [certified, provisional, uncertified]
+  BusinessProcess: { fields: [id, code, name, steps, owner, basis], id: "urn:kos:process:<bank>:<slug>" }
+  Control:
+    fields: [id, text, type, design, automation, key_control, grc_control_id, risk_ids, regulation, basis]
+    type: [fraud, aml, regulatory, operational, security]
+    design: [preventive, detective, corrective, null]
+    automation: [manual, automated, hybrid, null]
+    id: "urn:kos:control:<bank>:<slug>"
+
+# ---------------------------------------------------------------------------
+# Journey
+# ---------------------------------------------------------------------------
+Journey:
+  fields: [id, title, bank, product, persona, segment, lob, customer_goal, scope, version, as_of, status, basis, governance, stages, moments, variants]
+  status: [draft, in-review, published, retired]
+Moment:
+  fields:
+    id: URN
+    code: "M01…"
+    stage: "ref codelists.stages"
+    title: string
+    customer_action: "string | null (null = backstage only)"
+    touchpoints: "Touchpoint[] {channel, screen}"
+    frontstage: string
+    process: "ref BusinessProcess"
+    controls: "ref Control[]"
+    applications: "ref Application[]"
+    interfaces: "string[] (ISO 20022 message refs required before publish)"
+    data: "string[] (logical data model refs required before publish)"
+    capabilities: "ref Capability[]"
+    kpis: "KPIValue[] {metric, target {comparator, value} | null, actual, period_end, basis}"
+    fail_points: "FailPoint[] {id, text}"
+    emotion: "int -2..2 | null"
+    hotspot: "{pain, risk, cost: 1..3, method: kos-hotspot-rubric/1} — basis lives in evidence.hotspot"
+    handoff: "string | null"
+    evidence: "map<codelists.layers, Assertion>"
+Variant:
+  fields: [id, code, name, trigger, entry, exit, moments, notes, scope_rule, basis]
+
+hotspot_rubric:
+  id: kos-hotspot-rubric/1
+  pain: { 1: "Minor effort", 2: "Noticeable friction or doubt", 3: "Distress, money at risk, or abandonment" }
+  risk: { 1: "Low exposure", 2: "Material fraud, loss or compliance exposure", 3: "Primary fraud or regulatory exposure point" }
+  cost: { 1: "Fully automated", 2: "Some contacts or manual work", 3: "High contact volume, manual casework or write-offs" }
+  score: "pain + risk + cost (3–9); High ≥ 7, Medium 5–6, Low ≤ 4"
+
+# ---------------------------------------------------------------------------
+# Portfolio and comparison
+# ---------------------------------------------------------------------------
+Portfolio: { fields: [our_bank, banks, banks_note, products] }
+Comparison:
+  fields:
+    product: "ref Product"
+    governance: Governance
+    attributes: "Attribute[] {id, stage, name, datatype, unit, normalization, allowed_values (enum, enum_list)}"
+    values: "map<Party.id, map<Attribute.id, Assertion[]>> — every bank × attribute present; exactly one current assertion; missing data = basis awaiting"
+  datatype: [text, integer, boolean, money, duration, enum, enum_list]
+
+# ---------------------------------------------------------------------------
+# Relations
+# ---------------------------------------------------------------------------
+relations:
+  - [Journey, hasStage, Stage]
+  - [Journey, hasMoment, Moment]
+  - [Moment, inStage, Stage]
+  - [Moment, occursAt, Touchpoint]
+  - [Moment, realizedBy, BusinessProcess]
+  - [Moment, supportedBy, Application]
+  - [Moment, governedBy, Control]
+  - [Moment, measuredBy, Metric]
+  - [Moment, exposedTo, FailPoint]
+  - [Application, realizes, Capability]
+  - [Application, dependsOn, Application]
+  - [Variant, traverses, Moment]
+  - [Comparison, about, Product]
+
+# ---------------------------------------------------------------------------
+# Rendering
+# ---------------------------------------------------------------------------
+layers: [feeling, action, touchpoint, "— line of interaction —", frontstage, "— line of visibility (limit of competitive intelligence) —", process, controls, "— line of internal interaction —", applications, interfaces, capabilities, hotspot, kpis, fail_points]
+views:
+  portfolio: "Level 0 · hypothesis, products × stages heat map, products × banks coverage"
+  journey:   "Level 1 · experience curve, stage cards, ranked hot spots"
+  blueprint: "Level 2 · full blueprint with lenses and paths"
+  compare:   "Level 1 · one product across banks, attribute by attribute"
+lenses:
+  executive:   [feeling, action, controls, hotspot, kpis, fail_points]
+  product:     [feeling, action, touchpoint, frontstage, process, hotspot, kpis, fail_points]
+  engineering: [action, frontstage, process, controls, applications, interfaces, capabilities]
+  full:        all
+
+# ---------------------------------------------------------------------------
+# Required before publish (needs owners of these systems)
+# ---------------------------------------------------------------------------
+required_before_publish:   # enforced by the validator's publish gate for status in-review or published
+  - No sample or awaiting facts in the journey
+  - Steward and retention class assigned
+  - Approved CI legal review for any competitor journey or competitor comparison facts
+  - Control.grc_control_id and risk_ids from the enterprise GRC / RCSA taxonomy
+  - Application.cmdb_ci from the CMDB / app inventory
+  - Capability.bian_id and bian_version pinned to the landscape in use
+  - Interfaces as ISO 20022 message types where applicable (e.g. pacs.008, pacs.002 for RTP / FedNow)
+  - Product.fibo_class and data[] refs to the enterprise logical data model
+  - Party.lei for every bank
+  - Metric.steward and dq_status certified for any metric shown as an actual
