@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "$id": "urn:kos:schema:kos-journey:0.5.0",
+ "$id": "urn:kos:schema:kos-journey:0.6.0",
  "title": "KOS Journey Ontology instance",
  "type": "object",
  "additionalProperties": false,
@@ -22,7 +22,7 @@
  ],
  "properties": {
   "ontology": {
-   "const": "kos-journey/0.5.0"
+   "const": "kos-journey/0.6.0"
   },
   "codelists": {
    "type": "object",
@@ -644,94 +644,10 @@
     "^x-": {}
    }
   },
-  "comparison": {
-   "type": "object",
-   "additionalProperties": false,
-   "required": [
-    "product",
-    "attributes",
-    "values",
-    "governance"
-   ],
-   "properties": {
-    "product": {
-     "type": "string"
-    },
-    "attributes": {
-     "type": "array",
-     "items": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-       "id",
-       "stage",
-       "name",
-       "datatype",
-       "normalization"
-      ],
-      "properties": {
-       "id": {
-        "type": "string",
-        "pattern": "^attr-[a-z0-9-]+$"
-       },
-       "stage": {
-        "type": "string"
-       },
-       "name": {
-        "type": "string"
-       },
-       "datatype": {
-        "enum": [
-         "text",
-         "integer",
-         "boolean",
-         "money",
-         "duration",
-         "enum",
-         "enum_list"
-        ]
-       },
-       "unit": {
-        "type": [
-         "string",
-         "null"
-        ]
-       },
-       "normalization": {
-        "type": "string"
-       },
-       "allowed_values": {
-        "type": "array",
-        "items": {
-         "type": "string"
-        },
-        "minItems": 1
-       }
-      },
-      "patternProperties": {
-       "^x-": {}
-      }
-     }
-    },
-    "values": {
-     "type": "object",
-     "additionalProperties": {
-      "type": "object",
-      "additionalProperties": {
-       "type": "array",
-       "minItems": 1,
-       "items": {
-        "$ref": "#/$defs/assertion"
-       }
-      }
-     }
-    },
-    "governance": {
-     "$ref": "#/$defs/governance"
-    }
-   },
-   "patternProperties": {
-    "^x-": {}
+  "comparisons": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/comparison"
    }
   }
  },
@@ -1415,6 +1331,96 @@
      "type": "null"
     }
    ]
+  },
+  "comparison": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "product",
+    "attributes",
+    "values",
+    "governance"
+   ],
+   "properties": {
+    "product": {
+     "type": "string"
+    },
+    "attributes": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "id",
+       "stage",
+       "name",
+       "datatype",
+       "normalization"
+      ],
+      "properties": {
+       "id": {
+        "type": "string",
+        "pattern": "^attr-[a-z0-9-]+$"
+       },
+       "stage": {
+        "type": "string"
+       },
+       "name": {
+        "type": "string"
+       },
+       "datatype": {
+        "enum": [
+         "text",
+         "integer",
+         "boolean",
+         "money",
+         "duration",
+         "enum",
+         "enum_list"
+        ]
+       },
+       "unit": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "normalization": {
+        "type": "string"
+       },
+       "allowed_values": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       }
+      },
+      "patternProperties": {
+       "^x-": {}
+      }
+     }
+    },
+    "values": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "$ref": "#/$defs/assertion"
+       }
+      }
+     }
+    },
+    "governance": {
+     "$ref": "#/$defs/governance"
+    }
+   },
+   "patternProperties": {
+    "^x-": {}
+   }
   }
  }
 }

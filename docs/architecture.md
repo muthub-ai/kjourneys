@@ -62,7 +62,7 @@ erDiagram
 ```
 manifest.json                         manifest: ontology version, study
 dataproduct.yaml                   data product contract: owners, ports, gates, SLOs
-reports/<YYYY-MM-DD-vN>/           MI reports as received + extracts      → MI session (immutable)
+reports/<YYYY-MM-DD-vN>/           MI reports as received (html, docx, xlsx) + extracts → MI session (immutable)
 schema/                            ontology (human) + JSON Schema (machine)
 registries/                        shared catalogs                       → data office
 data/portfolio.json                banks and products in scope
@@ -89,7 +89,7 @@ flowchart LR
 |---|---|---|
 | Assemble | `tools/assemble.py` | A file's bank or product disagrees with its folder |
 | Validate | `tools/validate_journey.py` | Schema, integrity, typing, temporal, provenance or publish-gate rule broken |
-| Negative tests | `tests/run_tests.sh` | Any of 29 known-bad fixtures passes |
+| Negative tests | `tests/run_tests.sh` | Any of 31 known-bad fixtures passes |
 | Ingest test | `tests/test_ingest.py` | Versioned ingest, history, refusal or immutability behaves wrongly |
 | Build | `tools/build_site.py` | Template or data missing |
 | Export | `tools/export.py` | — (produces facts, coverage, summary; summary is posted to the CI run) |
@@ -125,7 +125,7 @@ This product is deliberately shaped like a KOS knowledge bundle so it can fold i
 
 | Limit | Plan |
 |---|---|
-| One comparison per instance (Zelle) | Make `comparison` a list keyed by product when the second product's MI begins |
+| Questions per product come from the MI data | `tools/new_comparison.py` creates a product's questions and bank slots; an Excel-to-extract converter follows once the MI workbook layout is known |
 | GRC, CMDB, LEI and BIAN IDs are empty | Filled by system owners. The publish gate blocks release until they are. |
 | The page inlines all data (~200 KB today) | Fine to several MB. Beyond that, load `kjourneys.json` as a sibling file. |
 | Sample data for Wells Fargo | Replace from KOS bundles and journey owners. Sample is never allowed past draft. |

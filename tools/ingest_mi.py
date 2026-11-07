@@ -4,9 +4,10 @@
   python3 tools/ingest_mi.py reports/<version> [--dry-run]
 
 Input  (reports/<version>/, immutable once committed):
-  manifest.json          version, product, producer, received_at, files[] with sha256
-  <report files>         the MI deliverable as received (md, pdf, docx, ...)
-  extract/<bank>.json    structured facts drawn from the report (see docs/mi-extraction.md)
+  manifest.json                    version, products, producer, received_at, files[] with sha256
+  <report files>                   the MI deliverable as received (html, docx, xlsx, pdf, ...)
+  extract/<product>/<bank>.json    structured facts drawn from the report (see docs/mi-extraction.md);
+                                   extract/<bank>.json is also accepted when the report covers one product
 
 Effect:
   registries/sources.json                          + the report itself and every cited URL
@@ -34,7 +35,7 @@ def jdump(p, o):                                   # atomic: write a temp file, 
     tmp = p + ".tmp"
     with open(tmp, "w") as f: json.dump(o, f, ensure_ascii=False, indent=2); f.write("\n")
     os.replace(tmp, p)
-MANIFEST_KEYS = {"report_version", "product", "title", "produced_by", "received_at", "files", "notes"}
+MANIFEST_KEYS = {"report_version", "product", "products", "title", "produced_by", "received_at", "files", "notes"}
 EXTRACT_KEYS = {"bank", "product", "facts"}
 FACT_KEYS = {"attribute", "value", "display", "qualifier", "basis", "confidence", "observed_on", "sources", "evidence"}
 SOURCE_KEYS = {"title", "url", "retrieved_at", "kind"}
@@ -62,8 +63,9 @@ man = jload(os.path.join(rdir, "manifest.json"))
 unknown(man, MANIFEST_KEYS, "manifest")
 try: datetime.fromisoformat(str(man.get("received_at", "")).replace("Z", "+00:00"))
 except ValueError: fail("manifest: received_at must be an ISO 8601 date-time, e.g. 2026-11-20T17:30:00-06:00")
-for k in ["report_version", "product", "produced_by", "received_at", "files"]:
+for k in ["report_version", "produced_by", "received_at", "files"]:
     if k not in man: fail(f"manifest: missing '{k}'")
+if ("product" in man) == ("products" in man): fail("manifest: give either 'products' (a list) or 'product' (one), not both or neither")
 if man.get("report_version") != version: fail(f"manifest: report_version '{man.get('report_version')}' must equal folder name '{version}'")
 if not re.fullmatch(r"\d{4}-\d{2}-\d{2}-v\d+", version): fail(f"version folder '{version}' must look like YYYY-MM-DD-vN")
 else:
@@ -76,16 +78,18 @@ for f in man.get("files", []):
     elif sha256(p) != f.get("sha256"): fail(f"manifest: {f['path']} sha256 mismatch — reports are immutable; add a new version instead")
 if not man.get("files"): fail("manifest: list at least the report file itself under files[]")
 
-product = man.get("product")
-cdir = os.path.join(ROOT, "data/comparisons", str(product))
-if not os.path.isdir(cdir): fail(f"no comparison folder for product '{product}'")
+products = man.get("products") or ([man["product"]] if man.get("product") else [])
+if not isinstance(products, list) or not products: fail("manifest: products must be a non-empty list")
+products = [str(x) for x in products] if isinstance(products, list) else []
+for product in products:
+    if not os.path.isfile(os.path.join(ROOT, "data/comparisons", product, "comparison.json")):
+        fail(f"no comparison for product '{product}' — create data/comparisons/{product}/comparison.json (its questions) first")
 log_path = os.path.join(ROOT, "reports/ingest-log.json")
 log = jload(log_path) if os.path.exists(log_path) else []
 rerun = any(e["report_version"] == version for e in log)
 if problems: print("INGEST FAIL"); [print(" -", p) for p in problems]; sys.exit(1)
 
-comparison = jload(os.path.join(cdir, "comparison.json"))
-attrs = {a["id"]: a for a in comparison["attributes"]}
+ATTRS = {p: {a["id"]: a for a in jload(os.path.join(ROOT, "data/comparisons", p, "comparison.json"))["attributes"]} for p in products}
 sources = jload(os.path.join(ROOT, "registries/sources.json"))
 src_ids = {s["id"] for s in sources}
 parties = {p["id"]: p for p in jload(os.path.join(ROOT, "registries/parties.json"))}
@@ -96,7 +100,7 @@ touched = {}
 # ---------- rerun: roll back what this version wrote ----------
 rolled_back = 0
 if rerun:
-    for vpath in sorted(glob.glob(os.path.join(cdir, "values", "*.json"))):
+    for vpath in sorted(glob.glob(os.path.join(ROOT, "data/comparisons", "*", "values", "*.json"))):
         vfile = jload(vpath); changed = False
         for aid, hist in vfile["values"].items():
             mine = [a for a in hist if report_src in a.get("source_ids", [])]
@@ -111,7 +115,7 @@ if rerun:
             bank = vfile["bank"]
             vfile["values"][aid] = rest or [{"basis": "awaiting", "source_ids": [], "asserted_by": None, "asserted_at": None,
                                              "observed_on": None, "valid_to": None, "verified_by": None, "verified_at": None,
-                                             "id": f"urn:kos:assertion:{bank}:{product}:{aid[5:]}:1"}]
+                                             "id": f"urn:kos:assertion:{bank}:{vfile['product']}:{aid[5:]}:1"}]
             rolled_back += len(mine); changed = True
         if changed: touched[vpath] = vfile
     sources = [s for s in sources if s["id"] != report_src]
@@ -137,7 +141,15 @@ def url_source(s):
 # ---------- apply facts ----------
 applied, unchanged = 0, 0
 runs = 1 + next((e.get("runs", 1) for e in (jload(log_path) if os.path.exists(log_path) else []) if e["report_version"] == version), 0)
-for ex in sorted(glob.glob(os.path.join(rdir, "extract/*.json"))):
+extracts = [(p, ex) for p in products for ex in sorted(glob.glob(os.path.join(rdir, "extract", p, "*.json")))]
+loose = sorted(glob.glob(os.path.join(rdir, "extract", "*.json")))
+if loose and len(products) == 1: extracts += [(products[0], ex) for ex in loose]
+elif loose: fail(f"extract/: this report covers several products, so put extracts in extract/<product>/<bank>.json ({len(loose)} file(s) at the top level)")
+for d_ in sorted(glob.glob(os.path.join(rdir, "extract", "*", ""))):
+    if os.path.basename(os.path.dirname(d_)) not in products: fail(f"extract/{os.path.basename(os.path.dirname(d_))}/: product not listed in the manifest")
+if not extracts: fail("no extract files found — see docs/mi-extraction.md")
+for product, ex in extracts:
+    attrs = ATTRS[product]; cdir = os.path.join(ROOT, "data/comparisons", product)
     e = jload(ex); bank = e.get("bank"); where = os.path.relpath(ex, ROOT)
     if os.path.splitext(os.path.basename(ex))[0] != bank: fail(f"{where}: file name must equal bank id"); continue
     if bank not in parties: fail(f"{where}: unknown bank '{bank}'"); continue
@@ -190,9 +202,9 @@ for ex in sorted(glob.glob(os.path.join(rdir, "extract/*.json"))):
 
 if problems: print("INGEST FAIL — nothing written"); [print(" -", p) for p in problems]; sys.exit(1)
 print(f"{version}: {'rerun — rolled back ' + str(rolled_back) + ' fact(s); ' if rerun else ''}{applied} fact(s) applied, {unchanged} unchanged, {len(new_sources)} new source(s), {len(touched)} bank file(s)")
-log.append({"report_version": version, "product": product, "produced_by": man["produced_by"], "ingested_facts": applied,
+log.append({"report_version": version, "products": products, "produced_by": man["produced_by"], "ingested_facts": applied,
             "unchanged": unchanged, "runs": runs, "ingested_at": datetime.now().astimezone().isoformat(timespec="seconds"),
-            "banks": sorted(os.path.splitext(os.path.basename(p))[0] for p in touched)})
+            "files": sorted(os.path.relpath(p, ROOT) for p in touched)})
 outputs = {**touched, os.path.join(ROOT, "registries/sources.json"): sources + new_sources, log_path: log}
 
 # ---------- validate the result before touching the repo ----------

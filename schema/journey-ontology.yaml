@@ -1,11 +1,14 @@
-# KOS Journey Ontology — kos-journey/0.5.0
+# KOS Journey Ontology — kos-journey/0.6.0
 # Human-readable schema. The machine contract is journey-ontology.schema.json (JSON Schema 2020-12),
 # enforced in CI with validate_journey.py (structure, integrity, typing, temporal rules, publish gates)
-# and tests/run_tests.sh (29 negative fixtures that must fail) plus tests/test_ingest.py.
+# and tests/run_tests.sh (31 negative fixtures that must fail) plus tests/test_ingest.py.
 # Canonical instance: JSON, split across registries/ and data/ and assembled by tools/assemble.py.
 
-ontology: kos-journey/0.5.0
+ontology: kos-journey/0.6.0
 changelog:
+  "0.6.0":
+    - "Breaking: comparison (one) becomes comparisons[] (one per product); data/comparisons/<product>/ per product (tools/migrate_0_5_to_0_6.py)"
+    - MI reports may cover several products; extracts live in extract/<product>/<bank>.json
   "0.5.0":
     - "Breaking: portfolio.our_bank renamed focus_bank; party role our_bank renamed focus (tools/migrate_0_4_to_0_5.py)"
     - Source kind mi-report with path, sha256 and report_version; reports are immutable and integrity-checked
@@ -154,6 +157,7 @@ hotspot_rubric:
 # ---------------------------------------------------------------------------
 Portfolio: { fields: [focus_bank, banks, banks_note, products] }
 Comparison:
+  cardinality: "comparisons[] — at most one per product"
   fields:
     product: "ref Product"
     governance: Governance

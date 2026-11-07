@@ -2,7 +2,7 @@
 
 A git-native data product for customer journeys in banking. It holds Wells Fargo service blueprints and sourced, dated competitor facts on the same stages. Every change is validated, reviewed and versioned, and is published as an executive journey site plus machine-readable outputs.
 
-First study: **money movement** (Zelle, ACH, wire, bill pay, instant payments) across the top 10 US banks.
+First study: **money movement** (Zelle, ACH, wire, bill pay, instant payments) across the top 10 US banks. Each product has its own comparison under `data/comparisons/<product>/`; add one with `tools/new_comparison.py`.
 
 > **Prototype.** This repo holds sample data only. Real bank internals and competitor research belong in enterprise GitHub (see [architecture §6](docs/architecture.md#6-governance)).
 
@@ -39,7 +39,7 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 
 - **Provenance on every fact:** basis (observed, disclosed, inferred, internal, sample, awaiting), sources, who asserted it and when, and validity dates.
 - **History is never lost:** facts are superseded, never overwritten, and git keeps every prior state. Tag the commit you present from.
-- **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 29 negative tests prove the rules hold.
+- **Rules are code:** a schema, an integrity checker and publish gates enforce them, and 31 negative tests prove the rules hold.
 - **The line of visibility is a provenance boundary:** competitors' backstage is never presented as fact.
 
 ## Repo map

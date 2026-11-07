@@ -397,7 +397,7 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
     </div>
     <div class="panel" id="covPanel">
       <div class="sec-head" style="margin-bottom:10px"><h3>What we know · product × bank</h3>
-        <div class="heatkey"><span><span class="covdot s"></span> Sample journey</span><span><span class="covdot"></span> Awaiting market intelligence</span><span id="banksNote"></span></div></div>
+        <div class="heatkey"><span><span class="covdot s"></span> Sample journey</span><span><span class="covdot"></span> No journey yet</span><span><span class="mono">3/11</span> sourced competitor facts</span><span id="banksNote"></span></div></div>
       <div class="tbl-scroll"><table class="cov" id="cov"></table></div>
     </div>
   </section>
@@ -467,16 +467,17 @@ body.presenting .spot{position:relative;z-index:20;box-shadow:0 0 0 4px var(--ac
   <!-- L1 COMPARE -->
   <section class="view" id="v-compare" data-view="compare" hidden>
     <div class="sec-head">
-      <div><div class="eyebrow">Level 1 · Competitor view</div><h2>Zelle across ten banks</h2></div>
+      <div><div class="eyebrow">Level 1 · Competitor view</div><h2 id="cmpTitle"></h2></div>
       <p>Same stages, same questions, one column per bank. Each cell is a sourced, dated fact labeled observed, disclosed or inferred. Share competitor facts only once legal review is approved; its status is shown below.</p>
     </div>
+    <div class="ctlgroup" id="cmpProducts"></div>
     <div class="dataline" id="cmpLine"></div>
     <div class="panel tbl-scroll" id="cmpPanel" style="padding:0"><table class="cmp" id="cmp"></table></div>
   </section>
 
   <!-- METHOD -->
   <section class="view parked" id="v-method" data-view="method" aria-label="Method and data">
-    <div class="sec-head"><div><div class="eyebrow">Method &amp; data</div><h2>How this is built, and how complete it is</h2></div><p>Everything here renders from one canonical journey file, validated against a JSON Schema, an integrity checker and 29 negative test cases on every change.</p></div>
+    <div class="sec-head"><div><div class="eyebrow">Method &amp; data</div><h2>How this is built, and how complete it is</h2></div><p>Everything here renders from one canonical journey file, validated against a JSON Schema, an integrity checker and 31 negative test cases on every change.</p></div>
     <div class="two">
       <div class="panel"><h3 style="margin-bottom:10px">Data status by basis</h3><div class="tbl-scroll"><table id="statusTbl"></table></div>
         <p class="muted" style="font-size:13px;margin-top:10px">Sample values are placeholders authored for design review. Awaiting slots are defined and validated but empty.</p></div>
@@ -546,7 +547,8 @@ const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const badge = b => `<span class="basis b-${b}">${b}</span>`;
 const by = (arr, k="id") => Object.fromEntries(arr.map(x => [x[k], x]));
-const J = DATA.journeys[0], M = J.moments, STAGES = DATA.codelists.stages, PF = DATA.portfolio, CMP = DATA.comparison;
+const J = DATA.journeys[0], M = J.moments, STAGES = DATA.codelists.stages, PF = DATA.portfolio, CMPS = DATA.comparisons || [];
+let CMP = CMPS[0];
 const party = by(DATA.parties), prod = by(DATA.products), cap = by(DATA.capabilities), app = by(DATA.applications, "app_id");
 const met = by(DATA.metrics), proc = by(DATA.processes), ctrl = by(DATA.controls), stageById = by(STAGES);
 const byUrn = by(M), code = urn => byUrn[urn]?.code;
@@ -564,7 +566,8 @@ const fmtTarget = k => { const mm = met[k.metric]; if(k.target) return `${CMPSYM
 const variants = J.variants.map(v => ({...v, mcodes: v.moments.map(code), ncodes: Object.fromEntries(Object.entries(v.notes).map(([k,t])=>[code(k),t]))}));
 
 /* ---------- status ---------- */
-const cmpCells = Object.values(CMP.values).flatMap(r => Object.values(r).map(cur));
+const cellsOf = c => Object.values(c.values).flatMap(r => Object.values(r).map(cur));
+const cmpCells = CMPS.flatMap(cellsOf);
 const cmpAwait = cmpCells.filter(a => a.basis==="awaiting").length;
 const slots = PF.products.length * PF.banks.length;
 const mapped = DATA.products.reduce((n,p)=>n+p.journeys.length,0);
@@ -601,8 +604,11 @@ heat += `<tr class="queued"><td><b style="color:var(--ink)">${queued.length} mor
 $("#heat").innerHTML = heat + `</tbody>`;
 let cov = `<thead><tr><th>Product</th>${BANKS.map(b=>`<th class="${b===PF.focus_bank?"us":""}">${esc(party[b].name)}</th>`).join("")}</tr></thead><tbody>`;
 PF.products.forEach(pid=>{ const p = prod[pid];
+  const C = CMPS.find(c=>c.product===pid);
   cov += `<tr><td><b>${esc(p.name)}</b></td>${BANKS.map(b=>{ const has = b===J.bank && p.journeys.includes(J.id);
-    return `<td class="${b===PF.focus_bank?"us":""}"><span class="covdot${has?" s":""}" title="${has?"Sample journey":"Awaiting"}"></span></td>`; }).join("")}</tr>`; });
+    const n = C ? Object.values(C.values[b]||{}).map(cur).filter(a=>["observed","disclosed","inferred"].includes(a.basis)).length : 0;
+    const tot = C ? C.attributes.length : 0;
+    return `<td class="${b===PF.focus_bank?"us":""}"><span class="covdot${has?" s":""}" title="${has?"Sample journey":"No journey yet"}"></span>${n?` <span class="mono" style="font-size:11.5px" title="${n} of ${tot} competitor facts sourced">${n}/${tot}</span>`:""}</td>`; }).join("")}</tr>`; });
 $("#cov").innerHTML = cov + `</tbody>`;
 
 /* ---------- L1 journey ---------- */
@@ -794,15 +800,19 @@ function renderCompare(){
     attrs.forEach(a=>{
       h += `<tr><td title="${esc(a.normalization)}"><span class="an">${esc(a.name)}</span><span class="dt">${esc(a.datatype)}${a.unit?` · ${esc(a.unit)}`:""}${a.allowed_values?` · ${esc(a.allowed_values.join(" | "))}`:""}</span></td>` + shown.map(b=>{
         const v = cur(CMP.values[b]?.[a.id]);
-        if(!v || v.basis==="awaiting") return `<td class="${b===PF.focus_bank?"us":""}"><span class="await">Awaiting MI</span></td>`;
+        if(!v || v.basis==="awaiting") return `<td class="${b===PF.focus_bank?"us":""}"><span class="await">${b===PF.focus_bank?"Awaiting Wells Fargo input":"Awaiting MI"}</span></td>`;
         const val = v.display ?? pretty(v.value, a);
         return `<td class="${b===PF.focus_bank?"us":""}"><div class="val"><span>${esc(val)}</span>${v.qualifier?`<span class="dt">${esc(v.qualifier)}</span>`:""}${badge(v.basis)}</div></td>`;
       }).join("") + (pending.length?`<td><span class="await">${pending.length} × awaiting</span></td>`:"") + `</tr>`;
     });
   });
   $("#cmp").innerHTML = h + `</tbody>`;
-  const tally = cmpCells.reduce((o,a)=>(o[a.basis]=(o[a.basis]||0)+1,o),{});
-  $("#cmpLine").innerHTML = `${["observed","disclosed","inferred","sample","awaiting"].filter(b=>tally[b]).map(b=>`<span><b>${tally[b]}</b> ${badge(b)}</span>`).join("")}<span class="muted">of ${cmpCells.length} cells</span><span>Legal review: <b>${esc(CMP.governance.ci_legal_review.status)}</b></span><button type="button" class="linkbtn" id="bankToggle">${showAllBanks?"Collapse pending banks":`Show all ${PF.banks.length} bank columns`}</button><span class="muted">Hover an attribute for its normalization rule</span>`;
+  const these = cellsOf(CMP);
+  const tally = these.reduce((o,a)=>(o[a.basis]=(o[a.basis]||0)+1,o),{});
+  $("#cmpTitle").textContent = `${prod[CMP.product]?.name || CMP.product} across ${PF.banks.length} banks`;
+  $("#cmpProducts").innerHTML = CMPS.length > 1 ? `<span class="seglabel">Product</span><div class="seg">${CMPS.map(c=>`<button type="button" data-cmp="${esc(c.product)}" aria-pressed="${c===CMP}">${esc(prod[c.product]?.name || c.product)}</button>`).join("")}</div>` : "";
+  $$("#cmpProducts [data-cmp]").forEach(b=>b.addEventListener("click",()=>{ CMP = CMPS.find(c=>c.product===b.dataset.cmp); if(CMP) renderCompare(); else $("#cmpTitle").textContent = "No product comparisons yet"; }));
+  $("#cmpLine").innerHTML = `${["observed","disclosed","inferred","sample","awaiting"].filter(b=>tally[b]).map(b=>`<span><b>${tally[b]}</b> ${badge(b)}</span>`).join("")}<span class="muted">of ${these.length} cells</span><span>Legal review: <b>${esc(CMP.governance.ci_legal_review.status)}</b></span><button type="button" class="linkbtn" id="bankToggle">${showAllBanks?"Collapse pending banks":`Show all ${PF.banks.length} bank columns`}</button><span class="muted">Hover an attribute for its normalization rule</span>`;
   $("#bankToggle").addEventListener("click", ()=>{ showAllBanks = !showAllBanks; renderCompare(); });
 }
 renderCompare();
@@ -823,7 +833,7 @@ renderCompare();
   $("#gov").innerHTML = `<table><tbody>
     <tr><td>Owner</td><td>${esc(who(g.owner))} <span class="mono muted" style="font-size:11.5px">${esc(g.owner)}</span></td></tr><tr><td>Steward</td><td>${esc(g.steward?who(g.steward):"Not assigned")}</td></tr>
     <tr><td>Classification</td><td>${esc(g.classification)}</td></tr><tr><td>Contains PII / MNPI</td><td>${g.contains_pii?"Yes":"No"} / ${g.mnpi?"Yes":"No"}</td></tr>
-    <tr><td>CI legal review (journey)</td><td><b style="color:var(--sample)">${esc(g.ci_legal_review.status)}</b></td></tr><tr><td>CI legal review (competitor data)</td><td><b style="color:var(--sample)">${esc(CMP.governance.ci_legal_review.status)}</b></td></tr><tr><td>Access</td><td>${esc(g.access_policy)}</td></tr></tbody></table>`;
+    <tr><td>CI legal review (journey)</td><td><b style="color:var(--sample)">${esc(g.ci_legal_review.status)}</b></td></tr>${CMPS.map(c=>`<tr><td>CI legal review (${esc(prod[c.product]?.name || c.product)} data)</td><td><b style="color:var(--sample)">${esc(c.governance.ci_legal_review.status)}</b></td></tr>`).join("")}<tr><td>Access</td><td>${esc(g.access_policy)}</td></tr></tbody></table>`;
   const req = (SCHEMA.split("required_before_publish:")[1]||"").split("\n").filter(l=>l.trim().startsWith("- ")).map(l=>l.trim().slice(2));
   $("#req").innerHTML = req.map(r=>`<li>${esc(r)}</li>`).join("");
   $("#ontVer").textContent = DATA.ontology;
@@ -904,7 +914,7 @@ const STORY = [
   {view:"blueprint", lens:"executive", path:"all", col:"M01", spot:"#bpFrame", title:"One blueprint, read by executives", text:"The executive lens keeps feeling, controls, hot spots, KPIs and fail points for every moment, and hides the systems detail."},
   {view:"blueprint", lens:"executive", path:"scam", spot:"#bpFrame", title:"5 moments on the scam path", text:"Follow a scam from the warning to the claim. The payment is authorized and irrevocable, so recovery depends on network rules. This is where customer expectations and coverage diverge."},
   {view:"blueprint", lens:"engineering", path:"all", trace:"frdsc", row:"apps", spot:"#bpFrame", title:`Fraud scoring touches ${M.filter(m=>m.applications.includes("frdsc")).length} moments`, text:"Tracing an app ID shows every moment that depends on it and who owns it. Any app can be traced the same way."},
-  {view:"compare", spot:"#cmpPanel", title:`${cmpAwait} competitor facts to collect`, text:"Each bank answers the same eleven questions, stage by stage. Cells fill with sourced, dated facts once legal review clears the study."}
+  {view:"compare", spot:"#cmpPanel", title:`${cmpAwait} competitor facts to collect`, text:"Each bank answers the same questions per product, stage by stage. Cells fill with sourced, dated facts once legal review clears the study."}
 ];
 let si = -1;
 function storyGo(d){ const n = si + d; if(n<0) return; if(n>=STORY.length){ endStory(); return; } si = n; applyStory(); }

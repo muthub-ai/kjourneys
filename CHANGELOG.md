@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.0 — 2026-11-06
+
+- **Several products:**
+  - The assembled instance holds `comparisons[]`, one per product. The site's Compare view has a product switcher, and the coverage grid shows sourced competitor facts per product and bank.
+  - `tools/new_comparison.py` scaffolds a product's questions with an awaiting slot for every bank. Rerunning it with new questions keeps existing facts.
+- **Multi-product MI reports:**
+  - The manifest takes `products: [...]`, and extracts live in `extract/<product>/<bank>.json`.
+  - Any formats are preserved: html, docx, xlsx, all checksum-pinned.
+- **Validation:** one comparison per product, and every comparison product must be in the portfolio. Two new negative fixtures (31 in total). The ingest test has 27 checks, including multi-product cases.
+- **Migration:** `tools/migrate_0_5_to_0_6.py`.
+
 ## 0.5.0 — 2026-11-06
 
 - **Versioned MI reports:** `reports/<YYYY-MM-DD-vN>/` holds each report as received, its manifest (sha256-pinned) and per-bank extracts.

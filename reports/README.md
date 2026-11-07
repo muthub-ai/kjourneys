@@ -8,9 +8,10 @@ reports/
   2026-11-20-v1/              <delivery date>-v<n>
     manifest.json             version, product, producer, received_at, files + sha256
     report.pdf                the deliverable as received (any format)
+    report.html  report.docx  data.xlsx    the deliverables as received, any formats
     extract/
-      citi.json               structured facts for one bank (docs/mi-extraction.md)
-      pnc.json
+      zelle/citi.json         structured facts for one product and bank (docs/mi-extraction.md)
+      ach/citi.json
   2026-12-05-v1/              a later delivery; changed facts supersede earlier ones
 ```
 
@@ -27,17 +28,21 @@ reports/
 ```json
 {
   "report_version": "2026-11-20-v1",
-  "product": "zelle",
-  "title": "Zelle competitive scan — top 10 US banks",
+  "products": ["zelle", "ach", "wire", "billpay", "instant"],
+  "title": "Money-movement competitive scan — top 10 US banks",
   "produced_by": "process:mi-session",
   "received_at": "2026-11-20T17:30:00-06:00",
   "files": [
-    { "path": "report.pdf", "sha256": "<sha256 of the file>", "kind": "report" }
+    { "path": "report.html", "sha256": "<sha256>", "kind": "report" },
+    { "path": "report.docx", "sha256": "<sha256>", "kind": "report" },
+    { "path": "data.xlsx",   "sha256": "<sha256>", "kind": "data" }
   ]
 }
 ```
 
-Get the hash with `shasum -a 256 report.pdf` (macOS) or `sha256sum report.pdf` (Linux). List the main report first; it becomes the source every ingested fact cites.
+Get each hash with `shasum -a 256 <file>` (macOS) or `sha256sum <file>` (Linux). List the main report first; it becomes the source every ingested fact cites. Every listed file is checksum-pinned, so all three formats are preserved exactly. A report about one product may use `"product": "zelle"` instead of `products`, and may put extracts directly in `extract/<bank>.json`.
+
+Each product needs its comparison questions before its first ingest: `python3 tools/new_comparison.py <product> <attributes.json>` creates them, with an awaiting slot for every bank.
 
 ## Ingest
 

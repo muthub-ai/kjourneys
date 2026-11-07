@@ -29,10 +29,8 @@ for p in sorted(glob.glob(os.path.join(ROOT, "data/journeys/*/*.json"))):
 
 out["portfolio"] = load("data/portfolio.json")
 
-comps = sorted(glob.glob(os.path.join(ROOT, "data/comparisons/*/comparison.json")))
-if len(comps) > 1:
-    problems.append("only one comparison per instance is supported in kos-journey/0.4 (found %d)" % len(comps))
-for c in comps[:1]:
+out["comparisons"] = []
+for c in sorted(glob.glob(os.path.join(ROOT, "data/comparisons/*/comparison.json"))):
     folder = os.path.dirname(c); product = os.path.basename(folder)
     cmp = json.load(open(c))
     if cmp["product"] != product:
@@ -43,11 +41,11 @@ for c in comps[:1]:
         if f.get("bank") != stem: problems.append(f"{os.path.relpath(v, ROOT)}: bank '{f.get('bank')}' does not match file name")
         if f.get("product") != product: problems.append(f"{os.path.relpath(v, ROOT)}: product '{f.get('product')}' does not match folder")
         cmp["values"][f["bank"]] = f["values"]
-    out["comparison"] = cmp
+    out["comparisons"].append(cmp)
 
 if problems:
     print("ASSEMBLE FAIL"); [print(" -", x) for x in problems]; sys.exit(1)
 os.makedirs(os.path.join(ROOT, "dist"), exist_ok=True)
 json.dump(out, open(os.path.join(ROOT, "dist/kjourneys.json"), "w"), ensure_ascii=False, indent=1)
 print(f"assembled dist/kjourneys.json — {len(out['journeys'])} journey(s), "
-      f"{len(out.get('comparison', {}).get('values', {}))} bank comparison file(s)")
+      f"{len(out['comparisons'])} product comparison(s): " + ", ".join(f"{c['product']} ({len(c['values'])} banks)" for c in out["comparisons"]))

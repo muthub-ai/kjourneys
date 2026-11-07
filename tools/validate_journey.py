@@ -176,41 +176,47 @@ if pf:
     unique(pf["banks"], "portfolio bank"); unique(pf["products"], "portfolio product")
     for b in pf["banks"]: need(b in PARTIES, f"ref: portfolio bank {b}")
     for p in pf["products"]: need(p in PRODUCTS, f"ref: portfolio product {p}")
-cmp = d.get("comparison")
-if cmp:
-    need(cmp["product"] in PRODUCTS, f"ref: comparison product {cmp['product']}")
+CMPS = d.get("comparisons", [])
+unique([c["product"] for c in CMPS], "comparison product")
+for cmp in CMPS:
+    P = cmp["product"]
+    need(P in PRODUCTS, f"ref: comparison product {P}")
+    need(P in pf.get("products", []), f"ref: comparison product {P} is not in portfolio.products")
     attrs = {a["id"]: a for a in cmp["attributes"]}
-    unique([a["id"] for a in cmp["attributes"]], "attribute")
+    unique([a["id"] for a in cmp["attributes"]], f"{P} attribute")
     for a in cmp["attributes"]:
-        need(a["stage"] in STAGES, f"ref: attribute {a['id']} stage")
+        need(a["stage"] in STAGES, f"ref: {P} attribute {a['id']} stage")
         need(a["datatype"] not in ("enum", "enum_list") or "allowed_values" in a, f"type: attribute {a['id']} is {a['datatype']} without allowed_values")
     for b in pf.get("banks", []):
-        need(b in cmp["values"], f"slot: comparison missing bank {b}")
-        for at in attrs: need(at in cmp["values"].get(b, {}), f"slot: comparison missing {b}/{at}")
+        need(b in cmp["values"], f"slot: {P} comparison missing bank {b}")
+        for at in attrs: need(at in cmp["values"].get(b, {}), f"slot: {P} comparison missing {b}/{at}")
     for b, row in cmp["values"].items():
-        need(b in PARTIES, f"ref: comparison bank {b}")
+        need(b in PARTIES, f"ref: {P} comparison bank {b}")
         if b not in focus_ids:
             for at, hist in row.items():
                 for a in hist:
                     need(a["basis"] in ("observed", "disclosed", "inferred", "awaiting"),
-                         f"basis: competitor {b}/{at} cannot be {a['basis']} — named banks take observed, disclosed or inferred facts only")
+                         f"basis: {P} competitor {b}/{at} cannot be {a['basis']} — named banks take observed, disclosed or inferred facts only")
         for at, hist in row.items():
-            need(at in attrs, f"ref: comparison attribute {at}")
+            need(at in attrs, f"ref: {P} comparison attribute {at}")
             current = [a for a in hist if not a.get("valid_to")]
-            need(len(current) == 1, f"temporal: {b}/{at} must have exactly one current assertion, found {len(current)}")
-            for a in hist: check_assertion(a, f"comparison {b}/{at}", attrs.get(at))
-    for b, row in cmp["values"].items():
-        for at, hist in row.items():
-            for a in hist:
-                if a.get("supersedes"): need(a["supersedes"] in assertion_ids, f"ref: {b}/{at} supersedes unknown {a['supersedes']}")
+            need(len(current) == 1, f"temporal: {P} {b}/{at} must have exactly one current assertion, found {len(current)}")
+            for a in hist: check_assertion(a, f"{P} comparison {b}/{at}", attrs.get(at))
     filled_competitor = any(a["basis"] in ("observed", "disclosed", "inferred") for b, row in cmp["values"].items() if b not in focus_ids
                             for hist in row.values() for a in hist if not a.get("valid_to"))
     if filled_competitor:
         need(cmp["governance"]["ci_legal_review"]["status"] in ("pending", "approved"),
-             "gate: competitor facts present while comparison legal review is rejected or not started")
+             f"gate: {P} competitor facts present while comparison legal review is rejected or not started")
+
+for cmp in CMPS:
+    P = cmp["product"]
+    for b, row in cmp["values"].items():
+        for at, hist in row.items():
+            for a in hist:
+                if a.get("supersedes"): need(a["supersedes"] in assertion_ids, f"ref: {P} {b}/{at} supersedes unknown {a['supersedes']}")
 
 if errors:
     print(f"FAIL — {len(errors)} defect(s)"); [print(" -", e) for e in errors[:60]]; sys.exit(1)
 n = sum(len(j["moments"]) for j in d["journeys"])
 print(f"PASS — {len(d['journeys'])} journey, {n} moments, {len(d['metrics'])} metrics, {len(d['controls'])} controls, "
-      f"{sum(len(r) for r in cmp['values'].values()) if cmp else 0} comparison slots")
+      f"{sum(len(r) for c in CMPS for r in c['values'].values())} comparison slots across {len(CMPS)} product(s)")

@@ -9,12 +9,13 @@ tmp = tempfile.mkdtemp(prefix="kjourneys-ingest-")
 shutil.copytree(REPO, tmp, dirs_exist_ok=True, ignore=shutil.ignore_patterns(".git", "dist", "fixtures", "__pycache__"))
 
 # start every test from placeholders, whatever real MI data the repo already holds
-for vp in os.listdir(os.path.join(tmp, "data/comparisons/zelle/values")):
-    path = os.path.join(tmp, "data/comparisons/zelle/values", vp); vf = json.load(open(path))
+import glob as _glob
+for path in _glob.glob(os.path.join(tmp, "data/comparisons/*/values/*.json")):
+    vf = json.load(open(path))
     if vf["bank"] == "wells-fargo": continue
     for aid in vf["values"]:
         vf["values"][aid] = [{"basis": "awaiting", "source_ids": [], "asserted_by": None, "asserted_at": None, "observed_on": None,
-                              "valid_to": None, "verified_by": None, "verified_at": None, "id": f"urn:kos:assertion:{vf['bank']}:zelle:{aid[5:]}:1"}]
+                              "valid_to": None, "verified_by": None, "verified_at": None, "id": f"urn:kos:assertion:{vf['bank']}:{vf['product']}:{aid[5:]}:1"}]
     json.dump(vf, open(path, "w"), indent=2)
 json.dump([], open(os.path.join(tmp, "reports/ingest-log.json"), "w"))
 
@@ -103,6 +104,32 @@ refused("2000-06-05-v1", [dict(base, sources=[{"title": "no url"}])], "needs a u
 os.makedirs(os.path.join(tmp, "reports/2000-06-07-v1"), exist_ok=True)
 r = run("python3", "tools/ingest_mi.py", "reports/2000-06-07-v1"); expect(r.returncode != 0 and "manifest.json not found" in r.stdout + r.stderr and "Traceback" not in r.stderr, "a missing manifest gives a message, not a traceback")
 r = run("python3", "tools/ingest_mi.py", "reports/2000-06-04-v1", "--dry-run"); expect(r.returncode != 0, "dry run reports the same failure")
+
+# ---------- several products in one report ----------
+json.dump([{"id": "attr-same-day", "stage": "move", "name": "TEST same-day option", "datatype": "boolean", "unit": None,
+            "normalization": "TEST rule"}], open(os.path.join(tmp, "ach-attrs.json"), "w"))
+r = run("python3", "tools/new_comparison.py", "ach", "ach-attrs.json"); expect(r.returncode == 0, "a new product comparison can be scaffolded")
+ok, out = check(); expect(ok, "repo validates with two product comparisons" + ("" if ok else f"\n{out}"))
+def make_multi(version, layout):
+    d = os.path.join(tmp, "reports", version); os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, "report.html"), "w").write("<p>TEST multi-product report</p>")
+    sha = hashlib.sha256(open(os.path.join(d, "report.html"), "rb").read()).hexdigest()
+    json.dump({"report_version": version, "products": ["zelle", "ach"], "produced_by": "process:mi-session",
+               "received_at": "2000-07-02T12:00:00-06:00", "files": [{"path": "report.html", "sha256": sha, "kind": "report"}]},
+              open(os.path.join(d, "manifest.json"), "w"))
+    for rel, obj in layout.items():
+        os.makedirs(os.path.dirname(os.path.join(d, rel)), exist_ok=True); json.dump(obj, open(os.path.join(d, rel), "w"))
+    return f"reports/{version}"
+zf = {"bank": "truist", "product": "zelle", "facts": [dict(base, observed_on="2000-07-01")]}
+af = {"bank": "truist", "product": "ach", "facts": [{"attribute": "attr-same-day", "value": True, "basis": "disclosed", "confidence": "medium",
+      "observed_on": "2000-07-01", "sources": src}]}
+mv = make_multi("2000-07-01-v1", {"extract/zelle/truist.json": zf, "extract/ach/truist.json": af})
+r = run("python3", "tools/ingest_mi.py", mv); ok, out = check()
+expect(r.returncode == 0 and "2 fact(s) applied" in r.stdout and ok, "one report fills two products" + ("" if ok else f"\n{out}"))
+r = run("python3", "tools/ingest_mi.py", make_multi("2000-07-02-v1", {"extract/truist.json": zf}))
+expect(r.returncode != 0 and "several products" in r.stdout, "multi-product reports need extract/<product>/ folders")
+r = run("python3", "tools/ingest_mi.py", make_multi("2000-07-03-v1", {"extract/wire/truist.json": zf}))
+expect(r.returncode != 0 and "not listed in the manifest" in r.stdout, "an extract folder for an unlisted product is refused")
 
 shutil.rmtree(tmp)
 print(f"\n{'PASS' if not fails else 'FAIL'} — ingest flow ({len(fails)} failure(s))"); sys.exit(1 if fails else 0)

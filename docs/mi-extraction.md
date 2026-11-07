@@ -11,7 +11,7 @@ Either way, the commit holds the report, the extract and the resulting data chan
 
 ## Extract file format
 
-`reports/<version>/extract/<bank-id>.json`:
+`reports/<version>/extract/<product>/<bank-id>.json` (or `extract/<bank-id>.json` when the report covers one product):
 
 ```json
 {

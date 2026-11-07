@@ -3,7 +3,7 @@
 
 id: urn:kos:dataproduct:kjourneys
 name: kjourneys
-version: 0.5.0                    # follows the ontology version
+version: 0.6.0                    # follows the ontology version
 status: prototype                 # prototype → pilot → production
 domain: customer-experience / money-movement
 description: >
@@ -76,8 +76,8 @@ quality_gates:                       # every scripts/refresh.sh run, and re-vali
   - temporal: one current assertion per slot, valid_from <= valid_to, supersedes resolves
   - provenance: every non-awaiting fact has sources, asserter, timestamp; competitors never sample/internal
   - publish_gate: in-review/published needs real data, steward, retention, GRC + CMDB links, approved legal review
-  - negative_tests: tests/fixtures (29 cases) must all fail
-  - ingest_flow: tests/test_ingest.py (22 end-to-end checks of ingest, rerun and refusals)
+  - negative_tests: tests/fixtures (31 cases) must all fail
+  - ingest_flow: tests/test_ingest.py (27 end-to-end checks of ingest, rerun, refusals and multi-product)
   - report_integrity: every mi-report source's file exists and matches its sha256
 
 slos:

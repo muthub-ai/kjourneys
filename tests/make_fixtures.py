@@ -4,7 +4,7 @@ import json, copy, os
 SRC = json.load(open("dist/kjourneys.json"))
 OUT = "tests/fixtures"; os.makedirs(OUT, exist_ok=True)
 J = lambda d: d["journeys"][0]
-WF = lambda d: d["comparison"]["values"]["wells-fargo"]
+WF = lambda d: d["comparisons"][0]["values"]["wells-fargo"]
 cases = {}
 def case(name):
     def deco(f): cases[name] = f; return f
@@ -38,7 +38,7 @@ def _(d): WF(d)["attr-stepup-trigger"][0]["supersedes"] = "urn:kos:assertion:doe
 def _(d): WF(d)["attr-stepup-trigger"][0]["verified_by"] = "bob"
 @case("m3h_awaiting_with_value")
 def _(d):
-    slot = next(h for b, row in d["comparison"]["values"].items() if b != d["portfolio"]["focus_bank"]
+    slot = next(h for b, row in d["comparisons"][0]["values"].items() if b != d["portfolio"]["focus_bank"]
                 for h in row.values() if h[-1]["basis"] == "awaiting")
     slot[-1]["value"] = 5000
 @case("m3i_two_current_assertions")
@@ -69,19 +69,23 @@ def _(d): J(d)["moments"][0]["evidence"]["vibes"] = dict(J(d)["moments"][0]["evi
 @case("m5f_duplicate_control_ref")
 def _(d): m = J(d)["moments"][0]; m["controls"].append(m["controls"][0])
 @case("m5g_focus_bank_missing")
-def _(d): d["portfolio"]["banks"].remove("wells-fargo"); del d["comparison"]["values"]["wells-fargo"]
+def _(d): d["portfolio"]["banks"].remove("wells-fargo"); del d["comparisons"][0]["values"]["wells-fargo"]
 @case("m5h_two_focus_banks")
 def _(d): d["parties"][0]["role"] = "focus"
+@case("m8a_duplicate_product_comparison")
+def _(d): d["comparisons"].append(copy.deepcopy(d["comparisons"][0]))
+@case("m8b_comparison_product_not_in_portfolio")
+def _(d): d["portfolio"]["products"].remove(d["comparisons"][0]["product"])
 @case("m6_enum_without_allowed_values")
-def _(d): d["comparison"]["attributes"][0].pop("allowed_values")
+def _(d): d["comparisons"][0]["attributes"][0].pop("allowed_values")
 
 for name, f in cases.items():
     d = copy.deepcopy(SRC); f(d); json.dump(d, open(f"{OUT}/{name}.json", "w"), indent=1)
 
 # competitor facts may never be sample or internal (added with the repo)
 d = copy.deepcopy(SRC)
-comp = next(b for b in d["comparison"]["values"] if b != d["portfolio"]["focus_bank"])
-d["comparison"]["values"][comp]["attr-enroll-steps"] = [dict(SRC["comparison"]["values"]["wells-fargo"]["attr-enroll-steps"][0],
+comp = next(b for b in d["comparisons"][0]["values"] if b != d["portfolio"]["focus_bank"])
+d["comparisons"][0]["values"][comp]["attr-enroll-steps"] = [dict(SRC["comparisons"][0]["values"]["wells-fargo"]["attr-enroll-steps"][0],
     id=f"urn:kos:assertion:{comp}:zelle:enroll-steps:9")]
 json.dump(d, open(f"{OUT}/m7_competitor_sample_fact.json", "w"), indent=1)
 print(len(cases) + 1, "fixtures written")
