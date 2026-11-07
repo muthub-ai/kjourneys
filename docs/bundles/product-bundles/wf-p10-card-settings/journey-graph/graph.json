@@ -1,0 +1,32 @@
+{
+ "bundle_id": "wf-p10-card-settings",
+ "nodes": [
+  {
+   "id": "product/WF-P10",
+   "type": "product",
+   "label": "Card Settings (card on/off, view recurring payments, digital wallets, account access) — formerly Control Tower℠"
+  },
+  {
+   "id": "sub-product/WF-P10-S01",
+   "type": "sub-product",
+   "label": "View recurring payments & subscriptions on card; card on/off"
+  },
+  {
+   "id": "journey/WF-J26",
+   "type": "journey",
+   "label": "Consumer reviews recurring payments/subscriptions and turns a card off (Control Tower / Card Settings)"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P10",
+   "to": "sub-product/WF-P10-S01",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P10-S01",
+   "to": "journey/WF-J26",
+   "rel": "used-by"
+  }
+ ]
+}

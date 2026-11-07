@@ -1,0 +1,62 @@
+{
+ "bundle_id": "wf-p07-atm-branch-deposits-transfer",
+ "nodes": [
+  {
+   "id": "product/WF-P07",
+   "type": "product",
+   "label": "ATM & branch deposits/transfers"
+  },
+  {
+   "id": "sub-product/WF-P07-S01",
+   "type": "sub-product",
+   "label": "ATM deposit (cash/check) and ATM transfer/payment"
+  },
+  {
+   "id": "sub-product/WF-P07-S02",
+   "type": "sub-product",
+   "label": "Branch wire / branch deposit"
+  },
+  {
+   "id": "sub-product/WF-P07-S03",
+   "type": "sub-product",
+   "label": "Cashier's checks (online order) and money orders (branch)"
+  },
+  {
+   "id": "sub-product/WF-P07-S04",
+   "type": "sub-product",
+   "label": "Foreign currency cash order (online; branch pickup required over $3,000)"
+  },
+  {
+   "id": "journey/WF-J14",
+   "type": "journey",
+   "label": "Consumer deposits cash/check and transfers at a Wells Fargo ATM (incl. card-free wallet access)"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P07",
+   "to": "sub-product/WF-P07-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P07",
+   "to": "sub-product/WF-P07-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P07",
+   "to": "sub-product/WF-P07-S03",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P07",
+   "to": "sub-product/WF-P07-S04",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P07-S01",
+   "to": "journey/WF-J14",
+   "rel": "used-by"
+  }
+ ]
+}

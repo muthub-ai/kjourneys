@@ -1,0 +1,106 @@
+{
+ "bundle_id": "wf-p12-early-pay-day-inbound-instan",
+ "nodes": [
+  {
+   "id": "product/WF-P12",
+   "type": "product",
+   "label": "Early Pay Day & inbound instant receive (RTP/FedNow/Zelle credits)"
+  },
+  {
+   "id": "sub-product/WF-P12-S01",
+   "type": "sub-product",
+   "label": "Receive RTP / FedNow instant credit"
+  },
+  {
+   "id": "sub-product/WF-P12-S02",
+   "type": "sub-product",
+   "label": "Early Pay Day (ACH direct deposit early availability)"
+  },
+  {
+   "id": "sub-product/WF-P12-S03",
+   "type": "sub-product",
+   "label": "Set up direct deposit (prefilled form generator)"
+  },
+  {
+   "id": "journey/WF-J15",
+   "type": "journey",
+   "label": "Consumer receives an RTP®/FedNow® instant payment or early ACH direct deposit"
+  },
+  {
+   "id": "customer-journey/CJ-INSTANT-RECEIVE-RFP",
+   "type": "customer-journey",
+   "label": "Consumer receives an instant credit and pays a biller Request for Payment (payer side)"
+  },
+  {
+   "id": "finding/GAP-WF-0023",
+   "type": "gap",
+   "label": "How inbound RTP/FedNow credits are labelled and alerted is unpublished.",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0038",
+   "type": "gap",
+   "label": "Observed: direct-deposit setup is a prefilled PDF ('Prefill your direct deposit ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0039",
+   "type": "gap",
+   "label": "Observed: the web 'Manage Alerts' page offers checking accounts only balance (ze",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0015",
+   "type": "strength",
+   "label": "Early Pay Day applies automatically with no enrollment.",
+   "severity": "low"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P12",
+   "to": "sub-product/WF-P12-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P12",
+   "to": "sub-product/WF-P12-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P12",
+   "to": "sub-product/WF-P12-S03",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P12-S01",
+   "to": "journey/WF-J15",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J15",
+   "to": "customer-journey/CJ-INSTANT-RECEIVE-RFP",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J15",
+   "to": "finding/GAP-WF-0023",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J15",
+   "to": "finding/GAP-WF-0038",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J15",
+   "to": "finding/GAP-WF-0039",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J15",
+   "to": "finding/STR-WF-0015",
+   "rel": "finding"
+  }
+ ]
+}

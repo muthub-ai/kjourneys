@@ -1,0 +1,42 @@
+{
+ "bundle_id": "wf-p11-digital-wallet-intersections",
+ "nodes": [
+  {
+   "id": "product/WF-P11",
+   "type": "product",
+   "label": "Digital wallet intersections (Paze, PayPal, Apple/Google/Samsung Pay, card-free ATM)"
+  },
+  {
+   "id": "sub-product/WF-P11-S01",
+   "type": "sub-product",
+   "label": "Paze enrollment/activation"
+  },
+  {
+   "id": "sub-product/WF-P11-S02",
+   "type": "sub-product",
+   "label": "Add WF card to PayPal / wallets from WF app"
+  },
+  {
+   "id": "journey/WF-J27",
+   "type": "journey",
+   "label": "Consumer activates Paze and links a card to PayPal from the Wells Fargo app (wallet intersections)"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P11",
+   "to": "sub-product/WF-P11-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P11",
+   "to": "sub-product/WF-P11-S02",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P11-S01",
+   "to": "journey/WF-J27",
+   "rel": "used-by"
+  }
+ ]
+}

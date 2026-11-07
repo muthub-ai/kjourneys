@@ -1,0 +1,196 @@
+{
+ "bundle_id": "wf-p13-wells-fargo-vantage",
+ "nodes": [
+  {
+   "id": "product/WF-P13",
+   "type": "product",
+   "label": "Wells Fargo Vantage® (replacing Commercial Electronic Office® / CEO®)"
+  },
+  {
+   "id": "sub-product/WF-P13-S01",
+   "type": "sub-product",
+   "label": "ACH origination (payroll, vendor, collections) with ACH Fraud Filter"
+  },
+  {
+   "id": "sub-product/WF-P13-S02",
+   "type": "sub-product",
+   "label": "Wires (domestic, international, FX) with approvals and Wires Status Search"
+  },
+  {
+   "id": "sub-product/WF-P13-S03",
+   "type": "sub-product",
+   "label": "Transfers (book transfers) and drawdowns"
+  },
+  {
+   "id": "sub-product/WF-P13-S04",
+   "type": "sub-product",
+   "label": "Instant payments (RTP® / FedNow®) via API with smart rail routing"
+  },
+  {
+   "id": "sub-product/WF-P13-S05",
+   "type": "sub-product",
+   "label": "Consolidated payables (Integrated Payables)"
+  },
+  {
+   "id": "sub-product/WF-P13-S06",
+   "type": "sub-product",
+   "label": "Mobile deposit (multi-check) and deposit approvals"
+  },
+  {
+   "id": "sub-product/WF-P13-S07",
+   "type": "sub-product",
+   "label": "Tokenized deposits (on-chain 24/7/365 settlement; USD→GBP pilot)"
+  },
+  {
+   "id": "sub-product/WF-P13-S08",
+   "type": "sub-product",
+   "label": "Treasury Management Services for Business Banking (via Vantage)"
+  },
+  {
+   "id": "journey/WF-J20",
+   "type": "journey",
+   "label": "Commercial ACH origination with dual custody and ACH Fraud Filter (Vantage/CEO)"
+  },
+  {
+   "id": "journey/WF-J21",
+   "type": "journey",
+   "label": "Commercial wire (domestic/international/FX) creation, approval and status search"
+  },
+  {
+   "id": "journey/WF-J22",
+   "type": "journey",
+   "label": "Commercial instant payment (RTP®/FedNow®) via Gateway API with rail routing"
+  },
+  {
+   "id": "journey/WF-J23",
+   "type": "journey",
+   "label": "Commercial consolidated payables file (ACH, wire, card, check) with online approval"
+  },
+  {
+   "id": "journey/WF-J25",
+   "type": "journey",
+   "label": "Commercial mobile multi-check deposit with deposit approval (Vantage app)"
+  },
+  {
+   "id": "customer-journey/CJ-COMMERCIAL-INSTANT",
+   "type": "customer-journey",
+   "label": "Commercial instant payments (RTP/FedNow) via API or treasury portal — sketch"
+  },
+  {
+   "id": "finding/GAP-WF-0034",
+   "type": "gap",
+   "label": "Commercial Request for Payment is absent from the public Instant Payments API v1",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0022",
+   "type": "gap",
+   "label": "The routing-number reachability check (RTP | FEDNOW) exists only in the API; no ",
+   "severity": "low"
+  },
+  {
+   "id": "finding/GAP-WF-0035",
+   "type": "gap",
+   "label": "Fallback when a receiver is unreachable on both rails is undocumented.",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0019",
+   "type": "strength",
+   "label": "Public Instant Payments API returns the reachable rail (RTP | FEDNOW | both) bef",
+   "severity": "high"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S03",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S04",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S05",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S06",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S07",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P13",
+   "to": "sub-product/WF-P13-S08",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P13-S01",
+   "to": "journey/WF-J20",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P13-S02",
+   "to": "journey/WF-J21",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P13-S04",
+   "to": "journey/WF-J22",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P13-S05",
+   "to": "journey/WF-J23",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P13-S06",
+   "to": "journey/WF-J25",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J22",
+   "to": "customer-journey/CJ-COMMERCIAL-INSTANT",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J22",
+   "to": "finding/GAP-WF-0034",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J22",
+   "to": "finding/GAP-WF-0022",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J22",
+   "to": "finding/GAP-WF-0035",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J22",
+   "to": "finding/STR-WF-0019",
+   "rel": "finding"
+  }
+ ]
+}

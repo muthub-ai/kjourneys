@@ -232,6 +232,18 @@ for j in d["journeys"]:
         need(bool(j.get("composite_match")), f"ref: {w} links a customer journey without saying how (composite_match)")
         if j.get("composite_match") == "rail-segment" and j["composite"] in COMPP:
             need(COMPP[j["composite"]] == j["product"], f"ref: {w} is linked by rail and segment to {j['composite']}, a customer journey on another rail")
+LOB = d.get("lines_of_business")
+if LOB:
+    ids = [l["id"] for l in LOB["lines_of_business"]]; unique(ids, "line of business")
+    for l in LOB["lines_of_business"]:
+        for x in l["source_ids"]: need(x in SOURCES, f"ref: line of business {l['id']} source {x}")
+    focus_products = {p["id"] for p in CAT if p["bank"] == LOB["bank"]}
+    unique([a["product"] for a in LOB["assignments"]], "line-of-business assignment")
+    for a in LOB["assignments"]:
+        need(a["product"] in focus_products, f"ref: line-of-business assignment product {a['product']} is not a {LOB['bank']} catalog product")
+        for x in [a["owner"]] + a.get("also", []): need(x in ids, f"ref: line-of-business assignment {a['product']} names unknown line of business {x}")
+        need(a["owner"] not in a.get("also", []), f"ref: line-of-business assignment {a['product']} lists its owner under also")
+    for p in sorted(focus_products - {a["product"] for a in LOB["assignments"]}): errors.append(f"ref: {LOB['bank']} product {p} has no owning line of business")
 unique([f["id"] for f in d.get("findings", [])], "finding")
 for f in d.get("findings", []):
     w = f"finding {f['id']}"

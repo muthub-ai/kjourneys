@@ -1,0 +1,96 @@
+{
+ "bundle_id": "wf-p05-expresssend",
+ "nodes": [
+  {
+   "id": "product/WF-P05",
+   "type": "product",
+   "label": "ExpressSend®"
+  },
+  {
+   "id": "sub-product/WF-P05-S01",
+   "type": "sub-product",
+   "label": "Send to bank account abroad"
+  },
+  {
+   "id": "sub-product/WF-P05-S02",
+   "type": "sub-product",
+   "label": "Send for cash pickup"
+  },
+  {
+   "id": "journey/WF-J12",
+   "type": "journey",
+   "label": "Consumer sends an ExpressSend® remittance for cash pickup or account credit (mobile)"
+  },
+  {
+   "id": "customer-journey/CJ-REMITTANCE-SEND",
+   "type": "customer-journey",
+   "label": "Consumer sends a cross-border remittance (account credit or cash pickup)"
+  },
+  {
+   "id": "finding/GAP-WF-0018",
+   "type": "gap",
+   "label": "ExpressSend supports neither recurring nor future-dated transfers on either serv",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0019",
+   "type": "gap",
+   "label": "ExpressSend is migrating to app-only: accepting mobile terms removes branch, web",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0008",
+   "type": "strength",
+   "label": "ExpressSend offers cash pickup at named retail partners in 12 countries, the onl",
+   "severity": "high"
+  },
+  {
+   "id": "finding/STR-WF-0009",
+   "type": "strength",
+   "label": "ExpressSend Mobile (nationwide Sep 2026): real-time tracking and alerts, upfront",
+   "severity": "medium"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P05",
+   "to": "sub-product/WF-P05-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P05",
+   "to": "sub-product/WF-P05-S02",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P05-S02",
+   "to": "journey/WF-J12",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J12",
+   "to": "customer-journey/CJ-REMITTANCE-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J12",
+   "to": "finding/GAP-WF-0018",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J12",
+   "to": "finding/GAP-WF-0019",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J12",
+   "to": "finding/STR-WF-0008",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J12",
+   "to": "finding/STR-WF-0009",
+   "rel": "finding"
+  }
+ ]
+}

@@ -35,6 +35,10 @@ Everything runs locally on your branch, and you can rerun it as often as you lik
 | Facts | `dist/facts.jsonl` | BI, agents, retrieval: one row per current fact (comparison cells, step evidence, findings, rankings) with basis and sources |
 | Coverage | `dist/coverage.json` | Health: completeness by bank and basis, staleness, legal status |
 
+## Wells Fargo bundles and map
+
+`docs/bundles/` holds Wells Fargo product and line-of-business bundles (OKF v0.2), built from a Wells Fargo-only export that no other bank can leak into. The site's "Wells Fargo map" tab shows line of business → product → sub-product → journey → customer journey. See [docs/bundles/README.md](docs/bundles/README.md).
+
 ## Why trust it
 
 - **Provenance on every fact:** basis (observed, disclosed, inferred, internal, sample, awaiting), the MI evidence level it came from, sources, who asserted it and when, and validity dates.

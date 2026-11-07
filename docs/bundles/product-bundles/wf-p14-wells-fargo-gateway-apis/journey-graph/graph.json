@@ -1,0 +1,42 @@
+{
+ "bundle_id": "wf-p14-wells-fargo-gateway-apis",
+ "nodes": [
+  {
+   "id": "product/WF-P14",
+   "type": "product",
+   "label": "Wells Fargo Gateway® APIs (developer portal)"
+  },
+  {
+   "id": "sub-product/WF-P14-S01",
+   "type": "sub-product",
+   "label": "Payments & data APIs"
+  },
+  {
+   "id": "sub-product/WF-P14-S02",
+   "type": "sub-product",
+   "label": "Push to Card API (near-real-time disbursement to U.S. debit / GPR prepaid cards)"
+  },
+  {
+   "id": "sub-product/WF-P14-S03",
+   "type": "sub-product",
+   "label": "Account Validation API (Full Response / Logic Box) and Bank Lookup"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P14",
+   "to": "sub-product/WF-P14-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P14",
+   "to": "sub-product/WF-P14-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P14",
+   "to": "sub-product/WF-P14-S03",
+   "rel": "has"
+  }
+ ]
+}

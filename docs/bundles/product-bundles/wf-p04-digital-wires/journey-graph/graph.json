@@ -1,0 +1,212 @@
+{
+ "bundle_id": "wf-p04-digital-wires",
+ "nodes": [
+  {
+   "id": "product/WF-P04",
+   "type": "product",
+   "label": "Digital Wires (Wire Money)"
+  },
+  {
+   "id": "sub-product/WF-P04-S01",
+   "type": "sub-product",
+   "label": "Domestic wire (USD)"
+  },
+  {
+   "id": "sub-product/WF-P04-S02",
+   "type": "sub-product",
+   "label": "International wire (USD or foreign currency)"
+  },
+  {
+   "id": "sub-product/WF-P04-S03",
+   "type": "sub-product",
+   "label": "Receive incoming wire"
+  },
+  {
+   "id": "journey/WF-J10",
+   "type": "journey",
+   "label": "Consumer sends a domestic wire online (Digital Wires)"
+  },
+  {
+   "id": "journey/WF-J11",
+   "type": "journey",
+   "label": "Consumer sends an international wire in foreign currency"
+  },
+  {
+   "id": "journey/WF-J18",
+   "type": "journey",
+   "label": "Small business sends a foreign-currency wire from Business Online"
+  },
+  {
+   "id": "customer-journey/CJ-ACH-ORIG-SMB-SEND",
+   "type": "customer-journey",
+   "label": "Small business pays payroll/vendors by ACH (standard, same-day, real-time) with approvals"
+  },
+  {
+   "id": "customer-journey/CJ-WIRE-DOM-CONSUMER-SEND",
+   "type": "customer-journey",
+   "label": "Consumer sends a domestic wire to a new recipient"
+  },
+  {
+   "id": "customer-journey/CJ-WIRE-INTL-CONSUMER-SEND",
+   "type": "customer-journey",
+   "label": "Consumer sends an international wire in foreign currency"
+  },
+  {
+   "id": "finding/GAP-WF-0030",
+   "type": "gap",
+   "label": "SMB wires from Business Online have no dual approval (INFERRED, WF-C003); a sing",
+   "severity": "high"
+  },
+  {
+   "id": "finding/GAP-WF-0014",
+   "type": "gap",
+   "label": "Digital wire fee messaging conflicts ($30 flat on product page vs '$0-$30' in FA",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0016",
+   "type": "gap",
+   "label": "Cancellation is possible only while 'Scheduled'; once Pending, recall requires a",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0017",
+   "type": "gap",
+   "label": "International wires show only Scheduled/Pending/Completed for 1-5 business days;",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0015",
+   "type": "gap",
+   "label": "Published Digital Wires steps cover Wells Fargo Online only; the mobile-app flow",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0005",
+   "type": "strength",
+   "label": "Richest public wire status vocabulary of the peer set (Scheduled, Pending, Compl",
+   "severity": "high"
+  },
+  {
+   "id": "finding/STR-WF-0007",
+   "type": "strength",
+   "label": "Foreign-currency rate lock with markup disclosed and a $0 consumer FX wire fee a",
+   "severity": "high"
+  },
+  {
+   "id": "finding/STR-WF-0006",
+   "type": "strength",
+   "label": "Mandatory OTP or RSA SecurID on every digital wire, plus wire-scam guidance on r",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0022",
+   "type": "strength",
+   "label": "Observed: Wire Money opens with a rail-specific wire-scam banner and a 'Compare ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0023",
+   "type": "strength",
+   "label": "Observed: the add-recipient wizard (3 steps) offers an in-flow 'Find an ABA/RTN'",
+   "severity": "low"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P04",
+   "to": "sub-product/WF-P04-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P04",
+   "to": "sub-product/WF-P04-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P04",
+   "to": "sub-product/WF-P04-S03",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P04-S01",
+   "to": "journey/WF-J10",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P04-S02",
+   "to": "journey/WF-J11",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P04-S02",
+   "to": "journey/WF-J18",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "customer-journey/CJ-WIRE-DOM-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J11",
+   "to": "customer-journey/CJ-WIRE-INTL-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J18",
+   "to": "customer-journey/CJ-ACH-ORIG-SMB-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J18",
+   "to": "finding/GAP-WF-0030",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/GAP-WF-0014",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/GAP-WF-0016",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J11",
+   "to": "finding/GAP-WF-0017",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/GAP-WF-0015",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/STR-WF-0005",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J11",
+   "to": "finding/STR-WF-0007",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/STR-WF-0006",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/STR-WF-0022",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J10",
+   "to": "finding/STR-WF-0023",
+   "rel": "finding"
+  }
+ ]
+}

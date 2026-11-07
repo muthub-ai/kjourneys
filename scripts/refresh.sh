@@ -10,7 +10,7 @@
 # journeys, findings, composites, scores and the per-bank extracts all come from that Excel file.
 # Rerunning a report version rolls back what it wrote before and applies its extracts afresh,
 # so fix an extract and run the same command again.
-# Output: dist/index.html (journey site), dist/kjourneys.json, dist/facts.jsonl, dist/coverage.json, dist/summary.md
+# Output: docs/bundles/ (Wells Fargo product and line-of-business bundles), dist/index.html (journey site), dist/kjourneys.json, dist/facts.jsonl, dist/coverage.json, dist/summary.md
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -57,7 +57,7 @@ echo; echo "Site: dist/index.html"
 
 if [[ $COMMIT -eq 1 ]]; then
   step "Commit on $(git rev-parse --abbrev-ref HEAD)"
-  git add data registries reports
+  git add data registries reports docs/bundles
   if git diff --cached --quiet; then
     echo "No data changes to commit."
   else

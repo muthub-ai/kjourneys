@@ -1,0 +1,316 @@
+{
+ "bundle_id": "wf-p01-zelle",
+ "nodes": [
+  {
+   "id": "product/WF-P01",
+   "type": "product",
+   "label": "Zelle®"
+  },
+  {
+   "id": "sub-product/WF-P01-S01",
+   "type": "sub-product",
+   "label": "Send money with Zelle®"
+  },
+  {
+   "id": "sub-product/WF-P01-S02",
+   "type": "sub-product",
+   "label": "Request money with Zelle®"
+  },
+  {
+   "id": "sub-product/WF-P01-S03",
+   "type": "sub-product",
+   "label": "Receive money with Zelle® (incl. Zelle tag & QR for business)"
+  },
+  {
+   "id": "sub-product/WF-P01-S04",
+   "type": "sub-product",
+   "label": "Family controls (parent-managed Zelle® access for teen account holders)"
+  },
+  {
+   "id": "sub-product/WF-P01-S05",
+   "type": "sub-product",
+   "label": "Zelle® contact and profile controls (Blocked contacts; Manage payment profiles)"
+  },
+  {
+   "id": "journey/WF-J01",
+   "type": "journey",
+   "label": "Consumer sends money to a new recipient with Zelle® (mobile)"
+  },
+  {
+   "id": "journey/WF-J02",
+   "type": "journey",
+   "label": "Consumer requests money / splits a cost with Zelle®"
+  },
+  {
+   "id": "journey/WF-J03",
+   "type": "journey",
+   "label": "Small business gets paid with a Zelle® tag / QR code and pays a vendor"
+  },
+  {
+   "id": "journey/WF-J28",
+   "type": "journey",
+   "label": "Consumer reports an unauthorized Zelle/online transfer or an imposter scam and seeks reimbursement"
+  },
+  {
+   "id": "journey/WF-J29",
+   "type": "journey",
+   "label": "Consumer sends, requests and manages Zelle® payments on the web (observed logged-in session)"
+  },
+  {
+   "id": "journey/sample",
+   "type": "journey",
+   "label": "Send money with Zelle"
+  },
+  {
+   "id": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "type": "customer-journey",
+   "label": "Consumer sends money to a new recipient with Zelle (mobile-first)"
+  },
+  {
+   "id": "customer-journey/CJ-ZELLE-REQUEST",
+   "type": "customer-journey",
+   "label": "Consumer requests money or splits a bill with Zelle"
+  },
+  {
+   "id": "customer-journey/CJ-ZELLE-SMB-RECEIVE",
+   "type": "customer-journey",
+   "label": "Small business gets paid with a Zelle tag/QR and pays vendors under controls"
+  },
+  {
+   "id": "finding/GAP-WF-0001",
+   "type": "gap",
+   "label": "Review screen carries only static 'only send to people you know and trust' copy;",
+   "severity": "high"
+  },
+  {
+   "id": "finding/GAP-WF-0002",
+   "type": "gap",
+   "label": "Unauthorized and scam claims start by phone (1-800-956-4442 / 1-866-867-5568) or",
+   "severity": "high"
+  },
+  {
+   "id": "finding/GAP-WF-0008",
+   "type": "gap",
+   "label": "Business Zelle sends in Business Online can be executed by a single 'View and Tr",
+   "severity": "high"
+  },
+  {
+   "id": "finding/GAP-WF-0003",
+   "type": "gap",
+   "label": "Scam-reimbursement stance is the network minimum ('qualifying imposter scams'); ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0004",
+   "type": "gap",
+   "label": "Fraud and scam support is split across at least four phone numbers with differen",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0006",
+   "type": "gap",
+   "label": "'Split' is marketed but implemented as separate single requests; no multi-payer ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0007",
+   "type": "gap",
+   "label": "No request reminders; a payer who refuses cannot be re-requested.",
+   "severity": "low"
+  },
+  {
+   "id": "finding/GAP-WF-0036",
+   "type": "gap",
+   "label": "Observed: on the web, Zelle is the fourth item of the 'Move Money & Pay Bills' p",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0001",
+   "type": "strength",
+   "label": "Zelle has its own bottom-nav tab and can be initiated by Fargo, the deepest navi",
+   "severity": "high"
+  },
+  {
+   "id": "finding/STR-WF-0002",
+   "type": "strength",
+   "label": "Step-up access code (text or RSA SecurID) on first payment to a new recipient.",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0003",
+   "type": "strength",
+   "label": "Skip-one or cancel-series for scheduled Zelle until 11:30 PM PT the day before; ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0004",
+   "type": "strength",
+   "label": "Business Zelle tag plus QR code displaying the business name.",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0021",
+   "type": "strength",
+   "label": "Observed: Zelle 'Family controls' lets a parent enable or disable Zelle for a te",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0020",
+   "type": "strength",
+   "label": "Observed: the web amount screen shows the recipient's Zelle-registered name ('En",
+   "severity": "low"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P01",
+   "to": "sub-product/WF-P01-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P01",
+   "to": "sub-product/WF-P01-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P01",
+   "to": "sub-product/WF-P01-S03",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P01",
+   "to": "sub-product/WF-P01-S04",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P01",
+   "to": "sub-product/WF-P01-S05",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P01-S01",
+   "to": "journey/WF-J01",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P01-S01",
+   "to": "journey/WF-J28",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P01-S01",
+   "to": "journey/WF-J29",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P01-S02",
+   "to": "journey/WF-J02",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P01-S03",
+   "to": "journey/WF-J03",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J01",
+   "to": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J02",
+   "to": "customer-journey/CJ-ZELLE-REQUEST",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J03",
+   "to": "customer-journey/CJ-ZELLE-SMB-RECEIVE",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J28",
+   "to": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J29",
+   "to": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/sample",
+   "to": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J01",
+   "to": "finding/GAP-WF-0001",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J28",
+   "to": "finding/GAP-WF-0002",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J03",
+   "to": "finding/GAP-WF-0008",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J28",
+   "to": "finding/GAP-WF-0003",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J01",
+   "to": "finding/GAP-WF-0004",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J02",
+   "to": "finding/GAP-WF-0006",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J02",
+   "to": "finding/GAP-WF-0007",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J29",
+   "to": "finding/GAP-WF-0036",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J01",
+   "to": "finding/STR-WF-0001",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J01",
+   "to": "finding/STR-WF-0002",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J01",
+   "to": "finding/STR-WF-0003",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J03",
+   "to": "finding/STR-WF-0004",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J29",
+   "to": "finding/STR-WF-0021",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J29",
+   "to": "finding/STR-WF-0020",
+   "rel": "finding"
+  }
+ ]
+}

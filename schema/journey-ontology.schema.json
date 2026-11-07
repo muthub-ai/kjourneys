@@ -770,6 +770,122 @@
       "items": {
         "$ref": "#/$defs/bank_product"
       }
+    },
+    "lines_of_business": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bank",
+        "lines_of_business",
+        "assignments"
+      ],
+      "properties": {
+        "bank": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "note": {
+          "type": "string"
+        },
+        "lines_of_business": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "kind",
+              "bank",
+              "description",
+              "source_ids"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z]+-[a-z]+$"
+              },
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "reportable-segment",
+                  "line-of-business"
+                ]
+              },
+              "bank": {
+                "type": "string"
+              },
+              "components": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "description": {
+                "type": "string"
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        "assignments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "owner",
+              "basis",
+              "rule"
+            ],
+            "properties": {
+              "product": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "component": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "also": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "basis": {
+                "enum": [
+                  "disclosed",
+                  "inferred",
+                  "internal"
+                ]
+              },
+              "rule": {
+                "type": "string"
+              },
+              "confirm": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {

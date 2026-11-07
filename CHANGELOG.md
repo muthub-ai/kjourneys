@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 — 2026-11-07 · Wells Fargo map and bundles
+
+- **Lines of business:** `registries/lines-of-business.json` records Wells Fargo's four reportable segments (Q3 2026 10-Q) and each marketed product's owning line of business, with the rule used; validated.
+- **Wells Fargo-only export:** `tools/export_focus.py` writes `docs/bundles/_source/wells-fargo.json` with Wells Fargo records only; other banks named in Wells Fargo text become "a peer bank"; best practice is a number with no bank. It fails if any other bank is still named.
+- **Bundles:** `tools/build_bundles.py` builds 15 product bundles and 4 line-of-business bundles in OKF v0.2 (manifest, index, insert-only log, knowledge-source, cited sections, script-built journey-graph, human-only knowledge-sources). `tools/validate_bundles.py` checks frontmatter, every citation and its record hash, manifests, indexes, and that no other bank is named. CI rebuilds and compares.
+- **Site:** a "Wells Fargo map" tab with a network view (precomputed layout, pan, zoom, filters, search, details panel) and a flow view.
+
 ## 0.7.1 — 2026-11-07 · v0.1 release review
 
 An independent review (a different model, given the code, not the conclusions) found these. Each was checked against the workbook before it was fixed.

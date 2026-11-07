@@ -1,0 +1,42 @@
+{
+ "bundle_id": "wf-p15-commercial-receivables-fraud",
+ "nodes": [
+  {
+   "id": "product/WF-P15",
+   "type": "product",
+   "label": "Commercial receivables & fraud controls (Perfect Receivables®, Bill Manager, Integrated Receivables, Lockbox, ACH Fraud Filter, Positive Pay)"
+  },
+  {
+   "id": "sub-product/WF-P15-S01",
+   "type": "sub-product",
+   "label": "Bill Manager (e-invoice + ACH debit collection)"
+  },
+  {
+   "id": "sub-product/WF-P15-S02",
+   "type": "sub-product",
+   "label": "Perfect Receivables® (proxy account numbers for ACH/wire receipts)"
+  },
+  {
+   "id": "journey/WF-J24",
+   "type": "journey",
+   "label": "Commercial receivables: Bill Manager e-invoice with ACH collection and Perfect Receivables"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P15",
+   "to": "sub-product/WF-P15-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P15",
+   "to": "sub-product/WF-P15-S02",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P15-S01",
+   "to": "journey/WF-J24",
+   "rel": "used-by"
+  }
+ ]
+}

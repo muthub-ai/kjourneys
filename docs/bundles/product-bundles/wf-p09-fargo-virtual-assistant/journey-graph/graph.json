@@ -1,0 +1,53 @@
+{
+ "bundle_id": "wf-p09-fargo-virtual-assistant",
+ "nodes": [
+  {
+   "id": "product/WF-P09",
+   "type": "product",
+   "label": "Fargo® virtual assistant"
+  },
+  {
+   "id": "sub-product/WF-P09-S01",
+   "type": "sub-product",
+   "label": "Fargo-initiated Zelle send / transfer / bill view"
+  },
+  {
+   "id": "journey/WF-J04",
+   "type": "journey",
+   "label": "Consumer sends Zelle® money by voice/chat with Fargo®"
+  },
+  {
+   "id": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "type": "customer-journey",
+   "label": "Consumer sends money to a new recipient with Zelle (mobile-first)"
+  },
+  {
+   "id": "finding/GAP-WF-0005",
+   "type": "gap",
+   "label": "Fargo can initiate a Zelle send, but its confirmation UX is unpublished (INFERRE",
+   "severity": "low"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P09",
+   "to": "sub-product/WF-P09-S01",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P09-S01",
+   "to": "journey/WF-J04",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J04",
+   "to": "customer-journey/CJ-ZELLE-CONSUMER-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J04",
+   "to": "finding/GAP-WF-0005",
+   "rel": "finding"
+  }
+ ]
+}

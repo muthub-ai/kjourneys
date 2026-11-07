@@ -1,0 +1,209 @@
+{
+ "bundle_id": "wf-p03-bill-pay",
+ "nodes": [
+  {
+   "id": "product/WF-P03",
+   "type": "product",
+   "label": "Bill Pay (Online Bill Pay / Business Bill Pay)"
+  },
+  {
+   "id": "sub-product/WF-P03-S01",
+   "type": "sub-product",
+   "label": "Add payee & pay a bill (one-time / scheduled)"
+  },
+  {
+   "id": "sub-product/WF-P03-S02",
+   "type": "sub-product",
+   "label": "Auto pay (automatic recurring payments)"
+  },
+  {
+   "id": "sub-product/WF-P03-S03",
+   "type": "sub-product",
+   "label": "eBills"
+  },
+  {
+   "id": "sub-product/WF-P03-S04",
+   "type": "sub-product",
+   "label": "Bill Pay instant payments (RTP, in response to Request for Payment)"
+  },
+  {
+   "id": "journey/WF-J07",
+   "type": "journey",
+   "label": "Consumer adds a payee and pays a bill (electronic or check)"
+  },
+  {
+   "id": "journey/WF-J08",
+   "type": "journey",
+   "label": "Consumer activates eBills and sets auto pay"
+  },
+  {
+   "id": "journey/WF-J09",
+   "type": "journey",
+   "label": "Consumer pays a Request for Payment instantly in Bill Pay (RTP instant payment, mobile)"
+  },
+  {
+   "id": "journey/WF-J17",
+   "type": "journey",
+   "label": "Small business pays an invoice with Business Bill Pay funded by a business credit card"
+  },
+  {
+   "id": "customer-journey/CJ-ACH-ORIG-SMB-SEND",
+   "type": "customer-journey",
+   "label": "Small business pays payroll/vendors by ACH (standard, same-day, real-time) with approvals"
+  },
+  {
+   "id": "customer-journey/CJ-BILLPAY-EBILL-MANAGE",
+   "type": "customer-journey",
+   "label": "Consumer activates eBills and manages autopay"
+  },
+  {
+   "id": "customer-journey/CJ-BILLPAY-SEND",
+   "type": "customer-journey",
+   "label": "Consumer adds a payee and pays a bill"
+  },
+  {
+   "id": "customer-journey/CJ-INSTANT-RECEIVE-RFP",
+   "type": "customer-journey",
+   "label": "Consumer receives an instant credit and pays a biller Request for Payment (payer side)"
+  },
+  {
+   "id": "finding/GAP-WF-0021",
+   "type": "gap",
+   "label": "No consumer- or SMB-initiated RTP/FedNow send exists outside RfP-driven Bill Pay",
+   "severity": "high"
+  },
+  {
+   "id": "finding/GAP-WF-0031",
+   "type": "gap",
+   "label": "Business Bill Pay has no dual control; any 'View and Transact' delegate can pay.",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0020",
+   "type": "gap",
+   "label": "Public Bill Pay FAQs omit edit/cancel and return handling (deferred to post-sign",
+   "severity": "low"
+  },
+  {
+   "id": "finding/GAP-WF-0024",
+   "type": "gap",
+   "label": "RfP instant pay is not marketed; discoverability depends entirely on biller part",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0010",
+   "type": "strength",
+   "label": "Bill Pay Payment Guarantee covers late fees and explicitly includes RfP instant ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0011",
+   "type": "strength",
+   "label": "Consumers can pay a biller Request for Payment instantly in mobile Bill Pay (RTP",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0016",
+   "type": "strength",
+   "label": "Autopay rules cover full statement, minimum or fixed amount.",
+   "severity": "low"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P03",
+   "to": "sub-product/WF-P03-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P03",
+   "to": "sub-product/WF-P03-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P03",
+   "to": "sub-product/WF-P03-S03",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P03",
+   "to": "sub-product/WF-P03-S04",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P03-S01",
+   "to": "journey/WF-J07",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P03-S01",
+   "to": "journey/WF-J17",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P03-S03",
+   "to": "journey/WF-J08",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P03-S04",
+   "to": "journey/WF-J09",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J07",
+   "to": "customer-journey/CJ-BILLPAY-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J08",
+   "to": "customer-journey/CJ-BILLPAY-EBILL-MANAGE",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J09",
+   "to": "customer-journey/CJ-INSTANT-RECEIVE-RFP",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J17",
+   "to": "customer-journey/CJ-ACH-ORIG-SMB-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J09",
+   "to": "finding/GAP-WF-0021",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J17",
+   "to": "finding/GAP-WF-0031",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J07",
+   "to": "finding/GAP-WF-0020",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J09",
+   "to": "finding/GAP-WF-0024",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J07",
+   "to": "finding/STR-WF-0010",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J09",
+   "to": "finding/STR-WF-0011",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J08",
+   "to": "finding/STR-WF-0016",
+   "rel": "finding"
+  }
+ ]
+}

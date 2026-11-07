@@ -1,0 +1,209 @@
+{
+  "bank": "wells-fargo",
+  "as_of": "2026-09-30",
+  "lines_of_business": [
+    {
+      "id": "wf-cbl",
+      "name": "Consumer Banking and Lending",
+      "kind": "reportable-segment",
+      "bank": "wells-fargo",
+      "components": [
+        "Consumer, Small and Business Banking",
+        "Credit Card",
+        "Home Lending",
+        "Auto",
+        "Personal Lending"
+      ],
+      "description": "Consumer Banking and Lending offers diversified financial products and services for consumers and small businesses.",
+      "source_ids": [
+        "src-wells-fargo-10q-2026q3"
+      ]
+    },
+    {
+      "id": "wf-cb",
+      "name": "Commercial Banking",
+      "kind": "reportable-segment",
+      "bank": "wells-fargo",
+      "components": [
+        "Lending and leasing",
+        "Treasury management and payments",
+        "Other"
+      ],
+      "description": "Commercial Banking provides financial solutions to private, family owned and certain public companies.",
+      "source_ids": [
+        "src-wells-fargo-10q-2026q3"
+      ]
+    },
+    {
+      "id": "wf-cib",
+      "name": "Corporate and Investment Banking",
+      "kind": "reportable-segment",
+      "bank": "wells-fargo",
+      "components": [
+        "Banking (Lending; Treasury Management and Payments; Investment Banking)",
+        "Commercial Real Estate",
+        "Markets"
+      ],
+      "description": "Corporate and Investment Banking delivers a suite of capital markets, banking, and financial products.",
+      "source_ids": [
+        "src-wells-fargo-10q-2026q3"
+      ]
+    },
+    {
+      "id": "wf-wim",
+      "name": "Wealth and Investment Management",
+      "kind": "reportable-segment",
+      "bank": "wells-fargo",
+      "components": [],
+      "description": "Wealth and Investment Management provides personalized wealth management, brokerage, financial planning.",
+      "source_ids": [
+        "src-wells-fargo-10q-2026q3"
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "product": "WF-P01",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P02",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P03",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P04",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P05",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P06",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P07",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P08",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P09",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P10",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P11",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer, small-business customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P12",
+      "owner": "wf-cbl",
+      "component": "Consumer, Small and Business Banking",
+      "also": [],
+      "basis": "inferred",
+      "rule": "Serves consumer customers, which the 10-Q places in Consumer Banking and Lending",
+      "confirm": false
+    },
+    {
+      "product": "WF-P13",
+      "owner": "wf-cb",
+      "component": "Treasury management and payments",
+      "also": [
+        "wf-cib",
+        "wf-cbl"
+      ],
+      "basis": "inferred",
+      "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q); also used by small businesses",
+      "confirm": true
+    },
+    {
+      "product": "WF-P14",
+      "owner": "wf-cb",
+      "component": "Treasury management and payments",
+      "also": [
+        "wf-cib"
+      ],
+      "basis": "inferred",
+      "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)",
+      "confirm": true
+    },
+    {
+      "product": "WF-P15",
+      "owner": "wf-cb",
+      "component": "Treasury management and payments",
+      "also": [
+        "wf-cib"
+      ],
+      "basis": "inferred",
+      "rule": "Commercial product: treasury management and payments is reported in Commercial Banking and in Corporate and Investment Banking (Q3 2026 10-Q)",
+      "confirm": true
+    }
+  ],
+  "note": "Owning line of business per marketed product. Inferred from each product's MI segments and Wells Fargo's segment definitions; confirm items marked confirm=true."
+}

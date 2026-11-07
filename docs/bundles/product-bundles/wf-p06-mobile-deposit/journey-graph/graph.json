@@ -1,0 +1,85 @@
+{
+ "bundle_id": "wf-p06-mobile-deposit",
+ "nodes": [
+  {
+   "id": "product/WF-P06",
+   "type": "product",
+   "label": "Mobile Deposit (Wells Fargo Mobile® Deposit)"
+  },
+  {
+   "id": "sub-product/WF-P06-S01",
+   "type": "sub-product",
+   "label": "Deposit a check by photo"
+  },
+  {
+   "id": "journey/WF-J13",
+   "type": "journey",
+   "label": "Consumer deposits a check with Mobile Deposit"
+  },
+  {
+   "id": "journey/WF-J19",
+   "type": "journey",
+   "label": "Small business deposits checks via mobile and manages delegate access"
+  },
+  {
+   "id": "customer-journey/CJ-MOBILE-DEPOSIT",
+   "type": "customer-journey",
+   "label": "Consumer deposits a check with the mobile app"
+  },
+  {
+   "id": "finding/GAP-WF-0032",
+   "type": "gap",
+   "label": "Returned-check notice is a written letter; no digital return notification docume",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0012",
+   "type": "strength",
+   "label": "Mobile Deposit shows remaining daily and 30-day limits on screen before capture.",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/STR-WF-0013",
+   "type": "strength",
+   "label": "Three-channel deposit confirmation: screen, email and Message Center.",
+   "severity": "medium"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P06",
+   "to": "sub-product/WF-P06-S01",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P06-S01",
+   "to": "journey/WF-J13",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P06-S01",
+   "to": "journey/WF-J19",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J13",
+   "to": "customer-journey/CJ-MOBILE-DEPOSIT",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J13",
+   "to": "finding/GAP-WF-0032",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J13",
+   "to": "finding/STR-WF-0012",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J13",
+   "to": "finding/STR-WF-0013",
+   "rel": "finding"
+  }
+ ]
+}

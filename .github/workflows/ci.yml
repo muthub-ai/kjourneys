@@ -27,6 +27,11 @@ jobs:
               python3 -I tools/import_mi_workbook.py "$d" --check
             fi
           done
+      - name: Wells Fargo export and bundles are current and valid
+        run: |
+          python3 tools/export_focus.py --check
+          python3 tools/build_bundles.py --check
+          python3 tools/validate_bundles.py
       - name: Negative tests (every fixture must fail, for its own reason)
         run: bash tests/run_tests.sh
       - name: Ingest flow test

@@ -1,0 +1,3 @@
+# Knowledge sources — Bill Pay (Online Bill Pay / Business Bill Pay)
+
+Human-authored material for this product goes here: PRDs, decisions (DEC-), roadmap notes, ceremony outputs. `tools/build_bundles.py` never writes to this folder.

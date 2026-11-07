@@ -30,6 +30,8 @@ for p in sorted(glob.glob(os.path.join(ROOT, "data/journeys/*/*.json"))):
     out["journeys"].append(j)
 
 out["portfolio"] = load("data/portfolio.json")
+_lob = os.path.join(ROOT, "registries/lines-of-business.json")
+if os.path.exists(_lob): out["lines_of_business"] = json.load(open(_lob))
 
 # MI analytical collections, one file per bank (or per product for composites), each record stamped with its report version
 for coll, folder in [("catalog", "catalog"), ("findings", "findings"), ("observations", "observations"), ("verifications", "verifications"), ("composites", "composites")]:

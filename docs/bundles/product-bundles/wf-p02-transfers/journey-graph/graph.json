@@ -1,0 +1,200 @@
+{
+ "bundle_id": "wf-p02-transfers",
+ "nodes": [
+  {
+   "id": "product/WF-P02",
+   "type": "product",
+   "label": "Transfers (Transfer Money)"
+  },
+  {
+   "id": "sub-product/WF-P02-S01",
+   "type": "sub-product",
+   "label": "Between your accounts (internal transfer)"
+  },
+  {
+   "id": "sub-product/WF-P02-S02",
+   "type": "sub-product",
+   "label": "Bank-to-bank transfers (external, 'Transfer between banks')"
+  },
+  {
+   "id": "sub-product/WF-P02-S03",
+   "type": "sub-product",
+   "label": "Wells Fargo payments (pay WF credit card/loan from WF or external account)"
+  },
+  {
+   "id": "sub-product/WF-P02-S04",
+   "type": "sub-product",
+   "label": "Saving made easy (automatic recurring savings transfer)"
+  },
+  {
+   "id": "sub-product/WF-P02-S05",
+   "type": "sub-product",
+   "label": "Brokerage transfers (WellsTrade / Wells Fargo Advisors)"
+  },
+  {
+   "id": "sub-product/WF-P02-S06",
+   "type": "sub-product",
+   "label": "Stop future payments (online ACH debit stop) and Stop a check"
+  },
+  {
+   "id": "journey/WF-J05",
+   "type": "journey",
+   "label": "Consumer transfers between own Wells Fargo accounts (mobile), one-time and recurring"
+  },
+  {
+   "id": "journey/WF-J06",
+   "type": "journey",
+   "label": "Consumer links an external bank account and transfers money ('Bank-to-bank transfers')"
+  },
+  {
+   "id": "customer-journey/CJ-ACH-EXT-SEND",
+   "type": "customer-journey",
+   "label": "Consumer links an external account and pushes money out"
+  },
+  {
+   "id": "customer-journey/CJ-INTERNAL-TRANSFER",
+   "type": "customer-journey",
+   "label": "Consumer moves money between own accounts"
+  },
+  {
+   "id": "finding/GAP-WF-0009",
+   "type": "gap",
+   "label": "External-account linking is micro-deposit/proof-of-ownership only — verification",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0010",
+   "type": "gap",
+   "label": "Outbound external transfers default to 2-3 business days; next-day is discretion",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0011",
+   "type": "gap",
+   "label": "Returned/failed external transfers lead to suspension and reinstatement at lower",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0013",
+   "type": "gap",
+   "label": "Inbound pulls are standard ACH only; no free next-day or RfP-based instant pull ",
+   "severity": "medium"
+  },
+  {
+   "id": "finding/GAP-WF-0012",
+   "type": "gap",
+   "label": "Linking entry ('Add Non-Wells Fargo Accounts') is documented for web; the mobile",
+   "severity": "low"
+  },
+  {
+   "id": "finding/GAP-WF-0033",
+   "type": "gap",
+   "label": "Same-day internal transfers cannot be cancelled; a wrong-account transfer must b",
+   "severity": "low"
+  },
+  {
+   "id": "finding/GAP-WF-0037",
+   "type": "gap",
+   "label": "Observed: 'Set up for transfers' on an already-verified payments-only external a",
+   "severity": "low"
+  },
+  {
+   "id": "finding/STR-WF-0014",
+   "type": "strength",
+   "label": "Transfer on the bottom bar, via Fargo and at ATMs.",
+   "severity": "low"
+  }
+ ],
+ "edges": [
+  {
+   "from": "product/WF-P02",
+   "to": "sub-product/WF-P02-S01",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P02",
+   "to": "sub-product/WF-P02-S02",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P02",
+   "to": "sub-product/WF-P02-S03",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P02",
+   "to": "sub-product/WF-P02-S04",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P02",
+   "to": "sub-product/WF-P02-S05",
+   "rel": "has"
+  },
+  {
+   "from": "product/WF-P02",
+   "to": "sub-product/WF-P02-S06",
+   "rel": "has"
+  },
+  {
+   "from": "sub-product/WF-P02-S01",
+   "to": "journey/WF-J05",
+   "rel": "used-by"
+  },
+  {
+   "from": "sub-product/WF-P02-S02",
+   "to": "journey/WF-J06",
+   "rel": "used-by"
+  },
+  {
+   "from": "journey/WF-J05",
+   "to": "customer-journey/CJ-INTERNAL-TRANSFER",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "customer-journey/CJ-ACH-EXT-SEND",
+   "rel": "delivers"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "finding/GAP-WF-0009",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "finding/GAP-WF-0010",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "finding/GAP-WF-0011",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "finding/GAP-WF-0013",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "finding/GAP-WF-0012",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J05",
+   "to": "finding/GAP-WF-0033",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J06",
+   "to": "finding/GAP-WF-0037",
+   "rel": "finding"
+  },
+  {
+   "from": "journey/WF-J05",
+   "to": "finding/STR-WF-0014",
+   "rel": "finding"
+  }
+ ]
+}
